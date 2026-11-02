@@ -249,3 +249,7 @@ X（S 图 + anchors）在 k ≤ 16 时最优：k=4 召回 0.99、成本比 A 低
 ## 第十一轮：LongBench QA 上的 anchors（2026-11-03）
 `exp/real/lb3_s6_{mfqa,hotpot}`（与 lb2 同 item），arms A/S/K/X，6 读者；`analysis_anchors_qa.txt`。
 qa_f1 vs A（12 格）：S +0.012（1 格显著为负）、K +0.031（0）、**X +0.009（0）**；计费 A 1177 / S 1084 / K 1356 / X 1264。MiniMax 在 hotpot 上 K/X 显著为正（+0.12/+0.13）。
+
+## 第十二轮：按密度路由（2026-11-03）
+`exp/real/route_density.py` → `analysis_routing.txt`。路由 R(τ)：r = anchors 估计 token / S 图视觉 token ≤ τ → X，否则纯文本。
+平均（4 个计费读者）：路由召回 0.988、成本 0.71×文本；k≤4 时 0.99–1.00 / 0.19–0.22×文本。路由-X 在所有 τ 上支配路由-K（R-or-R 风格）；k≤16：X 0.933 / 0.216 vs K 0.860 / 0.243。

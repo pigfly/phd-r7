@@ -1,0 +1,1302 @@
+{
+ "T_0.png": {
+  "text": "E22",
+  "usage": {
+   "prompt_tokens": 5774,
+   "completion_tokens": 3,
+   "total_tokens": 5777,
+   "cost": 0.0010845825,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010845825,
+    "upstream_inference_prompt_cost": 0.001082625,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "text": "My Boss, My Hero",
+  "usage": {
+   "prompt_tokens": 5315,
+   "completion_tokens": 6,
+   "total_tokens": 5321,
+   "cost": 0.0010004775,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010004775,
+    "upstream_inference_prompt_cost": 0.0009965625,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "text": "William Cavendish, 7th Duke of Devonshire",
+  "usage": {
+   "prompt_tokens": 5725,
+   "completion_tokens": 13,
+   "total_tokens": 5738,
+   "cost": 0.00108192,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00108192,
+    "upstream_inference_prompt_cost": 0.0010734375,
+    "upstream_inference_completions_cost": 8.4825e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "text": "459",
+  "usage": {
+   "prompt_tokens": 2666,
+   "completion_tokens": 2,
+   "total_tokens": 2668,
+   "cost": 0.00050118,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00050118,
+    "upstream_inference_prompt_cost": 0.000499875,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "text": "tennis player",
+  "usage": {
+   "prompt_tokens": 1245,
+   "completion_tokens": 4,
+   "total_tokens": 1249,
+   "cost": 0.0002360475,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002360475,
+    "upstream_inference_prompt_cost": 0.0002334375,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "text": "8,648",
+  "usage": {
+   "prompt_tokens": 2992,
+   "completion_tokens": 4,
+   "total_tokens": 2996,
+   "cost": 0.00056361,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00056361,
+    "upstream_inference_prompt_cost": 0.000561,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 5054,
+   "completion_tokens": 2,
+   "total_tokens": 5056,
+   "cost": 0.00094893,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00094893,
+    "upstream_inference_prompt_cost": 0.000947625,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "text": "Right On!",
+  "usage": {
+   "prompt_tokens": 5380,
+   "completion_tokens": 4,
+   "total_tokens": 5384,
+   "cost": 0.00101136,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00101136,
+    "upstream_inference_prompt_cost": 0.00100875,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "text": "very little",
+  "usage": {
+   "prompt_tokens": 5080,
+   "completion_tokens": 3,
+   "total_tokens": 5083,
+   "cost": 0.0009544575,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009544575,
+    "upstream_inference_prompt_cost": 0.0009525,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "text": "intelligent design",
+  "usage": {
+   "prompt_tokens": 5170,
+   "completion_tokens": 4,
+   "total_tokens": 5174,
+   "cost": 0.000971985,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000971985,
+    "upstream_inference_prompt_cost": 0.000969375,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "text": "1786",
+  "usage": {
+   "prompt_tokens": 8470,
+   "completion_tokens": 3,
+   "total_tokens": 8473,
+   "cost": 0.0015900825,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015900825,
+    "upstream_inference_prompt_cost": 0.001588125,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "text": "Medinilla",
+  "usage": {
+   "prompt_tokens": 6373,
+   "completion_tokens": 4,
+   "total_tokens": 6377,
+   "cost": 0.0011975475,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011975475,
+    "upstream_inference_prompt_cost": 0.0011949375,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "text": "Democratic",
+  "usage": {
+   "prompt_tokens": 8316,
+   "completion_tokens": 3,
+   "total_tokens": 8319,
+   "cost": 0.0015612075,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015612075,
+    "upstream_inference_prompt_cost": 0.00155925,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "text": "Albert S. Rogell",
+  "usage": {
+   "prompt_tokens": 3613,
+   "completion_tokens": 6,
+   "total_tokens": 3619,
+   "cost": 0.0006813525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006813525,
+    "upstream_inference_prompt_cost": 0.0006774375,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "text": "9, 10",
+  "usage": {
+   "prompt_tokens": 8126,
+   "completion_tokens": 5,
+   "total_tokens": 8131,
+   "cost": 0.0015268875,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015268875,
+    "upstream_inference_prompt_cost": 0.001523625,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "text": "13",
+  "usage": {
+   "prompt_tokens": 6149,
+   "completion_tokens": 2,
+   "total_tokens": 6151,
+   "cost": 0.0011542425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011542425,
+    "upstream_inference_prompt_cost": 0.0011529375,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "text": "11? miles",
+  "usage": {
+   "prompt_tokens": 4088,
+   "completion_tokens": 4,
+   "total_tokens": 4092,
+   "cost": 0.00076911,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00076911,
+    "upstream_inference_prompt_cost": 0.0007665,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "text": "alcoholic drinks",
+  "usage": {
+   "prompt_tokens": 8101,
+   "completion_tokens": 5,
+   "total_tokens": 8106,
+   "cost": 0.0015222,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015222,
+    "upstream_inference_prompt_cost": 0.0015189375,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "text": "Andrei Olhovskiy",
+  "usage": {
+   "prompt_tokens": 4257,
+   "completion_tokens": 6,
+   "total_tokens": 4263,
+   "cost": 0.0008021025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008021025,
+    "upstream_inference_prompt_cost": 0.0007981875,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 4875,
+   "completion_tokens": 2,
+   "total_tokens": 4877,
+   "cost": 0.0009153675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009153675,
+    "upstream_inference_prompt_cost": 0.0009140625,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "text": "Aloe Vera of America",
+  "usage": {
+   "prompt_tokens": 8641,
+   "completion_tokens": 6,
+   "total_tokens": 8647,
+   "cost": 0.0016241025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0016241025,
+    "upstream_inference_prompt_cost": 0.0016201875,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "text": "Luger P08",
+  "usage": {
+   "prompt_tokens": 5494,
+   "completion_tokens": 5,
+   "total_tokens": 5499,
+   "cost": 0.0010333875,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010333875,
+    "upstream_inference_prompt_cost": 0.001030125,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "text": "Albert",
+  "usage": {
+   "prompt_tokens": 4491,
+   "completion_tokens": 2,
+   "total_tokens": 4493,
+   "cost": 0.0008433675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008433675,
+    "upstream_inference_prompt_cost": 0.0008420625,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "text": "629",
+  "usage": {
+   "prompt_tokens": 6143,
+   "completion_tokens": 2,
+   "total_tokens": 6145,
+   "cost": 0.0011531175,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011531175,
+    "upstream_inference_prompt_cost": 0.0011518125,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "text": "Washington, D.C.",
+  "usage": {
+   "prompt_tokens": 3037,
+   "completion_tokens": 6,
+   "total_tokens": 3043,
+   "cost": 0.0005733525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005733525,
+    "upstream_inference_prompt_cost": 0.0005694375,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "text": "No",
+  "usage": {
+   "prompt_tokens": 4433,
+   "completion_tokens": 2,
+   "total_tokens": 4435,
+   "cost": 0.0008324925,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008324925,
+    "upstream_inference_prompt_cost": 0.0008311875,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "text": "Gambaga",
+  "usage": {
+   "prompt_tokens": 3262,
+   "completion_tokens": 4,
+   "total_tokens": 3266,
+   "cost": 0.000614235,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000614235,
+    "upstream_inference_prompt_cost": 0.000611625,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "text": "George Clooney, Violante Placido, Thekla Reuten, Irina Bj\u00f6rklund, Paolo Bonacelli",
+  "usage": {
+   "prompt_tokens": 5612,
+   "completion_tokens": 25,
+   "total_tokens": 5637,
+   "cost": 0.0010685625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010685625,
+    "upstream_inference_prompt_cost": 0.00105225,
+    "upstream_inference_completions_cost": 1.63125e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "text": "Karakoram",
+  "usage": {
+   "prompt_tokens": 3655,
+   "completion_tokens": 4,
+   "total_tokens": 3659,
+   "cost": 0.0006879225,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006879225,
+    "upstream_inference_prompt_cost": 0.0006853125,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 1144,
+   "completion_tokens": 2,
+   "total_tokens": 1146,
+   "cost": 0.000215805,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000215805,
+    "upstream_inference_prompt_cost": 0.0002145,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_30.png": {
+  "text": "1976",
+  "usage": {
+   "prompt_tokens": 7737,
+   "completion_tokens": 3,
+   "total_tokens": 7740,
+   "cost": 0.001452645,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001452645,
+    "upstream_inference_prompt_cost": 0.0014506875,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_31.png": {
+  "text": "Knowlton",
+  "usage": {
+   "prompt_tokens": 3985,
+   "completion_tokens": 4,
+   "total_tokens": 3989,
+   "cost": 0.0007497975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007497975,
+    "upstream_inference_prompt_cost": 0.0007471875,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_32.png": {
+  "text": "Flowering plants",
+  "usage": {
+   "prompt_tokens": 6616,
+   "completion_tokens": 4,
+   "total_tokens": 6620,
+   "cost": 0.00124311,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00124311,
+    "upstream_inference_prompt_cost": 0.0012405,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_33.png": {
+  "text": "University of Missouri",
+  "usage": {
+   "prompt_tokens": 4702,
+   "completion_tokens": 4,
+   "total_tokens": 4706,
+   "cost": 0.000884235,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000884235,
+    "upstream_inference_prompt_cost": 0.000881625,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_34.png": {
+  "text": "Echeveria",
+  "usage": {
+   "prompt_tokens": 5911,
+   "completion_tokens": 5,
+   "total_tokens": 5916,
+   "cost": 0.001111575,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001111575,
+    "upstream_inference_prompt_cost": 0.0011083125,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_35.png": {
+  "text": "Warrington Town",
+  "usage": {
+   "prompt_tokens": 8017,
+   "completion_tokens": 5,
+   "total_tokens": 8022,
+   "cost": 0.00150645,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00150645,
+    "upstream_inference_prompt_cost": 0.0015031875,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_36.png": {
+  "text": "Overijssel",
+  "usage": {
+   "prompt_tokens": 5416,
+   "completion_tokens": 4,
+   "total_tokens": 5420,
+   "cost": 0.00101811,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00101811,
+    "upstream_inference_prompt_cost": 0.0010155,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_37.png": {
+  "text": "1965",
+  "usage": {
+   "prompt_tokens": 8551,
+   "completion_tokens": 3,
+   "total_tokens": 8554,
+   "cost": 0.00160527,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00160527,
+    "upstream_inference_prompt_cost": 0.0016033125,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_38.png": {
+  "text": "Tennis",
+  "usage": {
+   "prompt_tokens": 2442,
+   "completion_tokens": 3,
+   "total_tokens": 2445,
+   "cost": 0.0004598325,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004598325,
+    "upstream_inference_prompt_cost": 0.000457875,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_39.png": {
+  "text": "filibusterer is not the answer, Theodore G. Bilbo was. The correct answer is: filibusterer is related to Theodore G. Bilbo. \n\nThe answer is filibustering. No, the answer is: Theodore G. Bilbo was term-limited. The correct answer is: Progressive measures. No.\n\nThe answer is: filibusterer.",
+  "usage": {
+   "prompt_tokens": 7437,
+   "completion_tokens": 77,
+   "total_tokens": 7514,
+   "cost": 0.00144468,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00144468,
+    "upstream_inference_prompt_cost": 0.0013944375,
+    "upstream_inference_completions_cost": 5.02425e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_40.png": {
+  "text": "2012 NBA draft, Prudential Center in Newark, New Jersey",
+  "usage": {
+   "prompt_tokens": 7210,
+   "completion_tokens": 14,
+   "total_tokens": 7224,
+   "cost": 0.00136101,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00136101,
+    "upstream_inference_prompt_cost": 0.001351875,
+    "upstream_inference_completions_cost": 9.135e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_41.png": {
+  "text": "Deutzia",
+  "usage": {
+   "prompt_tokens": 2844,
+   "completion_tokens": 4,
+   "total_tokens": 2848,
+   "cost": 0.00053586,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00053586,
+    "upstream_inference_prompt_cost": 0.00053325,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_42.png": {
+  "text": "Kuno Becker",
+  "usage": {
+   "prompt_tokens": 6670,
+   "completion_tokens": 4,
+   "total_tokens": 6674,
+   "cost": 0.001253235,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001253235,
+    "upstream_inference_prompt_cost": 0.001250625,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_43.png": {
+  "text": "Honeysuckle",
+  "usage": {
+   "prompt_tokens": 2026,
+   "completion_tokens": 4,
+   "total_tokens": 2030,
+   "cost": 0.000382485,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000382485,
+    "upstream_inference_prompt_cost": 0.000379875,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_44.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 5343,
+   "completion_tokens": 2,
+   "total_tokens": 5345,
+   "cost": 0.0010031175,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010031175,
+    "upstream_inference_prompt_cost": 0.0010018125,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_45.png": {
+  "text": "poi, k?lua pua?a (k?lua pig), poke, lomi salmon, ?opihi, and haupia",
+  "usage": {
+   "prompt_tokens": 4773,
+   "completion_tokens": 29,
+   "total_tokens": 4802,
+   "cost": 0.00091386,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00091386,
+    "upstream_inference_prompt_cost": 0.0008949375,
+    "upstream_inference_completions_cost": 1.89225e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_46.png": {
+  "text": "Newfoundland and Labrador",
+  "usage": {
+   "prompt_tokens": 8285,
+   "completion_tokens": 6,
+   "total_tokens": 8291,
+   "cost": 0.0015573525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015573525,
+    "upstream_inference_prompt_cost": 0.0015534375,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_47.png": {
+  "text": "lime juice",
+  "usage": {
+   "prompt_tokens": 5815,
+   "completion_tokens": 3,
+   "total_tokens": 5818,
+   "cost": 0.00109227,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00109227,
+    "upstream_inference_prompt_cost": 0.0010903125,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_48.png": {
+  "text": "No",
+  "usage": {
+   "prompt_tokens": 6662,
+   "completion_tokens": 2,
+   "total_tokens": 6664,
+   "cost": 0.00125043,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00125043,
+    "upstream_inference_prompt_cost": 0.001249125,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_49.png": {
+  "text": "Professional tennis player",
+  "usage": {
+   "prompt_tokens": 4741,
+   "completion_tokens": 4,
+   "total_tokens": 4745,
+   "cost": 0.0008915475,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008915475,
+    "upstream_inference_prompt_cost": 0.0008889375,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

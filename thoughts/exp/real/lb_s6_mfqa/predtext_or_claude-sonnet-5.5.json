@@ -1,0 +1,1302 @@
+{
+ "T_0.png": {
+  "text": "The learning rate is non-monotonic in the transition probability. It rises rapidly as p_tr increases from 0, peaks, and then declines slowly, eventually reaching zero. When transitions are very rare, a low learning rate gives slow, stable convergence. At moderate rates, faster learning is needed to exploit the shorter stays in each environment. When transitions are too frequent, agents evolve little or no learning and stay near the mean of the two environments.",
+  "usage": {
+   "prompt_tokens": 9838,
+   "completion_tokens": 148,
+   "total_tokens": 9986,
+   "cost": 0.021156,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.021156,
+    "upstream_inference_prompt_cost": 0.019676,
+    "upstream_inference_completions_cost": 0.00148
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "text": "Several vacuum processing apparatuses are arranged side by side in parallel. Each apparatus has an atmospheric loader, a vacuum loader and a lock device in a T-arrangement. Each apparatus has only two UHF-ECR vacuum processing chambers. They sit symmetrically about the axis through the center of the vacuum transfer chamber and lock device, on the side opposite the lock device, at an acute angle. All the vacuum processing chambers of the parallel apparatuses are aligned with one another.",
+  "usage": {
+   "prompt_tokens": 6106,
+   "completion_tokens": 169,
+   "total_tokens": 6275,
+   "cost": 0.013902,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.013902,
+    "upstream_inference_prompt_cost": 0.012212,
+    "upstream_inference_completions_cost": 0.00169
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "text": "At the 2008 general election, English was the deputy leader of the National Party (and an electorate MP for Clutha-Southland). After National's win he became Deputy Prime Minister and Minister of Finance.",
+  "usage": {
+   "prompt_tokens": 7360,
+   "completion_tokens": 67,
+   "total_tokens": 7427,
+   "cost": 0.01539,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01539,
+    "upstream_inference_prompt_cost": 0.01472,
+    "upstream_inference_completions_cost": 0.00067
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "text": "\u4ece https://truffleframework.com/ganache/ \u4e0b\u8f7d\u5e76\u5b89\u88c5 Ganache\uff0c\u7136\u540e\u6253\u5f00\u8f6f\u4ef6\uff0c\u9009\u62e9\u5feb\u901f\u542f\u52a8\uff08Quickstart\uff09\u3002\u542f\u52a8\u540e\u5b83\u4f1a\u81ea\u52a8\u751f\u6210 10 \u4e2a\u5e26\u6d4b\u8bd5\u4ee5\u592a\u5e01\u7684\u8d26\u6237\uff0c\u5e76\u9ed8\u8ba4\u5728\u672c\u673a IP \u7684 8545 \u7aef\u53e3\u8fd0\u884c\uff0cMetaMask \u53ef\u4ee5\u8fde\u63a5\u8fd9\u4e2a\u7aef\u53e3\u3002\n\n\u6587\u4e2d\u7684\u4e2d\u6587\u88ab\u4e71\u7801\u66ff\u6362\u4e86\uff0c\u6240\u4ee5\u201c\u5feb\u901f\u542f\u52a8\u201d\u8fd9\u4e00\u6b65\u662f\u6211\u6839\u636e\u4e0a\u4e0b\u6587\u63a8\u6d4b\u7684\u3002",
+  "usage": {
+   "prompt_tokens": 4698,
+   "completion_tokens": 411,
+   "total_tokens": 5109,
+   "cost": 0.013506,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.013506,
+    "upstream_inference_prompt_cost": 0.009396,
+    "upstream_inference_completions_cost": 0.00411
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 265,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "text": "Watt",
+  "usage": {
+   "prompt_tokens": 12460,
+   "completion_tokens": 5,
+   "total_tokens": 12465,
+   "cost": 0.02497,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02497,
+    "upstream_inference_prompt_cost": 0.02492,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "text": "1964",
+  "usage": {
+   "prompt_tokens": 3046,
+   "completion_tokens": 4,
+   "total_tokens": 3050,
+   "cost": 0.006132,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006132,
+    "upstream_inference_prompt_cost": 0.006092,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "text": "Five experiments.",
+  "usage": {
+   "prompt_tokens": 8423,
+   "completion_tokens": 8,
+   "total_tokens": 8431,
+   "cost": 0.016926,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.016926,
+    "upstream_inference_prompt_cost": 0.016846,
+    "upstream_inference_completions_cost": 8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "text": "It uses a content-recognition module or algorithm (object recognition, speech recognition, optical character recognition, fuzzy logic) to analyze the media asset's video frames, audio, subtitles and other associated data. It identifies who is speaking, the words spoken, the tone (e.g., by volume), and the surrounding words or actions (such as ten seconds before and after). It then cross-references this data and the relationships between words against a database of possible contexts.",
+  "usage": {
+   "prompt_tokens": 9848,
+   "completion_tokens": 145,
+   "total_tokens": 9993,
+   "cost": 0.021146,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.021146,
+    "upstream_inference_prompt_cost": 0.019696,
+    "upstream_inference_completions_cost": 0.00145
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "text": "Kansas, U.S.",
+  "usage": {
+   "prompt_tokens": 4283,
+   "completion_tokens": 11,
+   "total_tokens": 4294,
+   "cost": 0.008676,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008676,
+    "upstream_inference_prompt_cost": 0.008566,
+    "upstream_inference_completions_cost": 0.00011
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "text": "NFPA and FPSA vastly outperform GMRES and DSA in nearly all cases, usually by orders of magnitude in both runtime and iteration count. For SRK and EK, NFPA and FPSA take about 0.3\u20131.4 s and 5\u201326 iterations. DSA needs thousands of seconds and tens of thousands of iterations, and GMRES needs roughly 50\u2013200 s. NFPA and FPSA are very similar to each other, with FPSA slightly faster per run because each iteration is cheaper. For HGK, NFPA and FPSA need more time and iterations as g increases, but they still beat GMRES and DSA. The one exception is at g = 0.9, where DSA's runtime is closer, though still much slower.",
+  "usage": {
+   "prompt_tokens": 13448,
+   "completion_tokens": 245,
+   "total_tokens": 13693,
+   "cost": 0.029346,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.029346,
+    "upstream_inference_prompt_cost": 0.026896,
+    "upstream_inference_completions_cost": 0.00245
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "text": "It is the band-geometric origin of the effect. The intrinsic crossed nonlinear Hall conductivity is set by the momentum-space curl of the interlayer BCP over the occupied states, which makes it a Fermi-surface property. The interlayer BCP is the E\u22a5-space counterpart of the BCP and is nonzero only for layer-hybridized states. It is suppressed where a state is fully layer-polarized and is largest near band near-degeneracies with strong hybridization. Its curl is a time-reversal-even pseudoscalar, so it is allowed only in chiral structures such as twisted bilayers. It also flips sign when the twist direction is reversed.",
+  "usage": {
+   "prompt_tokens": 7389,
+   "completion_tokens": 221,
+   "total_tokens": 7610,
+   "cost": 0.016988,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.016988,
+    "upstream_inference_prompt_cost": 0.014778,
+    "upstream_inference_completions_cost": 0.00221
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "text": "Exposure to direct sunlight or other strong light may cause permanent yellow spot damage on the screen, and this damage is not covered by the warranty.",
+  "usage": {
+   "prompt_tokens": 5375,
+   "completion_tokens": 50,
+   "total_tokens": 5425,
+   "cost": 0.01125,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01125,
+    "upstream_inference_prompt_cost": 0.01075,
+    "upstream_inference_completions_cost": 0.0005
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "text": "February 15, 2010",
+  "usage": {
+   "prompt_tokens": 4148,
+   "completion_tokens": 9,
+   "total_tokens": 4157,
+   "cost": 0.008386,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008386,
+    "upstream_inference_prompt_cost": 0.008296,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "text": "It started in March 2002 and is expected to continue until the end of this decade.",
+  "usage": {
+   "prompt_tokens": 9525,
+   "completion_tokens": 25,
+   "total_tokens": 9550,
+   "cost": 0.0193,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0193,
+    "upstream_inference_prompt_cost": 0.01905,
+    "upstream_inference_completions_cost": 0.00025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "text": "Other vaccines, not a genuine placebo such as saline. According to the text, the vaccines were trialed against other vaccines, which themselves had never been tested against a genuine placebo.",
+  "usage": {
+   "prompt_tokens": 5677,
+   "completion_tokens": 61,
+   "total_tokens": 5738,
+   "cost": 0.011964,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011964,
+    "upstream_inference_prompt_cost": 0.011354,
+    "upstream_inference_completions_cost": 0.00061
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "text": "Legacies of Losing in American Politics (with Nicole Mellow, University of Chicago Press, Fall 2017), and an expanded edition of The Rhetorical Presidency (Princeton Classics series, Fall 2017).",
+  "usage": {
+   "prompt_tokens": 12025,
+   "completion_tokens": 78,
+   "total_tokens": 12103,
+   "cost": 0.02483,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02483,
+    "upstream_inference_prompt_cost": 0.02405,
+    "upstream_inference_completions_cost": 0.00078
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "text": "Superconducting proximity generally suppresses the Kondo effect, especially when the gap 2\u0394 exceeds T_K. However, in the sub-gap regime it can also enhance or induce Kondo screening. In this system, the non-local pairing produces CAR exchange, which can by itself cause a two-stage Kondo screening. This leaves a residual conductance at particle-hole symmetry. CAR exchange competes with ferromagnetic RKKY coupling. Coupling to the superconductor also shifts the first-stage Kondo temperature: it grows with \u0393_S1 as T\u0303_K = T_K\u00b7exp(\u03c0\u0393_S1\u00b2/(2\u0393U)).",
+  "usage": {
+   "prompt_tokens": 16098,
+   "completion_tokens": 223,
+   "total_tokens": 16321,
+   "cost": 0.034426,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.034426,
+    "upstream_inference_prompt_cost": 0.032196,
+    "upstream_inference_completions_cost": 0.00223
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "text": "Spanish BERT base (the Spanish language-specific BERT model)",
+  "usage": {
+   "prompt_tokens": 4738,
+   "completion_tokens": 25,
+   "total_tokens": 4763,
+   "cost": 0.009726,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009726,
+    "upstream_inference_prompt_cost": 0.009476,
+    "upstream_inference_completions_cost": 0.00025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "text": "He loses his job at Mr. Howlands' farm, and his family is forced to move.",
+  "usage": {
+   "prompt_tokens": 3060,
+   "completion_tokens": 29,
+   "total_tokens": 3089,
+   "cost": 0.00641,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00641,
+    "upstream_inference_prompt_cost": 0.00612,
+    "upstream_inference_completions_cost": 0.00029
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "text": "October 2001",
+  "usage": {
+   "prompt_tokens": 7342,
+   "completion_tokens": 6,
+   "total_tokens": 7348,
+   "cost": 0.014744,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.014744,
+    "upstream_inference_prompt_cost": 0.014684,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 2084,
+   "completion_tokens": 8,
+   "total_tokens": 2092,
+   "cost": 0.004248,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004248,
+    "upstream_inference_prompt_cost": 0.004168,
+    "upstream_inference_completions_cost": 8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "text": "62",
+  "usage": {
+   "prompt_tokens": 13243,
+   "completion_tokens": 3,
+   "total_tokens": 13246,
+   "cost": 0.026516,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.026516,
+    "upstream_inference_prompt_cost": 0.026486,
+    "upstream_inference_completions_cost": 3e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "text": "He argued that the Internet had caused far-reaching systemic and structural changes in the economy, so Quill now harms states far more than could have been anticipated. He concluded that the legal system should find an appropriate case for the Court to reexamine Quill and Bellas Hess.",
+  "usage": {
+   "prompt_tokens": 13698,
+   "completion_tokens": 88,
+   "total_tokens": 13786,
+   "cost": 0.028276,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.028276,
+    "upstream_inference_prompt_cost": 0.027396,
+    "upstream_inference_completions_cost": 0.00088
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "text": "The normalized least mean square (NLMS) algorithm is engaged. PLMS-PPIC uses a set of NLMS algorithms with different step-sizes.",
+  "usage": {
+   "prompt_tokens": 8355,
+   "completion_tokens": 55,
+   "total_tokens": 8410,
+   "cost": 0.01726,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01726,
+    "upstream_inference_prompt_cost": 0.01671,
+    "upstream_inference_completions_cost": 0.00055
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "text": "Replacing the integer decision variables with binary ones lowers the computational complexity of the mixed-integer problem. The original integer formulation took about 2 s in the worst case, when slow traffic blocked all lanes. The binary version makes real-time operation over a long horizon possible, with an average of about 0.096 s per optimization step. It also makes the lane-selection and safety constraints easier to express, since the target lane is chosen per lane and per step and the safety condition becomes a linear implication.",
+  "usage": {
+   "prompt_tokens": 11185,
+   "completion_tokens": 159,
+   "total_tokens": 11344,
+   "cost": 0.02396,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02396,
+    "upstream_inference_prompt_cost": 0.02237,
+    "upstream_inference_completions_cost": 0.00159
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "text": "Born in Brisbane; died in Cleveland, Queensland, Australia.",
+  "usage": {
+   "prompt_tokens": 3599,
+   "completion_tokens": 28,
+   "total_tokens": 3627,
+   "cost": 0.007478,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007478,
+    "upstream_inference_prompt_cost": 0.007198,
+    "upstream_inference_completions_cost": 0.00028
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "text": "Privacy concerns, skepticism that the monitoring program would work, and the possibility that taxpayers would be left with a $500,000-a-year bill to operate it.",
+  "usage": {
+   "prompt_tokens": 13630,
+   "completion_tokens": 55,
+   "total_tokens": 13685,
+   "cost": 0.02781,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02781,
+    "upstream_inference_prompt_cost": 0.02726,
+    "upstream_inference_completions_cost": 0.00055
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "text": "An open-shell \u03c0-diradical state (5OS, predicted to be a triplet) and a closed-shell state (5para, with a para-quinodimethane moiety in the as-indacene core).",
+  "usage": {
+   "prompt_tokens": 13877,
+   "completion_tokens": 62,
+   "total_tokens": 13939,
+   "cost": 0.028374,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.028374,
+    "upstream_inference_prompt_cost": 0.027754,
+    "upstream_inference_completions_cost": 0.00062
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "text": "The text doesn't say the slope is beneficial. The plans specify it, and it makes the fuselage section conical instead of cylindrical. A side panel laid out flat then bows into a \"banana\" shape, so the panels must be laid out in a \"developed\" form with true dimensions for the top longeron to lie flat.",
+  "usage": {
+   "prompt_tokens": 10961,
+   "completion_tokens": 329,
+   "total_tokens": 11290,
+   "cost": 0.025212,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.025212,
+    "upstream_inference_prompt_cost": 0.021922,
+    "upstream_inference_completions_cost": 0.00329
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 228,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "text": "$\\Gamma_e$ is the ratio of the average unscreened electron-electron potential energy to the electron kinetic energy:\n\n$$\\Gamma_e = \\frac{e^2}{4\\pi \\epsilon_0 a_{ws}}\\frac{1}{k_B T_e}$$\n\nHere $a_{ws}$ is the Wigner-Seitz radius, defined by $\\rho_e = 1/(\\frac{4}{3}\\pi a_{ws}^3)$. For an expanding plasma, $\\Gamma_e$ does not exceed about 0.25.",
+  "usage": {
+   "prompt_tokens": 14476,
+   "completion_tokens": 192,
+   "total_tokens": 14668,
+   "cost": 0.030872,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.030872,
+    "upstream_inference_prompt_cost": 0.028952,
+    "upstream_inference_completions_cost": 0.00192
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_30.png": {
+  "text": "The paper proposes a probabilistic interpretation of the LMS filter. It uses a linear-Gaussian state-space model with a random-walk (diffusion) parameter. The exact Gaussian posterior, which gives RLS, is approximated by an isotropic Gaussian that minimizes the KL divergence. The mean is kept and the variance is set to Tr(\u03a3)/M. This yields a linear-complexity, adaptive step-size LMS algorithm. The step size is \u03b7_k = (\u03c3\u0302\u00b2_{k-1}+\u03c3_d\u00b2)/((\u03c3\u0302\u00b2_{k-1}+\u03c3_d\u00b2)\u2016x_k\u2016\u00b2+\u03c3_n\u00b2). The algorithm has only two parameters, \u03c3_d\u00b2 and \u03c3_n\u00b2, and also gives an estimate of the error variance.",
+  "usage": {
+   "prompt_tokens": 9828,
+   "completion_tokens": 253,
+   "total_tokens": 10081,
+   "cost": 0.022186,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.022186,
+    "upstream_inference_prompt_cost": 0.019656,
+    "upstream_inference_completions_cost": 0.00253
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_31.png": {
+  "text": "Low-temperature scanning tunneling microscopy and spectroscopy (STM/STS, about 5 K, ultra-high vacuum). This included topography imaging and dI/dV spectroscopy and mapping with a lock-in amplifier. The defects were created in situ by Ar\u207a and N\u207a ion exposure. The measurements were supported by a 1D piecewise-constant-potential Schr\u00f6dinger model and by ab-initio DFT/Green's function simulations.",
+  "usage": {
+   "prompt_tokens": 12525,
+   "completion_tokens": 159,
+   "total_tokens": 12684,
+   "cost": 0.02664,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02664,
+    "upstream_inference_prompt_cost": 0.02505,
+    "upstream_inference_completions_cost": 0.00159
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_32.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 4296,
+   "completion_tokens": 6,
+   "total_tokens": 4302,
+   "cost": 0.008652,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008652,
+    "upstream_inference_prompt_cost": 0.008592,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_33.png": {
+  "text": "Four",
+  "usage": {
+   "prompt_tokens": 2869,
+   "completion_tokens": 4,
+   "total_tokens": 2873,
+   "cost": 0.005778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005778,
+    "upstream_inference_prompt_cost": 0.005738,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_34.png": {
+  "text": "V\u207a, V\u2070 and V\u207b, defined by the Kullback-Leibler information distances between P_v and P_v0 and between P_v and P_v1.\n\n- **V\u207b (small change):** P_v is closer to P_v0 than to P_v1, that is, I(P_v|P_v0) < I(P_v|P_v1).\n- **V\u2070 (medium change):** the two distances are equal.\n- **V\u207a (large change):** P_v is closer to P_v1, the opposite of V\u207b.",
+  "usage": {
+   "prompt_tokens": 7394,
+   "completion_tokens": 170,
+   "total_tokens": 7564,
+   "cost": 0.016488,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.016488,
+    "upstream_inference_prompt_cost": 0.014788,
+    "upstream_inference_completions_cost": 0.0017
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_35.png": {
+  "text": "By using an autoencoder to map the high-dimensional state to a complex-valued latent space, where each latent variable evolves independently under a time-continuous linear ODE, z' = \u03bbz. The complex \u03bb acts like an eigenvalue: its real part sets growth or decay, and its imaginary part sets the periodic component. The autoencoder and \u03bb are trained together with a combined reconstruction and latent-propagation loss. The probabilistic version replaces the ODE with an Ornstein-Uhlenbeck SDE and the autoencoder with a variational autoencoder.",
+  "usage": {
+   "prompt_tokens": 6142,
+   "completion_tokens": 185,
+   "total_tokens": 6327,
+   "cost": 0.014134,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.014134,
+    "upstream_inference_prompt_cost": 0.012284,
+    "upstream_inference_completions_cost": 0.00185
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_36.png": {
+  "text": "2013\u20132014",
+  "usage": {
+   "prompt_tokens": 2091,
+   "completion_tokens": 7,
+   "total_tokens": 2098,
+   "cost": 0.004252,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004252,
+    "upstream_inference_prompt_cost": 0.004182,
+    "upstream_inference_completions_cost": 7e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_37.png": {
+  "text": "A solution $u$ of $-\\Delta u = f(u)$ in $\\mathbb{R}^N$ is stable if\n$$\\int f'(u)\\,\\psi^2 \\le \\int |\\nabla \\psi|^2 \\qquad \\forall\\, \\psi \\in C_c^2(\\mathbb{R}^N),$$\nwhere $C_c^2$ is the set of $C^2$ functions on $\\mathbb{R}^N$ with compact support. This says that the second variation of the associated energy at $u$ is non-negative.",
+  "usage": {
+   "prompt_tokens": 12320,
+   "completion_tokens": 174,
+   "total_tokens": 12494,
+   "cost": 0.02638,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02638,
+    "upstream_inference_prompt_cost": 0.02464,
+    "upstream_inference_completions_cost": 0.00174
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_38.png": {
+  "text": "Jivani Street 2, Malatia-Sebastia District, Yerevan",
+  "usage": {
+   "prompt_tokens": 2050,
+   "completion_tokens": 28,
+   "total_tokens": 2078,
+   "cost": 0.00438,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00438,
+    "upstream_inference_prompt_cost": 0.0041,
+    "upstream_inference_completions_cost": 0.00028
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_39.png": {
+  "text": "The Iraq War and its aftermath in December 2010, including violence, the formation of Nouri al-Maliki's government, the situation of Iraqi Christians, and antiwar protests.",
+  "usage": {
+   "prompt_tokens": 9153,
+   "completion_tokens": 62,
+   "total_tokens": 9215,
+   "cost": 0.018926,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.018926,
+    "upstream_inference_prompt_cost": 0.018306,
+    "upstream_inference_completions_cost": 0.00062
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_40.png": {
+  "text": "\u201cAn ALPHABETICAL LIST OF THE NAMES and PLACES of ABODE of the MERCHANTS and PRINCIPAL TRADERS of the Cities of LONDON and WESTMINSTER, the Borough of SOUTHWARK, and their Environs, with the Number affixed to each House.\u201d",
+  "usage": {
+   "prompt_tokens": 14696,
+   "completion_tokens": 109,
+   "total_tokens": 14805,
+   "cost": 0.030482,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.030482,
+    "upstream_inference_prompt_cost": 0.029392,
+    "upstream_inference_completions_cost": 0.00109
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_41.png": {
+  "text": "23 September 2017",
+  "usage": {
+   "prompt_tokens": 6957,
+   "completion_tokens": 8,
+   "total_tokens": 6965,
+   "cost": 0.013994,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.013994,
+    "upstream_inference_prompt_cost": 0.013914,
+    "upstream_inference_completions_cost": 8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_42.png": {
+  "text": "Language-specific pretrained transformer models, each with a linear layer on the pooler output, were fine-tuned for dialect identification. The candidates were XLM-RoBERTa (the baseline), BERT, ELECTRA, RoBERTa and GPT-2. The best were RoBERTa base for English, Spanish BERT base for Spanish, and Portuguese BERT base for Portuguese. A fine-tuned XLM-RoBERTa handled the first-stage language identification.",
+  "usage": {
+   "prompt_tokens": 4729,
+   "completion_tokens": 161,
+   "total_tokens": 4890,
+   "cost": 0.011068,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011068,
+    "upstream_inference_prompt_cost": 0.009458,
+    "upstream_inference_completions_cost": 0.00161
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_43.png": {
+  "text": "Yes. DUO has 9.57 instances per image on average, compared with 7.7 for COCO.",
+  "usage": {
+   "prompt_tokens": 9361,
+   "completion_tokens": 35,
+   "total_tokens": 9396,
+   "cost": 0.019072,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.019072,
+    "upstream_inference_prompt_cost": 0.018722,
+    "upstream_inference_completions_cost": 0.00035
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_44.png": {
+  "text": "VC-10 Squadron",
+  "usage": {
+   "prompt_tokens": 4875,
+   "completion_tokens": 11,
+   "total_tokens": 4886,
+   "cost": 0.00986,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00986,
+    "upstream_inference_prompt_cost": 0.00975,
+    "upstream_inference_completions_cost": 0.00011
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_45.png": {
+  "text": "1766",
+  "usage": {
+   "prompt_tokens": 14710,
+   "completion_tokens": 4,
+   "total_tokens": 14714,
+   "cost": 0.02946,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02946,
+    "upstream_inference_prompt_cost": 0.02942,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_46.png": {
+  "text": "Ultracold neutral plasmas that form via kinetic rate processes from state-selected Rydberg gases, with particular emphasis on molecular ultracold plasmas. The main example is nitric oxide, which evolves from a Rydberg gas in a laser-crossed supersonic molecular beam.",
+  "usage": {
+   "prompt_tokens": 14476,
+   "completion_tokens": 100,
+   "total_tokens": 14576,
+   "cost": 0.029952,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.029952,
+    "upstream_inference_prompt_cost": 0.028952,
+    "upstream_inference_completions_cost": 0.001
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_47.png": {
+  "text": "Larger receptive fields let the model complete shapes with bigger gaps. The bigger the receptive field, the more shapes DSP can reconstruct.",
+  "usage": {
+   "prompt_tokens": 9234,
+   "completion_tokens": 51,
+   "total_tokens": 9285,
+   "cost": 0.018978,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.018978,
+    "upstream_inference_prompt_cost": 0.018468,
+    "upstream_inference_completions_cost": 0.00051
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_48.png": {
+  "text": "Users can use the support channels listed in the document:\n\n- Work order system: https://workorder.quectel.com/\n- Forum: https://forumschinese.quectel.com/c/function-subjects/quectpython/43\n- QuecPython QQ group: 445121768\n- Email: info@quectel.com\n- Website and documentation: https://python.quectel.com (downloads at https://python.quectel.com/download, wiki at https://python.quectel.com/wiki/#/, docs at https://python.quectel.com/doc/)",
+  "usage": {
+   "prompt_tokens": 6330,
+   "completion_tokens": 170,
+   "total_tokens": 6500,
+   "cost": 0.01436,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01436,
+    "upstream_inference_prompt_cost": 0.01266,
+    "upstream_inference_completions_cost": 0.0017
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_49.png": {
+  "text": "The text does not name a brother of Ralph Rokebye.",
+  "usage": {
+   "prompt_tokens": 9536,
+   "completion_tokens": 21,
+   "total_tokens": 9557,
+   "cost": 0.019282,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.019282,
+    "upstream_inference_prompt_cost": 0.019072,
+    "upstream_inference_completions_cost": 0.00021
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

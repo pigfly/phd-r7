@@ -1,4 +1,7474 @@
 {
+ "rbase_s5_multikey_1|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 507.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.64,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 497.833,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.667,
+    0.458,
+    0.833
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.64,
+    0.44,
+    0.84
+   ],
+   "S-Z": [
+    0.625,
+    0.417,
+    0.792
+   ],
+   "S-K": [
+    -0.36,
+    -0.56,
+    -0.2
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multikey_1|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.16,
+    "silent": 0.24,
+    "vtok": 506.88,
+    "billed": 635.2
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.92,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 635.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.32,
+    "silent": 0.32,
+    "vtok": 506.88,
+    "billed": 635.2
+   },
+   "Z": {
+    "recall": 0.2,
+    "silent": 0.48,
+    "vtok": 497.68,
+    "billed": 626.0
+   },
+   "K": {
+    "recall": 0.92,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 672.32
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.76,
+    0.52,
+    0.92
+   ],
+   "U-A": [
+    0.16,
+    -0.08,
+    0.4
+   ],
+   "Z-A": [
+    0.04,
+    -0.16,
+    0.24
+   ],
+   "K-A": [
+    0.76,
+    0.6,
+    0.92
+   ],
+   "S-U": [
+    0.6,
+    0.4,
+    0.8
+   ],
+   "S-Z": [
+    0.72,
+    0.48,
+    0.92
+   ],
+   "S-K": [
+    0.0,
+    -0.16,
+    0.16
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multikey_1|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.56,
+    "silent": 0.32,
+    "vtok": 506.88,
+    "billed": 1137.76
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1152.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.84,
+    "silent": 0.12,
+    "vtok": 506.88,
+    "billed": 1152.8
+   },
+   "Z": {
+    "recall": 0.92,
+    "silent": 0.04,
+    "vtok": 497.68,
+    "billed": 1137.52
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1183.8
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.44,
+    0.24,
+    0.64
+   ],
+   "U-A": [
+    0.28,
+    0.04,
+    0.52
+   ],
+   "Z-A": [
+    0.36,
+    0.16,
+    0.56
+   ],
+   "K-A": [
+    0.44,
+    0.24,
+    0.64
+   ],
+   "S-U": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "S-Z": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "S-K": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multikey_1|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.08,
+    "vtok": 506.88,
+    "billed": 577.2
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.56,
+    "silent": 0.12,
+    "vtok": 506.88,
+    "billed": 566.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.08,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 545.92
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 497.68,
+    "billed": 551.12
+   },
+   "K": {
+    "recall": 0.88,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 606.04
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "U-A": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.88,
+    0.76,
+    1.0
+   ],
+   "S-U": [
+    0.48,
+    0.24,
+    0.68
+   ],
+   "S-Z": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "S-K": [
+    -0.32,
+    -0.56,
+    -0.08
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multikey_1|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 1098.16
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.92,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1098.16
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 1098.16
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 497.68,
+    "billed": 1098.16
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1127.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "S-Z": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "S-K": [
+    -0.08,
+    -0.2,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multikey_1|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 448.72
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.72,
+    "silent": 0.28,
+    "vtok": 506.88,
+    "billed": 470.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 470.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 497.68,
+    "billed": 438.56
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 512.36
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.72,
+    0.52,
+    0.88
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.72,
+    0.52,
+    0.88
+   ],
+   "S-Z": [
+    0.72,
+    0.52,
+    0.88
+   ],
+   "S-K": [
+    -0.28,
+    -0.48,
+    -0.12
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 507.273,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.554,
+    "silent": 0.087,
+    "vtok": 507.13,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 507.273,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 498.182,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.99,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.557,
+    0.398,
+    0.716
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.989,
+    0.966,
+    1.0
+   ],
+   "S-U": [
+    0.557,
+    0.398,
+    0.716
+   ],
+   "S-Z": [
+    0.557,
+    0.386,
+    0.716
+   ],
+   "S-K": [
+    -0.435,
+    -0.598,
+    -0.272
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.26,
+    "silent": 0.24,
+    "vtok": 506.88,
+    "billed": 635.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.88,
+    "silent": 0.06,
+    "vtok": 506.88,
+    "billed": 635.24
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.29,
+    "silent": 0.33,
+    "vtok": 506.88,
+    "billed": 635.24
+   },
+   "Z": {
+    "recall": 0.33,
+    "silent": 0.4,
+    "vtok": 497.68,
+    "billed": 626.04
+   },
+   "K": {
+    "recall": 0.93,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 673.92
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.62,
+    0.52,
+    0.72
+   ],
+   "U-A": [
+    0.03,
+    -0.06,
+    0.12
+   ],
+   "Z-A": [
+    0.07,
+    -0.03,
+    0.16
+   ],
+   "K-A": [
+    0.67,
+    0.57,
+    0.76
+   ],
+   "S-U": [
+    0.59,
+    0.49,
+    0.69
+   ],
+   "S-Z": [
+    0.55,
+    0.42,
+    0.68
+   ],
+   "S-K": [
+    -0.05,
+    -0.16,
+    0.07
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.54,
+    "silent": 0.34,
+    "vtok": 506.88,
+    "billed": 1137.64
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1152.68
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.74,
+    "silent": 0.16,
+    "vtok": 506.88,
+    "billed": 1152.68
+   },
+   "Z": {
+    "recall": 0.93,
+    "silent": 0.02,
+    "vtok": 497.68,
+    "billed": 1137.4
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1184.88
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.46,
+    0.35,
+    0.57
+   ],
+   "U-A": [
+    0.2,
+    0.06,
+    0.33
+   ],
+   "Z-A": [
+    0.39,
+    0.28,
+    0.51
+   ],
+   "K-A": [
+    0.46,
+    0.35,
+    0.57
+   ],
+   "S-U": [
+    0.26,
+    0.18,
+    0.36
+   ],
+   "S-Z": [
+    0.07,
+    0.02,
+    0.13
+   ],
+   "S-K": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.05,
+    "silent": 0.08,
+    "vtok": 506.88,
+    "billed": 577.04
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.62,
+    "silent": 0.04,
+    "vtok": 506.88,
+    "billed": 561.36
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.02,
+    "silent": 0.08,
+    "vtok": 506.88,
+    "billed": 544.2
+   },
+   "Z": {
+    "recall": 0.07,
+    "silent": 0.04,
+    "vtok": 497.68,
+    "billed": 550.96
+   },
+   "K": {
+    "recall": 0.84,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 607.16
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.57,
+    0.46,
+    0.68
+   ],
+   "U-A": [
+    -0.03,
+    -0.08,
+    0.03
+   ],
+   "Z-A": [
+    0.02,
+    -0.03,
+    0.07
+   ],
+   "K-A": [
+    0.79,
+    0.66,
+    0.91
+   ],
+   "S-U": [
+    0.6,
+    0.48,
+    0.71
+   ],
+   "S-Z": [
+    0.55,
+    0.42,
+    0.67
+   ],
+   "S-K": [
+    -0.22,
+    -0.39,
+    -0.04
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.02,
+    "vtok": 506.88,
+    "billed": 1098.2
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.73,
+    "silent": 0.14,
+    "vtok": 506.88,
+    "billed": 1098.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.01,
+    "vtok": 506.88,
+    "billed": 1098.2
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.03,
+    "vtok": 497.68,
+    "billed": 1098.2
+   },
+   "K": {
+    "recall": 0.95,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 1128.32
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.73,
+    0.64,
+    0.81
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.95,
+    0.87,
+    1.0
+   ],
+   "S-U": [
+    0.73,
+    0.64,
+    0.81
+   ],
+   "S-Z": [
+    0.73,
+    0.64,
+    0.81
+   ],
+   "S-K": [
+    -0.22,
+    -0.29,
+    -0.16
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_multivalue|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.02,
+    "vtok": 506.88,
+    "billed": 411.16
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.73,
+    "silent": 0.14,
+    "vtok": 506.88,
+    "billed": 469.76
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.03,
+    "vtok": 506.88,
+    "billed": 395.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.02,
+    "vtok": 497.68,
+    "billed": 403.48
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 506.88,
+    "billed": 513.4
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.73,
+    0.63,
+    0.82
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.73,
+    0.63,
+    0.82
+   ],
+   "S-Z": [
+    0.73,
+    0.63,
+    0.82
+   ],
+   "S-K": [
+    -0.27,
+    -0.37,
+    -0.18
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.5,
+    "silent": 0.25,
+    "vtok": 471.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 504.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 495.84,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.5,
+    0.292,
+    0.708
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.5,
+    0.292,
+    0.708
+   ],
+   "S-Z": [
+    0.5,
+    0.292,
+    0.708
+   ],
+   "S-K": [
+    -0.5,
+    -0.708,
+    -0.292
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.16,
+    "vtok": 505.44,
+    "billed": 633.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.56,
+    "silent": 0.4,
+    "vtok": 470.88,
+    "billed": 598.68
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.04,
+    "silent": 0.48,
+    "vtok": 504.0,
+    "billed": 631.8
+   },
+   "Z": {
+    "recall": 0.04,
+    "silent": 0.48,
+    "vtok": 495.84,
+    "billed": 623.64
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 679.92
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "U-A": [
+    0.04,
+    0.0,
+    0.12
+   ],
+   "Z-A": [
+    0.04,
+    0.0,
+    0.12
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.52,
+    0.28,
+    0.72
+   ],
+   "S-Z": [
+    0.52,
+    0.32,
+    0.72
+   ],
+   "S-K": [
+    -0.44,
+    -0.64,
+    -0.24
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.12,
+    "silent": 0.84,
+    "vtok": 505.44,
+    "billed": 1138.36
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 470.88,
+    "billed": 1168.24
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.12,
+    "silent": 0.68,
+    "vtok": 504.0,
+    "billed": 1156.24
+   },
+   "Z": {
+    "recall": 0.52,
+    "silent": 0.32,
+    "vtok": 495.84,
+    "billed": 1140.24
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 1185.56
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.88,
+    0.76,
+    1.0
+   ],
+   "U-A": [
+    0.0,
+    -0.2,
+    0.2
+   ],
+   "Z-A": [
+    0.4,
+    0.16,
+    0.6
+   ],
+   "K-A": [
+    0.88,
+    0.76,
+    1.0
+   ],
+   "S-U": [
+    0.88,
+    0.76,
+    1.0
+   ],
+   "S-Z": [
+    0.48,
+    0.28,
+    0.68
+   ],
+   "S-K": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 580.08
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.32,
+    "silent": 0.28,
+    "vtok": 470.88,
+    "billed": 542.64
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 504.0,
+    "billed": 542.64
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 495.84,
+    "billed": 552.04
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 615.84
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.32,
+    0.16,
+    0.52
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.32,
+    0.16,
+    0.52
+   ],
+   "S-Z": [
+    0.32,
+    0.16,
+    0.52
+   ],
+   "S-K": [
+    -0.68,
+    -0.84,
+    -0.48
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 1101.12
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.08,
+    "silent": 0.6,
+    "vtok": 470.88,
+    "billed": 1101.12
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 504.0,
+    "billed": 1101.12
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 495.84,
+    "billed": 1101.12
+   },
+   "K": {
+    "recall": 0.96,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 1136.88
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.96,
+    0.88,
+    1.0
+   ],
+   "S-U": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "S-Z": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "S-K": [
+    -0.88,
+    -1.0,
+    -0.76
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s5_single_3|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 470.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.2,
+    "silent": 0.32,
+    "vtok": 470.88,
+    "billed": 440.8
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 504.0,
+    "billed": 470.24
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 495.84,
+    "billed": 439.8
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 505.44,
+    "billed": 515.48
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.2,
+    0.04,
+    0.36
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.2,
+    0.04,
+    0.36
+   ],
+   "S-Z": [
+    0.2,
+    0.08,
+    0.36
+   ],
+   "S-K": [
+    -0.8,
+    -0.96,
+    -0.64
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.043,
+    "silent": 0.13,
+    "vtok": 756.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.583,
+    "silent": 0.042,
+    "vtok": 576.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.136,
+    "vtok": 721.636,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.13,
+    "vtok": 730.522,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.96,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.545,
+    0.273,
+    0.773
+   ],
+   "U-A": [
+    -0.048,
+    -0.143,
+    0.0
+   ],
+   "Z-A": [
+    -0.045,
+    -0.136,
+    0.0
+   ],
+   "K-A": [
+    0.913,
+    0.783,
+    1.0
+   ],
+   "S-U": [
+    0.636,
+    0.455,
+    0.818
+   ],
+   "S-Z": [
+    0.545,
+    0.318,
+    0.727
+   ],
+   "S-K": [
+    -0.417,
+    -0.625,
+    -0.208
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.72,
+    "silent": 0.24,
+    "vtok": 756.0,
+    "billed": 883.88
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.96,
+    "silent": 0.0,
+    "vtok": 576.0,
+    "billed": 703.88
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.8,
+    "silent": 0.16,
+    "vtok": 720.0,
+    "billed": 847.88
+   },
+   "Z": {
+    "recall": 0.56,
+    "silent": 0.4,
+    "vtok": 730.36,
+    "billed": 858.24
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 921.96
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.24,
+    0.04,
+    0.44
+   ],
+   "U-A": [
+    0.08,
+    -0.12,
+    0.28
+   ],
+   "Z-A": [
+    -0.16,
+    -0.36,
+    0.04
+   ],
+   "K-A": [
+    0.28,
+    0.12,
+    0.48
+   ],
+   "S-U": [
+    0.16,
+    0.0,
+    0.36
+   ],
+   "S-Z": [
+    0.4,
+    0.16,
+    0.6
+   ],
+   "S-K": [
+    -0.04,
+    -0.12,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.96,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1148.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 576.0,
+    "billed": 1145.64
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.92,
+    "silent": 0.0,
+    "vtok": 720.0,
+    "billed": 1155.0
+   },
+   "Z": {
+    "recall": 0.92,
+    "silent": 0.04,
+    "vtok": 730.36,
+    "billed": 1137.24
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1194.92
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.04,
+    0.0,
+    0.12
+   ],
+   "U-A": [
+    -0.04,
+    -0.2,
+    0.08
+   ],
+   "Z-A": [
+    -0.04,
+    -0.16,
+    0.08
+   ],
+   "K-A": [
+    0.04,
+    0.0,
+    0.12
+   ],
+   "S-U": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "S-Z": [
+    0.08,
+    0.0,
+    0.2
+   ],
+   "S-K": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.12,
+    "silent": 0.04,
+    "vtok": 756.0,
+    "billed": 807.08
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.68,
+    "silent": 0.08,
+    "vtok": 576.0,
+    "billed": 615.12
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.2,
+    "silent": 0.12,
+    "vtok": 720.0,
+    "billed": 733.16
+   },
+   "Z": {
+    "recall": 0.12,
+    "silent": 0.2,
+    "vtok": 730.36,
+    "billed": 758.0
+   },
+   "K": {
+    "recall": 0.8,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 836.72
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.56,
+    0.32,
+    0.76
+   ],
+   "U-A": [
+    0.08,
+    -0.12,
+    0.28
+   ],
+   "Z-A": [
+    0.0,
+    -0.16,
+    0.16
+   ],
+   "K-A": [
+    0.68,
+    0.48,
+    0.84
+   ],
+   "S-U": [
+    0.48,
+    0.24,
+    0.68
+   ],
+   "S-Z": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "S-K": [
+    -0.12,
+    -0.36,
+    0.12
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 756.0,
+    "billed": 1097.96
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.8,
+    "silent": 0.12,
+    "vtok": 576.0,
+    "billed": 1097.96
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.28,
+    "vtok": 720.0,
+    "billed": 1097.96
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.12,
+    "vtok": 730.36,
+    "billed": 1054.0
+   },
+   "K": {
+    "recall": 0.92,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1127.6
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.8,
+    0.64,
+    0.96
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "S-U": [
+    0.8,
+    0.64,
+    0.92
+   ],
+   "S-Z": [
+    0.8,
+    0.64,
+    0.96
+   ],
+   "S-K": [
+    -0.12,
+    -0.32,
+    0.08
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multikey_1|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.08,
+    "silent": 0.08,
+    "vtok": 756.0,
+    "billed": 580.08
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.8,
+    "silent": 0.16,
+    "vtok": 576.0,
+    "billed": 517.12
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.08,
+    "silent": 0.2,
+    "vtok": 720.0,
+    "billed": 627.2
+   },
+   "Z": {
+    "recall": 0.08,
+    "silent": 0.16,
+    "vtok": 730.36,
+    "billed": 598.24
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 704.88
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.72,
+    0.48,
+    0.92
+   ],
+   "U-A": [
+    0.0,
+    -0.16,
+    0.16
+   ],
+   "Z-A": [
+    0.0,
+    -0.16,
+    0.16
+   ],
+   "K-A": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "S-U": [
+    0.72,
+    0.52,
+    0.88
+   ],
+   "S-Z": [
+    0.72,
+    0.56,
+    0.88
+   ],
+   "S-K": [
+    -0.2,
+    -0.36,
+    -0.04
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.03,
+    "silent": 0.04,
+    "vtok": 756.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.58,
+    "silent": 0.12,
+    "vtok": 576.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.02,
+    "silent": 0.07,
+    "vtok": 720.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.01,
+    "silent": 0.07,
+    "vtok": 725.4,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.958,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.55,
+    0.43,
+    0.67
+   ],
+   "U-A": [
+    -0.01,
+    -0.05,
+    0.03
+   ],
+   "Z-A": [
+    -0.02,
+    -0.06,
+    0.02
+   ],
+   "K-A": [
+    0.927,
+    0.833,
+    0.99
+   ],
+   "S-U": [
+    0.56,
+    0.45,
+    0.67
+   ],
+   "S-Z": [
+    0.57,
+    0.45,
+    0.69
+   ],
+   "S-K": [
+    -0.375,
+    -0.51,
+    -0.229
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.72,
+    "silent": 0.22,
+    "vtok": 756.0,
+    "billed": 883.84
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.96,
+    "silent": 0.04,
+    "vtok": 576.0,
+    "billed": 703.84
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.92,
+    "silent": 0.07,
+    "vtok": 720.0,
+    "billed": 847.84
+   },
+   "Z": {
+    "recall": 0.66,
+    "silent": 0.31,
+    "vtok": 725.4,
+    "billed": 853.24
+   },
+   "K": {
+    "recall": 0.99,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 921.8
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.24,
+    0.14,
+    0.35
+   ],
+   "U-A": [
+    0.2,
+    0.1,
+    0.31
+   ],
+   "Z-A": [
+    -0.06,
+    -0.2,
+    0.08
+   ],
+   "K-A": [
+    0.27,
+    0.18,
+    0.37
+   ],
+   "S-U": [
+    0.04,
+    -0.03,
+    0.12
+   ],
+   "S-Z": [
+    0.3,
+    0.18,
+    0.42
+   ],
+   "S-K": [
+    -0.03,
+    -0.08,
+    0.02
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.87,
+    "silent": 0.01,
+    "vtok": 756.0,
+    "billed": 1148.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 576.0,
+    "billed": 1146.52
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.95,
+    "silent": 0.0,
+    "vtok": 720.0,
+    "billed": 1153.24
+   },
+   "Z": {
+    "recall": 0.89,
+    "silent": 0.02,
+    "vtok": 725.4,
+    "billed": 1138.76
+   },
+   "K": {
+    "recall": 0.99,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1195.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.13,
+    0.07,
+    0.2
+   ],
+   "U-A": [
+    0.08,
+    0.01,
+    0.15
+   ],
+   "Z-A": [
+    0.02,
+    -0.08,
+    0.12
+   ],
+   "K-A": [
+    0.12,
+    0.07,
+    0.18
+   ],
+   "S-U": [
+    0.05,
+    0.01,
+    0.09
+   ],
+   "S-Z": [
+    0.11,
+    0.06,
+    0.17
+   ],
+   "S-K": [
+    0.01,
+    0.0,
+    0.03
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.22,
+    "silent": 0.07,
+    "vtok": 756.0,
+    "billed": 807.12
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.72,
+    "silent": 0.05,
+    "vtok": 576.0,
+    "billed": 615.16
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.28,
+    "silent": 0.04,
+    "vtok": 720.0,
+    "billed": 730.12
+   },
+   "Z": {
+    "recall": 0.11,
+    "silent": 0.12,
+    "vtok": 725.4,
+    "billed": 747.92
+   },
+   "K": {
+    "recall": 0.75,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 836.68
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.5,
+    0.37,
+    0.62
+   ],
+   "U-A": [
+    0.06,
+    -0.06,
+    0.18
+   ],
+   "Z-A": [
+    -0.11,
+    -0.23,
+    0.01
+   ],
+   "K-A": [
+    0.53,
+    0.38,
+    0.68
+   ],
+   "S-U": [
+    0.44,
+    0.32,
+    0.56
+   ],
+   "S-Z": [
+    0.61,
+    0.5,
+    0.72
+   ],
+   "S-K": [
+    -0.03,
+    -0.2,
+    0.15
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.01,
+    "silent": 0.1,
+    "vtok": 756.0,
+    "billed": 1098.12
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.8,
+    "silent": 0.07,
+    "vtok": 576.0,
+    "billed": 1098.12
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.04,
+    "silent": 0.15,
+    "vtok": 720.0,
+    "billed": 1098.12
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.17,
+    "vtok": 725.4,
+    "billed": 1098.12
+   },
+   "K": {
+    "recall": 0.82,
+    "silent": 0.02,
+    "vtok": 756.0,
+    "billed": 1127.68
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.79,
+    0.69,
+    0.88
+   ],
+   "U-A": [
+    0.03,
+    -0.01,
+    0.07
+   ],
+   "Z-A": [
+    -0.01,
+    -0.03,
+    0.0
+   ],
+   "K-A": [
+    0.81,
+    0.71,
+    0.9
+   ],
+   "S-U": [
+    0.76,
+    0.66,
+    0.85
+   ],
+   "S-Z": [
+    0.8,
+    0.7,
+    0.89
+   ],
+   "S-K": [
+    -0.02,
+    -0.17,
+    0.13
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_multivalue|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.12,
+    "silent": 0.18,
+    "vtok": 756.0,
+    "billed": 632.88
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.84,
+    "silent": 0.09,
+    "vtok": 576.0,
+    "billed": 522.28
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.16,
+    "silent": 0.17,
+    "vtok": 720.0,
+    "billed": 602.16
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.14,
+    "vtok": 725.4,
+    "billed": 623.24
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 704.92
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.72,
+    0.63,
+    0.81
+   ],
+   "U-A": [
+    0.04,
+    -0.05,
+    0.13
+   ],
+   "Z-A": [
+    -0.12,
+    -0.17,
+    -0.07
+   ],
+   "K-A": [
+    0.88,
+    0.83,
+    0.93
+   ],
+   "S-U": [
+    0.68,
+    0.56,
+    0.78
+   ],
+   "S-Z": [
+    0.84,
+    0.74,
+    0.92
+   ],
+   "S-K": [
+    -0.16,
+    -0.26,
+    -0.08
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|minimax": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 756.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.125,
+    "silent": 0.542,
+    "vtok": 540.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 720.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.043,
+    "vtok": 727.826,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.125,
+    0.0,
+    0.25
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.125,
+    0.0,
+    0.25
+   ],
+   "S-Z": [
+    0.136,
+    0.0,
+    0.273
+   ],
+   "S-K": [
+    -0.875,
+    -1.0,
+    -0.75
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.28,
+    "silent": 0.52,
+    "vtok": 756.0,
+    "billed": 884.2
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.84,
+    "silent": 0.16,
+    "vtok": 540.0,
+    "billed": 668.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.2,
+    "silent": 0.48,
+    "vtok": 720.0,
+    "billed": 848.2
+   },
+   "Z": {
+    "recall": 0.16,
+    "silent": 0.8,
+    "vtok": 726.64,
+    "billed": 854.84
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 931.32
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.56,
+    0.32,
+    0.8
+   ],
+   "U-A": [
+    -0.08,
+    -0.32,
+    0.16
+   ],
+   "Z-A": [
+    -0.12,
+    -0.32,
+    0.08
+   ],
+   "K-A": [
+    0.72,
+    0.52,
+    0.88
+   ],
+   "S-U": [
+    0.64,
+    0.44,
+    0.8
+   ],
+   "S-Z": [
+    0.68,
+    0.44,
+    0.88
+   ],
+   "S-K": [
+    -0.16,
+    -0.32,
+    -0.04
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.8,
+    "silent": 0.16,
+    "vtok": 756.0,
+    "billed": 1151.32
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 540.0,
+    "billed": 1175.88
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.48,
+    "silent": 0.44,
+    "vtok": 720.0,
+    "billed": 1156.32
+   },
+   "Z": {
+    "recall": 0.72,
+    "silent": 0.2,
+    "vtok": 726.64,
+    "billed": 1140.32
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1198.44
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.2,
+    0.04,
+    0.36
+   ],
+   "U-A": [
+    -0.32,
+    -0.56,
+    -0.04
+   ],
+   "Z-A": [
+    -0.08,
+    -0.32,
+    0.16
+   ],
+   "K-A": [
+    0.2,
+    0.04,
+    0.36
+   ],
+   "S-U": [
+    0.52,
+    0.32,
+    0.72
+   ],
+   "S-Z": [
+    0.28,
+    0.12,
+    0.48
+   ],
+   "S-K": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.12,
+    "vtok": 756.0,
+    "billed": 810.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.56,
+    "silent": 0.32,
+    "vtok": 540.0,
+    "billed": 580.24
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 720.0,
+    "billed": 734.8
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.04,
+    "vtok": 726.64,
+    "billed": 754.32
+   },
+   "K": {
+    "recall": 0.92,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 846.28
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.92,
+    0.8,
+    1.0
+   ],
+   "S-U": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "S-Z": [
+    0.56,
+    0.36,
+    0.76
+   ],
+   "S-K": [
+    -0.36,
+    -0.56,
+    -0.16
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 1101.24
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.16,
+    "silent": 0.44,
+    "vtok": 540.0,
+    "billed": 1101.24
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.08,
+    "vtok": 720.0,
+    "billed": 1101.24
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 726.64,
+    "billed": 1057.16
+   },
+   "K": {
+    "recall": 0.96,
+    "silent": 0.04,
+    "vtok": 756.0,
+    "billed": 1137.52
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    0.96,
+    0.88,
+    1.0
+   ],
+   "S-U": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "S-Z": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "S-K": [
+    -0.8,
+    -0.96,
+    -0.6
+   ]
+  },
+  "n": 25
+ },
+ "rbase_s6_single_3|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.16,
+    "vtok": 756.0,
+    "billed": 662.36
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.16,
+    "silent": 0.16,
+    "vtok": 540.0,
+    "billed": 490.84
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 720.0,
+    "billed": 630.36
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.12,
+    "vtok": 726.64,
+    "billed": 626.36
+   },
+   "K": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 756.0,
+    "billed": 707.56
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "U-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Z-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "K-A": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "S-U": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "S-Z": [
+    0.16,
+    0.04,
+    0.32
+   ],
+   "S-K": [
+    -0.84,
+    -0.96,
+    -0.68
+   ]
+  },
+  "n": 25
+ },
+ "rlong_c128k_multikey_1|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.053,
+    "vtok": 5976.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.65,
+    "silent": 0.1,
+    "vtok": 4051.8,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.632,
+    0.421,
+    0.842
+   ],
+   "S-T": [
+    -0.35,
+    -0.55,
+    -0.15
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multikey_1|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.55,
+    "silent": 0.4,
+    "vtok": 5976.0,
+    "billed": 6110.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 4051.8,
+    "billed": 4182.8
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.45,
+    0.25,
+    0.65
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multikey_1|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27805.2,
+    "billed": 27805.2
+   },
+   "A": {
+    "recall": 0.35,
+    "silent": 0.05,
+    "vtok": 5976.0,
+    "billed": 3310.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.8,
+    "silent": 0.0,
+    "vtok": 4051.8,
+    "billed": 2241.15
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.65,
+    -0.85,
+    -0.45
+   ],
+   "S-A": [
+    0.45,
+    0.2,
+    0.7
+   ],
+   "S-T": [
+    -0.2,
+    -0.4,
+    -0.05
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multikey_1|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 26511.0,
+    "billed": 26511.0
+   },
+   "A": {
+    "recall": 0.15,
+    "silent": 0.0,
+    "vtok": 5976.0,
+    "billed": 5647.15
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.7,
+    "silent": 0.05,
+    "vtok": 4051.8,
+    "billed": 3863.05
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.85,
+    -1.0,
+    -0.65
+   ],
+   "S-A": [
+    0.55,
+    0.3,
+    0.8
+   ],
+   "S-T": [
+    -0.3,
+    -0.5,
+    -0.1
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multikey_1|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 26620.75,
+    "billed": 26620.75
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.05,
+    "vtok": 5976.0,
+    "billed": 5454.95
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.55,
+    "silent": 0.3,
+    "vtok": 4051.8,
+    "billed": 4290.05
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.55,
+    0.35,
+    0.75
+   ],
+   "S-T": [
+    -0.45,
+    -0.65,
+    -0.25
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multikey_1|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27391.85,
+    "billed": 27391.85
+   },
+   "A": {
+    "recall": 0.15,
+    "silent": 0.0,
+    "vtok": 5976.0,
+    "billed": 4225.7
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.7,
+    "silent": 0.2,
+    "vtok": 4051.8,
+    "billed": 3227.6
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.85,
+    -1.0,
+    -0.65
+   ],
+   "S-A": [
+    0.55,
+    0.35,
+    0.75
+   ],
+   "S-T": [
+    -0.3,
+    -0.5,
+    -0.1
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 5972.211,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.688,
+    "silent": 0.087,
+    "vtok": 4060.8,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.724,
+    0.618,
+    0.816
+   ],
+   "S-T": [
+    -0.312,
+    -0.438,
+    -0.2
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.688,
+    "silent": 0.237,
+    "vtok": 5972.4,
+    "billed": 6106.5
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.95,
+    "silent": 0.0,
+    "vtok": 4060.8,
+    "billed": 4191.9
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.263,
+    0.15,
+    0.362
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27870.15,
+    "billed": 27870.15
+   },
+   "A": {
+    "recall": 0.188,
+    "silent": 0.05,
+    "vtok": 5972.4,
+    "billed": 3312.8
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.713,
+    "silent": 0.025,
+    "vtok": 4060.8,
+    "billed": 2239.45
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.812,
+    -0.863,
+    -0.762
+   ],
+   "S-A": [
+    0.525,
+    0.375,
+    0.662
+   ],
+   "S-T": [
+    -0.287,
+    -0.412,
+    -0.175
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 26551.7,
+    "billed": 26551.7
+   },
+   "A": {
+    "recall": 0.125,
+    "silent": 0.037,
+    "vtok": 5972.4,
+    "billed": 5647.05
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.5,
+    "silent": 0.05,
+    "vtok": 4060.8,
+    "billed": 3872.45
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.875,
+    -0.938,
+    -0.8
+   ],
+   "S-A": [
+    0.375,
+    0.263,
+    0.487
+   ],
+   "S-T": [
+    -0.5,
+    -0.613,
+    -0.388
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 0.975,
+    "silent": 0.0,
+    "vtok": 26669.0,
+    "billed": 26669.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 5972.4,
+    "billed": 5454.85
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.713,
+    "silent": 0.15,
+    "vtok": 4060.8,
+    "billed": 4289.95
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.975,
+    -1.0,
+    -0.938
+   ],
+   "S-A": [
+    0.713,
+    0.613,
+    0.812
+   ],
+   "S-T": [
+    -0.263,
+    -0.375,
+    -0.15
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_multivalue|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27452.25,
+    "billed": 27452.25
+   },
+   "A": {
+    "recall": 0.025,
+    "silent": 0.062,
+    "vtok": 5972.4,
+    "billed": 3521.35
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.812,
+    "silent": 0.113,
+    "vtok": 4060.8,
+    "billed": 3232.35
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.975,
+    -1.0,
+    -0.938
+   ],
+   "S-A": [
+    0.787,
+    0.675,
+    0.887
+   ],
+   "S-T": [
+    -0.188,
+    -0.3,
+    -0.087
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 5976.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.35,
+    "silent": 0.3,
+    "vtok": 4026.6,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.35,
+    0.15,
+    0.55
+   ],
+   "S-T": [
+    -0.65,
+    -0.85,
+    -0.45
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.1,
+    "silent": 0.85,
+    "vtok": 5976.0,
+    "billed": 6109.7
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.95,
+    "silent": 0.05,
+    "vtok": 4026.6,
+    "billed": 4157.3
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.85,
+    0.7,
+    1.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27816.25,
+    "billed": 27816.25
+   },
+   "A": {
+    "recall": 0.1,
+    "silent": 0.35,
+    "vtok": 5976.0,
+    "billed": 3313.15
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.6,
+    "silent": 0.2,
+    "vtok": 4026.6,
+    "billed": 2243.8
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.9,
+    -1.0,
+    -0.75
+   ],
+   "S-A": [
+    0.5,
+    0.3,
+    0.7
+   ],
+   "S-T": [
+    -0.4,
+    -0.6,
+    -0.2
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 26530.35,
+    "billed": 26530.35
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.15,
+    "vtok": 5976.0,
+    "billed": 5650.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.3,
+    "silent": 0.45,
+    "vtok": 4026.6,
+    "billed": 3848.55
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.3,
+    0.1,
+    0.5
+   ],
+   "S-T": [
+    -0.7,
+    -0.9,
+    -0.5
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 26647.15,
+    "billed": 26647.15
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 5976.0,
+    "billed": 5745.05
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.15,
+    "silent": 0.3,
+    "vtok": 4026.6,
+    "billed": 4293.05
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.15,
+    0.0,
+    0.3
+   ],
+   "S-T": [
+    -0.85,
+    -1.0,
+    -0.7
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c128k_single_3|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 27401.75,
+    "billed": 27401.75
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.1,
+    "vtok": 5976.0,
+    "billed": 4698.1
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.1,
+    "silent": 0.15,
+    "vtok": 4026.6,
+    "billed": 3209.7
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.1,
+    0.0,
+    0.25
+   ],
+   "S-T": [
+    -0.9,
+    -1.0,
+    -0.75
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.053,
+    "vtok": 1512.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.35,
+    "silent": 0.25,
+    "vtok": 1062.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.368,
+    0.158,
+    0.579
+   ],
+   "S-T": [
+    -0.65,
+    -0.85,
+    -0.45
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.65,
+    "silent": 0.3,
+    "vtok": 1512.0,
+    "billed": 1639.75
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.9,
+    "silent": 0.05,
+    "vtok": 1062.0,
+    "billed": 1189.75
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.25,
+    0.0,
+    0.5
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 7013.6,
+    "billed": 7013.6
+   },
+   "A": {
+    "recall": 0.7,
+    "silent": 0.15,
+    "vtok": 1512.0,
+    "billed": 1158.1
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 1062.0,
+    "billed": 1163.1
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.3,
+    -0.5,
+    -0.1
+   ],
+   "S-A": [
+    0.3,
+    0.1,
+    0.5
+   ],
+   "S-T": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6687.95,
+    "billed": 6687.95
+   },
+   "A": {
+    "recall": 0.15,
+    "silent": 0.05,
+    "vtok": 1512.0,
+    "billed": 1498.25
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.6,
+    "silent": 0.1,
+    "vtok": 1062.0,
+    "billed": 1078.15
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.85,
+    -1.0,
+    -0.7
+   ],
+   "S-A": [
+    0.45,
+    0.15,
+    0.75
+   ],
+   "S-T": [
+    -0.4,
+    -0.6,
+    -0.2
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6717.15,
+    "billed": 6717.15
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 1512.0,
+    "billed": 1968.25
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.75,
+    "silent": 0.15,
+    "vtok": 1062.0,
+    "billed": 1533.25
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.75,
+    0.55,
+    0.9
+   ],
+   "S-T": [
+    -0.25,
+    -0.45,
+    -0.1
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multikey_1|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6915.3,
+    "billed": 6915.3
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.1,
+    "vtok": 1512.0,
+    "billed": 1173.5
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.95,
+    "silent": 0.05,
+    "vtok": 1062.0,
+    "billed": 899.25
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.95,
+    0.85,
+    1.0
+   ],
+   "S-T": [
+    -0.05,
+    -0.15,
+    0.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.013,
+    "silent": 0.026,
+    "vtok": 1512.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.474,
+    "silent": 0.066,
+    "vtok": 1070.526,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.987,
+    -1.0,
+    -0.961
+   ],
+   "S-A": [
+    0.444,
+    0.264,
+    0.625
+   ],
+   "S-T": [
+    -0.526,
+    -0.697,
+    -0.355
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.825,
+    "silent": 0.163,
+    "vtok": 1512.0,
+    "billed": 1640.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.925,
+    "silent": 0.013,
+    "vtok": 1071.0,
+    "billed": 1199.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.1,
+    -0.025,
+    0.225
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6963.65,
+    "billed": 6963.65
+   },
+   "A": {
+    "recall": 0.575,
+    "silent": 0.087,
+    "vtok": 1512.0,
+    "billed": 1158.25
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.938,
+    "silent": 0.013,
+    "vtok": 1071.0,
+    "billed": 1169.05
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.425,
+    -0.562,
+    -0.3
+   ],
+   "S-A": [
+    0.362,
+    0.2,
+    0.512
+   ],
+   "S-T": [
+    -0.062,
+    -0.15,
+    0.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6649.75,
+    "billed": 6649.75
+   },
+   "A": {
+    "recall": 0.113,
+    "silent": 0.05,
+    "vtok": 1512.0,
+    "billed": 1497.9
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.675,
+    "silent": 0.025,
+    "vtok": 1071.0,
+    "billed": 1079.75
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.887,
+    -0.95,
+    -0.825
+   ],
+   "S-A": [
+    0.562,
+    0.463,
+    0.675
+   ],
+   "S-T": [
+    -0.325,
+    -0.438,
+    -0.212
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6678.5,
+    "billed": 6678.5
+   },
+   "A": {
+    "recall": 0.025,
+    "silent": 0.113,
+    "vtok": 1512.0,
+    "billed": 1967.85
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.713,
+    "silent": 0.113,
+    "vtok": 1071.0,
+    "billed": 1532.85
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.975,
+    -1.0,
+    -0.938
+   ],
+   "S-A": [
+    0.688,
+    0.562,
+    0.812
+   ],
+   "S-T": [
+    -0.287,
+    -0.412,
+    -0.163
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_multivalue|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6861.55,
+    "billed": 6861.55
+   },
+   "A": {
+    "recall": 0.062,
+    "silent": 0.138,
+    "vtok": 1512.0,
+    "billed": 1111.4
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.85,
+    "silent": 0.125,
+    "vtok": 1071.0,
+    "billed": 905.3
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.938,
+    -0.988,
+    -0.875
+   ],
+   "S-A": [
+    0.787,
+    0.65,
+    0.887
+   ],
+   "S-T": [
+    -0.15,
+    -0.25,
+    -0.075
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.05,
+    "vtok": 1512.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.35,
+    "silent": 0.3,
+    "vtok": 1441.8,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.35,
+    0.15,
+    0.55
+   ],
+   "S-T": [
+    -0.65,
+    -0.85,
+    -0.45
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.25,
+    "silent": 0.75,
+    "vtok": 1512.0,
+    "billed": 1640.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.75,
+    "silent": 0.25,
+    "vtok": 1441.8,
+    "billed": 1570.25
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.5,
+    0.25,
+    0.75
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 7022.2,
+    "billed": 7022.2
+   },
+   "A": {
+    "recall": 0.15,
+    "silent": 0.3,
+    "vtok": 1512.0,
+    "billed": 1161.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.8,
+    "silent": 0.1,
+    "vtok": 1441.8,
+    "billed": 1184.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.85,
+    -1.0,
+    -0.7
+   ],
+   "S-A": [
+    0.65,
+    0.45,
+    0.85
+   ],
+   "S-T": [
+    -0.2,
+    -0.4,
+    -0.05
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6701.45,
+    "billed": 6701.45
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.15,
+    "vtok": 1512.0,
+    "billed": 1499.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.5,
+    "silent": 0.3,
+    "vtok": 1441.8,
+    "billed": 1436.15
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.5,
+    0.3,
+    0.7
+   ],
+   "S-T": [
+    -0.5,
+    -0.7,
+    -0.3
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6731.15,
+    "billed": 6731.15
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.15,
+    "vtok": 1512.0,
+    "billed": 1971.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.05,
+    "silent": 0.5,
+    "vtok": 1441.8,
+    "billed": 1906.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.05,
+    0.0,
+    0.15
+   ],
+   "S-T": [
+    -0.95,
+    -1.0,
+    -0.85
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c32k_single_3|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 6924.2,
+    "billed": 6924.2
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.1,
+    "vtok": 1512.0,
+    "billed": 1238.55
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.0,
+    "silent": 0.1,
+    "vtok": 1441.8,
+    "billed": 1192.15
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "S-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 2988.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.632,
+    "silent": 0.0,
+    "vtok": 2063.368,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.588,
+    0.353,
+    0.824
+   ],
+   "S-T": [
+    -0.368,
+    -0.579,
+    -0.158
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.6,
+    "silent": 0.3,
+    "vtok": 2988.0,
+    "billed": 3118.9
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 2062.8,
+    "billed": 2190.7
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.4,
+    0.2,
+    0.6
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13959.75,
+    "billed": 13959.75
+   },
+   "A": {
+    "recall": 0.35,
+    "silent": 0.05,
+    "vtok": 2988.0,
+    "billed": 2252.4
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.9,
+    "silent": 0.05,
+    "vtok": 2062.8,
+    "billed": 1147.2
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.65,
+    -0.85,
+    -0.45
+   ],
+   "S-A": [
+    0.55,
+    0.35,
+    0.75
+   ],
+   "S-T": [
+    -0.1,
+    -0.25,
+    0.0
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13311.85,
+    "billed": 13311.85
+   },
+   "A": {
+    "recall": 0.2,
+    "silent": 0.0,
+    "vtok": 2988.0,
+    "billed": 2882.3
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.65,
+    "silent": 0.0,
+    "vtok": 2062.8,
+    "billed": 2007.8
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.8,
+    -0.95,
+    -0.6
+   ],
+   "S-A": [
+    0.45,
+    0.15,
+    0.75
+   ],
+   "S-T": [
+    -0.35,
+    -0.55,
+    -0.15
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13352.4,
+    "billed": 13352.4
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 2988.0,
+    "billed": 2836.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.75,
+    "silent": 0.1,
+    "vtok": 2062.8,
+    "billed": 2403.3
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.75,
+    0.55,
+    0.9
+   ],
+   "S-T": [
+    -0.25,
+    -0.45,
+    -0.1
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multikey_1|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13752.85,
+    "billed": 13752.85
+   },
+   "A": {
+    "recall": 0.05,
+    "silent": 0.15,
+    "vtok": 2988.0,
+    "billed": 2389.45
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.75,
+    "silent": 0.05,
+    "vtok": 2062.8,
+    "billed": 1681.85
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.95,
+    -1.0,
+    -0.85
+   ],
+   "S-A": [
+    0.7,
+    0.5,
+    0.9
+   ],
+   "S-T": [
+    -0.25,
+    -0.45,
+    -0.1
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.039,
+    "vtok": 2988.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.637,
+    "silent": 0.188,
+    "vtok": 2062.8,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.632,
+    0.487,
+    0.763
+   ],
+   "S-T": [
+    -0.362,
+    -0.5,
+    -0.237
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.588,
+    "silent": 0.3,
+    "vtok": 2988.0,
+    "billed": 3118.95
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.938,
+    "silent": 0.025,
+    "vtok": 2062.8,
+    "billed": 2190.75
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.35,
+    0.2,
+    0.5
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13985.15,
+    "billed": 13985.15
+   },
+   "A": {
+    "recall": 0.225,
+    "silent": 0.037,
+    "vtok": 2988.0,
+    "billed": 2252.25
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.812,
+    "silent": 0.013,
+    "vtok": 2062.8,
+    "billed": 1145.75
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.775,
+    -0.825,
+    -0.725
+   ],
+   "S-A": [
+    0.588,
+    0.45,
+    0.713
+   ],
+   "S-T": [
+    -0.188,
+    -0.325,
+    -0.075
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13292.15,
+    "billed": 13292.15
+   },
+   "A": {
+    "recall": 0.175,
+    "silent": 0.087,
+    "vtok": 2988.0,
+    "billed": 2881.9
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.613,
+    "silent": 0.05,
+    "vtok": 2062.8,
+    "billed": 2007.4
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.825,
+    -0.912,
+    -0.725
+   ],
+   "S-A": [
+    0.438,
+    0.275,
+    0.588
+   ],
+   "S-T": [
+    -0.388,
+    -0.487,
+    -0.287
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13349.85,
+    "billed": 13349.85
+   },
+   "A": {
+    "recall": 0.013,
+    "silent": 0.037,
+    "vtok": 2988.0,
+    "billed": 2835.75
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.762,
+    "silent": 0.113,
+    "vtok": 2062.8,
+    "billed": 2402.95
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.988,
+    -1.0,
+    -0.963
+   ],
+   "S-A": [
+    0.75,
+    0.625,
+    0.863
+   ],
+   "S-T": [
+    -0.237,
+    -0.362,
+    -0.138
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_multivalue|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13762.5,
+    "billed": 13762.5
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.15,
+    "vtok": 2988.0,
+    "billed": 2269.55
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.863,
+    "silent": 0.075,
+    "vtok": 2062.8,
+    "billed": 1681.35
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.863,
+    0.75,
+    0.95
+   ],
+   "S-T": [
+    -0.138,
+    -0.25,
+    -0.05
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|minimax": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 2988.0,
+    "billed": 0.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.2,
+    "silent": 0.45,
+    "vtok": 2673.0,
+    "billed": 0.0
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.211,
+    0.053,
+    0.421
+   ],
+   "S-T": [
+    -0.8,
+    -0.95,
+    -0.6
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|claude-sonnet-5.5": {
+  "arms": {
+   "T": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "A": {
+    "recall": 0.35,
+    "silent": 0.65,
+    "vtok": 2988.0,
+    "billed": 3119.1
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.95,
+    "silent": 0.05,
+    "vtok": 2673.0,
+    "billed": 2803.05
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "S-A": [
+    0.6,
+    0.35,
+    0.85
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|gemini-3.5-flash-lite": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13951.2,
+    "billed": 13951.2
+   },
+   "A": {
+    "recall": 0.2,
+    "silent": 0.25,
+    "vtok": 2988.0,
+    "billed": 2256.05
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.5,
+    "silent": 0.4,
+    "vtok": 2673.0,
+    "billed": 1857.4
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -0.8,
+    -0.95,
+    -0.6
+   ],
+   "S-A": [
+    0.3,
+    0.05,
+    0.55
+   ],
+   "S-T": [
+    -0.5,
+    -0.7,
+    -0.3
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|gpt-6-luna": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13297.85,
+    "billed": 13297.85
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.05,
+    "vtok": 2988.0,
+    "billed": 2885.1
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.4,
+    "silent": 0.2,
+    "vtok": 2673.0,
+    "billed": 2567.85
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.4,
+    0.2,
+    0.6
+   ],
+   "S-T": [
+    -0.6,
+    -0.8,
+    -0.4
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|llama-4-maverick": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13356.85,
+    "billed": 13356.85
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.05,
+    "vtok": 2988.0,
+    "billed": 2988.0
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.1,
+    "silent": 0.55,
+    "vtok": 2673.0,
+    "billed": 2784.3
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.1,
+    0.0,
+    0.25
+   ],
+   "S-T": [
+    -0.9,
+    -1.0,
+    -0.75
+   ]
+  },
+  "n": 20
+ },
+ "rlong_c64k_single_3|qwen3-vl-235b-a22b-instruct": {
+  "arms": {
+   "T": {
+    "recall": 1.0,
+    "silent": 0.0,
+    "vtok": 13737.7,
+    "billed": 13737.7
+   },
+   "A": {
+    "recall": 0.0,
+    "silent": 0.1,
+    "vtok": 2988.0,
+    "billed": 2392.2
+   },
+   "C": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "M": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "S": {
+    "recall": 0.05,
+    "silent": 0.15,
+    "vtok": 2673.0,
+    "billed": 2156.3
+   },
+   "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   }
+  },
+  "diffs": {
+   "A-T": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "S-A": [
+    0.05,
+    0.0,
+    0.15
+   ],
+   "S-T": [
+    -0.95,
+    -1.0,
+    -0.85
+   ]
+  },
+  "n": 20
+ },
  "ruler2_s5_multikey_1|minimax": {
   "arms": {
    "T": {
@@ -36,6 +7506,24 @@
     "silent": 0.04,
     "vtok": 506.88,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -47,7 +7535,7 @@
    "S-A": [
     0.609,
     0.391,
-    0.783
+    0.826
    ],
    "L-A": [
     0.391,
@@ -67,7 +7555,7 @@
    "L-S": [
     -0.208,
     -0.458,
-    0.042
+    0.0
    ]
   },
   "n": 25
@@ -109,6 +7597,24 @@
     "silent": 0.0,
     "vtok": 506.88,
     "billed": 635.2
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -182,12 +7688,30 @@
     "silent": 0.0,
     "vtok": 506.88,
     "billed": 1152.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.36,
-    0.2,
+    0.16,
     0.56
    ],
    "S-A": [
@@ -197,7 +7721,7 @@
    ],
    "L-A": [
     0.36,
-    0.16,
+    0.2,
     0.56
    ],
    "S-M": [
@@ -255,6 +7779,24 @@
     "silent": 0.16,
     "vtok": 506.88,
     "billed": 566.2
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -328,6 +7870,24 @@
     "silent": 0.0,
     "vtok": 506.88,
     "billed": 1098.16
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -401,6 +7961,24 @@
     "silent": 0.24,
     "vtok": 506.88,
     "billed": 470.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -421,13 +7999,13 @@
    ],
    "S-M": [
     0.16,
-    -0.12,
+    -0.08,
     0.4
    ],
    "L-M": [
     0.16,
     -0.12,
-    0.4
+    0.44
    ],
    "L-S": [
     0.0,
@@ -474,22 +8052,40 @@
     "silent": 0.05,
     "vtok": 506.88,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.38,
     0.217,
-    0.554
+    0.543
    ],
    "S-A": [
     0.663,
     0.522,
-    0.793
+    0.804
    ],
    "L-A": [
     0.543,
-    0.413,
+    0.402,
     0.674
    ],
    "S-M": [
@@ -504,7 +8100,7 @@
    ],
    "L-S": [
     -0.11,
-    -0.24,
+    -0.23,
     0.02
    ]
   },
@@ -547,12 +8143,30 @@
     "silent": 0.06,
     "vtok": 506.88,
     "billed": 635.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.64,
-    0.54,
+    0.53,
     0.73
    ],
    "S-A": [
@@ -567,8 +8181,8 @@
    ],
    "S-M": [
     0.0,
-    -0.12,
-    0.11
+    -0.11,
+    0.12
    ],
    "L-M": [
     -0.01,
@@ -577,7 +8191,7 @@
    ],
    "L-S": [
     -0.01,
-    -0.05,
+    -0.04,
     0.02
    ]
   },
@@ -620,6 +8234,24 @@
     "silent": 0.0,
     "vtok": 506.88,
     "billed": 1152.68
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -693,6 +8325,24 @@
     "silent": 0.02,
     "vtok": 506.88,
     "billed": 561.36
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -766,12 +8416,30 @@
     "silent": 0.12,
     "vtok": 506.88,
     "billed": 1098.2
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.34,
-    0.19,
+    0.2,
     0.5
    ],
    "S-A": [
@@ -786,18 +8454,18 @@
    ],
    "S-M": [
     0.33,
-    0.15,
+    0.16,
     0.5
    ],
    "L-M": [
     0.37,
-    0.19,
+    0.2,
     0.54
    ],
    "L-S": [
     0.04,
     0.0,
-    0.08
+    0.09
    ]
   },
   "n": 25
@@ -839,12 +8507,30 @@
     "silent": 0.13,
     "vtok": 506.88,
     "billed": 469.76
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.46,
-    0.32,
+    0.33,
     0.6
    ],
    "S-A": [
@@ -864,8 +8550,8 @@
    ],
    "L-M": [
     0.3,
-    0.14,
-    0.45
+    0.15,
+    0.44
    ],
    "L-S": [
     0.02,
@@ -912,6 +8598,24 @@
     "silent": 0.167,
     "vtok": 471.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -937,7 +8641,7 @@
    ],
    "L-M": [
     0.208,
-    0.0,
+    -0.042,
     0.417
    ],
    "L-S": [
@@ -985,6 +8689,24 @@
     "silent": 0.48,
     "vtok": 470.88,
     "billed": 598.68
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1058,18 +8780,36 @@
     "silent": 0.0,
     "vtok": 470.88,
     "billed": 1168.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.76,
-    0.52,
+    0.56,
     0.92
    ],
    "S-A": [
     0.8,
     0.64,
-    0.96
+    0.92
    ],
    "L-A": [
     0.8,
@@ -1131,6 +8871,24 @@
     "silent": 0.24,
     "vtok": 470.88,
     "billed": 542.64
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1157,7 +8915,7 @@
    "L-M": [
     0.0,
     -0.24,
-    0.24
+    0.2
    ],
    "L-S": [
     -0.08,
@@ -1204,6 +8962,24 @@
     "silent": 0.52,
     "vtok": 470.88,
     "billed": 1101.12
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1277,6 +9053,24 @@
     "silent": 0.36,
     "vtok": 470.88,
     "billed": 440.8
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1349,6 +9143,24 @@
     "recall": 0.417,
     "silent": 0.25,
     "vtok": 756.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
     "billed": 0.0
    }
   },
@@ -1423,6 +9235,24 @@
     "silent": 0.0,
     "vtok": 756.0,
     "billed": 883.88
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1496,6 +9326,24 @@
     "silent": 0.0,
     "vtok": 756.0,
     "billed": 1151.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1569,6 +9417,24 @@
     "silent": 0.24,
     "vtok": 756.0,
     "billed": 807.08
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1642,6 +9508,24 @@
     "silent": 0.2,
     "vtok": 756.0,
     "billed": 1097.96
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1715,6 +9599,24 @@
     "silent": 0.2,
     "vtok": 756.0,
     "billed": 632.8
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1741,7 +9643,7 @@
    "L-M": [
     -0.04,
     -0.28,
-    0.24
+    0.2
    ],
    "L-S": [
     -0.16,
@@ -1788,6 +9690,24 @@
     "silent": 0.14,
     "vtok": 756.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1808,12 +9728,12 @@
    ],
    "S-M": [
     -0.04,
-    -0.22,
+    -0.21,
     0.13
    ],
    "L-M": [
     0.01,
-    -0.18,
+    -0.17,
     0.19
    ],
    "L-S": [
@@ -1861,6 +9781,24 @@
     "silent": 0.01,
     "vtok": 756.0,
     "billed": 883.84
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -1872,16 +9810,16 @@
    "S-A": [
     0.19,
     0.07,
-    0.32
+    0.31
    ],
    "L-A": [
     0.22,
-    0.12,
-    0.33
+    0.13,
+    0.32
    ],
    "S-M": [
     -0.01,
-    -0.07,
+    -0.08,
     0.06
    ],
    "L-M": [
@@ -1934,6 +9872,24 @@
     "silent": 0.0,
     "vtok": 756.0,
     "billed": 1152.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2007,6 +9963,24 @@
     "silent": 0.12,
     "vtok": 756.0,
     "billed": 807.12
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2038,7 +10012,7 @@
    "L-S": [
     -0.18,
     -0.32,
-    -0.02
+    -0.03
    ]
   },
   "n": 25
@@ -2080,6 +10054,24 @@
     "silent": 0.23,
     "vtok": 756.0,
     "billed": 1098.12
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2096,7 +10088,7 @@
    "L-A": [
     0.59,
     0.46,
-    0.7
+    0.71
    ],
    "S-M": [
     -0.01,
@@ -2111,7 +10103,7 @@
    "L-S": [
     -0.15,
     -0.27,
-    -0.05
+    -0.04
    ]
   },
   "n": 25
@@ -2153,6 +10145,24 @@
     "silent": 0.22,
     "vtok": 756.0,
     "billed": 659.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2164,7 +10174,7 @@
    "S-A": [
     0.66,
     0.56,
-    0.76
+    0.75
    ],
    "L-A": [
     0.49,
@@ -2226,6 +10236,24 @@
     "silent": 0.56,
     "vtok": 756.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2241,7 +10269,7 @@
    ],
    "L-A": [
     0.208,
-    0.042,
+    0.083,
     0.375
    ],
    "S-M": [
@@ -2299,6 +10327,24 @@
     "silent": 0.04,
     "vtok": 756.0,
     "billed": 884.2
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2372,13 +10418,31 @@
     "silent": 0.0,
     "vtok": 756.0,
     "billed": 1167.32
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.12,
     0.0,
-    0.24
+    0.28
    ],
    "S-A": [
     0.12,
@@ -2445,6 +10509,24 @@
     "silent": 0.4,
     "vtok": 756.0,
     "billed": 810.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2518,6 +10600,24 @@
     "silent": 0.52,
     "vtok": 756.0,
     "billed": 1101.24
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2591,6 +10691,24 @@
     "silent": 0.16,
     "vtok": 756.0,
     "billed": 662.36
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2616,7 +10734,7 @@
    ],
    "L-M": [
     -0.04,
-    -0.2,
+    -0.24,
     0.12
    ],
    "L-S": [
@@ -2664,12 +10782,30 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.208,
-    0.083,
+    0.042,
     0.375
    ],
    "C-A": [
@@ -2732,6 +10868,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -2743,7 +10897,7 @@
    "C-A": [
     0.04,
     -0.08,
-    0.2
+    0.16
    ],
    "M-C": [
     0.68,
@@ -2800,12 +10954,30 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.36,
-    0.16,
+    0.2,
     0.56
    ],
    "C-A": [
@@ -2864,6 +11036,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -2936,6 +11126,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3000,6 +11208,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -3072,6 +11298,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3136,6 +11380,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -3208,6 +11470,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3272,6 +11552,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -3344,6 +11642,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3408,6 +11724,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -3480,6 +11814,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3548,13 +11900,31 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.59,
     0.48,
-    0.7
+    0.69
    ],
    "C-A": [
     0.09,
@@ -3568,7 +11938,7 @@
    ],
    "M-T": [
     -0.17,
-    -0.25,
+    -0.26,
     -0.09
    ],
    "A-T": [
@@ -3616,6 +11986,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3641,7 +12029,7 @@
    ],
    "A-T": [
     -0.4,
-    -0.52,
+    -0.53,
     -0.28
    ]
   },
@@ -3684,6 +12072,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3695,7 +12101,7 @@
    "C-A": [
     0.05,
     -0.02,
-    0.14
+    0.13
    ],
    "M-C": [
     0.36,
@@ -3705,7 +12111,7 @@
    "M-T": [
     -0.56,
     -0.67,
-    -0.45
+    -0.44
    ],
    "A-T": [
     -0.97,
@@ -3752,13 +12158,31 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.35,
     0.19,
-    0.52
+    0.51
    ],
    "C-A": [
     0.02,
@@ -3768,7 +12192,7 @@
    "M-C": [
     0.33,
     0.16,
-    0.51
+    0.5
    ],
    "M-T": [
     -0.65,
@@ -3820,6 +12244,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3841,7 +12283,7 @@
    "M-T": [
     -0.52,
     -0.64,
-    -0.4
+    -0.39
    ],
    "A-T": [
     -1.0,
@@ -3888,6 +12330,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -3904,7 +12364,7 @@
    "M-C": [
     0.304,
     0.13,
-    0.478
+    0.522
    ],
    "M-T": [
     -0.667,
@@ -3952,6 +12412,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4024,6 +12502,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4050,7 +12546,7 @@
    "A-T": [
     -0.88,
     -1.0,
-    -0.72
+    -0.76
    ]
   },
   "n": 25
@@ -4088,6 +12584,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4160,6 +12674,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4224,6 +12756,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4296,6 +12846,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4317,7 +12885,7 @@
    "M-T": [
     -0.36,
     -0.56,
-    -0.16
+    -0.2
    ],
    "A-T": [
     -0.958,
@@ -4360,6 +12928,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4432,6 +13018,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4496,6 +13100,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4568,6 +13190,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4632,6 +13272,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4704,6 +13362,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4768,6 +13444,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4840,6 +13534,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -4904,6 +13616,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -4976,6 +13706,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5040,6 +13788,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -5112,6 +13878,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5180,6 +13964,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5190,8 +13992,8 @@
    ],
    "C-A": [
     0.27,
-    0.17,
-    0.38
+    0.18,
+    0.37
    ],
    "M-C": [
     0.0,
@@ -5206,7 +14008,7 @@
    "A-T": [
     -0.29,
     -0.4,
-    -0.2
+    -0.19
    ]
   },
   "n": 25
@@ -5244,6 +14046,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -5316,6 +14136,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5341,7 +14179,7 @@
    ],
    "A-T": [
     -0.83,
-    -0.9,
+    -0.91,
     -0.75
    ]
   },
@@ -5380,6 +14218,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -5452,12 +14308,30 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.72,
-    0.65,
+    0.64,
     0.79
    ],
    "C-A": [
@@ -5468,7 +14342,7 @@
    "M-C": [
     0.16,
     0.03,
-    0.28
+    0.29
    ],
    "M-T": [
     -0.15,
@@ -5516,6 +14390,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -5588,6 +14480,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5604,17 +14514,17 @@
    "M-C": [
     0.08,
     -0.12,
-    0.28
+    0.32
    ],
    "M-T": [
     -0.12,
-    -0.28,
+    -0.24,
     0.0
    ],
    "A-T": [
     -0.72,
     -0.88,
-    -0.56
+    -0.52
    ]
   },
   "n": 25
@@ -5652,6 +14562,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,
@@ -5724,6 +14652,24 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
@@ -5792,18 +14738,36 @@
     "silent": 0.0,
     "vtok": 0.0,
     "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
    }
   },
   "diffs": {
    "M-A": [
     0.24,
     0.08,
-    0.44
+    0.4
    ],
    "C-A": [
     0.28,
     0.12,
-    0.48
+    0.44
    ],
    "M-C": [
     -0.04,
@@ -5856,6 +14820,24 @@
     "billed": 0.0
    },
    "L": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "U": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "Z": {
+    "recall": 0.0,
+    "silent": 0.0,
+    "vtok": 0.0,
+    "billed": 0.0
+   },
+   "K": {
     "recall": 0.0,
     "silent": 0.0,
     "vtok": 0.0,

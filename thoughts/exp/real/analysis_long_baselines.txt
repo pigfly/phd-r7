@@ -1,0 +1,14 @@
+LONG CONTEXT (6px, arms A/S, text T): mean over 6 readers x 3 tasks
+   32k: A 0.20  S 0.64  S-A +0.45 (sig 14/18)  billed A 1488 S 1269 T 6822
+   64k: A 0.15  S 0.64  S-A +0.48 (sig 16/18)  billed A 2699 S 2069 T 13593
+  128k: A 0.13  S 0.62  S-A +0.49 (sig 16/18)  billed A 4954 S 3559 T 27106
+
+BLACK-BOX BASELINES (16K chars): mean over 6 readers x 3 tasks
+  s5: A 0.09/779  S 0.66/779  U 0.14/775  Z 0.17/768  K 0.97/823
+    S-U: mean +0.527  S sig better 17/18  S sig worse 0/18
+    S-Z: mean +0.495  S sig better 16/18  S sig worse 0/18
+    S-K: mean -0.307  S sig better 0/18  S sig worse 12/18
+  s6: A 0.28/913  S 0.70/812  U 0.28/891  Z 0.24/887  K 0.95/960
+    S-U: mean +0.421  S sig better 14/18  S sig worse 0/18
+    S-Z: mean +0.462  S sig better 16/18  S sig worse 0/18
+    S-K: mean -0.252  S sig better 0/18  S sig worse 9/18

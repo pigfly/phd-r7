@@ -6,7 +6,7 @@ import base64, json, os, ssl, sys, time, urllib.request
 import certifi
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from run_minimax import parse, prompt_for
+from run_minimax import parse, prompt_for, raw
 
 HERE = Path(__file__).parent
 KEY = next(l.split("=", 1)[1].strip().strip('"') for l in (HERE.parents[2] / ".env").read_text().splitlines()
@@ -31,7 +31,7 @@ def read(img: Path, tries=4):
     for k in range(tries):
         try:
             j = call(img); txt = j["choices"][0]["message"].get("content") or ""
-            p = parse(txt)
+            p = raw(txt) if img.with_suffix(".raw").exists() else parse(txt)
             if p is not None: return img.name, p | {"usage": j.get("usage", {})}
             err = txt[-300:]
         except Exception as e:

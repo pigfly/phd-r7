@@ -35,6 +35,12 @@ def parse(txt):
         return parse(j["content"])
     return {"ids": [str(x) for x in j.get("ids", [])], **{k: str(j.get(k, "")) for k in ("codename", "mascot", "server")}}
 
+def raw(txt):
+    """free-form answer (LongBench): unwrap the mmx JSON envelope if present"""
+    try: j = json.loads(txt); txt = j.get("content", txt) if isinstance(j, dict) else txt
+    except json.JSONDecodeError: pass
+    return {"text": txt.strip()} if isinstance(txt, str) and txt.strip() else None
+
 def sidecar(img: Path):
     t = img.with_suffix(".txt")
     return ("\n\n" + t.read_text()) if t.exists() else ""
@@ -52,7 +58,7 @@ def read(img: Path, tries=3):
     for _ in range(tries):
         r = subprocess.run(["mmx", "text", "chat", "--model", MODEL, "--messages-file", f.name, "--temperature", "0.01",
                             "--output", "json", "--non-interactive", "--quiet"], capture_output=True, text=True, timeout=300)
-        p = parse(r.stdout)
+        p = raw(r.stdout) if img.with_suffix(".raw").exists() else parse(r.stdout)
         if p is not None: return img.name, p
     return img.name, {"ids": [], "codename": "", "error": (r.stdout + r.stderr)[-300:]}
 
@@ -62,8 +68,11 @@ def main():
     if ARMS:
         man = {m["name"]: m["arm"] for m in json.loads((Path(__file__).parent / run / "manifest.json").read_text())}
         imgs = [p for p in imgs if man[p.stem] in ARMS]
-    with ThreadPoolExecutor(4) as ex: out = dict(ex.map(read, imgs))
-    (Path(__file__).parent / run / OUTNAME).write_text(json.dumps(out, indent=1))
+    f = Path(__file__).parent / run / OUTNAME
+    old = json.loads(f.read_text()) if os.environ.get("RETRY") and f.exists() else {}
+    if old: imgs = [i for i in imgs if "error" in old.get(i.name, {"error": 1})]  # RETRY: failed images only
+    with ThreadPoolExecutor(4) as ex: out = old | dict(ex.map(read, imgs))
+    f.write_text(json.dumps(out, indent=1))
     print(run, len(out), "images,", sum("error" in v for v in out.values()), "errors")
 
 if __name__ == "__main__":

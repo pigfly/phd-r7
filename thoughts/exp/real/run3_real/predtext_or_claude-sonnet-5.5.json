@@ -1,0 +1,1170 @@
+{
+ "T_0.png": {
+  "ids": [
+   "torch/include/ATen/ops/le_meta.h",
+   "sha256=UbBHzYAeMAOf5AaQAHIPEg79BJO7-XIFTQ89ALnLoJY",
+   "googleapiclient/discovery_cache/documents/file.v1beta1.json",
+   "sha256=lnWBtWWwfRsYXEcZ7FzLncP0szc4eKkGgs0QkBiO9xc",
+   "116058",
+   "torchgen/packaged/autograd/deprecated.yaml",
+   "sha256=UbtajzWo89jf1Q5sw8JNJIZT5s-iDBagnrGJthtDS2Q"
+  ],
+  "codename": "juniper",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 900,
+   "completion_tokens": 255,
+   "total_tokens": 1155,
+   "cost": 0.00435,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00435,
+    "upstream_inference_prompt_cost": 0.0018,
+    "upstream_inference_completions_cost": 0.00255
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "ids": [
+   "torch/include/ATen/ops/heaviside.h",
+   "8ZEPgAx-WMb1EIPa6XnydwZxqKyE2kiGo1cHzlhXwB8",
+   "1207",
+   "sklearn/neighbors/tests/test_neighbors_tree.py",
+   "8OagtxQTE0jNy7-rTbl4L9lEbCgarf6n_jkx1woYlOs",
+   "9297",
+   "torch/include/torch/csrc/api/include/torch/data/samplers.h",
+   "ILkgiKXJN6RyR0Fjmmv8E8LuRBIoBH_P6lUmenbf8Ho",
+   "CONTRIBUTING.md"
+  ],
+  "codename": "saffron",
+  "mascot": "magpie",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 955,
+   "completion_tokens": 265,
+   "total_tokens": 1220,
+   "cost": 0.00456,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00456,
+    "upstream_inference_prompt_cost": 0.00191,
+    "upstream_inference_completions_cost": 0.00265
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "ids": [
+   "pluggy/_hooks.py",
+   "sha256=E6f3nYcI6dbEuO0Gmy61ozgGU_59_e69kC08a06EBuo",
+   "25218",
+   "matplotlib/dviread.pyi",
+   "sha256=165jDLJDuF1TMze11sh2fKBodwMQZkyzu-vELHfVxms",
+   "3364",
+   "torch/include/ATen/ops/isin_native.h",
+   "sha256=pdz0Xw8NqBOM6iNdyicHI9tPzmzf6KHM4UAJSsc7TS8",
+   "1638"
+  ],
+  "codename": "ember",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 935,
+   "completion_tokens": 231,
+   "total_tokens": 1166,
+   "cost": 0.00418,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00418,
+    "upstream_inference_prompt_cost": 0.00187,
+    "upstream_inference_completions_cost": 0.00231
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "ids": [
+   "yt_dlp/extractor/clubic.py",
+   "H0CRImnmd0S8wwTu1_i1RPmRrRh94yB78Hl-ojiJPv8",
+   "torch/include/ATen/ops/msort.h",
+   "u4Zn3h3lbbeXrG0RNKbFBunQGyRNsO01ItdS-sVFYIM",
+   "networkx/algorithms/bipartite/cluster.py",
+   "8aZRmlQ3g0XtzHyF1kUBBwnzMSjtduquHDH8MxKNSEI",
+   "build/latex",
+   "1903",
+   "1017",
+   "7346"
+  ],
+  "codename": "velvet",
+  "mascot": "marten",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 947,
+   "completion_tokens": 244,
+   "total_tokens": 1191,
+   "cost": 0.004334,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004334,
+    "upstream_inference_prompt_cost": 0.001894,
+    "upstream_inference_completions_cost": 0.00244
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "ids": [
+   "scikit_learn-1.7.2.dist-info/WHEEL",
+   "8p46Wkl0WhczJjlVFS5IFTrsMKIL7Z2FLJGy2tL7evk",
+   "sentence_transformers/evaluation/SequentialEvaluator.py",
+   "hYPsMc_OP49MBmg8OS_H6Z4jlF_kkjYh5WvUv7iBu90",
+   "2504",
+   "sympy/assumptions/predicates/__init__.py",
+   "q1C7iWpvdDymEUZNyzJvZLsLtgwSkYtCixME-fYyIDw",
+   "CONTRIBUTING.md"
+  ],
+  "codename": "orchid",
+  "mascot": "osprey",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 885,
+   "completion_tokens": 255,
+   "total_tokens": 1140,
+   "cost": 0.00432,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00432,
+    "upstream_inference_prompt_cost": 0.00177,
+    "upstream_inference_completions_cost": 0.00255
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "ids": [
+   "transformers/models/clip/image_processing_clip_fast.py",
+   "sha256=19Xm-DXHVL7IU8xmCwJJEuiiIMDFwWw0uBQFaVAi4So",
+   "1407",
+   "jsonschema/benchmarks/useless_keywords.py",
+   "sha256=bj_zKr1oVctFlqyZaObCsYTgFjiiNgPzC0hr1Y868mE",
+   "torch/_export/pass_infra/__init__.py",
+   "sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"
+  ],
+  "codename": "tundra",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 832,
+   "completion_tokens": 246,
+   "total_tokens": 1078,
+   "cost": 0.004124,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004124,
+    "upstream_inference_prompt_cost": 0.001664,
+    "upstream_inference_completions_cost": 0.00246
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "ids": [
+   "docx/opc/package.py",
+   "sha256=RQw_luqGDaEAylhTp-olMCZ9O9zvv6Se95Ih7UpSsVU",
+   "8727",
+   "websocket/tests/data/header02.txt",
+   "sha256=1HzQGIMG0OGwfnboRkUqwbTEg2nTevOX2Waj0gQARaw",
+   "torch/include/ATen/ops/exp2_cuda_dispatch.h",
+   "sha256=kHFfupmTIOQ3oT8rn6NcF0aEI8wbGtGBjX9Tk-maJ7M",
+   "RQw_luqGDaEAylhTp-olMCZ9O9zvv6Se95Ih7UpSsVU",
+   "1HzQGIMG0OGwfnboRkUqwbTEg2nTevOX2Waj0gQARaw",
+   "kHFfupmTIOQ3oT8rn6NcF0aEI8wbGtGBjX9Tk-maJ7M"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 813,
+   "completion_tokens": 370,
+   "total_tokens": 1183,
+   "cost": 0.005326,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005326,
+    "upstream_inference_prompt_cost": 0.001626,
+    "upstream_inference_completions_cost": 0.0037
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "ids": [
+   "sympy/simplify/epathtools.py",
+   "sha256=fV3oeD2J3LJRQ4YoTV6gq3yFT_NSZi-7xxKnrX-2KJA",
+   "10122",
+   "torch/include/ATen/ops/dist_ops.h",
+   "sha256=wfLQc4ek-VFco7gFN5NCbhVcvnRLj_rcHTdQVIEGS28",
+   "1859",
+   "werkzeug/datastructures/etag.py",
+   "sha256=N2dFqhFsLR0k5hgjol3QTGpcSltJhpgLWeyz6Va80G8",
+   "3278",
+   "path/to/file"
+  ],
+  "codename": "mosaic",
+  "mascot": "heron",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 924,
+   "completion_tokens": 252,
+   "total_tokens": 1176,
+   "cost": 0.004368,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004368,
+    "upstream_inference_prompt_cost": 0.001848,
+    "upstream_inference_completions_cost": 0.00252
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "ids": [
+   "sympy/plotting/pygletplot/tests/test_plotting.py",
+   "sha256=NisjR-yuBRJfQvjcb20skTR3yid2U3MhKHW6sy8RE10",
+   "2720",
+   "torch/include/ATen/native/cpu/SampledAddmmKernel.h",
+   "sha256=gG-E6_kfS4M6PAwiOKXsf7cBA7Zb_GOjioZ3leATpbI",
+   "pdfminer/cmap/78ms-RKSJ-V.json.gz",
+   "sha256=ThPluRM6KYVmDPzsF0heoiQ_2ry6uU35oBEeaGuFE_Q",
+   "31296",
+   "NisjR-yuBRJfQvjcb20skTR3yid2U3MhKHW6sy8RE10",
+   "gG-E6_kfS4M6PAwiOKXsf7cBA7Zb_GOjioZ3leATpbI",
+   "ThPluRM6KYVmDPzsF0heoiQ_2ry6uU35oBEeaGuFE_Q"
+  ],
+  "codename": "quill",
+  "mascot": "ferret",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 983,
+   "completion_tokens": 395,
+   "total_tokens": 1378,
+   "cost": 0.005916,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005916,
+    "upstream_inference_prompt_cost": 0.001966,
+    "upstream_inference_completions_cost": 0.00395
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "ids": [
+   "torch/jit/mobile/__init__.py",
+   "z7Iui_TP_TAKQu1FwYR0jBAg0yDUy1vkPPe_7r3L1Cw",
+   "8517",
+   "networkx/utils/backends.py",
+   "IDXNJjBWOfcqPm3Any5-kfwU9hZTH33R16gr3vZ6wnE",
+   "96862",
+   "torch/distributed/elastic/multiprocessing/tail_log.py",
+   "TC38G7Ppa3ZIv_mCr0WSyXT9rZVBXB4TIp5NyC_Y8nI",
+   "4947"
+  ],
+  "codename": "cobalt",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 930,
+   "completion_tokens": 243,
+   "total_tokens": 1173,
+   "cost": 0.00429,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00429,
+    "upstream_inference_prompt_cost": 0.00186,
+    "upstream_inference_completions_cost": 0.00243
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "ids": [
+   "networkx/algorithms/tests/test_dominance.py",
+   "sha256=rD-m7LVQpqrOTCUJrli43lYpezYxajfkcNd3xvGhTj8",
+   "9811",
+   "transformers/models/xmod/configuration_xmod.py",
+   "sha256=W5bQLbTh3EhMd-Lvseyl28uQhkVVCdPSdhcRXJO7hcg",
+   "9180",
+   "networkx/algorithms/broadcasting.py",
+   "sha256=Amw1oRpr8pdS67aC_9wjJOQomP1IqPvqtE7c0Mf9L70",
+   "4974",
+   "/items/{item id}"
+  ],
+  "codename": "willow",
+  "mascot": "jackal",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 835,
+   "completion_tokens": 257,
+   "total_tokens": 1092,
+   "cost": 0.00424,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00424,
+    "upstream_inference_prompt_cost": 0.00167,
+    "upstream_inference_completions_cost": 0.00257
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "ids": [
+   "torch/include/ATen/ops/rrelu_with_noise_native.h",
+   "sha256=9_8jye1rTAbRVMm5H2gP9kWvk_B2Ux1OR_LU-py_1YY",
+   "2114",
+   "annotated_types-0.7.0.dist-info/INSTALLER",
+   "sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg",
+   "torch/optim/swa_utils.py",
+   "sha256=d1bsOajKVNx-_Gnop0OY2J75ZjyokMehV1hQCTzHEtg",
+   "19259"
+  ],
+  "codename": "thistle",
+  "mascot": "badger",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 967,
+   "completion_tokens": 252,
+   "total_tokens": 1219,
+   "cost": 0.004454,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004454,
+    "upstream_inference_prompt_cost": 0.001934,
+    "upstream_inference_completions_cost": 0.00252
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "ids": [
+   "torch/include/ATen/ops/slow_conv3d_forward.h",
+   "sha256=U-yBFsodSZEP9Psmvjugcz2iLB8FfGgcR2IZYz8j0HM",
+   "6750",
+   "pandas/tests/tslibs/test_ccalendar.py",
+   "sha256=8wreW2d8xw2znrIo9Yy02NnqziDz9bb3wnlXqJUtaE4",
+   "1921",
+   "torch/distributed/checkpoint/_fsspec_filesystem.py",
+   "sha256=FSzE-iL-1HRkdCqFVkmEdrcwTv2L8xhoXXDQbpMAufI",
+   "5583"
+  ],
+  "codename": "prism",
+  "mascot": "magpie",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 917,
+   "completion_tokens": 265,
+   "total_tokens": 1182,
+   "cost": 0.004484,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004484,
+    "upstream_inference_prompt_cost": 0.001834,
+    "upstream_inference_completions_cost": 0.00265
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "ids": [
+   "torch/include/ATen/ops/grid_sampler_3d_backward_ops.h",
+   "xVExX0wg49UPI2KhFqoTWYLVRwquW2gAua130v95Ais",
+   "2961",
+   "torch/include/ATen/ops/_use_cudnn_ctc_loss_cuda_dispatch.h",
+   "_JdPWp-bKk5rX5Kl_Rcyfc_raJGUKB1uoELuKQt6LTw",
+   "1018",
+   "torch/_dynamo/variables/base.py",
+   "tNS2WO5CTz2Ks24pGjnS6uoOY6APK-_TkI8hGVqJk38",
+   "24396"
+  ],
+  "codename": "mosaic",
+  "mascot": "badger",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1008,
+   "completion_tokens": 263,
+   "total_tokens": 1271,
+   "cost": 0.004646,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004646,
+    "upstream_inference_prompt_cost": 0.002016,
+    "upstream_inference_completions_cost": 0.00263
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "ids": [
+   "sympy-1.14.0.dist-info/licenses/LICENSE",
+   "B6XpgZ9ye0mGrSgpx6KaYyDUJXX3IOsk1xt_71c6AoY",
+   "7885",
+   "torch/include/ATen/ops/convolution_overrideable_native.h",
+   "-y0TYZssFcUYRDiGlnON4Pia9S8bpWElSX03-J6rbCY",
+   "1037",
+   "sympy/codegen/abstract_nodes.py",
+   "TY4ecftqnym5viYInnb59zGPPFXdeSGQwi--xTz6Pvo"
+  ],
+  "codename": "sparrow",
+  "mascot": "newt",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 885,
+   "completion_tokens": 750,
+   "total_tokens": 1635,
+   "cost": 0.00927,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00927,
+    "upstream_inference_prompt_cost": 0.00177,
+    "upstream_inference_completions_cost": 0.0075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 507,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "ids": [
+   "transformers/video_processing_utils.py",
+   "sha256=Bn3JWf6ADVpaWrOcVLU4F6S1lCTzFDZ2fXNhwgs7pAk",
+   "41231",
+   "torch/include/torch/headeronly/util/complex.h",
+   "sha256=Hu1aY9NI7-EgPTCQY78ppx2REkYU7aKleuCdJV9xUhk",
+   "18077",
+   "torch/include/ATen/ops/replication_pad2d_meta.h",
+   "sha256=hSp3_b3I1TPlnd9aupwjGj9nJmG3D5nkMZJo4x-kx9Y"
+  ],
+  "codename": "falcon",
+  "mascot": "lemur",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 825,
+   "completion_tokens": 254,
+   "total_tokens": 1079,
+   "cost": 0.00419,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00419,
+    "upstream_inference_prompt_cost": 0.00165,
+    "upstream_inference_completions_cost": 0.00254
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "ids": [
+   "sympy/core/random.py",
+   "sha256=miFdVpNKfutbkpYiIOzG9kVNUm5GTk-_nnmQqUhVDZs",
+   "6647",
+   "torch/ao/nn/intrinsic/quantized/modules/bn_relu.py",
+   "sha256=kh0yWikPYFulF-ijwFaJiDKB8uCcry3e0-tH0nvPaGE",
+   "3285",
+   "torch/include/ATen/ops/_sparse_compressed_tensor_unsafe.h",
+   "sha256=ImtESbJdJRURiK0WB1Y9czNE5tV8aUwP1HuInmwsqDs",
+   "5594",
+   "devscripts/cli"
+  ],
+  "codename": "marigold",
+  "mascot": "gecko",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 986,
+   "completion_tokens": 272,
+   "total_tokens": 1258,
+   "cost": 0.004692,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004692,
+    "upstream_inference_prompt_cost": 0.001972,
+    "upstream_inference_completions_cost": 0.00272
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "ids": [
+   "torch/include/ATen/ops/sym_is_contiguous.h",
+   "sha256=kWAlnqyGBCcbUsabLZgYO9dLJiHJTHgetOISL_-LoWk",
+   "818",
+   "pip/_vendor/resolvelib/__init__.py",
+   "sha256=h509TdEcpb5-44JonaU3ex2TM15GVBLjM9CNCPwnTTs",
+   "537",
+   "pyasn1_modules/rfc7508.py",
+   "sha256=ZmJFbQO934Fs8wxcpO0gg5fU0d8yEFlkkFD3KMUQbAE",
+   "2182"
+  ],
+  "codename": "ember",
+  "mascot": "badger",
+  "server": "lumen",
+  "usage": {
+   "prompt_tokens": 855,
+   "completion_tokens": 248,
+   "total_tokens": 1103,
+   "cost": 0.00419,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00419,
+    "upstream_inference_prompt_cost": 0.00171,
+    "upstream_inference_completions_cost": 0.00248
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "ids": [
+   "torch/include/kineto/IActivityProfiler.h",
+   "sha256=nZ4opNgUHak2rjnmXRKsynHR_aOkka4YX2xMABhvUVk",
+   "5110",
+   "torch/include/torch/csrc/jit/runtime/static/passes.h",
+   "sha256=4FWM-FvTIvBj-lY46iES68J1XEUpvbejwst1Twb80YU",
+   "3684",
+   "torch/include/ATen/ops/gelu_native.h",
+   "sha256=G91sEiEiDE_omnn3Gt6SIpT-j3Eqgzf8oEbgLebM-e4",
+   "1571"
+  ],
+  "codename": "glacier",
+  "mascot": "magpie",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 973,
+   "completion_tokens": 254,
+   "total_tokens": 1227,
+   "cost": 0.004486,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004486,
+    "upstream_inference_prompt_cost": 0.001946,
+    "upstream_inference_completions_cost": 0.00254
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "ids": [
+   "transformers/models/wav2vec2/configuration_wav2vec2.py",
+   "sha256=A4XGuSVpZUfWvd-ZJPkcGhISsBSNtSgUCNU2gN0mZos",
+   "A4XGuSVpZUfWvd-ZJPkcGhISsBSNtSgUCNU2gN0mZos",
+   "20100",
+   "sklearn/externals/array_api_extra/_lib/__init__.py",
+   "sha256=GCx2h0v6DbmpkC0XDJkRzbZWcUqwwHEuVDoAeX7FrAI",
+   "GCx2h0v6DbmpkC0XDJkRzbZWcUqwwHEuVDoAeX7FrAI",
+   "numpy/f2py/common_rules.pyi",
+   "sha256=1uzTkcwiin6dVBbWUiOVB1ZppjKBHoRHG_Byvw-1UbI",
+   "1uzTkcwiin6dVBbWUiOVB1ZppjKBHoRHG_Byvw-1UbI"
+  ],
+  "codename": "harbor",
+  "mascot": "lynx",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 849,
+   "completion_tokens": 392,
+   "total_tokens": 1241,
+   "cost": 0.005618,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005618,
+    "upstream_inference_prompt_cost": 0.001698,
+    "upstream_inference_completions_cost": 0.00392
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "ids": [
+   "devscripts/install deps.py",
+   "transformers/models/phi3/modeling_phi3.py",
+   "sha256=KyQrfUWpaHR_DtvHOlWigkZz0NwOBzmBsRoyzXPzXA8",
+   "23280",
+   "torch/include/ATen/ops/linalg_eigvals_native.h",
+   "sha256=I4_EhghHQ3UzU0heTawT6MEsMR5kPOlHVG-dBcTbtlo",
+   "matplotlib/mpl-data/images/subplots_large.png",
+   "sha256=Edu9SwVMQEXJZ5ogU5cyW7VLcwXJdhdf-EtxxmxdkIs"
+  ],
+  "codename": "saffron",
+  "mascot": "newt",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 912,
+   "completion_tokens": 268,
+   "total_tokens": 1180,
+   "cost": 0.004504,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004504,
+    "upstream_inference_prompt_cost": 0.001824,
+    "upstream_inference_completions_cost": 0.00268
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "ids": [
+   "charset_normalizer-3.4.2.dist-info/licenses/LICENSE",
+   "bQ1Bv-FwrGx9wkjJpj4lTQ-0WmDVCoJX0K-SxuJJuIc",
+   "1071",
+   "proto/marshal/rules/field_mask.py",
+   "_CG9kvla4-32pqHVYzoXJDPfC9yySJzEJCAKZQC-2Io",
+   "1182",
+   "yt_dlp/extractor/murrtube.py",
+   "TqJiyyJrnCUtE7ERK2ttQiQARlsaLV4I9E9fvF4lhXo",
+   "5868"
+  ],
+  "codename": "falcon",
+  "mascot": "marten",
+  "server": "nimbus",
+  "usage": {
+   "prompt_tokens": 1070,
+   "completion_tokens": 756,
+   "total_tokens": 1826,
+   "cost": 0.0097,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0097,
+    "upstream_inference_prompt_cost": 0.00214,
+    "upstream_inference_completions_cost": 0.00756
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 506,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "ids": [
+   "torch/ao/quantization/backend_config/x86.py",
+   "4geWLr6mkFhSEYiXFXpkB8NegS05EXhv2fYHTpajNyg",
+   "3869",
+   "transformers/models/rt_detr_v2/__init__.py",
+   "7RL5U-hsGt3HQZ5SuWn8iZY_L166EYswBvaQXFRkzRc",
+   "1003",
+   "scipy/linalg/_misc.py",
+   "udhvxGfEHxhS3ecQBuwQ65W9ezVQIaVBw8JOmfqH_oE",
+   "6301"
+  ],
+  "codename": "sparrow",
+  "mascot": "lemur",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 815,
+   "completion_tokens": 236,
+   "total_tokens": 1051,
+   "cost": 0.00399,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00399,
+    "upstream_inference_prompt_cost": 0.00163,
+    "upstream_inference_completions_cost": 0.00236
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "ids": [
+   "urllib3/util/ssl_.py",
+   "sha256=jxnQ3msYkVaokJVWqHNnAVdVtDdidrTHDeyk50gwqaQ",
+   "19786",
+   "matplotlib/layout_engine.pyi",
+   "sha256=9cKFTFPCvwmKIygTUvrvOq1iWnFYme9Shniiv2QbC74",
+   "1788",
+   "torch/include/ATen/ops/fft_ihfft_ops.h",
+   "sha256=GxZRWnjanuhFHk8kiXmOWHtUz8oB88tu_F3K7BqYY00",
+   "2141"
+  ],
+  "codename": "russet",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 899,
+   "completion_tokens": 245,
+   "total_tokens": 1144,
+   "cost": 0.004248,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004248,
+    "upstream_inference_prompt_cost": 0.001798,
+    "upstream_inference_completions_cost": 0.00245
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "ids": [
+   "sympy/physics/quantum/tests/test_represent.py",
+   "sha256=lEwzpL0fGxDGkojZ4_WoBAtCcA7aq2-S-i0Z0QrnTXg",
+   "5177",
+   "sklearn/neighbors/tests/test_quad_tree.py",
+   "sha256=y_WE4jNxliYos_SiICl_miGIya2IJlu71rXzwvQw2qk",
+   "4856",
+   "numpy/lib/recfunctions.py",
+   "sha256=T4aa5xXav9ntfw5YmzPiq_YUkh12wGk40XyBLQPCEzU",
+   "59539"
+  ],
+  "codename": "pebble",
+  "mascot": "lemur",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 1019,
+   "completion_tokens": 250,
+   "total_tokens": 1269,
+   "cost": 0.004538,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004538,
+    "upstream_inference_prompt_cost": 0.002038,
+    "upstream_inference_completions_cost": 0.0025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "ids": [
+   "6B49 ACBA DCF6 BD1C A206 67AB CD54 FCE3 D964 BEFB",
+   "yt_dlp/extractor/rockstargames.py",
+   "_yV0LaqybuCnXCpY0s801bTgiazwHFj9GUtHSGAQ3Hs",
+   "2160",
+   "idna/compat.py",
+   "RzLy6QQCdl9784aFhb2EX9EKGCJjg0P3PilGdeXXcx8",
+   "yt_dlp/extractor/turner.py",
+   "DH8l6_U3NJ-eu2tmTGuHQt4-joNBcJ2IT9H1WIpghhU",
+   "11459"
+  ],
+  "codename": "canyon",
+  "mascot": "quokka",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 891,
+   "completion_tokens": 719,
+   "total_tokens": 1610,
+   "cost": 0.008972,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008972,
+    "upstream_inference_prompt_cost": 0.001782,
+    "upstream_inference_completions_cost": 0.00719
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 456,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "ids": [
+   "setuptools/_vendor/packaging/version.py",
+   "sha256=olfyuk_DPbflNkJ4wBWetXQ17c74x3DB501degUv7DY",
+   "olfyuk_DPbflNkJ4wBWetXQ17c74x3DB501degUv7DY",
+   "16676",
+   "numpy/matrixlib/__init__.py",
+   "sha256=Ut6IqfjuA-kwwo6HBOYAgFjXXC_h7YV_3HyDsKM72dk",
+   "Ut6IqfjuA-kwwo6HBOYAgFjXXC_h7YV_3HyDsKM72dk",
+   "transformers/models/roformer/tokenization_utils.py",
+   "sha256=v_Qvq0uBuHpE43oIM64g9kTZcy8BD9oHhOR_ketIyIg",
+   "v_Qvq0uBuHpE43oIM64g9kTZcy8BD9oHhOR_ketIyIg",
+   "2625"
+  ],
+  "codename": "thistle",
+  "mascot": "quokka",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 882,
+   "completion_tokens": 367,
+   "total_tokens": 1249,
+   "cost": 0.005434,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005434,
+    "upstream_inference_prompt_cost": 0.001764,
+    "upstream_inference_completions_cost": 0.00367
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "ids": [
+   "networkx/algorithms/operators/binary.py",
+   "sha256=hziSCLDIVIoTWPV56fED5gI1pErOdyLOQ3Z_E_Nz9As",
+   "13150",
+   "pyasn1/type/univ.py",
+   "sha256=Bnu2gHdA84UXMLtgb4LXbHI5TYw-kKljlsJ7dkJ8KfI",
+   "109212",
+   "PIL/.dylibs/libjpeg.62.4.0.dylib",
+   "sha256=VvQDTrlWDqJ1YbnkV1NTOPKswQz9Wq67yFDbNzYaPtY",
+   "653536"
+  ],
+  "codename": "meadow",
+  "mascot": "walrus",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1001,
+   "completion_tokens": 254,
+   "total_tokens": 1255,
+   "cost": 0.004542,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004542,
+    "upstream_inference_prompt_cost": 0.002002,
+    "upstream_inference_completions_cost": 0.00254
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "ids": [
+   "pandas/core/ops/invalid.py",
+   "sha256=ih16WY1IZHT3oCnqPVuh3mqcb5Qn2V_VpeILGKYytxQ",
+   "1706",
+   "pandas/tests/arrays/test_datetimes.py",
+   "sha256=Q9iTXCMsbWTj4vEbt3VWDX4DPpxVdjK3fHcAb_HG4JM",
+   "29809",
+   "starlette/background.py",
+   "sha256=50zBQ_50lV9YGRGevBUFQ4DOwisU47pUV_PfiBG9Cg4",
+   "1257"
+  ],
+  "codename": "cobalt",
+  "mascot": "otter",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 962,
+   "completion_tokens": 240,
+   "total_tokens": 1202,
+   "cost": 0.004324,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004324,
+    "upstream_inference_prompt_cost": 0.001924,
+    "upstream_inference_completions_cost": 0.0024
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "ids": [
+   "flake8/_compat.py",
+   "u9N4Dxo35mPmxF6hQWRPCjOqVHkLF8HxCgpgvgxueuQ",
+   "torch/include/ATen/native/cuda/Sort.h",
+   "S2RwrQkWVKojaNfpyLF6e5oKwmBYurvdO97-qZ6juh0",
+   "scipy/cluster/__init__.py",
+   "pgzWiWR5smQ3rwud2dhnLn6dpkD5lju_moElQp_zhoE"
+  ],
+  "codename": "prism",
+  "mascot": "jackal",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 940,
+   "completion_tokens": 212,
+   "total_tokens": 1152,
+   "cost": 0.004,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004,
+    "upstream_inference_prompt_cost": 0.00188,
+    "upstream_inference_completions_cost": 0.00212
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

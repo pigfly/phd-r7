@@ -1,0 +1,1163 @@
+{
+ "T_0.png": {
+  "ids": [
+   "torch/include/c10/cuda/CUDADeviceAssertionHost.h",
+   "_QbWZmFSf7mWiJ42xz1xNUDbxLpafLx9ElQpIRMrRP8",
+   "6631",
+   "torch/_dynamo/variables/higher_order_ops.py",
+   "el8CJ2nqUfQ3eVIVBv-gKQl7SMGFHBhVBDLTgXSro6Q",
+   "134371",
+   "pandas/core/groupby/ops.py",
+   "AbHU7O6Ft7dtQ3RzsSTLfpLm_ALO0CygcNPDZY0zKac",
+   "42144"
+  ],
+  "codename": "saffron",
+  "mascot": "walrus",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 578,
+   "completion_tokens": 508,
+   "total_tokens": 1086,
+   "cost": 0.0003118,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003118,
+    "upstream_inference_prompt_cost": 5.78e-05,
+    "upstream_inference_completions_cost": 0.000254
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 344,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "ids": [
+   "407",
+   "393",
+   "pandas/tests/arrays/masked/__init__.py",
+   "47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU",
+   "torch/include/ATen/ops/native_channel_shuffle_native.h",
+   "eF39fOvuFi54Dz7V40jQ09KpSazjkvAT4oJ-CXFuSfQ",
+   "589",
+   "185",
+   "torch/include/ATen/ops/huber_loss_cpu_dispatch.h",
+   "dD7sZyQq99M_2dm3ierMP0aEgJci-9KjsWlXJLxBhh4",
+   "1117"
+  ],
+  "codename": "harbor",
+  "mascot": "egret",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 593,
+   "completion_tokens": 566,
+   "total_tokens": 1159,
+   "cost": 0.0003423,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003423,
+    "upstream_inference_prompt_cost": 5.93e-05,
+    "upstream_inference_completions_cost": 0.000283
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 392,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "ids": [
+   "networkx/algorithms/shortest_paths/generic.py",
+   "-7wIqqDWeScy8brYFkdt68nuxkSgXVs1iXcwGWoBZAU",
+   "25337",
+   "sklearn/decomposition/_fastica.py",
+   "araRZCVXh0BwHsGv4vp9p07DodDqTSrGPhKz77oFWwU",
+   "26553",
+   "transformers/models/vitpose/configuration_vitpose.py",
+   "Ij3xe1cFLDOuIJYUTh-SP2UPKSf9pHwXlLwKRDtcqdc",
+   "6015"
+  ],
+  "codename": "russet",
+  "mascot": "heron",
+  "server": "dynamo",
+  "usage": {
+   "prompt_tokens": 606,
+   "completion_tokens": 514,
+   "total_tokens": 1120,
+   "cost": 0.0003176,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003176,
+    "upstream_inference_prompt_cost": 6.06e-05,
+    "upstream_inference_completions_cost": 0.000257
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 351,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "ids": [
+   "sympy/utilities/tests/test_pickling.py",
+   "ZXGzB_gQ9juws_N_n2vf6QPVojdfP4Mbl7uqdtkPb0E",
+   "23600",
+   "torch/include/ATen/ops/replication_pad1d_mps_dispatch.h",
+   "K2Z9CMLWPr1TByMGJFrt4QMrw9z4gF9rQZxt6wEnhko",
+   "1337",
+   "/items/{item id}",
+   "scipy/_lib/_uarray/_backend.py",
+   "LZnSLJ2UK209jrMtocOMoc5grlNoob3tbb1HbW0XlAQ",
+   "20531"
+  ],
+  "codename": "tundra",
+  "mascot": "badger",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 607,
+   "completion_tokens": 575,
+   "total_tokens": 1182,
+   "cost": 0.0003482,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003482,
+    "upstream_inference_prompt_cost": 6.07e-05,
+    "upstream_inference_completions_cost": 0.0002875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 400,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "ids": [
+   "torch/include/ATen/ops/_cdist_backward_cpu_dispatch.h",
+   "Ni3BgfKM5kOEZT8Plxe-QW3vZd7ktBbGOkkycjUdV38",
+   "yt_dlp/extractor/platzi.py",
+   "3TIifOn_Wz4wtcOQrtQc9SCvQ3uDNEW4Y_W7AW4H918",
+   "7315",
+   "scipy/io/matlab/tests/data/testsparsecomplex_7.1_GLNX86.mat",
+   "kgHcuq-deI2y8hfkGwlMOkW7lntexdPHfuz0ar6b3jo"
+  ],
+  "codename": "willow",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 641,
+   "completion_tokens": 515,
+   "total_tokens": 1156,
+   "cost": 0.0003216,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003216,
+    "upstream_inference_prompt_cost": 6.41e-05,
+    "upstream_inference_completions_cost": 0.0002575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 352,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "ids": [
+   "torch/include/ATen/ops/remainder_native.h",
+   "g6PHkrzN8jYif0FlaPXihrq_eECQLr4zafj3XS0Vd3Q",
+   "1112",
+   "torch/sparse/_semi_structured_conversions.py",
+   "4MJbS-JR997kLPEb24_h6Z48wYVP5Hg4PyDplP8gH5w",
+   "14016",
+   "sympy/polys/matrices/eigen.py",
+   "glArxs9_rTrE_ssz2fd2gKCTsguSyEHwoeQP82tmIcM",
+   "3015"
+  ],
+  "codename": "glacier",
+  "mascot": "egret",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 592,
+   "completion_tokens": 438,
+   "total_tokens": 1030,
+   "cost": 0.0002782,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002782,
+    "upstream_inference_prompt_cost": 5.92e-05,
+    "upstream_inference_completions_cost": 0.000219
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 276,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "ids": [
+   "rsa/util.py",
+   "DC27D6LR5E9pOPvxMwlTA1Y46Irx30Yh5gW3tCyp43E",
+   "2993",
+   "torch/include/ATen/ops/_coalesced_meta_dispatch.h",
+   "xw8dgdJtozkYpwN_n6Jj-izJmM643tDjj3PV519DGEg",
+   "scipy/spatial/tests/data/pdist-jensenshannon-ml.txt",
+   "-sZUikGMWskONojs6fJIMX8VEWpviYYg4u1vipY6Bak",
+   "2818",
+   "idnadata.py",
+   "uts46data.py"
+  ],
+  "codename": "falcon",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 620,
+   "completion_tokens": 554,
+   "total_tokens": 1174,
+   "cost": 0.000339,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000339,
+    "upstream_inference_prompt_cost": 6.2e-05,
+    "upstream_inference_completions_cost": 0.000277
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 384,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "ids": [
+   "networkx/readwrite/tests/test_graph6.py",
+   "WMQmTgrI_VDcli1Gl5cjM17EFKc8_AkwoR14FLS1sXQ",
+   "6559",
+   "torch/include/torch/csrc/lazy/backend/backend_device.h",
+   "ri9JmrjcvxEW3H7JEq6Fa8Uj2nKXlSqDQVyG8f0APjs",
+   "2928",
+   "torch/include/ATen/ops/_functional_assert_scalar_ops.h",
+   "QXM77gtDWpJPCbDW_QhcAVny_eWcVLEbtE4hGk2CRKI",
+   "1204"
+  ],
+  "codename": "velvet",
+  "mascot": "badger",
+  "server": "summit",
+  "usage": {
+   "prompt_tokens": 548,
+   "completion_tokens": 438,
+   "total_tokens": 986,
+   "cost": 0.0002738,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002738,
+    "upstream_inference_prompt_cost": 5.48e-05,
+    "upstream_inference_completions_cost": 0.000219
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 272,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "ids": [
+   "google_auth_oauthlib-1.1.0.dist-info/top_level.txt",
+   "7odKtDnfVqHR3mxRtqx0bx6Vu0juw_gEOZCkWYyCjbo",
+   "scipy/io/arff/tests/data/quoted_nominal.arff",
+   "01mPSc-_OpcjXFy3EoIzKdHCmzWSag4oK1Ek2tUc6_U",
+   "yt_dlp/extractor/leeco.py",
+   "7yXXjwM9DXFWATjbAsSRvwpyvs4i3dF85nQnyQOn3Uk",
+   "8605"
+  ],
+  "codename": "harbor",
+  "mascot": "ferret",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 571,
+   "completion_tokens": 539,
+   "total_tokens": 1110,
+   "cost": 0.0003266,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003266,
+    "upstream_inference_prompt_cost": 5.71e-05,
+    "upstream_inference_completions_cost": 0.0002695
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 382,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "ids": [
+   "torch/include/ATen/cuda/Atomic.cuh",
+   "-vaB50ZcMPUAUDj_c80qsUBDTxdNuy-dObapncIPF5c",
+   "27271",
+   "samples/",
+   "torch/include/ATen/ops/xor.h",
+   "g7Dw5bi22HC8Iqziz3EGrWZPS41dY0Y_56HUQ_w216A",
+   "sympy/combinatorics/tests/test_free_groups.py",
+   "g47dnRsNXVG9lFcqppJyrGryGIUCw9dRASkcMa4QujA",
+   "6411"
+  ],
+  "codename": "prism",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 628,
+   "completion_tokens": 504,
+   "total_tokens": 1132,
+   "cost": 0.0003148,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003148,
+    "upstream_inference_prompt_cost": 6.28e-05,
+    "upstream_inference_completions_cost": 0.000252
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 348,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "ids": [
+   "torch/include/ATen/ops/can_cast.h",
+   "eIjOxUsP4iy0SEvWpDYrKIUyFeeVisw_JxK5FsdOzco",
+   "googleapiclient/sample_tools.py",
+   "hDBLJNwLluN6AGhaBR-3GXWDrOwRNPvXyseLOyz9l30",
+   "4315",
+   "pydantic/_internal/_forward_ref.py",
+   "5n3Y7-3AKLn8_FS3Yc7KutLiPUhyXmAtkEZOaFnonwM"
+  ],
+  "codename": "marigold",
+  "mascot": "osprey",
+  "server": "horizon",
+  "usage": {
+   "prompt_tokens": 626,
+   "completion_tokens": 461,
+   "total_tokens": 1087,
+   "cost": 0.0002931,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002931,
+    "upstream_inference_prompt_cost": 6.26e-05,
+    "upstream_inference_completions_cost": 0.0002305
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 314,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "ids": [
+   "torch/include/ATen/ops/view_as_complex_copy_ops.h",
+   "CmaMV7VftNaIG6queVJp7hy5wlND0YwVmtgeoWa3k0o",
+   "1631",
+   "sklearn/utils/_show_versions.py",
+   "GL9Ca3wwOStKVdOYIqTv2vRB5BWCTwiJTBiQSIaYEmI",
+   "2548",
+   "torch/ao/quantization/backend_config/utils.py",
+   "-g1HkHsVuAKc8wTXXbiKfZzAPnVxVPDhparV9VlIE6Q",
+   "12433"
+  ],
+  "codename": "sparrow",
+  "mascot": "badger",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 573,
+   "completion_tokens": 575,
+   "total_tokens": 1148,
+   "cost": 0.0003448,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003448,
+    "upstream_inference_prompt_cost": 5.73e-05,
+    "upstream_inference_completions_cost": 0.0002875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 416,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "ids": [
+   "torch/include/ATen/ops/sparse_resize_ops.h",
+   "KnEy0zdT3jeqqg9AhvNEkbd7aPpi5GKhtz0vBawoWU0",
+   "2781",
+   "networkx/readwrite/tests/test_adjlist.py",
+   "aCDyLpv8cekWwEZgv5rB4gtwUvor7_YDArTYvL2ngPs",
+   "12756",
+   "numpy/polynomial/tests/test_laguerre.py",
+   "8c2h7Lj3F2DtuVuOPlS8ZL-dq_IoFxPrzREbuI5iZqQ",
+   "17637"
+  ],
+  "codename": "willow",
+  "mascot": "ibis",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 557,
+   "completion_tokens": 502,
+   "total_tokens": 1059,
+   "cost": 0.0003067,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003067,
+    "upstream_inference_prompt_cost": 5.57e-05,
+    "upstream_inference_completions_cost": 0.000251
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 337,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "ids": [
+   "torch/profiler/__init__.py",
+   "wkycjPawFAc2hKygHPFfcAfdkKKII5tR_Tp4GpGF0tw",
+   "1726",
+   "libc.py",
+   "sklearn/linear_model/tests/test_logistic.py",
+   "SNZyQ-lW4QXQsYzu8omicC7tAVN-rigTpYnnf9-dUmM",
+   "86751",
+   "torch/include/ATen/ops/cudnn_convolution_native.h",
+   "AxjtJMj0uaUDs9oiX7XQwmN5H5S2BUV8lIae8HLy5H8",
+   "918"
+  ],
+  "codename": "juniper",
+  "mascot": "osprey",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 590,
+   "completion_tokens": 547,
+   "total_tokens": 1137,
+   "cost": 0.0003325,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003325,
+    "upstream_inference_prompt_cost": 5.9e-05,
+    "upstream_inference_completions_cost": 0.0002735
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 378,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "ids": [
+   "torch/include/ATen/ops/_cast_Char_native.h",
+   "5eto8dQvywUal9BosyiU4OP3RuvVvIb2yE16snr9Lco",
+   "scipy/special/tests/test_faddeeva.py",
+   "YLY3Ylp4u_8zxTGxOb5kxNfXXEW0ld_GP2ceOR2ev_Y",
+   "2568",
+   "yt_dlp/extractor/kaltura.py",
+   "75Xq0EIqawDQ0_G4IUjPjW6rB2XGG3yPLhCO_WTTjzs",
+   "25253",
+   "CONTRIBUTING.md"
+  ],
+  "codename": "tundra",
+  "mascot": "jackal",
+  "server": "lumen",
+  "usage": {
+   "prompt_tokens": 584,
+   "completion_tokens": 597,
+   "total_tokens": 1181,
+   "cost": 0.0003569,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003569,
+    "upstream_inference_prompt_cost": 5.84e-05,
+    "upstream_inference_completions_cost": 0.0002985
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 431,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "ids": [
+   "numpy/typing/tests/data/reveal/polynomial_polyutils.pyi",
+   "I_4waxJEeUsp5pjnbBN55kqZ2kycK8akD_XvhsgsCGY",
+   "10642",
+   "setuptools/command/install_egg_info.py",
+   "3I9IPCH7D59Sh-6aVYz-h6wwyxq-wkxrKwKg3nDdJqs",
+   "2075",
+   "fontTools/ttLib/tables/B_A_S_E_.py",
+   "H71A9pJ850mvjbrWHqy8iFI2Dxg7102YRtAkfdCooig"
+  ],
+  "codename": "marigold",
+  "mascot": "lemur",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 550,
+   "completion_tokens": 659,
+   "total_tokens": 1209,
+   "cost": 0.0003845,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003845,
+    "upstream_inference_prompt_cost": 5.5e-05,
+    "upstream_inference_completions_cost": 0.0003295
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 497,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "ids": [
+   ".env",
+   "torch/cuda/amp/autocast_mode.py",
+   "lQjFh0vpiPbm-7SnM1EwhMGNJs8Xg4F_WGD1ydybnL8",
+   "2819",
+   "sympy/stats/symbolic_multivariate_probability.py",
+   "R6Co7XCcxLoOtTqC6ZSnGuylZNUBrC5AD0DrJr2jE1A",
+   "10450",
+   ".url"
+  ],
+  "codename": "pebble",
+  "mascot": "heron",
+  "server": "nimbus",
+  "usage": {
+   "prompt_tokens": 602,
+   "completion_tokens": 644,
+   "total_tokens": 1246,
+   "cost": 0.0003822,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003822,
+    "upstream_inference_prompt_cost": 6.02e-05,
+    "upstream_inference_completions_cost": 0.000322
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 516,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "ids": [
+   "google/genai/_test_api_client.py",
+   "4ruFIy5_1qcbKqqIBu3HSQbpSOBrxiecBtDZaTGFR1s",
+   "4797",
+   "websocket/tests/echo-server.py",
+   "yYwKXimgqo6gHFjGgqhkADb6fRncSrF-OewX6UinZVg",
+   "torch/_inductor/codegen/xpu/device_op_overrides.py",
+   "4WJHzEtwBR3MKfaFgqYMb0dbNnwGjJ-f4DnqOXYk41Q",
+   "1884"
+  ],
+  "codename": "juniper",
+  "mascot": "bison",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 677,
+   "completion_tokens": 422,
+   "total_tokens": 1099,
+   "cost": 0.0002787,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002787,
+    "upstream_inference_prompt_cost": 6.77e-05,
+    "upstream_inference_completions_cost": 0.000211
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 265,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "ids": [
+   "pandas/api/typing/__init__.py",
+   "fxDrTMpXY-_3zqbsQK3ZpsfEMZpfgG1BhjVTK_884VE",
+   "1451",
+   "scipy/optimize/_linesearch.py",
+   "sZ45z0K3l6LLURdAfzO5CI5DctDlXqD92PCaz9mKzYE",
+   "27215",
+   "torch/include/ATen/ops/bitwise_not_ops.h",
+   "ShPTG9U0EUOIxROll8o0XWMNOVmZRmqnS1xKiFk14Tk",
+   "190"
+  ],
+  "codename": "thistle",
+  "mascot": "ferret",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 582,
+   "completion_tokens": 446,
+   "total_tokens": 1028,
+   "cost": 0.0002812,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002812,
+    "upstream_inference_prompt_cost": 5.82e-05,
+    "upstream_inference_completions_cost": 0.000223
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 284,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "ids": [
+   "transformers/models/mimi/__init__.py",
+   "VXRZ-D8-AyOYcmRGvSxhjwTYQcSNXcCXi5ubks6Qxhk",
+   "pandas/core/arrays/interval.py",
+   "W9ZHrEL1_Zr51wb6CBMjFSN07dUjkaukpGp2MhWv3Ww",
+   "73770",
+   "scipy/optimize/_lsap.cpython-313-darwin.so",
+   "Vh9Jt5hQZZx7P61MYNKkKi39jRcke6jYj8qXeVguJVM",
+   "70696"
+  ],
+  "codename": "meadow",
+  "mascot": "badger",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 606,
+   "completion_tokens": 507,
+   "total_tokens": 1113,
+   "cost": 0.0003141,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003141,
+    "upstream_inference_prompt_cost": 6.06e-05,
+    "upstream_inference_completions_cost": 0.0002535
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 345,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "ids": [
+   "dist/pathspec- -py3-none-any.whl",
+   "sympy/liealgebras/cartan_matrix.py",
+   "yr2LoZi_Gxmu-EMKgFuPOPNMYPOsxucLAS6oRpSYi2U",
+   "pandas/io/excel/_base.py",
+   "U2NEYk2FoVkgZWXVGOccoyIClEbluKIsHQ5Bv80ELQQ",
+   "70410",
+   "numpy/doc/ufuncs.py",
+   "9xt8H34GhrXrFq9cWFUGvJFePa9YuH9Tq1DzAnm2E2E",
+   "5414"
+  ],
+  "codename": "nectar",
+  "mascot": "magpie",
+  "server": "indigo",
+  "usage": {
+   "prompt_tokens": 565,
+   "completion_tokens": 848,
+   "total_tokens": 1413,
+   "cost": 0.0004805,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004805,
+    "upstream_inference_prompt_cost": 5.65e-05,
+    "upstream_inference_completions_cost": 0.000424
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 687,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "ids": [
+   "torch/include/ATen/ops/split_with_sizes_copy_native.h",
+   "gEfnEnjNviGdhUdRgBf1L9qj_wL3caP8uEHDhjO_yLU",
+   "824",
+   "pytest_asyncio-1.0.0.dist-info/METADATA",
+   "COXTlvAPs6WJu76Pi1olsFlvFIhY7gHlEnhIi5tZKxM",
+   "3956",
+   "transformers/models/deit/feature_extraction_deit.py",
+   "0kfS_x_-B8O9b6ECuj3kosuPP9bwHKO_ZzjuvkBnPsc",
+   "1284"
+  ],
+  "codename": "willow",
+  "mascot": "marten",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 633,
+   "completion_tokens": 646,
+   "total_tokens": 1279,
+   "cost": 0.0003863,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003863,
+    "upstream_inference_prompt_cost": 6.33e-05,
+    "upstream_inference_completions_cost": 0.000323
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 478,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "ids": [
+   "torch/include/ATen/ops/asinh_ops.h",
+   "Tpi_iWvhhFOQ41puVbgoKIlPROiHJ725jfZSJ0ur128",
+   "2037",
+   "pandas/_libs/testing.cpython-313-darwin.so",
+   "SWz7tUbF2cFcXplRpoQ_dkVpgW5Dh7RcjtPBJEkAJ3o",
+   "118192",
+   "yt_dlp/extractor/linkedin.py",
+   "4ZiLpFqx5-G_Rwmjyn95C-1OLcq_pbEYnTi5m2dEMPg",
+   "14684"
+  ],
+  "codename": "marigold",
+  "mascot": "ibis",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 555,
+   "completion_tokens": 426,
+   "total_tokens": 981,
+   "cost": 0.0002685,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002685,
+    "upstream_inference_prompt_cost": 5.55e-05,
+    "upstream_inference_completions_cost": 0.000213
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 269,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "ids": [
+   "sklearn/utils/tests/test_array_api.py",
+   "X079ez3xRzqPQ-6RhM0nJjVWhm8z-nu6ZtZASHBotGA",
+   "21062",
+   "torch/include/ATen/ops/mkldnn_max_pool3d_native.h",
+   "D5irLdTDOlCiIMfvuD5xQFVxqfZXo-G9UOxpnqef7gc",
+   "sympy/strategies/core.py",
+   "nsH6LZgyc_aslv4Na5XvJMEizC6uSzscRlVW91k1pu4"
+  ],
+  "codename": "tundra",
+  "mascot": "jackal",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 609,
+   "completion_tokens": 531,
+   "total_tokens": 1140,
+   "cost": 0.0003264,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003264,
+    "upstream_inference_prompt_cost": 6.09e-05,
+    "upstream_inference_completions_cost": 0.0002655
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 372,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "ids": [
+   "numpy/_core/tests/test_nditer.py",
+   "7y1wdYzpGdwEbHRc5xppx8FZ45cKxNrm3JKzUPvkhrE",
+   "136568",
+   "sympy/calculus/__init__.py",
+   "IWDc6qPbEcWyTm9QM6V8vSAs-5OtGNijimykoWz3Clc",
+   "sklearn/tests/test_discriminant_analysis.py",
+   "VaWug3CYu_OLTFrJ_AM1IALfWTjldYc03ntlpWzyfxo",
+   "22689"
+  ],
+  "codename": "nectar",
+  "mascot": "gecko",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 575,
+   "completion_tokens": 504,
+   "total_tokens": 1079,
+   "cost": 0.0003095,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003095,
+    "upstream_inference_prompt_cost": 5.75e-05,
+    "upstream_inference_completions_cost": 0.000252
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 354,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "ids": [
+   "torch/utils/bottleneck/__init__.py",
+   "47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU",
+   "sklearn/externals/_scipy/sparse/__init__.py",
+   "47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU",
+   ".env",
+   ".gitignore",
+   "sympy/codegen/matrix_nodes.py",
+   "0d3qXy2zaq3isyklE48lP7NP5LTF7SkLXMHMbweVGXU"
+  ],
+  "codename": "pebble",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 622,
+   "completion_tokens": 638,
+   "total_tokens": 1260,
+   "cost": 0.0003812,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003812,
+    "upstream_inference_prompt_cost": 6.22e-05,
+    "upstream_inference_completions_cost": 0.000319
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 478,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "ids": [
+   "transformers/kernels/mra/cuda_kernel.h",
+   "UJvYq_MDzhcp07bZpYcOBn8ZGFcf_Ax1dynuiVTBvmA",
+   "1682",
+   "torch/include/ATen/ops/roll.h",
+   "zEi226Fy3RPTjZMMBVlXXNU6nMFE3KnxMDTZvzj1auY",
+   "3951",
+   "pip/_internal/commands/freeze.py",
+   "2Vt72BYTSm9rzue6d8dNzt8idxWK4Db6Hd-anq7GQ80",
+   "3203"
+  ],
+  "codename": "orchid",
+  "mascot": "ibis",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 634,
+   "completion_tokens": 523,
+   "total_tokens": 1157,
+   "cost": 0.0003249,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003249,
+    "upstream_inference_prompt_cost": 6.34e-05,
+    "upstream_inference_completions_cost": 0.0002615
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 369,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "ids": [
+   "torch/include/ATen/ops/linalg_vander.h",
+   "dsCH7dzhgvR6iqDSECEAtjd4ptB6yNOTqmgkv6HKF7I",
+   "1586",
+   "transformers/models/seamless_m4t/__init__.py",
+   "Y5c_W1E83fh8ToTMqF4NcReXzKZiTDv3A4ePoNUxXDg",
+   "1194",
+   "pyasn1_modules/rfc5940.py",
+   "66rMmgyKBhay-RZsWaKz7PUGwp0bqEAVULPb4Edk1vk",
+   "5940"
+  ],
+  "codename": "zephyr",
+  "mascot": "badger",
+  "server": "horizon",
+  "usage": {
+   "prompt_tokens": 565,
+   "completion_tokens": 537,
+   "total_tokens": 1102,
+   "cost": 0.000325,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000325,
+    "upstream_inference_prompt_cost": 5.65e-05,
+    "upstream_inference_completions_cost": 0.0002685
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 374,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "ids": [
+   "torch/include/google/protobuf/stubs/common.h",
+   "CT8Z_sHtECNOsEt3LDtYFHSBZLq2me6VXEBiJ-XwA34",
+   "7283",
+   "sympy/printing/tests/test_tableform.py",
+   "Ff5l1QL2HxN32WS_TdFhUAVqzop8YoWY3Uz1TThvVIM",
+   "5692",
+   "torchgen/dest/register_dispatch_key.py",
+   "-rvA6YCoRAprlXo-L9ZxZYLkNCk_kmO709ElL0CAwhE",
+   "41484"
+  ],
+  "codename": "russet",
+  "mascot": "otter",
+  "server": "horizon",
+  "usage": {
+   "prompt_tokens": 657,
+   "completion_tokens": 460,
+   "total_tokens": 1117,
+   "cost": 0.0002957,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002957,
+    "upstream_inference_prompt_cost": 6.57e-05,
+    "upstream_inference_completions_cost": 0.00023
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 302,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "ids": [
+   "sympy/stats/frv_types.py",
+   "Xkc3MU5dFLajPajIStW_lV4qiuiHg86rBo45zX_oGLk",
+   "23348",
+   "pandas/tests/extension/decimal/array.py",
+   "NQgcb9AH0ilbBSM9t-zJYBP0k3XGp44EPu34aREUxgg",
+   "9966",
+   "transformers/models/blenderbot_small/__init__.py",
+   "QsmmBSPdTC43EIyYBwo-xTyJjLLVqm4Cx-KFJ9O2mfE",
+   "1214"
+  ],
+  "codename": "meadow",
+  "mascot": "koala",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 585,
+   "completion_tokens": 498,
+   "total_tokens": 1083,
+   "cost": 0.0003075,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003075,
+    "upstream_inference_prompt_cost": 5.85e-05,
+    "upstream_inference_completions_cost": 0.000249
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 342,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

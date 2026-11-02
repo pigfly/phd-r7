@@ -1,0 +1,1220 @@
+{
+ "T_0.png": {
+  "ids": [
+   "UbBHzYAeMAOf5AaQAHIPEg79BJO7-XIFTQ89ALnLoJY",
+   "lnWBtWWwfRsYXEcZ7FzLncP0szc4eKkGgs0QkBiO9xc",
+   "UbtajzWo89jf1Q5sw8JNJIZT5s-iDBagnrGJthtDS2Q",
+   "torch/include/ATen/ops/le_meta.h",
+   "googleapiclient/discovery_cache/documents/file.v1beta1.json",
+   "torchgen/packaged/autograd/deprecated.yaml",
+   "116058",
+   "6250"
+  ],
+  "codename": "juniper",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 608,
+   "completion_tokens": 897,
+   "total_tokens": 1505,
+   "cost": 0.0006992925,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006992925,
+    "upstream_inference_prompt_cost": 0.000114,
+    "upstream_inference_completions_cost": 0.0005852925
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "ids": [
+   "8ZEPgAx-WMb1EIPaXnydwZxqKyE2kiGo1cHzlhXwB8",
+   "torch/include/ATen/ops/heaviside.h",
+   "1207",
+   "8OagtxQTE0j7-rTbl4L9lEbCgarf6n_jkx1woYlOs",
+   "sklearn/neighbors/tests/test_neighbors_tree.py",
+   "9297",
+   "ILkgiKXJN6RyR0Fjmmv8E8LuRBIoBH_P6lUmenbf8Ho",
+   "torch/include/torch/csrc/api/include/torch/data/samplers.h",
+   "318",
+   "90"
+  ],
+  "codename": "saffron",
+  "mascot": "magpie",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 611,
+   "completion_tokens": 651,
+   "total_tokens": 1262,
+   "cost": 0.00053934,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00053934,
+    "upstream_inference_prompt_cost": 0.0001145625,
+    "upstream_inference_completions_cost": 0.0004247775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "ids": [
+   "E6f3nYcI6dbEuO0Gmy61ozgGU_59_e69kC08a06EBuo",
+   "25218",
+   "pluggy/_hooks.py",
+   "165jDLJDuF1TMze11sh2fKBodwMQZkyzu-vELHfVxms",
+   "3364",
+   "matplotlib/dviread.pyi",
+   "v2.10",
+   "torch/include/ATen/ops/isin_native.h",
+   "pdz0Xw8NqBOM6iNdyicHI9tPzmzf6KHM4UAJSsc7TS8",
+   "1638"
+  ],
+  "codename": "ember",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 609,
+   "completion_tokens": 781,
+   "total_tokens": 1390,
+   "cost": 0.00062379,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00062379,
+    "upstream_inference_prompt_cost": 0.0001141875,
+    "upstream_inference_completions_cost": 0.0005096025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "ids": [
+   "H0CRImnmd0S8wwTu1_i1RPmRrRh94yB78Hl-ojiJPv8",
+   "u4Zn3h3lbbeXrG0RNKbFBunQGyRNsO01ItdS-sVFYIM",
+   "8aZRmlQ3g0XtzHyF1kUBBwnzMSjtduquHDH8MxKNSEI",
+   "yt_dlp/extractor/clubic.py",
+   "torch/include/ATen/ops/msort.h",
+   "networkx/algorithms/bipartite/cluster.py",
+   "1903",
+   "1017",
+   "7346"
+  ],
+  "codename": "velvet",
+  "mascot": "marten",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 607,
+   "completion_tokens": 921,
+   "total_tokens": 1528,
+   "cost": 0.000714765,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000714765,
+    "upstream_inference_prompt_cost": 0.0001138125,
+    "upstream_inference_completions_cost": 0.0006009525
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "ids": [
+   "8p46Wkl0WhczJjlVFS5IFTrsMKIL7Z2FLJGy2tL7evk",
+   "hYPsMc_OP49MBmg8OS_H6Z4jlF_kkjYh5WvUv7iBu90",
+   "q1C7iWpvdDymEUZNyzJvZLsLtgwSkYtCixME-fYyIDw",
+   "sentence_transformers/evaluation/SequentialEvaluator.py",
+   "sympy/assumptions/predicates/__init__.py",
+   "scikit_learn-1.7.2.dist-info/WHEEL",
+   "CONTRIBUTING.md",
+   "1.7.2",
+   "17.0",
+   "2504",
+   "unicodedata2",
+   "ffmpeg",
+   "Sphinx",
+   "pytorch"
+  ],
+  "codename": "orchid",
+  "mascot": "osprey",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 585,
+   "completion_tokens": 1017,
+   "total_tokens": 1602,
+   "cost": 0.00077328,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00077328,
+    "upstream_inference_prompt_cost": 0.0001096875,
+    "upstream_inference_completions_cost": 0.0006635925
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "ids": [
+   "19Xm-DXHVL7IU8xmCwJJEuiiIMDFwWw0uBQFaVAi4So",
+   "bj_zKr1oVctFlqyZaObCsYTgFjiiNgPzC0hr1Y868mE",
+   "47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU",
+   "transformers/models/clip/image_processing_clip_fast.py",
+   "jsonschema/benchmarks/useless_keywords.py",
+   "torch/_export/pass_infra/__init__.py",
+   "1407",
+   "867",
+   "0"
+  ],
+  "codename": "tundra",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 546,
+   "completion_tokens": 680,
+   "total_tokens": 1226,
+   "cost": 0.000546075,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000546075,
+    "upstream_inference_prompt_cost": 0.000102375,
+    "upstream_inference_completions_cost": 0.0004437
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "ids": [
+   "RQw_luqGDaEAylhTp-olMCZ9O9zvv6Se95Ih7UpSsVU",
+   "1HzQGIMG0OGwfnboRkUqwbTEg2nTevOX2Waj0gQARaw",
+   "kHFfupmTIOQ3oT8rn6NcF0aEI8wbGtGBjX9Tk-maJ7M",
+   "docx/opc/package.py",
+   "websocket/tests/data/header02.txt",
+   "torch/include/ATen/ops/exp2_cuda_dispatch.h",
+   "8727"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 553,
+   "completion_tokens": 714,
+   "total_tokens": 1267,
+   "cost": 0.0005695725,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005695725,
+    "upstream_inference_prompt_cost": 0.0001036875,
+    "upstream_inference_completions_cost": 0.000465885
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "ids": [
+   "fV3oeD2J3LJRQ4YoTV6gq3yFT_NSZi-7xxKnrX-2KJA",
+   "wfLQc4ek-VFco7gFN5NCbhVcvnRLj_rcHTdQVIEGS28",
+   "N2dFqhFsLR0k5hgjol3QTGpcSltJhpgLWeyz6Va80G8",
+   "sympy/simplify/epathtools.py",
+   "torch/include/ATen/ops/dist_ops.h",
+   "werkzeug/datastructures/etag.py",
+   "path/to/file",
+   "10122",
+   "1859",
+   "3278",
+   "0.10.0",
+   "121",
+   "@bbc2"
+  ],
+  "codename": "mosaic",
+  "mascot": "heron",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 605,
+   "completion_tokens": 626,
+   "total_tokens": 1231,
+   "cost": 0.0005219025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005219025,
+    "upstream_inference_prompt_cost": 0.0001134375,
+    "upstream_inference_completions_cost": 0.000408465
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "ids": [
+   "NisjR-yuBRJfQvjcb20skTR3yid2U3MhKHW6sy8RE10",
+   "sympy/plotting/pygletplot/tests/test_plotting.py",
+   "2720",
+   "torch/include/ATen/native/cpu/SampledAddmmKernel.h",
+   "gG-E6_kfS4M6PAwiOKXsf7cBA7Zb_GOjioZ3leATpbI",
+   "322",
+   "pdfminer/cmap/78ms-RKSJ-V.json.gz",
+   "ThPluRM6KYVmDPzsF0heoiQ_2ry6uU35oBEeaGuFE_Q",
+   "31296",
+   "pyproject.toml",
+   "setup.py"
+  ],
+  "codename": "quill",
+  "mascot": "ferret",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 638,
+   "completion_tokens": 966,
+   "total_tokens": 1604,
+   "cost": 0.00074994,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00074994,
+    "upstream_inference_prompt_cost": 0.000119625,
+    "upstream_inference_completions_cost": 0.000630315
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "ids": [
+   "z7Iui_TP_TAKQu1FwYR0jBAg0yDUy1vkPPe_7r3L1Cw",
+   "IDXNJjBWOfcqPm3Any5-kfwU9hZTH33R16gr3vZ6wnE",
+   "TC38G7Ppa3ZIv_mCr0WSyXT9rZVBXB4TIp5NyC_Y8nI",
+   "torch/jit/mobile/__init__.py",
+   "networkx/utils/backends.py",
+   "torch/distributed/elastic/multiprocessing/tail_log.py",
+   "fonttools",
+   "8517",
+   "96862",
+   "4947",
+   "296"
+  ],
+  "codename": "cobalt",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 588,
+   "completion_tokens": 768,
+   "total_tokens": 1356,
+   "cost": 0.00061137,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00061137,
+    "upstream_inference_prompt_cost": 0.00011025,
+    "upstream_inference_completions_cost": 0.00050112
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "ids": [
+   "rD-m7LVQpqrOTCUJrli43lYpezYxajfkcNd3xvGhT8",
+   "W5bQLbTh3EhMd-Lvseyl28uQhkVVCdPSdhcRXJO7hcg",
+   "Amw1oRpr8pdS67aC_9wjJOQomP1IqPvqtE7c0Mf9L70",
+   "networkx/algorithms/tests/test_dominance.py",
+   "transformers/models/xmod/configuration_xmod.py",
+   "networkx/algorithms/broadcasting.py",
+   "256",
+   "668",
+   "9811",
+   "9180",
+   "4974"
+  ],
+  "codename": "willow",
+  "mascot": "jackal",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 554,
+   "completion_tokens": 651,
+   "total_tokens": 1205,
+   "cost": 0.0005286525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005286525,
+    "upstream_inference_prompt_cost": 0.000103875,
+    "upstream_inference_completions_cost": 0.0004247775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "ids": [
+   "9_8jye1rTAbRVMm5H2gP9kWvk_B2Ux1OR_LU-py_1YY",
+   "zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg",
+   "d1bsOajKVNx-_Gnop0OY2J75ZjyokMehV1hQCTzHEtg",
+   "torch/include/ATen/ops/rrelu_with_noise_native.h",
+   "torch/optim/swa_utils.py",
+   "annotated_types-0.7.0.dist-info/INSTALLER",
+   "sqlean.py",
+   "2114",
+   "19259",
+   "gcp cdn",
+   "gs cdn pc app",
+   "gs cdn mobile web",
+   "gs cdn pc web"
+  ],
+  "codename": "thistle",
+  "mascot": "badger",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 637,
+   "completion_tokens": 642,
+   "total_tokens": 1279,
+   "cost": 0.0005383425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005383425,
+    "upstream_inference_prompt_cost": 0.0001194375,
+    "upstream_inference_completions_cost": 0.000418905
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "ids": [
+   "fontTools.misc.visitor",
+   "fontTools.ttLib.ttVisitor",
+   "torch/include/ATen/ops/slow_conv3d_forward.h",
+   "U-yBFsodSZEP9Psmvjugcz2iLB8FfGgcR2IZYz8j0HM",
+   "pandas/tests/tslibs/test_ccalendar.py",
+   "8wreW2d8xw2znrIo9Yy02NnqziDz9bb3wnlXqJUtaE4",
+   "torch/distributed/checkpoint/_fsspec_filesystem.py",
+   "FSzE-iL-1HRkdCqFVkmEdrcwTv2L8xhoXXDQbpMAufI",
+   "6750",
+   "1921",
+   "5583",
+   "doc/",
+   "yt dlp"
+  ],
+  "codename": "prism",
+  "mascot": "magpie",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 599,
+   "completion_tokens": 829,
+   "total_tokens": 1428,
+   "cost": 0.000653235,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000653235,
+    "upstream_inference_prompt_cost": 0.0001123125,
+    "upstream_inference_completions_cost": 0.0005409225
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "ids": [
+   "xVExX0wg49UPI2KhFqoTWYLVRwquW2gAua130v95Ais",
+   "_JdPWp-bKk5rX5Kl_Rcyfc_raJGUKB1uoELuKQt6LTw",
+   "tNS2WO5CTz2Ks24pGjnS6uoOY6APK-_TkI8hGVqJk38",
+   "torch/include/ATen/ops/grid_sampler_3d_backward_ops.h",
+   "torch/include/ATen/ops/_use_cudnn_ctc_loss_cuda_dispatch.h",
+   "torch/_dynamo/variables/base.py",
+   "2961",
+   "1018",
+   "24396",
+   "245"
+  ],
+  "codename": "mosaic",
+  "mascot": "badger",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 654,
+   "completion_tokens": 741,
+   "total_tokens": 1395,
+   "cost": 0.0006061275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006061275,
+    "upstream_inference_prompt_cost": 0.000122625,
+    "upstream_inference_completions_cost": 0.0004835025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "ids": [
+   "B6XpgZ9ye0mGrSgpx6KaYyDUJXX3IOsk1xt_71c6AoY",
+   "-y0TYZssFcUYRDiGlnON4Pia9S8bpWElSX03-J6rbCY",
+   "TY4ecftqnym5viYInnb59zGPPFXdeSGQwi--xTz6Pvo",
+   "sympy-1.14.0.dist-info/licenses/LICENSE",
+   "torch/include/ATen/ops/convolution_overrideable_native.h",
+   "sympy/codegen/abstract_nodes.py",
+   "meta.py",
+   "7885",
+   "1037",
+   "490",
+   "513",
+   "500",
+   "600",
+   "700"
+  ],
+  "codename": "sparrow",
+  "mascot": "newt",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 587,
+   "completion_tokens": 760,
+   "total_tokens": 1347,
+   "cost": 0.0006059625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006059625,
+    "upstream_inference_prompt_cost": 0.0001100625,
+    "upstream_inference_completions_cost": 0.0004959
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "ids": [
+   "Bn3JWf6ADVpaWrOcVLU4F6S1lCTzFDZ2fXNhwgs7pAk",
+   "Hu1aY9NI7-EgPTCQY78ppx2REkYU7aKleuCdJV9xUhk",
+   "hSp3_b3I1TPlnd9aupwjGj9nJmG3D5nkMZJo4x-kx9Y",
+   "transformers/video_processing_utils.py",
+   "torch/include/torch/headeronly/util/complex.h",
+   "torch/include/ATen/ops/replication_pad2d_meta.h",
+   "41231",
+   "18077",
+   "609",
+   "245",
+   "3.12"
+  ],
+  "codename": "falcon",
+  "mascot": "lemur",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 536,
+   "completion_tokens": 986,
+   "total_tokens": 1522,
+   "cost": 0.000743865,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000743865,
+    "upstream_inference_prompt_cost": 0.0001005,
+    "upstream_inference_completions_cost": 0.000643365
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "ids": [
+   "miFdVpNKfutbkpYiIOzG9kVNUm5GTk-_nnmQqUhVDZs",
+   "kh0yWikPYFulF-ijwFaJiDKB8uCcry3e0-tH0nvPaGE",
+   "ImtESbJdJRURiK0WB1Y9czNE5tV8aUwP1HuInmwsqDs",
+   "sympy/core/random.py",
+   "torch/ao/nn/intrinsic/quantized/modules/bn_relu.py",
+   "torch/include/ATen/ops/_sparse_compressed_tensor_unsafe.h",
+   "devscripts/cli",
+   "api.py",
+   "6647",
+   "3285",
+   "5594",
+   "@anton-malakhov",
+   "2.1",
+   "2.6",
+   "0.4.1",
+   "3.9"
+  ],
+  "codename": "marigold",
+  "mascot": "gecko",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 650,
+   "completion_tokens": 829,
+   "total_tokens": 1479,
+   "cost": 0.0006627975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006627975,
+    "upstream_inference_prompt_cost": 0.000121875,
+    "upstream_inference_completions_cost": 0.0005409225
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "ids": [
+   "kWAlnqyGBCcbUsabLZgYO9dLJiHJTHgetOISL_-LoWk",
+   "torch/include/ATen/ops/sym_is_contiguous.h",
+   "h509TdEcpb5-44JonaU3ex2TM15GVBLjM9CNCPwnTTs",
+   "pip/_vendor/resolvelib/__init__.py",
+   "ZmJFbQO934Fs8wxcpO0gg5fU0d8yEFlkkFD3KMUQbAE",
+   "pyasn1_modules/rfc7508.py",
+   "2182",
+   "537",
+   "818",
+   "395"
+  ],
+  "codename": "ember",
+  "mascot": "badger",
+  "server": "lumen",
+  "usage": {
+   "prompt_tokens": 569,
+   "completion_tokens": 669,
+   "total_tokens": 1238,
+   "cost": 0.00054321,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00054321,
+    "upstream_inference_prompt_cost": 0.0001066875,
+    "upstream_inference_completions_cost": 0.0004365225
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "ids": [
+   "nZ4opNgUHak2rjnmXRKsynHR_aOkka4YX2xMABhvUVk",
+   "4FWM-FvTIvBj-lY46iES68J1XEUpvbejwst1Twb80YU",
+   "G91sEiEiDE_omnn3Gt6SIpT-j3Eqgzf8oEbgLebM-e4",
+   "torch/include/kineto/IActivityProfiler.h",
+   "torch/include/torch/csrc/jit/runtime/static/passes.h",
+   "torch/include/ATen/ops/gelu_native.h",
+   "5110",
+   "3684",
+   "1571"
+  ],
+  "codename": "glacier",
+  "mascot": "magpie",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 580,
+   "completion_tokens": 1033,
+   "total_tokens": 1613,
+   "cost": 0.0007827825,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007827825,
+    "upstream_inference_prompt_cost": 0.00010875,
+    "upstream_inference_completions_cost": 0.0006740325
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "ids": [
+   "A4XGuSVpZUfWvd-ZJPkcGhISsBSNtSgUCNU2gN0mZos",
+   "transformers/models/wav2vec2/configuration_wav2vec2.py",
+   "20100",
+   "GCx2h0v6DbmpkC0XDJkRzbZWcUqwwHEuVDoAeX7FrAI",
+   "sklearn/externals/array_api_extra/_lib/__init__.py",
+   "91",
+   "numpy/f2py/common_rules.pyi",
+   "1uzTkcwiin6dVBbWUiOVB1ZppjKBHoRHG_Byvw-1UbI",
+   "323"
+  ],
+  "codename": "harbor",
+  "mascot": "lynx",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 572,
+   "completion_tokens": 747,
+   "total_tokens": 1319,
+   "cost": 0.0005946675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005946675,
+    "upstream_inference_prompt_cost": 0.00010725,
+    "upstream_inference_completions_cost": 0.0004874175
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "ids": [
+   "KyQrfUWpaHR_DtvHOlWigkZz0NwOBzmBsRoyzXPzXA8",
+   "I4_EhghHQ3UzU0heTawT6MEsMR5kPOlHVG-dBcTbtlo",
+   "Edu9SwVMQEXJZ5ogU5cyW7VLcwXJdhdf-EtxxmxdkIs",
+   "devscripts/install deps.py",
+   "transformers/models/phi3/modeling_phi3.py",
+   "torch/include/ATen/ops/linalg_eigvals_native.h",
+   "matplotlib/mpl-data/images/subplots_large.png",
+   "23280",
+   "570",
+   "662",
+   "0.10.0",
+   "121",
+   "@bbc2"
+  ],
+  "codename": "saffron",
+  "mascot": "newt",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 571,
+   "completion_tokens": 625,
+   "total_tokens": 1196,
+   "cost": 0.000514875,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000514875,
+    "upstream_inference_prompt_cost": 0.0001070625,
+    "upstream_inference_completions_cost": 0.0004078125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "ids": [
+   "bQ1Bv-FwrGx9wkjJpj4lTQ-0WmDVCoJX0K-SxuJJuIc",
+   "_CG9kvla4-32pqHVYzoXJDPfC9yySJzEJCAKZQC-2Io",
+   "TqJiyyJrnCUtE7ERK2ttQiQARlsaLV4I9E9fvF4lhXo",
+   "proto/marshal/rules/field_mask.py",
+   "yt_dlp/extractor/murrtube.py",
+   "charset_normalizer-3.4.2.dist-info/licenses/LICENSE",
+   "1071",
+   "1182",
+   "5868",
+   "3.4.2"
+  ],
+  "codename": "falcon",
+  "mascot": "marten",
+  "server": "nimbus",
+  "usage": {
+   "prompt_tokens": 651,
+   "completion_tokens": 739,
+   "total_tokens": 1390,
+   "cost": 0.00060426,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00060426,
+    "upstream_inference_prompt_cost": 0.0001220625,
+    "upstream_inference_completions_cost": 0.0004821975
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "ids": [
+   "4geWLr6mkFhSEYiXFXpkB8NegS05EXhv2fYHTpajNyg",
+   "7RL5U-hsGt3HQZ5SuWn8iZY_L166EYswBvaQXFRkzRc",
+   "udhvxGfEHxhS3ecQBuwQ65W9ezVQIaVBw8JOmfqH_oE",
+   "3869",
+   "1003",
+   "6301",
+   "torch/ao/quantization/backend_config/x86.py",
+   "transformers/models/rt_detr_v2/__init__.py",
+   "scipy/linalg/_misc.py"
+  ],
+  "codename": "sparrow",
+  "mascot": "lemur",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 562,
+   "completion_tokens": 854,
+   "total_tokens": 1416,
+   "cost": 0.00066261,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00066261,
+    "upstream_inference_prompt_cost": 0.000105375,
+    "upstream_inference_completions_cost": 0.000557235
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "ids": [
+   "jxnQ3msYkVaokJVWqHNnAVdVtDdidrTHDeyk50gwqaQ",
+   "9cKFTFPCvwmKIygTUvrvOq1iWnFYme9Shniiv2QbC74",
+   "GxZRWnjanuhFHk8kiXmOWHtUz8oB88tu_F3K7BqYY00",
+   "urllib3/util/ssl_.py",
+   "matplotlib/layout_engine.pyi",
+   "torch/include/ATen/ops/fft_ihfft_ops.h",
+   "19786",
+   "1788",
+   "2141",
+   "520",
+   "509",
+   "498",
+   "407",
+   "537"
+  ],
+  "codename": "russet",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 592,
+   "completion_tokens": 1001,
+   "total_tokens": 1593,
+   "cost": 0.0007641525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007641525,
+    "upstream_inference_prompt_cost": 0.000111,
+    "upstream_inference_completions_cost": 0.0006531525
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "ids": [
+   "lEwzpL0fGxDGkojZ4_WoBAtCcA7aq2-S-i0Z0QrnTXg",
+   "y_WE4jNxliYos_SiICl_miGIya2IJlu71rXzwvQw2qk",
+   "T4aa5xXav9ntfw5YmzPiq_YUkh12wGk40XyBLQPCEzU",
+   "sympy/physics/quantum/tests/test_represent.py",
+   "sklearn/neighbors/tests/test_quad_tree.py",
+   "numpy/lib/recfunctions.py",
+   "5177",
+   "4856",
+   "59539"
+  ],
+  "codename": "pebble",
+  "mascot": "lemur",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 636,
+   "completion_tokens": 726,
+   "total_tokens": 1362,
+   "cost": 0.000592965,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000592965,
+    "upstream_inference_prompt_cost": 0.00011925,
+    "upstream_inference_completions_cost": 0.000473715
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "ids": [
+   "6B49 ACBA DCF6 BD1C A206 67AB CD54 FCE3 D964 BEFB",
+   "_yV0LaqybuCnXCpY0s801bTgiazwHFj9GUtHSGAQ3Hs",
+   "RzLy6QQCdl9784aFhb2EX9EKGCJjg0P3PilGdeXXcx8",
+   "DH8l6_U3NJ-eu2tmTGuHQt4-joNBcJ2IT9H1WIpghhU",
+   "yt_dlp/extractor/rockstargames.py",
+   "idna/compat.py",
+   "yt_dlp/extractor/turner.py",
+   "2160",
+   "316",
+   "11459"
+  ],
+  "codename": "canyon",
+  "mascot": "quokka",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 573,
+   "completion_tokens": 896,
+   "total_tokens": 1469,
+   "cost": 0.0006920775,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006920775,
+    "upstream_inference_prompt_cost": 0.0001074375,
+    "upstream_inference_completions_cost": 0.00058464
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "ids": [
+   "olfyuk_DPbflNkJ4wBWetXQ17c74x3DB501degUv7DY",
+   "Ut6IqfjuA-kwwo6HBOYAgFjXXC_h7YV_3HyDsKM72dk",
+   "v_Qvq0uBuHpE43oIM64g9kTZcy8BD9oHhOR_ketIyIg",
+   "setuptools/_vendor/packaging/version.py",
+   "numpy/matrixlib/__init__.py",
+   "transformers/models/roformer/tokenization_utils.py",
+   "16676",
+   "243",
+   "2625",
+   "260",
+   "bbc2"
+  ],
+  "codename": "thistle",
+  "mascot": "quokka",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 577,
+   "completion_tokens": 708,
+   "total_tokens": 1285,
+   "cost": 0.0005701575,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005701575,
+    "upstream_inference_prompt_cost": 0.0001081875,
+    "upstream_inference_completions_cost": 0.00046197
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "ids": [
+   "hziSCLDIVIoTWPV56fED5gI1pErOdyLOQ3Z_E_Nz9As",
+   "Bnu2gHdA84UXMLtgb4LXbHI5TYw-kKljlsJ7dkJ8KfI",
+   "VvQDTrlWDqJ1YbnkV1NTOPKswQz9Wq67yFDbNzYaPtY",
+   "13150",
+   "109212",
+   "653536",
+   "networkx/algorithms/operators/binary.py",
+   "pyasn1/type/univ.py",
+   "PIL/.dylibs/libjpeg.62.4.0.dylib"
+  ],
+  "codename": "meadow",
+  "mascot": "walrus",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 655,
+   "completion_tokens": 700,
+   "total_tokens": 1355,
+   "cost": 0.0005795625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005795625,
+    "upstream_inference_prompt_cost": 0.0001228125,
+    "upstream_inference_completions_cost": 0.00045675
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "ids": [
+   "ih16WY1IZHT3oCnqPVuh3mqcb5Qn2V_VpeILGKYytxQ",
+   "Q9iTXCMsbWTj4vEbt3VWDX4DPpxVdjK3fHcAb_HG4JM",
+   "50zBQ_50lV9YGRGevBUFQ4DOwisU47pUV_PfiBG9Cg4",
+   "pandas/core/ops/invalid.py",
+   "pandas/tests/arrays/test_datetimes.py",
+   "starlette/background.py",
+   "1706",
+   "29809",
+   "1257"
+  ],
+  "codename": "cobalt",
+  "mascot": "otter",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 624,
+   "completion_tokens": 737,
+   "total_tokens": 1361,
+   "cost": 0.0005978925,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005978925,
+    "upstream_inference_prompt_cost": 0.000117,
+    "upstream_inference_completions_cost": 0.0004808925
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "ids": [
+   "u9N4Dxo35mPmxF6hQWRPCjOqVHkLF8HxCgpgvgxueuQ",
+   "S2RwrQkWVKojaNfpyLF6e5oKwmBYurvdO97-qZ6juh0",
+   "pgzWiWR5smQ3rwud2dhnLn6dpkD5lju_moElQp_zhoE",
+   "flake8/_compat.py",
+   "torch/include/ATen/native/cuda/Sort.h",
+   "scipy/cluster/__init__.py"
+  ],
+  "codename": "prism",
+  "mascot": "jackal",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 612,
+   "completion_tokens": 719,
+   "total_tokens": 1331,
+   "cost": 0.0005838975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005838975,
+    "upstream_inference_prompt_cost": 0.00011475,
+    "upstream_inference_completions_cost": 0.0004691475
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

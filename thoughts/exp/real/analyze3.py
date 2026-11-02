@@ -9,7 +9,7 @@ HERE = Path(__file__).parent
 import sys
 RUNS = sys.argv[1:] or ["run3_s5", "run3_s6", "run3_real"]
 READERS = {"claude": "pred_r*.json", "minimax": "pred_minimax.json", "minimax_unr": "pred_minimax_unr.json"}
-ARM_NAME = {"A": "A uniform", "C": "C hazard", "E": "CD hazard+residual anchors", "D": "D anchors", "P": "C' prose floor", "L": "L C+prose leading", "M": "M mixed wrap"}
+ARM_NAME = {"A": "A uniform", "C": "C hazard", "E": "CD hazard+residual anchors", "D": "D anchors", "P": "C' prose floor", "L": "L C+prose leading", "M": "M mixed wrap", "T": "T text only"}
 PROBES = ("codename", "mascot", "server")
 
 def clean(s): return s.strip().strip(".,;()`'\"")
@@ -60,6 +60,14 @@ def load(run, reader):
         billed = p.get("usage", {}).get("prompt_tokens")
         rows[m["item"]][m["arm"]] = score_item(p, gt[m["item"]]) | {"cost": m["vtok"] + m.get("anchor_tok", 0),
                                                                      "billed": billed if billed is not None else float("nan")}
+    tf = d / READERS[reader].replace("pred_", "predtext_")  # E1 text-only baseline -> arm T
+    if "*" not in READERS[reader] and tf.exists():
+        for k, p in json.loads(tf.read_text()).items():
+            it = int(k[2:-4])
+            if it not in gt or failed_read(p) == "drop": continue
+            if failed_read(p) == "zero": p = {"ids": []}
+            b = p.get("usage", {}).get("prompt_tokens")
+            rows[it]["T"] = score_item(p, gt[it]) | {"cost": b or round(len(gt[it]["text"]) / 4), "billed": b or float("nan")}
     return rows
 
 def boot(d, R, n=10000):
@@ -71,7 +79,7 @@ for run in RUNS:
     for reader in readers_for(run):
         rows = load(run, reader)
         if not rows: continue
-        arms = [a for a in "ACMLPED" if any(a in v for v in rows.values())]
+        arms = [a for a in "TACMLPED" if any(a in v for v in rows.values())]
         print(f"\n=== {run} · {reader}  (items {len(rows)})")
         tab = {}
         for a in arms:
@@ -79,7 +87,7 @@ for run in RUNS:
             tab[a] = {k: round(sum(e[k] for e in v) / len(v), 3) for k in ("ids", "silent", "abstain", "prose", "cost", "billed")} | {"n": len(v)}
             t = tab[a]; print(f"  {ARM_NAME[a]:28s} ids={t['ids']:.3f} silent={t['silent']:.3f} abstain={t['abstain']:.3f} prose={t['prose']:.3f} cost={t['cost']:.0f} billed={t['billed']:.0f}")
         diffs = {}
-        for a, b in [("C", "A"), ("P", "A"), ("C", "P"), ("L", "A"), ("L", "C"), ("M", "A"), ("M", "C"), ("E", "A"), ("E", "C"), ("D", "E"), ("D", "C")]:
+        for a, b in [("C", "A"), ("A", "T"), ("C", "T"), ("M", "T"), ("P", "A"), ("C", "P"), ("L", "A"), ("L", "C"), ("M", "A"), ("M", "C"), ("E", "A"), ("E", "C"), ("D", "E"), ("D", "C")]:
             pairs = [x for x in rows.values() if a in x and b in x]
             if len(pairs) < 5: continue
             for k in ("ids", "prose"):

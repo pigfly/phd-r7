@@ -50,10 +50,18 @@ def prompt_for(img: Path):
     q = img.with_suffix(".prompt")
     return q.read_text() if q.exists() else PROMPT + sidecar(img)
 
+def pages(img: Path):
+    """multi-page items: img.png, img.p1.png, img.p2.png ... (all sent in one call, in order)"""
+    extra = [q for q in img.parent.glob(img.stem + ".p*.png") if PAGE.search(q.name)]
+    return [img] + sorted(extra, key=lambda q: int(PAGE.search(q.name).group(1)))
+
+PAGE = re.compile(r"\.p(\d+)\.png$")
+def main_images(d: Path): return sorted(q for q in d.glob("*.png") if not PAGE.search(q.name))
+
 def read(img: Path, tries=3):
-    b = base64.b64encode(img.read_bytes()).decode()
-    msgs = [{"role": "user", "content": [{"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b}},
-                                         {"type": "text", "text": prompt_for(img)}]}]
+    blocks = [{"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": base64.b64encode(q.read_bytes()).decode()}}
+              for q in pages(img)]
+    msgs = [{"role": "user", "content": blocks + [{"type": "text", "text": prompt_for(img)}]}]
     with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f: json.dump(msgs, f)
     for _ in range(tries):
         r = subprocess.run(["mmx", "text", "chat", "--model", MODEL, "--messages-file", f.name, "--temperature", "0.01",
@@ -64,7 +72,7 @@ def read(img: Path, tries=3):
 
 def main():
   for run in sys.argv[1:]:
-    imgs = sorted((Path(__file__).parent / run / "img").glob("*.png"))
+    imgs = main_images(Path(__file__).parent / run / "img")
     if ARMS:
         man = {m["name"]: m["arm"] for m in json.loads((Path(__file__).parent / run / "manifest.json").read_text())}
         imgs = [p for p in imgs if man[p.stem] in ARMS]

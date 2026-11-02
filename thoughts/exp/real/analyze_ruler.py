@@ -7,7 +7,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 HERE = Path(__file__).parent
-ARMS = "TACMSL"
+ARMS = "TACMSLUZK"
 
 EXC = ("URLError", "HTTPError", "TimeoutError", "Remote", "IncompleteRead", "ConnectionReset", "JSONDecodeError", "KeyError")
 def failed_read(p):
@@ -31,7 +31,7 @@ def boot(d, R, n=10000):
 
 if __name__ == "__main__":
     R = random.Random(0); res = {}; drops = defaultdict(list)
-    for run in sorted(HERE.glob("ruler*_s*")):
+    for run in sorted([*HERE.glob("ruler*_s*"), *HERE.glob("rlong_*"), *HERE.glob("rbase_*")]):
         if not (run / "gt.json").exists(): continue
         gt = json.loads((run / "gt.json").read_text()); items = {it["item"]: it for it in gt["items"]}
         man = json.loads((run / "manifest.json").read_text())
@@ -57,11 +57,12 @@ if __name__ == "__main__":
             tab = {a: {k: round(sum(r[a][k] for r in rows.values() if a in r) / max(1, sum(a in r for r in rows.values())), 3)
                        for k in ("recall", "silent", "vtok", "billed")} for a in ARMS}
             diffs = {}
-            for a, b in (("M", "A"), ("C", "A"), ("M", "C"), ("M", "T"), ("A", "T"), ("S", "A"), ("L", "A"), ("S", "M"), ("L", "M"), ("L", "S")):
+            for a, b in (("M", "A"), ("C", "A"), ("M", "C"), ("M", "T"), ("A", "T"), ("S", "A"), ("L", "A"), ("S", "M"), ("L", "M"), ("L", "S"),
+                         ("U", "A"), ("Z", "A"), ("K", "A"), ("S", "U"), ("S", "Z"), ("S", "K"), ("S", "T")):
                 pr = [r for r in rows.values() if a in r and b in r]
                 if len(pr) >= 5: diffs[f"{a}-{b}"] = boot([r[a]["recall"] - r[b]["recall"] for r in pr], R)
             res[f"{run.name}|{reader}"] = dict(arms=tab, diffs=diffs, n=len(rows))
             print(f"{run.name:22s} {reader:28s} " + " ".join(f"{a}={tab[a]['recall']:.2f}/{tab[a]['silent']:.2f}/{tab[a]['billed']:.0f}" for a in ARMS if tab[a]["vtok"] or tab[a]["recall"])
-                  + "".join(f"  {k} " + "%+.2f [%+.2f,%+.2f]" % tuple(diffs[k]) for k in ("M-A", "L-A", "L-M") if k in diffs))
+                  + "".join(f"  {k} " + "%+.2f [%+.2f,%+.2f]" % tuple(diffs[k]) for k in ("M-A", "S-A", "L-M", "S-U", "S-Z", "S-K") if k in diffs))
     if drops: print("failed reads (arm = dropped refusal/transport error; arm* = unparseable output scored 0):", dict(drops))
     (HERE / "analysis_ruler.json").write_text(json.dumps(res, indent=1))

@@ -6,7 +6,7 @@ import base64, json, os, ssl, sys, time, urllib.request
 import certifi
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from run_minimax import parse, prompt_for, raw
+from run_minimax import parse, prompt_for, raw, pages, main_images
 
 HERE = Path(__file__).parent
 KEY = next(l.split("=", 1)[1].strip().strip('"') for l in (HERE.parents[2] / ".env").read_text().splitlines()
@@ -16,11 +16,11 @@ CTX = ssl.create_default_context(cafile=certifi.where())
 LIMIT = int(os.environ.get("LIMIT", 0)); WORKERS = int(os.environ.get("WORKERS", 8))
 
 def call(img: Path):
-    b = base64.b64encode(img.read_bytes()).decode()
     body = {"model": MODEL, "temperature": 0, "max_tokens": int(os.environ.get("MAXTOK", 2000)),
             **({"reasoning": {"effort": os.environ["EFFORT"]}} if os.environ.get("EFFORT") else {}),
             "messages": [{"role": "user", "content": [
-                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b}"}},
+                *[{"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(q.read_bytes()).decode()}}
+                  for q in pages(img)],
                 {"type": "text", "text": prompt_for(img)}]}]}
     req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", json.dumps(body).encode(),
                                  {"Authorization": f"Bearer {KEY}", "Content-Type": "application/json"})
@@ -40,7 +40,7 @@ def read(img: Path, tries=4):
 
 if __name__ == "__main__":
   for run in sys.argv[1:]:
-    imgs = sorted((HERE / run / "img").glob("*.png"))
+    imgs = main_images(HERE / run / "img")
     if LIMIT:
         for i in imgs[:LIMIT]: print(MODEL, read(i))
         continue

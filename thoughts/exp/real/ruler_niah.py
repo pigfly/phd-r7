@@ -12,6 +12,8 @@ TASKS = {  # RULER synthetic.yaml
     "niah_multikey_1": dict(hay="essay", k="words", v="numbers", nk=4, nv=1, nq=1),
     "niah_multivalue": dict(hay="essay", k="words", v="numbers", nk=1, nv=4, nq=1),
     "niah_multikey_3": dict(hay="needle", k="uuids", v="uuids", nk=1, nv=1, nq=1),
+    # hazard-density sweep (ours): essay haystack with --nk word->uuid needles, one queried key
+    "niah_density":    dict(hay="essay", k="words", v="uuids", nk=1, nv=1, nq=1),
 }
 NEEDLE = "One of the special magic {tv} for {key} is: {value}."
 TEMPLATE = ("Some special magic {tv} are hidden within the following text. Make sure to memorize it. I will quiz you about "
@@ -36,7 +38,7 @@ def make(i, cfg, R, sents, chars):
         needles += [NEEDLE.format(tv=cfg["v"], key=k, value=x) for x in v]
     R.shuffle(needles)
     if cfg["hay"] == "essay":
-        start = R.randrange(len(sents) - 400); body, n = [], 0
+        start = R.randrange(max(1, len(sents) - chars // 40)); body, n = [], 0
         for s in sents[start:]:
             if n + len(s) > chars - sum(len(x) + 1 for x in needles): break
             body.append(s); n += len(s) + 1
@@ -56,8 +58,12 @@ def main():
     ap.add_argument("--task", required=True); ap.add_argument("--size", type=int, default=6)
     ap.add_argument("--n", type=int, default=25); ap.add_argument("--chars", type=int, default=16000)
     ap.add_argument("--seed", type=int, default=0); ap.add_argument("--out", required=True)
-    ap.add_argument("--arms", default="ACM", help="A uniform, C hazard (word wrap), M global, S strict-detector M, L M-local")
-    a = ap.parse_args(); cfg = TASKS[a.task]; R = random.Random(a.seed); M.REAL = False
+    ap.add_argument("--nk", type=int, default=0, help="override the number of needle keys (density sweep)")
+    ap.add_argument("--arms", default="ACM", help="A uniform, C hazard (word wrap), M global, S strict-detector M (default method), "
+                    "L M-local, U best uniform font/size, Z render-large-then-downsample, K anchors (A image + verbatim sidecar), "
+                    "X = S image + anchors")
+    a = ap.parse_args(); cfg = dict(TASKS[a.task]); R = random.Random(a.seed); M.REAL = False
+    if a.nk: cfg["nk"] = a.nk
     hay = json.loads((HERE / "ruler" / "pg_essays.json").read_text())["text"]
     sents = [s for s in re.split(r"(?<=[.!?])\s+", hay) if 10 < len(s) < 400]
     out = HERE / a.out; (out / "img").mkdir(parents=True, exist_ok=True)
@@ -65,19 +71,30 @@ def main():
     for it in items:
         bud = M.vtokens(*M.render(M.units_uniform(it["text"], a.size)).size)
         for arm in a.arms:
+            anchors = None
             if arm == "C": im, lo, hi = M.arm_c(it["text"], bud); ex = 0
+            elif arm in "KX":  # anchors: verbatim sidecar of (strict-)flagged strings on the A image (K) or the S image (X)
+                im, lo, hi, ex = M.long_arm("A" if arm == "K" else "S", it["text"], bud, a.size); M.STRICT = True
+                anchors = [w.strip(".,;:()[]\"'") for w in M.words(it["text"]) if M.flagged(w)]; M.STRICT = False
             else: im, lo, hi, ex = M.long_arm(arm, it["text"], bud, a.size)
-            man.append(dict(item=it["item"], arm=arm, s_lo=lo, s_hi=hi, extra=ex, vtok=M.vtokens(*im.size), wh=im.size, anchor_tok=0, _im=im))
+            pages = M.paginate(im)
+            man.append(dict(item=it["item"], arm=arm, s_lo=lo, s_hi=hi, extra=ex, vtok=M.vtok_pages(pages), n_pages=len(pages),
+                            wh=im.size, anchor_tok=round(sum(len(t) / 2 + 3 for t in anchors)) if anchors else 0,
+                            anchors=anchors, _im=pages))
     R.shuffle(man)
     for k, m in enumerate(man):
-        m["name"] = f"img{k:03d}"; m.pop("_im").save(out / "img" / f"{m['name']}.png")
-        (out / "img" / f"{m['name']}.prompt").write_text(items[m["item"]]["prompt"])
+        m["name"] = f"img{k:03d}"
+        for j, pg in enumerate(m.pop("_im")): pg.save(out / "img" / (f"{m['name']}.png" if j == 0 else f"{m['name']}.p{j}.png"))
+        q = items[m["item"]]["prompt"]
+        if m.get("anchors"): q += "\n\nExact strings copied verbatim from the text block in the image:\n" + "\n".join(m["anchors"])
+        (out / "img" / f"{m['name']}.prompt").write_text(q)
     (out / "gt.json").write_text(json.dumps(dict(task=a.task, size=a.size, items=items), indent=1))
     (out / "manifest.json").write_text(json.dumps(man, indent=1))
     from collections import Counter
     print(a.out, len(man), "images; A vtok", sum(m["vtok"] for m in man if m["arm"] == "A") / a.n,
           *[(x, Counter((m["s_lo"], m["s_hi"], m["extra"]) for m in man if m["arm"] == x).most_common(4)) for x in a.arms if x != "A"],
-          "max h", max(m["wh"][1] for m in man))
+          "max h", max(m["wh"][1] for m in man), "pages", Counter(m["n_pages"] for m in man),
+          "vtok", {x: round(sum(m["vtok"] for m in man if m["arm"] == x) / a.n) for x in a.arms})
 
 if __name__ == "__main__":
     main()

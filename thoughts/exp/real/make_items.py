@@ -31,8 +31,9 @@ ANCHOR_BELOW = 10  # CD arm: anchor flagged spans still rendered below this size
 
 _fonts = {}
 def font(s):
-    if s not in _fonts: _fonts[s] = ImageFont.truetype(FONT_PATH, s)
-    return _fonts[s]
+    k = (FONT_PATH, s)
+    if k not in _fonts: _fonts[k] = ImageFont.truetype(FONT_PATH, s)
+    return _fonts[k]
 
 def vtokens(w, h): return math.ceil(w / 28) * math.ceil(h / 28)
 
@@ -173,20 +174,59 @@ def units_mixed(text, s, s_hi):
 def units_sub(text, s, s_hi):
     return [(p, s_hi if h else s) for t in words(text) for p, h in (pieces(t) if flagged(t) else [(t, False)])]
 
-def arm_c(text, budget, units=units_word, lead=0):
+def arm_c(text, budget, units=units_word, lead=0, lo_max=None):
     for s_hi in range(S_HI, 5, -1):
-        for s_lo in range(s_hi, 4, -1):
+        for s_lo in range(min(s_hi, lo_max or s_hi), 4, -1):  # prose larger than the uniform size never fits
             im = render(units(text, s_lo, s_hi), lead)
             if vtokens(*im.size) <= budget: return im, s_lo, s_hi
     im = render(units(text, 5, 5), lead); return im, 5, 5
 
 
-def arm_m(text, budget):
+def arm_m(text, budget, lo_max=None):
     """M: prose hard char-wrapped (as A), flagged tokens whole + enlarged; if there is no row slack,
     prose-only lines lose their 1px extra leading. Returns (im, s_lo, s_hi, lead)."""
-    im, lo, hi = arm_c(text, budget, units_mixed)
+    im, lo, hi = arm_c(text, budget, units_mixed, lo_max=lo_max)
     if hi > lo: return im, lo, hi, 0
-    im, lo, hi = arm_c(text, budget, units_mixed, lead=-1); return im, lo, hi, -1
+    im, lo, hi = arm_c(text, budget, units_mixed, lead=-1, lo_max=lo_max); return im, lo, hi, -1
+
+
+UNIFORM_FONTS = ["/System/Library/Fonts/Menlo.ttc", "/System/Library/Fonts/Supplemental/Arial.ttf",
+                 "/System/Library/Fonts/Supplemental/Arial Narrow.ttf"]
+def arm_u(text, budget):
+    """U (best uniform config, Glyph-style config search at matched budget): over fonts, the largest uniform
+    char-wrapped size whose image fits the budget. Returns (im, size, font index)."""
+    global FONT_PATH
+    old, best = FONT_PATH, None
+    try:
+        for fi, fp in enumerate(UNIFORM_FONTS):
+            FONT_PATH = fp
+            for sz in range(14, 4, -1):
+                im = render(units_uniform(text, sz))
+                if vtokens(*im.size) <= budget:
+                    if best is None or sz > best[1]: best = (im, sz, fi)
+                    break
+    finally:
+        FONT_PATH = old
+    return best
+
+def arm_z(text, budget, s_big=10):
+    """Z (render large, then downsample to the budget; DeepSeek-OCR-style resolution compression)."""
+    big = render(units_uniform(text, s_big)); f = 1.0
+    while True:
+        w, h = max(1, round(big.width * f)), max(1, round(big.height * f))
+        if vtokens(w, h) <= budget: return big.resize((w, h), Image.LANCZOS), f
+        f *= 0.98
+
+def paginate(im, page_h=2016):
+    """split a tall image into pages of height <= page_h, cutting only at blank pixel rows"""
+    if im.height <= page_h: return [im]
+    px = im.load(); blank = [all(px[x, y] == 255 for x in range(0, im.width, 2)) for y in range(im.height)]
+    pages, top = [], 0
+    while im.height - top > page_h:
+        cut = next((y for y in range(top + page_h, top + page_h // 2, -1) if blank[y]), top + page_h)
+        pages.append(im.crop((0, top, im.width, cut))); top = cut
+    pages.append(im.crop((0, top, im.width, im.height))); return pages
+def vtok_pages(pages): return sum(vtokens(*p.size) for p in pages)
 
 
 KS = [0, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
@@ -217,13 +257,16 @@ def arm_mlocal(text, budget, s_a, s_min_hi=10):
 
 def long_arm(code, text, budget, s_a):
     """Long-text arms -> (im, s_lo, s_hi, extra). A uniform; M global (current detector); S = M with the strict
-    detector; L = M-local with the strict detector. Restores STRICT afterwards."""
+    detector; L = M-local with the strict detector; U best uniform font/size; Z render-large-then-downsample.
+    (K anchors = A image + text sidecar, handled by the generators.) Restores STRICT afterwards."""
     global STRICT
     old = STRICT
     try:
         if code == "A": return render(units_uniform(text, s_a)), s_a, s_a, 0
+        if code == "U": im, sz, fi = arm_u(text, budget); return im, sz, sz, fi
+        if code == "Z": im, f = arm_z(text, budget); return im, 10, 10, round(f, 3)
         STRICT = code in "SL"
-        return arm_mlocal(text, budget, s_a) if code == "L" else arm_m(text, budget)
+        return arm_mlocal(text, budget, s_a) if code == "L" else arm_m(text, budget, lo_max=s_a)
     finally:
         STRICT = old
 

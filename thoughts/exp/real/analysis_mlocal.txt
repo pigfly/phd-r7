@@ -1,0 +1,20 @@
+LongBench holdout (12 reader x task cells), qa_f1 difference vs A:
+  M-A  mean -0.005   sig<0: 1/12   sig>0: 0/12   worst -0.107
+  S-A  mean +0.000   sig<0: 0/12   sig>0: 1/12   worst -0.056
+  L-A  mean +0.003   sig<0: 0/12   sig>0: 1/12   worst -0.045
+
+RULER s5 (18 cells), recall difference vs A:
+  M-A  mean +0.414   sig>0: 17/18
+  S-A  mean +0.569   sig>0: 17/18
+  L-A  mean +0.543   sig>0: 17/18
+  retention S vs M: 137%
+  retention L vs M: 131%
+  billed tokens (mean over readers with usage): A=779  M=780  S=779  L=779
+
+RULER s6 (18 cells), recall difference vs A:
+  M-A  mean +0.399   sig>0: 15/18
+  S-A  mean +0.395   sig>0: 14/18
+  L-A  mean +0.334   sig>0: 15/18
+  retention S vs M: 99%
+  retention L vs M: 84%
+  billed tokens (mean over readers with usage): A=913  M=829  S=812  L=920

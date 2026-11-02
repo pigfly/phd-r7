@@ -21,6 +21,8 @@
 | C8 | 真实数据：verbatim ↔ prose 是可调权衡（s_lo 旋钮） | run3/run4_real：C −14/−21 prose；C' prose n.s. 但 ids 只 +8；C2 子串放大预检无版面收益；+1px 行距（L）无效；3 seed 均值 prose ≈ −12 | ⚠️ 按权衡写 |
 | C10 | 跨 7 个读者（含 2 个开源）+ 公开 benchmark RULER-NIAH 成立；阴性对照无效应 | 第六轮：27/27 + 33/36 格显著 | ✅ |
 | C11 | 真实计费下不更贵：M 比 A 便宜 0–20% | OpenRouter usage.prompt_tokens | ✅ |
+| C12 | 收益随密度呈倒 U，峰值随读者强弱平移（机理） | E2 相图 6 读者 × 4 密度 | ✅ |
+| C13 | 普通 QA 上 M 有小幅代价 | E3 LongBench：M−A 平均 −0.05，3/12 显著 | ❌ 待 M-local 修复 |
 | C9 | 子代理读者的 prose 指标被跨图记忆污染 | Claude 错答 50–100% 来自名字池，MiniMax 0–10% | ✅ 方法学告诫 |
 
 ## 结构

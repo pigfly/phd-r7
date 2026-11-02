@@ -23,7 +23,9 @@
 - **第四轮（2026-11-02）**：C2 子串放大预检无版面收益（未跑读者）；run4_real 复现真实数据 C−A ids +0.21 / prose −0.14；C' 保 prose 但 ids 只 +0.08 → 真实数据是可调权衡。Claude 子代理的 prose 答错多来自其他图的名字（跨图污染），prose 以 MiniMax 为准。
 - **第五轮**：+1px prose 行距（arm L）不能修复 prose 代价（同 item L−C = 0.00）。真实数据 3 个 seed：C−A ids +0.15…+0.21（全显著），prose −0.21/−0.14/0.00。→ 按权衡写（C vs C'）。
 - **第六轮（多模型 + RULER）**：新增 5 个 OpenRouter 读者（Sonnet 5.5、Gemini 3.5 flash-lite、GPT-6-luna、Qwen3-VL-235B、Llama-4）。已有数据 C−A 27/27 格显著；RULER-NIAH 4 个子任务 × 2 密度 × 6 读者，M−A 33/36 格显著，阴性对照 ≈0；真实计费 M ≤ A。新 arm M（prose 按字符折行）在紧预算下也能工作 → 设为方法默认。
-- **下一步**：用 M 重跑真实数据；画图 1 / 表 1；写论文。
+- **第七轮（E1/E2/E3）**：纯文本基线 ≈1.00、RULER 上图片省 3–8× token；密度相图呈倒 U、峰值随读者强弱平移；**LongBench QA 上 M 平均 −0.05（3/12 显著）**——M 用 prose 分辨率换标识符精度，不是免费的。
+- **目标**：CVPR 2027 / IJCAI 2027；先做完实验再写论文。
+- **下一步**：M-local（只缩邻近 prose）+ 收紧检测器，目标 QA 不掉点、RULER 收益保留 ≥80%。
 
 ## 参考
 - R-or-R：`ref/main.pdf`, `ref/appendix.pdf`

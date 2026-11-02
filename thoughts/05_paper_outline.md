@@ -15,7 +15,7 @@
 | C2 | 主要收益来自**分配**而非排版（不折断） | B−A n.s.（+4…+8）；C−B 显著 | ✅（N=12，可补） |
 | C3 | 放大幅度关键，prose 下限无益 | C−C' +13/+24；C' prose 无改善 | ✅ |
 | C4 | 与 anchors 的 Pareto：中等密度下 C≈anchors，便宜 41%；极高密度仍需 anchors | run2/run3 D vs C | ✅ |
-| C5 | anchors 对弱读者的副作用：prose 读取崩溃 | MiniMax D/CD prose −13…−50，两轮复现 | ✅ 新发现 |
+| C5 | anchors 对弱读者的副作用：prose 读取崩溃 | MiniMax D/CD prose −13…−50（短文本探针）；**长文本 LongBench QA 上不成立**（MiniMax K/X +0.12） | ⚠️ 只限短文本探针 |
 | C6 | 静默错误非 prompt 产物：模型不知道自己读错 | "[unreadable]" 变体放弃率 ≤6%、静默不降 | ✅ |
 | C7 | 合成数据上无 prose 代价 | 3 探针，4 格中 3 格 n.s. | ⚠️ Claude 6px 临界 |
 | C8 | 真实数据：verbatim ↔ prose 是可调权衡（s_lo 旋钮） | run3/run4_real：C −14/−21 prose；C' prose n.s. 但 ids 只 +8；C2 子串放大预检无版面收益；+1px 行距（L）无效；3 seed 均值 prose ≈ −12 | ⚠️ 按权衡写 |
@@ -28,6 +28,7 @@
 | C16 | S ≫ 黑盒均匀 baseline（字体/字号搜索、降采样） | 第九轮 0/72 格更差 | ✅ |
 | C17 | 单独 S 不如 anchors；S + anchors（X）在 k≤16 最优：近乎免费的 anchors、中密度更准 | 第十轮密度扫描 | ✅ 定位改为"互补" |
 | C18 | 高密度（k≥64）所有图像方案失效 → 需路由回文本 | 第十轮 | ✅ 边界 |
+| C19 | 最终方法 X 在普通 QA 上无害 | LongBench 留出 X−A +0.009，0/12 显著为负 | ✅ |
 | C9 | 子代理读者的 prose 指标被跨图记忆污染 | Claude 错答 50–100% 来自名字池，MiniMax 0–10% | ✅ 方法学告诫 |
 
 ## 结构

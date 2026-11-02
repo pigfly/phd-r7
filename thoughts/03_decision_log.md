@@ -224,3 +224,10 @@
 - **风险**：第一/二轮发现 anchors 让弱读者的 prose 读取变差（MiniMax −13…−50 点）→ X 继承这一副作用，**必须在 LongBench 上测 K/X 对普通 QA 的影响**。
 - **操作教训**：`pgrep -f "run_minimax.py"` 会匹配到外层 shell 自己的命令行，导致等待循环永远不退出（rdens 的 MiniMax 因此延迟约 1 小时启动）；改用 `pgrep -f "[r]un_minimax.py"`。
 - **下一步**：(1) LongBench QA 上 A / S / K / X（普通理解是否受 anchors 伤害）；(2) 补齐 Qwen/MiniMax 高密度格。
+
+## 2026-11-03 · Iter 18 — LongBench QA 上的 anchors（X 是否伤害普通理解）
+- **设计**：`lb3_s6_{mfqa,hotpot}`，与 `lb2` 同一批留出样本（seed 11/12，N=50），arms A / S / K / X，6 读者。LongBench 危险串少：每篇 anchors mfqa 17 个（约 319 token）、hotpot 4 个（约 35 token）。
+- **结果**（`analysis_anchors_qa.txt`，qa_f1 vs A，12 格）：S +0.012（1 格显著为负：Qwen hotpot −0.06）；K +0.031（0 格为负，2 格为正）；**X +0.009（0 格为负）**；X−K −0.022（全 n.s.）。计费 A 1177 / S 1084 / K 1356 / X 1264。
+- **意外**：MiniMax 在 hotpot 上 K +0.12、X +0.13（显著为正）——第一/二轮"anchors 让弱读者 prose 读取变差"的发现（短文本合成探针）**没有延伸到长文本 QA**。论文里该发现只能限定在短文本探针设定，不能泛化。
+- **结论**：X（S + anchors）在 RULER 稀疏/中密度上最优、在普通 QA 上无害，成本在 RULER 稀疏时低于 A、在 LongBench 上 +7%。**X 定为最终方法**；S 作为"无文本旁路"变体。
+- **累计花费**：OpenRouter 约 $43（截至本轮）。

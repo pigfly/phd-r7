@@ -1,0 +1,5202 @@
+{
+ "img000.png": {
+  "text": "After National won the 2008 election, he became Deputy Prime Minister and Minister of Finance.",
+  "usage": {
+   "prompt_tokens": 1202,
+   "completion_tokens": 307,
+   "total_tokens": 1509,
+   "cost": 0.005474,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005474,
+    "upstream_inference_prompt_cost": 0.002404,
+    "upstream_inference_completions_cost": 0.00307
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 274,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img001.png": {
+  "text": "The Ilyushin Il-76MD-90A (Il-476).",
+  "usage": {
+   "prompt_tokens": 1841,
+   "completion_tokens": 763,
+   "total_tokens": 2604,
+   "cost": 0.011312,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011312,
+    "upstream_inference_prompt_cost": 0.003682,
+    "upstream_inference_completions_cost": 0.00763
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 739,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img002.png": {
+  "text": "\u03b2(r) comes from applying the Einstein vacuum equation to a small ball of freely falling test particles, which requires the ball's volume to stay constant at first order. This gives a differential equation for \u03b2(r), solved by separation of variables, with solution \u03b2\u00b2 = C/r (up to an integration constant). The constant is then fixed by matching to Newtonian gravity at large r, where the infalling observers start at rest at infinity. The result is \u03b2(r) = \u221a(2GM/r) = \u221a(r_S/r).",
+  "usage": {
+   "prompt_tokens": 1748,
+   "completion_tokens": 418,
+   "total_tokens": 2166,
+   "cost": 0.007676,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007676,
+    "upstream_inference_prompt_cost": 0.003496,
+    "upstream_inference_completions_cost": 0.00418
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 259,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img003.png": {
+  "text": "Wallace",
+  "usage": {
+   "prompt_tokens": 1179,
+   "completion_tokens": 207,
+   "total_tokens": 1386,
+   "cost": 0.004428,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004428,
+    "upstream_inference_prompt_cost": 0.002358,
+    "upstream_inference_completions_cost": 0.00207
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 201,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img004.png": {
+  "text": "The nuclear liquid-gas transition in the strong coupling regime of lattice QCD, studied with the dual (monomer-dimer-polymer) formulation and the worm algorithm. The paper examines the chiral and baryon-density behavior at nonzero chemical potential and temperature.",
+  "usage": {
+   "prompt_tokens": 843,
+   "completion_tokens": 96,
+   "total_tokens": 939,
+   "cost": 0.002646,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002646,
+    "upstream_inference_prompt_cost": 0.001686,
+    "upstream_inference_completions_cost": 0.00096
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img005.png": {
+  "text": "Low-temperature scanning tunneling microscopy and spectroscopy (STM/STS) were used on the quantum dot structures. They were imaged in constant-current mode and probed with dI/dV spectroscopy and dI/dV maps, which give the local density of states. The SWNTs were measured on an Au(111) substrate and had been modified by Ar\u207a ion irradiation and N\u207a ion irradiation. These measurements were supported by ab-initio DFT calculations and Wannier-function transport and tight-binding modeling.",
+  "usage": {
+   "prompt_tokens": 3439,
+   "completion_tokens": 178,
+   "total_tokens": 3617,
+   "cost": 0.008658,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008658,
+    "upstream_inference_prompt_cost": 0.006878,
+    "upstream_inference_completions_cost": 0.00178
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img006.png": {
+  "text": "\u0393_e is the ratio of the average unscreened electron\u2013electron potential energy to the electron kinetic energy: \u0393_e = (e\u00b2/4\u03c0\u03b5\u2080 a_ws)/(k_B T_e), where a_ws is the Wigner-Seitz radius.",
+  "usage": {
+   "prompt_tokens": 1825,
+   "completion_tokens": 290,
+   "total_tokens": 2115,
+   "cost": 0.00655,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00655,
+    "upstream_inference_prompt_cost": 0.00365,
+    "upstream_inference_completions_cost": 0.0029
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 202,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img007.png": {
+  "text": "The infall rate and the gas density (in the region close to the black hole) are both about 2\u20135 times smaller in the magnetized model than in non-magnetized accretion.",
+  "usage": {
+   "prompt_tokens": 466,
+   "completion_tokens": 378,
+   "total_tokens": 844,
+   "cost": 0.004712,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004712,
+    "upstream_inference_prompt_cost": 0.000932,
+    "upstream_inference_completions_cost": 0.00378
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 324,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img008.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 572,
+   "completion_tokens": 64,
+   "total_tokens": 636,
+   "cost": 0.001784,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001784,
+    "upstream_inference_prompt_cost": 0.001144,
+    "upstream_inference_completions_cost": 0.00064
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 58,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img009.png": {
+  "text": "Watt",
+  "usage": {
+   "prompt_tokens": 1498,
+   "completion_tokens": 5,
+   "total_tokens": 1503,
+   "cost": 0.003046,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003046,
+    "upstream_inference_prompt_cost": 0.002996,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img010.png": {
+  "text": "They were trialed against other vaccines or toxic products, not against a genuine placebo such as saline.",
+  "usage": {
+   "prompt_tokens": 951,
+   "completion_tokens": 242,
+   "total_tokens": 1193,
+   "cost": 0.004322,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004322,
+    "upstream_inference_prompt_cost": 0.001902,
+    "upstream_inference_completions_cost": 0.00242
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 209,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img011.png": {
+  "text": "A bigger receptive field lets the model complete larger gaps and more complex shapes, while a smaller one fills fewer gaps.",
+  "usage": {
+   "prompt_tokens": 1569,
+   "completion_tokens": 186,
+   "total_tokens": 1755,
+   "cost": 0.004998,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004998,
+    "upstream_inference_prompt_cost": 0.003138,
+    "upstream_inference_completions_cost": 0.00186
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 142,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img012.png": {
+  "text": "Other vaccines or toxic-containing products, not a genuine placebo such as saline.",
+  "usage": {
+   "prompt_tokens": 951,
+   "completion_tokens": 158,
+   "total_tokens": 1109,
+   "cost": 0.003482,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003482,
+    "upstream_inference_prompt_cost": 0.001902,
+    "upstream_inference_completions_cost": 0.00158
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 128,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img013.png": {
+  "text": "Del Bigtree and his team at ICAN",
+  "usage": {
+   "prompt_tokens": 966,
+   "completion_tokens": 215,
+   "total_tokens": 1181,
+   "cost": 0.004082,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004082,
+    "upstream_inference_prompt_cost": 0.001932,
+    "upstream_inference_completions_cost": 0.00215
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 198,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img014.png": {
+  "text": "Electricity powers lighting, heating and cooling, household appliances, electronics and computers, telecommunications, and electric motors for transport and industry.",
+  "usage": {
+   "prompt_tokens": 1383,
+   "completion_tokens": 175,
+   "total_tokens": 1558,
+   "cost": 0.004516,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004516,
+    "upstream_inference_prompt_cost": 0.002766,
+    "upstream_inference_completions_cost": 0.00175
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 126,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img015.png": {
+  "text": "Vice Admiral",
+  "usage": {
+   "prompt_tokens": 783,
+   "completion_tokens": 9,
+   "total_tokens": 792,
+   "cost": 0.001656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001656,
+    "upstream_inference_prompt_cost": 0.001566,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img016.png": {
+  "text": "McPherson County is located in the U.S. state of Kansas, in the central part of the state.",
+  "usage": {
+   "prompt_tokens": 568,
+   "completion_tokens": 30,
+   "total_tokens": 598,
+   "cost": 0.001436,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001436,
+    "upstream_inference_prompt_cost": 0.001136,
+    "upstream_inference_completions_cost": 0.0003
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img017.png": {
+  "text": "A larger receptive field lets the algorithm fill in bigger gaps and reconstruct more complete shapes.",
+  "usage": {
+   "prompt_tokens": 1591,
+   "completion_tokens": 236,
+   "total_tokens": 1827,
+   "cost": 0.005542,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005542,
+    "upstream_inference_prompt_cost": 0.003182,
+    "upstream_inference_completions_cost": 0.00236
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 198,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img018.png": {
+  "text": "John F. Kennedy Profiles in Courage Award",
+  "usage": {
+   "prompt_tokens": 740,
+   "completion_tokens": 149,
+   "total_tokens": 889,
+   "cost": 0.00297,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00297,
+    "upstream_inference_prompt_cost": 0.00148,
+    "upstream_inference_completions_cost": 0.00149
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 129,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img019.png": {
+  "text": "The interlayer Berry connection polarizability is a band-geometric quantity that gives rise to the intrinsic crossed nonlinear dynamical Hall effect in twisted bilayers. It describes how an applied electric field shifts the interlayer positions of the electrons, which is the field-induced interlayer positional shift (Berry connection). Together with the out-of-plane field it drives the Hall response, and twisting and interlayer hybridization enhance it.",
+  "usage": {
+   "prompt_tokens": 816,
+   "completion_tokens": 599,
+   "total_tokens": 1415,
+   "cost": 0.007622,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007622,
+    "upstream_inference_prompt_cost": 0.001632,
+    "upstream_inference_completions_cost": 0.00599
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 449,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img020.png": {
+  "text": "$O_\\parallel = L_{\\parallel}^{-\\beta/[\\nu(1+\\Delta)]}\\,\\tilde f_0\\!\\left(t/L_{\\parallel}^{z/(1+\\Delta)}\\right)$",
+  "usage": {
+   "prompt_tokens": 535,
+   "completion_tokens": 491,
+   "total_tokens": 1026,
+   "cost": 0.00598,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00598,
+    "upstream_inference_prompt_cost": 0.00107,
+    "upstream_inference_completions_cost": 0.00491
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 411,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img021.png": {
+  "text": "About 6 years (1946\u20131952).",
+  "usage": {
+   "prompt_tokens": 636,
+   "completion_tokens": 594,
+   "total_tokens": 1230,
+   "cost": 0.007212,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007212,
+    "upstream_inference_prompt_cost": 0.001272,
+    "upstream_inference_completions_cost": 0.00594
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 580,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img022.png": {
+  "text": "The time needed to update the robot's belief stays low and does not grow with the complexity of the environment (the number of obstacles and polytopes), so online inference remains tractable.",
+  "usage": {
+   "prompt_tokens": 1709,
+   "completion_tokens": 232,
+   "total_tokens": 1941,
+   "cost": 0.005738,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005738,
+    "upstream_inference_prompt_cost": 0.003418,
+    "upstream_inference_completions_cost": 0.00232
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 177,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img023.png": {
+  "text": "Users can visit https://python.quectel.com or email info@quectel.com.",
+  "usage": {
+   "prompt_tokens": 558,
+   "completion_tokens": 243,
+   "total_tokens": 801,
+   "cost": 0.003546,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003546,
+    "upstream_inference_prompt_cost": 0.001116,
+    "upstream_inference_completions_cost": 0.00243
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 217,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img024.png": {
+  "text": "By learning a linear latent ODE (with complex eigenvalues) in a complex-valued latent space with a probabilistic Slow Feature Analysis\u2013based autoencoder, where the latent variables evolve independently on distinct time scales.",
+  "usage": {
+   "prompt_tokens": 1051,
+   "completion_tokens": 78,
+   "total_tokens": 1129,
+   "cost": 0.002882,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002882,
+    "upstream_inference_prompt_cost": 0.002102,
+    "upstream_inference_completions_cost": 0.00078
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img025.png": {
+  "text": "The baseline is a straight reference line on the building surface. All the fuselage stations and measurements (the firewall and other stations, and the longeron positions) are laid out from it.",
+  "usage": {
+   "prompt_tokens": 1335,
+   "completion_tokens": 348,
+   "total_tokens": 1683,
+   "cost": 0.00615,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00615,
+    "upstream_inference_prompt_cost": 0.00267,
+    "upstream_inference_completions_cost": 0.00348
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 292,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img026.png": {
+  "text": "Users can go to the Quectel workorder system (https://workorder.quectel.com/QuecPython) or the Quectel forum (https://forumschinese.quectel.com/c/function-subjects/quectpython/43QuecPython), or join the QuecPython QQ group 445121768.",
+  "usage": {
+   "prompt_tokens": 3604,
+   "completion_tokens": 95,
+   "total_tokens": 3699,
+   "cost": 0.008158,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008158,
+    "upstream_inference_prompt_cost": 0.007208,
+    "upstream_inference_completions_cost": 0.00095
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img027.png": {
+  "text": "In the magnetized model, both the infall rate and the gas density are about 2\u20135 times smaller than in non-magnetized accretion. The exact factor depends on the outer magnetization, and the lower density applies in the region close to the black hole.",
+  "usage": {
+   "prompt_tokens": 689,
+   "completion_tokens": 340,
+   "total_tokens": 1029,
+   "cost": 0.004778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004778,
+    "upstream_inference_prompt_cost": 0.001378,
+    "upstream_inference_completions_cost": 0.0034
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 263,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img028.png": {
+  "text": "Del Bigtree and his team at ICAN.",
+  "usage": {
+   "prompt_tokens": 966,
+   "completion_tokens": 237,
+   "total_tokens": 1203,
+   "cost": 0.004302,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004302,
+    "upstream_inference_prompt_cost": 0.001932,
+    "upstream_inference_completions_cost": 0.00237
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 219,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img029.png": {
+  "text": "The method updates the robot's belief quickly, and that update time does not increase with the complexity of the environment. This makes it fast enough for real-time use.",
+  "usage": {
+   "prompt_tokens": 1205,
+   "completion_tokens": 462,
+   "total_tokens": 1667,
+   "cost": 0.00703,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00703,
+    "upstream_inference_prompt_cost": 0.00241,
+    "upstream_inference_completions_cost": 0.00462
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 414,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img030.png": {
+  "text": "The QuecPython forum (https://forumschinese.quectel.com/c/function-subjects/quectpython/43) or the work-order support site (https://workorder.quectel.com/QuecPython).",
+  "usage": {
+   "prompt_tokens": 558,
+   "completion_tokens": 291,
+   "total_tokens": 849,
+   "cost": 0.004026,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004026,
+    "upstream_inference_prompt_cost": 0.001116,
+    "upstream_inference_completions_cost": 0.00291
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 225,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img031.png": {
+  "text": "Yes. Individual indeno[1,2-a]fluorene molecules can be switched between open-shell and closed-shell states by adding or removing electrons with voltage pulses from the STM tip. The molecules are adsorbed on bilayer NaCl on Au(111), which makes this possible.",
+  "usage": {
+   "prompt_tokens": 1480,
+   "completion_tokens": 97,
+   "total_tokens": 1577,
+   "cost": 0.00393,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00393,
+    "upstream_inference_prompt_cost": 0.00296,
+    "upstream_inference_completions_cost": 0.00097
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img032.png": {
+  "text": "Ultracold neutral plasmas that form through kinetic rate processes from state-selected Rydberg gases, with particular emphasis on the distinctive dynamics in the evolution of molecular ultracold plasmas.",
+  "usage": {
+   "prompt_tokens": 1825,
+   "completion_tokens": 219,
+   "total_tokens": 2044,
+   "cost": 0.00584,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00584,
+    "upstream_inference_prompt_cost": 0.00365,
+    "upstream_inference_completions_cost": 0.00219
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 146,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img033.png": {
+  "text": "\"I have seen the Lord.\" She also told them that he had said these things to her.",
+  "usage": {
+   "prompt_tokens": 1887,
+   "completion_tokens": 208,
+   "total_tokens": 2095,
+   "cost": 0.005854,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005854,
+    "upstream_inference_prompt_cost": 0.003774,
+    "upstream_inference_completions_cost": 0.00208
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 183,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img034.png": {
+  "text": "They were trialed against other vaccines (described as \"toxic products\"), not against a genuine placebo such as saline.",
+  "usage": {
+   "prompt_tokens": 951,
+   "completion_tokens": 366,
+   "total_tokens": 1317,
+   "cost": 0.005562,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005562,
+    "upstream_inference_prompt_cost": 0.001902,
+    "upstream_inference_completions_cost": 0.00366
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 329,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img035.png": {
+  "text": "The least mean square (LMS) algorithm, in its normalized form (NLMS), is used in each stage to estimate the weights.",
+  "usage": {
+   "prompt_tokens": 3642,
+   "completion_tokens": 509,
+   "total_tokens": 4151,
+   "cost": 0.012374,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.012374,
+    "upstream_inference_prompt_cost": 0.007284,
+    "upstream_inference_completions_cost": 0.00509
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 466,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img036.png": {
+  "text": "The interlayer Berry connection polarizability is the band-geometric quantity behind the crossed nonlinear dynamical Hall effect in twisted bilayers. It measures how an applied in-plane electric field induces an interlayer Berry connection (a positional shift) through interlayer hybridization. The curl of this quantity in momentum space gives the Hall response. Its magnitude and sign can be controlled by the phase difference between the two driving fields, and it allows rectification and frequency doubling. It also does not require breaking time-reversal symmetry.",
+  "usage": {
+   "prompt_tokens": 1104,
+   "completion_tokens": 354,
+   "total_tokens": 1458,
+   "cost": 0.005748,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005748,
+    "upstream_inference_prompt_cost": 0.002208,
+    "upstream_inference_completions_cost": 0.00354
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 174,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img037.png": {
+  "text": "Jivani Street 2, Malatia-Sebastia District, Yerevan",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 179,
+   "total_tokens": 518,
+   "cost": 0.002468,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002468,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00179
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 151,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img038.png": {
+  "text": "The learning rate first rises rapidly as the transition probability increases from 0, then peaks and slowly declines toward zero when transitions become very frequent.",
+  "usage": {
+   "prompt_tokens": 1611,
+   "completion_tokens": 464,
+   "total_tokens": 2075,
+   "cost": 0.007862,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007862,
+    "upstream_inference_prompt_cost": 0.003222,
+    "upstream_inference_completions_cost": 0.00464
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 414,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img039.png": {
+  "text": "O(t, L_\u2225, S_\u0394) = L_\u2225^(\u2212\u03b2/(1+\u0394)) \u00b7 S_\u0394 \u00b7 f_O( t / L_\u2225^(\u22121/(1+\u0394)) ), where f_O is a scaling function.\n\nI could not read the exponents in the image clearly, so this form is my best reading and may be slightly off.",
+  "usage": {
+   "prompt_tokens": 345,
+   "completion_tokens": 1032,
+   "total_tokens": 1377,
+   "cost": 0.01101,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01101,
+    "upstream_inference_prompt_cost": 0.00069,
+    "upstream_inference_completions_cost": 0.01032
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 922,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img040.png": {
+  "text": "The interlayer Berry connection polarizability (BCP) is the band-geometric origin of the intrinsic crossed nonlinear dynamical Hall effect in twisted bilayers. It arises from layer hybridization through the twisted interlayer coupling. It determines the Hall response generated by the joint action of in-plane and out-of-plane electric fields, and it is a quantum-geometric quantity that can be tuned by twist angle.",
+  "usage": {
+   "prompt_tokens": 879,
+   "completion_tokens": 518,
+   "total_tokens": 1397,
+   "cost": 0.006938,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006938,
+    "upstream_inference_prompt_cost": 0.001758,
+    "upstream_inference_completions_cost": 0.00518
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 374,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img041.png": {
+  "text": "$\\Gamma_e=\\dfrac{e^2}{4\\pi\\epsilon_0\\,a_{ws}}\\dfrac{1}{k_B T_e}$, the ratio of the average unscreened electron\u2013electron potential energy to the electron kinetic energy. Here $a_{ws}=1/\\left(\\tfrac{4}{3}\\pi\\rho_e\\right)^{1/3}$ is the Wigner-Seitz radius.",
+  "usage": {
+   "prompt_tokens": 2853,
+   "completion_tokens": 401,
+   "total_tokens": 3254,
+   "cost": 0.009716,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009716,
+    "upstream_inference_prompt_cost": 0.005706,
+    "upstream_inference_completions_cost": 0.00401
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 251,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img042.png": {
+  "text": "Del Bigtree and his team at ICAN.",
+  "usage": {
+   "prompt_tokens": 966,
+   "completion_tokens": 200,
+   "total_tokens": 1166,
+   "cost": 0.003932,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003932,
+    "upstream_inference_prompt_cost": 0.001932,
+    "upstream_inference_completions_cost": 0.002
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 182,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img043.png": {
+  "text": "48V",
+  "usage": {
+   "prompt_tokens": 900,
+   "completion_tokens": 4,
+   "total_tokens": 904,
+   "cost": 0.00184,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00184,
+    "upstream_inference_prompt_cost": 0.0018,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img044.png": {
+  "text": "Deputy Leader of the National Party (he became Deputy Prime Minister and Minister of Finance after National's victory).",
+  "usage": {
+   "prompt_tokens": 1173,
+   "completion_tokens": 417,
+   "total_tokens": 1590,
+   "cost": 0.006516,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006516,
+    "upstream_inference_prompt_cost": 0.002346,
+    "upstream_inference_completions_cost": 0.00417
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 376,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img045.png": {
+  "text": "McPherson County is located in the U.S. state of Kansas.",
+  "usage": {
+   "prompt_tokens": 712,
+   "completion_tokens": 22,
+   "total_tokens": 734,
+   "cost": 0.001644,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001644,
+    "upstream_inference_prompt_cost": 0.001424,
+    "upstream_inference_completions_cost": 0.00022
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img046.png": {
+  "text": "A roundup of news and commentary on the Iraq war and its aftermath, including Iraq's political situation, the attacks on Iraqi Christians, and U.S. policy and anti-war activism.",
+  "usage": {
+   "prompt_tokens": 949,
+   "completion_tokens": 245,
+   "total_tokens": 1194,
+   "cost": 0.004348,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004348,
+    "upstream_inference_prompt_cost": 0.001898,
+    "upstream_inference_completions_cost": 0.00245
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 180,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img047.png": {
+  "text": "January 1929",
+  "usage": {
+   "prompt_tokens": 775,
+   "completion_tokens": 310,
+   "total_tokens": 1085,
+   "cost": 0.00465,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00465,
+    "upstream_inference_prompt_cost": 0.00155,
+    "upstream_inference_completions_cost": 0.0031
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 304,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img048.png": {
+  "text": "In the 2013/2014 season.",
+  "usage": {
+   "prompt_tokens": 346,
+   "completion_tokens": 304,
+   "total_tokens": 650,
+   "cost": 0.003732,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003732,
+    "upstream_inference_prompt_cost": 0.000692,
+    "upstream_inference_completions_cost": 0.00304
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 291,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img049.png": {
+  "text": "The time needed to update the robot's belief stays roughly constant and does not grow with the complexity of the environment (e.g., the number of obstacles or polytopes), so the method suits online use.",
+  "usage": {
+   "prompt_tokens": 1680,
+   "completion_tokens": 224,
+   "total_tokens": 1904,
+   "cost": 0.0056,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0056,
+    "upstream_inference_prompt_cost": 0.00336,
+    "upstream_inference_completions_cost": 0.00224
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 163,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img050.png": {
+  "text": "Fruit consumption may protect against mercury exposure in Amazonian fish-eating communities. Prevention strategies should therefore aim to keep fish consumption while reducing Hg exposure, for example by encouraging fruit intake.",
+  "usage": {
+   "prompt_tokens": 1130,
+   "completion_tokens": 654,
+   "total_tokens": 1784,
+   "cost": 0.0088,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0088,
+    "upstream_inference_prompt_cost": 0.00226,
+    "upstream_inference_completions_cost": 0.00654
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 576,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img051.png": {
+  "text": "Jivani Street 2, Malatia-Sebastia District, Yerevan",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 179,
+   "total_tokens": 518,
+   "cost": 0.002468,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002468,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00179
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 151,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img052.png": {
+  "text": "It provides cover for the war, letting supporters of the illegal war point to it and insist \"Things aren't so bad!\"",
+  "usage": {
+   "prompt_tokens": 1352,
+   "completion_tokens": 446,
+   "total_tokens": 1798,
+   "cost": 0.007164,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007164,
+    "upstream_inference_prompt_cost": 0.002704,
+    "upstream_inference_completions_cost": 0.00446
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 407,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img053.png": {
+  "text": "The club first won the Armenian Premier League in the 2013\u201314 season.",
+  "usage": {
+   "prompt_tokens": 346,
+   "completion_tokens": 269,
+   "total_tokens": 615,
+   "cost": 0.003382,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003382,
+    "upstream_inference_prompt_cost": 0.000692,
+    "upstream_inference_completions_cost": 0.00269
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 244,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img054.png": {
+  "text": "The study focuses on ultracold neutral plasmas formed by Penning ionization and avalanche in a Rydberg gas of nitric oxide (NO), created by photoionizing a laser-cooled molecular beam (a supersonic molecular beam). These are strongly coupled, molecular ultracold plasmas.",
+  "usage": {
+   "prompt_tokens": 2781,
+   "completion_tokens": 105,
+   "total_tokens": 2886,
+   "cost": 0.006612,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006612,
+    "upstream_inference_prompt_cost": 0.005562,
+    "upstream_inference_completions_cost": 0.00105
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img055.png": {
+  "text": "In the magnetized model, both the infall rate and the gas density are about 2\u20135 times smaller than in non-magnetized accretion, especially in the region close to the black hole.",
+  "usage": {
+   "prompt_tokens": 653,
+   "completion_tokens": 438,
+   "total_tokens": 1091,
+   "cost": 0.005686,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005686,
+    "upstream_inference_prompt_cost": 0.001306,
+    "upstream_inference_completions_cost": 0.00438
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 382,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img056.png": {
+  "text": "Low-temperature scanning tunneling microscopy and spectroscopy (STM/STS) were used. This included topographic imaging and differential conductance (dI/dV) spectra and maps, recorded with a lock-in technique, on ion-irradiated semiconducting SWNTs on Au(111). The authors compared these data with ab-initio (DFT) and tight-binding calculations and with a one-dimensional quantum-well model.",
+  "usage": {
+   "prompt_tokens": 1574,
+   "completion_tokens": 337,
+   "total_tokens": 1911,
+   "cost": 0.006518,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006518,
+    "upstream_inference_prompt_cost": 0.003148,
+    "upstream_inference_completions_cost": 0.00337
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 194,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img057.png": {
+  "text": "Keep deploying and harvesting your bases to earn XP.",
+  "usage": {
+   "prompt_tokens": 1274,
+   "completion_tokens": 243,
+   "total_tokens": 1517,
+   "cost": 0.004978,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004978,
+    "upstream_inference_prompt_cost": 0.002548,
+    "upstream_inference_completions_cost": 0.00243
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 221,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img058.png": {
+  "text": "20V",
+  "usage": {
+   "prompt_tokens": 394,
+   "completion_tokens": 397,
+   "total_tokens": 791,
+   "cost": 0.004758,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004758,
+    "upstream_inference_prompt_cost": 0.000788,
+    "upstream_inference_completions_cost": 0.00397
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 393,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img059.png": {
+  "text": "85.61%",
+  "usage": {
+   "prompt_tokens": 848,
+   "completion_tokens": 112,
+   "total_tokens": 960,
+   "cost": 0.002816,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002816,
+    "upstream_inference_prompt_cost": 0.001696,
+    "upstream_inference_completions_cost": 0.00112
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 106,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img060.png": {
+  "text": "The evolved learning rate first rises quickly as the transition probability increases from 0. It reaches a peak and then slowly declines, eventually falling to zero when transitions become too frequent. Rare transitions favor a low learning rate, moderate transitions favor faster learning, and very fast transitions favor little or no learning.",
+  "usage": {
+   "prompt_tokens": 1646,
+   "completion_tokens": 479,
+   "total_tokens": 2125,
+   "cost": 0.008082,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008082,
+    "upstream_inference_prompt_cost": 0.003292,
+    "upstream_inference_completions_cost": 0.00479
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 375,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img061.png": {
+  "text": "Deploy nanobots often, because every deployment, capture and attack earns experience points and you level up quickly.",
+  "usage": {
+   "prompt_tokens": 1814,
+   "completion_tokens": 434,
+   "total_tokens": 2248,
+   "cost": 0.007968,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007968,
+    "upstream_inference_prompt_cost": 0.003628,
+    "upstream_inference_completions_cost": 0.00434
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 398,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img062.png": {
+  "text": "John F. Kennedy Profile in Courage Award",
+  "usage": {
+   "prompt_tokens": 740,
+   "completion_tokens": 127,
+   "total_tokens": 867,
+   "cost": 0.00275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00275,
+    "upstream_inference_prompt_cost": 0.00148,
+    "upstream_inference_completions_cost": 0.00127
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 108,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img063.png": {
+  "text": "In the 2013\u20132014 season.",
+  "usage": {
+   "prompt_tokens": 346,
+   "completion_tokens": 184,
+   "total_tokens": 530,
+   "cost": 0.002532,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002532,
+    "upstream_inference_prompt_cost": 0.000692,
+    "upstream_inference_completions_cost": 0.00184
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 171,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img064.png": {
+  "text": "Fruit consumption may provide a protective effect against mercury exposure in Amazonian fish-eating communities. Prevention strategies should therefore aim to keep fish consumption while reducing Hg exposure.",
+  "usage": {
+   "prompt_tokens": 1130,
+   "completion_tokens": 594,
+   "total_tokens": 1724,
+   "cost": 0.0082,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0082,
+    "upstream_inference_prompt_cost": 0.00226,
+    "upstream_inference_completions_cost": 0.00594
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 524,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img065.png": {
+  "text": "A media application determines an event's context by using a content-recognition module or algorithm to analyze the media asset (its video frames, audio, subtitles and metadata) around the event. It then cross-references that data with information in a database, such as who spoke, what was said, and what was said before and after, to identify the possible contexts.",
+  "usage": {
+   "prompt_tokens": 1780,
+   "completion_tokens": 265,
+   "total_tokens": 2045,
+   "cost": 0.00621,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00621,
+    "upstream_inference_prompt_cost": 0.00356,
+    "upstream_inference_completions_cost": 0.00265
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 167,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img066.png": {
+  "text": "Watt",
+  "usage": {
+   "prompt_tokens": 2074,
+   "completion_tokens": 5,
+   "total_tokens": 2079,
+   "cost": 0.004198,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004198,
+    "upstream_inference_prompt_cost": 0.004148,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img067.png": {
+  "text": "1766",
+  "usage": {
+   "prompt_tokens": 1976,
+   "completion_tokens": 164,
+   "total_tokens": 2140,
+   "cost": 0.005592,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005592,
+    "upstream_inference_prompt_cost": 0.003952,
+    "upstream_inference_completions_cost": 0.00164
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 160,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img068.png": {
+  "text": "The least mean square (LMS) algorithm.",
+  "usage": {
+   "prompt_tokens": 889,
+   "completion_tokens": 800,
+   "total_tokens": 1689,
+   "cost": 0.009778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009778,
+    "upstream_inference_prompt_cost": 0.001778,
+    "upstream_inference_completions_cost": 0.008
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 783,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img069.png": {
+  "text": "Yes. Individual indeno[1,2-a]fluorene molecules can be reversibly switched between open-shell and closed-shell states on bilayer NaCl by applying voltage pulses with the STM tip. This changes the molecule's charge state and its bond structure.",
+  "usage": {
+   "prompt_tokens": 1827,
+   "completion_tokens": 89,
+   "total_tokens": 1916,
+   "cost": 0.004544,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004544,
+    "upstream_inference_prompt_cost": 0.003654,
+    "upstream_inference_completions_cost": 0.00089
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img070.png": {
+  "text": "Watt (W)",
+  "usage": {
+   "prompt_tokens": 1381,
+   "completion_tokens": 61,
+   "total_tokens": 1442,
+   "cost": 0.003372,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003372,
+    "upstream_inference_prompt_cost": 0.002762,
+    "upstream_inference_completions_cost": 0.00061
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 53,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img071.png": {
+  "text": "85.61%",
+  "usage": {
+   "prompt_tokens": 848,
+   "completion_tokens": 99,
+   "total_tokens": 947,
+   "cost": 0.002686,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002686,
+    "upstream_inference_prompt_cost": 0.001696,
+    "upstream_inference_completions_cost": 0.00099
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 93,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img072.png": {
+  "text": "6 years",
+  "usage": {
+   "prompt_tokens": 636,
+   "completion_tokens": 452,
+   "total_tokens": 1088,
+   "cost": 0.005792,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005792,
+    "upstream_inference_prompt_cost": 0.001272,
+    "upstream_inference_completions_cost": 0.00452
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 447,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img073.png": {
+  "text": "Keep deploying bots and harvesting your bases to earn XP, and attack enemy bases, which also earns XP.",
+  "usage": {
+   "prompt_tokens": 1371,
+   "completion_tokens": 295,
+   "total_tokens": 1666,
+   "cost": 0.005692,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005692,
+    "upstream_inference_prompt_cost": 0.002742,
+    "upstream_inference_completions_cost": 0.00295
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 255,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img074.png": {
+  "text": "January 1929",
+  "usage": {
+   "prompt_tokens": 775,
+   "completion_tokens": 318,
+   "total_tokens": 1093,
+   "cost": 0.00473,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00473,
+    "upstream_inference_prompt_cost": 0.00155,
+    "upstream_inference_completions_cost": 0.00318
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 312,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img075.png": {
+  "text": "Fatigue may be associated with eating high-mercury fish, but the sample size is small.",
+  "usage": {
+   "prompt_tokens": 1130,
+   "completion_tokens": 461,
+   "total_tokens": 1591,
+   "cost": 0.00687,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00687,
+    "upstream_inference_prompt_cost": 0.00226,
+    "upstream_inference_completions_cost": 0.00461
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 431,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img076.png": {
+  "text": "The baseline is a reference line drawn on the building surface. It marks the mid-point of the firewall for the developed (true-dimension) side panel. The stations and longerons are laid out from it, so the dimensions come out correctly when the panel is formed.",
+  "usage": {
+   "prompt_tokens": 1750,
+   "completion_tokens": 362,
+   "total_tokens": 2112,
+   "cost": 0.00712,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00712,
+    "upstream_inference_prompt_cost": 0.0035,
+    "upstream_inference_completions_cost": 0.00362
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 281,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img077.png": {
+  "text": "Yes.",
+  "usage": {
+   "prompt_tokens": 2906,
+   "completion_tokens": 236,
+   "total_tokens": 3142,
+   "cost": 0.008172,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008172,
+    "upstream_inference_prompt_cost": 0.005812,
+    "upstream_inference_completions_cost": 0.00236
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 230,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img078.png": {
+  "text": "As the transition probability increases from 0, the evolved learning rate rises rapidly. It reaches a peak, then declines slowly, eventually falling to near zero when transitions are very frequent.",
+  "usage": {
+   "prompt_tokens": 1611,
+   "completion_tokens": 468,
+   "total_tokens": 2079,
+   "cost": 0.007902,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007902,
+    "upstream_inference_prompt_cost": 0.003222,
+    "upstream_inference_completions_cost": 0.00468
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 405,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img079.png": {
+  "text": "Users can go to https://python.quectel.com, which has the download page, the wiki, and docs. For support they can also use the work order system at https://workorder.quectel.com/ or the forum at https://forumschinese.quectel.com/c/function-subjects/quectpython/43. The QQ group 445121768 is another option.",
+  "usage": {
+   "prompt_tokens": 3604,
+   "completion_tokens": 104,
+   "total_tokens": 3708,
+   "cost": 0.008248,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008248,
+    "upstream_inference_prompt_cost": 0.007208,
+    "upstream_inference_completions_cost": 0.00104
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img080.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 131,
+   "total_tokens": 470,
+   "cost": 0.001988,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001988,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00131
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 123,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img081.png": {
+  "text": "BERT, RoBERTa, XLM-RoBERTa, ELECTRA and GPT-2, including language-specific versions (e.g., English RoBERTa, Spanish BERT, Portuguese BERT).",
+  "usage": {
+   "prompt_tokens": 842,
+   "completion_tokens": 318,
+   "total_tokens": 1160,
+   "cost": 0.004864,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004864,
+    "upstream_inference_prompt_cost": 0.001684,
+    "upstream_inference_completions_cost": 0.00318
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 244,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img082.png": {
+  "text": "The text is a news digest from December 2010 covering the Iraq war and its aftermath, including Christian persecution in Iraq, the formation of Iraq's government under Maliki, US troop presence, and antiwar protests.",
+  "usage": {
+   "prompt_tokens": 980,
+   "completion_tokens": 73,
+   "total_tokens": 1053,
+   "cost": 0.00269,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00269,
+    "upstream_inference_prompt_cost": 0.00196,
+    "upstream_inference_completions_cost": 0.00073
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img083.png": {
+  "text": "Yes.",
+  "usage": {
+   "prompt_tokens": 1100,
+   "completion_tokens": 244,
+   "total_tokens": 1344,
+   "cost": 0.00464,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00464,
+    "upstream_inference_prompt_cost": 0.0022,
+    "upstream_inference_completions_cost": 0.00244
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 238,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img084.png": {
+  "text": "Del Bigtree and his team at ICAN",
+  "usage": {
+   "prompt_tokens": 966,
+   "completion_tokens": 293,
+   "total_tokens": 1259,
+   "cost": 0.004862,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004862,
+    "upstream_inference_prompt_cost": 0.001932,
+    "upstream_inference_completions_cost": 0.00293
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 276,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img085.png": {
+  "text": "January 1929",
+  "usage": {
+   "prompt_tokens": 775,
+   "completion_tokens": 438,
+   "total_tokens": 1213,
+   "cost": 0.00593,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00593,
+    "upstream_inference_prompt_cost": 0.00155,
+    "upstream_inference_completions_cost": 0.00438
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 432,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img086.png": {
+  "text": "Proximity to a superconductor generally competes with and suppresses the Kondo effect. Cooper-pair (Andreev) correlations induce local pairing on the dots, which screens the spin in a different way (a BCS-like singlet). This reduces the Kondo temperature and the Kondo-related conductance, and the system can shift from a Kondo singlet to a superconducting singlet. When the superconducting gap is large compared to the Kondo scale, the Kondo effect is destroyed. Coupling to the superconductor can also add a new screening channel, so the Kondo screening is modified rather than simply removed.",
+  "usage": {
+   "prompt_tokens": 3320,
+   "completion_tokens": 200,
+   "total_tokens": 3520,
+   "cost": 0.00864,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00864,
+    "upstream_inference_prompt_cost": 0.00664,
+    "upstream_inference_completions_cost": 0.002
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img087.png": {
+  "text": "Vice Admiral",
+  "usage": {
+   "prompt_tokens": 783,
+   "completion_tokens": 9,
+   "total_tokens": 792,
+   "cost": 0.001656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001656,
+    "upstream_inference_prompt_cost": 0.001566,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img088.png": {
+  "text": "The Iraq War and its aftermath, including the violence against Christians in Iraq, Iraqi politics, and U.S. military and foreign policy.",
+  "usage": {
+   "prompt_tokens": 1345,
+   "completion_tokens": 50,
+   "total_tokens": 1395,
+   "cost": 0.00319,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00319,
+    "upstream_inference_prompt_cost": 0.00269,
+    "upstream_inference_completions_cost": 0.0005
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img089.png": {
+  "text": "Molecular ultracold neutral plasmas: plasmas formed by Penning ionization and avalanche of Rydberg gases of nitric oxide (NO) in a supersonic molecular beam, as opposed to atomic plasmas such as those formed in a magneto-optical trap.",
+  "usage": {
+   "prompt_tokens": 2853,
+   "completion_tokens": 95,
+   "total_tokens": 2948,
+   "cost": 0.006656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006656,
+    "upstream_inference_prompt_cost": 0.005706,
+    "upstream_inference_completions_cost": 0.00095
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img090.png": {
+  "text": "The nuclear liquid-gas transition in the strong coupling regime of lattice QCD, studied with a dual (monomer-dimer-polymer) formulation and the worm algorithm at nonzero baryon chemical potential and finite temperature.",
+  "usage": {
+   "prompt_tokens": 873,
+   "completion_tokens": 82,
+   "total_tokens": 955,
+   "cost": 0.002566,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002566,
+    "upstream_inference_prompt_cost": 0.001746,
+    "upstream_inference_completions_cost": 0.00082
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img091.png": {
+  "text": "FC Banants",
+  "usage": {
+   "prompt_tokens": 347,
+   "completion_tokens": 91,
+   "total_tokens": 438,
+   "cost": 0.001604,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001604,
+    "upstream_inference_prompt_cost": 0.000694,
+    "upstream_inference_completions_cost": 0.00091
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 84,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img092.png": {
+  "text": "Using binary variables reduces the computational complexity of the mixed-integer optimization. The lane-selection and lane-change logic becomes a set of linear constraints, so the problem can be solved faster, which helps real-time use.",
+  "usage": {
+   "prompt_tokens": 1717,
+   "completion_tokens": 580,
+   "total_tokens": 2297,
+   "cost": 0.009234,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009234,
+    "upstream_inference_prompt_cost": 0.003434,
+    "upstream_inference_completions_cost": 0.0058
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 507,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img093.png": {
+  "text": "The infall rate is about 2\u20135 times smaller than in non-magnetized accretion, depending on the outer magnetization. The gas density near the black hole is also about 2\u20135 times smaller.",
+  "usage": {
+   "prompt_tokens": 502,
+   "completion_tokens": 330,
+   "total_tokens": 832,
+   "cost": 0.004304,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004304,
+    "upstream_inference_prompt_cost": 0.001004,
+    "upstream_inference_completions_cost": 0.0033
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 267,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img094.png": {
+  "text": "Electricity powers lighting, heating, refrigeration and air conditioning, communications and telecommunications, computation and electronics, and transport (electric motors, trains and vehicles). It also runs industry and appliances.",
+  "usage": {
+   "prompt_tokens": 1959,
+   "completion_tokens": 228,
+   "total_tokens": 2187,
+   "cost": 0.006198,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006198,
+    "upstream_inference_prompt_cost": 0.003918,
+    "upstream_inference_completions_cost": 0.00228
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 157,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img095.png": {
+  "text": "Jivani Street 2, Malatia-Sebastia District, Yerevan",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 209,
+   "total_tokens": 548,
+   "cost": 0.002768,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002768,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00209
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 181,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img096.png": {
+  "text": "Wallace",
+  "usage": {
+   "prompt_tokens": 1208,
+   "completion_tokens": 6,
+   "total_tokens": 1214,
+   "cost": 0.002476,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002476,
+    "upstream_inference_prompt_cost": 0.002416,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img097.png": {
+  "text": "After National's victory in the 2008 general election, English became Deputy Prime Minister and Minister of Finance.",
+  "usage": {
+   "prompt_tokens": 1202,
+   "completion_tokens": 451,
+   "total_tokens": 1653,
+   "cost": 0.006914,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006914,
+    "upstream_inference_prompt_cost": 0.002404,
+    "upstream_inference_completions_cost": 0.00451
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 414,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img098.png": {
+  "text": "The datasets are the URPC datasets (URPC2017, URPC2018, URPC2019, URPC2020_ZJ and URPC2020_DL), from the Underwater Robot Professional Contest. The text also introduces a new dataset, DUO (Detecting Underwater Objects).",
+  "usage": {
+   "prompt_tokens": 2902,
+   "completion_tokens": 97,
+   "total_tokens": 2999,
+   "cost": 0.006774,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006774,
+    "upstream_inference_prompt_cost": 0.005804,
+    "upstream_inference_completions_cost": 0.00097
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img099.png": {
+  "text": "Yes.",
+  "usage": {
+   "prompt_tokens": 2906,
+   "completion_tokens": 404,
+   "total_tokens": 3310,
+   "cost": 0.009852,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009852,
+    "upstream_inference_prompt_cost": 0.005812,
+    "upstream_inference_completions_cost": 0.00404
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 398,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img100.png": {
+  "text": "FC Banants",
+  "usage": {
+   "prompt_tokens": 347,
+   "completion_tokens": 75,
+   "total_tokens": 422,
+   "cost": 0.001444,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001444,
+    "upstream_inference_prompt_cost": 0.000694,
+    "upstream_inference_completions_cost": 0.00075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 68,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img101.png": {
+  "text": "30,223",
+  "usage": {
+   "prompt_tokens": 670,
+   "completion_tokens": 5,
+   "total_tokens": 675,
+   "cost": 0.00139,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00139,
+    "upstream_inference_prompt_cost": 0.00134,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img102.png": {
+  "text": "30,223",
+  "usage": {
+   "prompt_tokens": 721,
+   "completion_tokens": 5,
+   "total_tokens": 726,
+   "cost": 0.001492,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001492,
+    "upstream_inference_prompt_cost": 0.001442,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img103.png": {
+  "text": "Il-76MD-90A (Il-476)",
+  "usage": {
+   "prompt_tokens": 1445,
+   "completion_tokens": 264,
+   "total_tokens": 1709,
+   "cost": 0.00553,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00553,
+    "upstream_inference_prompt_cost": 0.00289,
+    "upstream_inference_completions_cost": 0.00264
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 247,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img104.png": {
+  "text": "85.61%",
+  "usage": {
+   "prompt_tokens": 848,
+   "completion_tokens": 108,
+   "total_tokens": 956,
+   "cost": 0.002776,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002776,
+    "upstream_inference_prompt_cost": 0.001696,
+    "upstream_inference_completions_cost": 0.00108
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 102,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img105.png": {
+  "text": "\u03b2(r) comes from the vacuum Einstein equation, which says the volume of a small ball of freely falling particles does not change at first order. This gives a differential equation for \u03b2(r), which is solved by separation of variables. The integration constant is fixed by requiring that infalling observers start at rest at infinity, so that c\u03b2(r) = \u221a(2GM/r), i.e. \u03b2 = \u221a(2GM/r)/c.",
+  "usage": {
+   "prompt_tokens": 3074,
+   "completion_tokens": 497,
+   "total_tokens": 3571,
+   "cost": 0.011118,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011118,
+    "upstream_inference_prompt_cost": 0.006148,
+    "upstream_inference_completions_cost": 0.00497
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 366,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img106.png": {
+  "text": "URPC2017, URPC2018, URPC2019, URPC2020_ZJ, URPC2020_DL, and UDD",
+  "usage": {
+   "prompt_tokens": 1096,
+   "completion_tokens": 304,
+   "total_tokens": 1400,
+   "cost": 0.005232,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005232,
+    "upstream_inference_prompt_cost": 0.002192,
+    "upstream_inference_completions_cost": 0.00304
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 260,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img107.png": {
+  "text": "Yes.",
+  "usage": {
+   "prompt_tokens": 1100,
+   "completion_tokens": 169,
+   "total_tokens": 1269,
+   "cost": 0.00389,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00389,
+    "upstream_inference_prompt_cost": 0.0022,
+    "upstream_inference_completions_cost": 0.00169
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 163,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img108.png": {
+  "text": "The normalized least mean square (NLMS) algorithm.",
+  "usage": {
+   "prompt_tokens": 889,
+   "completion_tokens": 209,
+   "total_tokens": 1098,
+   "cost": 0.003868,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003868,
+    "upstream_inference_prompt_cost": 0.001778,
+    "upstream_inference_completions_cost": 0.00209
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 188,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img109.png": {
+  "text": "You level up by earning XP (experience points) through actions for your faction, such as deploying nanobots and attacking or capturing bases. Early levels come quickly this way.",
+  "usage": {
+   "prompt_tokens": 1911,
+   "completion_tokens": 332,
+   "total_tokens": 2243,
+   "cost": 0.007142,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007142,
+    "upstream_inference_prompt_cost": 0.003822,
+    "upstream_inference_completions_cost": 0.00332
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 278,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img110.png": {
+  "text": "The Iraq War and its aftermath (including Iraq's political situation, the plight of Christians in Iraq, and U.S. foreign policy), compiled as a news and commentary roundup.",
+  "usage": {
+   "prompt_tokens": 1376,
+   "completion_tokens": 63,
+   "total_tokens": 1439,
+   "cost": 0.003382,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003382,
+    "upstream_inference_prompt_cost": 0.002752,
+    "upstream_inference_completions_cost": 0.00063
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img111.png": {
+  "text": "More than 120 novels.",
+  "usage": {
+   "prompt_tokens": 484,
+   "completion_tokens": 81,
+   "total_tokens": 565,
+   "cost": 0.001778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001778,
+    "upstream_inference_prompt_cost": 0.000968,
+    "upstream_inference_completions_cost": 0.00081
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 71,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img112.png": {
+  "text": "Yes. On bilayer NaCl films, individual indeno[1,2-a]fluorene molecules can be switched between open-shell and closed-shell states by attaching or removing electrons with an STM tip (charge-state cycling), and the switching is reversible.",
+  "usage": {
+   "prompt_tokens": 2115,
+   "completion_tokens": 86,
+   "total_tokens": 2201,
+   "cost": 0.00509,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00509,
+    "upstream_inference_prompt_cost": 0.00423,
+    "upstream_inference_completions_cost": 0.00086
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img113.png": {
+  "text": "It provides cover for the war, letting supporters of the war point to its figures.",
+  "usage": {
+   "prompt_tokens": 987,
+   "completion_tokens": 443,
+   "total_tokens": 1430,
+   "cost": 0.006404,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006404,
+    "upstream_inference_prompt_cost": 0.001974,
+    "upstream_inference_completions_cost": 0.00443
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 418,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img114.png": {
+  "text": "6 years",
+  "usage": {
+   "prompt_tokens": 636,
+   "completion_tokens": 531,
+   "total_tokens": 1167,
+   "cost": 0.006582,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006582,
+    "upstream_inference_prompt_cost": 0.001272,
+    "upstream_inference_completions_cost": 0.00531
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 526,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img115.png": {
+  "text": "John F. Kennedy Profile in Courage Award",
+  "usage": {
+   "prompt_tokens": 740,
+   "completion_tokens": 172,
+   "total_tokens": 912,
+   "cost": 0.0032,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0032,
+    "upstream_inference_prompt_cost": 0.00148,
+    "upstream_inference_completions_cost": 0.00172
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 153,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img116.png": {
+  "text": "Binary variables reduce the computational complexity of the SLAS optimization. They let the absolute-value (lane-change and flooring) constraints be rewritten as a few linear constraints, using the big-M method and auxiliary variables. This makes the problem easier and faster to solve, and the same formulation still works for any number of lanes.",
+  "usage": {
+   "prompt_tokens": 1749,
+   "completion_tokens": 505,
+   "total_tokens": 2254,
+   "cost": 0.008548,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008548,
+    "upstream_inference_prompt_cost": 0.003498,
+    "upstream_inference_completions_cost": 0.00505
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 398,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img117.png": {
+  "text": "1762",
+  "usage": {
+   "prompt_tokens": 1762,
+   "completion_tokens": 381,
+   "total_tokens": 2143,
+   "cost": 0.007334,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007334,
+    "upstream_inference_prompt_cost": 0.003524,
+    "upstream_inference_completions_cost": 0.00381
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 377,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img118.png": {
+  "text": "Jivani Street 2, Malatia-Sebastia District, Yerevan",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 181,
+   "total_tokens": 520,
+   "cost": 0.002488,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002488,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00181
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 153,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img119.png": {
+  "text": "**1762**",
+  "usage": {
+   "prompt_tokens": 1472,
+   "completion_tokens": 269,
+   "total_tokens": 1741,
+   "cost": 0.005634,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005634,
+    "upstream_inference_prompt_cost": 0.002944,
+    "upstream_inference_completions_cost": 0.00269
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 263,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img120.png": {
+  "text": "The framework uses a (variational) autoencoder to map the high-dimensional data to a low-dimensional complex latent space. There, the latent variables evolve independently under a linear latent ODE with a diagonal, eigenvalue-based propagator. Each variable's complex eigenvalue gives its own time scale and oscillation. A probabilistic, slow-feature-style formulation separates the slow processes from the fast ones and quantifies the predictive uncertainty.",
+  "usage": {
+   "prompt_tokens": 1029,
+   "completion_tokens": 499,
+   "total_tokens": 1528,
+   "cost": 0.007048,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007048,
+    "upstream_inference_prompt_cost": 0.002058,
+    "upstream_inference_completions_cost": 0.00499
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 347,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img121.png": {
+  "text": "Wallace",
+  "usage": {
+   "prompt_tokens": 1179,
+   "completion_tokens": 139,
+   "total_tokens": 1318,
+   "cost": 0.003748,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003748,
+    "upstream_inference_prompt_cost": 0.002358,
+    "upstream_inference_completions_cost": 0.00139
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 133,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img122.png": {
+  "text": "\"I have seen the Lord.\" She also told them that he had said these things to her.",
+  "usage": {
+   "prompt_tokens": 1887,
+   "completion_tokens": 167,
+   "total_tokens": 2054,
+   "cost": 0.005444,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005444,
+    "upstream_inference_prompt_cost": 0.003774,
+    "upstream_inference_completions_cost": 0.00167
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 142,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img123.png": {
+  "text": "The interlayer Berry connection polarizability (BCP) is the band-geometric origin of the crossed nonlinear dynamical Hall effect in twisted bilayers. The effect comes from the momentum-space curl of the interlayer BCP, which is a quantum geometric quantity. It produces an intrinsic Hall response whose rectification and frequency doubling can be controlled by the phase difference of the two driving fields.",
+  "usage": {
+   "prompt_tokens": 1167,
+   "completion_tokens": 443,
+   "total_tokens": 1610,
+   "cost": 0.006764,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006764,
+    "upstream_inference_prompt_cost": 0.002334,
+    "upstream_inference_completions_cost": 0.00443
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 304,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img124.png": {
+  "text": "More than 120 novels.",
+  "usage": {
+   "prompt_tokens": 484,
+   "completion_tokens": 81,
+   "total_tokens": 565,
+   "cost": 0.001778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001778,
+    "upstream_inference_prompt_cost": 0.000968,
+    "upstream_inference_completions_cost": 0.00081
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 71,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img125.png": {
+  "text": "January 1929",
+  "usage": {
+   "prompt_tokens": 775,
+   "completion_tokens": 449,
+   "total_tokens": 1224,
+   "cost": 0.00604,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00604,
+    "upstream_inference_prompt_cost": 0.00155,
+    "upstream_inference_completions_cost": 0.00449
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 443,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img126.png": {
+  "text": "NFPA and FPSA greatly outperform GMRES and DSA, needing far fewer iterations and much less runtime, often by orders of magnitude. FPSA is slightly faster than NFPA in runtime because it is simpler, and both are similar in iteration counts.",
+  "usage": {
+   "prompt_tokens": 1450,
+   "completion_tokens": 434,
+   "total_tokens": 1884,
+   "cost": 0.00724,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00724,
+    "upstream_inference_prompt_cost": 0.0029,
+    "upstream_inference_completions_cost": 0.00434
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 344,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img127.png": {
+  "text": "48V",
+  "usage": {
+   "prompt_tokens": 900,
+   "completion_tokens": 448,
+   "total_tokens": 1348,
+   "cost": 0.00628,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00628,
+    "upstream_inference_prompt_cost": 0.0018,
+    "upstream_inference_completions_cost": 0.00448
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 444,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img128.png": {
+  "text": "Low-temperature scanning tunneling microscopy and spectroscopy (STM/STS) in ultra-high vacuum. This included topographic imaging, dI/dV spectra, and dI/dV conductance maps. The quantum dots were created by Ar\u207a ion irradiation of the nanotubes, with the sample exposed to 1,2-dichloroethane. The experiments were supported by theoretical modeling (ab initio/tight-binding calculations).",
+  "usage": {
+   "prompt_tokens": 1502,
+   "completion_tokens": 309,
+   "total_tokens": 1811,
+   "cost": 0.006094,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006094,
+    "upstream_inference_prompt_cost": 0.003004,
+    "upstream_inference_completions_cost": 0.00309
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 155,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img129.png": {
+  "text": "Superconductivity competes with the Kondo effect. Proximity-induced pairing tends to suppress Kondo screening and favors a non-magnetic (singlet) state of the dot. This happens when the superconducting gap is large compared with the Kondo temperature. When the gap is small compared with the Kondo temperature, the Kondo effect survives.",
+  "usage": {
+   "prompt_tokens": 1828,
+   "completion_tokens": 384,
+   "total_tokens": 2212,
+   "cost": 0.007496,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007496,
+    "upstream_inference_prompt_cost": 0.003656,
+    "upstream_inference_completions_cost": 0.00384
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 269,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img130.png": {
+  "text": "Deputy Prime Minister and Minister of Finance (after National's 2008 victory).",
+  "usage": {
+   "prompt_tokens": 1173,
+   "completion_tokens": 378,
+   "total_tokens": 1551,
+   "cost": 0.006126,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006126,
+    "upstream_inference_prompt_cost": 0.002346,
+    "upstream_inference_completions_cost": 0.00378
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 347,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img131.png": {
+  "text": "1766",
+  "usage": {
+   "prompt_tokens": 2266,
+   "completion_tokens": 250,
+   "total_tokens": 2516,
+   "cost": 0.007032,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007032,
+    "upstream_inference_prompt_cost": 0.004532,
+    "upstream_inference_completions_cost": 0.0025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 246,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img132.png": {
+  "text": "The method updates the robot's belief quickly enough for real-time use, and the update time stays low and does not grow with the complexity of the environment.",
+  "usage": {
+   "prompt_tokens": 1176,
+   "completion_tokens": 424,
+   "total_tokens": 1600,
+   "cost": 0.006592,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006592,
+    "upstream_inference_prompt_cost": 0.002352,
+    "upstream_inference_completions_cost": 0.00424
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 379,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img133.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 665,
+   "completion_tokens": 6,
+   "total_tokens": 671,
+   "cost": 0.00139,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00139,
+    "upstream_inference_prompt_cost": 0.00133,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img134.png": {
+  "text": "\u0393_e is the ratio of the average unscreened electron\u2013electron potential energy to the electron kinetic energy, \u0393_e = e\u00b2/(4\u03c0\u03b5\u2080 a_ws) \u00b7 1/(k_B T_e), where a_ws is the Wigner\u2013Seitz radius.",
+  "usage": {
+   "prompt_tokens": 2781,
+   "completion_tokens": 356,
+   "total_tokens": 3137,
+   "cost": 0.009122,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009122,
+    "upstream_inference_prompt_cost": 0.005562,
+    "upstream_inference_completions_cost": 0.00356
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 265,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img135.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 156,
+   "total_tokens": 495,
+   "cost": 0.002238,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002238,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00156
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 148,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img136.png": {
+  "text": "BERT and RoBERTa models with a linear layer on the pooler output (language-specific versions, e.g. BERT base and RoBERTa base, per language). The text also says XLM-RoBERTa, ELECTRA, and GPT-2 were tried.",
+  "usage": {
+   "prompt_tokens": 842,
+   "completion_tokens": 399,
+   "total_tokens": 1241,
+   "cost": 0.005674,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005674,
+    "upstream_inference_prompt_cost": 0.001684,
+    "upstream_inference_completions_cost": 0.00399
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 313,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img137.png": {
+  "text": "More than 120 novels",
+  "usage": {
+   "prompt_tokens": 484,
+   "completion_tokens": 80,
+   "total_tokens": 564,
+   "cost": 0.001768,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001768,
+    "upstream_inference_prompt_cost": 0.000968,
+    "upstream_inference_completions_cost": 0.0008
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 71,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img138.png": {
+  "text": "The least mean square (LMS) algorithm.",
+  "usage": {
+   "prompt_tokens": 3642,
+   "completion_tokens": 439,
+   "total_tokens": 4081,
+   "cost": 0.011674,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011674,
+    "upstream_inference_prompt_cost": 0.007284,
+    "upstream_inference_completions_cost": 0.00439
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 422,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img139.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 126,
+   "total_tokens": 465,
+   "cost": 0.001938,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001938,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00126
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 118,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img140.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 339,
+   "completion_tokens": 206,
+   "total_tokens": 545,
+   "cost": 0.002738,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002738,
+    "upstream_inference_prompt_cost": 0.000678,
+    "upstream_inference_completions_cost": 0.00206
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 198,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img141.png": {
+  "text": "McPherson County is in the U.S. state of Kansas.",
+  "usage": {
+   "prompt_tokens": 517,
+   "completion_tokens": 87,
+   "total_tokens": 604,
+   "cost": 0.001904,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001904,
+    "upstream_inference_prompt_cost": 0.001034,
+    "upstream_inference_completions_cost": 0.00087
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 66,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img142.png": {
+  "text": "The media application uses a content-recognition module to analyze the media asset around the event, including its video frames, audio and speech, and subtitle or metadata text. It cross-references that data with other information, such as a database, to work out who made the statement or took the action, what was said, and the surrounding circumstances.",
+  "usage": {
+   "prompt_tokens": 1780,
+   "completion_tokens": 287,
+   "total_tokens": 2067,
+   "cost": 0.00643,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00643,
+    "upstream_inference_prompt_cost": 0.00356,
+    "upstream_inference_completions_cost": 0.00287
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 194,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img143.png": {
+  "text": "It provides cover for the war and allows its supporters to point to it.",
+  "usage": {
+   "prompt_tokens": 956,
+   "completion_tokens": 566,
+   "total_tokens": 1522,
+   "cost": 0.007572,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007572,
+    "upstream_inference_prompt_cost": 0.001912,
+    "upstream_inference_completions_cost": 0.00566
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 544,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img144.png": {
+  "text": "30,223",
+  "usage": {
+   "prompt_tokens": 577,
+   "completion_tokens": 77,
+   "total_tokens": 654,
+   "cost": 0.001924,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001924,
+    "upstream_inference_prompt_cost": 0.001154,
+    "upstream_inference_completions_cost": 0.00077
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 72,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img145.png": {
+  "text": "The media application uses a content-recognition module to analyze the media asset around the event, such as its video frames, audio, subtitles and metadata. It looks at what was said and done shortly before and after the event, and it cross-references that information with databases to work out the surrounding circumstances.",
+  "usage": {
+   "prompt_tokens": 1780,
+   "completion_tokens": 255,
+   "total_tokens": 2035,
+   "cost": 0.00611,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00611,
+    "upstream_inference_prompt_cost": 0.00356,
+    "upstream_inference_completions_cost": 0.00255
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 168,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img146.png": {
+  "text": "The baseline is a straight reference line on the building surface. The fuselage station distances and the top longeron are measured from it, so the side panels are laid out accurately and the fuselage comes out straight and true.",
+  "usage": {
+   "prompt_tokens": 1282,
+   "completion_tokens": 433,
+   "total_tokens": 1715,
+   "cost": 0.006894,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006894,
+    "upstream_inference_prompt_cost": 0.002564,
+    "upstream_inference_completions_cost": 0.00433
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 368,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img147.png": {
+  "text": "Wallace",
+  "usage": {
+   "prompt_tokens": 1208,
+   "completion_tokens": 175,
+   "total_tokens": 1383,
+   "cost": 0.004166,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004166,
+    "upstream_inference_prompt_cost": 0.002416,
+    "upstream_inference_completions_cost": 0.00175
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 169,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img148.png": {
+  "text": "Electricity powers lighting, heating, refrigeration, air conditioning, and electronics. It also supplies telecommunications and information processing, electric motors for industry and transport, and electrochemical processes such as battery use and aluminium production.",
+  "usage": {
+   "prompt_tokens": 2076,
+   "completion_tokens": 78,
+   "total_tokens": 2154,
+   "cost": 0.004932,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004932,
+    "upstream_inference_prompt_cost": 0.004152,
+    "upstream_inference_completions_cost": 0.00078
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img149.png": {
+  "text": "Low-temperature scanning tunneling microscopy (STM) and scanning tunneling spectroscopy (STS), including differential conductance (dI/dV) spectra and maps that probe the local density of states. These were combined with ab-initio (density functional theory) calculations, tight-binding modeling, and one-dimensional piecewise-constant potential models.",
+  "usage": {
+   "prompt_tokens": 3511,
+   "completion_tokens": 117,
+   "total_tokens": 3628,
+   "cost": 0.008192,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008192,
+    "upstream_inference_prompt_cost": 0.007022,
+    "upstream_inference_completions_cost": 0.00117
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img150.png": {
+  "text": "The framework uses an autoencoder to map the high-dimensional state into a low-dimensional latent space of complex-valued variables. There, the dynamics follow a linear ODE whose operator is diagonal, with learned eigenvalues. Each latent variable therefore evolves independently, with its own decay and oscillation rate, which separates the time scales. A probabilistic (variational, state-space) formulation adds uncertainty quantification, and the decoder maps the propagated latent state back to the full space.",
+  "usage": {
+   "prompt_tokens": 1029,
+   "completion_tokens": 445,
+   "total_tokens": 1474,
+   "cost": 0.006508,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006508,
+    "upstream_inference_prompt_cost": 0.002058,
+    "upstream_inference_completions_cost": 0.00445
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 283,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img151.png": {
+  "text": "The text is too small to read reliably, so this answer rests on the usual physics of such systems. Superconductivity induces pairing correlations in the quantum dot and competes with the Kondo effect, which suppresses it. This is a competition between Kondo screening and Cooper pairing, and the Kondo effect survives only when the Kondo temperature is large compared with the superconducting gap. The visible passage \"The proximity of SC... tends to suppress the Kondo effect if the superconducting energy gap is much larger than the relevant Kondo temperature\" supports this.\n\n**It suppresses the Kondo effect when the superconducting gap is larger than the Kondo temperature.**",
+  "usage": {
+   "prompt_tokens": 3320,
+   "completion_tokens": 218,
+   "total_tokens": 3538,
+   "cost": 0.00882,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00882,
+    "upstream_inference_prompt_cost": 0.00664,
+    "upstream_inference_completions_cost": 0.00218
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img152.png": {
+  "text": "\u0393_e is the ratio of the average unscreened electron\u2013electron potential energy to the electron kinetic energy: \u0393_e = (e\u00b2/4\u03c0\u03b5\u2080 a_ws)\u00b7(1/k_B T_e), where a_ws is the Wigner\u2013Seitz radius.",
+  "usage": {
+   "prompt_tokens": 1753,
+   "completion_tokens": 322,
+   "total_tokens": 2075,
+   "cost": 0.006726,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006726,
+    "upstream_inference_prompt_cost": 0.003506,
+    "upstream_inference_completions_cost": 0.00322
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 232,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img153.png": {
+  "text": "Yes, on bilayer NaCl/Au(111), individual indeno[1,2-a]fluorene molecules can be switched between open-shell and closed-shell states through charge-state manipulation, e.g. by applying voltage pulses with the STM tip, while adsorption-site changes can also stabilize the different states.",
+  "usage": {
+   "prompt_tokens": 1768,
+   "completion_tokens": 105,
+   "total_tokens": 1873,
+   "cost": 0.004586,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004586,
+    "upstream_inference_prompt_cost": 0.003536,
+    "upstream_inference_completions_cost": 0.00105
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img154.png": {
+  "text": "2013/2014",
+  "usage": {
+   "prompt_tokens": 346,
+   "completion_tokens": 215,
+   "total_tokens": 561,
+   "cost": 0.002842,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002842,
+    "upstream_inference_prompt_cost": 0.000692,
+    "upstream_inference_completions_cost": 0.00215
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 208,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img155.png": {
+  "text": "Bigger receptive fields let the algorithm complete shapes with larger gaps. The larger the filter size, the more successfully it fills in the gaps.",
+  "usage": {
+   "prompt_tokens": 1591,
+   "completion_tokens": 309,
+   "total_tokens": 1900,
+   "cost": 0.006272,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006272,
+    "upstream_inference_prompt_cost": 0.003182,
+    "upstream_inference_completions_cost": 0.00309
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 258,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img156.png": {
+  "text": "NFPA and FPSA need far less runtime and far fewer iterations than GMRES and DSA. GMRES and DSA require thousands of iterations (e.g., about 25,000\u201373,000 for DSA), while NFPA and FPSA converge in tens of iterations. This is a speedup of several orders of magnitude, and it holds for both the isotropic-source and beam problems. NFPA is similar to or slightly better than FPSA, with the two being close in cost and clearly outperforming GMRES and DSA on the forward-peaked problems.",
+  "usage": {
+   "prompt_tokens": 3155,
+   "completion_tokens": 180,
+   "total_tokens": 3335,
+   "cost": 0.00811,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00811,
+    "upstream_inference_prompt_cost": 0.00631,
+    "upstream_inference_completions_cost": 0.0018
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img157.png": {
+  "text": "Using binary variables reduces the computational complexity and solve time of the SLAS optimization. Replacing the integer lane variables with binary ones keeps the constraints linear and makes the problem faster to solve, which supports real-time use.",
+  "usage": {
+   "prompt_tokens": 1717,
+   "completion_tokens": 519,
+   "total_tokens": 2236,
+   "cost": 0.008624,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008624,
+    "upstream_inference_prompt_cost": 0.003434,
+    "upstream_inference_completions_cost": 0.00519
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 443,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img158.png": {
+  "text": "85.61%",
+  "usage": {
+   "prompt_tokens": 848,
+   "completion_tokens": 121,
+   "total_tokens": 969,
+   "cost": 0.002906,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002906,
+    "upstream_inference_prompt_cost": 0.001696,
+    "upstream_inference_completions_cost": 0.00121
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 115,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img159.png": {
+  "text": "The baseline is a straight reference line drawn on the building surface. Layout measurements, such as the firewall midpoint and the station locations, are taken from it. This helps ensure the fuselage is fair, straight and true.",
+  "usage": {
+   "prompt_tokens": 1803,
+   "completion_tokens": 330,
+   "total_tokens": 2133,
+   "cost": 0.006906,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006906,
+    "upstream_inference_prompt_cost": 0.003606,
+    "upstream_inference_completions_cost": 0.0033
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 259,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img160.png": {
+  "text": "It provides cover for the war and lets supporters of the illegal war point to it and insist \"things aren't so bad.\"",
+  "usage": {
+   "prompt_tokens": 1383,
+   "completion_tokens": 307,
+   "total_tokens": 1690,
+   "cost": 0.005836,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005836,
+    "upstream_inference_prompt_cost": 0.002766,
+    "upstream_inference_completions_cost": 0.00307
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 270,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img161.png": {
+  "text": "The learning rate first rises rapidly as the transition probability increases from zero. It reaches a peak, then declines slowly and eventually falls to zero. When transitions are very rare, agents evolve a low learning rate. When transitions are very frequent, they stop learning and keep the average of the environments' values.",
+  "usage": {
+   "prompt_tokens": 1646,
+   "completion_tokens": 521,
+   "total_tokens": 2167,
+   "cost": 0.008502,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008502,
+    "upstream_inference_prompt_cost": 0.003292,
+    "upstream_inference_completions_cost": 0.00521
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 423,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img162.png": {
+  "text": "NFPA and FPSA need far fewer iterations and much less runtime than GMRES and DSA. The text says both accelerators outperform GMRES and DSA, with iteration counts and runtimes lower by roughly an order of magnitude. NFPA and FPSA perform similarly to each other, and FPSA is slightly faster in some cases. The exception is the Henyey-Greenstein problems with strong forward-peaked scattering (g = 0.99), where NFPA does not do as well as it does elsewhere.",
+  "usage": {
+   "prompt_tokens": 3119,
+   "completion_tokens": 170,
+   "total_tokens": 3289,
+   "cost": 0.007938,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007938,
+    "upstream_inference_prompt_cost": 0.006238,
+    "upstream_inference_completions_cost": 0.0017
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img163.png": {
+  "text": "Vice Admiral",
+  "usage": {
+   "prompt_tokens": 783,
+   "completion_tokens": 9,
+   "total_tokens": 792,
+   "cost": 0.001656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001656,
+    "upstream_inference_prompt_cost": 0.001566,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img164.png": {
+  "text": "More than 120 novels",
+  "usage": {
+   "prompt_tokens": 484,
+   "completion_tokens": 80,
+   "total_tokens": 564,
+   "cost": 0.001768,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001768,
+    "upstream_inference_prompt_cost": 0.000968,
+    "upstream_inference_completions_cost": 0.0008
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 71,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img165.png": {
+  "text": "FC Banants",
+  "usage": {
+   "prompt_tokens": 347,
+   "completion_tokens": 240,
+   "total_tokens": 587,
+   "cost": 0.003094,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003094,
+    "upstream_inference_prompt_cost": 0.000694,
+    "upstream_inference_completions_cost": 0.0024
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 233,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img166.png": {
+  "text": "Vice Admiral",
+  "usage": {
+   "prompt_tokens": 783,
+   "completion_tokens": 9,
+   "total_tokens": 792,
+   "cost": 0.001656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001656,
+    "upstream_inference_prompt_cost": 0.001566,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img167.png": {
+  "text": "Molecular ultracold neutral plasmas, formed by avalanche ionization of a nitric oxide (NO) Rydberg gas in a seeded supersonic molecular beam.",
+  "usage": {
+   "prompt_tokens": 1753,
+   "completion_tokens": 385,
+   "total_tokens": 2138,
+   "cost": 0.007356,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007356,
+    "upstream_inference_prompt_cost": 0.003506,
+    "upstream_inference_completions_cost": 0.00385
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 323,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img168.png": {
+  "text": "It encodes the high-dimensional data into a low-dimensional latent space of complex variables, where the dynamics follow a linear ODE. The ODE's eigenvalues give the time scales, and each latent variable evolves independently as a decoupled process. The framework learns this with an autoencoder, and a probabilistic version adds a variational autoencoder to quantify uncertainty.",
+  "usage": {
+   "prompt_tokens": 1051,
+   "completion_tokens": 322,
+   "total_tokens": 1373,
+   "cost": 0.005322,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005322,
+    "upstream_inference_prompt_cost": 0.002102,
+    "upstream_inference_completions_cost": 0.00322
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 198,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img169.png": {
+  "text": "Fruit consumption may provide a protective effect against mercury exposure in Amazonian riparian populations. Prevention strategies should therefore aim to maintain fish consumption while reducing mercury exposure in fish-eating communities.",
+  "usage": {
+   "prompt_tokens": 1130,
+   "completion_tokens": 423,
+   "total_tokens": 1553,
+   "cost": 0.00649,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00649,
+    "upstream_inference_prompt_cost": 0.00226,
+    "upstream_inference_completions_cost": 0.00423
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 346,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img170.png": {
+  "text": "Airbus C-295",
+  "usage": {
+   "prompt_tokens": 1656,
+   "completion_tokens": 900,
+   "total_tokens": 2556,
+   "cost": 0.012312,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.012312,
+    "upstream_inference_prompt_cost": 0.003312,
+    "upstream_inference_completions_cost": 0.009
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 891,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img171.png": {
+  "text": "URPC2017, URPC2018, URPC2019, URPC2020_ZJ, and URPC2020_DL",
+  "usage": {
+   "prompt_tokens": 2902,
+   "completion_tokens": 40,
+   "total_tokens": 2942,
+   "cost": 0.006204,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006204,
+    "upstream_inference_prompt_cost": 0.005804,
+    "upstream_inference_completions_cost": 0.0004
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img172.png": {
+  "text": "\"I have seen the Lord.\" She also told them that he had said these things to her.",
+  "usage": {
+   "prompt_tokens": 1887,
+   "completion_tokens": 208,
+   "total_tokens": 2095,
+   "cost": 0.005854,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005854,
+    "upstream_inference_prompt_cost": 0.003774,
+    "upstream_inference_completions_cost": 0.00208
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 183,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img173.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 521,
+   "completion_tokens": 103,
+   "total_tokens": 624,
+   "cost": 0.002072,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002072,
+    "upstream_inference_prompt_cost": 0.001042,
+    "upstream_inference_completions_cost": 0.00103
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 97,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img174.png": {
+  "text": "The nuclear liquid\u2013gas transition in the strong coupling regime of lattice QCD, studied with staggered fermions at finite baryon density. The paper examines how this first-order transition depends on quark mass and the anisotropy.",
+  "usage": {
+   "prompt_tokens": 1167,
+   "completion_tokens": 76,
+   "total_tokens": 1243,
+   "cost": 0.003094,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003094,
+    "upstream_inference_prompt_cost": 0.002334,
+    "upstream_inference_completions_cost": 0.00076
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img175.png": {
+  "text": "Watt",
+  "usage": {
+   "prompt_tokens": 1957,
+   "completion_tokens": 62,
+   "total_tokens": 2019,
+   "cost": 0.004534,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004534,
+    "upstream_inference_prompt_cost": 0.003914,
+    "upstream_inference_completions_cost": 0.00062
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 57,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img176.png": {
+  "text": "A larger receptive field lets the algorithm fill in bigger gaps, so it completes shapes more successfully.",
+  "usage": {
+   "prompt_tokens": 1569,
+   "completion_tokens": 151,
+   "total_tokens": 1720,
+   "cost": 0.004648,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004648,
+    "upstream_inference_prompt_cost": 0.003138,
+    "upstream_inference_completions_cost": 0.00151
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 113,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img177.png": {
+  "text": "$O_\\parallel = L_\\parallel^{-\\beta/[\\nu(1+\\Delta)]}\\,\\tilde f_0\\!\\left(t/L_\\parallel^{z/(1+\\Delta)}\\right)$",
+  "usage": {
+   "prompt_tokens": 345,
+   "completion_tokens": 476,
+   "total_tokens": 821,
+   "cost": 0.00545,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00545,
+    "upstream_inference_prompt_cost": 0.00069,
+    "upstream_inference_completions_cost": 0.00476
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 400,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img178.png": {
+  "text": "O(t, L_\u2225) = L_\u2225^{-\u03b2/[\u03bd(1+\u0394)]} S_\u0394( t / L_\u2225^{z/(1+\u0394)} )",
+  "usage": {
+   "prompt_tokens": 535,
+   "completion_tokens": 395,
+   "total_tokens": 930,
+   "cost": 0.00502,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00502,
+    "upstream_inference_prompt_cost": 0.00107,
+    "upstream_inference_completions_cost": 0.00395
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 337,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img179.png": {
+  "text": "NFPA and FPSA are far faster than GMRES and DSA, with much shorter runtimes and far fewer iterations, often by orders of magnitude. NFPA and FPSA perform similarly to each other. FPSA is cheaper per iteration, while NFPA sometimes needs fewer iterations.",
+  "usage": {
+   "prompt_tokens": 1486,
+   "completion_tokens": 476,
+   "total_tokens": 1962,
+   "cost": 0.007732,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.007732,
+    "upstream_inference_prompt_cost": 0.002972,
+    "upstream_inference_completions_cost": 0.00476
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 373,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img180.png": {
+  "text": "The media application uses a content-recognition module or algorithm to analyze the media asset, such as its video frames, audio, and subtitles. It looks at what was said or done, who said it, and the tone, including the media just before and after the event. It also cross-references this against metadata and databases.",
+  "usage": {
+   "prompt_tokens": 1780,
+   "completion_tokens": 327,
+   "total_tokens": 2107,
+   "cost": 0.00683,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00683,
+    "upstream_inference_prompt_cost": 0.00356,
+    "upstream_inference_completions_cost": 0.00327
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 239,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img181.png": {
+  "text": "BERT and RoBERTa, each with a linear layer on the pooler output. The language-specific models were chosen from BERT, RoBERTa, ELECTRA, GPT-2 and XLM-RoBERTa.",
+  "usage": {
+   "prompt_tokens": 842,
+   "completion_tokens": 330,
+   "total_tokens": 1172,
+   "cost": 0.004984,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004984,
+    "upstream_inference_prompt_cost": 0.001684,
+    "upstream_inference_completions_cost": 0.0033
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 256,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img182.png": {
+  "text": "Il-76MD-90A (Il-476)",
+  "usage": {
+   "prompt_tokens": 1260,
+   "completion_tokens": 404,
+   "total_tokens": 1664,
+   "cost": 0.00656,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00656,
+    "upstream_inference_prompt_cost": 0.00252,
+    "upstream_inference_completions_cost": 0.00404
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 387,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img183.png": {
+  "text": "The nuclear liquid\u2013gas transition in the strong coupling regime of lattice QCD with staggered fermions, studied at nonzero baryon chemical potential. It examines how the transition depends on quark mass and lattice anisotropy, and uses a worm algorithm for the Monte Carlo simulations.",
+  "usage": {
+   "prompt_tokens": 1197,
+   "completion_tokens": 102,
+   "total_tokens": 1299,
+   "cost": 0.003414,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.003414,
+    "upstream_inference_prompt_cost": 0.002394,
+    "upstream_inference_completions_cost": 0.00102
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img184.png": {
+  "text": "\u03b2(r) is fixed by Einstein's vacuum equation. It requires the volume of a small ball of freely falling test particles to have zero second time derivative. This gives a differential equation for \u03b2(r), of the form (r\u03b2\u00b2)\u2032 = 0 up to constants, so \u03b2\u00b2 \u221d 1/r. The integration constant is then fixed by matching the Newtonian limit at large r, where the infall speed is \u221a(2GM/r). The result is \u03b2(r) = \u221a(2GM/(rc\u00b2)).",
+  "usage": {
+   "prompt_tokens": 3110,
+   "completion_tokens": 540,
+   "total_tokens": 3650,
+   "cost": 0.01162,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01162,
+    "upstream_inference_prompt_cost": 0.00622,
+    "upstream_inference_completions_cost": 0.0054
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 383,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img185.png": {
+  "text": "John F. Kennedy Profile in Courage Award",
+  "usage": {
+   "prompt_tokens": 740,
+   "completion_tokens": 169,
+   "total_tokens": 909,
+   "cost": 0.00317,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00317,
+    "upstream_inference_prompt_cost": 0.00148,
+    "upstream_inference_completions_cost": 0.00169
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 150,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img186.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 716,
+   "completion_tokens": 6,
+   "total_tokens": 722,
+   "cost": 0.001492,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001492,
+    "upstream_inference_prompt_cost": 0.001432,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img187.png": {
+  "text": "Using binary variables reduces the computational complexity and overhead of the integer-variable formulation, which cuts solve time. It also lets the implication constraints be written as linear constraints.",
+  "usage": {
+   "prompt_tokens": 1749,
+   "completion_tokens": 528,
+   "total_tokens": 2277,
+   "cost": 0.008778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008778,
+    "upstream_inference_prompt_cost": 0.003498,
+    "upstream_inference_completions_cost": 0.00528
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 469,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img188.png": {
+  "text": "McPherson County is located in the U.S. state of Kansas.",
+  "usage": {
+   "prompt_tokens": 661,
+   "completion_tokens": 22,
+   "total_tokens": 683,
+   "cost": 0.001542,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001542,
+    "upstream_inference_prompt_cost": 0.001322,
+    "upstream_inference_completions_cost": 0.00022
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img189.png": {
+  "text": "URPC2017, URPC2018, URPC2019, URPC2020_ZJ, URPC2020_DL, and UDD.",
+  "usage": {
+   "prompt_tokens": 1096,
+   "completion_tokens": 182,
+   "total_tokens": 1278,
+   "cost": 0.004012,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004012,
+    "upstream_inference_prompt_cost": 0.002192,
+    "upstream_inference_completions_cost": 0.00182
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 137,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img190.png": {
+  "text": "BERT and RoBERTa-based models, including language-specific versions. XLM-RoBERTa, ELECTRA and GPT-2 were also tried, each with a linear layer on top.",
+  "usage": {
+   "prompt_tokens": 842,
+   "completion_tokens": 254,
+   "total_tokens": 1096,
+   "cost": 0.004224,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004224,
+    "upstream_inference_prompt_cost": 0.001684,
+    "upstream_inference_completions_cost": 0.00254
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 191,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img191.png": {
+  "text": "\u03b2(r) comes from applying the vacuum Einstein equation (the volume of a small ball of freely falling test particles has zero second time derivative) to the infalling observers. This gives a differential equation for \u03b2(r). It is solved by separation of variables, and the integration constant is fixed by requiring that the observers start at rest at infinity. The result is \u03b2(r) = \u221a(2GM/r).",
+  "usage": {
+   "prompt_tokens": 1712,
+   "completion_tokens": 472,
+   "total_tokens": 2184,
+   "cost": 0.008144,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008144,
+    "upstream_inference_prompt_cost": 0.003424,
+    "upstream_inference_completions_cost": 0.00472
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 349,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img192.png": {
+  "text": "Electricity powers lighting, heating, and household appliances, as well as electronics, telecommunications, and computers. It also drives motors in industry and transport, such as electric trains and vehicles, and it is generated and distributed across power grids to homes and businesses.",
+  "usage": {
+   "prompt_tokens": 1500,
+   "completion_tokens": 84,
+   "total_tokens": 1584,
+   "cost": 0.00384,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00384,
+    "upstream_inference_prompt_cost": 0.003,
+    "upstream_inference_completions_cost": 0.00084
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img193.png": {
+  "text": "They were trialed against other vaccines or toxic products, not against a genuine placebo such as saline.",
+  "usage": {
+   "prompt_tokens": 951,
+   "completion_tokens": 232,
+   "total_tokens": 1183,
+   "cost": 0.004222,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004222,
+    "upstream_inference_prompt_cost": 0.001902,
+    "upstream_inference_completions_cost": 0.00232
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 199,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img194.png": {
+  "text": "6 years",
+  "usage": {
+   "prompt_tokens": 636,
+   "completion_tokens": 556,
+   "total_tokens": 1192,
+   "cost": 0.006832,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.006832,
+    "upstream_inference_prompt_cost": 0.001272,
+    "upstream_inference_completions_cost": 0.00556
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 551,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img195.png": {
+  "text": "20V",
+  "usage": {
+   "prompt_tokens": 394,
+   "completion_tokens": 336,
+   "total_tokens": 730,
+   "cost": 0.004148,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004148,
+    "upstream_inference_prompt_cost": 0.000788,
+    "upstream_inference_completions_cost": 0.00336
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 332,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img196.png": {
+  "text": "30,223",
+  "usage": {
+   "prompt_tokens": 526,
+   "completion_tokens": 72,
+   "total_tokens": 598,
+   "cost": 0.001772,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001772,
+    "upstream_inference_prompt_cost": 0.001052,
+    "upstream_inference_completions_cost": 0.00072
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 67,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img197.png": {
+  "text": "FC Banants",
+  "usage": {
+   "prompt_tokens": 347,
+   "completion_tokens": 177,
+   "total_tokens": 524,
+   "cost": 0.002464,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002464,
+    "upstream_inference_prompt_cost": 0.000694,
+    "upstream_inference_completions_cost": 0.00177
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 170,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img198.png": {
+  "text": "Proximity of superconductivity tends to suppress the Kondo effect when the superconducting gap \u0394 is larger than the relevant Kondo temperature T_K.",
+  "usage": {
+   "prompt_tokens": 1828,
+   "completion_tokens": 160,
+   "total_tokens": 1988,
+   "cost": 0.005256,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005256,
+    "upstream_inference_prompt_cost": 0.003656,
+    "upstream_inference_completions_cost": 0.0016
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 105,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "img199.png": {
+  "text": "\"I have seen the Lord.\" She also told them that he had said these things to her.",
+  "usage": {
+   "prompt_tokens": 1887,
+   "completion_tokens": 208,
+   "total_tokens": 2095,
+   "cost": 0.005854,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.005854,
+    "upstream_inference_prompt_cost": 0.003774,
+    "upstream_inference_completions_cost": 0.00208
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 183,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

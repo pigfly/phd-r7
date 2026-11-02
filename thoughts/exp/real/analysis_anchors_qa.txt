@@ -1,0 +1,6 @@
+LongBench holdout (lb3, 12 reader x task cells): qa_f1 vs A
+  S-A: mean +0.012  sig<0 1/12  sig>0 0/12  worst -0.058
+  K-A: mean +0.031  sig<0 0/12  sig>0 2/12  worst -0.018
+  X-A: mean +0.009  sig<0 0/12  sig>0 1/12  worst -0.041
+  X-K: mean -0.022  sig<0 0/12  sig>0 0/12  worst -0.064
+  billed (readers with usage): A=1177  S=1084  K=1356  X=1264

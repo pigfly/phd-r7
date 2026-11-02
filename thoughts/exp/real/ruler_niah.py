@@ -42,7 +42,8 @@ def make(i, cfg, R, sents, chars):
         for s in sents[start:]:
             if n + len(s) > chars - sum(len(x) + 1 for x in needles): break
             body.append(s); n += len(s) + 1
-        depths = sorted(R.sample(range(len(body) + 1), len(needles)))
+        depths = (sorted(R.sample(range(len(body) + 1), len(needles))) if len(needles) <= len(body) + 1
+                  else sorted(R.choice(range(len(body) + 1)) for _ in needles))  # dense sweep: several needles per gap
         for d, nd in reversed(list(zip(depths, needles))): body.insert(d, nd)
     else:  # haystack made of distractor needles
         body = []

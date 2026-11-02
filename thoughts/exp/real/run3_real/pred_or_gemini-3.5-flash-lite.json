@@ -1,0 +1,2366 @@
+{
+ "r0_img000.png": {
+  "ids": [
+   "Ub8HZhYaEMAOfSAaQaHIPEg79BJ07-XIFTQ89ALnLoJY,735",
+   "torch/include/ATen/ops/le_meta.h",
+   "googleapiclient/discovery_cache/documents/file.v1beta1.json",
+   "lnWBtWwfRsYXEcz7FzLnCP0szc4eKkGgsOQkBi09xc,116058",
+   "torchgen/packaged/autograd/deprecated.yaml",
+   "UbtajzWo89jf1QSsw8JNJIZTSs-iDBagnrGJthtDS2Q,6250"
+  ],
+  "codename": "juniper",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 215,
+   "total_tokens": 1405,
+   "cost": 0.0008945,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008945,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0005375
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img002.png": {
+  "ids": [
+   "296",
+   "7lu1_TP_TAKQu1FwYR0jBAg0yDUy1vkPPe_7r3L1Cw",
+   "8517",
+   "IDXNJjBW0fcqPm3Any5-kfwU9hZTH33R16gr3vZ6wnE",
+   "96862",
+   "TC38G7Ppa3ZIV_mCr0WSyXT9rZVBXB4Tip5NyC_Y8nI",
+   "4947"
+  ],
+  "codename": "cobalt",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 182,
+   "total_tokens": 1381,
+   "cost": 0.0008147,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008147,
+    "upstream_inference_prompt_cost": 0.0003597,
+    "upstream_inference_completions_cost": 0.000455
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img003.png": {
+  "ids": [
+   "pycairo",
+   "torch/include/ATen/ops/heaviside.h,sha256=8ZEPgAx-WMb1EIPa6XnydWZqKyE2kiGo1cHzlXwB8,1207",
+   "ContourPy",
+   "CONTRIBUTING.md",
+   "h11.Response",
+   "h11.Data",
+   "h11.EndOfMessage",
+   "sklearn/neighbors/tests/test_neighbors_tree.py,sha256=80agtxQTE0jNy7-rTbl4L9lEbCgarf6n_jkx1woYl0s,9297",
+   "torch/include/torch/csrc/api/include/torch/data/samplers.h,sha256=ILkgiKXJN6RyR0Fjmmv8E8LuRBiOBH_P6lUmenbf8Ho,318",
+   "Pydantic",
+   "pathspec.pathspec.PathSpec.check",
+   "ASCIIHexDecode",
+   "ASCII85Decode",
+   "LZWDecode",
+   "FlateDecode",
+   "RunLengthDecode",
+   "CCITTFaxDecode",
+   "RC4",
+   "AES"
+  ],
+  "codename": "saffron",
+  "mascot": "magpie",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 303,
+   "total_tokens": 1466,
+   "cost": 0.0011064,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011064,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.0007575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img004.png": {
+  "ids": [
+   "torch/ao/quantization/backend_config/x86.py",
+   "4gewLr6mkFhSEYIXFXpk88NegS05EXhv2fYHTpajNyg",
+   "3869",
+   "transformers/models/rt_detr_v2/__init__.py",
+   "7RLSU-hsGt3HQZSSuWn8iZY_L166EYsw8vaQXFRkzRc",
+   "1003",
+   "scipy/linalg/_misc.py",
+   "udhvxGfEHxhS3ecQBuwQ65W9ezVQiAVb8J0mfqH_oE",
+   "6301"
+  ],
+  "codename": "sparrow",
+  "mascot": "lemur",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 218,
+   "total_tokens": 1408,
+   "cost": 0.000902,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000902,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.000545
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img007.png": {
+  "ids": [
+   "NisjR-yuBRJfQvjcb20skTR3yid2U3MhKHW6sy8RE10",
+   "2720",
+   "3.10",
+   "2.0",
+   "ympy/plotting/pygletplot/tests/test_ploting.py",
+   "gG-E6_kfS4M6PAwiOKXsf7cBA72b_G0jioZ3leATpbI",
+   "322",
+   "pdfminer/cmap/78ms-RKSJ-V.json.gz",
+   "ThPluRM6KYVnDPzsFQheoiQ_2ry6uU35oBEeaGUFE_Q",
+   "31296"
+  ],
+  "codename": "quill",
+  "mascot": "ferret",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 199,
+   "total_tokens": 1335,
+   "cost": 0.0008383,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008383,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0004975
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img009.png": {
+  "ids": [
+   "networkx/algorithms/operators/binary.py",
+   "hziSCLDIVIoTWPV56fED5gI1pEr0dyL0Q3Z_E_Nz9As",
+   "13150",
+   "17.0",
+   "pyasn1/type/univ.py",
+   "Bnu2gHdA84UXMLtgb4LXbHI5TYw-kKljlsJ7dkJ8KfI",
+   "109212",
+   "PIL/.dylibs/libjpeg.62.4.0.dylib",
+   "VvQDTrlWDqJ1YbnkV1NTOPKswQz9Wq67yFDbNzYaPtY",
+   "65356"
+  ],
+  "codename": "meadow",
+  "mascot": "walrus",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1228,
+   "completion_tokens": 232,
+   "total_tokens": 1460,
+   "cost": 0.0009484,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009484,
+    "upstream_inference_prompt_cost": 0.0003684,
+    "upstream_inference_completions_cost": 0.00058
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img011.png": {
+  "ids": [
+   "520",
+   "509",
+   "498",
+   "407",
+   "537",
+   "urllib3/util/ssl_.py",
+   "jxnQ3msYkVao kJVwQH N nAVdVtDd1 dr THD eyk50gwqaQ",
+   "19786",
+   "matplotlib/layout_engine.py1",
+   "9cKFTFPCvwmKIygTUvrvOq11WnFYme9Shn11v2QbC74",
+   "1788",
+   "torch/include/ATen/ops/fft_ihfft_ops.h",
+   "GxZRWnjanuhFHk8k1XmOWHtU=8oB88tu_F3K7BqYY00",
+   "2141"
+  ],
+  "codename": "russet",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 257,
+   "total_tokens": 1456,
+   "cost": 0.0010022,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010022,
+    "upstream_inference_prompt_cost": 0.0003597,
+    "upstream_inference_completions_cost": 0.0006425
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img013.png": {
+  "ids": [
+   "256",
+   "networkx/algorithms/tests/test_dominance.py",
+   "sha256=r0-m7LVQpqr0TCUJrli43lYpezYxajfkcNd3xvGhTj8",
+   "9811",
+   "668",
+   "transformers/models/xmod/configuration_xmod.py",
+   "sha256=W5bQLbTh3EhMd-Lvseyl28uQhkVVCdPSdhcRXJ07hcg",
+   "9180",
+   "/items/{item id}",
+   "networkx/algorithms/broadcasting.py",
+   "sha256=Amw1oRpr8pdS67aC_9wjJ0QomP1IqPvqtE7c0MF9L70",
+   "4974"
+  ],
+  "codename": "willow",
+  "mascot": "jackal",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 222,
+   "total_tokens": 1358,
+   "cost": 0.0008958,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008958,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.000555
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img014.png": {
+  "ids": [
+   "torch/include/ATen/ops/grid_sampler_3d_backward_ops.h",
+   "xVExX0wg49UPI2KhFqoTWYLVRwquW2gAua130v95Ais",
+   "2961",
+   "torch/include/ATen/ops/_use_cudnn_ctc_loss_cuda_dispatch.h",
+   "_JdPWp-bKk5rX5Kl_Rcyfc_raJGUKB1uoELuKQt6LTw",
+   "1018",
+   "245",
+   "torch/_dynamo/variables/base.py",
+   "tNS2W05CTz2Ks24pGjnS6uo0Y6APK-_TkI8hGVqJk38",
+   "24396",
+   "-800"
+  ],
+  "codename": "mosaic",
+  "mascot": "badger",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1239,
+   "completion_tokens": 218,
+   "total_tokens": 1457,
+   "cost": 0.0009167,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009167,
+    "upstream_inference_prompt_cost": 0.0003717,
+    "upstream_inference_completions_cost": 0.000545
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img015.png": {
+  "ids": [
+   "torch/include/ATen/ops/rrelu_with_noise_native.h",
+   "9_8jyelrTAbRVMm5H2gP9kWvk_B2Ux10R_LU-py_1YY",
+   "2114",
+   "10",
+   "11",
+   "annotated_types-0.7.0.dist-info/INSTALLER",
+   "uuue4knoyJ-UwPPXg8fe=S7VCrXJQrAP7=eNuwvFQg",
+   "4",
+   "torch/optim/swa_utils.py",
+   "d1bs0ajKVNx-_Gnop00Y2J75ZjyokMehV1hQCT=HEtg",
+   "19259"
+  ],
+  "codename": "thistle",
+  "mascot": "badger",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 239,
+   "total_tokens": 1402,
+   "cost": 0.0009464,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009464,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.0005975
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img016.png": {
+  "ids": [
+   "sympy/simplify/epathtools.py",
+   "fV3oeD2J3LJRQ4YoTV6gq3yFT_NSZi-7xxKnrX-2KJA",
+   "10122",
+   "torch/include/ATen/ops/dist_ops.h",
+   "wfLQc4ek-VFco7gFN5NCbhVcvnRLj_rcHTdQVIEGS28",
+   "1859",
+   "werkzeug/datastructures/etag.py",
+   "N2dFqhFsLR0k5hgjol3QTGpcSltJhpgLWeyz6Va80G8",
+   "3278"
+  ],
+  "codename": "mosaic",
+  "mascot": "heron",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 214,
+   "total_tokens": 1377,
+   "cost": 0.0008839,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008839,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.000535
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img019.png": {
+  "ids": [
+   "8p46Wkl@WhczjjLVFSSIFTrMKIL7Z2FLJGy2tL7evk",
+   "122",
+   "hYpsMc_OP49MBmg80S_H624jlF_kkjYhWvUv7iBu90",
+   "2504",
+   "q1C7iWpvdDymEUZnyzJv2LsLtgwSkYtCixME-fYyIDw",
+   "110"
+  ],
+  "codename": "orchid",
+  "mascot": "osprey",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 174,
+   "total_tokens": 1310,
+   "cost": 0.0007758,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007758,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.000435
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img020.png": {
+  "ids": [
+   "3.9+",
+   "2.1+",
+   "2.6+",
+   "0.4.1+",
+   "sympy/core/random.py",
+   "miFdVpNKfutbkpYiI0zG9kVNum5GTk-_nnmQqUhVDZs",
+   "6647",
+   "torch/ao/nn/intrinsic/quantized/modules/bn_relu.py",
+   "kh0yWikPYFulF-ijwFajiDKB8uCcry3e0-tH0nvPAGe",
+   "3285",
+   "torch/include/ATen/ops/_sparse_compressed_tensor_unsafe.h",
+   "ImESbJdJRURiK0WB1Y9cZNEsTv8aUwP1HuInmwsqDs",
+   "5594",
+   "devscripts/cli",
+   "api.py",
+   "0"
+  ],
+  "codename": "marigold",
+  "mascot": "gecko",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 223,
+   "total_tokens": 1413,
+   "cost": 0.0009145,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009145,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0005575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img021.png": {
+  "ids": [
+   "KyQrfUWpaHR_DtvH0lWigkZz0Nw0BzmBsRoyzXPzXA8",
+   "23280",
+   "I4_EhghHQ3UzU@heTawT6MEsMSkP0LHVG-dBcTbtIo",
+   "570",
+   "Edu9SwVMQEXJ2SogUScyW7VLcwxJdhdf-EtxxmxdkIs",
+   "662"
+  ],
+  "codename": "saffron",
+  "mascot": "newt",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 165,
+   "total_tokens": 1355,
+   "cost": 0.0007695,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007695,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0004125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img025.png": {
+  "ids": [
+   "torch/include/kineto/IActivityProfiler.h",
+   "nZ4opNgUHak2rjnmXRKsynHR_a0kka4YX2xMABhUVk",
+   "5110",
+   "3.10",
+   "torch/include/torch/csrc/jit/runtime/static/passes.h",
+   "4FWM-FvTiVBj-lY46iES68J1XEUpvbejwst1Twb80YU",
+   "3684",
+   "torch/include/ATen/ops/gelu_native.h",
+   "G9IsEiEiDE_omnn3Gt6SiPT-j3Eqgzf8oEbgLebM-e4",
+   "1571"
+  ],
+  "codename": "glacier",
+  "mascot": "magpie",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 233,
+   "total_tokens": 1423,
+   "cost": 0.0009395,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009395,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0005825
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img026.png": {
+  "ids": [
+   "flake8/_compat.py",
+   "u9N4Dxo35mPmxF6hQWRPCj0qVHkLF8HxCgpgvgxueuQ",
+   "283",
+   "torch/include/ATen/native/cuda/Sort.h",
+   "S2RwrQkWVKojaNfpYL6e5oKwmBYurvd097-qZ6juh0",
+   "401",
+   "scipy/cluster/__init__.py",
+   "pgzWiWR5smQ3rwud2dhnLn6dpkD5lju_moElQp_zhoE",
+   "880"
+  ],
+  "codename": "prism",
+  "mascot": "jackal",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 176,
+   "total_tokens": 1375,
+   "cost": 0.0007997,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007997,
+    "upstream_inference_prompt_cost": 0.0003597,
+    "upstream_inference_completions_cost": 0.00044
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img027.png": {
+  "ids": [
+   "A4XGuSVpZUFwvd-ZJPkcGhISsBSNtSgUCNU2gN0mZos",
+   "20100",
+   "GCx2h0v6DbmpkC0XDJkRzbZWcUqwfHEuVDoAeX7FrAI",
+   "91",
+   "1uzTkcwiin6dVBbWUi0VB1ZppjKBHoRHG_Byvw-1UbI",
+   "323"
+  ],
+  "codename": "harbor",
+  "mascot": "lynx",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 143,
+   "total_tokens": 1306,
+   "cost": 0.0007064,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007064,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.0003575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img028.png": {
+  "ids": [
+   "sympy-1.14.0.dist-info/licenses/LICENSE",
+   "86XpqZ9ye@mGrSqpx6KaYyDUJXX3IOsk1xt_71c6AoY",
+   "7885",
+   "torch/include/ATen/ops/convolution_overrideable_native.h",
+   "y0TYZssFcUYRDIGlnON4Pia9S8bpWElSX03-J6rbCY",
+   "1037",
+   "sympy/codegen/abstract_nodes.py",
+   "TY4ecftqnym5ViYInnbS9zGPPFXdeSGqwi--xTz6Pvo",
+   "490"
+  ],
+  "codename": "sparrow",
+  "mascot": "newt",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 222,
+   "total_tokens": 1412,
+   "cost": 0.000912,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000912,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.000555
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img031.png": {
+  "ids": [
+   "6D49",
+   "ACBA",
+   "DCF6",
+   "BD1C",
+   "A206",
+   "67AB",
+   "CD54",
+   "FCE3",
+   "D964",
+   "BEFB",
+   "yt_dlp/extractor/rockstargames.py",
+   "_yV0LaqybuCnXCPy0s801bTgiazwHFj9GUrHSGAQ3Hs",
+   "2160",
+   "idna/compat.py",
+   "RzLy6QQCdI9784aFhb2EX9EKGCJjg0P3PiLgdeXXcx8",
+   "316",
+   "yt_dlp/extractor/turner.py",
+   "DH8l6_U3NJ-eu2tmTGuHQt4-joNBCJ2IT9H1WIPghhU",
+   "11459"
+  ],
+  "codename": "canyon",
+  "mascot": "quokka",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 1181,
+   "completion_tokens": 232,
+   "total_tokens": 1413,
+   "cost": 0.0009343,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009343,
+    "upstream_inference_prompt_cost": 0.0003543,
+    "upstream_inference_completions_cost": 0.00058
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img035.png": {
+  "ids": [
+   "transformers/video_processing_utils.py",
+   "Bn3JWf6ADVpaWr0cVLU4F6S1lCTzFDZ2fXNhwgs7pAk",
+   "41231",
+   "torch/include/torch/headeronly/util/complex.h",
+   "Hu1aY9NI7-EgPTCQY78ppx2REkYU7aKleuCdJV9xUhk",
+   "18077",
+   "3.12",
+   "torch/include/ATen/ops/replication_pad2d_meta.h",
+   "hSp3_b3I1TPlnd9aupwjGj9nJmG3D5nkMZJo4x-kx9Y",
+   "609",
+   "245"
+  ],
+  "codename": "falcon",
+  "mascot": "lemur",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 1181,
+   "completion_tokens": 243,
+   "total_tokens": 1424,
+   "cost": 0.0009618,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009618,
+    "upstream_inference_prompt_cost": 0.0003543,
+    "upstream_inference_completions_cost": 0.0006075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img036.png": {
+  "ids": [
+   "kWAlnqyGBCbUsabLZgY09dLJiHJHget0ISL_-LoWk",
+   "818",
+   "395",
+   "h509TdEcpb5-44JonaU3ex2TM15GVBLjM9CNCPwnTTs",
+   "537"
+  ],
+  "codename": "ember",
+  "mascot": "badger",
+  "server": "lumen",
+  "usage": {
+   "prompt_tokens": 1217,
+   "completion_tokens": 105,
+   "total_tokens": 1322,
+   "cost": 0.0006276,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006276,
+    "upstream_inference_prompt_cost": 0.0003651,
+    "upstream_inference_completions_cost": 0.0002625
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img037.png": {
+  "ids": [
+   "pandas/core/ops/invalid.py",
+   "ih16WY1IZHT3oCnqPVuh3mqcb5Qm2V_VpeILGKYytxQ",
+   "1706",
+   "123",
+   "4.4",
+   "pandas/tests/arrays/test_datetimes.py",
+   "Q9iTXCMsbWTj4vEbt3VWDX4DPxVdjK3FhCAb_HG4JM",
+   "29809",
+   "ufo2ft",
+   "starlette/background.py",
+   "50z8Q_S0lV9YGRGevBUFQ4D0wisU47pUV_PfiBG9Cg4",
+   "1257"
+  ],
+  "codename": "cobalt",
+  "mascot": "otter",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 236,
+   "total_tokens": 1372,
+   "cost": 0.0009308,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009308,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.00059
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img039.png": {
+  "ids": [
+   "sympy/physics/quantum/tests/test_represent.py",
+   "1EwzpL0fGxDGkojZ4_NoBAtCcA7aq2-S-i0Z0QrnTXg",
+   "5177",
+   "sklearn/neighbors/tests/test_quad_tree.py",
+   "y_WE4jNxliYos_SiICl_miGIya2IJlu71rXzwvQw2qk",
+   "4856",
+   "numpy/lib/recfunctions.py",
+   "T4aa5xXav9ntfwSYmzPiq_YUkh12wGk40XyBLQPCEzU",
+   "59539",
+   "22"
+  ],
+  "codename": "pebble",
+  "mascot": "lemur",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 191,
+   "total_tokens": 1381,
+   "cost": 0.0008345,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008345,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0004775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img040.png": {
+  "ids": [
+   "setuptools/_vendor/packaging/version.py",
+   "sha256=olfyuk_DPbfINkJ4w8WetXQ17c74x3DB501degUv7DY",
+   "16676",
+   "numpy/matrixlib/__init__.py",
+   "sha256=Ut6IqfjuA-kwvo6HBOYAgFjXXC_h7YV_3HyDsKM72dk",
+   "243",
+   "260",
+   "transformers/models/roformer/tokenization_utils.py",
+   "sha256=v_Qvq@uBuHpE43oIM64g9kTZcy8BD9oHh0R_ketIyIg",
+   "2625"
+  ],
+  "codename": "thistle",
+  "mascot": "quokka",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 239,
+   "total_tokens": 1375,
+   "cost": 0.0009383,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009383,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0005975
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img043.png": {
+  "ids": [
+   "U-yBFsodSZEP9Psmvjugc2iL88FfGgCR2IZYz8jOHM",
+   "6750",
+   "8wrew2d8xw2nnrIo9Yy02NnqiDz9bb3wnlXqJUtAE4",
+   "1921",
+   "FSzE-iL-1HRkdCqFvKmEdrcTv2L8xhoXXDQbpMAUfI",
+   "5583"
+  ],
+  "codename": "prism",
+  "mascot": "magpie",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 174,
+   "total_tokens": 1364,
+   "cost": 0.000792,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000792,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.000435
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img046.png": {
+  "ids": [
+   "yt_dlp/extractor/clubic.py,sha256=H0CRImnmd0S8wwTu1_i1RPmRrRh94yB78Hl-ojiJPv8,1903",
+   "torch/include/ATen/ops/msort.h,sha256=u4Zn3h3lbbeXrG0RNKbFBunQGyRNs001ItdS-sVFYIM,1017",
+   "networkx/algorithms/bipartite/cluster.py,sha256=8aZRmlQ3g0XtzHyF1kUBBwnzMSjtduquHDH8MxKNSEI,7346"
+  ],
+  "codename": "velvet",
+  "mascot": "marten",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 217,
+   "total_tokens": 1380,
+   "cost": 0.0008914,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008914,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.0005425
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img047.png": {
+  "ids": [
+   "bQ1Bv-FwrGx9wkjJpj4LTQ-0WmDVCoJX0K-SxuJJuIc",
+   "1071",
+   "_CG9kvla4-32pqHVYz0XJDPfc9yySJzEJCAKZQC-2Io",
+   "1182",
+   "TqJiyyJrnCUvE7ERK2ttQiQARlsaLV4I9E9fvF4lhXo",
+   "5868"
+  ],
+  "codename": "falcon",
+  "mascot": "marten",
+  "server": "nimbus",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 168,
+   "total_tokens": 1331,
+   "cost": 0.0007689,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007689,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.00042
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img050.png": {
+  "ids": [
+   "19Xm-DXHVL7IU8xmCwJJEuiiIMDFwWwOuBQFaVAi4So",
+   "1407",
+   "bj_zKr1oVctFlqyZa0bCsYTgFjiiNgPzC0hr1Y868mE",
+   "867",
+   "47DEQpj8HBSa-_TImW-5JCeuGeRkm5NMpJWZG3hSuFU",
+   "0"
+  ],
+  "codename": "tundra",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1217,
+   "completion_tokens": 140,
+   "total_tokens": 1357,
+   "cost": 0.0007151,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007151,
+    "upstream_inference_prompt_cost": 0.0003651,
+    "upstream_inference_completions_cost": 0.00035
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img056.png": {
+  "ids": [
+   "pluggy/_hooks.py",
+   "sha256=E6f3nYCI6dbEu0Gm6i0zgGU_59_e69kC08a06EBuo",
+   "25218",
+   "2.10",
+   "matplotlib/dviread.py",
+   "sha256=165jDLJDuF1TMzeIish2fKBodwMQZkyzu-vELHfVxms",
+   "3364",
+   "150",
+   "torch/include/ATen/ops/isin_native.h",
+   "sha256=pdz0Xw8NqB0M6iNdyiCHI9tPzmzf6KHM4UAJSsc7TS8",
+   "1638"
+  ],
+  "codename": "ember",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 240,
+   "total_tokens": 1430,
+   "cost": 0.000957,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000957,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0006
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img059.png": {
+  "ids": [
+   "docx/opc/package.py",
+   "RQw_luqGDaEAylhTp-olMCZ909zvv6Se95Ih7UpSsVU",
+   "8727",
+   "websocket/tests/data/header02.txt",
+   "1HzQGIMG0GWfnboRkUqbTEg2nTev0X2Waj0gQARaw",
+   "161",
+   "22",
+   "torch/include/ATen/ops/exp2_cuda_dispatch.h",
+   "kHFfupTl0Q3oT8rn6NcF0aEI8wbGtGBjX9Tk-maJ7M",
+   "922",
+   "123",
+   "0",
+   "3"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 238,
+   "total_tokens": 1374,
+   "cost": 0.0009358,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009358,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.000595
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img001.png": {
+  "ids": [
+   "setuptools/_vendor/packaging/version.py",
+   "olfyuk_DPbfUNkJ4wBWetXQ17c74x3DB501degUv7DY",
+   "16676",
+   "numpy/matrixlib/__init__.py",
+   "Ut6IqfjuA-kwwo6HBOYAgFjXXC_h7YV_3HyDsKM72dk",
+   "243",
+   "m.captures(\"item\")",
+   "transformers/models/roformer/tokenization_utils.py",
+   "v_Qvq0uBuHpE43oIM64g9kTZcy8BD9oHhOR_ketIyIg",
+   "2625"
+  ],
+  "codename": "thistle",
+  "mascot": "quokka",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1217,
+   "completion_tokens": 227,
+   "total_tokens": 1444,
+   "cost": 0.0009326,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009326,
+    "upstream_inference_prompt_cost": 0.0003651,
+    "upstream_inference_completions_cost": 0.0005675
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img005.png": {
+  "ids": [
+   "u9N4dOxo35mPmxF6hQWRPCjOqVHkLF8HxCgpgvgxueuQ,283",
+   "S2RwrQkWVKojaNfpyLF6eSoKWM8Yurvd097-qZ6juh0,401",
+   "pgzWiWR5smQ3rwud2dhnLn6dpkDSlju_moElQp_zhoE,880"
+  ],
+  "codename": "prism",
+  "mascot": "jackal",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 140,
+   "total_tokens": 1330,
+   "cost": 0.000707,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000707,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.00035
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img006.png": {
+  "ids": [
+   "296",
+   "z7Iui_TP_TAKQu1FwYR0jBAg0DUy1vKPPe_7r3L1Cw",
+   "8517",
+   "IOXNJjBW0fcqPm3Any5-kfwU9h2TH33R16gr3vZ6wnE",
+   "96862",
+   "TC38G7Ppa3ZIv_mCr0WSyXT9r2VBXB4TiPSNyC_Y8nI",
+   "4947"
+  ],
+  "codename": "cobalt",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 154,
+   "total_tokens": 1344,
+   "cost": 0.000742,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000742,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.000385
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img008.png": {
+  "ids": [
+   "networkx/algorithms/operators/binary.py",
+   "hziSCLDivioTWPVS6fEDSgI1pEr0dyLQQ3Z_E_Nz9As",
+   "13150",
+   "17.0",
+   "pyasn1/type/univ.py",
+   "8nu2gHdA84UXMLtgb4LXbHISTYw-kKljlsJ7dkJ8KFI",
+   "109212",
+   "PIL/.dylibs/libjpeg.62.4.0.dylib",
+   "VvQDTrlWDqJ1YbnkV1NT0PKsWqZ9Wq67yFDbNzYaPtY",
+   "653536"
+  ],
+  "codename": "meadow",
+  "mascot": "walrus",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 231,
+   "total_tokens": 1367,
+   "cost": 0.0009183,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009183,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0005775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img010.png": {
+  "ids": [
+   "torch/include/ATen/ops/rrelu_with_noise_native.h",
+   "sha256=9_8jye1rTaBRVmN5H2gP9kNvk_B2Ux10R_LU-py_1YY",
+   "2114",
+   "10",
+   "11",
+   "annotated_types-0.7.0.dist-info/INSTALLER",
+   "sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQoAP7zeNuwvFQg",
+   "4",
+   "torch/optim/swa_utils.py",
+   "sha256=d1bs0ajKVNx-_Gnop0Y2J75ZjyokMehV1hQCT2HEtg",
+   "19259"
+  ],
+  "codename": "thistle",
+  "mascot": "badger",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 252,
+   "total_tokens": 1442,
+   "cost": 0.000987,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000987,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.00063
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img012.png": {
+  "ids": [
+   "transformers/models/wav2vec2/configuration_wav2vec2.py",
+   "A4XGuSVpZUFWvd-ZJPkcGhISsBSNtSqUCNU2gN0mZos",
+   "20100",
+   "sklearn/externals/array_api_extra/_lib/__init__.py",
+   "GCx2h@v60bmpkC0XDJkRzbZWcUqwHEuVDoAeX7FrAI",
+   "91",
+   "numpy/f2py/common_rules.py",
+   "1uZTkcwiin6dVBbWUiOVB1ZppjKBHoRHG_Byvw-1UbI",
+   "323"
+  ],
+  "codename": "harbor",
+  "mascot": "lynx",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 224,
+   "total_tokens": 1360,
+   "cost": 0.0009008,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009008,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.00056
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img017.png": {
+  "ids": [
+   "256",
+   "networkx/algorithms/tests/test_dominance.py",
+   "rD-m7LVqpqrOTCUJrli43lYpezYajfkcNd3xvGhTj8",
+   "9811",
+   "668",
+   "transformers/models/xmod/configuration_xmod.py",
+   "W5bQLbTh3EhMd-Lvseyl28uQhkVVCdPSdhcRXJ07hcg",
+   "9180",
+   "networkx/algorithms/broadcasting.py",
+   "Amw1oRpr8pdS67aC_9wjJ0QomP1IqPvqtE7c0Mf9L70",
+   "4974"
+  ],
+  "codename": "willow",
+  "mascot": "jackal",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 235,
+   "total_tokens": 1371,
+   "cost": 0.0009283,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009283,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0005875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img018.png": {
+  "ids": [
+   "docx/opc/package.py",
+   "RQw_luqGDaEAylhTp-olMCZ909zvv6Se95Ih7UpSsVU",
+   "8727",
+   "websocket/tests/data/header02.txt",
+   "1HzQGlMG00GwfnboRkUqbTEg2nTevOX2Waj0gQARaw",
+   "161",
+   "86-64",
+   "torch/include/ATen/ops/exp2_cuda_dispatch.h",
+   "kHFfupmTI0Q3oT8rn6NCF0aEI8wbGtGBjX9Tk-maJ7M",
+   "922"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 190,
+   "total_tokens": 1353,
+   "cost": 0.0008239,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008239,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.000475
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img022.png": {
+  "ids": [
+   "charset_normalizer-3.4.2.dist-info/licenses/LICENSE",
+   "bQ1Bv-FwrGx9wkjJpj4LTQ-0WmDVCoJX0K-SxuJJuIc",
+   "1071",
+   "proto/marshal/rules/field_mask.py",
+   "CG9kvla4-32pqHVYzoXJDPfc9yySJzEJCAKZQC-2Io",
+   "1182",
+   "yt_dlp/extractor/murrtube.py",
+   "TqJiyyJrnCUTe7ERK2ttQiQARlsaLV4I9E9fvF4lhXo",
+   "5868"
+  ],
+  "codename": "falcon",
+  "mascot": "marten",
+  "server": "nimbus",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 220,
+   "total_tokens": 1410,
+   "cost": 0.000907,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000907,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.00055
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img023.png": {
+  "ids": [
+   "torch/include/ATen/ops/slow_conv3d_forward.h",
+   "U-yBFsodSZEP9Psmvjugcz2iLB8FfGgR2IZYz8j0HM",
+   "6750",
+   "pandas/tests/tslibs/test_ccalendar.py",
+   "8wreW2d8xw2znrIo9Yy02NnqziDz9bb3wnLXqJUtAE4",
+   "1921",
+   "torch/distributed/checkpoint/_fsspec_filesystem.py",
+   "FSzE-iL-1HRKdCqFVkmEdrcwTv2L8xhoXXDQbpMAufI",
+   "5583",
+   "example.pdf"
+  ],
+  "codename": "prism",
+  "mascot": "magpie",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 236,
+   "total_tokens": 1399,
+   "cost": 0.0009389,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009389,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.00059
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img024.png": {
+  "ids": [
+   "6849",
+   "ACBA",
+   "DCF6",
+   "BD1C",
+   "A206",
+   "67AB",
+   "CD54",
+   "FCE3",
+   "D964",
+   "BEFB",
+   "yt_dlp/extractor/rockstargames.py",
+   "sha256=_yV0LaqybuCnXCpY0s801bTgiazwHFj9GUthSGAQ3Hs",
+   "2160",
+   "idna/compat.py",
+   "sha256=RzLy6QQCdI9784aFhb2EX9EKGCJjg0P3PilGdeXXcx8",
+   "316",
+   "yt_dlp/extractor/turner.py",
+   "sha256=DH8I6_U3NJ-eu2tmTGuHQt4-joNBcJ2IT9H1WIpghhU",
+   "11459"
+  ],
+  "codename": "canyon",
+  "mascot": "quokka",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 299,
+   "total_tokens": 1435,
+   "cost": 0.0010883,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010883,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0007475
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img029.png": {
+  "ids": [
+   "8ZEPgAx-WMb1EIPa6XnydwZxqKyE2kiGo1cHzlhXw88,1207",
+   "80agtxQTE@jNy7-rTbl4L9lEbCgarf6n_jkx1woYl0s,9297",
+   "ILkgikXJN6RyR0Fjmmv8E8LuRBiO8H_P6lUmenbf8Ho,318",
+   "90"
+  ],
+  "codename": "saffron",
+  "mascot": "magpie",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 148,
+   "total_tokens": 1338,
+   "cost": 0.000727,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000727,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.00037
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img030.png": {
+  "ids": [
+   "xVEXx0wg49UPI2KhFqoTWYLVRwquW2gAua130v95Ais",
+   "2961",
+   "_JdPWp-bKkSrXSKl_Rcyfc_raJGUKB1uoELuKQt6LTw",
+   "1018",
+   "245",
+   "tNS2W05CTz2Ks24pGjnS6uo0Y6APK-_Tki8hGVqJk38",
+   "24396",
+   "~800"
+  ],
+  "codename": "mosaic",
+  "mascot": "badger",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 158,
+   "total_tokens": 1294,
+   "cost": 0.0007358,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007358,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.000395
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img032.png": {
+  "ids": [
+   "torch/ao/quantization/backend_config/x86.py",
+   "4geWLr6mkFhSEYiXFXpkB8NegS05EXhv2fYHTpajNyg",
+   "3869",
+   "transformers/models/rt_detr_v2/__init__.py",
+   "7RL5U-hsGt3HQZ5SuWn8iZY_L166EYswBvaQXFRkzRc",
+   "1003",
+   "scipy/linalg/_misc.py",
+   "udhvxGfEHxhS3ecQBuwQ65W9ezVQIaVBw8JOmfqH_oE",
+   "6301"
+  ],
+  "codename": "sparrow",
+  "mascot": "lemur",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 220,
+   "total_tokens": 1383,
+   "cost": 0.0008989,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008989,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.00055
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img033.png": {
+  "ids": [
+   "3.9+",
+   "2.1+",
+   "2.6+",
+   "0.4.1+",
+   "sympy/core/random.py",
+   "miFdVpNKfutbkpYiI0zG9kVNUM5GTk-_nnmQqUhVDZs,6647",
+   "torch/ao/nn/intrinsic/quantized/modules/bn_relu.py",
+   "kh0yWikPYFulF-ijwFaJiDKB8uCcry3e0-tH0nvPaGE,3285",
+   "torch/include/ATen/ops/_sparse_compressed_tensor_unsafe.h",
+   "ImtESbJdJRURiK0WB1Y9czNE5tV8aUwP1HuInmwsqDs,5594"
+  ],
+  "codename": "marigold",
+  "mascot": "gecko",
+  "server": "borealis",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 206,
+   "total_tokens": 1369,
+   "cost": 0.0008639,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008639,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.000515
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img034.png": {
+  "ids": [
+   "1.7.2",
+   "8p46Wkl0WhczJjlVFS5IFTrsMKIL7Z2FLJGy2tL7evk",
+   "122",
+   "scikit_learn-1.7.2.dist-info/WHEEL",
+   "hYPsMc_OP49MBmg80S_H6Z4jlF_kkjYh5WvUv7iBu90",
+   "2504",
+   "sentence_transformers/evaluation/SequentialEvaluator.py",
+   "q1C7iWpvdDymEUZNyzJvZLsLtgwSkYtCixME-fYyIDw",
+   "110",
+   "sympy/assumptions/predicates/__init__.py",
+   "17.0"
+  ],
+  "codename": "orchid",
+  "mascot": "osprey",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1181,
+   "completion_tokens": 245,
+   "total_tokens": 1426,
+   "cost": 0.0009668,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009668,
+    "upstream_inference_prompt_cost": 0.0003543,
+    "upstream_inference_completions_cost": 0.0006125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img038.png": {
+  "ids": [
+   "torch/include/ATen/ops/le_meta.h,sha256=UbBHZaYEAOf5AaQAHIPEg79BJ07-XIFTQ89ALnLoJY,735",
+   "googleapiclient/discovery_cache/documents/file.v1beta1.json,sha256=lnWBtWwfRsYXecZ7FzLncP0szc4eKkGgs0QKbi09xc,116058",
+   "torchgen/packaged/autograd/deprecated.yaml,sha256=UbtajzWo89jf1Q5sw8JNJIZT5s-iDBagnrGJthtDS2Q,6250"
+  ],
+  "codename": "juniper",
+  "mascot": "osprey",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 223,
+   "total_tokens": 1422,
+   "cost": 0.0009172,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009172,
+    "upstream_inference_prompt_cost": 0.0003597,
+    "upstream_inference_completions_cost": 0.0005575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img041.png": {
+  "ids": [
+   "transformers/models/phi3/modeling_phi3.py,sha256=KyQrfUWpaHR_DtvH0lWigkZz0NwOZmBsRoyzXPxXA8,23280",
+   "torch/include/ATen/ops/linalg_eigvals_native.h,sha256=I4_EhghHQ3UzU0heTawT6MESMR5kP0lHVG-dBcTbtlo,570",
+   "matplotlib/mpl-data/images/subplots_large.png,sha256=Edu9SwVMQEXJZ5ogU5cyW7VLcwXJdhdf-EtxxmxdkIs,662"
+  ],
+  "codename": "saffron",
+  "mascot": "newt",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1181,
+   "completion_tokens": 217,
+   "total_tokens": 1398,
+   "cost": 0.0008968,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008968,
+    "upstream_inference_prompt_cost": 0.0003543,
+    "upstream_inference_completions_cost": 0.0005425
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img042.png": {
+  "ids": [
+   "torch/include/kineto/IActivityProfiler.h",
+   "nZ4opNgUHak2rjnmXRKsynHR_aOkka4YX2xMABhvUVk",
+   "5110",
+   "torch/include/torch/csrc/jit/runtime/static/passes.h",
+   "4PWM-FvTlVBj-lY46iES68J1XEUpvbejwst1Twb80YU",
+   "3684",
+   "torch/include/ATen/ops/gelu_native.h",
+   "G91sEiEiDE_omnn3Gt6SIpT-j3Eqgzf8oEbgLebM-e4",
+   "1571"
+  ],
+  "codename": "glacier",
+  "mascot": "magpie",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 226,
+   "total_tokens": 1389,
+   "cost": 0.0009139,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009139,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.000565
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img044.png": {
+  "ids": [
+   "yt_dlp/extractor/clubic.py",
+   "sha256=H0CRImnmd0S8wwTu1_i1RPmRrRh94y878Hl-ojiJPv8",
+   "1903",
+   "USE",
+   "CUDA",
+   "0",
+   "V2",
+   "V1",
+   "v1",
+   "v1",
+   "4",
+   "torch/include/ATen/ops/msort.h",
+   "sha256=u42n3h3lbbeXrG0RNKbFBunQGyRNs001ItdS-sVFYIM",
+   "1017",
+   "3.6",
+   "google-api-core",
+   "2.8.2",
+   "Inference",
+   "networkx/algorithms/bipartite/cluster.py",
+   "sha256=8aZRmlQ3g0XtzHyF1kUB8wn2MSjtduquHDH8MxKNSEI",
+   "7346"
+  ],
+  "codename": "velvet",
+  "mascot": "marten",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 311,
+   "total_tokens": 1501,
+   "cost": 0.0011345,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011345,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0007775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img045.png": {
+  "ids": [
+   "pluggy/_hooks.py",
+   "E6f3nYCI6dbEu00Gmy61ozgGU_59_e69kC08a06EBuo",
+   "25218",
+   "2.10",
+   "matplotlib/dviread.py",
+   "165jDLJDuF1TMze11sh2fKBodwMQZkyzu-vELHfVxms",
+   "3364",
+   "150",
+   "torch/include/ATen/ops/isin_native.h",
+   "pdz0Xw8NqB0M6iNdyicHI9tPzmzf6KHM4UAJSsc7TS8",
+   "1638"
+  ],
+  "codename": "ember",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 1181,
+   "completion_tokens": 229,
+   "total_tokens": 1410,
+   "cost": 0.0009268,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009268,
+    "upstream_inference_prompt_cost": 0.0003543,
+    "upstream_inference_completions_cost": 0.0005725
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img048.png": {
+  "ids": [
+   "1.14.0",
+   "B6XpgZ9ye0mGrSgpx6KaYyDUJXX3I0sk1xt_71c6AoY",
+   "7885",
+   "y0TYZssFcUYRDiGlnON4Pia9S8bpWElSX03-J6rbCY",
+   "1037",
+   "TY4ecftqnym5viYInnb59zGPPFXdeSGQwi--xTz6Pvo",
+   "490",
+   "513",
+   "500:600:700"
+  ],
+  "codename": "sparrow",
+  "mascot": "newt",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 202,
+   "total_tokens": 1401,
+   "cost": 0.0008647,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008647,
+    "upstream_inference_prompt_cost": 0.0003597,
+    "upstream_inference_completions_cost": 0.000505
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img049.png": {
+  "ids": [
+   "sympy/plotting/pygletplot/tests/test_plotting.py",
+   "NisjR-yuBRJFQvjcb20skTR3yid2U3MhKHW6sy8RE10",
+   "2720",
+   "torch/include/ATen/native/cpu/SampledAddmmKernel.h",
+   "gG-E6_kfS4M6PAwi0KXsf7cBA7Zb_G0jioZ3leATpbI",
+   "322",
+   "pdfminer/cmap/78ms-RKSJ-V.json.gz",
+   "ThPluRM6KYVmDPzsF0heoiQ_2ry6uU35oBEeaGuFE_Q",
+   "31296"
+  ],
+  "codename": "quill",
+  "mascot": "ferret",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 1228,
+   "completion_tokens": 238,
+   "total_tokens": 1466,
+   "cost": 0.0009634,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009634,
+    "upstream_inference_prompt_cost": 0.0003684,
+    "upstream_inference_completions_cost": 0.000595
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img051.png": {
+  "ids": [
+   "sympy/physics/quantum/tests/test_represent.py,sha256=lEw=pl0fGxDGkojZ4_WoBAtCcA7aq2-S-1OZ0QrnTXg,5177",
+   "sklearn/neighbors/tests/test_quad_tree.py,sha256=y_WE4jNxl1Yos_S1ICl_m1GIya2IJlu71rX=wvQw2qk,4856",
+   "numpy/lib/recfunctions.py,sha256=T4aa5xXav9ntfw5Ym=P1q_Yukh12wGk40XyBLQPCE=U,59539"
+  ],
+  "codename": "pebble",
+  "mascot": "lemur",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 1163,
+   "completion_tokens": 200,
+   "total_tokens": 1363,
+   "cost": 0.0008489,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008489,
+    "upstream_inference_prompt_cost": 0.0003489,
+    "upstream_inference_completions_cost": 0.0005
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img052.png": {
+  "ids": [
+   "sympy/simplify/epathtools.py",
+   "fv3oeD2J3LJRQ4YoTV6gq3yFT_NSZi-7xxKnRX-2KJA",
+   "10122",
+   "torch/include/ATen/ops/dist__ops.h",
+   "wfLQc4ek-VFco7gFNSNCbhVcvnRLj_rcHTdQVlEGS28",
+   "1859",
+   "gbb<2>",
+   " 121|",
+   "0.10.0",
+   "werkzeug/datastructures/etag.py",
+   "N2dFqhFsLR0kShgjol3QTGpSltJhpgLWeyz6Va80G8",
+   "3278"
+  ],
+  "codename": "mosaic",
+  "mascot": "heron",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 240,
+   "total_tokens": 1430,
+   "cost": 0.000957,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000957,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0006
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img053.png": {
+  "ids": [
+   "8n3JWf6ADVpaWr0cVLU4F6S1lCTzFDZ2FXNhwgs7pAk",
+   "41231",
+   "Hu1aY9NI7-EgPTCQY78ppx2REKyU7aKleuCdJV9xUhk",
+   "18077",
+   "hSp3_b3I1TPlnd9aupwjGj9mJG3D5nkMZJo4x-kx9Y",
+   "609",
+   "245"
+  ],
+  "codename": "falcon",
+  "mascot": "lemur",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 151,
+   "total_tokens": 1287,
+   "cost": 0.0007183,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007183,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0003775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img054.png": {
+  "ids": [
+   "19Xm-DXHVL7IU8xmCwJJEuiiIMDFwww@UBQFaVAi4So",
+   "1407",
+   "bj_zKrIoVctFlqyZa0bCsYTgFjiiNgPzC@hr1Y868mE",
+   "867",
+   "47DEQpj8HBSa-_TIMw-SJCeuQeRkmSNMpJWZG3hSuFU",
+   "0"
+  ],
+  "codename": "tundra",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 135,
+   "total_tokens": 1271,
+   "cost": 0.0006783,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006783,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.0003375
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img055.png": {
+  "ids": [
+   "520",
+   "509",
+   "498",
+   "407",
+   "537",
+   "urllib3/util/ssl_.py",
+   "jxnQ3msYkVaokJVwQHnAnAVdTDdidrTHDeyk50gwqaQ",
+   "19786",
+   "matplotlib/layout_engine.py",
+   "9cKFTFPCvwmKIygTUvrv0q1iWnFYMe9Shniiv2QbC74",
+   "1788",
+   "torch/include/ATen/ops/fft_ihfft_ops.h",
+   "GxZRWnjanuhFHk8kiXnOMHtUz8o888tu_F3K7BqYY00",
+   "2141"
+  ],
+  "codename": "russet",
+  "mascot": "magpie",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 1190,
+   "completion_tokens": 251,
+   "total_tokens": 1441,
+   "cost": 0.0009845,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009845,
+    "upstream_inference_prompt_cost": 0.000357,
+    "upstream_inference_completions_cost": 0.0006275
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img057.png": {
+  "ids": [
+   "pandas/core/ops/invalid.py,sha256=ih16WY1IZHT3oCnqPVuh3mqcb5Qn2V_VpeILGKYytxQ,1706",
+   "123",
+   "pandas/tests/arrays/test_datetimes.py,sha256=Q9iTXCMSbWTj4vEbt3VWdX4DPpxVdjK3fHcAb_HG4JM,29809",
+   "starlette/background.py,sha256=50zBQ_5oLV9YGRGevBUFQ4D0wisU47pUV_PfiBG9Cg4,1257"
+  ],
+  "codename": "cobalt",
+  "mascot": "otter",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 1228,
+   "completion_tokens": 192,
+   "total_tokens": 1420,
+   "cost": 0.0008484,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008484,
+    "upstream_inference_prompt_cost": 0.0003684,
+    "upstream_inference_completions_cost": 0.00048
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img058.png": {
+  "ids": [
+   "torch/include/ATen/ops/sym_is_contiguous.h",
+   "kWAlnqyGBCcbUsabLZgY09dLJiHJTHgetOISL_LoWk",
+   "818",
+   "395",
+   "pip/_vendor/resolvelib/__init__.py",
+   "h5O9TdEcpbS-44JonaU3ex2TM1SGVBLjM9CNCPwnTTs",
+   "537",
+   "pyasn1_modules/rfc7508.py",
+   "ZnJfbQ0934Fs8wxcp0@ggSfU@d8yEFlkkFD3KMUQbAE",
+   "2182"
+  ],
+  "codename": "ember",
+  "mascot": "badger",
+  "server": "lumen",
+  "usage": {
+   "prompt_tokens": 1136,
+   "completion_tokens": 224,
+   "total_tokens": 1360,
+   "cost": 0.0009008,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009008,
+    "upstream_inference_prompt_cost": 0.0003408,
+    "upstream_inference_completions_cost": 0.00056
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

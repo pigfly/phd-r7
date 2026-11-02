@@ -1,0 +1,346 @@
+
+=== run3_s5 · claude  (items 30)
+  A uniform                    ids=0.317 silent=0.506 abstain=0.000 prose=0.544 cost=72 billed=nan
+  C hazard                     ids=0.644 silent=0.261 abstain=0.000 prose=0.611 cost=73 billed=nan
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.611 cost=149 billed=nan
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.544 cost=148 billed=nan
+  C-A ids  : +0.328 [+0.222, +0.428]
+  C-A prose: +0.067 [-0.089, +0.222]
+  E-A ids  : +0.683 [+0.628, +0.739]
+  E-A prose: +0.067 [-0.089, +0.233]
+  E-C ids  : +0.356 [+0.261, +0.456]
+  E-C prose: -0.000 [-0.089, +0.078]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: -0.067 [-0.222, +0.089]
+  D-C ids  : +0.356 [+0.261, +0.461]
+  D-C prose: -0.067 [-0.222, +0.078]
+
+=== run3_s5 · minimax  (items 30)
+  A uniform                    ids=0.089 silent=0.400 abstain=0.000 prose=0.811 cost=72 billed=nan
+  C hazard                     ids=0.367 silent=0.306 abstain=0.000 prose=0.778 cost=73 billed=nan
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.278 cost=149 billed=nan
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.311 cost=148 billed=nan
+  C-A ids  : +0.278 [+0.178, +0.383]
+  C-A prose: -0.033 [-0.156, +0.089]
+  E-A ids  : +0.911 [+0.872, +0.944]
+  E-A prose: -0.533 [-0.667, -0.389]
+  E-C ids  : +0.633 [+0.533, +0.728]
+  E-C prose: -0.500 [-0.667, -0.333]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: +0.033 [-0.111, +0.178]
+  D-C ids  : +0.633 [+0.528, +0.728]
+  D-C prose: -0.467 [-0.644, -0.278]
+
+=== run3_s5 · minimax_unr  (items 30)
+  A uniform                    ids=0.061 silent=0.306 abstain=0.056 prose=0.733 cost=72 billed=nan
+  C hazard                     ids=0.328 silent=0.328 abstain=0.044 prose=0.689 cost=73 billed=nan
+  C-A ids  : +0.267 [+0.172, +0.367]
+  C-A prose: -0.044 [-0.189, +0.100]
+
+=== run3_s5 · claude-sonnet-5.5  (items 30)
+  A uniform                    ids=0.272 silent=0.451 abstain=0.000 prose=0.765 cost=72 billed=268
+  C hazard                     ids=0.630 silent=0.253 abstain=0.000 prose=0.802 cost=73 billed=269
+  CD hazard+residual anchors   ids=0.994 silent=0.000 abstain=0.000 prose=0.747 cost=150 billed=370
+  D anchors                    ids=0.994 silent=0.006 abstain=0.000 prose=0.711 cost=148 billed=369
+  C-A ids  : +0.347 [+0.227, +0.460]
+  C-A prose: +0.067 [-0.040, +0.187]
+  E-A ids  : +0.722 [+0.660, +0.784]
+  E-A prose: +0.025 [-0.099, +0.160]
+  E-C ids  : +0.364 [+0.259, +0.475]
+  E-C prose: -0.062 [-0.136, +0.000]
+  D-E ids  : +0.000 [-0.017, +0.017]
+  D-E prose: -0.046 [-0.161, +0.080]
+  D-C ids  : +0.364 [+0.265, +0.475]
+  D-C prose: -0.099 [-0.210, +0.012]
+
+=== run3_s5 · gemini-3.5-flash-lite  (items 30)
+  A uniform                    ids=0.506 silent=0.417 abstain=0.000 prose=0.989 cost=72 billed=1183
+  C hazard                     ids=0.833 silent=0.139 abstain=0.000 prose=1.000 cost=73 billed=1129
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=149 billed=1247
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.989 cost=148 billed=1300
+  C-A ids  : +0.328 [+0.228, +0.428]
+  C-A prose: +0.011 [+0.000, +0.033]
+  E-A ids  : +0.494 [+0.422, +0.567]
+  E-A prose: +0.011 [+0.000, +0.033]
+  E-C ids  : +0.167 [+0.089, +0.256]
+  E-C prose: +0.000 [+0.000, +0.000]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: -0.011 [-0.033, +0.000]
+  D-C ids  : +0.167 [+0.083, +0.256]
+  D-C prose: -0.011 [-0.033, +0.000]
+
+=== run3_s5 · gpt-6-luna  (items 30)
+  A uniform                    ids=0.022 silent=0.067 abstain=0.000 prose=0.378 cost=72 billed=210
+  C hazard                     ids=0.228 silent=0.094 abstain=0.000 prose=0.433 cost=73 billed=210
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.478 cost=149 billed=293
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.378 cost=148 billed=293
+  C-A ids  : +0.206 [+0.133, +0.272]
+  C-A prose: +0.056 [-0.044, +0.167]
+  E-A ids  : +0.978 [+0.956, +0.994]
+  E-A prose: +0.100 [+0.000, +0.200]
+  E-C ids  : +0.772 [+0.711, +0.833]
+  E-C prose: +0.044 [+0.000, +0.100]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: -0.100 [-0.222, +0.011]
+  D-C ids  : +0.772 [+0.711, +0.833]
+  D-C prose: -0.056 [-0.178, +0.056]
+
+=== run3_s5 · llama-4-maverick  (items 30)
+  A uniform                    ids=0.000 silent=0.056 abstain=0.000 prose=0.244 cost=72 billed=720
+  C hazard                     ids=0.050 silent=0.306 abstain=0.000 prose=0.244 cost=73 billed=720
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.289 cost=149 billed=800
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.189 cost=148 billed=800
+  C-A ids  : +0.050 [+0.022, +0.083]
+  C-A prose: +0.000 [-0.111, +0.111]
+  E-A ids  : +1.000 [+1.000, +1.000]
+  E-A prose: +0.044 [-0.044, +0.144]
+  E-C ids  : +0.950 [+0.917, +0.978]
+  E-C prose: +0.044 [+0.000, +0.100]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: -0.100 [-0.189, -0.011]
+  D-C ids  : +0.950 [+0.917, +0.978]
+  D-C prose: -0.056 [-0.167, +0.044]
+
+=== run3_s5 · qwen3-vl-235b-a22b-instruct  (items 30)
+  A uniform                    ids=0.011 silent=0.067 abstain=0.000 prose=0.189 cost=72 billed=nan
+  C hazard                     ids=0.050 silent=0.261 abstain=0.000 prose=0.200 cost=73 billed=nan
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.222 cost=149 billed=315
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.300 cost=148 billed=315
+  C-A ids  : +0.039 [+0.006, +0.072]
+  C-A prose: +0.011 [-0.067, +0.100]
+  E-A ids  : +0.989 [+0.972, +1.000]
+  E-A prose: +0.033 [-0.056, +0.133]
+  E-C ids  : +0.950 [+0.917, +0.978]
+  E-C prose: +0.022 [-0.022, +0.078]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: +0.078 [-0.011, +0.178]
+  D-C ids  : +0.950 [+0.917, +0.978]
+  D-C prose: +0.100 [+0.011, +0.189]
+
+=== run3_s6 · claude  (items 30)
+  A uniform                    ids=0.756 silent=0.167 abstain=0.000 prose=0.911 cost=108 billed=nan
+  C hazard                     ids=0.967 silent=0.028 abstain=0.000 prose=0.822 cost=108 billed=nan
+  CD hazard+residual anchors   ids=0.983 silent=0.011 abstain=0.000 prose=0.833 cost=134 billed=nan
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.900 cost=186 billed=nan
+  C-A ids  : +0.211 [+0.150, +0.272]
+  C-A prose: -0.089 [-0.189, +0.011]
+  E-A ids  : +0.228 [+0.172, +0.283]
+  E-A prose: -0.078 [-0.167, +0.011]
+  E-C ids  : +0.017 [-0.011, +0.044]
+  E-C prose: +0.011 [-0.067, +0.078]
+  D-E ids  : +0.017 [+0.000, +0.033]
+  D-E prose: +0.067 [-0.022, +0.156]
+  D-C ids  : +0.033 [+0.006, +0.061]
+  D-C prose: +0.078 [-0.033, +0.189]
+
+=== run3_s6 · minimax  (items 30)
+  A uniform                    ids=0.378 silent=0.250 abstain=0.000 prose=0.867 cost=108 billed=nan
+  C hazard                     ids=0.950 silent=0.017 abstain=0.000 prose=0.844 cost=108 billed=nan
+  CD hazard+residual anchors   ids=0.972 silent=0.017 abstain=0.000 prose=0.656 cost=134 billed=nan
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.700 cost=186 billed=nan
+  C-A ids  : +0.572 [+0.506, +0.633]
+  C-A prose: -0.022 [-0.133, +0.089]
+  E-A ids  : +0.594 [+0.528, +0.661]
+  E-A prose: -0.211 [-0.378, -0.044]
+  E-C ids  : +0.022 [-0.017, +0.061]
+  E-C prose: -0.189 [-0.356, -0.044]
+  D-E ids  : +0.028 [+0.006, +0.050]
+  D-E prose: +0.044 [-0.133, +0.233]
+  D-C ids  : +0.050 [+0.022, +0.083]
+  D-C prose: -0.144 [-0.244, -0.044]
+
+=== run3_s6 · minimax_unr  (items 30)
+  A uniform                    ids=0.167 silent=0.344 abstain=0.022 prose=0.656 cost=108 billed=nan
+  C hazard                     ids=0.750 silent=0.056 abstain=0.000 prose=0.444 cost=108 billed=nan
+  C-A ids  : +0.583 [+0.511, +0.656]
+  C-A prose: -0.211 [-0.333, -0.100]
+
+=== run3_s6 · claude-sonnet-5.5  (items 30)
+  A uniform                    ids=0.767 silent=0.156 abstain=0.000 prose=0.889 cost=108 billed=304
+  C hazard                     ids=0.961 silent=0.028 abstain=0.000 prose=0.944 cost=108 billed=304
+  CD hazard+residual anchors   ids=0.971 silent=0.023 abstain=0.000 prose=0.920 cost=132 billed=335
+  D anchors                    ids=0.994 silent=0.000 abstain=0.000 prose=0.878 cost=186 billed=405
+  C-A ids  : +0.194 [+0.139, +0.256]
+  C-A prose: +0.056 [-0.011, +0.122]
+  E-A ids  : +0.201 [+0.149, +0.259]
+  E-A prose: +0.034 [-0.046, +0.115]
+  E-C ids  : +0.006 [-0.011, +0.023]
+  E-C prose: -0.023 [-0.069, +0.023]
+  D-E ids  : +0.023 [-0.006, +0.057]
+  D-E prose: -0.046 [-0.138, +0.034]
+  D-C ids  : +0.033 [+0.006, +0.067]
+  D-C prose: -0.067 [-0.144, +0.011]
+
+=== run3_s6 · gemini-3.5-flash-lite  (items 30)
+  A uniform                    ids=0.950 silent=0.022 abstain=0.000 prose=1.000 cost=108 billed=1155
+  C hazard                     ids=0.994 silent=0.000 abstain=0.000 prose=0.989 cost=108 billed=1180
+  CD hazard+residual anchors   ids=1.000 silent=0.000 abstain=0.000 prose=0.989 cost=134 billed=1219
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=186 billed=1273
+  C-A ids  : +0.044 [+0.022, +0.072]
+  C-A prose: -0.011 [-0.033, +0.000]
+  E-A ids  : +0.050 [+0.022, +0.083]
+  E-A prose: -0.011 [-0.033, +0.000]
+  E-C ids  : +0.006 [+0.000, +0.017]
+  E-C prose: +0.000 [+0.000, +0.000]
+  D-E ids  : +0.000 [+0.000, +0.000]
+  D-E prose: +0.011 [+0.000, +0.033]
+  D-C ids  : +0.006 [+0.000, +0.017]
+  D-C prose: +0.011 [+0.000, +0.033]
+
+=== run3_s6 · gpt-6-luna  (items 30)
+  A uniform                    ids=0.183 silent=0.117 abstain=0.000 prose=0.511 cost=108 billed=239
+  C hazard                     ids=0.589 silent=0.156 abstain=0.000 prose=0.544 cost=108 billed=249
+  CD hazard+residual anchors   ids=0.772 silent=0.061 abstain=0.000 prose=0.489 cost=134 billed=276
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.456 cost=186 billed=321
+  C-A ids  : +0.406 [+0.339, +0.483]
+  C-A prose: +0.033 [-0.111, +0.178]
+  E-A ids  : +0.589 [+0.500, +0.678]
+  E-A prose: -0.022 [-0.178, +0.144]
+  E-C ids  : +0.183 [+0.094, +0.272]
+  E-C prose: -0.056 [-0.178, +0.056]
+  D-E ids  : +0.228 [+0.144, +0.317]
+  D-E prose: -0.033 [-0.189, +0.122]
+  D-C ids  : +0.411 [+0.339, +0.478]
+  D-C prose: -0.089 [-0.233, +0.044]
+
+=== run3_s6 · llama-4-maverick  (items 30)
+  A uniform                    ids=0.056 silent=0.233 abstain=0.000 prose=0.633 cost=108 billed=720
+  C hazard                     ids=0.717 silent=0.161 abstain=0.000 prose=0.244 cost=108 billed=720
+  CD hazard+residual anchors   ids=0.906 silent=0.050 abstain=0.000 prose=0.200 cost=134 billed=746
+  D anchors                    ids=0.978 silent=0.000 abstain=0.000 prose=0.622 cost=186 billed=800
+  C-A ids  : +0.661 [+0.567, +0.750]
+  C-A prose: -0.389 [-0.511, -0.256]
+  E-A ids  : +0.850 [+0.800, +0.900]
+  E-A prose: -0.433 [-0.544, -0.322]
+  E-C ids  : +0.189 [+0.094, +0.294]
+  E-C prose: -0.044 [-0.100, +0.000]
+  D-E ids  : +0.072 [+0.022, +0.122]
+  D-E prose: +0.422 [+0.311, +0.522]
+  D-C ids  : +0.261 [+0.172, +0.356]
+  D-C prose: +0.378 [+0.256, +0.500]
+
+=== run3_s6 · qwen3-vl-235b-a22b-instruct  (items 30)
+  A uniform                    ids=0.011 silent=0.122 abstain=0.000 prose=0.300 cost=108 billed=203
+  C hazard                     ids=0.450 silent=0.233 abstain=0.000 prose=0.222 cost=108 billed=222
+  CD hazard+residual anchors   ids=0.689 silent=0.128 abstain=0.000 prose=0.289 cost=134 billed=259
+  D anchors                    ids=1.000 silent=0.000 abstain=0.000 prose=0.278 cost=186 billed=315
+  C-A ids  : +0.439 [+0.350, +0.528]
+  C-A prose: -0.078 [-0.178, +0.022]
+  E-A ids  : +0.678 [+0.567, +0.783]
+  E-A prose: -0.011 [-0.133, +0.111]
+  E-C ids  : +0.239 [+0.117, +0.372]
+  E-C prose: +0.067 [+0.011, +0.133]
+  D-E ids  : +0.311 [+0.211, +0.417]
+  D-E prose: -0.011 [-0.122, +0.100]
+  D-C ids  : +0.550 [+0.461, +0.639]
+  D-C prose: +0.056 [-0.044, +0.156]
+
+=== run3_real · claude  (items 30)
+  A uniform                    ids=0.383 silent=0.094 abstain=0.000 prose=0.744 cost=113 billed=nan
+  C hazard                     ids=0.628 silent=0.172 abstain=0.000 prose=0.611 cost=113 billed=nan
+  C-A ids  : +0.244 [+0.183, +0.311]
+  C-A prose: -0.133 [-0.256, -0.011]
+
+=== run3_real · minimax  (items 30)
+  A uniform                    ids=0.167 silent=0.122 abstain=0.000 prose=0.867 cost=113 billed=nan
+  C hazard                     ids=0.339 silent=0.150 abstain=0.000 prose=0.656 cost=113 billed=nan
+  C-A ids  : +0.172 [+0.106, +0.239]
+  C-A prose: -0.211 [-0.311, -0.111]
+
+=== run3_real · claude-sonnet-5.5  (items 30)
+  A uniform                    ids=0.397 silent=0.144 abstain=0.000 prose=0.874 cost=112 billed=308
+  C hazard                     ids=0.611 silent=0.194 abstain=0.000 prose=0.767 cost=113 billed=309
+  C-A ids  : +0.207 [+0.138, +0.282]
+  C-A prose: -0.103 [-0.218, +0.000]
+
+=== run3_real · gemini-3.5-flash-lite  (items 30)
+  A uniform                    ids=0.328 silent=0.194 abstain=0.000 prose=1.000 cost=113 billed=1167
+  C hazard                     ids=0.556 silent=0.150 abstain=0.000 prose=1.000 cost=113 billed=1186
+  C-A ids  : +0.228 [+0.100, +0.356]
+  C-A prose: +0.000 [+0.000, +0.000]
+
+=== run3_real · gpt-6-luna  (items 30)
+  A uniform                    ids=0.033 silent=0.056 abstain=0.000 prose=0.444 cost=113 billed=249
+  C hazard                     ids=0.200 silent=0.106 abstain=0.000 prose=0.289 cost=113 billed=254
+  C-A ids  : +0.167 [+0.106, +0.228]
+  C-A prose: -0.156 [-0.267, -0.022]
+
+=== run3_real · llama-4-maverick  (items 30)
+  A uniform                    ids=0.033 silent=0.083 abstain=0.000 prose=0.589 cost=113 billed=720
+  C hazard                     ids=0.217 silent=0.106 abstain=0.000 prose=0.211 cost=113 billed=720
+  C-A ids  : +0.183 [+0.122, +0.244]
+  C-A prose: -0.378 [-0.511, -0.244]
+
+=== run3_real · qwen3-vl-235b-a22b-instruct  (items 30)
+  A uniform                    ids=0.000 silent=0.000 abstain=0.000 prose=0.167 cost=113 billed=nan
+  C hazard                     ids=0.056 silent=0.033 abstain=0.000 prose=0.122 cost=113 billed=nan
+  C-A ids  : +0.056 [+0.028, +0.089]
+  C-A prose: -0.044 [-0.156, +0.056]
+
+=== run4_real · minimax  (items 30)
+  A uniform                    ids=0.144 silent=0.089 abstain=0.000 prose=0.856 cost=114 billed=nan
+  C hazard                     ids=0.350 silent=0.172 abstain=0.000 prose=0.711 cost=114 billed=nan
+  C' prose floor               ids=0.228 silent=0.078 abstain=0.000 prose=0.822 cost=120 billed=nan
+  C-A ids  : +0.206 [+0.122, +0.283]
+  C-A prose: -0.144 [-0.267, -0.033]
+  P-A ids  : +0.083 [+0.017, +0.150]
+  P-A prose: -0.033 [-0.122, +0.056]
+  C-P ids  : +0.122 [+0.050, +0.194]
+  C-P prose: -0.111 [-0.211, -0.011]
+
+=== run4_real · claude-sonnet-5.5  (items 30)
+  A uniform                    ids=0.439 silent=0.172 abstain=0.000 prose=0.844 cost=114 billed=310
+  C hazard                     ids=0.572 silent=0.200 abstain=0.000 prose=0.767 cost=114 billed=310
+  C' prose floor               ids=0.450 silent=0.161 abstain=0.000 prose=0.844 cost=120 billed=316
+  C-A ids  : +0.133 [+0.078, +0.194]
+  C-A prose: -0.078 [-0.189, +0.033]
+  P-A ids  : +0.011 [-0.056, +0.072]
+  P-A prose: +0.000 [-0.122, +0.122]
+  C-P ids  : +0.122 [+0.072, +0.178]
+  C-P prose: -0.078 [-0.222, +0.067]
+
+=== run4_real · gemini-3.5-flash-lite  (items 30)
+  A uniform                    ids=0.361 silent=0.189 abstain=0.000 prose=1.000 cost=114 billed=1161
+  C hazard                     ids=0.550 silent=0.161 abstain=0.000 prose=0.989 cost=114 billed=1184
+  C' prose floor               ids=0.367 silent=0.194 abstain=0.000 prose=1.000 cost=120 billed=1178
+  C-A ids  : +0.189 [+0.083, +0.289]
+  C-A prose: -0.011 [-0.033, +0.000]
+  P-A ids  : +0.006 [-0.078, +0.083]
+  P-A prose: +0.000 [+0.000, +0.000]
+  C-P ids  : +0.183 [+0.067, +0.300]
+  C-P prose: -0.011 [-0.033, +0.000]
+
+=== run4_real · gpt-6-luna  (items 30)
+  A uniform                    ids=0.044 silent=0.039 abstain=0.000 prose=0.367 cost=114 billed=250
+  C hazard                     ids=0.222 silent=0.083 abstain=0.000 prose=0.400 cost=114 billed=255
+  C' prose floor               ids=0.144 silent=0.083 abstain=0.000 prose=0.578 cost=120 billed=255
+  C-A ids  : +0.178 [+0.128, +0.233]
+  C-A prose: +0.033 [-0.067, +0.133]
+  P-A ids  : +0.100 [+0.050, +0.150]
+  P-A prose: +0.211 [+0.111, +0.300]
+  C-P ids  : +0.078 [+0.022, +0.133]
+  C-P prose: -0.178 [-0.267, -0.089]
+
+=== run4_real · llama-4-maverick  (items 30)
+  A uniform                    ids=0.011 silent=0.056 abstain=0.000 prose=0.600 cost=114 billed=nan
+  C hazard                     ids=0.283 silent=0.139 abstain=0.000 prose=0.222 cost=114 billed=720
+  C' prose floor               ids=0.078 silent=0.061 abstain=0.000 prose=0.611 cost=120 billed=720
+  C-A ids  : +0.272 [+0.206, +0.333]
+  C-A prose: -0.378 [-0.500, -0.256]
+  P-A ids  : +0.067 [+0.028, +0.111]
+  P-A prose: +0.011 [-0.089, +0.111]
+  C-P ids  : +0.206 [+0.150, +0.261]
+  C-P prose: -0.389 [-0.522, -0.256]
+
+=== run4_real · qwen3-vl-235b-a22b-instruct  (items 30)
+  A uniform                    ids=0.000 silent=0.000 abstain=0.000 prose=0.144 cost=114 billed=nan
+  C hazard                     ids=0.083 silent=0.033 abstain=0.000 prose=0.144 cost=114 billed=nan
+  C' prose floor               ids=0.017 silent=0.011 abstain=0.000 prose=0.278 cost=120 billed=nan
+  C-A ids  : +0.083 [+0.033, +0.139]
+  C-A prose: -0.000 [-0.122, +0.122]
+  P-A ids  : +0.017 [+0.000, +0.033]
+  P-A prose: +0.133 [-0.022, +0.300]
+  C-P ids  : +0.067 [+0.011, +0.128]
+  C-P prose: -0.133 [-0.278, +0.000]
+
+failed reads (arm = dropped refusal/transport error; arm* = unparseable output scored 0): {'run3_s5|claude-sonnet-5.5': ['E', 'C', 'A', 'A', 'A', 'C', 'C'], 'run3_s5|qwen3-vl-235b-a22b-instruct': ['C*', 'A*', 'C*', 'A*', 'A*', 'A*', 'A*', 'A*', 'C*', 'A*', 'A*'], 'run3_s6|claude-sonnet-5.5': ['E'], 'run3_real|claude-sonnet-5.5': ['A'], 'run3_real|qwen3-vl-235b-a22b-instruct': ['C*', 'A*', 'A*', 'A*', 'A*', 'A*', 'C*', 'C*', 'A*', 'A*', 'A*', 'A*', 'A*', 'A*', 'A*'], 'run4_real|llama-4-maverick': ['A*'], 'run4_real|qwen3-vl-235b-a22b-instruct': ['P*', 'P*', 'C*', 'C*', 'A*', 'P*', 'A*', 'P*', 'A*', 'P*', 'A*', 'A*', 'P*', 'A*', 'A*', 'A*', 'A*', 'A*', 'P*', 'P*', 'A*', 'A*', 'P*', 'P*', 'A*', 'P*', 'A*', 'P*']}

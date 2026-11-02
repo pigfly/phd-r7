@@ -1,0 +1,496 @@
+{
+ "N_chars": 24128,
+ "N_spans": 192,
+ "text_units": 6981.5,
+ "detector": {
+  "precision": 0.8767123287671232,
+  "recall": 1.0
+ },
+ "hi_level_labelfree": [
+  7,
+  4
+ ],
+ "rows": [
+  {
+   "level": [
+    4,
+    2
+   ],
+   "chars_per_vtok": 32.0,
+   "cost_vs_text": {
+    "uniform": 0.108,
+    "anchors": 0.4,
+    "gated": 0.108,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.108,
+    "v2_at_anchor_budget": 0.387
+   },
+   "auroc_tokscore": 0.809,
+   "uniform": {
+    "prose_cer": 0.3892277422528283,
+    "span_exact": 0.010416666666666666,
+    "silent_corr": 0.11979166666666667
+   },
+   "anchors": {
+    "prose_cer": 0.38012788981800294,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.384751598622725,
+    "span_exact": 0.0,
+    "silent_corr": 0.09375,
+    "lo": [
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      2
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0022134776192818117,
+    "span_exact": 0.875,
+    "silent_corr": 0.07291666666666667,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.38544023610427935,
+    "span_exact": 0.015625,
+    "silent_corr": 0.08333333333333333,
+    "lo_shift": [
+     [
+      4,
+      2
+     ],
+     4
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 0.0019183472700442517,
+    "span_exact": 0.9791666666666666,
+    "silent_corr": 0.0,
+    "lo_shift": [
+     [
+      7,
+      4
+     ],
+     0
+    ]
+   }
+  },
+  {
+   "level": [
+    5,
+    3
+   ],
+   "chars_per_vtok": 17.1,
+   "cost_vs_text": {
+    "uniform": 0.202,
+    "anchors": 0.495,
+    "gated": 0.154,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.163,
+    "v2_at_anchor_budget": 0.432
+   },
+   "auroc_tokscore": 0.732,
+   "uniform": {
+    "prose_cer": 0.04899163797343831,
+    "span_exact": 0.10416666666666667,
+    "silent_corr": 0.23958333333333334
+   },
+   "anchors": {
+    "prose_cer": 0.04790949335956718,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.3764387604525332,
+    "span_exact": 0.8333333333333334,
+    "silent_corr": 0.09895833333333333,
+    "lo": [
+     [
+      4,
+      2
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0019183472700442517,
+    "span_exact": 0.8541666666666666,
+    "silent_corr": 0.08333333333333333,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.3814067879980325,
+    "span_exact": 0.9635416666666666,
+    "silent_corr": 0.0,
+    "lo_shift": [
+     [
+      4,
+      2
+     ],
+     0
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 0.0014756517461879115,
+    "span_exact": 0.9427083333333334,
+    "silent_corr": 0.010416666666666666,
+    "lo_shift": [
+     [
+      8,
+      4
+     ],
+     0
+    ]
+   }
+  },
+  {
+   "level": [
+    6,
+    3
+   ],
+   "chars_per_vtok": 14.2,
+   "cost_vs_text": {
+    "uniform": 0.243,
+    "anchors": 0.535,
+    "gated": 0.232,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.241,
+    "v2_at_anchor_budget": 0.432
+   },
+   "auroc_tokscore": 0.759,
+   "uniform": {
+    "prose_cer": 0.02169208066896211,
+    "span_exact": 0.3125,
+    "silent_corr": 0.22395833333333334
+   },
+   "anchors": {
+    "prose_cer": 0.021052631578947323,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.04658140678799805,
+    "span_exact": 0.84375,
+    "silent_corr": 0.06770833333333333,
+    "lo": [
+     [
+      5,
+      3
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0021642892277422554,
+    "span_exact": 0.890625,
+    "silent_corr": 0.06770833333333333,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.047811116576487955,
+    "span_exact": 0.9166666666666666,
+    "silent_corr": 0.03125,
+    "lo_shift": [
+     [
+      5,
+      3
+     ],
+     0
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 0.0014264633546483552,
+    "span_exact": 0.9322916666666666,
+    "silent_corr": 0.005208333333333333,
+    "lo_shift": [
+     [
+      8,
+      4
+     ],
+     0
+    ]
+   }
+  },
+  {
+   "level": [
+    7,
+    4
+   ],
+   "chars_per_vtok": 9.1,
+   "cost_vs_text": {
+    "uniform": 0.378,
+    "anchors": 0.67,
+    "gated": 0.378,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.275,
+    "v2_at_anchor_budget": 0.634
+   },
+   "auroc_tokscore": 0.786,
+   "uniform": {
+    "prose_cer": 0.002361042793900592,
+    "span_exact": 0.8385416666666666,
+    "silent_corr": 0.09895833333333333
+   },
+   "anchors": {
+    "prose_cer": 0.0026069847515985956,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.0021642892277422554,
+    "span_exact": 0.890625,
+    "silent_corr": 0.057291666666666664,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0026069847515985956,
+    "span_exact": 0.875,
+    "silent_corr": 0.07291666666666667,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.02198721101819967,
+    "span_exact": 0.9427083333333334,
+    "silent_corr": 0.020833333333333332,
+    "lo_shift": [
+     [
+      6,
+      3
+     ],
+     0
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 0.0,
+    "span_exact": 0.9791666666666666,
+    "silent_corr": 0.0,
+    "lo_shift": [
+     [
+      10,
+      5
+     ],
+     0
+    ]
+   }
+  },
+  {
+   "level": [
+    8,
+    4
+   ],
+   "chars_per_vtok": 8.0,
+   "cost_vs_text": {
+    "uniform": 0.432,
+    "anchors": 0.724,
+    "gated": 0.378,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.432,
+    "v2_at_anchor_budget": 0.634
+   },
+   "auroc_tokscore": 0.742,
+   "uniform": {
+    "prose_cer": 0.001672405312346248,
+    "span_exact": 0.96875,
+    "silent_corr": 0.0
+   },
+   "anchors": {
+    "prose_cer": 0.000836202656173124,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.0017707820954254716,
+    "span_exact": 0.8645833333333334,
+    "silent_corr": 0.08333333333333333,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0021642892277422554,
+    "span_exact": 0.8333333333333334,
+    "silent_corr": 0.11458333333333333,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.0014264633546483552,
+    "span_exact": 0.9427083333333334,
+    "silent_corr": 0.010416666666666666,
+    "lo_shift": [
+     [
+      8,
+      4
+     ],
+     0
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 4.918839153955634e-05,
+    "span_exact": 0.9583333333333334,
+    "silent_corr": 0.005208333333333333,
+    "lo_shift": [
+     [
+      10,
+      5
+     ],
+     0
+    ]
+   }
+  },
+  {
+   "level": [
+    10,
+    5
+   ],
+   "chars_per_vtok": 5.1,
+   "cost_vs_text": {
+    "uniform": 0.675,
+    "anchors": 0.967,
+    "gated": 0.378,
+    "gated_at_anchor_budget": 0.378,
+    "v2": 0.634,
+    "v2_at_anchor_budget": 0.881
+   },
+   "auroc_tokscore": NaN,
+   "uniform": {
+    "prose_cer": 0.0,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "anchors": {
+    "prose_cer": 0.0,
+    "span_exact": 1.0,
+    "silent_corr": 0.0
+   },
+   "gated": {
+    "prose_cer": 0.0019183472700442517,
+    "span_exact": 0.828125,
+    "silent_corr": 0.109375,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "gated_at_anchor_budget": {
+    "prose_cer": 0.0023118544023610355,
+    "span_exact": 0.8541666666666666,
+    "silent_corr": 0.06770833333333333,
+    "lo": [
+     [
+      7,
+      4
+     ],
+     [
+      7,
+      4
+     ]
+    ]
+   },
+   "v2": {
+    "prose_cer": 0.0,
+    "span_exact": 0.96875,
+    "silent_corr": 0.010416666666666666,
+    "lo_shift": [
+     [
+      10,
+      5
+     ],
+     0
+    ]
+   },
+   "v2_at_anchor_budget": {
+    "prose_cer": 4.918839153955634e-05,
+    "span_exact": 0.96875,
+    "silent_corr": 0.0,
+    "lo_shift": [
+     [
+      12,
+      6
+     ],
+     0
+    ]
+   }
+  }
+ ],
+ "runtime_s": 3.59
+}

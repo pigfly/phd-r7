@@ -260,7 +260,7 @@
  "img029.png": {
   "ids": [],
   "codename": "",
-  "error": "\n"
+  "error": "ut.\",\n    \"hint\": \"Try increasing --timeout (e.g. --timeout 60).\\nIf this happens on every request with a valid API key, you may be hitting the wrong region.\\nRun: mmx auth status   \u2014 to check your credentials and region.\\nRun: mmx config set region global   (or cn) \u2014 to override the region.\"\n  }\n}\n"
  },
  "img030.png": {
   "ids": [

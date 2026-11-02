@@ -25,7 +25,8 @@
 - **第六轮（多模型 + RULER）**：新增 5 个 OpenRouter 读者（Sonnet 5.5、Gemini 3.5 flash-lite、GPT-6-luna、Qwen3-VL-235B、Llama-4）。已有数据 C−A 27/27 格显著；RULER-NIAH 4 个子任务 × 2 密度 × 6 读者，M−A 33/36 格显著，阴性对照 ≈0；真实计费 M ≤ A。新 arm M（prose 按字符折行）在紧预算下也能工作 → 设为方法默认。
 - **第七轮（E1/E2/E3）**：纯文本基线 ≈1.00、RULER 上图片省 3–8× token；密度相图呈倒 U、峰值随读者强弱平移；**LongBench QA 上 M 平均 −0.05（3/12 显著）**——M 用 prose 分辨率换标识符精度，不是免费的。
 - **目标**：CVPR 2027 / IJCAI 2027；先做完实验再写论文。
-- **下一步**：M-local（只缩邻近 prose）+ 收紧检测器，目标 QA 不掉点、RULER 收益保留 ≥80%。
+- **第八轮（只做长文本）**：严格检测器（不放大年份等）+ 全局缩放 = **arm S，方法默认**：LongBench 留出 0/12 格掉点，RULER 5px +0.57、6px +0.40，计费比 A 少 11%。M-local（L）无额外收益。
+- **下一步候选**：更长上下文（多图）、检测器消融、黑盒 baseline 同表、LongBench 代码任务。
 
 ## 参考
 - R-or-R：`ref/main.pdf`, `ref/appendix.pdf`

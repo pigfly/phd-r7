@@ -216,3 +216,14 @@ prose M−A 显著为负：Llama −0.36、Qwen −0.18（均 @14 ch/vtok）。
 | MiniMax-M3 | 0.43 / 0.25 / 0.19 | 0.69 / 0.37 / 0.26 | −0.06 / −0.11* |
 
 M−A 平均 −0.048（3/12 显著）；A−T 平均 −0.18。
+
+## 第八轮：严格检测器（S）与 M-local（L）（2026-11-02）
+数据 `exp/real/lb2_s6_mfqa`、`lb2_s6_hotpot`（LongBench 留出样本，N=50）、`ruler2_s{5,6}_{single_3,multikey_1,multivalue}`（N=25），arms A/M/S/L，6 读者；汇总 `summarize_mlocal.py` → `analysis_mlocal.txt`。
+
+| | LongBench F1 vs A（12 格） | RULER 5px 召回 vs A（18 格） | RULER 6px 召回 vs A（18 格） | 6px 计费 |
+|---|---|---|---|---|
+| M（旧检测器，全局） | −0.005（1 格显著为负） | +0.41 | +0.40 | 829 |
+| **S（严格检测器，全局）** | **+0.000（0 格）** | **+0.57** | **+0.40** | **812** |
+| L（严格检测器，局部） | +0.003（0 格） | +0.54 | +0.33 | 920 |
+
+A 计费 913。S 在 QA 上无害、在 RULER 上收益最大且最便宜 → 方法默认。

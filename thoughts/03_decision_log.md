@@ -1,0 +1,143 @@
+# 03 · 决策日志（边做边调方向）
+
+> 规则：每做完一步，写下 **看到了什么 → 这意味着什么 → 下一步去哪 → 什么结果会让我掉头**。
+
+---
+
+## 2026-11-01 · Iter 0 — 读文献
+- **看到**：R-or-R 的 Limitations 明确写了 "one frozen renderer" 和 "gist closure 52.1%"；DeepSeek-OCR 2 的收益来自**内容自适应**（可变 token 预算 + 语义重排），但需要训练；2026 年的免训练视觉 token 剪枝（PIO-FVLM、VPRune、PruneSID、RTPrune）都只看视觉侧信号，FCoT-VL 指出它们在**文本密集**场景掉点严重。
+- **意味着**：空白在"免训练 + 内容自适应 + 文本密集"的交叉点；而**我们自己渲染图片**这一点是所有视觉侧方法都没有的先验。
+- **下一步**：提出 5 个 RQ（见 01），先用 toy 验证 RQ1。
+- **为什么不先做 RQ3**：RQ3 价值大但"语义错误"标注噪声大，失败时难判断是方法不行还是评测不行；RQ1 的失败/成功信号干净。
+
+## Iter 1 — toy v1（σ=0.30, 64 px/vtok）
+- **看到**：prose 都读不出来（CER 0.86），成本比纯文本还贵（>1.0）。
+- **意味着**：toy 没有复现已知事实，不能用来预测任何东西。
+- **调整**：汇率改为 256 px/vtok（使中档 ≈ 论文的 ~18 字符/vtok 量级），σ 扫 {0.10, 0.15, 0.20}。
+
+## Iter 2 — 校准（只看 uniform arm）
+- **看到**：σ=0.10 时 14 ch/vtok 处 prose CER 2.3%、span exact 0.36、silent 0.21 ——与 R-or-R 图 3 / 表 A1 的形状一致。
+- **决定**：**冻结 σ=0.10**，之后不再动。
+
+## Iter 3 — H1 主实验（v1 gated）
+- **看到**：同预算 exact 0.36→0.85，silent 0.21→0.09。但 exact 在 ~0.85 封顶。
+- **诊断**：v1 的"3σ 可读"规则不看 span 长度；UUID 36 字符，per-char 0.4% 错误 → span 错误 ~13%。
+- **调整**：v2 = 按长度选档（`L·p_char ≤ 0.02`，p_char 由字形间距无标签算出）。这本身就是一个可写进论文的设计点：**span 长度感知的可读性边界**——R-or-R 的密度门是 block 级的，没有这个维度。
+
+## Iter 4 — v2 + 4 seeds
+- **看到**：同预算 exact 0.31–0.38 → **0.92–0.95**，silent → 0.01–0.03；在更高预算点 v2 **省 27% 且更准**。v2 比"完美 anchors"省 ~20% 但精确率低 2–7 点。seed 3 出现**离散档位悬崖**（prose CER 0.37）。
+- **意味着**：
+  1. H1 在机制层面成立，且效应量很大（+0.55 exact），值得花真钱验证。
+  2. v2 与 anchors 不是替代而是**互补**：v2 降低需要 anchor/retry 的频率，anchors+retry 兜底。最终方法应该是 v2 → (残余风险 span) anchors → check-and-retry。
+  3. 必须加 prose 下限保护（prose 不得低于其可读档；不够就把最长的 span 改走 anchor/text）。
+- **方向重估**：RQ1 保持第一；RQ5 优先级上调（"渲染器知道风险在哪"的论点在 toy 中得到支持，白盒版本可以复用同一张风险图）。
+
+---
+
+## ▶ 下一步（按顺序）
+1. **v3 toy（<5 s）**：加 prose 下限 + "预算不足时最长 span 走 anchor"回退；同时加一个 **prose 任务指标**（如关键词召回）以替代 CER——因为 gist 任务对字符错误不敏感，CER 可能高估 prose 代价。
+2. **RQ2 零成本事后分析**：在已有 R-or-R T-A 日志里按"span 是否跨行"分组比较失败率。
+3. **真实 API pilot（RQ1）**：1 个模型（Fable）× T-A × 2 密度（med/high）× N=50 × arms {uniform, v2-render, image+anchors}；用 `count_tokens` 对齐计费。预算约 $10–20。
+   - 实现要点：渲染器支持**混合字号**（标记 span 用大字号独占行），图像面积按实际像素计费。
+
+## ✋ Kill / Pivot criteria（提前写死，防止事后合理化）
+| 观察（真实 API pilot） | 动作 |
+|---|---|
+| v2 在**同计费**下 T-A exact 提升 < 10 点 | 放弃 RQ1 主线，转 RQ5（白盒）或 RQ2 | ✅ 未触发：+46 / +19 点 |
+| v2 使 T-E gist 掉 > 3 点 | RQ1 只保留"block 内无 prose 依赖"的场景（logs/tables），降为 R-or-R 的扩展而非新论文 |
+| 混排字号让 VLM 读序混乱（跨 span 错误上升） | 转 RQ2：先解决版面/阅读顺序，再谈分配 |
+| v2 ≥ anchors 精确率且更省 | 加速：直接扩到 3 模型 × 5 任务族的相图 |
+
+## 2026-11-01 · 约束更新：短平快
+- 用户目标：**实验量小、规模小、快出结果**。
+- 据此重排：RQ5（要 GPU + 开源模型部署）、RQ3/RQ4（标注/组合空间大）暂缓。
+- 推荐合并实验：**同一批合成 T-A 数据、1 个 API 模型、1 个密度、N=50，4 个 arm**：uniform / no-break 排版（RQ2）/ v2 放大字号（RQ1）/ anchors。约 200 次调用，一次回答 RQ1+RQ2。
+
+## 2026-11-01 · Iter 5 — 真实 VLM pilot 搭建（读者 = Claude Code 子代理，非 API）
+- 用户决定：不走 API，用当前会话的 Claude（子代理 + Read 读 PNG）当黑盒 VLM；无美元成本。
+- 计费：按官方公式 `⌈w/28⌉×⌈h/28⌉`（Claude 4.7+ high-res tier，长边 ≤2576 px 不缩放）。没有 count_tokens，文本侧成本只能估算。
+- 代码：`exp/real/make_items.py`（渲染 A uniform / B nobreak / C hazard 三组，C 的视觉 token 严格 ≤ A），`exp/real/score.py`。
+- 防泄漏：图片拷到 `/tmp/...`，答案 `gt.json` 不在读者可见路径；文件名打乱，读者不知道 arm；要求只用 Read、禁止裁剪放大。
+- **校准 1**（Menlo 5–10px，7.6–21 字符/vtok）：100% 全对。⚠️ 同一 item 的多个密度给了同一个读者，可能互相补全 → 不可信。
+- **意味着**：Opus 级读者在 21 ch/vtok 仍未进入失败区——比论文的 Fable 更强；若 uniform 不出错，RQ1/RQ2 就无提升空间。
+- **调整**：校准 2 用拉丁方（每个读者每个 item 只见一次），密度推到 20–57 ch/vtok（含下采样）。
+
+## Iter 6 — 校准 2 + 真实 pilot 结果（详见 04）
+- **校准 2（拉丁方，独立读）**：5px/21 ch/vtok 标识符精确 0.29、静默 0.33、codename 1.00；4px 及下采样全面崩溃。→ 复现论文相图；也证实校准 1 的 100% 是跨图泄漏。
+- **主实验**（同视觉 token，N=12×2 工作点）：C−A = **+0.46**（5px）/ **+0.19**（6px），CI 不跨 0，0 个 item 变差；静默错误 0.50→0.15 / 0.15→0.00；prose（codename）无可见代价。B−A（RQ2）+0.04/+0.08，CI 跨 0。
+- **意味着**：RQ1 在真实 VLM 上通过了 kill criterion（同成本提升 ≥10 点）。RQ2 单独太弱 → 并入 RQ1 方法，不单独成文。
+- **方向重估**：RQ1 定为主线论文。最省力的下一步是扩大证据而不是换方向。
+
+## ▶ 下一步（更新，仍按短平快）
+1. **第二家 VLM**（最关键，审稿必问）：同一批图片，换一个非 Claude 模型读（需要你决定用哪家/哪种访问方式）。
+2. **扩 N**：每工作点 12→30 item（只多开几个子代理，零美元）。
+3. **稳健性**：prompt 允许 "[unreadable]"，看静默错误是否只是被 prompt 逼出来的；C 的优势是否仍在。
+4. **实际跑 anchors 组**，把"C 零额外成本 vs anchors +70–105% token"做成正式 Pareto 图。
+
+## Iter 7 — 第二家 VLM：MiniMax-M3
+- **看到**：C−A = +47（5px）/ +51（6px）点，CI 不跨 0；6px 的 C 组 0.97、静默 0。MiniMax 比 Claude 弱，但收益更大。RQ2 依旧不显著。新风险：5px 时 MiniMax 的 codename 在 C 组 0.58→0.42（N=12，不显著）。
+- **意味着**：RQ1 是跨模型的，不是 Claude 特有。prose 代价在**弱读者 + 高密度**时可能出现 → 需要 prose 下限（toy 里也见过同样的"悬崖"）。
+- **下一步**：(1) 扩 N 到 30/工作点，重点看 prose 代价是否真实；(2) 加 prose 下限 = 6px 的 C' 变体；(3) 实跑 anchors 做 Pareto；(4) 可选第三家开源 VLM。
+
+## Iter 8 — 第二轮（N=42、C'、anchors 实跑）
+- **看到**：C−A 在 2 读者 × 2 密度全部显著（+16…+52）。C'（prose 下限）比 C 差 13–24 点，且 prose 并没变好。D（anchors）只在 20 ch/vtok 时明显优于 C；14 ch/vtok 时 D 只多 2–6 点却多花 70% token。MiniMax 在 D 组 codename 显著下降（−30 / −13 点）。
+- **意味着**：
+  1. 设计规则清楚了：**prose 缩到可读下限，标识符尽量放大**；prose 下限没有必要。
+  2. 论文主张可以写成 Pareto：C 支配 A（同成本、更准）；中等密度下 C ≈ D 但便宜 41%；极高密度用 C+D。
+  3. anchors 对弱读者有副作用（prose 读取变差）——这是 R-or-R 原论文没发现的、支持本方法的新证据。
+- **悬而未决**：Claude 5px 的 codename −0.14（CI 跨 0）。若为真，来源不是字号。
+- **方向重估**：RQ1 已经够一篇短论文（workshop / findings 级）的核心实验。下一步从"验证"转向"补齐论文所需"。
+
+## ▶ 下一步（更新）
+1. **C+D 组合 arm**（hazard 渲染 + 只对放大后仍超密度的 span 加 anchors），画完整 Pareto 曲线（成本 vs 精确率，2 读者）。
+2. **prose 代价专项**：用更多 prose 探针（每 item 3 个 codename 式问题）代替单个 codename，提高 prose 指标的统计功效。
+3. **prompt 稳健性**：允许 "[unreadable]"，看 silent 是否只是 prompt 逼出来的。
+4. **真实分布**：用真实日志/代码块（而非合成 prose）复测一个工作点。
+5. 开始写论文骨架（方法 + 两读者结果 + Pareto 图）。
+
+## Iter 9 — 第三轮（CD、3 探针、真实数据、unreadable prompt）
+- **看到**：C−A 在合成与真实数据、两读者上全部显著。prose 代价：合成数据上基本无，真实数据上显著（−13 / −21 点）。anchors 让 MiniMax 的 prose 暴跌（−50 点级），两轮复现。CD 落在 C 和 D 之间，无独立价值。"[unreadable]" 几乎不被使用、静默错误不降。
+- **意味着**：
+  1. 主张稳了：hazard 渲染在同成本下系统性提升 verbatim 精确率，跨读者、跨数据分布。
+  2. 真实数据暴露了实现缺陷：放大粒度应是**高熵子串**而非整个 token。这是下一轮唯一必须修的点。
+  3. "anchors 伤害弱读者"与"模型不知道自己读错"是两个可写进论文的独立发现，都支持"在渲染端预防"的思路。
+- **下一步**：
+  1. C2 = 子串级放大（只放大熵/regex 命中的子串），真实数据上 A/C/C2 复测，目标是消除 prose 代价。
+  2. 写论文骨架（`05_paper_outline.md` 已起草）。
+
+## 附注（与研究方向无关但重要）
+- `ref/main.pdf` 致谢写的是 "Swimming Victoria ... real-world training data"，与"零训练、编码助手流量"的论文内容不符，像是模板残留；投稿前请检查。
+
+## 2026-11-02 · Iter 10 — C2 预检 + 真实数据 prose 代价诊断（run4_real，仅 MiniMax）
+- **C2 预检（零读者成本）**：子串级放大（`units_sub`，arm F）在真实 item 上 s_hi 分布与 C 几乎相同（9–10px），prose 仍 5px。原因：清单行里路径+哈希本身就占了 ~85% 字符，`sha256=`/大小字段省不出版面。→ **C2 假设被证伪，未花读者成本**，arm F 保留在代码里但不跑。
+- **诊断 run3_real（`diag_prose.py`）**：
+  1. MiniMax（无状态）在 C 组的 prose 错误是真实视觉误读（`borrealis`、`maggot`、`nlbue`）；落在纯 5px 行上的探针 0.61，落在含放大 token 的行（行距更大）上 0.75。合成 6px 中 71% 的探针落在"大行"，真实数据只有 31%——解释了为何合成数据无代价。
+  2. **Claude 子代理通道的 prose 指标被跨图污染**：Claude 答错的 prose 探针中 50–100% 是名字池里的其他名字（它在同一会话读过的其他图里的名字）；MiniMax 只有 0–10%。→ Claude 的 prose 数字偏悲观、且不独立；**以后 prose 结论以 MiniMax 为准**，Claude 读者需每图一个新子代理或每 item 用唯一名字。
+- **run4_real（新 seed 41，N=30，A/C/C'，MiniMax 90 次调用，0 错误）**：
+  - C−A：标识符 **+0.21** [+0.12, +0.28]，prose **−0.14** [−0.27, −0.03] → 第二次复现真实数据的 prose 代价。
+  - C'（prose 下限 6px，标识符只能放到 6–8px）：标识符 +0.08 [+0.02, +0.15]，prose −0.03（n.s.），成本 +5%（8 个 item 预算不够，退化为 6/6 词折行）。
+- **意味着**：真实数据在 14 ch/vtok 下存在**真实的 verbatim ↔ prose 权衡**，不是实现缺陷。s_lo 是一个旋钮：C（全给标识符）与 C'（保 prose）是同一条前沿上的两点。论文 C8 改写为"可调权衡 + 合成无代价"，不再声称真实数据无代价。
+- **下一步**：(1) 论文里把 C/C' 画成真实数据的前沿；(2) 可选：给纯 5px prose 行加 1px 行距的变体（诊断指向行距），零训练、成本小，若 prose 回到 A 水平且 ids 仍 ≥ +0.15 则成为默认；(3) 修正 Claude 读者协议后再用其 prose 数据。
+
+## 2026-11-02 · Iter 11 — prose 行距变体 L（用户选定）
+- **设计**：arm L = C + 纯 prose 行（无放大 token 的行）+1px 行距；预算不变，代价是 s_hi 平均少 ~1px。
+- **run5_real（新 seed 53，A/C/L）**：这个 seed 上 C 本身就没有 prose 代价（C−A 0.00，A 基线 0.78 偏低），无法判断 L。
+- **run4_real 同 item 补跑 L**（`run4_real_L` → 合并为 `run4_real_merged`，C 有 −0.14 代价的那批）：L−C prose **0.000** [−0.09, +0.09]，ids +0.03（n.s.）。→ **行距假设被证伪**；Iter 10 的"大行 vs 纯 5px 行"差异是混杂（含放大 token 的行本身位置/内容不同），不是行距造成的。
+- **真实数据 C−A prose 汇总（MiniMax，3 个 seed × 30 item）**：−0.21 / −0.14 / 0.00，均值约 −0.12。代价来自 prose 字号本身（6→5px），seed 间波动大。
+- **决定**：不再找"免费修复"。论文按**权衡**写：C（ids 最大化，prose 约 −12 点）与 C'（prose 无损，ids +8）是同一前沿上的两点，s_lo 由下游任务决定。合成数据上无代价的结论不变。arm F（C2）、L 保留在代码中作为负结果记录。
+- **下一步**：论文写作（图 1 加真实数据前沿 A/C/C'/L）；可选第 3 读者、Claude 读者协议修正。
+
+## 2026-11-02 · Iter 12 — 多模型（OpenRouter）+ 公开 benchmark（RULER-NIAH）
+- **起因**：用户指出同类工作需要公开 benchmark、需要更多模型。OpenRouter key 在 `.env`。
+- **读者**（新增 5 个，都是每图一次无状态调用，temp 0）：claude-sonnet-5.5、gemini-3.5-flash-lite、gpt-6-luna（reasoning effort=minimal）、qwen3-vl-235b-a22b（开源权重）、llama-4-maverick（开源权重）。代码 `exp/real/run_openrouter.py`，同时记录**厂商真实计费的 prompt_tokens**。
+- **事故**：`run_openrouter.py` import `run_minimax.py` 时触发了后者没有 `__main__` 保护的主循环，**覆盖了 `run3_s6/pred_minimax.json`**。已加保护，并用同样设置重跑 MiniMax run3_s6：C−A ids +0.572（原 +0.578），anchors 的 prose 伤害仍显著（E−C −0.19、D−C −0.14，原 −0.28/−0.18）。结论不变；**run3_s6 的 MiniMax 原始预测现在是重跑版**，`analysis3.json` 仍是原始版（备份 `analysis3.backup.json`）。
+- **失败读取规则**：拒答（Sonnet 内容过滤把哈希/IP 当网络安全内容，9/390）、空回复、网络错误 → 剔除该图；**无法解析的输出（Qwen 退化成无限重复，主要发生在 A 组）→ 按答错计 0 分**。解析器改为取第一个可解析 JSON 对象（修复 Llama 在 JSON 后加文字的情况）。
+- **多模型复测（4 个已有 run × 7 个读者）**：C−A 标识符 **27/27 格全部显著**（+0.04…+0.66）。prose 代价显著的 7 格：Llama 3 格（−0.38/−0.39，弱读者最受伤）、真实数据上 Claude/MiniMax/GPT。真实计费 C/A 在 −5%…+9% 之间（各家切图网格不同；Qwen 6px +9% 最大）。
+- **RULER-NIAH**（`exp/real/ruler_niah.py`，按 NVIDIA/RULER synthetic.yaml 的模板/needle/配置复现，PG essays 做 haystack，≈16K 字符 ≈ RULER-4K，单图）：4 个子任务 × 2 密度 × 6 读者，N=25（null 对照 15）。
+  - 发现：5px 时按词折行的 C **无法放大**（A 正好填满整数行，零余量），且退化后成本超 A。→ 新 arm **M**：prose 像 A 一样按字符折行，标识符整体放大；若仍无余量，prose-only 行行距 −1px。
+  - **M−A 在 36 格（3 个任务 × 2 密度 × 6 读者）中 33 格显著**，+0.04…+0.84；不显著的 3 格是天花板（Gemini 6px multikey_1 A=1.00）或接近。
+  - **阴性对照 niah_multikey_3**（整段都是 UUID needle，没有可挪的 prose）：M−A ≈ 0（全部 CI 含 0）→ 收益确实来自"重新分配"。
+  - 真实计费：M 比 A **便宜 15–20%**（Sonnet 884→730、GPT 807→643、Qwen 659→544；Gemini/Llama 持平）——按实际像素计费的厂商，M 的图更矮。
+- **意味着**：主张现在有 7 个读者（含 2 个开源）× 合成/真实/RULER 的支撑。**M 应成为方法默认**（在宽松预算下 ≈ C，在紧预算下仍可工作）。prose 代价集中在弱读者 + 真实数据，按权衡写。
+- **花费**：OpenRouter 约 $9（Sonnet 占 ~$7），MiniMax 若干。
+- **下一步**：用 M 重跑真实数据（run4_real 那批 item），确认 M 的 prose 代价 ≤ C；画论文图 1/表 1。

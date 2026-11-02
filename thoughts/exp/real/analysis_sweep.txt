@@ -1,0 +1,266 @@
+
+=== sw_s5 · minimax  (items 30)
+  T text only                  ids=0.967 silent=0.006 abstain=0.000 prose=1.000 cost=380 billed=nan
+  A uniform                    ids=0.094 silent=0.344 abstain=0.000 prose=0.678 cost=72 billed=nan
+  M mixed wrap                 ids=0.417 silent=0.306 abstain=0.000 prose=0.800 cost=72 billed=nan
+  A-T ids  : -0.872 [-0.911, -0.828]
+  A-T prose: -0.322 [-0.422, -0.233]
+  M-T ids  : -0.550 [-0.633, -0.472]
+  M-T prose: -0.200 [-0.289, -0.122]
+  M-A ids  : +0.322 [+0.233, +0.417]
+  M-A prose: +0.122 [+0.011, +0.233]
+
+=== sw_s5 · claude-sonnet-5.5  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=724 billed=724
+  A uniform                    ids=0.327 silent=0.476 abstain=0.000 prose=0.750 cost=72 billed=268
+  M mixed wrap                 ids=0.638 silent=0.218 abstain=0.000 prose=0.632 cost=72 billed=268
+  A-T ids  : -0.673 [-0.738, -0.601]
+  A-T prose: -0.250 [-0.357, -0.155]
+  M-T ids  : -0.362 [-0.460, -0.270]
+  M-T prose: -0.368 [-0.483, -0.253]
+  M-A ids  : +0.321 [+0.198, +0.444]
+  M-A prose: -0.099 [-0.222, +0.025]
+
+=== sw_s5 · gemini-3.5-flash-lite  (items 30)
+  T text only                  ids=0.978 silent=0.000 abstain=0.000 prose=1.000 cost=550 billed=550
+  A uniform                    ids=0.456 silent=0.472 abstain=0.000 prose=1.000 cost=72 billed=1188
+  M mixed wrap                 ids=0.844 silent=0.100 abstain=0.000 prose=1.000 cost=72 billed=1130
+  A-T ids  : -0.522 [-0.600, -0.439]
+  A-T prose: +0.000 [+0.000, +0.000]
+  M-T ids  : -0.133 [-0.228, -0.044]
+  M-T prose: +0.000 [+0.000, +0.000]
+  M-A ids  : +0.389 [+0.289, +0.483]
+  M-A prose: +0.000 [+0.000, +0.000]
+
+=== sw_s5 · gpt-6-luna  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=509 billed=509
+  A uniform                    ids=0.022 silent=0.033 abstain=0.000 prose=0.267 cost=72 billed=210
+  M mixed wrap                 ids=0.200 silent=0.183 abstain=0.000 prose=0.489 cost=72 billed=210
+  A-T ids  : -0.978 [-0.994, -0.956]
+  A-T prose: -0.733 [-0.811, -0.644]
+  M-T ids  : -0.800 [-0.850, -0.750]
+  M-T prose: -0.511 [-0.622, -0.400]
+  M-A ids  : +0.178 [+0.128, +0.228]
+  M-A prose: +0.222 [+0.133, +0.311]
+
+=== sw_s5 · llama-4-maverick  (items 30)
+  T text only                  ids=0.994 silent=0.000 abstain=0.000 prose=1.000 cost=514 billed=514
+  A uniform                    ids=0.000 silent=0.044 abstain=0.000 prose=0.133 cost=72 billed=720
+  M mixed wrap                 ids=0.067 silent=0.328 abstain=0.000 prose=0.278 cost=72 billed=720
+  A-T ids  : -0.994 [-1.000, -0.983]
+  A-T prose: -0.867 [-0.933, -0.800]
+  M-T ids  : -0.928 [-0.967, -0.889]
+  M-T prose: -0.722 [-0.811, -0.633]
+  M-A ids  : +0.067 [+0.028, +0.111]
+  M-A prose: +0.144 [+0.044, +0.244]
+
+=== sw_s5 · qwen3-vl-235b-a22b-instruct  (items 30)
+  T text only                  ids=0.989 silent=0.000 abstain=0.000 prose=1.000 cost=548 billed=548
+  A uniform                    ids=0.006 silent=0.106 abstain=0.000 prose=0.167 cost=72 billed=nan
+  M mixed wrap                 ids=0.061 silent=0.211 abstain=0.000 prose=0.256 cost=72 billed=nan
+  A-T ids  : -0.983 [-1.000, -0.961]
+  A-T prose: -0.833 [-0.911, -0.744]
+  M-T ids  : -0.928 [-0.967, -0.883]
+  M-T prose: -0.744 [-0.844, -0.633]
+  M-A ids  : +0.056 [+0.022, +0.094]
+  M-A prose: +0.089 [+0.000, +0.178]
+
+=== sw_s6 · minimax  (items 30)
+  T text only                  ids=0.978 silent=0.000 abstain=0.000 prose=1.000 cost=379 billed=nan
+  A uniform                    ids=0.500 silent=0.211 abstain=0.000 prose=0.911 cost=108 billed=nan
+  M mixed wrap                 ids=0.967 silent=0.017 abstain=0.000 prose=0.878 cost=108 billed=nan
+  A-T ids  : -0.478 [-0.556, -0.394]
+  A-T prose: -0.089 [-0.156, -0.033]
+  M-T ids  : -0.011 [-0.050, +0.028]
+  M-T prose: -0.122 [-0.189, -0.056]
+  M-A ids  : +0.467 [+0.372, +0.550]
+  M-A prose: -0.033 [-0.122, +0.067]
+
+=== sw_s6 · claude-sonnet-5.5  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=716 billed=716
+  A uniform                    ids=0.778 silent=0.150 abstain=0.000 prose=0.933 cost=108 billed=304
+  M mixed wrap                 ids=0.967 silent=0.028 abstain=0.000 prose=0.867 cost=108 billed=304
+  A-T ids  : -0.222 [-0.283, -0.161]
+  A-T prose: -0.067 [-0.122, -0.022]
+  M-T ids  : -0.033 [-0.067, -0.011]
+  M-T prose: -0.133 [-0.211, -0.067]
+  M-A ids  : +0.189 [+0.122, +0.256]
+  M-A prose: -0.067 [-0.144, +0.011]
+
+=== sw_s6 · gemini-3.5-flash-lite  (items 30)
+  T text only                  ids=0.983 silent=0.000 abstain=0.000 prose=1.000 cost=546 billed=546
+  A uniform                    ids=0.928 silent=0.022 abstain=0.000 prose=1.000 cost=108 billed=1176
+  M mixed wrap                 ids=0.994 silent=0.006 abstain=0.000 prose=1.000 cost=108 billed=1178
+  A-T ids  : -0.056 [-0.089, -0.022]
+  A-T prose: +0.000 [+0.000, +0.000]
+  M-T ids  : +0.011 [-0.011, +0.033]
+  M-T prose: +0.000 [+0.000, +0.000]
+  M-A ids  : +0.067 [+0.033, +0.106]
+  M-A prose: +0.000 [+0.000, +0.000]
+
+=== sw_s6 · gpt-6-luna  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=506 billed=506
+  A uniform                    ids=0.194 silent=0.122 abstain=0.000 prose=0.633 cost=108 billed=228
+  M mixed wrap                 ids=0.739 silent=0.111 abstain=0.000 prose=0.611 cost=108 billed=249
+  A-T ids  : -0.806 [-0.850, -0.761]
+  A-T prose: -0.367 [-0.478, -0.256]
+  M-T ids  : -0.261 [-0.322, -0.206]
+  M-T prose: -0.389 [-0.467, -0.311]
+  M-A ids  : +0.544 [+0.472, +0.617]
+  M-A prose: -0.022 [-0.144, +0.111]
+
+=== sw_s6 · llama-4-maverick  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=512 billed=512
+  A uniform                    ids=0.061 silent=0.300 abstain=0.000 prose=0.644 cost=108 billed=720
+  M mixed wrap                 ids=0.839 silent=0.089 abstain=0.000 prose=0.289 cost=108 billed=720
+  A-T ids  : -0.939 [-0.967, -0.911]
+  A-T prose: -0.356 [-0.456, -0.256]
+  M-T ids  : -0.161 [-0.228, -0.100]
+  M-T prose: -0.711 [-0.811, -0.600]
+  M-A ids  : +0.778 [+0.711, +0.844]
+  M-A prose: -0.356 [-0.478, -0.233]
+
+=== sw_s6 · qwen3-vl-235b-a22b-instruct  (items 30)
+  T text only                  ids=0.950 silent=0.000 abstain=0.000 prose=1.000 cost=543 billed=543
+  A uniform                    ids=0.022 silent=0.194 abstain=0.000 prose=0.367 cost=108 billed=nan
+  M mixed wrap                 ids=0.506 silent=0.178 abstain=0.000 prose=0.189 cost=108 billed=nan
+  A-T ids  : -0.928 [-0.967, -0.883]
+  A-T prose: -0.633 [-0.722, -0.533]
+  M-T ids  : -0.444 [-0.544, -0.344]
+  M-T prose: -0.811 [-0.889, -0.722]
+  M-A ids  : +0.483 [+0.400, +0.572]
+  M-A prose: -0.178 [-0.311, -0.044]
+
+=== sw_s8 · minimax  (items 30)
+  T text only                  ids=0.989 silent=0.000 abstain=0.000 prose=0.989 cost=389 billed=nan
+  A uniform                    ids=0.450 silent=0.250 abstain=0.000 prose=0.833 cost=145 billed=nan
+  M mixed wrap                 ids=0.950 silent=0.000 abstain=0.000 prose=0.833 cost=145 billed=nan
+  A-T ids  : -0.539 [-0.611, -0.467]
+  A-T prose: -0.156 [-0.233, -0.089]
+  M-T ids  : -0.039 [-0.078, -0.011]
+  M-T prose: -0.156 [-0.211, -0.100]
+  M-A ids  : +0.500 [+0.422, +0.578]
+  M-A prose: +0.000 [-0.089, +0.089]
+
+=== sw_s8 · claude-sonnet-5.5  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=735 billed=735
+  A uniform                    ids=0.833 silent=0.150 abstain=0.000 prose=0.967 cost=145 billed=341
+  M mixed wrap                 ids=0.961 silent=0.017 abstain=0.000 prose=0.933 cost=145 billed=341
+  A-T ids  : -0.167 [-0.222, -0.117]
+  A-T prose: -0.033 [-0.089, +0.000]
+  M-T ids  : -0.039 [-0.072, -0.011]
+  M-T prose: -0.067 [-0.122, -0.022]
+  M-A ids  : +0.128 [+0.061, +0.194]
+  M-A prose: -0.033 [-0.089, +0.033]
+
+=== sw_s8 · gemini-3.5-flash-lite  (items 30)
+  T text only                  ids=0.994 silent=0.000 abstain=0.000 prose=1.000 cost=554 billed=554
+  A uniform                    ids=0.944 silent=0.017 abstain=0.000 prose=1.000 cost=145 billed=1189
+  M mixed wrap                 ids=0.972 silent=0.006 abstain=0.000 prose=1.000 cost=145 billed=1179
+  A-T ids  : -0.050 [-0.083, -0.022]
+  A-T prose: +0.000 [+0.000, +0.000]
+  M-T ids  : -0.022 [-0.044, -0.006]
+  M-T prose: +0.000 [+0.000, +0.000]
+  M-A ids  : +0.028 [-0.011, +0.067]
+  M-A prose: +0.000 [+0.000, +0.000]
+
+=== sw_s8 · gpt-6-luna  (items 30)
+  T text only                  ids=0.994 silent=0.006 abstain=0.000 prose=1.000 cost=514 billed=514
+  A uniform                    ids=0.222 silent=0.261 abstain=0.000 prose=0.656 cost=145 billed=259
+  M mixed wrap                 ids=0.739 silent=0.089 abstain=0.000 prose=0.778 cost=145 billed=272
+  A-T ids  : -0.772 [-0.817, -0.728]
+  A-T prose: -0.344 [-0.433, -0.267]
+  M-T ids  : -0.256 [-0.306, -0.206]
+  M-T prose: -0.222 [-0.322, -0.133]
+  M-A ids  : +0.517 [+0.444, +0.589]
+  M-A prose: +0.122 [+0.011, +0.233]
+
+=== sw_s8 · llama-4-maverick  (items 30)
+  T text only                  ids=0.989 silent=0.011 abstain=0.000 prose=1.000 cost=519 billed=519
+  A uniform                    ids=0.233 silent=0.328 abstain=0.000 prose=0.744 cost=145 billed=720
+  M mixed wrap                 ids=0.856 silent=0.033 abstain=0.000 prose=0.611 cost=145 billed=720
+  A-T ids  : -0.756 [-0.806, -0.706]
+  A-T prose: -0.256 [-0.344, -0.167]
+  M-T ids  : -0.133 [-0.189, -0.078]
+  M-T prose: -0.389 [-0.522, -0.256]
+  M-A ids  : +0.622 [+0.550, +0.700]
+  M-A prose: -0.133 [-0.278, +0.011]
+
+=== sw_s8 · qwen3-vl-235b-a22b-instruct  (items 30)
+  T text only                  ids=0.978 silent=0.000 abstain=0.000 prose=1.000 cost=551 billed=551
+  A uniform                    ids=0.100 silent=0.272 abstain=0.000 prose=0.456 cost=145 billed=236
+  M mixed wrap                 ids=0.567 silent=0.217 abstain=0.000 prose=0.500 cost=145 billed=237
+  A-T ids  : -0.878 [-0.917, -0.839]
+  A-T prose: -0.544 [-0.644, -0.444]
+  M-T ids  : -0.411 [-0.472, -0.350]
+  M-T prose: -0.500 [-0.633, -0.367]
+  M-A ids  : +0.467 [+0.400, +0.539]
+  M-A prose: +0.044 [-0.100, +0.189]
+
+=== sw_s10 · minimax  (items 30)
+  T text only                  ids=0.967 silent=0.006 abstain=0.000 prose=1.000 cost=391 billed=nan
+  A uniform                    ids=0.456 silent=0.128 abstain=0.000 prose=0.811 cost=202 billed=nan
+  M mixed wrap                 ids=0.694 silent=0.061 abstain=0.000 prose=0.889 cost=198 billed=nan
+  A-T ids  : -0.511 [-0.600, -0.417]
+  A-T prose: -0.189 [-0.256, -0.122]
+  M-T ids  : -0.272 [-0.356, -0.194]
+  M-T prose: -0.111 [-0.178, -0.056]
+  M-A ids  : +0.239 [+0.128, +0.350]
+  M-A prose: +0.078 [-0.022, +0.167]
+
+=== sw_s10 · claude-sonnet-5.5  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=736 billed=736
+  A uniform                    ids=0.978 silent=0.017 abstain=0.000 prose=1.000 cost=202 billed=398
+  M mixed wrap                 ids=0.994 silent=0.000 abstain=0.000 prose=1.000 cost=198 billed=394
+  A-T ids  : -0.022 [-0.044, -0.006]
+  A-T prose: +0.000 [+0.000, +0.000]
+  M-T ids  : -0.006 [-0.017, +0.000]
+  M-T prose: +0.000 [+0.000, +0.000]
+  M-A ids  : +0.017 [+0.000, +0.039]
+  M-A prose: +0.000 [+0.000, +0.000]
+
+=== sw_s10 · gemini-3.5-flash-lite  (items 30)
+  T text only                  ids=0.967 silent=0.000 abstain=0.000 prose=1.000 cost=553 billed=553
+  A uniform                    ids=0.989 silent=0.006 abstain=0.000 prose=1.000 cost=202 billed=1203
+  M mixed wrap                 ids=0.972 silent=0.000 abstain=0.000 prose=1.000 cost=198 billed=1205
+  A-T ids  : +0.022 [-0.006, +0.050]
+  A-T prose: +0.000 [+0.000, +0.000]
+  M-T ids  : +0.006 [-0.033, +0.039]
+  M-T prose: +0.000 [+0.000, +0.000]
+  M-A ids  : -0.017 [-0.050, +0.006]
+  M-A prose: +0.000 [+0.000, +0.000]
+
+=== sw_s10 · gpt-6-luna  (items 30)
+  T text only                  ids=1.000 silent=0.000 abstain=0.000 prose=1.000 cost=516 billed=516
+  A uniform                    ids=0.506 silent=0.156 abstain=0.000 prose=0.900 cost=202 billed=339
+  M mixed wrap                 ids=0.689 silent=0.128 abstain=0.000 prose=0.900 cost=198 billed=317
+  A-T ids  : -0.494 [-0.550, -0.439]
+  A-T prose: -0.100 [-0.167, -0.044]
+  M-T ids  : -0.311 [-0.367, -0.256]
+  M-T prose: -0.100 [-0.156, -0.044]
+  M-A ids  : +0.183 [+0.106, +0.261]
+  M-A prose: +0.000 [-0.089, +0.089]
+
+=== sw_s10 · llama-4-maverick  (items 30)
+  T text only                  ids=0.950 silent=0.006 abstain=0.000 prose=0.967 cost=521 billed=521
+  A uniform                    ids=0.594 silent=0.156 abstain=0.000 prose=0.956 cost=202 billed=720
+  M mixed wrap                 ids=0.833 silent=0.033 abstain=0.000 prose=0.978 cost=198 billed=720
+  A-T ids  : -0.356 [-0.450, -0.239]
+  A-T prose: -0.011 [-0.089, +0.078]
+  M-T ids  : -0.117 [-0.183, -0.028]
+  M-T prose: +0.011 [-0.044, +0.100]
+  M-A ids  : +0.239 [+0.156, +0.322]
+  M-A prose: +0.022 [-0.033, +0.089]
+
+=== sw_s10 · qwen3-vl-235b-a22b-instruct  (items 30)
+  T text only                  ids=0.989 silent=0.000 abstain=0.000 prose=1.000 cost=553 billed=553
+  A uniform                    ids=0.411 silent=0.228 abstain=0.000 prose=0.878 cost=202 billed=286
+  M mixed wrap                 ids=0.639 silent=0.206 abstain=0.000 prose=0.856 cost=198 billed=280
+  A-T ids  : -0.578 [-0.644, -0.511]
+  A-T prose: -0.122 [-0.189, -0.067]
+  M-T ids  : -0.350 [-0.417, -0.278]
+  M-T prose: -0.144 [-0.222, -0.078]
+  M-A ids  : +0.228 [+0.139, +0.317]
+  M-A prose: -0.022 [-0.111, +0.067]
+
+failed reads (arm = dropped refusal/transport error; arm* = unparseable output scored 0): {'sw_s5|claude-sonnet-5.5': ['A', 'A', 'M'], 'sw_s5|qwen3-vl-235b-a22b-instruct': ['A*', 'A*', 'A*', 'M*', 'A*', 'A*', 'M*', 'A*', 'M*', 'M*'], 'sw_s6|qwen3-vl-235b-a22b-instruct': ['A*', 'A*', 'A*', 'M*']}

@@ -1,0 +1,2225 @@
+{
+ "r0_img001.png": {
+  "ids": [
+   "10.220.46.111:48705",
+   "/var/log/app_d5a9/run40.log",
+   "17",
+   "320203",
+   "e37f-eaed-38d0-1b4c7c410506",
+   "9e57b708-e37f-eaed-38d0-1b4c7c410506",
+   "4eaf0b756c47c961",
+   "7ae01737357C",
+   "4eaf0b756c47c961"
+  ],
+  "codename": "rumor",
+  "mascot": "marmot",
+  "server": "pionexus",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 162,
+   "total_tokens": 882,
+   "cost": 0.000240705,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000240705,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.000105705
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img002.png": {
+  "ids": [
+   "/var/log/app_f229/run48.log",
+   "10.90.203.199:35394",
+   "a84f2207-a96c-bac1-7411-da5294cc3f1b",
+   "23603c73f665",
+   "aff260791896790b",
+   "730699"
+  ],
+  "codename": "Nixie",
+  "mascot": "Snegurochka",
+  "server": "dinara",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img005.png": {
+  "ids": [
+   "/var/log/sbp_515a/run87.log",
+   "4e8dae83-26e6-e901-a670-92df9af7526e",
+   "10.84.42.27:63953",
+   "430951",
+   "4e8dae83-26e6-e901-a670-92df9af7526e",
+   "9c559ca380ace113",
+   "558e9276f2e9"
+  ],
+  "codename": "plaster",
+  "mascot": "geeko",
+  "server": "sumit",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 140,
+   "total_tokens": 860,
+   "cost": 0.00022635,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00022635,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.135e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img007.png": {
+  "ids": [
+   "10.184.126.151:23604",
+   "55811b36-c4c9-7126-cd30-eae527971590",
+   "119e5ebee8b162b",
+   "275557",
+   "f465102434ca"
+  ],
+  "codename": "archy",
+  "mascot": "quokka",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 99,
+   "total_tokens": 819,
+   "cost": 0.0001995975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0001995975,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 6.45975e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img009.png": {
+  "ids": [
+   "edea90b27373c40b",
+   "a436ecd-57a0-9508-1640d1553b6a2",
+   "933802",
+   "10.71.839.232:42139"
+  ],
+  "codename": "tundra",
+  "mascot": "gecko",
+  "server": "trallis",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 788,
+   "total_tokens": 1508,
+   "cost": 0.00064917,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00064917,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00051417
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img010.png": {
+  "ids": [
+   "d8eae907d565b7fc",
+   "d9f302bba3e6",
+   "bb55341-23ac-7510-eaa9506bc10",
+   "/var/log/nagios/0221/nrun02.log",
+   "tcp/0.0.4.132515",
+   "313630",
+   "extractor.Jar"
+  ],
+  "codename": "orchid",
+  "mascot": "bison",
+  "server": "indigo",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 975,
+   "total_tokens": 1695,
+   "cost": 0.0007711875,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007711875,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.0006361875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img013.png": {
+  "ids": [
+   "10.239.280.231:45147",
+   "v8r/log/app_af15/cuh8.log",
+   "317f02ad-f978-537a-8a63-e8426303380a",
+   "45472163bbd2957",
+   "v8f4fd9f97a8",
+   "240687",
+   "e8426303380a"
+  ],
+  "codename": "thistle",
+  "mascot": "parrot",
+  "server": "redford",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 126,
+   "total_tokens": 846,
+   "cost": 0.000217215,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000217215,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.2215e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img014.png": {
+  "ids": [
+   "extra_arg",
+   "10.170.180.43:53312",
+   "2a178438-e122-e99d-cfde-139ac831f7c3",
+   "220aeffb432054f5",
+   "a23047f194ba",
+   "128221",
+   "/var/log/app_2c0d/run91.log",
+   "Ticket 128221"
+  ],
+  "codename": "lathern",
+  "mascot": "tiger",
+  "server": "fiojt",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 128,
+   "total_tokens": 848,
+   "cost": 0.00021852,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021852,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.352e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img015.png": {
+  "ids": [
+   "32138eda-4454-5d7a-5ded-add46d13ca37",
+   "8148f9b5b7bb",
+   "/var/log/app_1a56/run60.log",
+   "2b1be5ff4e6ff9b6",
+   "10.102.11.36:29875",
+   "576757"
+  ],
+  "codename": "juniper",
+  "mascot": "ladybug",
+  "server": "bonsai",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 628,
+   "total_tokens": 1348,
+   "cost": 0.00054477,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00054477,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00040977
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img016.png": {
+  "ids": [
+   "f89bd3f64eff085d",
+   "3735da54f01a",
+   "9c9279c5-4773-8222-60f1-622c3c9b6b9e",
+   "10.9.176.45:59866",
+   "957223",
+   "/var/log/app_c818/run79.log"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "redbad",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 121,
+   "total_tokens": 841,
+   "cost": 0.0002139525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002139525,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.89525e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img017.png": {
+  "ids": [
+   "75a29d11-e5f6-52b1-051a-509e6ef0d257",
+   "/var/log/app_b135/run12.log",
+   "10.143.30.223:24520",
+   "943665",
+   "02f346763f5d",
+   "60ad8c9dead53ec"
+  ],
+  "codename": "rectr",
+  "mascot": "llama",
+  "server": "envoy",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img018.png": {
+  "ids": [
+   "672136",
+   "72563ebc-7f62-97a-a548-081ab62bc5c7",
+   "c1e8eb0dc2f3b",
+   "579b9c9",
+   "10.60.219.231:9092"
+  ],
+  "codename": "prism",
+  "mascot": "numbat",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 105,
+   "total_tokens": 825,
+   "cost": 0.0002035125,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002035125,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 6.85125e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img021.png": {
+  "ids": [
+   "7506427998497054",
+   "c0ddccba-d2ae-570b-df03-3e76cddd83a7",
+   "Refl641547f4",
+   "86.247.232.209:13499",
+   "3.384.3.384",
+   "/var/log/app.3.384/rund3.log"
+  ],
+  "codename": "funtura",
+  "mascot": "otter",
+  "server": "trellis",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 120,
+   "total_tokens": 840,
+   "cost": 0.0002133,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002133,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.83e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img022.png": {
+  "ids": [
+   "0ebcd308c88ae",
+   "/var/log/app_37/var/log/review.log",
+   "10.564.36.111:62988",
+   "2.6.33",
+   "629",
+   "246",
+   "2023",
+   "1449ae595-81a6-7b6d-946b-9d5c55531849"
+  ],
+  "codename": "russet",
+  "mascot": "lynx",
+  "server": "redox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 647,
+   "total_tokens": 1367,
+   "cost": 0.0005571675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005571675,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.0004221675
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img024.png": {
+  "ids": [
+   "277d86963ec23d8",
+   "7c0ff8-7e8d-4e58-9c1d-0a6235e4c7da",
+   "36,144,351,463,319",
+   "36,144,351,463,319",
+   "708237",
+   "708237",
+   "441f658",
+   "441f658"
+  ],
+  "codename": "canopy",
+  "mascot": "raffin",
+  "server": "monsoon",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 129,
+   "total_tokens": 849,
+   "cost": 0.0002191725,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002191725,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.41725e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img026.png": {
+  "ids": [
+   "a4e44c82-90ec-a9ad-e99f-25c333cd03d1",
+   "defc2c1ed32b0d14",
+   "309c60bdcaaf",
+   "10.192.249.225:58094",
+   "739781",
+   "/var/log/app_2e05/run57.log"
+  ],
+  "codename": "ember",
+  "mascot": "jackal",
+  "server": "fond",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 118,
+   "total_tokens": 838,
+   "cost": 0.000211995,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000211995,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.6995e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img032.png": {
+  "ids": [
+   "747732",
+   "5d3c78b6-c63f-5ac1-2970-4408f0f017a5",
+   "ea715b1dc5fa",
+   "10.164.74.164:47498",
+   "2e993fa573863f4d",
+   "/var/log/app_2c9e/run97.log"
+  ],
+  "codename": "bismuth",
+  "mascot": "raccoon",
+  "server": "arwen",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 125,
+   "total_tokens": 845,
+   "cost": 0.0002165625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002165625,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.15625e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img033.png": {
+  "ids": [
+   "47eceed2-9cbe-cc7a-4aa4-bd66ed72b65e",
+   "4a122bdaaed4",
+   "31138838103641dd",
+   "944886",
+   "10.238.217.12:32511",
+   "/var/log/app_za90/run87.log",
+   "root_dir"
+  ],
+  "codename": "moeda",
+  "mascot": "raccoon",
+  "server": "roar_dir",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 123,
+   "total_tokens": 843,
+   "cost": 0.0002152575,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002152575,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.02575e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img036.png": {
+  "ids": [
+   "e643b5b1a5df",
+   "245370",
+   "10.50.39.246:55213",
+   "/var/log/app_5288/run34.log",
+   "4a414e79-d153-d97f-fad7-61fab7731171",
+   "7a7b43b72119dcdb"
+  ],
+  "codename": "canyon",
+  "mascot": "otter",
+  "server": "backup01",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img041.png": {
+  "ids": [
+   "c3d6579e-0875-4046-3272-9cd834f6aa88",
+   "db5f4627",
+   "/var/log/app_stdf/run31.log",
+   "10.192.0.226:5244",
+   "778223",
+   "320906426bbd1fdf",
+   "3",
+   "28",
+   "31",
+   "0",
+   "6",
+   "9"
+  ],
+  "codename": "velvet",
+  "mascot": "lemur",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 706,
+   "total_tokens": 1426,
+   "cost": 0.000595665,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000595665,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.000460665
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img042.png": {
+  "ids": [
+   "10.223.147.224:27276",
+   "/var/log/app.4867/run41.log",
+   "copystat",
+   "Ticket 088959",
+   "Build 156a3768824",
+   "Request id defb5e8799-70fa-677c-4dedfcb3133",
+   "Commit 8cc0444c7ad5a7",
+   "tools/scripts/md5f-csv"
+  ],
+  "codename": "velvet",
+  "mascot": "Nobita",
+  "server": "onys",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 138,
+   "total_tokens": 858,
+   "cost": 0.000225045,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000225045,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.0045e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img043.png": {
+  "ids": [
+   "10.169.101.228:50771",
+   "/var/log/app_ce0d/run31.log",
+   "583082",
+   "4f544aacb3c4",
+   "806d936d-4f67-13b8-fa91-4a9347ce9193",
+   "9c0b9a510d079746"
+  ],
+  "codename": "cabital",
+  "mascot": "lynx",
+  "server": "rex-Fail",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 642,
+   "total_tokens": 1362,
+   "cost": 0.000553905,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000553905,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.000418905
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img047.png": {
+  "ids": [
+   "3afa7b808658",
+   "f7b3b63b5738b8ba",
+   "8479490-677a-4d7f-4d84-235864815757",
+   "10.168.131.158:40853",
+   "3af7b808658",
+   "f7b3b63b5738b8ba8ba",
+   "/usr/lib/abc.a",
+   "810821"
+  ],
+  "codename": "willow",
+  "mascot": "koala",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 139,
+   "total_tokens": 859,
+   "cost": 0.0002256975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002256975,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.06975e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img049.png": {
+  "ids": [
+   "742960",
+   "370317022895d1dff",
+   "b3d8167c-9e90-b601-f920-d55b1fd84a5a",
+   "b146e9b6427b",
+   "/var/log/app_195e/run43.log",
+   "10.149.118.68:51672"
+  ],
+  "codename": "fair,quilt3",
+  "mascot": "beaver",
+  "server": "nrliff",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 688,
+   "total_tokens": 1408,
+   "cost": 0.00058392,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00058392,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00044892
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img050.png": {
+  "ids": [
+   "458695",
+   "16.185.109.231:4649",
+   "376288648c480b8d",
+   "42adb6c4e534",
+   "7da6d7ee-acff-1408-adea-d4d876846d99",
+   "376288648c480b8d",
+   "42adb6c4e534"
+  ],
+  "codename": "tundra",
+  "mascot": "marten",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 124,
+   "total_tokens": 844,
+   "cost": 0.00021591,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021591,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.091e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img051.png": {
+  "ids": [
+   "254386",
+   "0x3af1",
+   "3769c6de-f11d-ede1-8ddeb-df4ddef4",
+   "3629d654c4",
+   "04fdc667887f2bde",
+   "2",
+   "3",
+   "5",
+   "f(2)",
+   "f(51)",
+   "f(81)",
+   "30.157.202.104:26278"
+  ],
+  "codename": "Prise",
+  "mascot": "Maggie",
+  "server": "Cascade",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 141,
+   "total_tokens": 861,
+   "cost": 0.0002270025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002270025,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.20025e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img052.png": {
+  "ids": [
+   "377ea3b47666",
+   "0344",
+   "run36.log",
+   "0344/722f",
+   "722f",
+   "2082213",
+   "edbe8c12e7-195b-b4b8-c437-c7ab9b2ca9",
+   "288613",
+   "abbbdde4f722c",
+   "79Name..."
+  ],
+  "codename": "willow",
+  "mascot": "lynx",
+  "server": "Trails",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 126,
+   "total_tokens": 846,
+   "cost": 0.000217215,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000217215,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.2215e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img053.png": {
+  "ids": [
+   "eta586f00179a6c2",
+   "da7f924-cf8e-465e-85e7-3f516a95b6b3",
+   "e48237",
+   "10.150.207.150:35555",
+   "/var/log/app_e482/e482.log",
+   "/var/log/app_e482/rq44.log",
+   "/var/app_e482/rq44"
+  ],
+  "codename": "fahrenheit",
+  "mascot": "lynx",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 132,
+   "total_tokens": 852,
+   "cost": 0.00022113,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00022113,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.613e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img056.png": {
+  "ids": [
+   "6625c098-c83f-8168-413b-48252ddc7fe6",
+   "/var/log/app_f3/round43.log",
+   "16.225.226.81:24506",
+   "453761dbca26fb",
+   "453122",
+   "484",
+   "38",
+   "40",
+   "a420de8ad6635"
+  ],
+  "codename": "exastic",
+  "mascot": "newt",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 125,
+   "total_tokens": 845,
+   "cost": 0.0002165625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002165625,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.15625e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img057.png": {
+  "ids": [
+   "345cdd80143b",
+   "419263",
+   "16ed39adb-1ed1-099c-e08f-2657bd88e7a",
+   "96062b0cc933b51d",
+   "10.14.244.86:26138",
+   "10.244.86:26138",
+   "8089",
+   "17"
+  ],
+  "codename": "rustel",
+  "mascot": "ferret",
+  "server": "pager",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 123,
+   "total_tokens": 843,
+   "cost": 0.0002152575,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002152575,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.02575e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img000.png": {
+  "ids": [
+   "277d698c3ee25a0",
+   "39ffdb87cfb-0f19-e2ec-923dce75d1ea",
+   "10.144.31.4:65319",
+   "758237",
+   "/var/log/app_df3a/run13.log",
+   "494f8d58feb1"
+  ],
+  "codename": "canary",
+  "mascot": "parrot",
+  "server": "monocore",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img003.png": {
+  "ids": [
+   "10.169.181.228:5071",
+   "0b8be2d1-467-1b8f-f014f937ce9931",
+   "/var/log/sys_panic/runlist.log",
+   "50882",
+   "4f544acb3c4",
+   "0b806b50807786"
+  ],
+  "codename": "cobalt",
+  "mascot": "lynx",
+  "server": "squark",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 676,
+   "total_tokens": 1396,
+   "cost": 0.00057609,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00057609,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00044109
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img004.png": {
+  "ids": [
+   "19.184.126.151:23664",
+   "53816336-649-1726-c8f0-ea5297759808",
+   "var/log/app/logs/mysql.log",
+   "77567",
+   "10fe6ebe0b1d5a2b",
+   "f451682434ca",
+   "23664"
+  ],
+  "codename": "zephyr",
+  "mascot": "quokka",
+  "server": "quasar",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img006.png": {
+  "ids": [
+   "/var/log/app_195e/rund3.log",
+   "743268",
+   "7831762280dstdiff",
+   "db8aba",
+   "06.249.213.681:5672"
+  ],
+  "codename": "margold",
+  "mascot": "martlet",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 569,
+   "total_tokens": 1289,
+   "cost": 0.0005062725,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005062725,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.0003712725
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img008.png": {
+  "ids": [
+   "def23e5d320d654",
+   "10.192.249.235:18004",
+   "a4e4c82-0bec-e9ad-e90f-25c33c083d1",
+   "739781",
+   "/var/log/app_20d8f/run07.log"
+  ],
+  "codename": "member",
+  "mascot": "jackal",
+  "server": "jarda",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 108,
+   "total_tokens": 828,
+   "cost": 0.00020547,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00020547,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.047e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img011.png": {
+  "ids": [
+   "DEFAULT_BUFFER_SIZE",
+   "345c6885143b",
+   "452563",
+   "060628c0cb35d",
+   "bodybuild-led-903-w88f-267b8d8f07a",
+   "36.14.244.86",
+   "262138",
+   "a",
+   "b"
+  ],
+  "codename": "russet",
+  "mascot": "ferret",
+  "server": "jasper",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 113,
+   "total_tokens": 833,
+   "cost": 0.0002087325,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002087325,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.37325e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img012.png": {
+  "ids": [
+   "/var/log/app.0e44/run36.log",
+   "377ea3b47666",
+   "10.47.72.89:22111",
+   "200613",
+   "e0d8e19b-12d7-1951-bdb0-c637a8b42ca9",
+   "a38169de945f22a2"
+  ],
+  "codename": "willow",
+  "mascot": "lynx",
+  "server": "trailbl",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 121,
+   "total_tokens": 841,
+   "cost": 0.0002139525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002139525,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.89525e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img019.png": {
+  "ids": [
+   "458695",
+   "10.185.109.131:4649",
+   "/var/log/app_3748/run36.log",
+   "17b283004c0300b0",
+   "42aa8ace4eb4",
+   "7da0c7ee-ecf3-146b-aeda-da6df784d49b",
+   "7da0c7ee-ecf3-146b-aeda-da6df784d49b"
+  ],
+  "codename": "turquoise",
+  "mascot": "racoon",
+  "server": "resolute",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 141,
+   "total_tokens": 861,
+   "cost": 0.0002270025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002270025,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.20025e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img020.png": {
+  "ids": [
+   "2b3e0ff4e4df9bde",
+   "32138eda-4454-507a-5ded-ad46d33ca37",
+   "c148f9b5b7b",
+   "/var/log/app.log",
+   "10.202.11.36:29875",
+   "576757"
+  ],
+  "codename": "jupiter",
+  "mascot": "t. rex",
+  "server": "Deathstar-II",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 706,
+   "total_tokens": 1426,
+   "cost": 0.000595665,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000595665,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.000460665
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img023.png": {
+  "ids": [
+   "c9ddcc8a-d2a0-570b-df08-3e76e8dd83a7",
+   "707089",
+   "751642f990497654",
+   "8ef1e8414df4",
+   "10.247.212.209:13495",
+   "/var/log/app_30a5/run63.log"
+  ],
+  "codename": "karoto",
+  "mascot": "ort_info",
+  "server": "trailli",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 120,
+   "total_tokens": 840,
+   "cost": 0.0002133,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002133,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.83e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img025.png": {
+  "ids": [
+   "747732",
+   "5dc3b6e-c437-5ac2976e-4480f763763a",
+   "10.164.74.164:47408",
+   "200907678618764",
+   "2.0.9",
+   "DEFAULT_BUFFER_SIZE"
+  ],
+  "codename": "harbor",
+  "mascot": "tapir",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 104,
+   "total_tokens": 824,
+   "cost": 0.00020286,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00020286,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 6.786e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img027.png": {
+  "ids": [
+   "16.09.281.199:33394",
+   "/var/log/apps/f228/run8.log",
+   "af6d7229-9dc6-47fa-a94c1f7f",
+   "29846777603",
+   "eff0487630760b",
+   "298469",
+   "2028676507",
+   "0-6",
+   "28-31"
+  ],
+  "codename": "thistle",
+  "mascot": "otter",
+  "server": "dyson",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 125,
+   "total_tokens": 845,
+   "cost": 0.0002165625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002165625,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.15625e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img028.png": {
+  "ids": [
+   "33f302ed-fbf9-557b-0a3b-0e2c403001af",
+   "4547f2163bbd3957",
+   "a98f4fd99fa8",
+   "290587",
+   "/var/log/app_af31/run30.log",
+   "10.219.200.211:43147"
+  ],
+  "codename": "thistle",
+  "mascot": "raccoon",
+  "server": "backup",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 118,
+   "total_tokens": 838,
+   "cost": 0.000211995,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000211995,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.6995e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img029.png": {
+  "ids": [
+   "16.243.18.233:24258",
+   "941c949d65",
+   "027f4763f50",
+   "6a8edc9bead3e",
+   "75a7b6e1-e7f6-5261-85f1-a9e6e0f6257",
+   "onys",
+   "16.243.18.233:24258",
+   "941c949d65"
+  ],
+  "codename": "vector",
+  "mascot": "heron",
+  "server": "onys",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 138,
+   "total_tokens": 858,
+   "cost": 0.000225045,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000225045,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.0045e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img030.png": {
+  "ids": [
+   "e6ea90b27373bc40",
+   "/var/log/app_8b3c/run81.log",
+   "10.171.189.232:42139",
+   "ae4e36cd-5a7d-e950-844c-160d155b06a2",
+   "b8f956ff5e71",
+   "893802"
+  ],
+  "codename": "trunda",
+  "mascot": "llama",
+  "server": "talos",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 751,
+   "total_tokens": 1471,
+   "cost": 0.0006250275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006250275,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.0004900275
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img031.png": {
+  "ids": [
+   "2-4998-cfe-39a8317f23",
+   "10.176.180.43:53132",
+   "24278438-e42",
+   "228eff543284f5",
+   "a234577598a6e8a6",
+   "12822",
+   "/var/log/app_2.0.0/runlog.log"
+  ],
+  "codename": "lantern",
+  "mascot": "tapir",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 601,
+   "total_tokens": 1321,
+   "cost": 0.0005271525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005271525,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.0003921525
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img034.png": {
+  "ids": [
+   "e1a5b6f690175a6c",
+   "dd75ee24-c598-c4e5-885c-7e351a35beb1",
+   "0f3c8d9e6f9",
+   "/var/log/app_0852/run44.log",
+   "10.150.107.150:35515",
+   "823377"
+  ],
+  "codename": "factor",
+  "mascot": "lynx",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 664,
+   "total_tokens": 1384,
+   "cost": 0.00056826,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00056826,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00043326
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img035.png": {
+  "ids": [
+   "7/id/name/ye/no",
+   "submodule_search_locations",
+   "5a8a3b5a",
+   "reducefunction",
+   "iterable",
+   "initial",
+   "10.184.42.27:63951",
+   "variance",
+   "_tdin_",
+   "0cd9ca380ace113",
+   "Suk4270f729",
+   "0x4eaf02fe7f2d6a",
+   "TS_CHARACTER_JUNK"
+  ],
+  "codename": "lacier",
+  "mascot": "gecko",
+  "server": "submit",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 145,
+   "total_tokens": 865,
+   "cost": 0.0002296125,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002296125,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 9.46125e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img037.png": {
+  "ids": [
+   "f89bcdf6def858",
+   "6c9372e3-4773-8223-4891-6b223c106b6e",
+   "e8f0d3f4",
+   "10.9.176.45.59",
+   "867fde4f",
+   "952723",
+   "185fde4f",
+   "errors=0",
+   "errors=1"
+  ],
+  "codename": "velvet",
+  "mascot": "quokka",
+  "server": "redwood",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 133,
+   "total_tokens": 853,
+   "cost": 0.0002217825,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002217825,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.67825e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img038.png": {
+  "ids": [
+   "672136",
+   "10.66.199.233:42919",
+   "fab057059bc9",
+   "c51eafbd05c921b",
+   "f2563edb-7f62-f97a-a548-d03ab62bc5c7",
+   "53cb",
+   "app_53cb",
+   "/var/log/app_53cb/run57.log"
+  ],
+  "codename": "prince",
+  "mascot": "quokka",
+  "server": "apollo",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 125,
+   "total_tokens": 845,
+   "cost": 0.0002165625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002165625,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.15625e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img039.png": {
+  "ids": [
+   "10.228.46.111:48705",
+   "e85768437f-eaed-3d84-184c7c410c86",
+   "7a0b73737557",
+   "daf9785cf7d265",
+   "320203",
+   "0"
+  ],
+  "codename": "ruvet",
+  "mascot": "egypt",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 107,
+   "total_tokens": 827,
+   "cost": 0.0002048175,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002048175,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 6.98175e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img040.png": {
+  "ids": [
+   "9be5d1c3d8c8bae",
+   "/var/log/app_b704/run99.log",
+   "f01e451c-f51f",
+   "10.164.36.113:62908",
+   "246620",
+   "1449e595-81a6-736d-9a6b-d5c555d31849"
+  ],
+  "codename": "rustcat",
+  "mascot": "lynx",
+  "server": "redacted",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 121,
+   "total_tokens": 841,
+   "cost": 0.0002139525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002139525,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.89525e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img044.png": {
+  "ids": [
+   "254386",
+   "c575c5eb-f415-6be8-efd1-8d8e8a6bdf64",
+   "30320566c410",
+   "/var/log/app_8f69/run74.log",
+   "041ce6670874266e",
+   "10.147.62.154:20278",
+   "1123",
+   "3",
+   "31"
+  ],
+  "codename": "prince",
+  "mascot": "Sequenomeatcher",
+  "server": "canopus",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 132,
+   "total_tokens": 852,
+   "cost": 0.00022113,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00022113,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.613e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img045.png": {
+  "ids": [
+   "d8ea90070565bf5f",
+   "10.96.48.4:32191",
+   "bbc55341-23ac-75ab-1310-eea8950b6c10",
+   "9fd392bba36e",
+   "/var/log/app_3221/run29.log",
+   "333630"
+  ],
+  "codename": "DERBY.BUFFER.SIZE",
+  "mascot": "bison",
+  "server": "Indigo",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 121,
+   "total_tokens": 841,
+   "cost": 0.0002139525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002139525,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.89525e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img046.png": {
+  "ids": [
+   "10.223.147.224:27276",
+   "/var/log/app_ed67/run43.log",
+   "816af3f68824",
+   "908959",
+   "b6fb15d8-8799-7bfa-577c-de60cfa83133",
+   "0cc9e444c7ad14a7"
+  ],
+  "codename": "velvet",
+  "mascot": "koala",
+  "server": "days",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 696,
+   "total_tokens": 1416,
+   "cost": 0.00058914,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00058914,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 0.00045414
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img048.png": {
+  "ids": [
+   "778223",
+   "10.195.80.126:8324",
+   "c3d61779-00f5-4d46-3272-9cd034fa9ab8",
+   "326f094264bd3f8f",
+   "db36fef49227",
+   "326f094264bd3f8f",
+   "61df",
+   "31"
+  ],
+  "codename": "velvet",
+  "mascot": "racoon",
+  "server": "equinox",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 127,
+   "total_tokens": 847,
+   "cost": 0.0002178675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002178675,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 8.28675e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img054.png": {
+  "ids": [
+   "6625c098-403f-8160-41b4-8252d1dc71e6",
+   "e2cead486d15",
+   "403f61a6bcae26fb",
+   "10.226.220.81:24590",
+   "453322"
+  ],
+  "codename": "musica",
+  "mascot": "real",
+  "server": "floyd",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 106,
+   "total_tokens": 826,
+   "cost": 0.000204165,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000204165,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 6.9165e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img055.png": {
+  "ids": [
+   "47ceed2-9cbe-c72a-4a4-bd66d720b5e",
+   "A4s22daae4",
+   "94488",
+   "10.238.217.12:3251",
+   "/var/log/app_2408/rund7.log",
+   "3133838318@qq.com",
+   "X"
+  ],
+  "codename": "meadow",
+  "mascot": "temer",
+  "server": "onyx",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 119,
+   "total_tokens": 839,
+   "cost": 0.0002126475,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002126475,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.76475e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img058.png": {
+  "ids": [
+   "f70538b639108080",
+   "810121",
+   "3af79bb80658",
+   "10.168.131.158:40053",
+   "/var/log/app_3d6f/run49.log",
+   "84f9b9e0-a578-d49f-629d-135458a165f3"
+  ],
+  "codename": "granite",
+  "mascot": "koala",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 116,
+   "total_tokens": 836,
+   "cost": 0.00021069,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00021069,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.569e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r1_img059.png": {
+  "ids": [
+   "e64b5b51adf",
+   "4ad4479e-d153-097f-fad7-61fab7731571",
+   "245370",
+   "39.39.39.246:55233",
+   "3288",
+   "2fb402152130cdb",
+   "f2"
+  ],
+  "codename": "canary",
+  "mascot": "otter",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 720,
+   "completion_tokens": 108,
+   "total_tokens": 828,
+   "cost": 0.00020547,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00020547,
+    "upstream_inference_prompt_cost": 0.000135,
+    "upstream_inference_completions_cost": 7.047e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

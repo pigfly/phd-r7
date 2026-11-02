@@ -34,14 +34,14 @@ for run in sorted(HERE.glob("lb*_*")):
                 if fr == "drop": continue
                 rows[int(k[2:-4])]["T"] = {"f1": 0.0 if fr else f1(p, items[int(k[2:-4])]), "billed": p.get("usage", {}).get("prompt_tokens", 0)}
         tab = {a: {k: round(sum(r[a][k] for r in rows.values() if a in r) / max(1, sum(a in r for r in rows.values())), 3)
-                   for k in ("f1", "billed")} for a in "TAMSL"}
+                   for k in ("f1", "billed")} for a in "TAMSLKX"}
         diffs = {}
-        for a, b in (("M", "A"), ("A", "T"), ("M", "T"), ("S", "A"), ("L", "A"), ("L", "M")):
+        for a, b in (("M", "A"), ("A", "T"), ("M", "T"), ("S", "A"), ("L", "A"), ("L", "M"), ("K", "A"), ("X", "A"), ("X", "K")):
             pr = [r for r in rows.values() if a in r and b in r]
             if len(pr) >= 5: diffs[f"{a}-{b}"] = boot([r[a]["f1"] - r[b]["f1"] for r in pr], R)
         res[f"{run.name}|{reader}"] = dict(arms=tab, diffs=diffs, n=len(rows))
         fmt = lambda k: ("%+.3f [%+.3f,%+.3f]" % tuple(diffs[k])) if k in diffs else "-"
-        print(f"{run.name:14s} {reader:28s} " + " ".join(f"{a}={tab[a]['f1']:.3f}" for a in "TAMSL" if tab[a]["billed"] or tab[a]["f1"])
-              + "".join(f"  {k} {fmt(k)}" for k in ("M-A", "S-A", "L-A", "A-T") if k in diffs))
+        print(f"{run.name:14s} {reader:28s} " + " ".join(f"{a}={tab[a]['f1']:.3f}" for a in "TAMSLKX" if tab[a]["billed"] or tab[a]["f1"])
+              + "".join(f"  {k} {fmt(k)}" for k in ("M-A", "S-A", "L-A", "K-A", "X-A", "A-T") if k in diffs))
 if fails: print("failed reads (arm = dropped; arm* = scored 0):", dict(fails))
 (HERE / "analysis_longbench.json").write_text(json.dumps(res, indent=1))

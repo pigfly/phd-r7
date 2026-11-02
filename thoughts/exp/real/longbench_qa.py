@@ -27,7 +27,8 @@ def main():
     ap.add_argument("--task", required=True); ap.add_argument("--size", type=int, default=6)
     ap.add_argument("--n", type=int, default=50); ap.add_argument("--max_chars", type=int, default=40000)
     ap.add_argument("--seed", type=int, default=0); ap.add_argument("--out", required=True)
-    ap.add_argument("--arms", default="AM", help="A uniform, M global, S strict-detector M, L M-local (strict)")
+    ap.add_argument("--arms", default="AM", help="A uniform, M global, S strict-detector M, L M-local (strict), "
+                    "K anchors on A, X anchors on S")
     a = ap.parse_args(); R = random.Random(a.seed); M.REAL = True
     rows = [json.loads(l) for l in open(HERE / "longbench" / "data" / f"{a.task}.jsonl")]
     rows = R.sample([r for r in rows if len(r["context"]) <= a.max_chars], a.n)
@@ -41,12 +42,19 @@ def main():
         items.append(it)
         bud = M.vtokens(*M.render(M.units_uniform(text, a.size)).size)
         for arm in a.arms:
-            im, l, h, ex = M.long_arm(arm, text, bud, a.size)
-            man.append(dict(item=i, arm=arm, s_lo=l, s_hi=h, extra=ex, vtok=M.vtokens(*im.size), wh=im.size, _im=im))
+            anchors = None
+            if arm in "KX":  # anchors (strict-flagged strings) on the A image (K) or the S image (X)
+                im, l, h, ex = M.long_arm("A" if arm == "K" else "S", text, bud, a.size); M.STRICT = True
+                anchors = [w.strip(".,;:()[]\"'") for w in M.words(text) if M.flagged(w)]; M.STRICT = False
+            else: im, l, h, ex = M.long_arm(arm, text, bud, a.size)
+            man.append(dict(item=i, arm=arm, s_lo=l, s_hi=h, extra=ex, vtok=M.vtokens(*im.size), wh=im.size, anchors=anchors,
+                            anchor_tok=round(sum(len(t) / 2 + 3 for t in anchors)) if anchors else 0, _im=im))
     R.shuffle(man)
     for k, m in enumerate(man):
         m["name"] = f"img{k:03d}"; m.pop("_im").save(out / "img" / f"{m['name']}.png")
-        (out / "img" / f"{m['name']}.prompt").write_text(items[m["item"]]["prompt"]); (out / "img" / f"{m['name']}.raw").write_text("")
+        q = items[m["item"]]["prompt"]
+        if m.get("anchors"): q = q.replace(PH, PH + "\n\nExact strings copied verbatim from the text in the image:\n" + "\n".join(m["anchors"]))
+        (out / "img" / f"{m['name']}.prompt").write_text(q); (out / "img" / f"{m['name']}.raw").write_text("")
     (out / "gt.json").write_text(json.dumps(dict(task=a.task, size=a.size, items=items), indent=1))
     (out / "manifest.json").write_text(json.dumps(man, indent=1))
     print(a.out, len(man), "images; A vtok", sum(m["vtok"] for m in man if m["arm"] == "A") / a.n,

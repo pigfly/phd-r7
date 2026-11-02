@@ -1,0 +1,126 @@
+[
+ {
+  "item": 0,
+  "text": "That constrains reasonable uses of this routine unless written as part of a conditional replacement: if item > heap[0]: item = heapreplace(heap, item) The release codename is mosaic. The return value i is such that all e in a[:i] have e <= x, and all e in a[i:] have e > x. Request id 149d4395-36b3-216f-daee-b975729fae92 was logged. Given a `delta` produced by `Differ.compare()` or `ndiff()`, extract lines originating from file 1 or 2 (parameter `which`), stripping off line prefixes. Output went to /var/log/app_1371/run83.log for review. Otherwise, the returned significand satisfies 10**(figures - 1) <= significand < 10**figures. The commit is d5a4fd12aabfe228. (?aiLmsux) The letters set the corresponding flags defined below. Build f219e9cb0eb5 passed. This module exports the following functions: match Match a regular expression pattern to the beginning of a string. Ticket 223800 is still open. Compare two sequences of lines; generate the delta as a context diff. Most ordinary characters, like \"A\", \"a\", or \"0\", are the simplest regular expressions; they simply match themselves. The service listens on 10.203.25.250:15512 today. `extract_dir` is the name of the target directory, where the archive is unpacked. The function does not check this precondition. The numerator defaults to 0 and the denominator defaults to 1 so that Fraction(3) == 3 and Fraction() == 0. In string patterns without the ASCII flag, it will match the whole range of Unicode digits. `src` and `dst` are path-like objects or path names given as strings. Unpack tar/tar.gz/tar.bz2/tar.xz `filename` to `extract_dir` ",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_1371/run83.log"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.203.25.250:15512"
+   },
+   {
+    "kind": "uuid",
+    "value": "149d4395-36b3-216f-daee-b975729fae92"
+   },
+   {
+    "kind": "num6",
+    "value": "223800"
+   },
+   {
+    "kind": "sha16",
+    "value": "d5a4fd12aabfe228"
+   },
+   {
+    "kind": "hex12",
+    "value": "f219e9cb0eb5"
+   }
+  ],
+  "codename": "mosaic"
+ },
+ {
+  "item": 1,
+  "text": "Return disk usage statistics about the given path. Raised when trying to do a kind of operation (e.g. email Parser wants to see strings rather than bytes. Return sqrt(x * y) computed with improved accuracy and without overflow/underflow. The release codename is ember. If follow_symlinks is not set, symlinks aren't followed if and only if both `src` and `dst` are symlinks. Ticket 767357 is still open. But a TextIOWrapper around self.rfile would buffer too many bytes from the stream, bytes which we later need to read as bytes. The output tar file will be named 'base_name' + \".tar\", possibly plus the appropriate compression extension (\".gz\", \".bz2\", or \".xz\"). Output went to /var/log/app_26c4/run91.log for review. Timing: Basic R-O is cubic time worst case and quadratic time expected case. All other inputs (except `n`) must be bytes rather than str. The commit is 8f506b40928b5b7a. To estimate the variance from a sample, the ``variance`` function is usually a better choice. Request id 8904dba4-1ecc-cc3f-c162-6e53a13043b0 was logged. The return value i is such that all e in a[:i] have e <= x, and all e in a[i:] have e > x. The service listens on 10.129.177.155:24889 today. \\Z Matches only at the end of the string. Build f33feff9243a passed. If the key function is not specified or is None, the element itself is used for grouping. Divide *data* into *n* continuous intervals with equal probability.",
+  "ids": [
+   {
+    "kind": "uuid",
+    "value": "8904dba4-1ecc-cc3f-c162-6e53a13043b0"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_26c4/run91.log"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.129.177.155:24889"
+   },
+   {
+    "kind": "hex12",
+    "value": "f33feff9243a"
+   },
+   {
+    "kind": "sha16",
+    "value": "8f506b40928b5b7a"
+   },
+   {
+    "kind": "num6",
+    "value": "767357"
+   }
+  ],
+  "codename": "ember"
+ },
+ {
+  "item": 2,
+  "text": "Returns a string formatted from n strings, centered within n columns. plot = ' ' * int(density * 400) + 'x' ... This class can be used to create an HTML table (or a complete HTML file containing the table) showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. If dirs_exist_ok is false (the default) and `dst` already exists, a `FileExistsError` is raised. Ticket 938487 is still open. The basic idea is to find the longest contiguous matching subsequence that contains no \"junk\" elements (R-O doesn't address junk). Output went to /var/log/app_3e02/run66.log for review. Optional ndiff arguments may be passed to this function and they in turn will be passed to ndiff. \\number Matches the contents of the group of the same number. ``mode`` assumes discrete data, and returns a single value. compile Compile a pattern into a Pattern object. The commit is 8697a8d41bed440e. data should be a sequence or iterable of Real-valued numbers, with at least one value. Request id 23c6f5da-2cec-2554-04e4-fb440034d660 was logged. 'base_dir' is the directory where we start archiving from; ie. Build 50454f31af31 passed. Providing a *seed* allows reproducible selections within a single thread. The release codename is meadow. To the contrary, minimal diffs are often counter-intuitive, because they synch up anywhere possible, sometimes accidental matches 100 pages apart. The service listens on 10.127.97.71:3789 today. If the base is not specified, returns the natural logarithm (base e) of x.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "938487"
+   },
+   {
+    "kind": "uuid",
+    "value": "23c6f5da-2cec-2554-04e4-fb440034d660"
+   },
+   {
+    "kind": "sha16",
+    "value": "8697a8d41bed440e"
+   },
+   {
+    "kind": "hex12",
+    "value": "50454f31af31"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.127.97.71:3789"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_3e02/run66.log"
+   }
+  ],
+  "codename": "meadow"
+ },
+ {
+  "item": 3,
+  "text": "The data is fit to a line passing through the origin. The release codename is willow. If `dirs_exist_ok` is true, the copying operation will continue if it encounters existing directories, and files within the `dst` tree will be overwritten by corresponding files from the `src` tree. Return sqrt(x * y) computed with improved accuracy and without overflow/underflow. The service listens on 10.239.112.192:63447 today. Create a zip file from all the files under 'base_dir'. The commit is 827283e0ad841735. version -- the version of this interpreter as a string version_info -- version information as a named tuple __stdin__ -- the original stdin; don't touch! Output went to /var/log/app_a2b0/run53.log for review. The default is the module-level function IS_CHARACTER_JUNK, which filters out whitespace characters (a blank or tab; note: it's a bad idea to include newline in this!). The optional ignore argument is a callable. The scheme argument provides the default value of the scheme component when no scheme is found in url. (?aiLmsux) The letters set the corresponding flags defined below. This effectively reduces the iterable to a single value. Build 3cf575dcad6b passed. If follow_symlinks is not set and src is a symbolic link, a new symlink will be created instead of copying the file it points to. Request id ee0ca923-7328-8158-4d8c-4fa2815d2802 was logged. A more tenable assumption is that the 484 members of that age group are evenly distributed between 30 and 40. Ticket 680963 is still open. Finally, StringIO is an in-memory stream for text. __stdout__ -- the original stdout; don't touch!",
+  "ids": [
+   {
+    "kind": "ipport",
+    "value": "10.239.112.192:63447"
+   },
+   {
+    "kind": "hex12",
+    "value": "3cf575dcad6b"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_a2b0/run53.log"
+   },
+   {
+    "kind": "num6",
+    "value": "680963"
+   },
+   {
+    "kind": "uuid",
+    "value": "ee0ca923-7328-8158-4d8c-4fa2815d2802"
+   },
+   {
+    "kind": "sha16",
+    "value": "827283e0ad841735"
+   }
+  ],
+  "codename": "willow"
+ }
+]

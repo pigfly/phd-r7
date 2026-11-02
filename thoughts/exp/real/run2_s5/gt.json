@@ -1,0 +1,1176 @@
+[
+ {
+  "item": 0,
+  "text": "All remaining arguments are treated the same as if they were passed to the dict constructor, including keyword arguments. The service listens on 10.197.162.125:26359 today. Unpack tar/tar.gz/tar.bz2/tar.xz `filename` to `extract_dir`  Length of line is limited by _MAXLINE, and number of headers is limited by _MAXHEADERS. The destination path in that directory must not already exist. When the number of data points is odd, the middle value is returned. Recursively move a file or directory to another location. Ticket 625797 is still open. If `filter` is given, it is passed to the underlying extraction function. The commit is 8025f0f27a355bab. Return True if x is a positive or negative infinity, and False otherwise. Output went to /var/log/app_dde1/run52.log for review. If both onerror and onexc are set, onerror is ignored and onexc is used. The *data* can be any iterable containing sample. Build 973525db517d passed. 'value' can be an integer, string, tuple, or another Decimal object. If encoding or errors is specified, then the object must expose a data buffer that will be decoded using the given encoding and error handler. The release codename is harbor. For inputs that do not have trailing newlines, set the lineterm argument to \"\" so that the output will be uniformly newline free. Request id f3b04230-e5ac-f451-f726-623fc6a4d9be was logged. If follow_symlinks is not set and src is a symbolic link, a new symlink will be created instead of copying the file it points to.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_dde1/run52.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "f3b04230-e5ac-f451-f726-623fc6a4d9be"
+   },
+   {
+    "kind": "num6",
+    "value": "625797"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.197.162.125:26359"
+   },
+   {
+    "kind": "sha16",
+    "value": "8025f0f27a355bab"
+   },
+   {
+    "kind": "hex12",
+    "value": "973525db517d"
+   }
+  ],
+  "codename": "harbor",
+  "flagged_tokens": [
+   "10.197.162.125:26359",
+   "tar/tar.gz/tar.bz2/tar.xz",
+   "625797",
+   "8025f0f27a355bab",
+   "/var/log/app_dde1/run52.log",
+   "973525db517d",
+   "f3b04230-e5ac-f451-f726-623fc6a4d9be"
+  ]
+ },
+ {
+  "item": 1,
+  "text": "Symlinks are recreated under the new name if os.rename() fails because of cross filesystem renames. Build 949acf7555c6 passed. Regular expressions can contain both special and ordinary characters. Symbols that are not relevant to the underlying system are not defined. This module exports a set of functions implemented in C corresponding to the intrinsic operators of Python. The release codename is canyon. It also includes default encodings for all supported locale names. Request id f06b4bdf-f948-40c4-08a7-d8c4443c350e was logged. os.strerror(2) could return 'No such file or directory'. Return a context manager that will set the default context to a copy of ctx on entry to the with-statement and restore the previous default context when exiting the with-statement. On Windows, we can use NeedCurrentDirectoryForExePath to figure out if we should add the cwd to PATH when searching for executables if the mode is executable. Roughly equivalent to: sum(itertools.starmap(operator.mul, zip(p, q, strict=True))) For float and mixed int/float inputs, the intermediate products and sums are computed with extended precision. The commit is 2c578a17c499f31a. Convert data to floats and compute the geometric mean. The service listens on 10.72.36.223:8827 today. Generate one of the two sequences that generated a delta. Ticket 787156 is still open. \"|\" A|B, creates an RE that will match either A or B. Restricting synch points to contiguous matches preserves some notion of locality, at the occasional cost of producing a longer diff. Output went to /var/log/app_110c/run69.log for review. Return the index where to insert item x in list a, assuming a is sorted.",
+  "ids": [
+   {
+    "kind": "uuid",
+    "value": "f06b4bdf-f948-40c4-08a7-d8c4443c350e"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.72.36.223:8827"
+   },
+   {
+    "kind": "num6",
+    "value": "787156"
+   },
+   {
+    "kind": "hex12",
+    "value": "949acf7555c6"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_110c/run69.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "2c578a17c499f31a"
+   }
+  ],
+  "codename": "canyon",
+  "flagged_tokens": [
+   "949acf7555c6",
+   "f06b4bdf-f948-40c4-08a7-d8c4443c350e",
+   "2c578a17c499f31a",
+   "10.72.36.223:8827",
+   "787156",
+   "/var/log/app_110c/run69.log"
+  ]
+ },
+ {
+  "item": 2,
+  "text": "Change owner user and group of the given path. The release codename is lantern. I IGNORECASE Perform case-insensitive matching. The service listens on 10.164.130.242:56426 today. (?P=name) Matches the text matched earlier by the group named name. (?:...) Non-grouping version of regular parentheses. The commit is 8cde7ccaf721f5fb. If `dirs_exist_ok` is true, the copying operation will continue if it encounters existing directories, and files within the `dst` tree will be overwritten by corresponding files from the `src` tree. If both onerror and onexc are set, onerror is ignored and onexc is used. Request id 6e87ffc9-c05a-69c4-2529-ce35d6ab6820 was logged. `name` is the absolute name of the module. It returns a list of names relative to the `src` directory that should not be copied. 'base_dir' will be the common prefix of all files and directories in the archive. Given a command, mode, and a PATH string, return the path which conforms to the given mode on the PATH, or None if there is no such file. Build cecde85c8366 passed. Optional keyword parameters `linejunk` and `charjunk` are for filter functions, or can be None: - linejunk: A function that should accept a single string argument and return true iff the string is junk. Output went to /var/log/app_4678/run58.log for review. Raised when trying to do a kind of operation (e.g. (...) Matches the RE inside the parentheses. Ticket 264798 is still open. See ``pvariance`` for arguments and other details.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "8cde7ccaf721f5fb"
+   },
+   {
+    "kind": "uuid",
+    "value": "6e87ffc9-c05a-69c4-2529-ce35d6ab6820"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.164.130.242:56426"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_4678/run58.log"
+   },
+   {
+    "kind": "num6",
+    "value": "264798"
+   },
+   {
+    "kind": "hex12",
+    "value": "cecde85c8366"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "10.164.130.242:56426",
+   "8cde7ccaf721f5fb",
+   "6e87ffc9-c05a-69c4-2529-ce35d6ab6820",
+   "cecde85c8366",
+   "/var/log/app_4678/run58.log",
+   "264798"
+  ]
+ },
+ {
+  "item": 3,
+  "text": "This module exports the following functions: match Match a regular expression pattern to the beginning of a string. Build 022d641fffa4 passed. Functions specific for a socket are available as methods of the socket object. Ticket 122067 is still open. Smaller values emphasize local features while larger values give smoother results. The release codename is mosaic. The function translate(PATTERN) returns a regular expression corresponding to PATTERN. For inputs that do not have trailing newlines, set the lineterm argument to \"\" so that the output will be uniformly newline free. 'value' can be an integer, string, tuple, or another Decimal object. This is helpful so that inputs created from file.readlines() result in diffs that are suitable for file.writelines() since both the inputs and outputs have trailing newlines. Request id 022536b8-b151-f8c5-137b-8d66d2a761b5 was logged. This runs faster than the mean() function and it always returns a float. * It is one of the most extensively tested generators in existence. On Linux, copystat() also copies the \"extended attributes\" where possible. The service listens on 10.180.88.158:18401 today. functools.py - Tools for working with functions and callable objects The commit is bff5e081639c6eb0. The basic idea is to smooth the data using a kernel function to help draw inferences about a population from a sample. Output went to /var/log/app_84b9/run48.log for review. The output zip file will be named 'base_name' + \".zip\". copying) which is not supported on a special file (e.g.",
+  "ids": [
+   {
+    "kind": "hex12",
+    "value": "022d641fffa4"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_84b9/run48.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "022536b8-b151-f8c5-137b-8d66d2a761b5"
+   },
+   {
+    "kind": "num6",
+    "value": "122067"
+   },
+   {
+    "kind": "sha16",
+    "value": "bff5e081639c6eb0"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.180.88.158:18401"
+   }
+  ],
+  "codename": "mosaic",
+  "flagged_tokens": [
+   "022d641fffa4",
+   "122067",
+   "022536b8-b151-f8c5-137b-8d66d2a761b5",
+   "10.180.88.158:18401",
+   "bff5e081639c6eb0",
+   "/var/log/app_84b9/run48.log"
+  ]
+ },
+ {
+  "item": 4,
+  "text": "\\Z Matches only at the end of the string. Ticket 137278 is still open. reduce(function, iterable[, initial], /) -> value Apply a function of two arguments cumulatively to the items of an iterable, from left to right. Thus we always get the last component of the path, even for directories. The service listens on 10.111.16.176:60035 today. It can be used for averaging ratios or rates, for example speeds. Request id 10b4faeb-ce28-3b8e-36a2-9744839664ff was logged. SequenceMatcher tries to compute a \"human-friendly diff\" between two sequences. Returns generator yielding marked up from/to side by side differences. The release codename is meadow. See the CoerceTest test class in test_statistics for details. When this is True, `__file__` attribute of the module is set. Build 5c4c109e6f7f passed. If follow_symlinks is set to False and the last element of the path is a symbolic link, chown will modify the link itself and not the file being referenced by the link. Output went to /var/log/app_ae94/run38.log for review. `has_location` indicates that a spec's \"origin\" reflects a location. That person is in the 30 to 40 year old age group. The commit is def6685dc7ff81e6. For bytes patterns, this flag is the only available behaviour and needn't be specified. A more tenable assumption is that the 484 members of that age group are evenly distributed between 30 and 40. For inputs that do not have trailing newlines, set the lineterm argument to \"\" so that the output will be uniformly newline free.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "def6685dc7ff81e6"
+   },
+   {
+    "kind": "num6",
+    "value": "137278"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_ae94/run38.log"
+   },
+   {
+    "kind": "hex12",
+    "value": "5c4c109e6f7f"
+   },
+   {
+    "kind": "uuid",
+    "value": "10b4faeb-ce28-3b8e-36a2-9744839664ff"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.111.16.176:60035"
+   }
+  ],
+  "codename": "meadow",
+  "flagged_tokens": [
+   "137278",
+   "10.111.16.176:60035",
+   "10b4faeb-ce28-3b8e-36a2-9744839664ff",
+   "5c4c109e6f7f",
+   "/var/log/app_ae94/run38.log",
+   "def6685dc7ff81e6"
+  ]
+ },
+ {
+  "item": 5,
+  "text": "Returns a list of (n - 1) cut points separating the intervals. The optional copy_function argument is a callable that will be used to copy each file. The release codename is zephyr. Of course, they must then only use functions that are defined by all platforms (e.g., unlink and opendir), and leave all pathname manipulation to os.path (e.g., split and join). Request id 4508aa96-1e56-4054-7353-c33660277376 was logged. dir_fd may not be implemented on your platform. If not specified, the strings default to blanks. The commit is 5128f859abf8c913. On Linux, copystat() also copies the \"extended attributes\" where possible. Ticket 984538 is still open. `loader` is the loader to use when loading the module. The service listens on 10.113.44.89:33143 today. Compare two sequences of lines; generate the delta as a context diff. Return the arc cosine (measured in radians) of x. Return True for ignorable character: iff `ch` is a space or tab. Raised when trying to do a kind of operation (e.g. Build d0c9abd1f1cf passed. Each element of the returned sequence is a tuple (name, description) Output went to /var/log/app_92fa/run27.log for review. `path` defaults to the result of os.environ.get(\"PATH\"), or can be overridden with a custom search path. Returns a new subclass of tuple with named fields.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "984538"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.113.44.89:33143"
+   },
+   {
+    "kind": "uuid",
+    "value": "4508aa96-1e56-4054-7353-c33660277376"
+   },
+   {
+    "kind": "hex12",
+    "value": "d0c9abd1f1cf"
+   },
+   {
+    "kind": "sha16",
+    "value": "5128f859abf8c913"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_92fa/run27.log"
+   }
+  ],
+  "codename": "zephyr",
+  "flagged_tokens": [
+   "4508aa96-1e56-4054-7353-c33660277376",
+   "5128f859abf8c913",
+   "984538",
+   "10.113.44.89:33143",
+   "d0c9abd1f1cf",
+   "/var/log/app_92fa/run27.log"
+  ]
+ },
+ {
+  "item": 6,
+  "text": "If `filter` is given, it is passed to the underlying extraction function. A ASCII For string patterns, make \\w, \\W, \\b, \\B, \\d, \\D match the corresponding ASCII character categories (rather than the whole Unicode categories, which is the default). Ticket 891008 is still open. 'owner' and 'group' are used when creating a tar archive. When it is even, the smaller of the two middle values is returned. Note, this function utilizes the ndiff function to generate the side by side difference markup. Output went to /var/log/app_65a0/run95.log for review. A StatisticsError will be raised if the *data* sequence is empty. The release codename is orchid. Round a rational number to a given number of significant figures. `function` is the callable that will be used to unpack archives. Request id 7e7bc685-bf4a-b492-179a-c5c08867306c was logged. Argument names are not part of the specification, and only the arguments of open() are intended to be used as keyword arguments. Differ is a class for comparing sequences of lines of text, and producing human-readable differences or deltas. The service listens on 10.142.178.2:47018 today. If the optional flag `follow_symlinks` is not set, symlinks aren't followed if and only if both `src` and `dst` are symlinks. Kernel Density Estimation: Create a continuous probability density function or cumulative distribution function from discrete samples. Build 6f65dc94c140 passed. For data associated with the module, including source, use the spec's loader. The commit is 25e3f12a359e9dc3. If source and destination are the same file, a SameFileError will be raised.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_65a0/run95.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "7e7bc685-bf4a-b492-179a-c5c08867306c"
+   },
+   {
+    "kind": "hex12",
+    "value": "6f65dc94c140"
+   },
+   {
+    "kind": "num6",
+    "value": "891008"
+   },
+   {
+    "kind": "sha16",
+    "value": "25e3f12a359e9dc3"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.142.178.2:47018"
+   }
+  ],
+  "codename": "orchid",
+  "flagged_tokens": [
+   "891008",
+   "/var/log/app_65a0/run95.log",
+   "7e7bc685-bf4a-b492-179a-c5c08867306c",
+   "10.142.178.2:47018",
+   "6f65dc94c140",
+   "25e3f12a359e9dc3"
+  ]
+ },
+ {
+  "item": 7,
+  "text": "\\w Matches any alphanumeric character; equivalent to [a-zA-Z0-9_] in bytes patterns or string patterns with the ASCII flag. But a TextIOWrapper around self.rfile would buffer too many bytes from the stream, bytes which we later need to read as bytes. Covariance is a measure of the joint variability of two inputs. 'value' can be an integer, string, tuple, or another Decimal object. Ticket 751842 is still open. Complex is better than complicated.\\n', '? The commit is 9d62ee55e1cf2f53. If no_neg_zero is true, then the returned sign will always be False when the significand is zero. This runs faster than the mean() function and it always returns a float. The release codename is cobalt. Return True for ignorable character: iff `ch` is a space or tab. Build d8a6cc9179a7 passed. This is essential for getting a correct result. The service listens on 10.4.15.253:21313 today. onerror is deprecated and only remains for backwards compatibility. `origin` is the specific location used by the loader from which to load the module, if that information is available. Request id 402e2dbc-ef85-9792-45da-8bc3b1267eaf was logged. Returns a pair (sign: bool, significand: int) representing the rounded value (-1)**sign * significand * 10**exponent. It corresponds to the `__cached__` attribute. Output went to /var/log/app_5635/run49.log for review. No special efforts are made to achieve exact results.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "751842"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_5635/run49.log"
+   },
+   {
+    "kind": "hex12",
+    "value": "d8a6cc9179a7"
+   },
+   {
+    "kind": "sha16",
+    "value": "9d62ee55e1cf2f53"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.4.15.253:21313"
+   },
+   {
+    "kind": "uuid",
+    "value": "402e2dbc-ef85-9792-45da-8bc3b1267eaf"
+   }
+  ],
+  "codename": "cobalt",
+  "flagged_tokens": [
+   "751842",
+   "9d62ee55e1cf2f53",
+   "d8a6cc9179a7",
+   "10.4.15.253:21313",
+   "402e2dbc-ef85-9792-45da-8bc3b1267eaf",
+   "/var/log/app_5635/run49.log"
+  ]
+ },
+ {
+  "item": 8,
+  "text": "Change owner user and group of the given path. The release codename is zephyr. Use this function to calculate the variance from the entire population. Request id a211f55c-c9e1-545c-e5cc-a36533a13cac was logged. Return weekday of first day of month (0-6 ~ Mon-Sun) and number of days (28-31) for year, month. log(x, [base=math.e]) Return the logarithm of x to the given base. Suppose a car travels 40 km/hr for 5 km and then speeds-up to 60 km/hr for another 5 km. Output went to /var/log/app_507d/run99.log for review. Convert data to floats and compute the arithmetic mean. This module exports the following functions: match Match a regular expression pattern to the beginning of a string. Ticket 313108 is still open. After f = itemgetter(2), the call f(r) returns r[2]. The service listens on 10.30.185.65:25540 today. Unrelated but handy function to calculate Unix timestamp from GMT. If the destination is on our current filesystem, then rename() is used. If follow_symlinks is set to False and the last element of the path is a symbolic link, chown will modify the link itself and not the file being referenced by the link. Build ad185753a755 passed. Some headers do in fact appear multiple times (e.g. The commit is dc85d609cd68cf97. Roughly equivalent to: sum(itertools.starmap(operator.mul, zip(p, q, strict=True))) For float and mixed int/float inputs, the intermediate products and sums are computed with extended precision. For onexc it is the exception instance, and for onerror it is a tuple as returned by sys.exc_info().",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "313108"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_507d/run99.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "dc85d609cd68cf97"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.30.185.65:25540"
+   },
+   {
+    "kind": "hex12",
+    "value": "ad185753a755"
+   },
+   {
+    "kind": "uuid",
+    "value": "a211f55c-c9e1-545c-e5cc-a36533a13cac"
+   }
+  ],
+  "codename": "zephyr",
+  "flagged_tokens": [
+   "a211f55c-c9e1-545c-e5cc-a36533a13cac",
+   "/var/log/app_507d/run99.log",
+   "313108",
+   "10.30.185.65:25540",
+   "ad185753a755",
+   "dc85d609cd68cf97"
+  ]
+ },
+ {
+  "item": 9,
+  "text": "Each element of the returned sequence is a tuple (name, description) By default, the diff control lines (those with ---, +++, or @@) are created with a trailing newline. Ticket 665514 is still open. Create a (possibly compressed) tar file from all the files under 'base_dir'. fnmatchcase(FILENAME, PATTERN) always takes case in account. The destination path in that directory must not already exist. The commit is 2cf6d77860561ac6. This module implements specialized container datatypes providing alternatives to Python's general purpose built-in containers, dict, list, set, and tuple. Output went to /var/log/app_bf80/run12.log for review. Regular expressions can contain both special and ordinary characters. Build 3c92817fcdb1 passed. repeat(object [,times]) -> create an iterator which returns the object for the specified number of times. Request id ca6ab99e-0282-3ffa-dac7-824526bccf34 was logged. The function names are those used for special methods; variants without leading and trailing '__' are also provided for convenience. Unrelated but handy function to calculate Unix timestamp from GMT. The release codename is sparrow. If initial is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty. 'root_dir' and 'base_dir' both default to the current directory. The service listens on 10.65.16.248:32789 today. Each row represents a week; days outside this month are zero. Not all of the mapping methods are implemented.",
+  "ids": [
+   {
+    "kind": "uuid",
+    "value": "ca6ab99e-0282-3ffa-dac7-824526bccf34"
+   },
+   {
+    "kind": "sha16",
+    "value": "2cf6d77860561ac6"
+   },
+   {
+    "kind": "hex12",
+    "value": "3c92817fcdb1"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_bf80/run12.log"
+   },
+   {
+    "kind": "num6",
+    "value": "665514"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.65.16.248:32789"
+   }
+  ],
+  "codename": "sparrow",
+  "flagged_tokens": [
+   "665514",
+   "2cf6d77860561ac6",
+   "/var/log/app_bf80/run12.log",
+   "3c92817fcdb1",
+   "ca6ab99e-0282-3ffa-dac7-824526bccf34",
+   "10.65.16.248:32789"
+  ]
+ },
+ {
+  "item": 10,
+  "text": "This module provides socket operations and some related functions. Output went to /var/log/app_741a/run71.log for review. Return a callable object that fetches the given item(s) from its operand. Rounds the rational number n/d to the nearest integer multiple of 10**exponent, rounding to the nearest even integer multiple in the case of a tie. Return Real number x to exact (numerator, denominator) pair. Assumes IEEE-754 floating-point arithmetic. Build 4011e5fde4dd passed. In the two-argument form of the constructor, Fraction(8, 6) will produce a rational number equivalent to 4/3. Request id 8147f66b-fa14-4b9d-89bc-b65a1878d7aa was logged. Return weekday of first day of month (0-6 ~ Mon-Sun) and number of days (28-31) for year, month. Ticket 764289 is still open. In case none is found, a ValueError is raised. Covariance is a measure of the joint variability of two inputs. The release codename is juniper. Compare `a` and `b` (lists of strings); return a `Differ`-style delta. See ``pvariance`` for arguments and other details. The service listens on 10.243.128.19:32856 today. `origin` is the specific location used by the loader from which to load the module, if that information is available. \\Z Matches only at the end of the string. The commit is a7a605fc500f8245. Returns a string formatted from n strings, centered within n columns.",
+  "ids": [
+   {
+    "kind": "ipport",
+    "value": "10.243.128.19:32856"
+   },
+   {
+    "kind": "num6",
+    "value": "764289"
+   },
+   {
+    "kind": "sha16",
+    "value": "a7a605fc500f8245"
+   },
+   {
+    "kind": "uuid",
+    "value": "8147f66b-fa14-4b9d-89bc-b65a1878d7aa"
+   },
+   {
+    "kind": "hex12",
+    "value": "4011e5fde4dd"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_741a/run71.log"
+   }
+  ],
+  "codename": "juniper",
+  "flagged_tokens": [
+   "/var/log/app_741a/run71.log",
+   "4011e5fde4dd",
+   "4/3",
+   "8147f66b-fa14-4b9d-89bc-b65a1878d7aa",
+   "764289",
+   "10.243.128.19:32856",
+   "a7a605fc500f8245"
+  ]
+ },
+ {
+  "item": 11,
+  "text": "After g = itemgetter(2, 5, 3), the call g(r) returns (r[2], r[5], r[3]) {m,n} Matches from m to n repetitions of the preceding RE. Build 52b4e9fca26c passed. Find the n smallest elements in a dataset. Ticket 494954 is still open. ' attempt to guide the eye to intraline differences, and were not present in either input sequence. The value returned is a named tuple of type os.terminal_size. The release codename is lantern. This class can be used to create an HTML table (or a complete HTML file containing the table) showing a side by side, line by line comparison of text with inter-line and intra-line change highlights. Output went to /var/log/app_fd64/run93.log for review. It returns a list of names relative to the `src` directory that should not be copied. key A function for computing the group category for each element. Request id 971ab9a0-50c9-e352-067d-2c562e02fd14 was logged. If exception(s) occur, an Error is raised with a list of reasons. See also function get_close_matches() in this module, which shows how simple code building on SequenceMatcher can be used to do useful work. The optional `copy_function` argument is a callable that will be used to copy the source or it will be delegated to `copytree`. The commit is 01b469395dbc28ed. Will return more than one result if there are multiple modes or an empty list if *data* is empty. The service listens on 10.156.20.112:15592 today. If `filter` is given, it is passed to the underlying extraction function. Kernel Density Estimation: Create a continuous probability density function or cumulative distribution function from discrete samples.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "494954"
+   },
+   {
+    "kind": "hex12",
+    "value": "52b4e9fca26c"
+   },
+   {
+    "kind": "uuid",
+    "value": "971ab9a0-50c9-e352-067d-2c562e02fd14"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_fd64/run93.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "01b469395dbc28ed"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.156.20.112:15592"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "52b4e9fca26c",
+   "494954",
+   "/var/log/app_fd64/run93.log",
+   "971ab9a0-50c9-e352-067d-2c562e02fd14",
+   "01b469395dbc28ed",
+   "10.156.20.112:15592"
+  ]
+ },
+ {
+  "item": 12,
+  "text": "In the two-argument form of the constructor, Fraction(8, 6) will produce a rational number equivalent to 4/3. The commit is e38e541b2d29b826. This module provides some more Pythonic support for SSL. Ticket 551108 is still open. Return the population variance of ``data``. If dst already exists but is not a directory, it may be overwritten depending on os.rename() semantics. Each row represents a week; days outside this month are zero. If follow_symlinks is false, symlinks won't be followed. Request id d0886cce-572e-ebe3-9386-63270a1e3a36 was logged. search Search a string for the presence of a pattern. The number of context lines is set by 'n' which defaults to three. The release codename is cobalt. int([x]) -> integer int(x, base=10) -> integer Convert a number or string to an integer, or return 0 if no arguments are given. Pearson's correlation coefficient Return the Pearson's correlation coefficient for two inputs. The service listens on 10.73.94.34:31079 today. Explicit is better than implicit.\\n', '- 3. Output went to /var/log/app_34b1/run35.log for review. On Linux, copystat() also copies the \"extended attributes\" where possible. Concrete implementation of SourceLoader using the file system. Build b7fa5f9295d4 passed. _sum(data) -> (type, sum, count) Return a high-precision sum of the given numeric data as a fraction, together with the type to be converted to and the count of items.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_34b1/run35.log"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.73.94.34:31079"
+   },
+   {
+    "kind": "sha16",
+    "value": "e38e541b2d29b826"
+   },
+   {
+    "kind": "hex12",
+    "value": "b7fa5f9295d4"
+   },
+   {
+    "kind": "num6",
+    "value": "551108"
+   },
+   {
+    "kind": "uuid",
+    "value": "d0886cce-572e-ebe3-9386-63270a1e3a36"
+   }
+  ],
+  "codename": "cobalt",
+  "flagged_tokens": [
+   "4/3",
+   "e38e541b2d29b826",
+   "551108",
+   "d0886cce-572e-ebe3-9386-63270a1e3a36",
+   "10.73.94.34:31079",
+   "/var/log/app_34b1/run35.log",
+   "b7fa5f9295d4"
+  ]
+ },
+ {
+  "item": 13,
+  "text": "In one pass, compute the mean and sample standard deviation as floats. The commit is 9cdcd543627fb772. A typical implementation should not inherit from a RawIOBase implementation, but wrap one. Output went to /var/log/app_21fe/run93.log for review. If the base is not specified, returns the natural logarithm (base e) of x. If given *c* is used the mean; otherwise, it is calculated from the data. Request id b5be7f53-b11c-0405-989a-478ac0b0deb3 was logged. See ``variance`` for arguments and other details. A custom key function can be supplied to customize the sort order. Its subclasses, BufferedWriter, BufferedReader, and BufferedRWPair buffer streams that are readable, writable, and both respectively. Build 1ee9c7227004 passed. The context diff format normally has a header for filenames and modification times. Return a callable object that fetches the given item(s) from its operand. Ticket 439421 is still open. Optional keyword parameters `linejunk` and `charjunk` are for filter functions, or can be None: - linejunk: A function that should accept a single string argument and return true iff the string is junk. Constants/functions for interpreting results of os.stat() and os.lstat(). The service listens on 10.151.56.251:22279 today. Refer to the library manual and corresponding Unix manual entries for more information on calls. The release codename is lantern. `submodule_search_locations` is the sequence of path entries to search when importing submodules. __stdout__ -- the original stdout; don't touch!",
+  "ids": [
+   {
+    "kind": "uuid",
+    "value": "b5be7f53-b11c-0405-989a-478ac0b0deb3"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.151.56.251:22279"
+   },
+   {
+    "kind": "num6",
+    "value": "439421"
+   },
+   {
+    "kind": "hex12",
+    "value": "1ee9c7227004"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_21fe/run93.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "9cdcd543627fb772"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "9cdcd543627fb772",
+   "/var/log/app_21fe/run93.log",
+   "b5be7f53-b11c-0405-989a-478ac0b0deb3",
+   "1ee9c7227004",
+   "439421",
+   "10.151.56.251:22279"
+  ]
+ },
+ {
+  "item": 14,
+  "text": "\"|\" A|B, creates an RE that will match either A or B. Build dd5e13892c7b passed. They cache the compiled regular expressions for speed. Ticket 809110 is still open. `src` and `dst` are path-like objects or path names given as strings. Returns a list of (n - 1) cut points separating the intervals. Request id faf146a2-a95c-932c-79fe-b0525c0c52fb was logged. For floating-point numbers, this truncates towards zero. The return value i is such that all e in a[:i] have e <= x, and all e in a[i:] have e > x. The commit is 74399f7720d9ffe6. purge Clear the regular expression cache. This module also defines exception 'PatternError', aliased to 'error' for backward compatibility. Output went to /var/log/app_a371/run33.log for review. If provided, extra_args is a sequence of (name, value) tuples that will be passed as arguments to the callable. If `dirs_exist_ok` is true, the copying operation will continue if it encounters existing directories, and files within the `dst` tree will be overwritten by corresponding files from the `src` tree. The release codename is lantern. \\S Matches any non-whitespace character; equivalent to [^\\s]. \\A Matches only at the start of the string. If it's unable to handle an archive, it needs to raise a ReadError exception. The service listens on 10.184.173.69:40583 today. In the special case where n = 0, returns a significand of zero and an exponent of 1 - figures, for compatibility with formatting.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "74399f7720d9ffe6"
+   },
+   {
+    "kind": "num6",
+    "value": "809110"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.184.173.69:40583"
+   },
+   {
+    "kind": "uuid",
+    "value": "faf146a2-a95c-932c-79fe-b0525c0c52fb"
+   },
+   {
+    "kind": "hex12",
+    "value": "dd5e13892c7b"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_a371/run33.log"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "dd5e13892c7b",
+   "809110",
+   "faf146a2-a95c-932c-79fe-b0525c0c52fb",
+   "74399f7720d9ffe6",
+   "/var/log/app_a371/run33.log",
+   "10.184.173.69:40583"
+  ]
+ },
+ {
+  "item": 15,
+  "text": "Convert data to floats and compute the arithmetic mean. The commit is 6ac801201d9e5d40. Greedy means that it will match as many repetitions as possible. Ticket 207715 is still open. This module makes available standard errno system symbols. Build e5bea34ed313 passed. *fsrc* must support readinto() method and both files must be open in binary mode. Request id 782b418c-2244-b55a-335b-1403ba3de806 was logged. hypot(*coordinates) -> value Multidimensional Euclidean distance from the origin to a point. 'zero\\none\\ntree\\nfour\\n'.splitlines(True), 'Original', 'Current')), ... You can concatenate ordinary characters, so last matches the string 'last'. Return the exact mean and sum of square deviations of sequence data. The release codename is willow. 'base_dir' will be the common prefix of all files and directories in the archive. Output went to /var/log/app_f56c/run89.log for review. The special characters are: \".\" Matches any character except a newline. The service listens on 10.227.93.186:35519 today. fnmatchcase(FILENAME, PATTERN) always takes case in account. d must be positive, but n and d need not be relatively prime. Return sqrt(x * y) computed with improved accuracy and without overflow/underflow. findall Find all occurrences of a pattern in a string.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "207715"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_f56c/run89.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "6ac801201d9e5d40"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.227.93.186:35519"
+   },
+   {
+    "kind": "hex12",
+    "value": "e5bea34ed313"
+   },
+   {
+    "kind": "uuid",
+    "value": "782b418c-2244-b55a-335b-1403ba3de806"
+   }
+  ],
+  "codename": "willow",
+  "flagged_tokens": [
+   "6ac801201d9e5d40",
+   "207715",
+   "e5bea34ed313",
+   "782b418c-2244-b55a-335b-1403ba3de806",
+   "/var/log/app_f56c/run89.log",
+   "10.227.93.186:35519"
+  ]
+ },
+ {
+  "item": 16,
+  "text": "Given a `delta` produced by `Differ.compare()` or `ndiff()`, extract lines originating from file 1 or 2 (parameter `which`), stripping off line prefixes. Request id a5ed2068-5fe8-3a6d-0798-0ff1512e0d5a was logged. If `dirs_exist_ok` is true, the copying operation will continue if it encounters existing directories, and files within the `dst` tree will be overwritten by corresponding files from the `src` tree. The release codename is pebble. Each row represents a week; days outside this month are zero. Ticket 768711 is still open. Use SequenceMatcher to return list of the best \"good enough\" matches. If not specified, the strings default to blanks. The commit is 7ac173ad88694e33. Return Real number x to exact (numerator, denominator) pair. The service listens on 10.106.215.216:26552 today. Thus we always get the last component of the path, even for directories. * It is one of the most extensively tested generators in existence. That, and the method here, appear to yield more intuitive difference reports than does diff. Output went to /var/log/app_2a72/run68.log for review. fullmatch Match a regular expression pattern to all of a string. Build f767e2206e54 passed. See also function get_close_matches() in this module, which shows how simple code building on SequenceMatcher can be used to do useful work. This is similar to the Unix \"mv\" command. If dir_fd is set, it should be an open file descriptor to the directory to be used as the root of *path* if it is relative. fnmatchcase(FILENAME, PATTERN) always takes case in account.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_2a72/run68.log"
+   },
+   {
+    "kind": "hex12",
+    "value": "f767e2206e54"
+   },
+   {
+    "kind": "num6",
+    "value": "768711"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.106.215.216:26552"
+   },
+   {
+    "kind": "sha16",
+    "value": "7ac173ad88694e33"
+   },
+   {
+    "kind": "uuid",
+    "value": "a5ed2068-5fe8-3a6d-0798-0ff1512e0d5a"
+   }
+  ],
+  "codename": "pebble",
+  "flagged_tokens": [
+   "a5ed2068-5fe8-3a6d-0798-0ff1512e0d5a",
+   "768711",
+   "7ac173ad88694e33",
+   "10.106.215.216:26552",
+   "/var/log/app_2a72/run68.log",
+   "f767e2206e54"
+  ]
+ },
+ {
+  "item": 17,
+  "text": "dir_fd may not be implemented on your platform. ' attempt to guide the eye to intraline differences, and were not present in either input sequence. The release codename is marigold. Round a rational number to a given number of significant figures. The service listens on 10.170.158.105:32867 today. \"$\" matches the end of lines (before a newline) as well as the end of the string. Build 2f54a693ea91 passed. Return an accurate floating-point sum of values in the iterable seq. For floating-point numbers, this truncates towards zero. Output went to /var/log/app_09ca/run17.log for review. email Parser wants to see strings rather than bytes. Request id c8489f35-4695-02e9-72e6-87632b59cd47 was logged. repeat(object [,times]) -> create an iterator which returns the object for the specified number of times. The commit is 53f76dd5b3b275e8. To the contrary, minimal diffs are often counter-intuitive, because they synch up anywhere possible, sometimes accidental matches 100 pages apart. plot = ' ' * int(density * 400) + 'x' ... Ticket 829303 is still open. Optional ndiff arguments may be passed to this function and they in turn will be passed to ndiff. If provided, `extra_args` is a sequence of (name, value) tuples that will be passed as arguments to the callable. To map error codes to error messages, use the function os.strerror(), e.g. If the input dataset is empty, it raises a StatisticsError.",
+  "ids": [
+   {
+    "kind": "hex12",
+    "value": "2f54a693ea91"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.170.158.105:32867"
+   },
+   {
+    "kind": "uuid",
+    "value": "c8489f35-4695-02e9-72e6-87632b59cd47"
+   },
+   {
+    "kind": "sha16",
+    "value": "53f76dd5b3b275e8"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_09ca/run17.log"
+   },
+   {
+    "kind": "num6",
+    "value": "829303"
+   }
+  ],
+  "codename": "marigold",
+  "flagged_tokens": [
+   "10.170.158.105:32867",
+   "2f54a693ea91",
+   "/var/log/app_09ca/run17.log",
+   "c8489f35-4695-02e9-72e6-87632b59cd47",
+   "53f76dd5b3b275e8",
+   "829303"
+  ]
+ },
+ {
+  "item": 18,
+  "text": "Find the n smallest elements in a dataset. A custom key function can be supplied to customize the sort order. Request id 816fa748-b93b-b853-9dd1-e52a8fd2cda8 was logged. * It is one of the most extensively tested generators in existence. Build edb41363df13 passed. 'root_dir' and 'base_dir' both default to the current directory. The release codename is nectar. S DOTALL \".\" matches any character at all, including the newline. The commit is 92bbaa0138822f96. The default is None, and is recommended; the underlying SequenceMatcher class has an adaptive notion of \"noise\" lines. Ticket 344334 is still open. \\B Matches the empty string, but not at the start or end of a word. Given a `delta` produced by `Differ.compare()` or `ndiff()`, extract lines originating from file 1 or 2 (parameter `which`), stripping off line prefixes. \"$\" matches the end of lines (before a newline) as well as the end of the string. copying) which is not supported on a special file (e.g. Slope and intercept for simple linear regression. If not provided, the current working directory is used. Output went to /var/log/app_177c/run46.log for review. They cache the compiled regular expressions for speed. The service listens on 10.108.25.221:36416 today. findall Find all occurrences of a pattern in a string.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "92bbaa0138822f96"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.108.25.221:36416"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_177c/run46.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "816fa748-b93b-b853-9dd1-e52a8fd2cda8"
+   },
+   {
+    "kind": "hex12",
+    "value": "edb41363df13"
+   },
+   {
+    "kind": "num6",
+    "value": "344334"
+   }
+  ],
+  "codename": "nectar",
+  "flagged_tokens": [
+   "816fa748-b93b-b853-9dd1-e52a8fd2cda8",
+   "edb41363df13",
+   "92bbaa0138822f96",
+   "344334",
+   "/var/log/app_177c/run46.log",
+   "10.108.25.221:36416"
+  ]
+ },
+ {
+  "item": 19,
+  "text": "Return a count object whose .__next__() method returns consecutive values. Request id 7817231f-00d9-c7bb-28d4-cfd0543886ff was logged. Returned value is a named tuple with attributes 'total', 'used' and 'free', which are the amount of total, used and free space, in bytes. The unidiff format normally has a header for filenames and modification times. hexversion -- version information encoded as a single integer implementation -- Python implementation information. split Split a string by the occurrences of a pattern. The service listens on 10.36.80.174:56432 today. Return the arc tangent (measured in radians) of x. Return number of leap years in range [y1, y2). Build 2e173696f271 passed. This is similar to the Unix \"mv\" command. The release codename is meadow. In string patterns without the ASCII flag, it will match the range of Unicode alphanumeric characters (letters plus digits plus underscore). The commit is 8228d3e4853e03f8. When this is True, `__file__` attribute of the module is set. Copy file metadata Copy the permission bits, last access time, last modification time, and flags from `src` to `dst`. Output went to /var/log/app_5254/run59.log for review. plot = ' ' * int(density * 400) + 'x' ... Ticket 821608 is still open. Returns a pair (sign: bool, significand: int) representing the rounded value (-1)**sign * significand * 10**exponent. The output tar file will be named 'base_name' + \".tar\", possibly plus the appropriate compression extension (\".gz\", \".bz2\", or \".xz\").",
+  "ids": [
+   {
+    "kind": "ipport",
+    "value": "10.36.80.174:56432"
+   },
+   {
+    "kind": "sha16",
+    "value": "8228d3e4853e03f8"
+   },
+   {
+    "kind": "uuid",
+    "value": "7817231f-00d9-c7bb-28d4-cfd0543886ff"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_5254/run59.log"
+   },
+   {
+    "kind": "hex12",
+    "value": "2e173696f271"
+   },
+   {
+    "kind": "num6",
+    "value": "821608"
+   }
+  ],
+  "codename": "meadow",
+  "flagged_tokens": [
+   "7817231f-00d9-c7bb-28d4-cfd0543886ff",
+   "10.36.80.174:56432",
+   "2e173696f271",
+   "8228d3e4853e03f8",
+   "/var/log/app_5254/run59.log",
+   "821608"
+  ]
+ },
+ {
+  "item": 20,
+  "text": "Replace whitespace with the original whitespace characters in `s` Packages are simply modules that (may) have submodules. Ignored for string patterns (it is the default), and forbidden for bytes patterns. The release codename is meadow. The callable will receive archives to unpack. To estimate the variance from a sample, the ``variance`` function is usually a better choice. Output went to /var/log/app_b344/run68.log for review. The default is None, and is recommended; the underlying SequenceMatcher class has an adaptive notion of \"noise\" lines. The service listens on 10.102.46.63:54474 today. SequenceMatcher is a flexible class for comparing pairs of sequences of any type, so long as the sequence elements are hashable. It measures the strength and direction of a linear relationship. Build 8eb728ffaaa3 passed. data should be an iterable of Real-valued numbers, with at least two values. The commit is ed6741f797f55c86. finditer Return an iterator yielding a Match object for each match. Ticket 509226 is still open. os.strerror(2) could return 'No such file or directory'. Request id ce0b067a-21e7-fa4c-e02e-8c809abc94e1 was logged. Divide *data* into *n* continuous intervals with equal probability. Each element of the returned sequence is a tuple (name, description) Return sqrt(x * y) computed with improved accuracy and without overflow/underflow.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "509226"
+   },
+   {
+    "kind": "sha16",
+    "value": "ed6741f797f55c86"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.102.46.63:54474"
+   },
+   {
+    "kind": "uuid",
+    "value": "ce0b067a-21e7-fa4c-e02e-8c809abc94e1"
+   },
+   {
+    "kind": "hex12",
+    "value": "8eb728ffaaa3"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_b344/run68.log"
+   }
+  ],
+  "codename": "meadow",
+  "flagged_tokens": [
+   "/var/log/app_b344/run68.log",
+   "10.102.46.63:54474",
+   "8eb728ffaaa3",
+   "ed6741f797f55c86",
+   "509226",
+   "ce0b067a-21e7-fa4c-e02e-8c809abc94e1"
+  ]
+ },
+ {
+  "item": 21,
+  "text": "`src` and `dst` are path-like objects or path names given as strings. Find the n smallest elements in a dataset. The release codename is orchid. onerror is deprecated and only remains for backwards compatibility. The service listens on 10.220.19.17:21833 today. The file contents, owner, and group are unaffected. If ignore_errors is false and both onexc and onerror are None, the exception is reraised. Build e749b29bd881 passed. Reads potential header lines into a list from a file pointer. This module implements specialized container datatypes providing alternatives to Python's general purpose built-in containers, dict, list, set, and tuple. description can be provided to describe the format, and will be returned by the get_unpack_formats() function. Ticket 657583 is still open. \\s Matches any whitespace character; equivalent to [ \\t\\n\\r\\f\\v] in bytes patterns or string patterns with the ASCII flag. Constants/functions for interpreting results of os.stat() and os.lstat(). Output went to /var/log/app_9f5a/run15.log for review. This module exports a set of functions implemented in C corresponding to the intrinsic operators of Python. __stderr__ -- the original stderr; don't touch! The commit is ba7c13490f1c73ed. escape Backslash all non-alphanumerics in a string. Request id b6360be1-9844-6b3a-8360-346776442f24 was logged. The context diff format normally has a header for filenames and modification times.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_9f5a/run15.log"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.220.19.17:21833"
+   },
+   {
+    "kind": "num6",
+    "value": "657583"
+   },
+   {
+    "kind": "uuid",
+    "value": "b6360be1-9844-6b3a-8360-346776442f24"
+   },
+   {
+    "kind": "hex12",
+    "value": "e749b29bd881"
+   },
+   {
+    "kind": "sha16",
+    "value": "ba7c13490f1c73ed"
+   }
+  ],
+  "codename": "orchid",
+  "flagged_tokens": [
+   "10.220.19.17:21833",
+   "e749b29bd881",
+   "657583",
+   "/var/log/app_9f5a/run15.log",
+   "ba7c13490f1c73ed",
+   "b6360be1-9844-6b3a-8360-346776442f24"
+  ]
+ },
+ {
+  "item": 22,
+  "text": "When it is even, the larger of the two middle values is returned. The commit is b68222f5ac496cf5. `extract_dir` is the name of the target directory, where the archive is unpacked. It corresponds to the `__cached__` attribute. The release codename is prism. If source and destination are the same file, a SameFileError will be raised. The unidiff format normally has a header for filenames and modification times. Convert data to floats and compute the geometric mean. Covariance Return the sample covariance of two inputs *x* and *y*. Request id 8a412fe4-2db6-1400-6f01-0b112ef1d052 was logged. Each element of the returned sequence is a tuple (name, description) Output went to /var/log/app_dc9c/run17.log for review. The io module provides the Python interfaces to stream handling. for t = list[int], t.__origin__ is list and t.__args__ is (int,). The service listens on 10.165.149.58:16403 today. Change owner user and group of the given path. 'value' can be an integer, string, tuple, or another Decimal object. Build 722b5f9d0a0b passed. Note that the value returned may be larger than item! Ticket 967464 is still open. SequenceMatcher tries to compute a \"human-friendly diff\" between two sequences.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "b68222f5ac496cf5"
+   },
+   {
+    "kind": "num6",
+    "value": "967464"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_dc9c/run17.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "8a412fe4-2db6-1400-6f01-0b112ef1d052"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.165.149.58:16403"
+   },
+   {
+    "kind": "hex12",
+    "value": "722b5f9d0a0b"
+   }
+  ],
+  "codename": "prism",
+  "flagged_tokens": [
+   "b68222f5ac496cf5",
+   "8a412fe4-2db6-1400-6f01-0b112ef1d052",
+   "/var/log/app_dc9c/run17.log",
+   "10.165.149.58:16403",
+   "722b5f9d0a0b",
+   "967464"
+  ]
+ },
+ {
+  "item": 23,
+  "text": "When it is even, the larger of the two middle values is returned. The service listens on 10.45.38.213:51949 today. email Parser wants to see strings rather than bytes. Output went to /var/log/app_c642/run31.log for review. Slope and intercept for simple linear regression. The commit is d07f763421bcc519. ' line not present in either input sequence Lines beginning with '? Request id ddcdfec5-e4d1-cf82-98e9-11b580e9fa61 was logged. The destination path in that directory must not already exist. The release codename is meadow. a multipart or a message/rfc822), then the payload is a list of Message objects, otherwise it is a string. Some headers do in fact appear multiple times (e.g. A defaultdict compares equal to a dict with the same items. Build 12fd00608c2e passed. A module's spec is the source for information about the module. This effectively reduces the iterable to a single value. Kernel Density Estimation: Create a continuous probability density function or cumulative distribution function from discrete samples. `parent` is the name of the package the module is in. Ticket 316665 is still open. The parameters are returned as a named tuple. The optional `copy_function` argument is a callable that will be used to copy the source or it will be delegated to `copytree`.",
+  "ids": [
+   {
+    "kind": "hex12",
+    "value": "12fd00608c2e"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.45.38.213:51949"
+   },
+   {
+    "kind": "uuid",
+    "value": "ddcdfec5-e4d1-cf82-98e9-11b580e9fa61"
+   },
+   {
+    "kind": "num6",
+    "value": "316665"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_c642/run31.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "d07f763421bcc519"
+   }
+  ],
+  "codename": "meadow",
+  "flagged_tokens": [
+   "10.45.38.213:51949",
+   "/var/log/app_c642/run31.log",
+   "d07f763421bcc519",
+   "ddcdfec5-e4d1-cf82-98e9-11b580e9fa61",
+   "message/rfc822",
+   "12fd00608c2e",
+   "316665"
+  ]
+ },
+ {
+  "item": 24,
+  "text": "For each of the two dimensions, the environment variable, COLUMNS and LINES respectively, is checked. Request id accbb211-1611-9aba-f67d-b7061c8ea24b was logged. By default, uses the current owner and group. If the base is not specified, returns the natural logarithm (base e) of x. The release codename is lantern. Use this function when your data is a sample from a population. Use SequenceMatcher to return list of the best \"good enough\" matches. \\b Matches the empty string, but only at the start or end of a word. The specification for a module, used for loading. Ticket 432306 is still open. When COLUMNS or LINES is not defined, which is the common case, the terminal connected to sys.__stdout__ is queried by invoking os.get_terminal_size. The service listens on 10.249.254.200:40730 today. Return the sum of products of values from two iterables p and q. Build f9a80247b87b passed. Suppose a car travels 40 km/hr for 5 km and then speeds-up to 60 km/hr for another 5 km. The commit is 60ccdc3af63a01bb. Optional arg n (default 3) is the maximum number of close matches to return. Output went to /var/log/app_55ec/run56.log for review. Scan through string looking for a match, and return a corresponding match object instance. fnmatchcase(FILENAME, PATTERN) always takes case in account. The value returned is a named tuple of type os.terminal_size.",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "432306"
+   },
+   {
+    "kind": "hex12",
+    "value": "f9a80247b87b"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_55ec/run56.log"
+   },
+   {
+    "kind": "sha16",
+    "value": "60ccdc3af63a01bb"
+   },
+   {
+    "kind": "uuid",
+    "value": "accbb211-1611-9aba-f67d-b7061c8ea24b"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.249.254.200:40730"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "accbb211-1611-9aba-f67d-b7061c8ea24b",
+   "432306",
+   "10.249.254.200:40730",
+   "f9a80247b87b",
+   "60ccdc3af63a01bb",
+   "/var/log/app_55ec/run56.log"
+  ]
+ },
+ {
+  "item": 25,
+  "text": "See ``variance`` for arguments and other details. Build 6f0c52540b2d passed. \"$\" Matches the end of the string or just before the newline at the end of the string. Smaller values emphasize local features while larger values give smoother results. In string patterns without the ASCII flag, it will match the whole range of Unicode whitespace characters. Compare `a` and `b`, two sequences of lines represented as bytes rather than str. Output went to /var/log/app_6f42/run47.log for review. The kernel determines the relative weights of the sample data points. The service listens on 10.10.42.29:15203 today. If the destination is on our current filesystem, then rename() is used. The release codename is saffron. The basic idea is to smooth the data using a kernel function to help draw inferences about a population from a sample. Ticket 407423 is still open. The table can be generated in either full or contextual difference mode. Request id 7ebd94a0-009b-5f7c-d86f-aa72e3c82cd5 was logged. The builtins True and False are the only two instances of the class bool. repeat(object [,times]) -> create an iterator which returns the object for the specified number of times. 'base_name' is the name of the file to create, minus any format-specific extension; 'format' is the archive format: one of \"zip\", \"tar\", \"gztar\", \"bztar\", or \"xztar\". The parameters are returned as a named tuple. The commit is ae855ebcdddaf883. __stderr__ -- the original stderr; don't touch!",
+  "ids": [
+   {
+    "kind": "num6",
+    "value": "407423"
+   },
+   {
+    "kind": "sha16",
+    "value": "ae855ebcdddaf883"
+   },
+   {
+    "kind": "uuid",
+    "value": "7ebd94a0-009b-5f7c-d86f-aa72e3c82cd5"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.10.42.29:15203"
+   },
+   {
+    "kind": "hex12",
+    "value": "6f0c52540b2d"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_6f42/run47.log"
+   }
+  ],
+  "codename": "saffron",
+  "flagged_tokens": [
+   "6f0c52540b2d",
+   "/var/log/app_6f42/run47.log",
+   "10.10.42.29:15203",
+   "407423",
+   "7ebd94a0-009b-5f7c-d86f-aa72e3c82cd5",
+   "ae855ebcdddaf883"
+  ]
+ },
+ {
+  "item": 26,
+  "text": "The optional copy_function argument is a callable that will be used to copy each file. The commit is 1c04e2969a426824. Some headers do in fact appear multiple times (e.g. The service listens on 10.213.1.131:4266 today. To estimate the variance from a sample, the ``variance`` function is usually a better choice. Output went to /var/log/app_ab87/run14.log for review. Change owner user and group of the given path. `submodule_search_locations` is the sequence of path entries to search when importing submodules. Differ is a class for comparing sequences of lines of text, and producing human-readable differences or deltas. Ticket 238257 is still open. It will be called with the source path and the destination path as arguments. Elements are stored as dictionary keys and their counts are stored as dictionary values. Return the index where to insert item x in list a, assuming a is sorted. The release codename is lantern. __stdout__ -- the original stdout; don't touch! Request id fde57622-f25e-a0d0-586f-c15087feacf8 was logged. A look at a mv.c shows a lot of the issues this implementation glosses over. repeat(object [,times]) -> create an iterator which returns the object for the specified number of times. The output tar file will be named 'base_name' + \".tar\", possibly plus the appropriate compression extension (\".gz\", \".bz2\", or \".xz\"). Build 031bf2019ca4 passed. os.strerror(2) could return 'No such file or directory'.",
+  "ids": [
+   {
+    "kind": "path",
+    "value": "/var/log/app_ab87/run14.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "fde57622-f25e-a0d0-586f-c15087feacf8"
+   },
+   {
+    "kind": "hex12",
+    "value": "031bf2019ca4"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.213.1.131:4266"
+   },
+   {
+    "kind": "num6",
+    "value": "238257"
+   },
+   {
+    "kind": "sha16",
+    "value": "1c04e2969a426824"
+   }
+  ],
+  "codename": "lantern",
+  "flagged_tokens": [
+   "1c04e2969a426824",
+   "10.213.1.131:4266",
+   "/var/log/app_ab87/run14.log",
+   "238257",
+   "fde57622-f25e-a0d0-586f-c15087feacf8",
+   "031bf2019ca4"
+  ]
+ },
+ {
+  "item": 27,
+  "text": "\\b Matches the empty string, but only at the start or end of a word. It supports both 8-bit and Unicode strings; both the pattern and the strings being processed can contain null bytes and characters outside the US ASCII range. Each function other than purge and escape can take an optional 'flags' argument consisting of one or more of the following module constants, joined by \"|\". Build ea976bcd5d45 passed. When it is even, the smaller of the two middle values is returned. The service listens on 10.86.164.8:19640 today. Differ uses SequenceMatcher both to compare sequences of lines, and to compare sequences of characters within similar (near-matching) lines. Output went to /var/log/app_dd3c/run59.log for review. This is a wrapper for `dfunc`, which is typically either unified_diff() or context_diff(). Otherwise, src is copied to the destination and then removed. Compare two sequences of lines; generate the delta as a context diff. The release codename is mosaic. 'root_dir' is a directory that will be the root directory of the archive; ie. Ticket 166886 is still open. The function translate(PATTERN) returns a regular expression corresponding to PATTERN. Timing: Basic R-O is cubic time worst case and quadratic time expected case. Request id bb5dc6f3-b576-4037-d199-8dc8e3b66b43 was logged. Return disk usage statistics about the given path. Return the arc cosine (measured in radians) of x. The commit is 4e4669e047e17d8b. email Parser wants to see strings rather than bytes.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "4e4669e047e17d8b"
+   },
+   {
+    "kind": "uuid",
+    "value": "bb5dc6f3-b576-4037-d199-8dc8e3b66b43"
+   },
+   {
+    "kind": "hex12",
+    "value": "ea976bcd5d45"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.86.164.8:19640"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_dd3c/run59.log"
+   },
+   {
+    "kind": "num6",
+    "value": "166886"
+   }
+  ],
+  "codename": "mosaic",
+  "flagged_tokens": [
+   "ea976bcd5d45",
+   "10.86.164.8:19640",
+   "/var/log/app_dd3c/run59.log",
+   "166886",
+   "bb5dc6f3-b576-4037-d199-8dc8e3b66b43",
+   "4e4669e047e17d8b"
+  ]
+ },
+ {
+  "item": 28,
+  "text": "Use this function when your data is a sample from a population. Argument names are not part of the specification, and only the arguments of open() are intended to be used as keyword arguments. Ticket 455555 is still open. str(object='') -> str str(bytes_or_buffer[, encoding[, errors]]) -> str Create a new string object from the given object. Output went to /var/log/app_2b9c/run59.log for review. It is either a SplitResult or SplitResultBytes object, depending on the type of the url parameter. Generally, the choice of kernel shape does not matter as much as the more influential bandwidth smoothing parameter. The service listens on 10.146.248.85:61394 today. `name` is the absolute name of the module. dir_fd may not be implemented on your platform. If the destination is on our current filesystem, then rename() is used. The release codename is thistle. That person is in the 30 to 40 year old age group. findall Find all occurrences of a pattern in a string. Request id 1f532166-3bc3-4949-13f2-3924aaa1c4b1 was logged. This module implements specialized container datatypes providing alternatives to Python's general purpose built-in containers, dict, list, set, and tuple. Build c36a1cf7d8fc passed. traps=[InvalidOperation, DivisionByZero, Overflow], ... The commit is 448e37a3f1f1426a. Return the population variance of ``data``. Return True if x is neither an infinity nor a NaN, and False otherwise.",
+  "ids": [
+   {
+    "kind": "uuid",
+    "value": "1f532166-3bc3-4949-13f2-3924aaa1c4b1"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_2b9c/run59.log"
+   },
+   {
+    "kind": "num6",
+    "value": "455555"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.146.248.85:61394"
+   },
+   {
+    "kind": "hex12",
+    "value": "c36a1cf7d8fc"
+   },
+   {
+    "kind": "sha16",
+    "value": "448e37a3f1f1426a"
+   }
+  ],
+  "codename": "thistle",
+  "flagged_tokens": [
+   "455555",
+   "/var/log/app_2b9c/run59.log",
+   "10.146.248.85:61394",
+   "1f532166-3bc3-4949-13f2-3924aaa1c4b1",
+   "c36a1cf7d8fc",
+   "448e37a3f1f1426a"
+  ]
+ },
+ {
+  "item": 29,
+  "text": "``mode`` assumes discrete data, and returns a single value. Compare two sequences of lines; generate the delta as a unified diff. The service listens on 10.119.112.116:59122 today. Kernel Density Estimation: Create a continuous probability density function or cumulative distribution function from discrete samples. Ticket 852329 is still open. hexversion -- version information encoded as a single integer implementation -- Python implementation information. The number of context lines is set by 'n' which defaults to three. Output went to /var/log/app_be9b/run20.log for review. Roughly equivalent to: sum(itertools.starmap(operator.mul, zip(p, q, strict=True))) For float and mixed int/float inputs, the intermediate products and sums are computed with extended precision. The commit is 64f8c8af197bd591. If both onerror and onexc are set, onerror is ignored and onexc is used. This function/iterator was originally developed to generate side by side file difference for making HTML pages (see HtmlDiff class for example usage). Build 88befed0ba86 passed. Differ is a class for comparing sequences of lines of text, and producing human-readable differences or deltas. The release codename is russet. The basic idea is to smooth the data using a kernel function to help draw inferences about a population from a sample. Each function other than purge and escape can take an optional 'flags' argument consisting of one or more of the following module constants, joined by \"|\". Request id 0d52dbc0-3dbf-e1d6-3381-04313cb1e660 was logged. Greedy means that it will match as many repetitions as possible. Return sqrt(x * y) computed with improved accuracy and without overflow/underflow. That may be because this is the only method of the 3 that has a *concept* of \"junk\" <wink>.",
+  "ids": [
+   {
+    "kind": "sha16",
+    "value": "64f8c8af197bd591"
+   },
+   {
+    "kind": "num6",
+    "value": "852329"
+   },
+   {
+    "kind": "hex12",
+    "value": "88befed0ba86"
+   },
+   {
+    "kind": "ipport",
+    "value": "10.119.112.116:59122"
+   },
+   {
+    "kind": "path",
+    "value": "/var/log/app_be9b/run20.log"
+   },
+   {
+    "kind": "uuid",
+    "value": "0d52dbc0-3dbf-e1d6-3381-04313cb1e660"
+   }
+  ],
+  "codename": "russet",
+  "flagged_tokens": [
+   "10.119.112.116:59122",
+   "852329",
+   "/var/log/app_be9b/run20.log",
+   "64f8c8af197bd591",
+   "88befed0ba86",
+   "0d52dbc0-3dbf-e1d6-3381-04313cb1e660"
+  ]
+ }
+]

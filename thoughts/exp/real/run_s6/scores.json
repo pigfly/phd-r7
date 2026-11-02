@@ -1,0 +1,56 @@
+{
+ "A": {
+  "n_imgs": 12,
+  "n_ids": 72,
+  "id_exact": 0.458,
+  "silent": 0.139,
+  "codename": 0.583,
+  "vtok": 108.0,
+  "chars_per_vtok": 13.9,
+  "by_kind": {
+   "hex12": 0.33,
+   "ipport": 0.75,
+   "num6": 0.67,
+   "path": 0.58,
+   "sha16": 0.17,
+   "uuid": 0.25
+  },
+  "mean_s_lo": 6.0
+ },
+ "B": {
+  "n_imgs": 12,
+  "n_ids": 72,
+  "id_exact": 0.528,
+  "silent": 0.139,
+  "codename": 0.833,
+  "vtok": 108.0,
+  "chars_per_vtok": 13.9,
+  "by_kind": {
+   "hex12": 0.33,
+   "ipport": 0.67,
+   "num6": 0.67,
+   "path": 0.67,
+   "sha16": 0.5,
+   "uuid": 0.33
+  },
+  "mean_s_lo": 6.0
+ },
+ "C": {
+  "n_imgs": 12,
+  "n_ids": 72,
+  "id_exact": 0.972,
+  "silent": 0.0,
+  "codename": 0.833,
+  "vtok": 108.0,
+  "chars_per_vtok": 13.9,
+  "by_kind": {
+   "hex12": 1.0,
+   "ipport": 1.0,
+   "num6": 1.0,
+   "path": 0.92,
+   "sha16": 0.92,
+   "uuid": 1.0
+  },
+  "mean_s_lo": 5.0
+ }
+}

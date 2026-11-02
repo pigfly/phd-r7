@@ -115,7 +115,15 @@ def _ent(t):
     from collections import Counter
     c = Counter(t); return -sum(v / len(t) * math.log2(v / len(t)) for v in c.values())
 REAL = False
+# strict detector (long-text method): no 4-digit numbers (years), long-token rules need letters AND digits
+HAZ_STRICT = re.compile(r"[0-9a-f]{8,}|\d{5,}|/\S*\d\S*|\d+\.\d+\.\d+\.\d+|\S+/\S+\.\w{1,5}|sha256=")
+STRICT = False
+def _idlike(tok): return bool(re.search(r"\d", tok)) and bool(re.search(r"[A-Za-z]", tok))
 def flagged(tok):
+    if STRICT:
+        t = tok.strip(".,;:()[]\"'")
+        return bool(HAZ_STRICT.search(t)) or (_idlike(t) and (bool(re.search(r"[A-Za-z0-9_\-]{20,}", t)) or (
+            len(t) >= 16 and max(_ent(t[k:k + 16]) for k in range(len(t) - 15)) >= 3.5)))
     if not REAL: return bool(HAZ.search(tok))
     return bool(HAZ_REAL.search(tok)) or (len(tok) >= 16 and max(_ent(tok[k:k + 16]) for k in range(len(tok) - 15)) >= 3.5)
 
@@ -179,6 +187,45 @@ def arm_m(text, budget):
     im, lo, hi = arm_c(text, budget, units_mixed)
     if hi > lo: return im, lo, hi, 0
     im, lo, hi = arm_c(text, budget, units_mixed, lead=-1); return im, lo, hi, -1
+
+
+KS = [0, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+def arm_mlocal(text, budget, s_a, s_min_hi=10):
+    """L (M-local): prose stays at the uniform size s_a; only prose words within K words of a flagged token drop to s_a-1.
+    Picks the smallest K (then the largest s_hi >= s_min_hi) that fits the budget; falls back to global M.
+    Returns (im, s_lo, s_hi, K) with K=-1 for the fallback."""
+    ws = words(text); idx = [i for i, w in enumerate(ws) if flagged(w)]
+    if not idx: return render(units_uniform(text, s_a)), s_a, s_a, 0
+    dist, j = [], 0
+    for i in range(len(ws)):
+        while j + 1 < len(idx) and abs(idx[j + 1] - i) <= abs(idx[j] - i): j += 1
+        dist.append(abs(idx[j] - i))
+    s_lo = max(5, s_a - 1)
+    def build(K, hi):
+        return render([u for i, w in enumerate(ws) for u in ([(w, hi)] if i in fl else [(c, s_lo if dist[i] <= K else s_a) for c in w])])
+    fl = set(idx); best = None
+    for hi in range(S_HI, s_min_hi - 1, -1):  # binary search the smallest feasible K for this s_hi
+        lo_k, hi_k, found = 0, len(KS) - 1, None
+        while lo_k <= hi_k:
+            mid = (lo_k + hi_k) // 2; im = build(KS[mid], hi)
+            if vtokens(*im.size) <= budget: found = (mid, im); hi_k = mid - 1
+            else: lo_k = mid + 1
+        if found and (best is None or found[0] < best[0]): best = (found[0], found[1], hi)
+    if best: return best[1], s_lo, best[2], KS[best[0]]
+    im, lo, hi, _ = arm_m(text, budget); return im, lo, hi, -1
+
+
+def long_arm(code, text, budget, s_a):
+    """Long-text arms -> (im, s_lo, s_hi, extra). A uniform; M global (current detector); S = M with the strict
+    detector; L = M-local with the strict detector. Restores STRICT afterwards."""
+    global STRICT
+    old = STRICT
+    try:
+        if code == "A": return render(units_uniform(text, s_a)), s_a, s_a, 0
+        STRICT = code in "SL"
+        return arm_mlocal(text, budget, s_a) if code == "L" else arm_m(text, budget)
+    finally:
+        STRICT = old
 
 
 def arm_p(text, budget, s_floor):

@@ -27,6 +27,7 @@ def main():
     ap.add_argument("--task", required=True); ap.add_argument("--size", type=int, default=6)
     ap.add_argument("--n", type=int, default=50); ap.add_argument("--max_chars", type=int, default=40000)
     ap.add_argument("--seed", type=int, default=0); ap.add_argument("--out", required=True)
+    ap.add_argument("--arms", default="AM", help="A uniform, M global, S strict-detector M, L M-local (strict)")
     a = ap.parse_args(); R = random.Random(a.seed); M.REAL = True
     rows = [json.loads(l) for l in open(HERE / "longbench" / "data" / f"{a.task}.jsonl")]
     rows = R.sample([r for r in rows if len(r["context"]) <= a.max_chars], a.n)
@@ -36,11 +37,12 @@ def main():
         text = "".join(c if c.isascii() else "?" for c in text)  # Menlo has no CJK etc.; same text for every arm and T
         it = dict(item=i, text=text, answers=r["answers"], input=r["input"], placeholder=PH,
                   prompt=TPL[a.task].format(context=PH, input=r["input"]), n_flagged=sum(M.flagged(w) for w in M.words(text)))
+        M.STRICT = True; it["n_flagged_strict"] = sum(M.flagged(w) for w in M.words(text)); M.STRICT = False
         items.append(it)
-        A = M.render(M.units_uniform(text, a.size)); bud = M.vtokens(*A.size)
-        X, lo, hi, lead = M.arm_m(text, bud)
-        for arm, im, l, h, ld in (("A", A, a.size, a.size, 0), ("M", X, lo, hi, lead)):
-            man.append(dict(item=i, arm=arm, s_lo=l, s_hi=h, lead=ld, vtok=M.vtokens(*im.size), wh=im.size, _im=im))
+        bud = M.vtokens(*M.render(M.units_uniform(text, a.size)).size)
+        for arm in a.arms:
+            im, l, h, ex = M.long_arm(arm, text, bud, a.size)
+            man.append(dict(item=i, arm=arm, s_lo=l, s_hi=h, extra=ex, vtok=M.vtokens(*im.size), wh=im.size, _im=im))
     R.shuffle(man)
     for k, m in enumerate(man):
         m["name"] = f"img{k:03d}"; m.pop("_im").save(out / "img" / f"{m['name']}.png")
@@ -48,7 +50,7 @@ def main():
     (out / "gt.json").write_text(json.dumps(dict(task=a.task, size=a.size, items=items), indent=1))
     (out / "manifest.json").write_text(json.dumps(man, indent=1))
     print(a.out, len(man), "images; A vtok", sum(m["vtok"] for m in man if m["arm"] == "A") / a.n,
-          "M sizes", Counter((m["s_lo"], m["s_hi"], m["lead"]) for m in man if m["arm"] == "M").most_common(5),
+          *[(x, Counter((m["s_lo"], m["s_hi"], m["extra"]) for m in man if m["arm"] == x).most_common(4)) for x in a.arms if x != "A"],
           "max h", max(m["wh"][1] for m in man), "flagged/item", sum(it["n_flagged"] for it in items) / a.n)
 
 if __name__ == "__main__":

@@ -13,7 +13,8 @@ def f1(p, it):
     t = (p.get("text") or "").strip().split("\n")[0]  # LongBench scores the first line for these QA tasks
     return max(qa_f1(t, g) for g in it["answers"])
 
-for run in sorted(HERE.glob("lb_*")):
+for run in sorted(HERE.glob("lb*_*")):
+    if not (run / "gt.json").exists(): continue
     gt = json.loads((run / "gt.json").read_text()); items = {it["item"]: it for it in gt["items"]}
     man = json.loads((run / "manifest.json").read_text())
     for pf in sorted(run.glob("pred_*.json")):
@@ -33,14 +34,14 @@ for run in sorted(HERE.glob("lb_*")):
                 if fr == "drop": continue
                 rows[int(k[2:-4])]["T"] = {"f1": 0.0 if fr else f1(p, items[int(k[2:-4])]), "billed": p.get("usage", {}).get("prompt_tokens", 0)}
         tab = {a: {k: round(sum(r[a][k] for r in rows.values() if a in r) / max(1, sum(a in r for r in rows.values())), 3)
-                   for k in ("f1", "billed")} for a in "TAM"}
+                   for k in ("f1", "billed")} for a in "TAMSL"}
         diffs = {}
-        for a, b in (("M", "A"), ("A", "T"), ("M", "T")):
+        for a, b in (("M", "A"), ("A", "T"), ("M", "T"), ("S", "A"), ("L", "A"), ("L", "M")):
             pr = [r for r in rows.values() if a in r and b in r]
             if len(pr) >= 5: diffs[f"{a}-{b}"] = boot([r[a]["f1"] - r[b]["f1"] for r in pr], R)
         res[f"{run.name}|{reader}"] = dict(arms=tab, diffs=diffs, n=len(rows))
         fmt = lambda k: ("%+.3f [%+.3f,%+.3f]" % tuple(diffs[k])) if k in diffs else "-"
-        print(f"{run.name:14s} {reader:28s} " + " ".join(f"{a}={tab[a]['f1']:.3f}/{tab[a]['billed']:.0f}" for a in "TAM")
-              + f"  M-A {fmt('M-A')}  A-T {fmt('A-T')}")
+        print(f"{run.name:14s} {reader:28s} " + " ".join(f"{a}={tab[a]['f1']:.3f}" for a in "TAMSL" if tab[a]["billed"] or tab[a]["f1"])
+              + "".join(f"  {k} {fmt(k)}" for k in ("M-A", "S-A", "L-A", "A-T") if k in diffs))
 if fails: print("failed reads (arm = dropped; arm* = scored 0):", dict(fails))
 (HERE / "analysis_longbench.json").write_text(json.dumps(res, indent=1))

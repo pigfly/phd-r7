@@ -40,3 +40,4 @@
 - [FCoT-VL (2502.18512)](https://arxiv.org/pdf/2502.18512) — 免训练剪枝在文本密集基准上掉点
 - [Glyph (2510.17800)](https://arxiv.org/pdf/2510.17800), [DeepSeek-OCR (2510.18234)](https://arxiv.org/pdf/2510.18234)
 - KV 侧免训练：[Expected Attention (2510.00636)](https://arxiv.org/pdf/2510.00636), [PagedEviction (2509.04377)](https://arxiv.org/pdf/2509.04377), [DepthKV (2604.24647)](https://arxiv.org/pdf/2604.24647)
+- **第十三轮**：真实语料中 prose 长文档几乎全部路由到 X（成本 0.19–0.27×文本），代码/日志回文本；检测器 regex ≈ oracle，漏检时安全退化为均匀渲染；Claude 子代理（订阅）作留出读者：路由 0.98 召回 / 0.61×文本成本。

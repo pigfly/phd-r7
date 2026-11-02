@@ -1,0 +1,27 @@
+DETECTOR ABLATION (RULER multivalue, 16K, 6px): recall / billed  - mean over readers
+
+7-digit values (detected by strict regex): readers ['gemini-3.5-flash-lite', 'gpt-6-luna', 'llama-4-maverick', 'minimax']
+  A: recall 0.265  billed 1018
+  S: recall 0.782  billed 953
+  O: recall 0.780  billed 952
+  X: recall 0.982  billed 988
+  Y: recall 0.985  billed 986
+  S-A: mean +0.518  sig+ 4/4  sig- 0/4
+  O-A: mean +0.515  sig+ 4/4  sig- 0/4
+  O-S: mean -0.003  sig+ 0/4  sig- 0/4
+  X-A: mean +0.718  sig+ 4/4  sig- 0/4
+  Y-X: mean +0.003  sig+ 0/4  sig- 0/4
+  Y-A: mean +0.720  sig+ 4/4  sig- 0/4
+
+4-digit values (missed by strict regex): readers ['gemini-3.5-flash-lite', 'gpt-6-luna', 'llama-4-maverick', 'minimax']
+  A: recall 0.365  billed 1018
+  S: recall 0.370  billed 1015
+  O: recall 0.828  billed 952
+  X: recall 0.360  billed 1016
+  Y: recall 0.988  billed 979
+  S-A: mean +0.005  sig+ 0/4  sig- 0/4
+  O-A: mean +0.463  sig+ 4/4  sig- 0/4
+  O-S: mean +0.458  sig+ 4/4  sig- 0/4
+  X-A: mean -0.005  sig+ 0/4  sig- 0/4
+  Y-X: mean +0.628  sig+ 4/4  sig- 0/4
+  Y-A: mean +0.623  sig+ 4/4  sig- 0/4

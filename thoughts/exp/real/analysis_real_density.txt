@@ -1,0 +1,20 @@
+text-token fit: 0.2083/plain char + 0.7367/flagged char  (mean abs rel err 1.1%; = 4.80 plain chars/token)
+
+corpus                             n  flag/1K  r med  r p90   ->X  cost/T
+longbench/narrativeqa             20     0.06   0.00   0.01   95%    0.27
+longbench/qasper                  20     0.18   0.03   0.13  100%    0.19
+longbench/multifieldqa_en         20     0.85   0.05   0.98   75%    0.43
+longbench/hotpotqa                20     0.17   0.01   0.11   95%    0.25
+longbench/2wikimqa                20     0.06   0.01   0.05  100%    0.21
+longbench/musique                 20     0.06   0.00   0.02  100%    0.22
+longbench/gov_report              20     0.04   0.00   0.02  100%    0.21
+longbench/qmsum                   20     0.00   0.00   0.00  100%    0.23
+longbench/multi_news              20     0.06   0.00   0.05  100%    0.21
+longbench/triviaqa                20     0.23   0.08   0.19   95%    0.23
+longbench/passage_retrieval_en    20     0.04   0.00   0.02  100%    0.21
+longbench/lcc                     20     1.40   0.40   0.83   25%    0.81
+longbench/repobench-p             20     1.43   0.52   0.87    5%    0.96
+pg_essays                         36     0.01   0.00   0.00  100%    0.22
+python_source                     40     2.62   0.67   1.47   12%    0.91
+system_logs                       40    11.84   3.73   4.09    0%    1.00
+pkg_manifests                     40    11.32  16.09  16.72    0%    1.00

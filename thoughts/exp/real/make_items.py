@@ -119,8 +119,10 @@ REAL = False
 # strict detector (long-text method): no 4-digit numbers (years), long-token rules need letters AND digits
 HAZ_STRICT = re.compile(r"[0-9a-f]{8,}|\d{5,}|/\S*\d\S*|\d+\.\d+\.\d+\.\d+|\S+/\S+\.\w{1,5}|sha256=")
 STRICT = False
+ORACLE = None  # detector ablation: a set of gold hazard strings overrides every regex rule
 def _idlike(tok): return bool(re.search(r"\d", tok)) and bool(re.search(r"[A-Za-z]", tok))
 def flagged(tok):
+    if ORACLE is not None: return tok.strip(".,;:()[]\"'") in ORACLE
     if STRICT:
         t = tok.strip(".,;:()[]\"'")
         return bool(HAZ_STRICT.search(t)) or (_idlike(t) and (bool(re.search(r"[A-Za-z0-9_\-]{20,}", t)) or (

@@ -173,6 +173,14 @@ def arm_c(text, budget, units=units_word, lead=0):
     im = render(units(text, 5, 5), lead); return im, 5, 5
 
 
+def arm_m(text, budget):
+    """M: prose hard char-wrapped (as A), flagged tokens whole + enlarged; if there is no row slack,
+    prose-only lines lose their 1px extra leading. Returns (im, s_lo, s_hi, lead)."""
+    im, lo, hi = arm_c(text, budget, units_mixed)
+    if hi > lo: return im, lo, hi, 0
+    im, lo, hi = arm_c(text, budget, units_mixed, lead=-1); return im, lo, hi, -1
+
+
 def arm_p(text, budget, s_floor):
     """C': prose never below s_floor; enlarge flagged spans as far as the budget allows."""
     for s_hi in range(S_HI, s_floor, -1):
@@ -192,7 +200,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=8); ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--seed", type=int, default=7); ap.add_argument("--out", default="run1")
-    ap.add_argument("--arms", default="ABC", help="subset of A,B,C,P(C' prose floor),D(A image + text anchors),E(C + residual anchors),F(C2 substring-level enlargement),L(C + prose line spacing)")
+    ap.add_argument("--arms", default="ABC", help="subset of A,B,C,P(C' prose floor),D(A image + text anchors),E(C + residual anchors),F(C2 substring-level enlargement),L(C + prose line spacing),M(prose char-wrap + whole enlarged tokens)")
     ap.add_argument("--real", action="store_true", help="real-distribution items from installed packages")
     ap.add_argument("--calib", action="store_true")
     ap.add_argument("--calib2", action="store_true", help="latin-square extreme densities")
@@ -226,6 +234,7 @@ def main():
             ims = {"A": (A, a.size, a.size), "D": (A, a.size, a.size)}
             if "B" in a.arms: ims["B"] = (render(units_word(it["text"], a.size)), a.size, a.size)
             if "C" in a.arms: ims["C"] = arm_c(it["text"], bud)
+            if "M" in a.arms: ims["M"] = arm_m(it["text"], bud)[:3]
             if "L" in a.arms: ims["L"] = arm_c(it["text"], bud, lead=LEAD)
             if "F" in a.arms: ims["F"] = arm_c(it["text"], bud, units_sub)
             if "P" in a.arms: ims["P"] = arm_p(it["text"], bud, a.size)

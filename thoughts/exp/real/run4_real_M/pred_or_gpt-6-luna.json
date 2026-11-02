@@ -1,0 +1,1110 @@
+{
+ "r0_img000.png": {
+  "ids": [
+   "torch/include/ATen/ops/cuda/Atomic.cuh",
+   "vaB50ZcMPAUdjj+Q8g0BSDTqNuy-Dobapcnl?PE5c",
+   "27271",
+   "torch/include/ATen/ops/xor.h",
+   "07G5Wbi22HJC8Iqiz3EGrWZPS41dY0Y_56HUQ_w216A",
+   "897",
+   "sympy/core/...?",
+   "6411",
+   "1000"
+  ],
+  "codename": "prism",
+  "mascot": "dog",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 287,
+   "completion_tokens": 1622,
+   "total_tokens": 1909,
+   "cost": 0.0008397,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008397,
+    "upstream_inference_prompt_cost": 2.87e-05,
+    "upstream_inference_completions_cost": 0.000811
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1496,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img001.png": {
+  "ids": [
+   "torch/include/ATen/ops/cudnn_convolution_native.h",
+   "AxjTMj0uadDs9oiX7QWmN5H52BUV8Lae8HLY5H8",
+   "1726",
+   "sklearn/linear_model/tests/test_logistic.py",
+   "SNZyQ-lW4QXQSyZu80miCci7+AVN-rigTpnmFn9-dUJM",
+   "86751"
+  ],
+  "codename": "juniper",
+  "mascot": "fox",
+  "server": "vault-02",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1610,
+   "total_tokens": 1859,
+   "cost": 0.0008299,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008299,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000805
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1489,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img002.png": {
+  "ids": [
+   "numpy/core/tests/test_niter.py",
+   "7y1WdyZpgD0WhE8rcSpxp8FZ45cKxNnM3JKUPvkhR",
+   "136568",
+   "sympy/calculus/__init__.py",
+   "2TdCqbPeBdeMy9m0V6V8Sa5-S0tUijjmyk2olC3C",
+   "build-requirements.txt"
+  ],
+  "codename": "granite",
+  "mascot": "ferret",
+  "server": "granite",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1151,
+   "total_tokens": 1400,
+   "cost": 0.0006004,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006004,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0005755
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1034,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img003.png": {
+  "ids": [
+   "torch/aten/src/ATen/ops/_dist_batch_forward_cpu_dispatch.h",
+   "Ni3BgFkM5k0E7ZT8PLxQe-O3vZd7ktBbGOkkycjUD38",
+   "811",
+   "yt_dlpe/extractor/platzi.py",
+   "3T1f0n_w24wtcQQrtC9SCvQ3uDNBW4Y7wAHH918",
+   "7315",
+   "scipy/io/matlab/tests/data/testsparsecomplex_7.1_GLNX86.mat",
+   "kgHqCuq-deI2Y8hfKGwJMOkw7ltnedPHhf20a6b3",
+   "241"
+  ],
+  "codename": "millie",
+  "mascot": "spy",
+  "server": "TqdmCallback",
+  "usage": {
+   "prompt_tokens": 287,
+   "completion_tokens": 1589,
+   "total_tokens": 1876,
+   "cost": 0.0008232,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008232,
+    "upstream_inference_prompt_cost": 2.87e-05,
+    "upstream_inference_completions_cost": 0.0007945
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1419,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img004.png": {
+  "ids": [
+   "1.0.0",
+   "dist/",
+   "70410",
+   "5414"
+  ],
+  "codename": "black[jupyter]",
+  "mascot": "blue jay",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1416,
+   "total_tokens": 1665,
+   "cost": 0.0007329,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007329,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000708
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1371,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img005.png": {
+  "ids": [
+   "torch/include/cuda.h",
+   "QbWZmF5G7m4Jz4X1NUdPpKafL9eQ1PImR8",
+   "6511",
+   "torch/dynamo/variables/higher_order_ops.py",
+   "eL8CJ2nqUfQ3EVIBV-gKQL7SMGFHBVBDLTgXrsO60",
+   "134371",
+   "pandas/core/groupby/ops.py",
+   "AbHU706fTdt7ORzsSTLFpLm_AL0GycgNPDZY0zKac",
+   "42144"
+  ],
+  "codename": "cobalt",
+  "mascot": "fox",
+  "server": "kestrel",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1497,
+   "total_tokens": 1746,
+   "cost": 0.0007734,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007734,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007485
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1349,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img006.png": {
+  "ids": [
+   "torch/include/gloo/protobuf/stubs/common.h",
+   "CT8Z_shEtECN0sEt3LDTyFHSBZLq2me6VXEIB1J-XwA34",
+   "7283",
+   "fonttools[ufo,xml,woff,unicode]",
+   "sympy/printing/tests/test_tableform.py",
+   "Ff51I1QL2HxN32WS_TdFhUAVqzop8YoWY3UZ1TThvVIM",
+   "5692",
+   "torchgen/...?",
+   "aZ6YCoRAprLxQ-L9zZYLkNC_km0709EL0CAwhE",
+   "4184"
+  ],
+  "codename": "Juniper",
+  "mascot": "otter",
+  "server": "AuthLab",
+  "usage": {
+   "prompt_tokens": 287,
+   "completion_tokens": 1497,
+   "total_tokens": 1784,
+   "cost": 0.0007772,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007772,
+    "upstream_inference_prompt_cost": 2.87e-05,
+    "upstream_inference_completions_cost": 0.0007485
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1332,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img007.png": {
+  "ids": [
+   "/rsa/util.py",
+   "DC27D6LRE59p0vXWmV1TAIY46IrX30hY5g3TCypE34",
+   "2993",
+   "torch/include/ATen/Ops/_coalesced_meta_dispatch.h",
+   "wdg8DutZqJpKnN_j6-JjzM6l43TdjJP3V5P19DG9G",
+   "739",
+   "scipy/special/tests/data/pdist_jensenmann-m1.txt",
+   "sZ_uGikwWNois6FJIMXW8EVYjGy4ulVp6YkA8",
+   "2818"
+  ],
+  "codename": "falcon",
+  "mascot": "fox",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1480,
+   "total_tokens": 1729,
+   "cost": 0.0007649,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007649,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.00074
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1318,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img008.png": {
+  "ids": [
+   "pandas/api/types/integer/__init__.py",
+   "fcDfTrMPyY-_3zqbQK3ZpsFzMFbgFG1BhjVTK_884VE",
+   "1451",
+   "scipy/optimize/_linear_sum.py",
+   "5Z4Z0K6LURdAfO5C15DEtCdXQd92PCa29MkZYE",
+   "27215",
+   "torch/include/ATen/ops/bitwise_not_ops.h",
+   "5hPT9U0E0IxX0R11b8O0xMN0VMZmQmqnS1aKkF1tK",
+   "2091"
+  ],
+  "codename": "thistle",
+  "mascot": "badger",
+  "server": "buildbox-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1540,
+   "total_tokens": 1789,
+   "cost": 0.0007949,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007949,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.00077
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1374,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img009.png": {
+  "ids": [
+   "sklearn/utils/testing.py",
+   "torch/include/ATen/ops/mkldnn_max_pool3d_native.h",
+   "H6LZyg-asLV4Na5xVJMEi2C6uSzsclRWN1k1pu4j",
+   "Di5rLdT0lCiIMfvuD5xQVFxxfZXo-G9U0xpnqef7gc",
+   "829"
+  ],
+  "codename": "R2G-P6R-Q6H",
+  "mascot": "jackal",
+  "server": "key",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1750,
+   "total_tokens": 1999,
+   "cost": 0.0008999,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008999,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1629,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img010.png": {
+  "ids": [
+   "torch/include/ATen/ops/split_with_sizes_copy_native.h",
+   "gEfnEnjNvjGdhUdRgBf1I9qJ_wL3caP8uEHDhj0_yLU",
+   "pytest_asyncio-1.0.0.dist-info/METADATA",
+   "COXTTvAPs6WJu76P1lo1sFLv1y7GHTEnh1i5tZKm",
+   "3956",
+   "transformers/models/deit/feature_extraction_deit.py",
+   "0kfS_X_b809b6ECuj3kOSuPP9bhWKO_ZzjuvkBnPsc",
+   "1284"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 287,
+   "completion_tokens": 1425,
+   "total_tokens": 1712,
+   "cost": 0.0007412,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007412,
+    "upstream_inference_prompt_cost": 2.87e-05,
+    "upstream_inference_completions_cost": 0.0007125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1266,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img011.png": {
+  "ids": [
+   "network/rewrite/tests/test_adjlist.py",
+   "aCDyLpv8cekwEZgv5rB4gtUvor7_YDArTYvL2ngPs",
+   "12756",
+   "mypy/polynomial/tests/test_laguerre.py",
+   "8c2h7LJ3F2DtuV0oPLs8ZL_dq_IoFxPrZBeU5IzQ",
+   "17637"
+  ],
+  "codename": "Luna",
+  "mascot": "ibis",
+  "server": "pineapple",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1562,
+   "total_tokens": 1811,
+   "cost": 0.0008059,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008059,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000781
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1446,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img012.png": {
+  "ids": [
+   "network/rewrite/fontfiles/test_graph6.py",
+   "M0WnTgr1_DVdCli1G5CjiM7EFKc8_AkW0R14F1SLsXQ",
+   "6559",
+   "torch/include/torch/csrc/lazy/backend/device_cache.h",
+   "torch/include/ATen/ops/_functional_assert_scalar_ops.h",
+   "1204"
+  ],
+  "codename": "Juniper",
+  "mascot": "badger",
+  "server": "summit",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1527,
+   "total_tokens": 1776,
+   "cost": 0.0007884,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007884,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007635
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1422,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img013.png": {
+  "ids": [
+   "torch/include/ATen/ops/view_as_complex_copy.h",
+   "CMa5CMv7VftNaIGGQEvPJ7hy5wJND0YWVtGbe0Wka3o0",
+   "1631",
+   "sklearn/utils/_show_versions.py",
+   "GL9Ca3w0STkVd0yIqTqv2RB5BWCTwIJTBiqSIAyEmI",
+   "2548",
+   "torch/ao/quantization/backend_config/utils.py",
+   "g1HkHsVUaKc8TWXKjkFzZApNVxVDPhar9V1LE6Q",
+   "12433"
+  ],
+  "codename": "sparrow",
+  "mascot": "badger",
+  "server": "atlas",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1469,
+   "total_tokens": 1718,
+   "cost": 0.0007594,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007594,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007345
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1308,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img014.png": {
+  "ids": [
+   "TOKEN=sha256:5kXz6MUD5fLqPajJStW_LVqjH8G6rBo4z5xQ_dL",
+   "pandas/tests/extension/decimal/array.py",
+   "sha256=NgQcb9AH0iLbBSM9t-ZJYBP0K3XG4P4UEuXg",
+   "9966",
+   "Transformers/models/blenderbot_small/__init__.py",
+   "sha256=Qsmn5PdTC4SElyWB0-xTjJYLVQm4c-KFJ902nFE",
+   "1214"
+  ],
+  "codename": "Saffron",
+  "mascot": "koala",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1530,
+   "total_tokens": 1779,
+   "cost": 0.0007899,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007899,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000765
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1372,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img015.png": {
+  "ids": [
+   "network/modeling/shortest_paths/generic.py",
+   "sklearn/decomposition/fastica.py",
+   "transformers/models/vit/pose-conversion"
+  ],
+  "codename": "Nebula",
+  "mascot": "heron",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1381,
+   "total_tokens": 1630,
+   "cost": 0.0007154,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007154,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0006905
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1323,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img016.png": {
+  "ids": [
+   "google/genai/_test_api_client.py",
+   "4ruFJy5_1qcbKqqIBu3HSGbpSOBRxiecBtDZaTGFR1s",
+   "4797",
+   "websocket/tests/echo-server.py",
+   "yVwXKImqgo6hGJFJGqgkhADb6fRncSrF-OewX6UinZVg",
+   "482",
+   "torch/_inductor/codegen/cpp/device_op_overrides.py",
+   "4WJHzEbTwB3MKFaFQGHYMb0dbNbNwGj-F4dnqQXYk41Q",
+   "1884",
+   "youtube:player-client"
+  ],
+  "codename": "Nebula",
+  "mascot": "bison",
+  "server": "pinnacle",
+  "usage": {
+   "prompt_tokens": 287,
+   "completion_tokens": 1549,
+   "total_tokens": 1836,
+   "cost": 0.0008032,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008032,
+    "upstream_inference_prompt_cost": 2.87e-05,
+    "upstream_inference_completions_cost": 0.0007745
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1383,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img017.png": {
+  "ids": [
+   "torch/include/ATen/ops/_cast_Char_native.h",
+   "5et8oDqvwYJal9BosyiU40P3RuvWv1b2YEl6snr9Lco",
+   "505",
+   "scipy/special/tests/test_faddeeva.py",
+   "yt_dlp/extractor/kaltura.py"
+  ],
+  "codename": "Kestrel",
+  "mascot": "jackal",
+  "server": "backup-02",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1325,
+   "total_tokens": 1574,
+   "cost": 0.0006874,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006874,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0006625
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1227,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img018.png": {
+  "ids": [
+   "torcha/include/ATen/ops/asinh_ops.h",
+   "TpI_iwHFQ041puVbg0k1PRJHJ7hZ5fJSZ0Ur128",
+   "2037",
+   "pandas/_libs/testing.cpython-313-darwin.so",
+   "SWz7tUbF2cFcXpbRpoD_0kVpgW5Dh7RcjtPBJEkAJ3o",
+   "118192",
+   "yt_dlp/extractor/LinkedIn.py",
+   "4ZilLpFzq5_G-Ruwyjn95C-1OLcq_pbBEYnTjSm2dEMPg",
+   "14684",
+   "1.34.0"
+  ],
+  "codename": "Cinder",
+  "mascot": "bird",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1878,
+   "total_tokens": 2127,
+   "cost": 0.0009639,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009639,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000939
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1710,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img019.png": {
+  "ids": [
+   "2819",
+   "1.6.1",
+   "10450",
+   "5075",
+   "sympy/stats/symbolic_multivariate_probability.py",
+   "sympy/plotting/texplot.py"
+  ],
+  "codename": "Jubilee",
+  "mascot": "fox",
+  "server": "Nimbus",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1279,
+   "total_tokens": 1528,
+   "cost": 0.0006644,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006644,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0006395
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1216,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img020.png": {
+  "ids": [
+   "torch/include/ATen/ops/renamer.h",
+   "6GPHkR8zNjYFiF0LaPXihQeECLq4zafj3X0VdQ",
+   "1112",
+   "torch/sparse/semi_structured_conversions.py",
+   "4MJbS-JR997kLPeB24_h6248vYV5PHg4yDpLP8gH5w",
+   "14016"
+  ],
+  "codename": "glacier",
+  "mascot": "penguin",
+  "server": "iris",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1475,
+   "total_tokens": 1724,
+   "cost": 0.0007624,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007624,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007375
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1358,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img021.png": {
+  "ids": [
+   "system/utilities/tests/to_string_picking.py",
+   "ZKZB_gO9juws__N_n2v6FQPVojdfP4Mbl7UgdktPb0E",
+   "23600",
+   "torch/include/ATen/ops/replication_pad1d_mps_dispatch.h",
+   "K229CjHLWP1TByM8JfT4QWm924gr5qQzXt6wEhnK",
+   "1337",
+   "/lib/array/backup_endpoint.py",
+   "20531"
+  ],
+  "codename": "tundra",
+  "mascot": "badger",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1588,
+   "total_tokens": 1837,
+   "cost": 0.0008189,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008189,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000794
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1450,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img022.png": {
+  "ids": [
+   "torch/utils/bottleneck/__init__.py",
+   "47DEQpj8HBSa-_TjWl?5JCeuQeRkm5NMpJWZG3hSuFU",
+   "tqdm/wrapt(file.py)",
+   "sklearn/externals/_scipy/sparse/_?",
+   "sympy/codegen/matrix_nodes.py"
+  ],
+  "codename": "pebble",
+  "mascot": "puppy",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1425,
+   "total_tokens": 1674,
+   "cost": 0.0007374,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007374,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1324,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img023.png": {
+  "ids": [
+   "googleapiclient/sample_tools.py",
+   "pydantic-settings",
+   "pydantic/_internal/_forward_ref.py",
+   "LICENSE"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "horizon",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1357,
+   "total_tokens": 1606,
+   "cost": 0.0007034,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007034,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0006785
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1311,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img024.png": {
+  "ids": [
+   "numpy/typing/_tests/data/reveal/polynomial_poly.py",
+   "sha256=Ew4W1EeU5pJbN8NS2kKyK8aD_XhvsGCY",
+   "10642",
+   "fontTools/ttLib/tables/B_A_S_E_.py",
+   "sha256=H7A19pJ850m"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1124,
+   "total_tokens": 1373,
+   "cost": 0.0005869,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005869,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000562
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1031,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img025.png": {
+  "ids": [
+   "torch/include/ATen/ops/linalg_vander.h",
+   "sha256=CDhZdhzgvR6iQdSECAEtjd4ptB6yNOTqmgKv6HKFZ1",
+   "1586",
+   "1194",
+   "1613"
+  ],
+  "codename": "",
+  "mascot": "badger",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1289,
+   "total_tokens": 1538,
+   "cost": 0.0006694,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006694,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0006445
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1211,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img026.png": {
+  "ids": [
+   "1682",
+   "TORCH/include/ATen/ops/roll.h",
+   "sha256=E21226fY3RPTJZMMBXUNU6MHE?3K",
+   "3951",
+   "pip/_internal/commands/freeze.py",
+   "sha256=2vt72BYTSm9rzue6d8Nzt8idxWKD4b6hd-anq7GQ80",
+   "3203"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1582,
+   "total_tokens": 1831,
+   "cost": 0.0008159,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008159,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000791
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1476,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img027.png": {
+  "ids": [
+   "frameworks/models/mini/__init__.py",
+   "VXZB-D8-Ay0YmCRVgSxvJHQYcXNCxN5UksbQ6XHk",
+   "9899",
+   "pandas/core/arrays/interval.py",
+   "W9ZHrEL1_Zr51wb6CBMjF9SN07dJjkaukpG2MhlW3w",
+   "73770",
+   "scipy/optimize/_lsap.cpython-313-darwin.so",
+   "Vh9J5hQZZx7P6Y"
+  ],
+  "codename": "Tern",
+  "mascot": "otter",
+  "server": "vault-03",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1635,
+   "total_tokens": 1884,
+   "cost": 0.0008424,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008424,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0008175
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1488,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img028.png": {
+  "ids": [
+   "scipy/io/arff/tests/data/quoted_nominal.arff",
+   "01mP5c_OpCjXFY3oIzKdhcmzWSag4Ok1E2ktUc6_U_286",
+   "yt_dl/extractor/leece.py",
+   "7yXXjMjMDXFWAtJabSRwypvsy4i3d85nQyQm3Uk",
+   "8605"
+  ],
+  "codename": "Puffin",
+  "mascot": "ferret",
+  "server": "fjord",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1666,
+   "total_tokens": 1915,
+   "cost": 0.0008579,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008579,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.000833
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1552,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "r0_img029.png": {
+  "ids": [
+   "407",
+   "393",
+   "sha256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU",
+   "torch/include/ATen/ops/native_channel_shuffle_native.h",
+   "sha256=eF39f0vuFi54Dz7V04j0Q9kSpZajkvAT4oJ-CXFuSfU",
+   "589",
+   "torch/include/ATen/ops/huber_loss_cpu_dispatch.h",
+   "sha256=dD7sZyQq99M_2dm3icRMP0aEgC1-9KjSwJwLxZbBh4",
+   "1117"
+  ],
+  "codename": "Borealis",
+  "mascot": "badger",
+  "server": "backup-01",
+  "usage": {
+   "prompt_tokens": 249,
+   "completion_tokens": 1539,
+   "total_tokens": 1788,
+   "cost": 0.0007944,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007944,
+    "upstream_inference_prompt_cost": 2.49e-05,
+    "upstream_inference_completions_cost": 0.0007695
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 1369,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

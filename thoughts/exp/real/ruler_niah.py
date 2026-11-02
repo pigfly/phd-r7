@@ -64,9 +64,7 @@ def main():
     for it in items:
         A = M.render(M.units_uniform(it["text"], a.size)); bud = M.vtokens(*A.size)
         C, slo, shi = M.arm_c(it["text"], bud)
-        X, xlo, xhi = M.arm_c(it["text"], bud, M.units_mixed); lead = 0
-        if xhi == xlo:  # no row slack: tighten prose-only lines by 1px to free room for the flagged tokens
-            X, xlo, xhi = M.arm_c(it["text"], bud, M.units_mixed, lead=-1); lead = -1
+        X, xlo, xhi, lead = M.arm_m(it["text"], bud)
         for arm, im, lo, hi, ld in (("A", A, a.size, a.size, 0), ("C", C, slo, shi, 0), ("M", X, xlo, xhi, lead)):
             man.append(dict(item=it["item"], arm=arm, s_lo=lo, s_hi=hi, lead=ld, vtok=M.vtokens(*im.size), wh=im.size, anchor_tok=0, _im=im))
     R.shuffle(man)

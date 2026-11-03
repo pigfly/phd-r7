@@ -1,7 +1,12 @@
 \begin{abstract}
 Rendering long text into images lets vision-language models (VLMs) read it with several times fewer tokens than the text itself.
-This optical compression, however, spends resolution uniformly, while the risk it creates is concentrated in a few high-entropy strings such as identifiers and hashes, which are misread into well-formed but wrong answers more often as contexts grow.
-We exploit the fact that the renderer, unlike the model, sees the text: a training-free renderer for black-box VLMs flags verbatim-hazardous strings, enlarges only them within the vision-token budget of uniform rendering, spends the budget this saves on verbatim anchors of the flagged strings, and routes documents too dense in such strings back to plain text.
-Across six commercial and open VLMs, the allocation alone raises needle recall on RULER over uniform rendering by 0.45--0.49 at 32K--128K characters while using 15--28\% fewer billed tokens, and beats font/size search and render-then-downsample in 63 of 72 paired comparisons without losing any, whereas enlarging random words does not help. With anchors, recall of identifiers that occur naturally in LongBench documents rises from 0.23 to 0.76 at about one fifth of the plain-text cost, synthetic needles in sparse documents reach 0.99, and LongBench QA shows no significant loss in any of 12 reader--task cells.
-Optical compression thus becomes usable for long documents that contain identifiers, with a text-side rule that decides when it should not be used at all.
+This optical compression spends resolution uniformly, yet the errors it causes concentrate in a few high-entropy strings such as identifiers and hashes.
+These strings are misread into well-formed but wrong answers, and more often as contexts grow.
+Our method rests on one fact: the renderer, unlike the model, sees the text.
+A training-free renderer for black-box VLMs flags verbatim-hazardous strings and enlarges only them within the vision-token budget of uniform rendering.
+It spends the budget this saves on verbatim anchors of the flagged strings, and it routes documents too dense in such strings back to plain text.
+Across six commercial and open VLMs, the allocation alone raises needle recall on RULER over uniform rendering by 0.45--0.49 at 32K--128K characters while using 15--28\% fewer billed tokens.
+It beats font/size search and render-then-downsample in 63 of 72 paired comparisons and loses none, whereas enlarging random words does not help.
+With anchors, recall of identifiers that occur naturally in LongBench documents rises from 0.23 to 0.76 at about one fifth of the plain-text cost, synthetic needles in sparse documents reach 0.99, and LongBench QA shows no significant loss in any of 12 reader--task cells.
+Optical compression thus becomes usable for long documents that contain identifiers, with a text-side rule that decides when not to use it at all.
 \end{abstract}

@@ -34,13 +34,15 @@ We seek a size assignment that makes every $w_i$, $i\in\mathcal{H}(x)$, as legib
 
 The detector approximates $\mathcal{H}(x)$ without labels.
 Its premise is that a string is hazardous when it is \emph{high-entropy}: a misread character yields another valid-looking string, and the language model cannot repair it from context.
-We flag a word if, after stripping surrounding punctuation, it matches one of five patterns (a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix), or if it mixes letters and digits and either has at least 20 identifier characters or contains a 16-character window with Shannon entropy of at least 3.5 bits.
+After stripping surrounding punctuation, we flag a word if it matches one of five patterns: a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix.
+We also flag words that mix letters and digits and either have at least 20 identifier characters or contain a 16-character window with Shannon entropy of at least 3.5 bits.
 Two choices encode what \emph{not} to protect.
-Four-digit numbers are excluded because in natural text they are mostly years, which are low-entropy and cheap to read; mixed letter--digit tokens are required for the length and entropy rules so that long English words are not flagged.
+Four-digit numbers are excluded because in natural text they are mostly years, which are low-entropy and cheap to read.
+The length and entropy rules require mixed letter--digit tokens so that long English words are not flagged.
 A preliminary detector without these two exclusions flagged on average 85--112 words per LongBench document, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
 
-The detector is \emph{fail-safe}.
-Words it does not flag are rendered exactly as in the uniform baseline, so a missed hazard costs the potential gain but never makes the rendering worse than uniform (\cref{sec:analysis}).
+When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:analysis}).
+A missed hazard in a document where \emph{other} strings are flagged is, however, shrunk together with the prose.
 
 \subsection{\textsc{Allocate}: budget-constrained glyph allocation}
 \label{sec:allocate}
@@ -55,7 +57,7 @@ We choose the sizes by
   \label{eq:alloc}
 \end{equation}
 where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.
-The order expresses the design choice that the marginal pixel is worth more on a hash than on prose: verbatim accuracy is limited by the least legible character of a string, while prose comprehension degrades gracefully.
+The order expresses the design choice that the marginal pixel is worth more on a hash than on prose: verbatim accuracy is limited by the least legible character of a string, whereas prose comprehension degrades gracefully.
 The lower bound of 5\,px keeps prose within the range VLMs still read, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
 If no pair satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated; if $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
 At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings; at $s_0=6$\,px, prose shrinks to 5\,px.
@@ -68,13 +70,14 @@ With our unoptimized pure-Python renderer, budget computation plus allocation ta
 When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row.
 In our long-context runs, it used 15--28\% fewer billed tokens than uniform rendering; at $s_0=5$\,px there is no such saving, and anchors add to the budget.
 We spend these savings on a second channel: after the question, we append the flagged strings verbatim as text, under a line stating that they are copied exactly from the image.
-Anchors do not say which key a string belongs to, so the reader must still locate it in the image; enlarged strings make this association easier, which is why anchors are more effective on the allocated image than on a uniform one (\cref{sec:density}).
+Anchors do not say which key a string belongs to, so the reader must still locate it in the image.
+Enlarged strings should make this association easier, a plausible reason why anchors are more effective on the allocated image than on a uniform one at moderate density (\cref{sec:density}).
 
 \subsection{\textsc{Route}: density-aware fallback to text}
 \label{sec:route}
 
 Anchors are cheap only while hazards are sparse.
-Its text cost grows linearly with the number of flagged strings, while the vision cost stays fixed, so we estimate before any model call
+Their text cost grows linearly with the number of flagged strings while the vision cost stays fixed, so before any model call we estimate
 \begin{equation}
   r(x) \;=\; \frac{\sum_{i\in\mathcal{H}(x)} c(w_i)}{v(I)}, \qquad c(w) = \tfrac{|w|}{2} + 3,
   \label{eq:route}

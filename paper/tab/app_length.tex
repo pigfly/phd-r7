@@ -1,0 +1,21 @@
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Per-reader recall for the length study (\cref{fig:scaling}).}
+\label{tab:app_length}
+\begin{tabular}{l cc cc cc}
+\toprule
+& \multicolumn{2}{c}{32K} & \multicolumn{2}{c}{64K} & \multicolumn{2}{c}{128K} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Reader & A & S & A & S & A & S \\
+\midrule
+Claude Sonnet 5.5 & 0.57 & \textbf{0.86} & 0.51 & \textbf{0.96} & 0.45 & \textbf{0.97} \\
+Gemini 3.5 Flash-Lite & 0.47 & \textbf{0.91} & 0.26 & \textbf{0.74} & 0.21 & \textbf{0.70} \\
+GPT-6 Luna & 0.09 & \textbf{0.59} & 0.12 & \textbf{0.55} & 0.09 & \textbf{0.50} \\
+Qwen3-VL-235B & 0.02 & \textbf{0.60} & 0.02 & \textbf{0.55} & 0.06 & \textbf{0.54} \\
+Llama 4 Maverick & 0.01 & \textbf{0.50} & 0.00 & \textbf{0.54} & 0.00 & \textbf{0.47} \\
+MiniMax-M3 & 0.00 & \textbf{0.40} & 0.00 & \textbf{0.49} & 0.00 & \textbf{0.56} \\
+\midrule
+\textit{Mean} & 0.20 & 0.64 & 0.15 & 0.64 & 0.14 & 0.62 \\
+\bottomrule
+\end{tabular}
+\end{table}

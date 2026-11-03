@@ -14,3 +14,13 @@ __pycache__/
 .omc/
 thoughts/**/.omc/
 thoughts/exp/real/longbench/
+
+template
+
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+paper/*.brf
+paper/missfont.log

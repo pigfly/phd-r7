@@ -1,0 +1,18 @@
+\begin{table}[h]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{Per-reader recall in the hazard-density sweep, K/X (anchors on uniform rendering / on our rendering).}
+\label{tab:app_density}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l cccccc}
+\toprule
+Reader & $k{=}1$ & 4 & 16 & 64 & 128 & 256 \\
+\midrule
+Claude Sonnet 5.5 & 1.00/1.00 & 1.00/1.00 & 0.88/0.96 & 0.60/0.72 & 0.28/0.44 & 0.16/0.24 \\
+Gemini 3.5 Flash-Lite & 0.96/1.00 & 0.96/1.00 & 0.68/0.88 & 0.36/0.28 & 0.28/0.16 & 0.08/0.08 \\
+GPT-6 Luna & 0.96/1.00 & 0.88/1.00 & 0.60/0.92 & 0.32/0.32 & 0.20/0.12 & 0.12/0.12 \\
+Qwen3-VL-235B & 1.00/1.00 & 1.00/1.00 & 1.00/1.00 & 0.04/0.04 & 0.00/0.00 & 0.00/0.00 \\
+Llama 4 Maverick & 1.00/1.00 & 0.80/0.96 & 0.48/0.44 & 0.48/0.20 & 0.16/0.16 & 0.08/0.04 \\
+MiniMax-M3 & 1.00/1.00 & 1.00/0.96 & 0.72/0.76 & 0.52/0.76 & 0.48/0.52 & 0.00/0.12 \\
+\bottomrule
+\end{tabular}}
+\end{table}

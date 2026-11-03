@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two rendering densities (uniform 5\,px $\approx$ 21 and 6\,px $\approx$ 14 characters per vision token). A, U, Z, and S are images with the same vision-token budget; \textbf{bold} marks the best among them. K adds anchors (verbatim text copies of the flagged strings) to A and is shown in gray because it spends extra text tokens. The last row is the provider-billed prompt-token count averaged over the readers that report usage. Hazard-aware rendering (S) is significantly worse than U or Z in none of the 72 paired comparisons (36 reader$\times$task$\times$density cells $\times$ 2 baselines) and significantly better in 63.}
+\label{tab:baselines}
+\small
+\setlength{\tabcolsep}{4.2pt}
+\begin{tabular}{l ccccc ccccc}
+\toprule
+& \multicolumn{5}{c}{5\,px budget ($\approx$21 chars/vtok)} & \multicolumn{5}{c}{6\,px budget ($\approx$14 chars/vtok)} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+Reader & A & U & Z & S (ours) & \textcolor{gray}{K} & A & U & Z & S (ours) & \textcolor{gray}{K} \\
+\midrule
+Claude Sonnet 5.5 & 0.14 & 0.22 & 0.19 & \textbf{0.79} & \textcolor{gray}{0.95} & 0.57 & 0.64 & 0.46 & \textbf{0.92} & \textcolor{gray}{1.00} \\
+Gemini 3.5 Flash-Lite & 0.41 & 0.57 & 0.79 & \textbf{1.00} & \textcolor{gray}{1.00} & 0.88 & 0.78 & 0.84 & \textbf{1.00} & \textcolor{gray}{1.00} \\
+GPT-6 Luna & 0.02 & 0.03 & 0.02 & \textbf{0.50} & \textcolor{gray}{0.91} & 0.11 & 0.16 & 0.08 & \textbf{0.65} & \textcolor{gray}{0.82} \\
+Qwen3-VL-235B & 0.00 & 0.00 & 0.00 & \textbf{0.55} & \textcolor{gray}{1.00} & 0.07 & 0.08 & 0.03 & \textbf{0.60} & \textcolor{gray}{1.00} \\
+Llama 4 Maverick & 0.00 & 0.00 & 0.00 & \textbf{0.58} & \textcolor{gray}{0.97} & 0.00 & 0.01 & 0.00 & \textbf{0.59} & \textcolor{gray}{0.90} \\
+MiniMax-M3 & 0.00 & 0.00 & 0.00 & \textbf{0.57} & \textcolor{gray}{1.00} & 0.02 & 0.01 & 0.00 & \textbf{0.42} & \textcolor{gray}{0.97} \\
+\midrule
+\textit{Mean} & 0.09 & 0.14 & 0.17 & \textbf{0.66} & \textcolor{gray}{0.97} & 0.28 & 0.28 & 0.23 & \textbf{0.70} & \textcolor{gray}{0.95} \\
+\textit{Billed tokens} & 779 & 775 & 768 & 779 & \textcolor{gray}{823} & 913 & 891 & 887 & 812 & \textcolor{gray}{960} \\
+\bottomrule
+\end{tabular}
+\end{table*}

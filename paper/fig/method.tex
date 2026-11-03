@@ -1,0 +1,37 @@
+% Method overview (TikZ). Palette: peach #F7D8B8, light aqua #BFE6EA, salmon #F6A69A, mist #D9E2EB, warm white #F2F2F2,
+% deep teal #1F8FAE, coral #E8685B, dark coral #A83E35.
+\begin{figure*}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2.2mm]},
+  mod/.style={draw=#1!70!black, fill=#1, rounded corners=3pt, minimum height=1.35cm, text width=2.7cm, align=center, inner sep=3pt},
+  io/.style={draw=gray!60, fill=cWarm, rounded corners=2pt, align=left, inner sep=3pt, text width=2.3cm},
+  lab/.style={font=\scriptsize\itshape, text=gray!80!black},
+  flow/.style={->, thick, draw=gray!70!black},
+  save/.style={->, thick, dashed, draw=cCoral},
+]
+% input
+\node[io] (doc) at (0,0) {\textbf{Long document $x$}\\[1pt]
+  \tiny \ldots{} the special magic uuid for dusty-harbor is: \colorbox{cSalmon}{\texttt{186c24bd-2192-4b86-\ldots}} \ldots{} founders in 1995 \ldots{}};
+% modules
+\node[mod=cPeach, right=0.55cm of doc] (det) {\textbf{\textsc{Detect}}\\[1pt]\scriptsize text-side hazard set $\mathcal{H}(x)$\\ regex + entropy; years excluded};
+\node[mod=cAqua, right=0.55cm of det] (alloc) {\textbf{\textsc{Allocate}}\\[1pt]\scriptsize prose at $s_{\mathrm{lo}}$, hazards at $s_{\mathrm{hi}}$\\ $\max s_{\mathrm{hi}}$ s.t.\ $v(I)\le B$};
+\node[mod=cSalmon, right=0.55cm of alloc] (anc) {\textbf{\textsc{Anchor}}\\[1pt]\scriptsize verbatim anchors of $\mathcal{H}(x)$, paid by $B - v(I)$};
+\node[mod=cMist, right=0.55cm of anc] (route) {\textbf{\textsc{Route}}\\[1pt]\scriptsize $r=\frac{\text{anchor tokens}}{v(I)}$\\ $r\le\tau$: image; else text};
+% outputs
+\node[io, text width=1.9cm, above right=0.05cm and 0.5cm of route.east, anchor=south west] (img) {\textbf{VLM input}\\ \scriptsize image pages + anchors};
+\node[io, text width=1.9cm, below right=0.05cm and 0.5cm of route.east, anchor=north west] (txt) {\textbf{VLM input}\\ \scriptsize plain text (hazard-dense)};
+% flows
+\draw[flow] (doc) -- (det);
+\draw[flow] (det) -- node[lab, above] {$\mathcal{H}$} (alloc);
+\draw[flow] (alloc) -- node[lab, above] {$I$} (anc);
+\draw[flow] (anc) -- (route);
+\draw[flow] (route.east) -- ++(0.2,0) |- (img.west);
+\draw[flow] (route.east) -- ++(0.2,0) |- (txt.west);
+\draw[save] (alloc.south) to[bend right=25] node[lab, below, text=cCoral] {saved budget $B-v(I)$} (anc.south);
+\end{tikzpicture}}
+\caption{\textbf{Hazard-aware rendering.} \textsc{Detect} marks verbatim-risky strings in the text before rendering; \textsc{Allocate} enlarges only those strings and shrinks prose so that the image never exceeds the vision-token budget $B$ of uniform rendering (a 6\,px uniform image in our experiments); \textsc{Anchor} spends the budget the allocation saved on anchors, verbatim text copies of the flagged strings; \textsc{Route} sends documents whose anchors would be too expensive to plain text. Every step is training-free and needs no access to the model.}
+\label{fig:method}
+\end{figure*}

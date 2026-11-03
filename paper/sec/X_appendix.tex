@@ -1,0 +1,124 @@
+\section{Implementation Details}
+\label{app:impl}
+
+\paragraph{Renderer.}
+Pages are 1008 pixels wide (36 patches) with a 4-pixel margin and are rendered in grayscale with the Menlo monospace font through PIL.
+Prose is wrapped at character boundaries; a flagged word is placed whole on the next line when it does not fit.
+Each line is as tall as its largest glyph plus one pixel of leading.
+Documents taller than 2016 pixels are split into pages at blank pixel rows, so no line is cut; all pages are sent in one request in reading order.
+The budget of \cref{eq:vtok} is enforced on the unsplit image; splitting can add one patch row per page, which made 10 of the 180 reallocated long-context images 1.2\% more expensive than their uniform counterparts.
+All reported costs are billed tokens and include this effect.
+
+\paragraph{Detector.}
+After stripping the characters \texttt{.,;:()[]"'} from both ends, a word is flagged if it matches \verb![0-9a-f]{8,}!, \verb!\d{5,}!, \verb!/\S*\d\S*!, \verb!\d+\.\d+\.\d+\.\d+!, \verb!\S+/\S+\.\w{1,5}!, or \verb!sha256=!, or if it contains at least one letter and one digit and either contains \verb![A-Za-z0-9_\-]{20,}! or is at least 16 characters long with a 16-character window whose character entropy is at least 3.5 bits.
+
+\paragraph{Baselines.}
+U tries Menlo, Arial, and Arial Narrow at sizes 14 down to 5\,px and keeps the largest size that fits the budget (ties broken by font order); at the 5\,px and 6\,px budgets it selects 6\,px Arial and 8\,px Arial Narrow for most documents.
+Z renders at 10\,px and shrinks the image by repeated factors of 0.98 with Lanczos resampling until it fits the budget (final scale 0.52--0.64).
+K and X append, after the question, the line ``Exact strings copied verbatim from the text block in the image:'' followed by one flagged string per line.
+
+\paragraph{Prompts and scoring.}
+RULER prompts follow the official template with the context replaced by ``[The text is rendered in the image above.]'' and ask for a JSON list of values; a gold value counts as recalled if it appears (case-insensitively) in any returned string.
+LongBench prompts are the official ones for each task; the first output line is scored with the official QA F1.
+For the plain-text arm the context is inserted verbatim into the same template.
+
+\paragraph{Router threshold.}
+$\tau$ is chosen per reader by two-fold cross-validation on the density sweep (folds by item parity), maximizing recall minus 0.5 times the cost relative to plain text over $\tau\in\{0,0.05,0.1,0.2,0.3,0.5,0.75,1,1.5,2,4,\infty\}$.
+Selected values were 0.1--0.5 with median 0.3, which we use for all other experiments.
+
+\section{Per-Reader Results}
+\label{app:tables}
+
+\Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}.
+
+\input{tab/app_length}
+\input{tab/app_density}
+
+\section{Short Documents: Mechanism Study}
+\label{app:short}
+
+Before the long-context experiments, we studied 1.6K-character documents that fit one small image, with six identifiers and three one-word prose facts per document (``The release codename is \ldots''), both on synthetic text and on real package manifests whose lines contain file paths and 43-character base64 hashes.
+This setting isolates the allocation mechanism but is not a deployment target: for such short inputs an image is often not cheaper than the text.
+
+\paragraph{Reallocation helps every reader; prose can pay for it.}
+\Cref{tab:app_short} reports word-wrapped reallocation against uniform rendering.
+Identifier exact-match improves significantly in all 24 reader--condition cells.
+Prose probes are unaffected on synthetic text, but on real manifests some weaker readers lose prose accuracy (Llama up to $-$0.39), because whole manifest lines are enlarged and prose shrinks from 6 to 5\,px.
+On long documents, where hazards occupy a small fraction of the text, this cost does not appear (\cref{tab:longbench}).
+
+\input{tab/app_short}
+
+\paragraph{The gain depends on density and reader.}
+\Cref{fig:phase} sweeps four densities from 7.8 to 21.1 characters per vision token on synthetic documents.
+The gain follows an inverted U whose peak moves to higher densities for stronger readers, as discussed in \cref{sec:analysis}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{fig/phase.pdf}
+\caption{Gain in identifier exact-match of reallocation over uniform rendering versus rendering density (short synthetic documents, $N{=}30$ per point).}
+\label{fig:phase}
+\end{figure}
+
+\paragraph{Readers do not know when they misread.}
+Allowing an ``[unreadable]'' answer did not reduce silent errors: MiniMax-M3 used it for at most 6\% of identifiers, and its rate of wrong-but-well-formed answers did not decrease.
+This supports preventing errors at render time rather than relying on the reader's self-assessment.
+
+\paragraph{Agent-based readers can leak across items.}
+In a pilot, Claude readers accessed through an agent interface read several images in one session.
+Among their wrong prose answers, 50--100\% were names that appeared in \emph{other} images of the same session, versus 0--10\% for a stateless API reader.
+All agent-based readings reported in this paper therefore use a Latin-square design in which each agent sees each item in only one form (\cref{app:claude}).
+
+\section{Negative Results}
+\label{app:negative}
+
+\paragraph{Global detector.}
+A detector that also flagged four-digit numbers and long letter-only tokens (later replaced by the one in \cref{sec:detect}) flagged on average 85 and 112 words per MultiFieldQA and HotpotQA document, 62\% of them years.
+On one LongBench sample it lowered F1 by 0.05 on average, with 3 of 12 cells significantly negative; on a second sample it was neutral ($-$0.005, 1 of 12 negative).
+With the final detector the difference to uniform rendering is $+$0.000 (0 of 12 negative) on the second sample.
+
+\paragraph{Word wrapping.}
+Wrapping prose at word boundaries wastes part of every line; on long documents at the 5\,px budget this left no room to enlarge anything, so that variant matched or exceeded the uniform cost while gaining little ($+$0.00 to $+$0.12 recall).
+Character wrapping for prose (\cref{sec:allocate}) removes this waste.
+
+\paragraph{Local instead of global shrinking.}
+Shrinking only the prose within $K$ words of a flagged string, with the smallest feasible $K$, was harmless on LongBench ($+$0.003, 0 of 12 negative) but retained only 84\% of the RULER gain at the 6\,px budget, because it fills the whole budget with slightly smaller enlarged strings.
+It brought no benefit over global shrinking.
+
+\paragraph{Other variants.}
+On short manifests, enlarging only the hash and path substrings of a manifest line freed almost no space; adding one pixel of line spacing to prose-only lines did not change prose accuracy ($+$0.00, 95\% CI $[-0.09,0.09]$); and keeping prose at the uniform size left room only for 6--8\,px identifiers and recovered 13--24 points less than full reallocation.
+
+\section{Real-Corpus Profile}
+\label{app:corpora}
+
+\Cref{tab:app_corpora} lists the routing profile of real corpora: 13 English LongBench tasks (20 chunks each), Paul Graham essays, Python source files from an installed package environment, local system logs, and Python package \texttt{RECORD} manifests (36--40 chunks each).
+Every chunk is rendered and reallocated so that $r$ uses the actual image cost.
+
+\input{tab/app_corpora}
+
+\section{Additional Claude Reader}
+\label{app:claude}
+
+We also used Claude through an agent interface as a reader that is never used to choose any setting.
+For $k\in\{1,4,16,64,256\}$, ten items of the density sweep were read as X, K, and plain text in a Latin square: 15 agents each read ten different items, each in one form, using only file-reading tools.
+Costs are estimated with \cref{eq:vtok} for images and with the linear text-token fit of \cref{tab:app_corpora}.
+\Cref{tab:app_claude} shows that this stronger reader tolerates higher density than the API readers (0.90 for X at $k{=}64$, against 0.60 for K), and with $\tau{=}0.3$ the routed system reaches 0.98 recall at an estimated 0.61$\times$ the plain-text cost.
+Agents may resample images when reading them, and $N{=}10$ per cell is small, so these numbers are indicative.
+
+\input{tab/app_claude}
+
+\section{Reproducibility and Ethics}
+\label{app:repro}
+
+\paragraph{Code and data.}
+The renderer, detector, router, task generators, reader clients, analysis scripts, all logged model outputs, and the scripts that produce every figure and table will be released.
+Task data are generated from public sources (RULER templates with Paul Graham essays, LongBench) with fixed seeds.
+
+\paragraph{Compute and cost.}
+No model was trained.
+All readers were accessed through provider APIs between November 1 and 3, 2026; reader versions are identified by their provider model names in \cref{sec:setup}.
+Pay-per-token API charges for all experiments, including pilots, were about \$51; MiniMax-M3 and the agent-based Claude reader were used under subscription plans.
+
+\paragraph{Ethics.}
+The study involves no human subjects and no personal data.
+The system logs profiled in \cref{app:corpora} were processed locally to count flagged strings; their contents are not released.
+Better verbatim fidelity under compression could in principle help extract identifiers from rendered documents, but the method only changes how a document the user already holds is presented to a model.

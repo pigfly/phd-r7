@@ -1,0 +1,36 @@
+\section{Introduction}
+\label{sec:intro}
+
+Long contexts are expensive to feed to large models, and a growing line of work reduces this cost by \emph{rendering} text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
+A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it holds, so dense rendering can compress a document several-fold; in our measurements, a 128K-character essay costs 27.1K billed text tokens but only 5.0K billed tokens as a uniformly rendered image.
+The appeal is practical: the compression needs no training, works with any VLM that accepts images, and is controlled entirely by the party that renders the text.
+
+Existing systems decide \emph{how densely} to render, but not \emph{where} the resolution goes.
+Optical compressors choose one font, size, and layout for the whole document, sometimes searched for a good accuracy--compression trade-off~\cite{cheng2025glyph}; training-free visual-token reduction methods prune or merge tokens after the image is encoded, using visual saliency or attention~\cite{chen2024fastv,yang2025visionzip,zhang2025sparsevlm}; text-side compressors drop tokens judged unimportant by a language model~\cite{jiang2023llmlingua,li2023selective}.
+Each of these allocates capacity by a signal that is blind to one property that matters for many downstream uses: whether a span must be reproduced \emph{character for character}.
+
+This blind spot is costly because verbatim risk is not uniform.
+Identifiers, hashes, file paths, and long numbers carry no redundancy, so a single misread glyph turns them into a different, equally plausible string, while the surrounding prose survives the same blur.
+\cref{fig:teaser} shows the typical outcome: a VLM returns a well-formed UUID with four wrong characters and no hedge.
+We find three properties of this failure that existing allocation schemes cannot address.
+First, it is \emph{concentrated}: at an equal budget, uniform rendering recovers only 9--28\% of RULER needles (\cref{tab:baselines}), whereas short prose facts rendered at the same densities are recovered far more reliably (\cref{app:short}).
+Second, it is \emph{silent}: under uniform rendering about one in eight needles is answered with a well-formed near-miss of the correct string, and a reader explicitly allowed to answer ``[unreadable]'' used that option for at most 6\% of identifiers in our test, so a downstream system cannot tell such answers from correct ones.
+Third, it \emph{worsens with length}: averaged over six VLMs, needle recall under uniform rendering falls from 0.20 at 32K characters to 0.13 at 128K.
+Vision-side token reduction is not designed for this, because once text is rasterized, which glyphs form a hash is no longer explicit; text-side compression is not either, because it removes text rather than protecting it.
+
+Our observation is that the renderer already holds the missing signal.
+Before any pixel is drawn, the text says where the hazardous strings are, and the renderer decides how many pixels each of them gets.
+We turn this into \emph{\ours} (HAR, \cref{fig:method}), four training-free steps that require only black-box access to the VLM:
+\textsc{Detect} flags verbatim-hazardous strings with label-free rules;
+\textsc{Allocate} enlarges only those strings and shrinks prose so that the image never exceeds the vision-token budget of uniform rendering;
+\textsc{Anchor} spends the budget this saves on \emph{anchors}, verbatim text copies of the flagged strings;
+and \textsc{Route} sends documents whose anchors would be too expensive back to plain text, using a ratio computable before any model call.
+In our experiments, S denotes the allocation step alone and X allocation plus anchors.
+
+Our contributions are:
+\begin{itemize}
+  \item We characterize verbatim corruption under optical compression across six VLMs, showing that it is concentrated on high-entropy strings, silent, and growing with context length (\cref{sec:results}).
+  \item We propose budget-constrained, content-aware glyph allocation for rendered context. At equal or lower cost it raises needle recall by 0.42--0.57 over uniform rendering at 16K--128K characters, is significantly better than a font/size search or render-then-downsample baseline in 63 of 72 paired comparisons and worse in none, and changes LongBench QA F1 significantly in only one of 12 reader--task cells.
+  \item We show that reallocation and anchors are complementary: at a 6\,px budget, the vision tokens saved by reallocation pay for the anchors, which yields 0.99 recall at $\approx$0.2$\times$ the plain-text cost on sparse documents and, with a density-aware router, dominates anchors on uniform images at every operating point.
+  \item We map where the approach applies: a detector ablation shows that missed hazards degrade gracefully to uniform rendering, and a profile of real corpora shows that prose-dominated documents are routed to images while code and logs are routed to text.
+\end{itemize}

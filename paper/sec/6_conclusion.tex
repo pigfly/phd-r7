@@ -1,0 +1,14 @@
+\section{Limitations and Conclusion}
+\label{sec:conclusion}
+
+\paragraph{Limitations.}
+Our fidelity evaluation relies mainly on synthetic needles inserted into natural text; LongBench establishes that the method does no harm on natural documents but not how much it helps on their identifiers, for lack of a benchmark that asks for verbatim copies of naturally occurring strings.
+We evaluate black-box readers only and therefore cannot say how enlarged glyphs change a model's internal attention.
+Budgets follow one patch-based accounting rule (\cref{eq:vtok}); providers tile images differently, and while billed costs confirm the savings for the readers we tested, other tokenizers may shift them.
+The detector is rule-based: it is fail-safe but recall-bounded, and hazards it does not recognize receive no protection.
+Finally, reallocation alone raises recall without reducing the share of confident near-misses; only anchors remove them.
+
+\paragraph{Conclusion.}
+Optical context compression decides how many pixels a document receives but not where they go, and its failures concentrate on exactly the strings that must survive verbatim.
+Because the renderer reads the text before it draws it, it can spend resolution where errors hurt, reinvest the savings in anchors, and fall back to text when a document is too dense with identifiers.
+These steps are training-free and model-agnostic, and across six VLMs they make optical compression reliable for embedded identifiers: on long documents with few identifiers, the routed system retrieves them nearly as well as plain text at about one fifth of its cost, and it sends identifier-dense documents to text.

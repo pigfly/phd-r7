@@ -1,0 +1,47 @@
+% CVPR 2027 submission. Build: pdflatex main; bibtex main; pdflatex main; pdflatex main
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[review]{cvpr}
+\input{preamble}
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+\def\confName{CVPR}
+\def\confYear{2027}
+
+\title{Spend Pixels Where It Hurts:\\Hazard-Aware Rendering for Optical Long-Context Compression}
+\author{Anonymous CVPR submission}
+
+\begin{document}
+\twocolumn[{%
+\renewcommand\twocolumn[1][]{#1}%
+\maketitle
+\vspace{-1.2em}
+\begin{center}
+\includegraphics[width=\textwidth]{fig/teaser.pdf}
+\captionof{figure}{\textbf{Uniform rendering silently corrupts exactly the strings that must be copied.} A 32K-character essay hides one UUID. \emph{Left:} rendered uniformly at 6\,px, Claude Sonnet 5.5 returns a well-formed UUID with four wrong characters and no sign of doubt. \emph{Middle:} our renderer enlarges the UUID and shrinks the surrounding prose; the image uses no more vision tokens, and the answer is exact. \emph{Right:} needle recall averaged over six VLMs and three RULER tasks; uniform rendering degrades with context length while hazard-aware rendering does not.}
+\label{fig:teaser}
+\end{center}
+\vspace{0.6em}
+}]
+
+\input{sec/0_abstract}
+\input{sec/1_intro}
+\input{sec/2_related}
+\input{sec/3_method}
+\input{sec/4_setup}
+\input{sec/5_results}
+\input{sec/6_conclusion}
+
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{refs}
+}
+
+\input{sec/7_llm_statement}
+
+\clearpage
+\appendix
+\input{sec/X_appendix}
+
+\end{document}

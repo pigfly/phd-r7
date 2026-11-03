@@ -1,0 +1,542 @@
+{
+ "T_0.png": {
+  "ids": [
+   "iacobacci2015sensembed"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_1.png": {
+  "ids": [
+   " https://github.com/kepei1106/ARAML."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_2.png": {
+  "ids": [
+   "lee2010devils created and deployed 60 seed social accounts on Twitter to attract spammers by reporting back what accounts interact with them. They collected 19,276 legitimate users and 22,223 spammers in their datasets along with their tweet content in 7 months. This is our first test dataset. Our Weibo Dataset: Sina Weibo is one of the most famous social platforms in China. It has implemented many features from Twitter. The 2197 legitimate user accounts in this dataset are provided by the Tianchi Competition held by Sina Weibo. The spammers are all purchased commercially from multiple vendors on the Internet. We checked them manually and collected 802 suitable \"smart\" spammers accounts. Preprocessing: Before directly performing the experiments on the employed datasets, we first delete some accounts with few posts in the two employed since the number of tweets is highly indicative of spammers. For the English Honeypot dataset, we remove stopwords, punctuations, non-ASCII words and apply stemming. For the Chinese Weibo dataset, we perform segmentation with \"Jieba\", a Chinese text segmentation tool. After preprocessing steps, the Weibo dataset contains 2197 legitimate users and 802 spammers, and the honeypot dataset contains 2218 legitimate users and 2947 spammers. It is worth mentioning that the Honeypot dataset has been slashed because most of the Twitter accounts only have limited number of posts, which are not enough to show their interest inclination. Evaluation Metrics The evaluating indicators in our model are show in 2 . We calculate precision, recall and F1-score (i.e. F1 score) as in Eq. ( 19 ). Precision is the ratio of selected accounts that are spammers. Recall is the ratio of spammers that are detected so. F1-score is the harmonic mean of precision and recall. $$precision =\\frac{TP}{TP+FP}, recall =\\frac{TP}{TP+FN}\\nonumber \\\\ F1-score =\\frac{2\\times precision \\times recall}{precision + recall}$$ (Eq. 19) Performance Comparisons with Baseline Three baseline classification methods: Support Vector Machines (SVM), Adaboost, and Random Forests are adopted to evaluate our extracted features. We test each classification algorithm with scikit-learn BIBREF9 and run a 10-fold cross validation. On each dataset, the employed classifiers are trained with individual feature first, and then with the combination of the two features. From 1 , we can see that GOSS+LOSS achieves the best performance on F1-score among all others. Besides, the classification by combination of LOSS and GOSS can increase accuracy by more than 3% compared with raw topic distribution probability. Comparison with Other Features To compare our extracted features with previously used features for spammer detection, we use three most discriminative feature sets according to Lee et al. lee2011seven( 4 ). Two classifiers (Adaboost and SVM) are selected to conduct feature performance comparisons. Using Adaboost, our LOSS+GOSS features outperform all other features except for UFN which is 2% higher than ours with regard to precision on the Honeypot dataset. It is caused by the incorrectly classified spammers who are mostly news source after our manual check. They keep posting all kinds of news pieces covering diverse topics, which is similar to the behavior of fake accounts. However, UFN based on friendship networks is more useful for public accounts who possess large number of followers. The best recall value of our LOSS+GOSS features using SVM is up to 6% higher than the results by other feature groups. Regarding F1-score, our features outperform all other features. To further show the advantages of our proposed features, we compare our combined LOSS+GOSS with the combination of all the features from Lee et al. lee2011seven (UFN+UC+UH). It's obvious that LOSS+GOSS have a great advantage over UFN+UC+UH in terms of recall and F1-score. Moreover, by combining our LOSS+GOSS features and UFN+UC+UH features together, we obtained another 7.1% and 2.3% performance gain with regard to precision and F1-score by Adaboost. Though there is a slight decline in terms of recall. By SVM, we get comparative results on recall and F1-score but about 3.5% improvement on precision. Conclusion In this paper, we propose a novel feature extraction method to effectively detect \"smart\" spammers who post seemingly legitimate tweets and are thus difficult to identify by existing spammer classification methods. Using the LDA model, we obtain the topic probability for each Twitter user. By utilizing the topic probability result, we extract our two topic-based features: GOSS and LOSS which represent the account with global and local information. Experimental results on a public dataset and a self-built Chinese microblog dataset validate the effectiveness of the proposed features. Future Work In future work, the combination method of local and global information can be further improved to maximize their individual strengths. We will also apply decision theory to enhancing the performance of our proposed features. Moreover, we are also building larger datasets on both Twitter and Weibo to validate our method. Moreover, larger datasets on both Twitter and Weibo will be built to further validate our method."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_3.png": {
+  "ids": [
+   "(90,266/1,220/1,093 CNN documents and 196,961/12,148/10,397 DailyMail documents)."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_4.png": {
+  "ids": [
+   "GlobalAveragePooling2D"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_5.png": {
+  "ids": [
+   "Previous work BIBREF4, BIBREF5 found that the SNLI datasets are suitable for training sentence embeddings."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_6.png": {
+  "ids": [
+   "Sun2018AnswerfocusedAP"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_7.png": {
+  "ids": [
+   "Kiritchenko.2016"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_8.png": {
+  "ids": [
+   "alen.cheng.2013leveraging"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_9.png": {
+  "ids": [
+   "feng2015applying, tan-EtAl:2016:P16-1 examine question answering in the insurance domain, another specialized domain similar to privacy, where the intended audience is the general public."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_10.png": {
+  "ids": [
+   "??????"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_11.png": {
+  "ids": [
+   "legislation."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_12.png": {
+  "ids": [
+   "messaging lexicon"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_13.png": {
+  "ids": [
+   "2015/19/N/ST3/01030"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_14.png": {
+  "ids": [
+   "(environmental fluctuation and reliability, task complexity) have on the form of evolved functional reward-modulated plasticity rules."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_15.png": {
+  "ids": [
+   "Wide-SEW-ResNet14 and Wide-SEW-ResNet8 achieve the first and second highest final similarity scores respectively."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_16.png": {
+  "ids": [
+   "vispecn13806 is the same instance used in other Shadoks experiments in Section 5."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_17.png": {
+  "ids": [
+   "arXiv:2303.00861v1 [cs.RO] 1 Mar 2023"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_18.png": {
+  "ids": [
+   "i=L/2,j (t) as a function of the operator position j and time t, for the infinite temperature initial state, for a denoised second-order Trotter supercircuit with Trotter depth Mtrot = 32 and denoiser depth M = 2."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_19.png": {
+  "ids": [
+   "13459.80"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_20.png": {
+  "ids": [
+   "R45343"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_21.png": {
+  "ids": [
+   "AN/TPY-2 radars in Japan."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_22.png": {
+  "ids": [
+   "R45007,"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_23.png": {
+  "ids": [
+   "R42875, FHA Single-Family Mortgage Insurance: Financial Status of the Mutual Mortgage Insurance Fund (MMI Fund)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_24.png": {
+  "ids": [
+   "mm/.50 calibre RWS or a 30 mm cannon RWS"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_25.png": {
+  "ids": [
+   "post-9/11 veterans with disabilities"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_26.png": {
+  "ids": [
+   "RL30631, Retirement Benefits for Members of Congress , by Katelin P. Isaacs."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_27.png": {
+  "ids": [
+   "RL32665, Navy Force Structure and Shipbuilding Plans: Background and Issues for Congress"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_28.png": {
+  "ids": [
+   "RL33476, Israel: Background and U.S. Relations"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_29.png": {
+  "ids": [
+   "R42388, The Congressional Appropriations Process: An Introduction"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_30.png": {
+  "ids": [
+   "1805."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_31.png": {
+  "ids": [
+   "978-0-948524-24-0"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_32.png": {
+  "ids": [
+   " (1852?1942).Monsen"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_33.png": {
+  "ids": [
+   "978-0-948524-24-0"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_34.png": {
+  "ids": [
+   "978-0-944722-34-3"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_35.png": {
+  "ids": [
+   "1042/35?1006 BCE"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_36.png": {
+  "ids": [
+   "1685/6)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_37.png": {
+  "ids": [
+   "5.7/10."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_38.png": {
+  "ids": [
+   "(1676?1735)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_39.png": {
+  "ids": [
+   "53.699722?N 132.095278?W? / 53.699722; -132.095278"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_40.png": {
+  "ids": [
+   "9789030041801. OCLC 647415773."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_41.png": {
+  "ids": [
+   "2017?2019)Former members Touring musicians Timeline Discography Albums as Blood on the Dance Floor"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_42.png": {
+  "ids": [
+   " (2009/2014), was awarded the BRDC Gold Star in 2014, and won the BARC Gold Medal in 2015."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_43.png": {
+  "ids": [
+   "(87.6/km2)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_44.png": {
+  "ids": [
+   "978-0-19-517034-4"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_45.png": {
+  "ids": [
+   " (1824\u20131875)."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_46.png": {
+  "ids": [
+   "Q101's 1992 inception as an alternative station)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_47.png": {
+  "ids": [
+   "2021."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_48.png": {
+  "ids": [
+   "(2012)Singles"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_49.png": {
+  "ids": [
+   "6/18/74, 4/9/89, 6/15/93, and 6/16/93."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_50.png": {
+  "ids": [
+   "https://t.co/DezeSnr6Gj ? HarryDreyfuss (@harrydreyfuss) November 4, 2017"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_51.png": {
+  "ids": [
+   "https://t.co/rfdgY88bn7 pic.twitter.com/vd2YzFmAZ0 ? Dean C. Smith (@DeanCSmith) March 29, 2018"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_52.png": {
+  "ids": [
+   "image:66419:2::0"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_53.png": {
+  "ids": [
+   "31,2014.(Reuters)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_54.png": {
+  "ids": [
+   "Cummings and other panel Democrats on Monday released their rebuttal to the GOP?s report in an attempt to debunk its findings."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_55.png": {
+  "ids": [
+   " http://tnne.ws/2bkJwgO"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_56.png": {
+  "ids": [
+   "pic.twitter.com/6z7gHBn6"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_57.png": {
+  "ids": [
+   "pic.twitter.com/8FmRRA7WnE ? Jayne Miller (@jemillerwbal) September 20, 2018"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_58.png": {
+  "ids": [
+   "540/374-5413"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ },
+ "T_59.png": {
+  "ids": [
+   "https://usat.ly/2Bwhqz3 "
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {}
+ }
+}

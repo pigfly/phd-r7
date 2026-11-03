@@ -98,13 +98,11 @@ Two choices keep the cost low: the detector ignores years and long English words
 \subsection{Analysis}
 \label{sec:analysis}
 
-\input{tab/detector}
 
 \paragraph{How much does the detector matter?}
-\Cref{tab:detector} replaces the regex detector by an oracle that flags exactly the needle values.
-When the hazards are of a type the detector recognizes (seven-digit numbers), the regex detector is as good as the oracle, both for reallocation (0.77 vs.\ 0.78) and with anchors (0.99 vs.\ 0.99).
-When they are not (four-digit numbers, which the detector deliberately ignores), reallocation and anchors fall back to the uniform rendering in 24 of 25 documents and match its recall (0.33 and 0.32 vs.\ 0.32), while the oracle would reach 0.82 and 0.99.
-When a document's hazards all go undetected, the method thus costs the gain but does no harm. Hazards missed in documents where other strings are flagged would instead be shrunk with the prose, which this experiment does not test; improving detector recall, for example with task-specific patterns, is the remedy.
+Replacing the regex detector by an oracle that flags exactly the needle values changes nothing when the needles are of a type the detector recognizes (seven-digit numbers: 0.77 vs.\ 0.78 for S, 0.99 vs.\ 0.99 for X; \cref{tab:detector}).
+When they are not (four-digit numbers, which the detector deliberately ignores), S and X fall back to the uniform rendering in 24 of 25 documents and match its recall (0.33 and 0.32 vs.\ 0.32), while the oracle would reach 0.82 and 0.99.
+Missed hazards thus cost the gain without harm when nothing else is flagged; hazards missed in documents where other strings are flagged would be shrunk with the prose, which this test does not cover.
 
 \paragraph{Where do real documents fall?}
 Because the router decides from text alone, we profiled 32K-character chunks of 13 LongBench tasks, essays, Python source, system logs, and package manifests without querying any model (\cref{app:corpora}).

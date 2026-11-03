@@ -159,5 +159,17 @@ def phase():
     ax.legend(frameon=False, fontsize=5.8, loc="center left", bbox_to_anchor=(1.0, 0.5))
     fig.savefig(FIG / "phase.pdf"); plt.close(fig)
 
+def thumbs():
+    """two crops of the same 32K document (uniform vs allocated) for the method figure"""
+    import make_items as M
+    run = EXP / "rlong_c32k_single_3"; it = {i["item"]: i for i in json.loads((run / "gt.json").read_text())["items"]}[1]
+    man = {(m["item"], m["arm"]): m for m in json.loads((run / "manifest.json").read_text())}
+    ma, ms = man[(1, "A")], man[(1, "S")]; gold = it["answers"][0]; M.REAL = False
+    a = needle_crop(run / "img" / f"{ma['name']}.png", it["text"], M.units_uniform(it["text"], 6), 0, gold, width=300, lines_ctx=4)
+    M.STRICT = True
+    b = needle_crop(run / "img" / f"{ms['name']}.png", it["text"], M.units_mixed(it["text"], ms["s_lo"], ms["s_hi"]), ms["extra"], gold, width=300, lines_ctx=4)
+    M.STRICT = False
+    a.save(FIG / "thumb_uniform.png"); b.save(FIG / "thumb_alloc.png"); return a.size, b.size
+
 if __name__ == "__main__":
-    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("ok")
+    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("ok")

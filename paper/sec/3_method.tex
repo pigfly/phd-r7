@@ -52,8 +52,10 @@ Two levels keep the layout simple; a locally varying alternative that shrinks on
 Prose is wrapped at character boundaries like the uniform baseline, so it consumes no extra space, while each flagged word is kept on one line so it is never split.
 We choose the sizes by
 \begin{equation}
-  (s_{\mathrm{hi}}^{\ast}, s_{\mathrm{lo}}^{\ast}) = \operatorname*{lexmax}_{\substack{s_{\mathrm{hi}}\in[s_0,\,12]\\ s_{\mathrm{lo}}\in[5,\,\min(s_{\mathrm{hi}},s_0)]}} (s_{\mathrm{hi}}, s_{\mathrm{lo}})
-  \;\;\text{s.t.}\;\; v\big(R(x;\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}})\big)\le B ,
+\begin{aligned}
+  (s_{\mathrm{hi}}^{\ast}, s_{\mathrm{lo}}^{\ast}) = &\operatorname*{lexmax}_{\substack{s_{\mathrm{hi}}\in[s_0,\,12]\\ s_{\mathrm{lo}}\in[5,\,\min(s_{\mathrm{hi}},s_0)]}} (s_{\mathrm{hi}}, s_{\mathrm{lo}})\\
+  &\text{s.t.}\;\; v\big(R(x;\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}})\big)\le B ,
+\end{aligned}
   \label{eq:alloc}
 \end{equation}
 where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.

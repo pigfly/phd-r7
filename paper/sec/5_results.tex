@@ -8,15 +8,23 @@
 
 \Cref{tab:baselines} compares all image arms at the same vision-token budget on 16K-character RULER documents.
 Uniform rendering recovers only 9\% of needles at the denser budget and 28\% at the lighter one, and the failures are spread across readers: at 6\,px, Claude Sonnet 5.5 recovers 0.57 and Gemini 0.88 of the needles, while GPT, Qwen, Llama, and MiniMax recover at most 11\%.
-Hazard-aware rendering raises the mean to 0.66 and 0.70, a gain of 0.57 and 0.42, and is significantly better than uniform rendering in 33 of 36 cells.
-The two stronger uniform baselines barely help.
-Searching font family and size (U) reaches 0.14 and 0.28 because a narrower font buys legibility for all characters equally, and rendering large then downsampling (Z) reaches 0.17 and 0.23 because resampling blurs exactly the fine strokes that distinguish hexadecimal digits.
-Hazard-aware rendering is significantly worse than U or Z in none of the 72 paired comparisons, and at the lighter budget it is also 11\% cheaper than uniform rendering, because prose shrinks more than the enlarged strings grow.
+Hazard-aware allocation (S) raises the mean to 0.66 and 0.70, a gain of 0.57 and 0.42, and is significantly better than uniform rendering in 33 of 36 cells.
+The two stronger uniform baselines barely help: searching font family and size (U) reaches 0.14 and 0.28, and rendering large then downsampling (Z) 0.17 and 0.23, plausibly because both spread legibility evenly over all characters.
+S is significantly worse than U or Z in none of the 72 paired comparisons, and at the lighter budget it is also 11\% cheaper than uniform rendering, because prose shrinks more than the enlarged strings grow.
 The weaker readers benefit most in absolute terms: Llama 4 Maverick goes from 0.00 to 0.58 and MiniMax-M3 from 0.00 to 0.57 at 5\,px.
 
-Anchors on the uniform image (K) recover 0.97 and 0.95 of the needles for 5\% more tokens than uniform rendering, a reminder that anchors are hard to beat when hazards are few.
-Reallocation also leaves one failure mode untouched: the fraction of answers that are well-formed near-misses of the gold string is similar for A and S (0.13 and 0.16 at 5\,px), whereas anchors nearly remove them (0.002).
-Both observations motivate combining the two, which we study in \cref{sec:density}.
+\paragraph{Is it the targeting or the enlargement?}
+Arm R runs the same allocation but enlarges randomly chosen ordinary words with the same total length as the flagged strings, leaving the needles at prose size.
+It recovers 0.11 and 0.09 of the needles, no better than uniform rendering and significantly worse in 5 of 15 cells at 6\,px, where the needles shrink with the prose.
+S exceeds R by 0.53 and 0.56 (14 of 15 cells significant at each budget): the gain comes from \emph{which} strings are enlarged, not from enlargement as such.
+
+\paragraph{Anchors.}
+Anchors on the uniform image (K) recover 0.97 and 0.95 of the needles for 5\% more tokens than uniform rendering, a reminder that verbatim copies are hard to beat when hazards are few.
+Allocation leaves one failure mode untouched: the fraction of well-formed near-misses is similar for A and S (0.13 and 0.16 at 5\,px), whereas anchors nearly remove it (0.002).
+Combining the two (X) gives the best of both.
+On the five readers on which both were run, X reaches 0.98 and 0.99 against 0.97 and 0.94 for K; at the 6\,px budget, where allocation frees vision tokens, X is 0.06 more accurate than K (3 of 15 cells significant) and 9\% cheaper (881 vs.\ 968 billed tokens), and even 4\% cheaper than uniform rendering alone.
+At the 5\,px budget prose cannot shrink further, so X costs the same as K and matches its accuracy.
+We return to this trade-off as hazards become denser in \cref{sec:density}.
 
 \subsection{Scaling with context length}
 \label{sec:length}
@@ -57,6 +65,19 @@ The router of \cref{sec:route} turns this into a policy.
 Sweeping its threshold traces a recall--cost frontier (\cref{fig:density}c) on which routing between X and plain text dominates routing between K and plain text at every operating point: at a fixed $\tau{=}0.3$, it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$ (mean over the four readers that report billed costs for both images and text).
 On documents with at most 16 hazardous strings, X reaches 0.93 recall at 0.22$\times$ the plain-text cost, compared with 0.86 at 0.24$\times$ for K, and with $k\le4$ the routed system reaches 0.99--1.00 at 0.19--0.22$\times$.
 With $\tau$ cross-validated per reader instead, the routed system reaches 0.99 recall at 0.71$\times$ the plain-text cost on held-out items; this aggregate reflects that half of the documents in this sweep are dense enough to be routed to text; real corpora are much sparser (\cref{sec:analysis}).
+
+\subsection{Naturally occurring identifiers}
+\label{sec:niq}
+
+\input{tab/niq}
+
+RULER needles are synthetic, and our detector was designed with such strings in mind.
+To test identifiers that occur naturally, we built 60 questions from LongBench documents of up to 40K characters (ten each from Qasper, MultiFieldQA, GovReport, 2WikiMQA, HotpotQA, and MultiNews), each asking for the exact string that follows a unique six-word phrase.
+Targets are strings the documents already contain, such as report and grant numbers, ISBNs, citation keys, military specifications, dates, and URLs; we removed candidates produced by dataset artifacts such as words glued together across a missing space (\cref{app:niq}).
+\Cref{tab:niq} confirms the synthetic results on these strings.
+Allocation alone doubles mean recall (0.23 to 0.48, significant for four of five readers), and allocation with anchors more than triples it (0.76, significant for all five) while costing 11\% fewer billed tokens than anchors on the uniform image and 5\% fewer than uniform rendering.
+Plain text remains clearly better for the weaker readers (0.97 on average), at 4.7$\times$ the cost of X; only Gemini approaches it (0.90 vs.\ 0.92).
+Natural identifiers are thus where optical compression benefits most from protection, and where the router's option of falling back to text matters for weaker readers.
 
 \subsection{Effect on ordinary comprehension}
 \label{sec:longbench}

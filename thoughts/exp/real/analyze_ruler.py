@@ -7,7 +7,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 HERE = Path(__file__).parent
-ARMS = "TACMSLUZKXOY"
+ARMS = "TACMSLUZKXOYR"
 
 EXC = ("URLError", "HTTPError", "TimeoutError", "Remote", "IncompleteRead", "ConnectionReset", "JSONDecodeError", "KeyError")
 def failed_read(p):
@@ -31,7 +31,7 @@ def boot(d, R, n=10000):
 
 if __name__ == "__main__":
     R = random.Random(0); res = {}; drops = defaultdict(list)
-    for run in sorted([*HERE.glob("ruler*_s*"), *HERE.glob("rlong_*"), *HERE.glob("rbase_*"), *HERE.glob("rdens_*"), *HERE.glob("rdet_*")]):
+    for run in sorted([*HERE.glob("ruler*_s*"), *HERE.glob("rlong_*"), *HERE.glob("rbase_*"), *HERE.glob("rdens_*"), *HERE.glob("rdet_*"), *HERE.glob("rbx_*"), *HERE.glob("niq2_*")]):
         if not (run / "gt.json").exists(): continue
         gt = json.loads((run / "gt.json").read_text()); items = {it["item"]: it for it in gt["items"]}
         man = json.loads((run / "manifest.json").read_text())
@@ -58,7 +58,7 @@ if __name__ == "__main__":
                        for k in ("recall", "silent", "vtok", "billed")} for a in ARMS}
             diffs = {}
             for a, b in (("M", "A"), ("C", "A"), ("M", "C"), ("M", "T"), ("A", "T"), ("S", "A"), ("L", "A"), ("S", "M"), ("L", "M"), ("L", "S"),
-                         ("U", "A"), ("Z", "A"), ("K", "A"), ("S", "U"), ("S", "Z"), ("S", "K"), ("S", "T"), ("X", "K"), ("X", "S"), ("X", "A"), ("O", "A"), ("O", "S"), ("Y", "X"), ("Y", "A")):
+                         ("U", "A"), ("Z", "A"), ("K", "A"), ("S", "U"), ("S", "Z"), ("S", "K"), ("S", "T"), ("X", "K"), ("X", "S"), ("X", "A"), ("O", "A"), ("O", "S"), ("Y", "X"), ("Y", "A"), ("R", "A"), ("S", "R"), ("X", "S"), ("X", "T")):
                 pr = [r for r in rows.values() if a in r and b in r]
                 if len(pr) >= 5: diffs[f"{a}-{b}"] = boot([r[a]["recall"] - r[b]["recall"] for r in pr], R)
             res[f"{run.name}|{reader}"] = dict(arms=tab, diffs=diffs, n=len(rows))

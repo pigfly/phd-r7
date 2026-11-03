@@ -17,24 +17,29 @@ num, reg = {}, []
 
 def mean(xs): xs = [x for x in xs if x is not None]; return round(St.mean(xs), 3) if xs else None
 
-# --- Table 1: black-box baselines on RULER 16K (rbase_s{5,6}_{single_3,multikey_1,multivalue}) ---
+# --- Table 1: equal-budget arms on RULER 16K. rbx_* = rbase_* (A,S,U,Z,K) merged item-by-item with rabl_* (R,X) ---
+ARMS1 = "ASUZKRX"
+def has(c, a): return bool(c["arms"][a]["recall"] or c["arms"][a]["billed"] or c["arms"][a]["vtok"])
 t1 = {}
 for d in ("s5", "s6"):
     for rd in READERS:
-        cells = [r[k] for k in r if k.startswith(f"rbase_{d}_") and k.endswith("|" + rd)]
-        t1[f"{d}|{rd}"] = {a: mean(c["arms"][a]["recall"] for c in cells) for a in "ASUZK"} | \
-            {f"billed_{a}": mean(c["arms"][a]["billed"] or None for c in cells) for a in "ASUZK"} | \
+        cells = [r[k] for k in r if k.startswith(f"rbx_{d}_") and k.endswith("|" + rd)]
+        t1[f"{d}|{rd}"] = {a: (mean(c["arms"][a]["recall"] for c in cells) if any(has(c, a) for c in cells) else None) for a in ARMS1} | \
+            {f"billed_{a}": mean(c["arms"][a]["billed"] or None for c in cells) for a in ARMS1} | \
             {f"silent_{a}": mean(c["arms"][a]["silent"] for c in cells) for a in "ASUZK"} | \
             {"sig_S-A": sum(c["diffs"]["S-A"][1] > 0 for c in cells), "n_cells": len(cells)}
-    allc = [r[k] for k in r if k.startswith(f"rbase_{d}_")]
-    t1[f"{d}|mean"] = {a: mean(c["arms"][a]["recall"] for c in allc) for a in "ASUZK"} | \
-        {f"billed_{a}": mean(c["arms"][a]["billed"] or None for c in allc) for a in "ASUZK"} | \
+    allc = [r[k] for k in r if k.startswith(f"rbx_{d}_")]
+    t1[f"{d}|mean"] = {a: mean(c["arms"][a]["recall"] for c in allc if has(c, a)) for a in ARMS1} | \
+        {f"billed_{a}": mean(c["arms"][a]["billed"] or None for c in allc) for a in ARMS1} | \
         {f"silent_{a}": mean(c["arms"][a]["silent"] for c in allc) for a in "ASUZK"}
-    for b in "UZK":
-        x = [c["diffs"][f"S-{b}"] for c in allc]
+    for b in "UZKR":
+        x = [c["diffs"][f"S-{b}"] for c in allc if f"S-{b}" in c["diffs"]]
         t1[f"{d}|S-{b}"] = dict(mean=mean(y[0] for y in x), sig_better=sum(y[1] > 0 for y in x), sig_worse=sum(y[2] < 0 for y in x), n=len(x))
+    for dd in ("X-K", "X-A", "R-A"):
+        x = [c["diffs"][dd] for c in allc if dd in c["diffs"]]
+        t1[f"{d}|{dd}"] = dict(mean=mean(y[0] for y in x), sig_better=sum(y[1] > 0 for y in x), sig_worse=sum(y[2] < 0 for y in x), n=len(x))
 num["table1_baselines_ruler16k"] = t1
-reg.append("table1_baselines_ruler16k <- analysis_ruler.json keys rbase_s{5,6}_*|<reader> (16K chars, N=25/task, 3 tasks)")
+reg.append("table1_baselines_ruler16k <- analysis_ruler.json keys rbx_s{5,6}_*|<reader> (rbase A/S/U/Z/K + rabl R/X on identical items; 16K chars, N=25/task, 3 tasks; R/X not run for Claude)")
 
 # --- Length scaling (rlong) ---
 ls = {}
@@ -78,6 +83,9 @@ for run in ("rdet_mv7", "rdet_mv4"):
 num["detector_ablation"] = det
 reg.append("detector_ablation <- analysis_ruler.json rdet_mv{7,4}|<reader> (16K, N=25, 5 readers)")
 
+niq = {k.split("|")[1]: v for k, v in r.items() if k.startswith("niq2_s6|")}
+num["niq"] = {rd: {"arms": {a: v["arms"][a] for a in "TASKX"}, "diffs": v["diffs"]} for rd, v in niq.items()}
+reg.append("niq <- analysis_ruler.json niq2_s6|<reader> (natural identifiers from LongBench docs, N=60, 6px; niq_s6 discarded: glued-token artifacts)")
 num["real_density"] = json.loads((EXP / "analysis_real_density.json").read_text())
 num["claude_subagent"] = json.loads((EXP / "analysis_claude_reader.json").read_text())
 num["sweep_short"] = json.loads((EXP / "analysis_sw_s5_sw_s6_sw_s8_sw_s10.json").read_text())

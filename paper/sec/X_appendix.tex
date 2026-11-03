@@ -87,6 +87,15 @@ It brought no benefit over global shrinking.
 \paragraph{Other variants.}
 On short manifests, enlarging only the hash and path substrings of a manifest line freed almost no space; adding one pixel of line spacing to prose-only lines did not change prose accuracy ($+$0.00, 95\% CI $[-0.09,0.09]$); and keeping prose at the uniform size left room only for 6--8\,px identifiers and recovered 13--24 points less than full reallocation.
 
+\section{Natural-Identifier Questions}
+\label{app:niq}
+
+For each of six LongBench tasks we shuffled the documents of at most 40K characters with a fixed seed and kept the first ten that contain a usable target.
+A target is a word flagged by the detector of \cref{sec:detect} that, after stripping surrounding punctuation, has 6--64 ASCII characters including a digit, starts with a letter or digit, and is preceded by six words none of which is flagged; the six-word phrase must occur exactly once in the document.
+We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, characters replaced by ``?'' during ASCII normalization, and words glued across a missing space (a period, parenthesis, or comma directly followed by a letter).
+A first version of the set without the last two filters contained such artifacts in 14 of its 60 questions; because anchors and enlarged rendering present the glued string as a single unit, that version favored our arms, and we discarded it.
+The prompt asks for the exact string that follows the phrase; scoring is the same recall as for RULER.
+
 \section{Real-Corpus Profile}
 \label{app:corpora}
 

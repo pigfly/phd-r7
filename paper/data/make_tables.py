@@ -12,37 +12,44 @@ def fmt(x, best=False, second=False, d=2):
     s = f"{x:.{d}f}"
     return f"\\textbf{{{s}}}" if best else (f"\\underline{{{s}}}" if second else s)
 
-# ---------------- Table 1: equal-budget arms (A,U,Z,S) + anchors K, both densities
+# ---------------- Table 1: equal-budget images (A,U,Z,R,S) and with anchors (K,X), both densities
 t = N["table1_baselines_ruler16k"]
+def cell(v, best):
+    if v is None: return "--"
+    return f"\\textbf{{{v:.2f}}}" if (best and v == best and v > 0) else f"{v:.2f}"
 rows = []
 for rd in RD + ["mean"]:
     cells = []
     for d in ("s5", "s6"):
-        v = t[f"{d}|{rd}"]; eq = {a: v[a] for a in "AUZS"}; mx = max(eq.values())
-        srt = sorted(set(eq.values()), reverse=True); sec = srt[1] if len(srt) > 1 else None
-        cells += [fmt(v[a], v[a] == mx and mx > 0) for a in "AUZS"] + [f"\\textcolor{{gray}}{{{v['K']:.2f}}}"]
-    name = "\\textit{Mean}" if rd == "mean" else SHORT[rd]
-    if rd == "mean": rows.append("\\midrule")
-    rows.append(f"{name} & " + " & ".join(cells) + " \\\\")
+        v = t[f"{d}|{rd}"]
+        b1 = max(v[a] for a in "AUZRS" if v[a] is not None); b2 = max(v[a] for a in "KX" if v[a] is not None)
+        cells += [cell(v[a], b1) for a in "AUZRS"] + [cell(v[a], b2) for a in "KX"]
+    if rd == "mean":
+        rows.append("\\midrule")
+        cells = [c + ("$^{\\dagger}$" if i % 7 in (3, 6) else "") for i, c in enumerate(cells)]
+    rows.append(("\\textit{Mean}" if rd == "mean" else SHORT[rd]) + " & " + " & ".join(cells) + " \\\\")
 cost = []
 for d in ("s5", "s6"):
-    v = t[f"{d}|mean"]; cost += [f"{v['billed_'+a]:.0f}" for a in "AUZS"] + [f"\\textcolor{{gray}}{{{v['billed_K']:.0f}}}"]
+    v = t[f"{d}|mean"]; cost += [f"{v['billed_'+a]:.0f}" + ("$^{\\dagger}$" if a in "RX" else "") for a in "AUZRSKX"]
 rows.append("\\textit{Billed tokens} & " + " & ".join(cost) + " \\\\")
 (TAB / "baselines.tex").write_text(r"""\begin{table*}[t]
 \centering
-\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two rendering densities (uniform 5\,px $\approx$ 21 and 6\,px $\approx$ 14 characters per vision token). A, U, Z, and S are images with the same vision-token budget; \textbf{bold} marks the best among them. K adds anchors (verbatim text copies of the flagged strings) to A and is shown in gray because it spends extra text tokens. The last row is the provider-billed prompt-token count averaged over the readers that report usage. Hazard-aware rendering (S) is significantly worse than U or Z in none of the 72 paired comparisons (36 reader$\times$task$\times$density cells $\times$ 2 baselines) and significantly better in 63.}
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 21 and 6\,px $\approx$ 14 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} words enlarged by our allocation, and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
 \label{tab:baselines}
 \small
-\setlength{\tabcolsep}{4.2pt}
-\begin{tabular}{l ccccc ccccc}
+\setlength{\tabcolsep}{3.4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l ccccc cc ccccc cc}
 \toprule
-& \multicolumn{5}{c}{5\,px budget ($\approx$21 chars/vtok)} & \multicolumn{5}{c}{6\,px budget ($\approx$14 chars/vtok)} \\
-\cmidrule(lr){2-6}\cmidrule(lr){7-11}
-Reader & A & U & Z & S (ours) & \textcolor{gray}{K} & A & U & Z & S (ours) & \textcolor{gray}{K} \\
+& \multicolumn{7}{c}{5\,px budget ($\approx$21 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$14 chars/vtok)} \\
+\cmidrule(lr){2-8}\cmidrule(lr){9-15}
+& \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
+Reader & A & U & Z & R & S (ours) & K & X (ours) & A & U & Z & R & S (ours) & K & X (ours) \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table*}
 """)
 
@@ -200,3 +207,31 @@ Reader & ids & prose & ids & prose & ids & prose & ids & prose \\
 \midrule
 """ + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}}\n\\end{table*}\n")
 print("appendix tables written")
+
+# ---------------- Table: natural identifiers (NIQ)
+nq = N["niq"]; rows = []
+RD5 = [r for r in RD if r in nq]
+def sg(d): return "$^{\\ast}$" if d[1] > 0 else ("$^{\\dagger}$" if d[2] < 0 else "")
+for rd in RD5:
+    a = nq[rd]["arms"]; d = nq[rd]["diffs"]
+    rows.append(f"{SHORT[rd]} & {a['A']['recall']:.2f} & {a['S']['recall']:.2f}{sg(d['S-A'])} & {a['K']['recall']:.2f} & {a['X']['recall']:.2f}{sg(d['X-A'])} & {a['T']['recall']:.2f} \\\\")
+mean = [St.mean(nq[r]["arms"][x]["recall"] for r in RD5) for x in "ASKXT"]
+bil = [St.mean(nq[r]["arms"][x]["billed"] for r in RD5 if nq[r]["arms"][x]["billed"]) for x in "ASKXT"]
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{m:.2f}" for m in mean) + " \\\\",
+         "\\textit{Billed tokens} & " + " & ".join(f"{b:.0f}" for b in bil) + " \\\\"]
+(TAB / "niq.tex").write_text(r"""\begin{table}[t]
+\centering
+\caption{\textbf{Naturally occurring identifiers.} Exact-copy recall on 60 LongBench documents ($\le$40K characters, 6\,px budget) for identifiers already present in the text, such as report numbers, ISBNs, grant numbers, citation keys, and URLs. $^{\ast}$: paired 95\% CI vs.\ uniform (A) above zero. Billed tokens average the four readers that report usage.}
+\label{tab:niq}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l ccccc}
+\toprule
+Reader & A & S & K & X & T (text) \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}
+\end{table}
+""")
+print("niq table written")

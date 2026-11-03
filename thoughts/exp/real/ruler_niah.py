@@ -66,7 +66,7 @@ def main():
     ap.add_argument("--nk", type=int, default=0, help="override the number of needle keys (density sweep)")
     ap.add_argument("--arms", default="ACM", help="A uniform, C hazard (word wrap), M global, S strict-detector M (default method), "
                     "L M-local, U best uniform font/size, Z render-large-then-downsample, K anchors (A image + verbatim sidecar), "
-                    "X = S image + anchors, O = S with an oracle detector (gold needle values), Y = O image + oracle anchors")
+                    "X = S image + anchors, R = ablation enlarging random ordinary words, O = S with an oracle detector (gold needle values), Y = O image + oracle anchors")
     a = ap.parse_args(); cfg = dict(TASKS[a.task]); R = random.Random(a.seed); M.REAL = False
     if a.nk: cfg["nk"] = a.nk
     hay = json.loads((HERE / "ruler" / "pg_essays.json").read_text())["text"]
@@ -82,6 +82,15 @@ def main():
                 if arm == "Y": M.ORACLE = set(it["gold"])
                 im, lo, hi, ex = M.long_arm("A" if arm == "K" else "S", it["text"], bud, a.size); M.STRICT = True
                 anchors = [w.strip(".,;:()[]\"'") for w in M.words(it["text"]) if M.flagged(w)]; M.STRICT = False; M.ORACLE = None
+            elif arm == "R":  # ablation: enlarge random ordinary words with the same total length as the flagged words
+                M.STRICT = True; ws = M.words(it["text"]); haz = [w for w in ws if M.flagged(w)]; M.STRICT = False
+                target = sum(len(w.strip(".,;:()[]\"'")) for w in haz); rr = random.Random(a.seed * 1000 + it["item"])
+                pool = [w.strip(".,;:()[]\"'") for w in ws if w.strip() and w not in haz and len(w.strip(".,;:()[]\"'")) >= 4]
+                rr.shuffle(pool); pick, tot = set(), 0
+                for w in pool:
+                    if tot >= target: break
+                    if w not in pick and w not in it["gold"]: pick.add(w); tot += len(w)
+                M.ORACLE = pick; im, lo, hi, ex = M.long_arm("S", it["text"], bud, a.size); M.ORACLE = None
             elif arm == "O":  # oracle detector: S allocation with exactly the gold needle values flagged
                 M.ORACLE = set(it["gold"]); im, lo, hi, ex = M.long_arm("S", it["text"], bud, a.size); M.ORACLE = None
             else: im, lo, hi, ex = M.long_arm(arm, it["text"], bud, a.size)

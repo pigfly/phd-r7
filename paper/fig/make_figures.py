@@ -20,8 +20,8 @@ LAB = dict(A="Uniform (A)", K="Anchors (K)", S="Ours (S)", X="Ours + anchors (X)
 INK, MUTED, GRID = "#2B2B2B", "#6B6B6B", "#E3E7EC"
 LIGHT = dict(aqua="#BFE6EA", peach="#F7D8B8", mist="#D9E2EB", warm="#F2F2F2", salmon="#F6A69A")
 plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
-                     "font.size": 7.5, "axes.labelsize": 7.5, "axes.titlesize": 8, "legend.fontsize": 6.5,
-                     "xtick.labelsize": 6.5, "ytick.labelsize": 6.5, "axes.edgecolor": MUTED, "axes.linewidth": 0.6,
+                     "font.size": 8.5, "axes.labelsize": 8.5, "axes.titlesize": 8.5, "legend.fontsize": 7.5,
+                     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "axes.edgecolor": MUTED, "axes.linewidth": 0.6,
                      "xtick.color": MUTED, "ytick.color": MUTED, "axes.labelcolor": INK, "text.color": INK,
                      "lines.linewidth": 1.4, "lines.markersize": 4, "pdf.fonttype": 42, "axes.spines.top": False,
                      "axes.spines.right": False})
@@ -59,19 +59,24 @@ def teaser():
     ans_a, ans_s = pa[ma["name"] + ".png"]["ids"][0], pa[ms["name"] + ".png"]["ids"][0]
     M.REAL = False
     crop_a = needle_crop(run / "img" / f"{ma['name']}.png", it["text"], M.units_uniform(it["text"], 6), 0, gold)
+    zoom_a = needle_crop(run / "img" / f"{ma['name']}.png", it["text"], M.units_uniform(it["text"], 6), 0, gold, width=300, lines_ctx=0)
     M.STRICT = True
     crop_s = needle_crop(run / "img" / f"{ms['name']}.png", it["text"], M.units_mixed(it["text"], ms["s_lo"], ms["s_hi"]), ms["extra"], gold)
+    zoom_s = needle_crop(run / "img" / f"{ms['name']}.png", it["text"], M.units_mixed(it["text"], ms["s_lo"], ms["s_hi"]), ms["extra"], gold, width=300, lines_ctx=0)
     M.STRICT = False
-    fig = plt.figure(figsize=(6.9, 2.15))
-    gs = fig.add_gridspec(2, 3, width_ratios=[1.0, 1.0, 0.8], height_ratios=[1, 0.46], wspace=0.2, hspace=0.06,
-                          left=0.01, right=0.99, top=0.9, bottom=0.17)
-    for col, (crop, title, ans, ok, arm) in enumerate([(crop_a, "Uniform rendering (6 px everywhere)", ans_a, False, "A"),
-                                                       (crop_s, "Hazard-aware rendering (ours, same budget)", ans_s, True, "S")]):
+    fig = plt.figure(figsize=(6.9, 2.45))
+    gs = fig.add_gridspec(3, 3, width_ratios=[1.0, 1.0, 0.8], height_ratios=[1, 0.3, 0.42], wspace=0.2, hspace=0.12,
+                          left=0.01, right=0.99, top=0.91, bottom=0.15)
+    for col, (crop, zoom, title, ans, ok, arm) in enumerate([(crop_a, zoom_a, "Uniform rendering (6 px everywhere)", ans_a, False, "A"),
+                                                       (crop_s, zoom_s, "Hazard-aware rendering (ours, same budget)", ans_s, True, "S")]):
         ax = fig.add_subplot(gs[0, col]); ax.imshow(crop, cmap="gray", vmin=0, vmax=255, interpolation="nearest")
         ax.set_xticks([]); ax.set_yticks([])
         for sp in ax.spines.values(): sp.set_visible(True); sp.set_color(C[arm]); sp.set_linewidth(1.2)
-        ax.set_title(title, fontsize=7.5, color=INK, pad=3)
-        tx = fig.add_subplot(gs[1, col]); tx.axis("off")
+        ax.set_title(title, fontsize=8, color=INK, pad=3)
+        zx = fig.add_subplot(gs[1, col]); zx.imshow(zoom, cmap="gray", vmin=0, vmax=255, interpolation="nearest", aspect="equal")
+        zx.set_xticks([]); zx.set_yticks([])
+        for sp in zx.spines.values(): sp.set_visible(True); sp.set_color(C[arm]); sp.set_linewidth(0.8); sp.set_linestyle(":")
+        tx = fig.add_subplot(gs[2, col]); tx.axis("off")
         tx.text(0.0, 0.78, f"Q: the special magic uuid for '{it['query']}'?", fontsize=6.3, color=MUTED, transform=tx.transAxes)
         # answer with wrong characters marked
         x = 0.0; tx.text(x, 0.42, "A:", fontsize=6.6, family="monospace", transform=tx.transAxes); x += 0.05

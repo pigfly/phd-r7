@@ -1,27 +1,27 @@
 \begin{table*}[t]
 \centering
-\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 21 and 6\,px $\approx$ 14 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} words enlarged by our allocation, and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 32 and 6\,px $\approx$ 21 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} ordinary words enlarged by our allocation (matched in total length), and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
 \label{tab:baselines}
 \small
 \setlength{\tabcolsep}{3.4pt}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{l ccccc cc ccccc cc}
 \toprule
-& \multicolumn{7}{c}{5\,px budget ($\approx$21 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$14 chars/vtok)} \\
+& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars/vtok)} \\
 \cmidrule(lr){2-8}\cmidrule(lr){9-15}
 & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
 Reader & A & U & Z & R & S (ours) & K & X (ours) & A & U & Z & R & S (ours) & K & X (ours) \\
 \midrule
 Claude Sonnet 5.5 & 0.14 & 0.22 & 0.19 & -- & \textbf{0.79} & \textbf{0.95} & -- & 0.57 & 0.64 & 0.46 & -- & \textbf{0.92} & \textbf{1.00} & -- \\
-Gemini 3.5 Flash-Lite & 0.41 & 0.57 & 0.79 & 0.53 & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} & 0.88 & 0.78 & 0.84 & 0.44 & \textbf{1.00} & 1.00 & \textbf{1.00} \\
-GPT-6 Luna & 0.02 & 0.03 & 0.02 & 0.01 & \textbf{0.50} & 0.91 & \textbf{0.94} & 0.11 & 0.16 & 0.08 & 0.02 & \textbf{0.65} & 0.82 & \textbf{0.98} \\
+Gemini 3.5 Flash-Lite & 0.41 & 0.57 & 0.79 & 0.48 & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} & 0.88 & 0.78 & 0.84 & 0.46 & \textbf{1.00} & 1.00 & \textbf{1.00} \\
+GPT-6 Luna & 0.02 & 0.03 & 0.02 & 0.02 & \textbf{0.50} & 0.91 & \textbf{0.94} & 0.11 & 0.16 & 0.08 & 0.02 & \textbf{0.65} & 0.82 & \textbf{0.98} \\
 Qwen3-VL-235B & 0.00 & 0.00 & 0.00 & 0.00 & \textbf{0.55} & \textbf{1.00} & \textbf{1.00} & 0.07 & 0.08 & 0.03 & 0.00 & \textbf{0.60} & \textbf{1.00} & \textbf{1.00} \\
 Llama 4 Maverick & 0.00 & 0.00 & 0.00 & 0.00 & \textbf{0.58} & \textbf{0.97} & \textbf{0.97} & 0.00 & 0.01 & 0.00 & 0.00 & \textbf{0.59} & 0.90 & \textbf{1.00} \\
 MiniMax-M3 & 0.00 & 0.00 & 0.00 & 0.00 & \textbf{0.57} & \textbf{1.00} & 0.98 & 0.02 & 0.01 & 0.00 & 0.00 & \textbf{0.42} & 0.97 & \textbf{1.00} \\
 \midrule
-\textit{Mean} & 0.09 & 0.14 & 0.17 & 0.11$^{\dagger}$ & \textbf{0.66} & 0.97 & \textbf{0.98}$^{\dagger}$ & 0.28 & 0.28 & 0.23 & 0.09$^{\dagger}$ & \textbf{0.70} & 0.95 & \textbf{0.99}$^{\dagger}$ \\
-\textit{Billed tokens} & 779 & 775 & 768 & 808$^{\dagger}$ & 779 & 823 & 857$^{\dagger}$ & 913 & 891 & 887 & 901$^{\dagger}$ & 812 & 960 & 881$^{\dagger}$ \\
+\textit{Mean} & 0.09 & 0.14 & 0.17 & 0.10$^{\dagger}$ & \textbf{0.66} & 0.97 & \textbf{0.98}$^{\dagger}$ & 0.28 & 0.28 & 0.23 & 0.10$^{\dagger}$ & \textbf{0.70} & 0.95 & \textbf{1.00}$^{\dagger}$ \\
+\textit{Billed tokens} & 779 & 775 & 768 & 814$^{\dagger}$ & 779 & 823 & 857$^{\dagger}$ & 913 & 891 & 887 & 844$^{\dagger}$ & 812 & 960 & 881$^{\dagger}$ \\
 \bottomrule
 \end{tabular}}
 \end{table*}

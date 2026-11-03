@@ -34,14 +34,14 @@ for d in ("s5", "s6"):
 rows.append("\\textit{Billed tokens} & " + " & ".join(cost) + " \\\\")
 (TAB / "baselines.tex").write_text(r"""\begin{table*}[t]
 \centering
-\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 21 and 6\,px $\approx$ 14 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} words enlarged by our allocation, and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 32 and 6\,px $\approx$ 21 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} ordinary words enlarged by our allocation (matched in total length), and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
 \label{tab:baselines}
 \small
 \setlength{\tabcolsep}{3.4pt}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{l ccccc cc ccccc cc}
 \toprule
-& \multicolumn{7}{c}{5\,px budget ($\approx$21 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$14 chars/vtok)} \\
+& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars/vtok)} \\
 \cmidrule(lr){2-8}\cmidrule(lr){9-15}
 & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
@@ -214,7 +214,7 @@ RD5 = [r for r in RD if r in nq]
 def sg(d): return "$^{\\ast}$" if d[1] > 0 else ("$^{\\dagger}$" if d[2] < 0 else "")
 for rd in RD5:
     a = nq[rd]["arms"]; d = nq[rd]["diffs"]
-    rows.append(f"{SHORT[rd]} & {a['A']['recall']:.2f} & {a['S']['recall']:.2f}{sg(d['S-A'])} & {a['K']['recall']:.2f} & {a['X']['recall']:.2f}{sg(d['X-A'])} & {a['T']['recall']:.2f} \\\\")
+    rows.append(f"{SHORT[rd]} & {a['A']['recall']:.2f} & {a['S']['recall']:.2f}{sg(d['S-A'])} & {a['K']['recall']:.2f}{sg(d['K-A'])} & {a['X']['recall']:.2f}{sg(d['X-A'])} & {a['T']['recall']:.2f} \\\\")
 mean = [St.mean(nq[r]["arms"][x]["recall"] for r in RD5) for x in "ASKXT"]
 bil = [St.mean(nq[r]["arms"][x]["billed"] for r in RD5 if nq[r]["arms"][x]["billed"]) for x in "ASKXT"]
 rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{m:.2f}" for m in mean) + " \\\\",

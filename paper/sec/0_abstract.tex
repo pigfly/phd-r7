@@ -1,7 +1,7 @@
 \begin{abstract}
 Rendering long text into images lets vision-language models (VLMs) read it with several times fewer tokens than the text itself.
 This optical compression spends resolution uniformly, yet the errors it causes concentrate in a few high-entropy strings such as identifiers and hashes.
-These strings are misread into well-formed but wrong answers, and more often as contexts grow.
+These strings are misread into well-formed but wrong answers, and they fail more often as contexts grow.
 Our method rests on one fact: the renderer, unlike the model, sees the text.
 A training-free renderer for black-box VLMs flags verbatim-hazardous strings and enlarges only them within the vision-token budget of uniform rendering.
 It spends the budget this saves on verbatim anchors of the flagged strings, and it routes documents too dense in such strings back to plain text.

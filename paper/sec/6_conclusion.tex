@@ -5,13 +5,11 @@
 Most of our fidelity evaluation uses synthetic needles, and the natural-identifier set is small (60 automatically constructed questions).
 On that set, the full method still trails plain text by 0.21 recall on average, so weaker readers should be routed to text more often than our density threshold alone would suggest.
 We evaluate black-box readers only and therefore cannot say how enlarged glyphs change a model's internal attention.
-Budgets follow one patch-based accounting rule (\cref{eq:vtok}); providers tile images differently, and while billed costs confirm the savings for the readers we tested, other tokenizers may shift them.
+Budgets follow one patch-based accounting rule (\cref{eq:vtok}), and providers tile images differently: billed costs confirm the savings for Claude, GPT, and Qwen, whereas Llama is billed independently of image size and Gemini slightly more for our images at up to 32K characters.
 The detector is rule-based and recall-bounded: hazards it does not recognize receive no protection, and in documents where other strings are flagged they are shrunk with the prose.
 Finally, reallocation alone raises recall without reducing the share of confident near-misses; only anchors remove them.
 
 \paragraph{Conclusion.}
-Optical context compression decides how many pixels a document receives but not where they go, and its failures concentrate on exactly the strings that must survive verbatim.
-Because the renderer reads the text before it draws it, it can spend resolution where errors hurt, reinvest the savings in anchors, and fall back to text when a document is too dense with identifiers.
-These steps are training-free and model-agnostic.
-Across six VLMs, they make optical compression far more reliable for embedded identifiers, more than tripling their recall on natural documents at about one fifth of the plain-text cost.
-They also tell the system when a document is too dense with identifiers to be compressed at all.
+Optical context compression decides how many pixels a document receives but not where they go, and its failures concentrate on the strings that must survive verbatim.
+Because the renderer reads the text before drawing it, it can spend resolution where errors hurt, reinvest the savings in anchors, and fall back to text for identifier-dense documents.
+Across the readers we tested, this training-free procedure more than triples the recall of naturally occurring identifiers at about one fifth of the plain-text cost.

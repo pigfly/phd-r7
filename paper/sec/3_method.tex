@@ -59,8 +59,8 @@ We choose the sizes by
 where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.
 The order expresses the design choice that the marginal pixel is worth more on a hash than on prose: verbatim accuracy is limited by the least legible character of a string, whereas prose comprehension degrades gracefully.
 The lower bound of 5\,px keeps prose within the range VLMs still read, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
-If no pair satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated; if $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
-At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings; at $s_0=6$\,px, prose shrinks to 5\,px.
+If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated (in the implementation, $s_{\mathrm{hi}}$ is searched over $[6,12]$); if $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
+At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings; at $s_0=6$\,px, prose shrinks to 5\,px when needed and otherwise stays at 6\,px.
 With our unoptimized pure-Python renderer, budget computation plus allocation takes about 1\,s for a 32K-character document and 4\,s for 128K characters on one CPU core, small compared with a VLM call.
 \Cref{fig:teaser} (middle) shows a typical outcome: the UUID is drawn at 12\,px while prose stays at 6\,px.
 

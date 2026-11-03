@@ -15,16 +15,16 @@ After stripping the characters \texttt{.,;:()[]"'} from both ends, a word is fla
 \paragraph{Baselines.}
 U tries Menlo, Arial, and Arial Narrow at sizes 14 down to 5\,px and keeps the largest size that fits the budget (ties broken by font order); at the 5\,px and 6\,px budgets it selects 6\,px Arial and 8\,px Arial Narrow for most documents.
 Z renders at 10\,px and shrinks the image by repeated factors of 0.98 with Lanczos resampling until it fits the budget (final scale 0.52--0.64).
-K and X append, after the question, the line ``Exact strings copied verbatim from the text block in the image:'' followed by one flagged string per line.
+For RULER and the natural-identifier questions, K and X append, after the question, the line ``Exact strings copied verbatim from the text block in the image:'' followed by one flagged string per line; for LongBench, the anchors are inserted after the image placeholder and before the question, under ``Exact strings copied verbatim from the text in the image:''.
 
 \paragraph{Prompts and scoring.}
-RULER prompts follow the official template with the context replaced by ``[The text is rendered in the image above.]'' and ask for a JSON list of values; a gold value counts as recalled if it appears (case-insensitively) in any returned string.
+RULER prompts follow the official template with the context replaced by ``[The text is rendered in the image above.]'', add ``Copy each one exactly, character for character.'', and ask for a JSON list of values; a gold value counts as recalled if it appears (case-insensitively) in any returned string.
 LongBench prompts are the official ones for each task; the first output line is scored with the official QA F1.
 For the plain-text arm the context is inserted verbatim into the same template.
 
 \paragraph{Router threshold.}
 $\tau$ is chosen per reader by two-fold cross-validation on the density sweep (folds by item parity), maximizing recall minus 0.5 times the cost relative to plain text over $\tau\in\{0,0.05,0.1,0.2,0.3,0.5,0.75,1,1.5,2,4,\infty\}$.
-Selected values were 0.1--0.5 with median 0.3, which we use for all other experiments.
+Selected values were 0.1--0.5 with median 0.3, which we use for all other experiments. The frontier in \cref{fig:density}c sweeps $\tau$ and the per-density figures use the median $\tau$; both are therefore in-sample, unlike the cross-validated aggregate.
 
 \section{Per-Reader Results}
 \label{app:tables}
@@ -43,14 +43,16 @@ This setting isolates the allocation mechanism but is not a deployment target: f
 \paragraph{Reallocation helps every reader; prose can pay for it.}
 \Cref{tab:app_short} reports word-wrapped reallocation against uniform rendering.
 Identifier exact-match improves significantly in all 24 reader--condition cells.
-Prose probes are unaffected on synthetic text, but on real manifests some weaker readers lose prose accuracy (Llama up to $-$0.39), because whole manifest lines are enlarged and prose shrinks from 6 to 5\,px.
+Prose probes are unaffected on synthetic text except for Llama at 14 characters per vision token ($-$0.39). On real manifests, weaker readers lose up to 0.38 of prose accuracy, because whole manifest lines are enlarged and prose shrinks from 6 to 5\,px.
 On long documents, where hazards occupy a small fraction of the text, this cost does not appear (\cref{tab:longbench}).
 
 \input{tab/app_short}
 
 \paragraph{The gain depends on density and reader.}
 \Cref{fig:phase} sweeps four densities from 7.8 to 21.1 characters per vision token on synthetic documents.
-The gain follows an inverted U whose peak moves to higher densities for stronger readers, as discussed in \cref{sec:analysis}.
+The gain follows an inverted U whose peak shifts with reader strength.
+The strongest readers gain most at the highest density (Claude $+$0.32 and Gemini $+$0.39 at 21 characters per vision token), where they first start to fail.
+Weaker readers gain most at moderate densities ($+$0.48 to $+$0.78 at 11--14).
 
 \begin{figure}[h]
 \centering
@@ -60,12 +62,12 @@ The gain follows an inverted U whose peak moves to higher densities for stronger
 \end{figure}
 
 \paragraph{Readers do not know when they misread.}
-Allowing an ``[unreadable]'' answer did not reduce silent errors: MiniMax-M3 used it for at most 6\% of identifiers, and its rate of wrong-but-well-formed answers did not decrease.
+Allowing an ``[unreadable]'' answer did not consistently reduce silent errors: MiniMax-M3 used it for at most 6\% of identifiers, and its rate of wrong-but-well-formed answers fell in one of four conditions (uniform, 21 characters per vision token: 0.40 to 0.31) and rose in the other three.
 This supports preventing errors at render time rather than relying on the reader's self-assessment.
 
 \paragraph{Agent-based readers can leak across items.}
 In a pilot, Claude readers accessed through an agent interface read several images in one session.
-Among their wrong prose answers, 50--100\% were names that appeared in \emph{other} images of the same session, versus 0--10\% for a stateless API reader.
+Among their wrong prose answers, 50--100\% were names that appeared in \emph{other} images of the same session, versus 0--10\% for MiniMax-M3 queried statelessly.
 All agent-based readings reported in this paper therefore use a Latin-square design in which each agent sees each item in only one form (\cref{app:claude}).
 
 \section{Negative Results}
@@ -94,7 +96,7 @@ Keeping prose at the uniform size left room only for 6--8\,px identifiers and re
 
 For each of six LongBench tasks we shuffled the documents of at most 40K characters with a fixed seed and kept the first ten that contain a usable target.
 A target is a word flagged by the detector of \cref{sec:detect} that, after stripping surrounding punctuation, has 6--64 ASCII characters including a digit, starts with a letter or digit, and is preceded by six words none of which is flagged; the six-word phrase must occur exactly once in the document.
-We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, characters replaced by ``?'' during ASCII normalization, and words glued across a missing space (a period, parenthesis, or comma directly followed by a letter).
+We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, characters replaced by ``?'' during ASCII normalization, and words glued across a missing space (a comma directly followed by a letter, a period or closing parenthesis followed by an uppercase letter, and a few letter--digit patterns); targets containing ``='' are also excluded.
 A first version of the set without the last two filters contained such artifacts in 14 of its 60 questions; because anchors and enlarged rendering present the glued string as a single unit, that version favored our arms, and we discarded it.
 The prompt asks for the exact string that follows the phrase; scoring is the same recall as for RULER.
 
@@ -110,7 +112,7 @@ Every chunk is rendered and reallocated so that $r$ uses the actual image cost.
 \label{app:claude}
 
 We also used Claude through an agent interface as a reader that is never used to choose any setting.
-For $k\in\{1,4,16,64,256\}$, ten items of the density sweep were read as X, K, and plain text in a Latin square: 15 agents each read ten different items, each in one form, using only file-reading tools.
+For $k\in\{1,4,16,64,256\}$, ten items of the density sweep were read as X, K, and plain text in a Latin square: 15 agents each read ten different items, each in one form, using only a file-reading tool and a tool to write their answer file.
 Costs are estimated with \cref{eq:vtok} for images and with the linear text-token fit of \cref{tab:app_corpora}.
 \Cref{tab:app_claude} shows that this stronger reader tolerates higher density than the API readers (0.90 for X at $k{=}64$, against 0.60 for K), and with $\tau{=}0.3$ the routed system reaches 0.98 recall at an estimated 0.61$\times$ the plain-text cost.
 Agents may resample images when reading them, and $N{=}10$ per cell is small, so these numbers are indicative.

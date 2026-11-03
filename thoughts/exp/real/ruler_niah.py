@@ -87,9 +87,11 @@ def main():
                 target = sum(len(w.strip(".,;:()[]\"'")) for w in haz); rr = random.Random(a.seed * 1000 + it["item"])
                 pool = [w.strip(".,;:()[]\"'") for w in ws if w.strip() and w not in haz and len(w.strip(".,;:()[]\"'")) >= 4]
                 rr.shuffle(pool); pick, tot = set(), 0
-                for w in pool:
+                occ = __import__("collections").Counter(w.strip(".,;:()[]\"'") for w in ws if w not in haz)
+                for w in pool:  # match the total length of ALL enlarged occurrences, not of distinct word types
                     if tot >= target: break
-                    if w not in pick and w not in it["gold"]: pick.add(w); tot += len(w)
+                    if w not in pick and w not in it["gold"] and tot + len(w) * occ[w] <= target * 1.1:
+                        pick.add(w); tot += len(w) * occ[w]
                 M.ORACLE = pick; im, lo, hi, ex = M.long_arm("S", it["text"], bud, a.size); M.ORACLE = None
             elif arm == "O":  # oracle detector: S allocation with exactly the gold needle values flagged
                 M.ORACLE = set(it["gold"]); im, lo, hi, ex = M.long_arm("S", it["text"], bud, a.size); M.ORACLE = None

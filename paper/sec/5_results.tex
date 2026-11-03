@@ -12,18 +12,18 @@ The failures are spread across readers: at 6\,px, Claude Sonnet 5.5 recovers 0.5
 Hazard-aware allocation (S) raises the mean to 0.66 and 0.70, a gain of 0.57 and 0.42, and is significantly better than uniform rendering in 33 of 36 cells.
 The two stronger uniform baselines barely help: searching font family and size (U) reaches 0.14 and 0.28, and rendering large then downsampling (Z) 0.17 and 0.23, plausibly because both spread legibility evenly over all characters.
 S is significantly worse than U or Z in none of the 72 paired comparisons, and at the lighter budget it is also 11\% cheaper than uniform rendering, because prose shrinks more than the enlarged strings grow.
-The weaker readers benefit most in absolute terms: Llama 4 Maverick goes from 0.00 to 0.58 and MiniMax-M3 from 0.00 to 0.57 at 5\,px.
+At 5\,px every reader gains 0.48--0.65. At 6\,px the weaker readers gain most (Llama 4 Maverick from 0.00 to 0.59, GPT from 0.11 to 0.65, Qwen from 0.07 to 0.60), while Gemini, already at 0.88, gains 0.12.
 
 \paragraph{Is it the targeting or the enlargement?}
-Arm R runs the same allocation but enlarges randomly chosen ordinary words with the same total length as the flagged strings, leaving the needles at prose size.
-It recovers 0.11 and 0.09 of the needles, no better than uniform rendering and significantly worse in 5 of 15 cells at 6\,px, where the needles shrink with the prose.
-S exceeds R by 0.53 and 0.56 (14 of 15 cells significant at each budget): the gain comes from \emph{which} strings are enlarged, not from enlargement as such.
+Arm R runs the same allocation but enlarges every occurrence of randomly chosen ordinary words, matched to within 10\% of the total length of the flagged strings, and leaves the needles at prose size; its sizes and vision-token cost are therefore close to those of S.
+It recovers 0.10 of the needles at both budgets, no better than uniform rendering (no significant cell at 5\,px) and significantly worse in 5 of 15 cells at 6\,px, where the needles shrink with the prose.
+S exceeds R by 0.54 and 0.56 (14 of 15 cells significant at each budget): the gain comes from \emph{which} strings are enlarged, not from enlargement as such.
 
 \paragraph{Anchors.}
-Anchors on the uniform image (K) recover 0.97 and 0.95 of the needles for 5\% more tokens than uniform rendering, a reminder that verbatim copies are hard to beat when hazards are few.
+Anchors on the uniform image (K) recover 0.97 and 0.95 of the needles for 5--6\% more tokens than uniform rendering, a reminder that verbatim copies are hard to beat when hazards are few.
 Allocation leaves one failure mode untouched: the fraction of well-formed near-misses is similar for A and S (0.13 and 0.16 at 5\,px), whereas anchors nearly remove it (0.002).
 Combining the two (X) gives the best of both.
-On the five readers on which both were run, X reaches 0.98 and 0.99 against 0.97 and 0.94 for K.
+On the five readers on which both were run, X reaches 0.98 and 1.00 against 0.97 and 0.94 for K.
 At the 6\,px budget, where allocation frees vision tokens, X is 0.06 more accurate than K (3 of 15 cells significant) and 9\% cheaper (881 vs.\ 968 billed tokens); it is even 4\% cheaper than uniform rendering alone.
 At the 5\,px budget prose cannot shrink further, so X costs the same as K and matches its accuracy.
 We return to this trade-off as hazards become denser in \cref{sec:density}.
@@ -41,9 +41,8 @@ We return to this trade-off as hazards become denser in \cref{sec:density}.
 Optical compression is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
 Under uniform rendering, mean recall declines from 0.20 at 32K to 0.15 at 64K and 0.13 at 128K, consistent with prior reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
 Hazard-aware rendering is essentially flat at 0.64, 0.64, and 0.62, so its advantage widens slightly from 0.45 to 0.48 and 0.49, with 46 of 54 cells significant.
-The cost picture is equally favorable (\cref{fig:scaling}b): reallocation uses 15\%, 23\%, and 28\% fewer billed tokens than uniform rendering at the three lengths, and 5.4$\times$, 6.6$\times$, and 7.6$\times$ fewer than the plain text, which every reader we measured answers with recall of at least 0.99.
-Individual readers differ widely in level (0.47 to 0.97 at 128K for S) and in trend.
-S improves with length for Claude and MiniMax, is roughly stable for GPT, Qwen, and Llama, and declines for Gemini (0.91 to 0.70), whose uniform curve declines even more (0.48 to 0.21).
+The cost picture is equally favorable (\cref{fig:scaling}b): reallocation uses 15\%, 23\%, and 28\% fewer billed tokens than uniform rendering at the three lengths, and, on the four readers with billed costs for both, 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than the plain text, which every reader we measured answers with recall of at least 0.99.
+Individual readers differ widely (0.47 to 0.97 at 128K for S); S declines with length only for Gemini (0.91 to 0.70), whose uniform curve declines more (0.48 to 0.21; \cref{tab:app_length}).
 
 \subsection{Hazard density, anchors, and routing}
 \label{sec:density}
@@ -51,7 +50,7 @@ S improves with length for Claude and MiniMax, is roughly stable for GPT, Qwen, 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig/density.pdf}
-\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X); recall averages six readers, cost the five that report usage (MiniMax does not). (c) Recall versus cost relative to plain text when each document is routed either to an image with anchors or to plain text by \cref{eq:route}, sweeping $\tau$ (the four readers with billed costs for both images and plain text; Claude was not run on plain text at this length). Routing with X dominates routing with K at every threshold.}
+\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X); recall averages six readers, cost the five that report usage (MiniMax does not). (c) Recall versus cost relative to plain text when each document is routed either to an image with anchors or to plain text by \cref{eq:route}, sweeping $\tau$ (the four readers with billed costs for both images and plain text; Claude was not run on plain text at this length). Routing with X matches or dominates routing with K at every threshold.}
 \label{fig:density}
 \end{figure*}
 
@@ -61,12 +60,12 @@ Anchors are strong while hazards are sparse but become both less accurate and ex
 
 Combining the two (X) gives the best of both in the regime where images are worth using.
 At $k{=}4$, X recovers 0.99 of the needles while costing 13\% \emph{less} than uniform rendering and 20\% less than K: the vision tokens saved by reallocation pay for the anchors.
-At $k{=}16$, X is 0.10 more accurate than K and 13\% cheaper, because the reader must still find which copied string belongs to the queried key, and enlarged strings make that lookup easier.
+At $k{=}16$, X is 0.10 more accurate than K on average (significant for one of six readers) and 13\% cheaper; a plausible reason is that the reader must still find which anchor belongs to the queried key, and enlarged strings should make that lookup easier.
 From $k{=}64$ on, no image arm recovers more than 0.39 of the needles, which marks where optical compression should not be used at all.
 
 The router of \cref{sec:route} turns this into a policy.
 Sweeping its threshold traces a recall--cost frontier (\cref{fig:density}c).
-On this frontier, routing between X and plain text dominates routing between K and plain text at every operating point: at a fixed $\tau{=}0.3$, it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$ (mean over the four readers that report billed costs for both images and text).
+On this frontier, routing between X and plain text matches or dominates routing between K and plain text at every operating point (mean of four readers): at a fixed $\tau{=}0.3$, it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$ (mean over the four readers that report billed costs for both images and text).
 On documents with at most 16 hazardous strings, X reaches 0.93 recall at 0.22$\times$ the plain-text cost, compared with 0.86 at 0.24$\times$ for K, and with $k\le4$ the routed system reaches 0.99--1.00 at 0.19--0.22$\times$.
 With $\tau$ cross-validated per reader instead, the routed system reaches 0.99 recall at 0.71$\times$ the plain-text cost on held-out items; this aggregate reflects that half of the documents in this sweep are dense enough to be routed to text; real corpora are much sparser (\cref{sec:analysis}).
 
@@ -93,9 +92,8 @@ Shrinking prose could hurt questions that have nothing to do with identifiers.
 Averaged over readers, F1 is unchanged on MultiFieldQA (0.35 for A, S, and X) and slightly higher on HotpotQA (0.58 for A, 0.60 for S and X).
 The full method X has no significantly negative cell among 12 and one significantly positive cell; reallocation alone has one significantly negative cell (Qwen3-VL on HotpotQA, $-$0.06).
 Anchors do not distract readers either: K is never significantly worse than A.
-Two design choices matter here.
-The detector excludes years and long English words (\cref{sec:detect}); the preliminary detector without these exclusions flagged most numbers in these documents and cost 0.05 F1 on average, with three significantly negative cells, on one LongBench sample, although it was neutral on another (\cref{app:negative}).
-And on almost half of the HotpotQA documents nothing is flagged, so the rendering is identical to uniform by construction.
+A repeat read of the same documents (\cref{app:negative}) gave S no negative cell, consistent with run-to-run variation.
+Two choices keep the cost low: the detector ignores years and long English words, whose inclusion cost 0.05 F1 with three negative cells on another sample (\cref{app:negative}), and almost half of the HotpotQA documents contain no flagged string, so they are rendered exactly as uniform.
 
 \subsection{Analysis}
 \label{sec:analysis}
@@ -105,19 +103,13 @@ And on almost half of the HotpotQA documents nothing is flagged, so the renderin
 \paragraph{How much does the detector matter?}
 \Cref{tab:detector} replaces the regex detector by an oracle that flags exactly the needle values.
 When the hazards are of a type the detector recognizes (seven-digit numbers), the regex detector is as good as the oracle, both for reallocation (0.77 vs.\ 0.78) and with anchors (0.99 vs.\ 0.99).
-When they are not (four-digit numbers, which the detector deliberately ignores), reallocation and anchors fall back to exactly the uniform result (0.33 and 0.32 vs.\ 0.32), while the oracle would reach 0.82 and 0.99.
+When they are not (four-digit numbers, which the detector deliberately ignores), reallocation and anchors fall back to the uniform rendering in 24 of 25 documents and match its recall (0.33 and 0.32 vs.\ 0.32), while the oracle would reach 0.82 and 0.99.
 When a document's hazards all go undetected, the method thus costs the gain but does no harm. Hazards missed in documents where other strings are flagged would instead be shrunk with the prose, which this experiment does not test; improving detector recall, for example with task-specific patterns, is the remedy.
 
 \paragraph{Where do real documents fall?}
-The router decides from text alone, so we can profile real corpora without querying any model.
-We rendered 32K-character chunks from 13 LongBench tasks, essays, Python source, system logs, and package manifests (\cref{app:corpora}).
-Prose-dominated documents (QA, summarization, essays) are routed to images 95--100\% of the time at an estimated 0.19--0.27$\times$ the plain-text cost, and technical prose with occasional identifiers (MultiFieldQA) 75\% of the time at 0.43$\times$.
-Code is mostly routed to text (0.81--0.96$\times$), and logs and manifests always are.
-This matches the density sweep: hazard-aware rendering is a tool for long documents that \emph{contain} identifiers, not for documents that \emph{consist} of them.
+Because the router decides from text alone, we profiled 32K-character chunks of 13 LongBench tasks, essays, Python source, system logs, and package manifests without querying any model (\cref{app:corpora}).
+Prose-dominated documents are routed to images 95--100\% of the time at an estimated 0.19--0.27$\times$ the plain-text cost, and technical prose with occasional identifiers (MultiFieldQA) 75\% of the time at 0.43$\times$; code is mostly routed to text (0.81--0.96$\times$), and logs and manifests always are.
+Hazard-aware rendering is thus a tool for long documents that \emph{contain} identifiers, not for documents that \emph{consist} of them.
 
 \paragraph{Which readers benefit?}
-On short documents at four densities (\cref{app:short}), the gain over uniform rendering follows an inverted U whose peak shifts with reader strength.
-The strongest readers gain most at the highest density (Claude $+$0.32 and Gemini $+$0.39 at 21 characters per vision token), where they first start to fail.
-Weaker readers gain most at moderate densities ($+$0.48 to $+$0.78 at 11--14).
-Reallocation helps wherever a reader is close to, but not past, its legibility limit, which is why a single budget benefits all six readers in \cref{tab:baselines}.
-A seventh reader, Claude accessed through an agent interface, gives a consistent picture on a small sample ($N{=}10$ per cell, estimated costs): with $\tau{=}0.3$ fixed from the other readers, it reaches 0.98 recall at about 0.61$\times$ the plain-text cost (\cref{app:claude}).
+On short documents, the gain follows an inverted U over density whose peak moves to higher densities for stronger readers, which suggests that reallocation helps most where a reader is close to, but not past, its legibility limit (\cref{app:short}).

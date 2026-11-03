@@ -15,7 +15,7 @@ r = json.loads((EXP / "analysis_ruler.json").read_text())
 lb = json.loads((EXP / "analysis_longbench.json").read_text())
 num, reg = {}, []
 
-def mean(xs): xs = [x for x in xs if x is not None]; return round(St.mean(xs), 3) if xs else None
+def mean(xs): xs = [x for x in xs if x is not None]; return round(St.mean(xs), 6) if xs else None  # round once, at display time
 
 # --- Table 1: equal-budget arms on RULER 16K. rbx_* = rbase_* (A,S,U,Z,K) merged item-by-item with rabl_* (R,X) ---
 ARMS1 = "ASUZKRX"

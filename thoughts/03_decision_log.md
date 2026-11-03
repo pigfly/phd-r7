@@ -274,3 +274,8 @@
   - Main fixes: long-document densities corrected to ≈32/21 chars/vtok (21/14 applies only to short docs); double rounding removed from the table generators (X 6px mean 1.00, 128K A 0.13); cost ratios recomputed on matched readers (5.4/6.8/8.0×, 4.7K); procedure statements aligned with code (temperature 0.01 for MiniMax, up to 3 retries, unparseable outputs scored wrong, anchor placement in LongBench, agents had a write tool).
   - **Random-enlargement ablation R rerun** (`rabl2_*`): the old implementation enlarged every occurrence of the sampled words, about 5× the flagged-string length. After matching total length (0.96–1.09×), R = 0.10/0.10, S−R = +0.54/+0.56 (14/15 significant each); conclusion unchanged.
 - The main body is still exactly 8 pages (a few sentences compressed and the reader-strength analysis moved to Appendix C).
+
+## Stage 3 review round 1 (2026-11-04)
+- 5 seats (Claude subagents, role-separated): all Major Revision. Reports in paper/review/r1_*.md; decision letter + roadmap in paper/review/round1_editorial.md.
+- User decision: **cite R-or-R and narrow novelty to budget-constrained allocation** (reverses 2026-11-03 decision). K/routing become prior-work baseline.
+- User decision: Stage 4 scope = P0 (RM-1..4) + cheap P1 (RM-5 detector-independent NIQ, RM-6 8–10px, RM-7 stats, RM-8 salience control). Skip local Glyph/DeepSeek-OCR/pruning (RM-10 → scoping paragraph).

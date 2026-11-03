@@ -270,3 +270,7 @@
 - 正文恰好 8 页（参考文献从第 9 页开始），无余量。
 - **下一步**：Stage 2.5 完整性检查（MANDATORY）。
 - **2026-11-04 Stage 2.5**：用户决定跳过 academic-pipeline 的"AI 研究失败模式清单"（7 项）检查（pipeline 默认强制；此处记录为用户覆盖，未给出理由）。只做数字核对、引用核对、说法与证据一致性、可复现性陈述核对，由独立子代理执行，报告见 `paper/lit/integrity_stage2.5.md`。
+- **Stage 2.5 integrity check (3 rounds, independent subagents)**: round 1 FAIL (10 numeric mismatches, 3 contradicted claims, 5 code contradictions, 6 imprecise citations; none changed a headline result). After fixes, round 2 found 42/45 resolved plus 2 new findings; round 3 left only the billing-exceptions sentence, fixed exactly as suggested (not independently re-verified, since the 3-round cap was reached).
+  - Main fixes: long-document densities corrected to ≈32/21 chars/vtok (21/14 applies only to short docs); double rounding removed from the table generators (X 6px mean 1.00, 128K A 0.13); cost ratios recomputed on matched readers (5.4/6.8/8.0×, 4.7K); procedure statements aligned with code (temperature 0.01 for MiniMax, up to 3 retries, unparseable outputs scored wrong, anchor placement in LongBench, agents had a write tool).
+  - **Random-enlargement ablation R rerun** (`rabl2_*`): the old implementation enlarged every occurrence of the sampled words, about 5× the flagged-string length. After matching total length (0.96–1.09×), R = 0.10/0.10, S−R = +0.54/+0.56 (14/15 significant each); conclusion unchanged.
+- The main body is still exactly 8 pages (a few sentences compressed and the reader-strength analysis moved to Appendix C).

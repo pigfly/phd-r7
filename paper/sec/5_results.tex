@@ -42,7 +42,7 @@ Optical compression is most attractive for long documents, so \cref{fig:scaling}
 Under uniform rendering, mean recall declines from 0.20 at 32K to 0.15 at 64K and 0.13 at 128K, consistent with prior reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
 Hazard-aware rendering is essentially flat at 0.64, 0.64, and 0.62, so its advantage widens slightly from 0.45 to 0.48 and 0.49, with 46 of 54 cells significant.
 The cost picture is equally favorable (\cref{fig:scaling}b): reallocation uses 15\%, 23\%, and 28\% fewer billed tokens than uniform rendering at the three lengths, and, on the four readers with billed costs for both, 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than the plain text, which every reader we measured answers with recall of at least 0.99.
-Individual readers differ widely (0.47 to 0.97 at 128K for S); S declines with length only for Gemini (0.91 to 0.70), whose uniform curve declines more (0.48 to 0.21; \cref{tab:app_length}).
+Individual readers differ widely (0.47 to 0.97 at 128K for S); S rises with length for Claude and MiniMax and declines for the others, most for Gemini (0.91 to 0.70), whose uniform curve declines more (0.48 to 0.21; \cref{tab:app_length}).
 
 \subsection{Hazard density, anchors, and routing}
 \label{sec:density}

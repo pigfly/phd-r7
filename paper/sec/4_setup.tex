@@ -5,7 +5,7 @@
 We treat every VLM as a black box and query it with one stateless request per item at temperature 0 (0.01 for MiniMax); a request whose output cannot be parsed is re-sent up to three times.
 The six readers span vendors, scales, and open weights: Claude Sonnet 5.5, Gemini 3.5 Flash-Lite, GPT-6 Luna (minimal reasoning effort), Qwen3-VL-235B-A22B~\cite{bai2025qwen3vl}, Llama 4 Maverick, and MiniMax-M3.
 Costs are the prompt tokens billed by each provider, which include the image, the question, and any appended copy; MiniMax does not report usage and is excluded from cost averages only.
-Empty responses and transport errors (73 of about 33{,}000 calls in all experiments reported here) are dropped; any other unparseable output, including refusals and degenerate repetition, counts as wrong.
+Empty responses and transport errors (fewer than 100 of roughly 35{,}000 calls in all experiments reported here, about 0.25\%) are dropped; any other unparseable output, including refusals and degenerate repetition, counts as wrong.
 
 \paragraph{Tasks.}
 Verbatim fidelity is measured with RULER needle-in-a-haystack tasks~\cite{hsieh2024ruler}, re-implemented with the official templates and Paul Graham essays as the haystack: \emph{single} (one UUID value), \emph{multi-key} (four keys, one queried, numeric values), and \emph{multi-value} (four numeric values for one key).

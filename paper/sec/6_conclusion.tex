@@ -2,14 +2,13 @@
 \label{sec:conclusion}
 
 \paragraph{Limitations.}
-Most of our fidelity evaluation uses synthetic needles, and the natural-identifier set is small (60 automatically constructed questions).
-On that set, the full method still trails plain text by 0.21 recall on average, so weaker readers should be routed to text more often than our density threshold alone would suggest.
+Most fidelity tests use synthetic needles; on our small natural-identifier set (60 automatically constructed questions), the full method trails plain text by 0.21 recall, so weaker readers should be routed to text more often.
 We evaluate black-box readers only and therefore cannot say how enlarged glyphs change a model's internal attention.
-Budgets follow one patch-based accounting rule (\cref{eq:vtok}), and providers tile images differently: billed costs confirm the savings for Claude, GPT, and Qwen, whereas Llama is billed independently of image size and Gemini slightly more for our images at up to 32K characters.
+Budgets follow one patch-based accounting rule (\cref{eq:vtok}), and providers tile images differently: billed savings hold in most settings, with exceptions on RULER at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama at 16K, whose billing ignores image size).
 The detector is rule-based and recall-bounded: hazards it does not recognize receive no protection, and in documents where other strings are flagged they are shrunk with the prose.
-Finally, reallocation alone raises recall without reducing the share of confident near-misses; only anchors remove them.
+Finally, allocation alone does not reduce confident near-misses; only anchors do.
 
 \paragraph{Conclusion.}
-Optical context compression decides how many pixels a document receives but not where they go, and its failures concentrate on the strings that must survive verbatim.
+Optical compression decides how many pixels a document receives but not where they go.
 Because the renderer reads the text before drawing it, it can spend resolution where errors hurt, reinvest the savings in anchors, and fall back to text for identifier-dense documents.
 Across the readers we tested, this training-free procedure more than triples the recall of naturally occurring identifiers at about one fifth of the plain-text cost.

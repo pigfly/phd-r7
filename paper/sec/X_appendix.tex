@@ -97,14 +97,14 @@ Keeping prose at the uniform size left room only for 6--8\,px identifiers and re
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig/density.pdf}
-\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X); recall averages six readers, cost the five that report usage (MiniMax does not). (c) Recall versus cost relative to plain text when each document is routed either to an image with anchors or to plain text by \cref{eq:route}, sweeping $\tau$ (the four readers with billed costs for both images and plain text).}
+\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X); recall averages the five non-Claude readers; cost averages the readers that report usage (Claude included, MiniMax excluded). (c) Recall versus cost relative to plain text when each document is routed either to an image with anchors or to plain text by \cref{eq:route}, sweeping $\tau$ (the four readers with billed costs for both images and plain text).}
 \label{fig:density}
 \end{figure*}
 
-\Cref{fig:density} varies the number of flagged strings per 32K-character document from 1 to 256 (six readers; per-reader values in \cref{tab:app_density}).
-Allocation alone degrades as density grows (0.50 at $k{=}1$, 0.33 at $k{=}16$, 0.13 at $k{=}64$), because more strings compete for the pixels prose can give up.
-Anchors are strong while hazards are sparse but become both less accurate and expensive as they multiply, reaching 0.39 recall at $k{=}64$ for 1.8$\times$ the tokens of uniform rendering.
-At $k{=}4$, X recovers 0.99 of the needles while costing 13\% less than uniform rendering and 20\% less than K.
+\Cref{fig:density} varies the number of flagged strings per 32K-character document from 1 to 256 (per-reader values, including Claude, in \cref{tab:app_density}).
+Allocation alone degrades as density grows (0.42 at $k{=}1$, 0.24 at $k{=}16$, 0.06 at $k{=}64$), because more strings compete for the pixels prose can give up.
+Anchors are strong while hazards are sparse but become both less accurate and expensive as they multiply, reaching 0.34 recall (K) at $k{=}64$ for 1.8$\times$ the tokens of uniform rendering.
+At $k{=}4$, X recovers 0.98 of the needles while costing 13\% less than uniform rendering and 20\% less than K.
 Under the precision-aware F1, however, X and K do not differ (pooled over $k\in\{1,4,16\}$: $-$0.01, CI [$-$0.07, 0.04]), and several readers return most of the anchor list at $k\ge4$.
 For routing, $\tau$ was chosen per reader by two-fold cross-validation on this sweep; the selected values have median 0.3.
 Sweeping $\tau$ traces the recall--cost frontiers of panel (c), on which routing with X matches or dominates routing with K; at $\tau{=}0.3$ it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$.

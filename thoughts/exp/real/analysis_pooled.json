@@ -351,6 +351,38 @@
   "sig_pos_holm": 30,
   "sig_neg_holm": 0
  },
+ "niq2_s5|X-K|recall": {
+  "pooled": 0.037,
+  "ci_items": [
+   -0.01,
+   0.087
+  ],
+  "ci_readers_items": [
+   -0.03,
+   0.107
+  ],
+  "cells": 5,
+  "sig_pos": 0,
+  "sig_neg": 0,
+  "sig_pos_holm": 0,
+  "sig_neg_holm": 0
+ },
+ "niq2_s5|X-K|f1": {
+  "pooled": 0.031,
+  "ci_items": [
+   -0.018,
+   0.082
+  ],
+  "ci_readers_items": [
+   -0.034,
+   0.1
+  ],
+  "cells": 5,
+  "sig_pos": 0,
+  "sig_neg": 0,
+  "sig_pos_holm": 0,
+  "sig_neg_holm": 0
+ },
  "niq2_s6|S-A|recall": {
   "pooled": 0.247,
   "ci_items": [
@@ -477,6 +509,38 @@
   "sig_pos": 5,
   "sig_neg": 0,
   "sig_pos_holm": 5,
+  "sig_neg_holm": 0
+ },
+ "niq2_s7|X-K|recall": {
+  "pooled": 0.047,
+  "ci_items": [
+   -0.013,
+   0.107
+  ],
+  "ci_readers_items": [
+   -0.06,
+   0.157
+  ],
+  "cells": 5,
+  "sig_pos": 1,
+  "sig_neg": 0,
+  "sig_pos_holm": 1,
+  "sig_neg_holm": 0
+ },
+ "niq2_s7|X-K|f1": {
+  "pooled": 0.046,
+  "ci_items": [
+   -0.013,
+   0.104
+  ],
+  "ci_readers_items": [
+   -0.057,
+   0.151
+  ],
+  "cells": 5,
+  "sig_pos": 1,
+  "sig_neg": 0,
+  "sig_pos_holm": 1,
   "sig_neg_holm": 0
  },
  "niq3_s6|S-A|recall": {

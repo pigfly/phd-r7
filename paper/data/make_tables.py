@@ -45,7 +45,7 @@ for rd in RD:
     for L in ("32k", "64k", "128k"):
         v = ls[f"{L}|{rd}"]; c += [f"{v['A']:.2f}", f"\\textbf{{{v['S']:.2f}}}"]
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
-rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{ls[f'{L}|mean'][a]:.2f}" for L in ("32k", "64k", "128k") for a in "AS") + " \\\\"]
+rows += ["\\midrule", "\\textit{Mean (5 readers, excl.\\ Claude)} & " + " & ".join(f"{St.mean(ls[f'{L}|{r}'][a] for r in RD if r != 'claude-sonnet-5.5'):.2f}" for L in ("32k", "64k", "128k") for a in "AS") + " \\\\"]
 (TAB / "app_length.tex").write_text(r"""\begin{table}[h]
 \centering\small\setlength{\tabcolsep}{4pt}
 \caption{Per-reader recall for the length study (\cref{fig:scaling}).}
@@ -211,7 +211,7 @@ prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RUL
        prow("RULER 16K, 5\\,px", "tab1_s5", "X-K", "f1"), prow("RULER 16K, 6\\,px", "tab1_s6", "X-K", "f1"),
        prow("RULER 32K, 8\\,px", "s8", "X-K", "f1"), prow("RULER 32K, 10\\,px", "s10", "X-K", "f1"),
        prow("density $k\\le16$, 32K", "density", "X-K", "f1"), prow("multi-key 64K--128K", "long_kx", "X-K", "f1"),
-       prow("natural, flagged", "niq2_s6", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
+       prow("natural, flagged, 5\\,px", "niq2_s5", "X-K"), prow("natural, flagged, 6\\,px", "niq2_s6", "X-K"), prow("natural, flagged, 7\\,px", "niq2_s7", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
 (TAB / "pooled.tex").write_text(r"""\begin{table}[t]
 \centering
 \caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative. All X$-$K comparisons we ran are listed.}

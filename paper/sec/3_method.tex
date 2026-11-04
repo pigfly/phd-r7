@@ -68,7 +68,7 @@ Budget computation plus allocation takes about 1\,s for 32K and 4\,s for 128K ch
 \label{sec:anchor}
 \label{sec:route}
 
-When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row; in our long-context runs it used 15--28\% fewer billed tokens than uniform rendering.
+When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row; in our long-context runs it used 13--27\% fewer billed tokens than uniform rendering.
 Following~\cite{anon2026renderretain}, we spend these savings on \emph{anchors}: after the question, the flagged strings are appended verbatim as text, under a line stating that they are copied exactly from the image.
 Anchors carry no key, but when a document contains only one or a few flagged strings, the anchor list is short and may consist of the answer alone, so a reader can answer without reading the image (\cref{sec:anchors}).
 Anchor cost grows linearly with the number of flagged strings, so before any model call we compute the ratio

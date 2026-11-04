@@ -28,14 +28,14 @@ The gain therefore comes from making the targeted strings legible, not from layo
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/scaling.pdf}
-\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three image pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean over five readers. (b) Billed prompt tokens averaged over readers that report usage; note the log scale.}
+\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three image pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean over five readers. (b) Billed prompt tokens averaged over the four of these readers that report usage; note the log scale.}
 \label{fig:scaling}
 \end{figure}
 
 Optical compression is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
 Under uniform rendering, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
-Allocation stays between 0.60 and 0.56, a pooled gain of 0.48 [0.42, 0.54] with 35 of 45 cells significant after Holm correction.
-It also uses 15\%, 23\%, and 28\% fewer billed tokens than uniform rendering at the three lengths and, on the four readers with billed costs for both, 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than the plain text, which every reader answers with recall of at least 0.99.
+Allocation stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
+It also uses 13\%, 23\%, and 27\% fewer billed tokens than uniform rendering at the three lengths and, on the four readers with billed costs for both, 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than the plain text, which every reader answers with recall of at least 0.99.
 Individual readers differ widely (0.47 to 0.97 at 128K for S; \cref{tab:app_length}).
 
 \subsection{Milder budgets}
@@ -57,7 +57,7 @@ We built two sets of 60 questions from LongBench documents of up to 40K characte
 In the first set, targets are strings the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs.
 Here allocation doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer billed tokens than uniform rendering (\cref{tab:niq}).
 In the second set, targets are any digit-bearing tokens of at least four characters, sampled without the detector; the detector flags only one of the 60, because most are short numbers, percentages, and version strings such as ``25,000'' or ``2.0.13''.
-On these, every image arm is equally poor (0.36--0.45 against 0.96 for text), and allocation neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
+On these, every image arm is poor (0.36--0.45 against 0.96 for text), and allocation neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
 Shrinking prose to make room for flagged strings thus did not measurably damage the strings the detector misses, but nothing in the image protects them either.
 
 \subsection{Anchors on the allocated image}
@@ -98,5 +98,5 @@ Together with the detector-independent set of \cref{sec:niq}, this suggests that
 
 \paragraph{Where do real documents fall?}
 Because the routing ratio is computed from text alone, we profiled 32K-character chunks of 13 LongBench tasks, essays, Python source, system logs, and package manifests without querying any model (\cref{app:corpora}).
-Prose-dominated documents are routed to images 95--100\% of the time at an estimated 0.19--0.27$\times$ the plain-text cost, while code is mostly routed to text and logs and manifests always are.
+Prose-dominated documents are routed to images 95--100\% of the time at an estimated 0.19--0.27$\times$ the plain-text cost and technical prose (MultiFieldQA) 75\% of the time, while code is mostly routed to text and logs and manifests always are.
 Hazard-aware rendering is thus a tool for long documents that \emph{contain} identifiers, not for documents that \emph{consist} of them.

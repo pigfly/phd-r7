@@ -100,6 +100,8 @@ def teaser():
 
 # ---------------------------------------------------------------- length scaling
 R5 = [r for r in N["reader_names"] if r != "claude-sonnet-5.5"]
+def b5(L, arm):
+    v = [N["length_scaling"][f"{L}|{r}"][f"billed_{arm}"] for r in R5]; v = [x for x in v if x]; return sum(v) / len(v)
 def m5(L, arm): return sum(N["length_scaling"][f"{L}|{r}"][arm] for r in R5) / len(R5)  # fixed 5-reader mean (review RM-7)
 def scaling():
     Ls = ["32k", "64k", "128k"]; xs = [32, 64, 128]; ls = N["length_scaling"]
@@ -113,7 +115,7 @@ def scaling():
                 mfc=("white" if arm == "A" else C[arm]))
     a1.set_ylim(0, 1.0); a1.set_ylabel("needle recall"); a1.text(0.02, 0.97, "(a)", transform=a1.transAxes, va="top", fontsize=7.5)
     for arm in "AST":
-        a2.plot(xs, [ls[f"{L}|mean"][f"billed_{arm}"] / 1000 for L in Ls], color=C[arm], marker=MK[arm], ls=LS[arm],
+        a2.plot(xs, [b5(L, arm) / 1000 for L in Ls], color=C[arm], marker=MK[arm], ls=LS[arm],
                 label=LAB[arm], mfc=("white" if arm == "A" else C[arm]))
     a2.set_yscale("log"); a2.set_yticks([1.5, 3, 6, 12, 25]); a2.set_yticklabels(["1.5", "3", "6", "12", "25"])
     a2.minorticks_off(); a2.set_ylabel("billed prompt tokens (K)"); a2.text(0.02, 0.97, "(b)", transform=a2.transAxes, va="top", fontsize=7.5)
@@ -129,7 +131,7 @@ def density():
     fig, axs = plt.subplots(1, 3, figsize=(6.9, 1.75), gridspec_kw=dict(wspace=0.32, left=0.06, right=0.99, bottom=0.22, top=0.88))
     for ax in axs: style(ax)
     for arm in "ASKX":
-        axs[0].plot(ks, [d[str(k)][arm] for k in ks], color=C[arm], marker=MK[arm], ls=LS[arm], label=LAB[arm],
+        axs[0].plot(ks, [sum(d[str(k)]["per_reader"][r][arm] for r in R5) / len(R5) for k in ks], color=C[arm], marker=MK[arm], ls=LS[arm], label=LAB[arm],
                     mfc=("white" if arm == "A" else C[arm]))
         axs[1].plot(ks, [d[str(k)][f"billed_{arm}"] / 1000 for k in ks], color=C[arm], marker=MK[arm], ls=LS[arm],
                     mfc=("white" if arm == "A" else C[arm]))

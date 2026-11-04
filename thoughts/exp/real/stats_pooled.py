@@ -90,7 +90,7 @@ FAMILIES = {
     "tab1_s5": [f"rbx_s5_{t}+rabl2_s5_{t}" for t in ("single_3", "multikey_1", "multivalue")],
     "tab1_s6": [f"rbx_s6_{t}+rabl2_s6_{t}" for t in ("single_3", "multikey_1", "multivalue")],
     "length": [f"rlong_c{c}k_{t}" for c in (32, 64, 128) for t in ("single_3", "multikey_1", "multivalue")],
-    "niq2_s6": ["niq2_s6"], "niq3_s6": ["niq3_s6"],
+    "niq2_s5": ["niq2_s5"], "niq2_s6": ["niq2_s6"], "niq2_s7": ["niq2_s7"], "niq3_s6": ["niq3_s6"],
     "density": [f"rdens_k{k}" for k in (1, 4, 16)],
     "box_s6": [f"rv2_box_s6_{t}" for t in ("single_3", "multikey_1", "multivalue")],
     "s8": [f"rv2_s8_c32k_{t}" for t in ("single_3", "multikey_1")], "s10": [f"rv2_s10_c32k_{t}" for t in ("single_3", "multikey_1")],
@@ -98,7 +98,7 @@ FAMILIES = {
     "longbench": ["lb3_s6_mfqa", "lb3_s6_hotpot"],
 }
 COMPARE = {"tab1_s5": ["S-A", "S-U", "S-Z", "S-R", "X-K"], "tab1_s6": ["S-A", "S-U", "S-Z", "S-R", "X-K"],
-           "length": ["S-A"], "niq2_s6": ["S-A", "X-A", "X-K", "K-A"], "niq3_s6": ["S-A", "X-A", "X-K", "K-A", "X-T"],
+           "length": ["S-A"], "niq2_s5": ["X-K"], "niq2_s6": ["S-A", "X-A", "X-K", "K-A"], "niq2_s7": ["X-K"], "niq3_s6": ["S-A", "X-A", "X-K", "K-A", "X-T"],
            "density": ["S-A", "X-K"], "box_s6": ["B-A", "S-B", "S-A"], "s8": ["S-A", "S-U", "X-K"], "s10": ["S-A", "S-U", "X-K"],
            "long_kx": ["S-A", "X-K", "K-A", "X-A", "X-S"], "longbench": ["S-A", "X-A", "K-A", "X-T"]}
 

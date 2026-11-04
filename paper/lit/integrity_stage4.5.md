@@ -109,3 +109,61 @@ Fixed reader set used for checking: the 5 non-Claude readers (Gemini 3.5 Flash-L
   - 14/60 artifacts
   - linear fit 0.208/0.737/1.1%
 - **Teaser**: Claude's answer is a well-formed UUID with 4 wrong characters; allocation draws it at s_hi 12 / s_lo 6 on a 31.9K-character document.
+
+## Round 2 re-verification
+
+Verifier: independent (did not author). Date: 2026-11-05. Scope: commit 83853f4 ("Stage 4.5 fixes...") against parent d981c0f. Evidence: paper/data/numbers.json, thoughts/exp/real/analysis_pooled.json, thoughts/exp/real/analysis_rescore.json (not implicated by this diff).
+
+### M1. Length-study CI — FIXED
+sec/5_results.tex:37 now reads "a pooled gain of 0.48 [0.43, 0.53]". analysis_pooled.json `length|S-A|recall`: `ci_readers_items` = [0.435, 0.525] → rounds to [0.43, 0.53]. Matches tab/pooled.tex's "S−A, 32K–128K, 6px" row (+0.48 [+0.43, +0.53]). Verified.
+
+### M2. Length-study cost savings (Claude excluded) — FIXED
+sec/5_results.tex:38 now reads "13%, 23%, and 27% fewer billed tokens". Recomputing from numbers.json `length_scaling[L|reader].billed_A/billed_S` over the 4 non-Claude readers that report usage (gemini-3.5-flash-lite, gpt-6-luna, qwen3-vl-235b, llama-4-maverick — minimax's billed fields are 0/absent) gives 13.36%, 23.38%, 27.03% → 13/23/27%. Matches exactly. Abstract (0_abstract.tex:7, "up to 27%") and method (3_method.tex:71, "13–27%") were updated consistently. fig/make_figures.py `scaling()` now uses a new `b5(L, arm)` helper that averages `billed_*` over `R5` filtering falsy values, which reproduces the same 4-reader set used in the text — Fig. 3b is now consistent. Verified.
+
+### M3. tab/app_length.tex Mean row — FIXED
+make_tables.py now computes the Mean row as `St.mean(... for r in RD if r != 'claude-sonnet-5.5')`, and the row is relabeled "Mean (5 readers, excl. Claude)". Recomputing the 5-reader means directly from numbers.json gives A = 0.1192/0.0809/0.0725 and S = 0.6009/0.5746/0.5551 at 32K/64K/128K, which round to the printed 0.12/0.60, 0.08/0.57, 0.07/0.56. Verified.
+
+### M4. Appendix density sweep (5-reader means) — FIXED
+X_appendix.tex now says "Allocation alone degrades as density grows (0.42 at k=1, 0.24 at k=16, 0.06 at k=64)", "reaching 0.34 recall (K) at k=64", and "X recovers 0.98 of the needles" at k=4; the figure caption and in-text aside now say recall averages "the five non-Claude readers" (tab:app_density itself is unchanged and is now correctly described as "including Claude"). Recomputing from numbers.json `density_sweep[k].per_reader[r]` over the 5 non-Claude readers gives S = 0.424/0.240/0.064 (k=1/16/64), K at k=64 = 0.344, X at k=4 = 0.984 — all round to the printed values. fig/make_figures.py `density()` panel (a) now averages `per_reader[r][arm]` over `R5`; panel (b) (cost) is unchanged, consistent with the caption's "cost averages the readers that report usage (Claude included, MiniMax excluded)". Verified.
+
+### B2 wording (third person) — FIXED
+2_related.tex:12 now reads "is the closest prior work" instead of "is the direct predecessor of this work", removing the shared-authorship implication. (The anonymized-supplementary-copy question itself is a user action outside the manuscript, not re-checked here, per task scope.)
+
+### Wording nits — FIXED
+- DocOwl2/TextMonkey (2_related.tex:9): now "compress the visual tokens of high-resolution pages with learned modules" — sidesteps the selection-vs-compression inaccuracy entirely; accurate for both systems.
+- gim2024promptcache (2_related.tex:22): now "reusing cached prompt segments" — accurate (Prompt Cache reuses attention states of modular prompt segments, not just a prefix).
+
+### Non-blocking item 1 (conclusion, "cheaper... prior work") — FIXED
+6_conclusion.tex:15 now reads "makes the anchors of prior work cheaper where prose can shrink", conditioning the claim as in the abstract.
+
+### Non-blocking item 2 (abstract, unconditioned anchor-accuracy claim) — FIXED
+0_abstract.tex:10 now reads "For flagged targets, verbatim anchors from prior work are as accurate...". 1_intro.tex:33 contribution bullet was also updated to "pooled X−K between −0.01 and +0.05 in every setting with flagged targets". Checking every flagged-target X−K row in the new tab/pooled.tex (RULER 16K 5/6px: 0.00/+0.04; RULER 32K 8/10px: 0.00/0.00; density k≤16: −0.01; multi-key 64–128K: −0.01; natural flagged 5/6/7px: +0.04/+0.02/+0.05) the min is −0.01 and the max is +0.05 — matches exactly, including why the bound changed from the old "+0.04" to "+0.05" (the new 7px row introduces the new max). Verified.
+
+### Non-blocking item 3 (MultiFieldQA exception) — FIXED
+5_results.tex:101 now reads "...and technical prose (MultiFieldQA) 75% of the time, while code is mostly routed to text...", naming the exception instead of silently omitting it.
+
+### Non-blocking item 4 ("equally poor") — FIXED
+5_results.tex:60 now reads "every image arm is poor (0.36–0.45...)", dropping "equally", consistent with X being significantly below A in 2/5 niq3 cells.
+
+### Non-blocking item 5 ("no single difference is significant") — NOT FIXED; NEW CONTRADICTION INTRODUCED
+The commit added the missing 5px/7px X−K rows to tab/pooled.tex (as item 5 asked), but this exposes that the claim itself is now false. sec/5_results.tex:74 still reads "...although no single difference is significant (\cref{tab:pooled})" directly citing the pooled table. The newly added row "natural, flagged, 7\,px" in tab/pooled.tex reports sig = **1/5** (one reader×task cell significant positive after Holm correction), matching analysis_pooled.json / numbers.json `niq2_s7|X-K|recall` (`sig_pos_holm: 1`). This is the same meaning of "sig." used elsewhere in the paper (e.g. 5_results.tex:11 uses the identical column to claim "significant in 14 and 11 of 15 cells"), so "no single difference is significant" is contradicted by the very row the fix commit added. This also affects the frontier claim on the same line ("X thus lies on or above K's frontier ... although no single difference is significant") — the 7px cell is an exception.
+- Fix needed: either qualify the sentence (e.g. "all but one of the 15 cells across the three sizes are non-significant" or restrict the claim to 5px/6px and flag the 7px exception), or drop "although no single difference is significant" and let the CIs in tab:pooled speak for themselves.
+
+### New numbers introduced by the fix commit — spot check
+- 13/23/27% cost savings (abstract, method, results): verified against numbers.json (see M2).
+- 5-reader density means 0.42/0.24/0.06, K 0.34 at k=64, X 0.98 at k=4: verified against numbers.json (see M4).
+- New tab/pooled.tex rows (niq2_s5, niq2_s7, X−K recall): pooled +0.04/+0.05, CIs [−0.03,+0.11]/[−0.06,+0.16], sig 0/5 and 1/5 — all verified byte-for-byte against analysis_pooled.json / numbers.json.
+- Intro "between −0.01 and +0.05": verified as the true min/max over all flagged-target X−K rows in the updated tab/pooled.tex (see non-blocking item 2).
+- analysis_rescore.json is not touched by this diff and introduces no new numbers requiring a check here.
+
+### Format / page limit — PASS (re-confirmed)
+`pdftotext -layout main.pdf` shows page 8 ends mid-conclusion ("...makes the anchors of prior ...") and page 9 begins with reference-list entries ([11]/[12]); `pdfinfo` reports 15 pages total (main body + appendix + refs). `grep -ni "warning" main.log` shows no "undefined"/"multiply defined" citation or reference warnings (only benign package-load and float-placement notices). PASS.
+
+### B1 (citing anon2026renderretain) — not a blocker
+Per task instructions, citing anon2026renderretain is approved by the user and is not re-litigated here.
+
+## Round 2 verdict: FAIL (one item, low severity, fixable in minutes)
+
+Items M1–M4, B2 wording, and all five previously-listed wording/claim-evidence nits are confirmed FIXED and every new number the fix commit introduced (cost %, density means, new pooled.tex rows, intro bound) matches the evidence files exactly. Format checks (page 8/9 split, no undefined refs) PASS.
+
+The sole remaining problem is self-inflicted by this fix commit: adding the 5px/7px natural-flagged X−K rows to tab/pooled.tex (to satisfy the old non-blocking item 5, "the 5/7 px comparisons are not reported anywhere") surfaces that the 7px row has 1/5 Holm-significant cells, which falsifies the still-unedited claim at sec/5_results.tex:74 ("although no single difference is significant"). This is a one-line text fix (soften or scope the claim), not a data problem — no table, figure, or other sentence needs to change.

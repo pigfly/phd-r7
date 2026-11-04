@@ -71,7 +71,7 @@ These numbers measure copying rather than reading, so we compare K and X where t
 On the flagged natural identifiers, documents carry 5.3 distinct anchors on average, and choosing one at random would score 0.44.
 Readers do better (K 0.74, X 0.76) and almost always return a single value, so here the anchors are used, not dumped.
 Repeating this set at base sizes of 5, 6, and 7\,px gives a recall--cost frontier for each arm: X reaches 0.75, 0.76, and 0.81 at 1017, 1128, and 1306 billed tokens, and K reaches 0.71, 0.74, and 0.77 at 1014, 1267, and 1345.
-X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink), although no single difference is significant (\cref{tab:pooled}).
+X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink), although the pooled confidence intervals all include zero and only one reader--budget cell is significant (\cref{tab:pooled}).
 At 64K and 128K characters, X costs 31\% and 29\% fewer billed tokens than K because allocation shrinks the image, but on multi-key the precision-aware F1 is the same for S, K, and X (0.36--0.40), so there the anchors add nothing over allocation alone.
 When the target is \emph{not} flagged, anchors can mislead: on the detector-independent set, X scores 0.36 against 0.44 for S and K ($-$0.08 vs.\ K, CI [$-$0.17, 0.01]), consistent with readers copying a plausible anchor instead of reading the image.
 On a synthetic sweep of hazard density (\cref{app:density}), anchors on either image become expensive and ineffective beyond about 16 flagged strings per 32K characters, which is where routing to text~\cite{anon2026renderretain} takes over.

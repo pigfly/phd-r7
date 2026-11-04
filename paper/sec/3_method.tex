@@ -6,11 +6,9 @@
 \paragraph{Overview.}
 Given a long document, an optical compressor renders it into image pages that a VLM reads in place of the text.
 Our goal is to make the strings that must be copied exactly survive this rendering, without spending more vision tokens and without access to the model.
-\Cref{fig:method} shows the four steps.
-\textsc{Detect} reads the text and marks verbatim-hazardous strings.
-\textsc{Allocate} renders those strings large and the remaining prose small, choosing sizes so that the image costs no more than uniform rendering would.
-\textsc{Anchor} appends \emph{anchors}, verbatim text copies of the flagged strings, paid for by the vision tokens the allocation saved.
-\textsc{Route} estimates, before calling the model, whether the anchors are cheap enough, and otherwise falls back to plain text.
+\Cref{fig:method} shows the pipeline.
+\textsc{Detect} reads the text and marks verbatim-hazardous strings, and \textsc{Allocate}, our contribution, renders those strings large and the remaining prose small, so that the image costs no more than uniform rendering would.
+The other two steps follow prior work on failure-aware optical compression~\cite{anon2026renderretain}: \textsc{Anchor} appends verbatim text copies of the flagged strings, here paid for by the vision tokens the allocation saved, and \textsc{Route} falls back to plain text when the anchors would be too expensive.
 
 \subsection{Problem formulation}
 \label{sec:formulation}
@@ -32,14 +30,14 @@ We seek a size assignment that makes every $w_i$, $i\in\mathcal{H}(x)$, as legib
 \subsection{\textsc{Detect}: text-side hazard detection}
 \label{sec:detect}
 
-The detector approximates $\mathcal{H}(x)$ without labels.
+The detector approximates $\mathcal{H}(x)$ without labels, following the regex-plus-windowed-entropy design of~\cite{anon2026renderretain}.
 Its premise is that a string is hazardous when it is \emph{high-entropy}: a misread character yields another valid-looking string, and the language model cannot repair it from context.
 After stripping surrounding punctuation, we flag a word if it matches one of five patterns: a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix.
 We also flag words that mix letters and digits and either have at least 20 identifier characters or contain a 16-character window with Shannon entropy of at least 3.5 bits.
 Two choices encode what \emph{not} to protect.
 Four-digit numbers are excluded because in natural text they are mostly years, which are low-entropy and cheap to read.
 The length and entropy rules require mixed letter--digit tokens so that long English words are not flagged.
-A preliminary detector without these two exclusions flagged on average 85--112 words per LongBench document, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
+These exclusions are our changes; a preliminary detector without them flagged on average 85--112 words per LongBench document, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
 
 When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:analysis}).
 A missed hazard in a document where \emph{other} strings are flagged is, however, shrunk together with the prose.
@@ -66,24 +64,17 @@ At $s_0=5$\,px, prose is already at its minimum size, so this removed line spaci
 Budget computation plus allocation takes about 1\,s for 32K and 4\,s for 128K characters on one CPU core (unoptimized Python).
 \Cref{fig:teaser} (middle) shows a typical outcome: the UUID is drawn at 12\,px while prose stays at 6\,px.
 
-\subsection{\textsc{Anchor}: anchors paid by the saved budget}
+\subsection{\textsc{Anchor} and \textsc{Route}}
 \label{sec:anchor}
-
-When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row.
-In our long-context runs, it used 15--28\% fewer billed tokens than uniform rendering; at $s_0=5$\,px there is no such saving, and anchors add to the budget.
-We spend these savings on a second channel: after the question, we append the flagged strings verbatim as text, under a line stating that they are copied exactly from the image.
-Anchors do not say which key a string belongs to, so the reader must still locate it in the image.
-Enlarged strings should make this association easier, a plausible reason why anchors are more effective on the allocated image than on a uniform one at moderate density (\cref{sec:density}).
-
-\subsection{\textsc{Route}: density-aware fallback to text}
 \label{sec:route}
 
-Anchors are cheap only while hazards are sparse.
-Their text cost grows linearly with the number of flagged strings while the vision cost stays fixed, so before any model call we estimate
+When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row; in our long-context runs it used 15--28\% fewer billed tokens than uniform rendering.
+Following~\cite{anon2026renderretain}, we spend these savings on \emph{anchors}: after the question, the flagged strings are appended verbatim as text, under a line stating that they are copied exactly from the image.
+Anchors carry no key, but when a document contains only one or a few flagged strings, the anchor list is short and may consist of the answer alone, so a reader can answer without reading the image (\cref{sec:anchors}).
+Anchor cost grows linearly with the number of flagged strings, so before any model call we compute the ratio
 \begin{equation}
   r(x) \;=\; \frac{\sum_{i\in\mathcal{H}(x)} c(w_i)}{v(I)}, \qquad c(w) = \tfrac{|w|}{2} + 3,
   \label{eq:route}
 \end{equation}
-where $c(w)$ estimates the text tokens of one anchor (about two characters per token for identifiers plus three for the line break and separators) and $I$ is the allocated image.
-If $r(x)\le\tau$ we send the image with anchors; otherwise we send the document as plain text, because a document this dense in identifiers is better served by its exact characters.
-We choose $\tau$ per reader by two-fold cross-validation on the density sweep (\cref{sec:density}); the selected values have median 0.3, which we fix for a held-out reader (\cref{app:claude}) and for profiling real corpora (\cref{sec:analysis}).
+where $c(w)$ estimates the text tokens of one anchor and $I$ is the allocated image, and send the document as plain text when $r(x)>\tau$.
+This replaces the density test of~\cite{anon2026renderretain} with one that accounts for the allocated image; we use $\tau=0.3$, the median of per-reader two-fold cross-validation on a synthetic density sweep (\cref{app:density}).

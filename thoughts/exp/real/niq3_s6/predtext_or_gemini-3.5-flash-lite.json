@@ -1,0 +1,1862 @@
+{
+ "T_0.png": {
+  "ids": [
+   "3-layers of PRU with an embedding size of 400."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4639,
+   "completion_tokens": 26,
+   "total_tokens": 4665,
+   "cost": 0.0014567,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0014567,
+    "upstream_inference_prompt_cost": 0.0013917,
+    "upstream_inference_completions_cost": 6.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "ids": [
+   "520-sentence dev-set"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2909,
+   "completion_tokens": 18,
+   "total_tokens": 2927,
+   "cost": 0.0009177,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009177,
+    "upstream_inference_prompt_cost": 0.0008727,
+    "upstream_inference_completions_cost": 4.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "ids": [
+   "0.0001."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3252,
+   "completion_tokens": 17,
+   "total_tokens": 3269,
+   "cost": 0.0010181,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0010181,
+    "upstream_inference_prompt_cost": 0.0009756,
+    "upstream_inference_completions_cost": 4.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "ids": [
+   "25,000 updates are for language specific parameters"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5200,
+   "completion_tokens": 22,
+   "total_tokens": 5222,
+   "cost": 0.001615,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001615,
+    "upstream_inference_prompt_cost": 0.00156,
+    "upstream_inference_completions_cost": 5.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "ids": [
+   " 2.0.13"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5774,
+   "completion_tokens": 17,
+   "total_tokens": 5791,
+   "cost": 0.0017747,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0017747,
+    "upstream_inference_prompt_cost": 0.0017322,
+    "upstream_inference_completions_cost": 4.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "ids": [
+   " 98.6%, while"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2089,
+   "completion_tokens": 17,
+   "total_tokens": 2106,
+   "cost": 0.0006692,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006692,
+    "upstream_inference_prompt_cost": 0.0006267,
+    "upstream_inference_completions_cost": 4.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "ids": [
+   "83.6% (PU=87.5%, CO=80.1%), but note that our English results are not directly comparable to theirs due to differences argument identification, as discussed in section SECREF25 . As their argument identification score is lower, perhaps their system is discarding ?difficult? arguments which leads to a higher clustering score. In the second setting (Line 2), we use the additional monolingual Europarl (EP) data for training. We get equivalent results in English and a significant improvement in German compared to our previous setting (Line 1). The German dataset in CoNLL is quite small and benefits from the additional EP training data. In contrast, the English model is already quite good due to a relatively big dataset from CoNLL, and good accuracy syntactic parsers. Unfortunately, titovcrosslingual do not report results with this setting. The third setting (Line 3) gives the results of our multilingual model, which adds the word alignments in the EP data. Comparing with Line 2, we get non-significant improvements in both languages. titovcrosslingual obtain an F1 score of 82.7% (PU=85.0%, CO=80.6%) for German, and 83.7% (PU=86.8%, CO=80.7%"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5181,
+   "completion_tokens": 289,
+   "total_tokens": 5470,
+   "cost": 0.0022768,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0022768,
+    "upstream_inference_prompt_cost": 0.0015543,
+    "upstream_inference_completions_cost": 0.0007225
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "ids": [
+   "F1-score by Adaboost."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3562,
+   "completion_tokens": 19,
+   "total_tokens": 3581,
+   "cost": 0.0011161,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011161,
+    "upstream_inference_prompt_cost": 0.0010686,
+    "upstream_inference_completions_cost": 4.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "ids": [
+   "2010 i2b2/VA being easier to access and parse, 2) 2013 ShARe/CLEF containing disjoint entities and hence requiring more complicated tagging schemes."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4828,
+   "completion_tokens": 52,
+   "total_tokens": 4880,
+   "cost": 0.0015784,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015784,
+    "upstream_inference_prompt_cost": 0.0014484,
+    "upstream_inference_completions_cost": 0.00013
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "ids": [
+   "BB3-event subtask that involves predicting whether a \u201clives-in\u201d relation holds for a Bacteria in a location."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3813,
+   "completion_tokens": 45,
+   "total_tokens": 3858,
+   "cost": 0.0012564,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0012564,
+    "upstream_inference_prompt_cost": 0.0011439,
+    "upstream_inference_completions_cost": 0.0001125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "ids": [
+   " 2-dimensional configuration that arises at ? = 1"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4995,
+   "completion_tokens": 22,
+   "total_tokens": 5017,
+   "cost": 0.0015535,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015535,
+    "upstream_inference_prompt_cost": 0.0014985,
+    "upstream_inference_completions_cost": 5.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "ids": [
+   "116.28, 103.53 and dividing by 58.395, 57.12, 57.375, respectively."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7646,
+   "completion_tokens": 52,
+   "total_tokens": 7698,
+   "cost": 0.0024238,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0024238,
+    "upstream_inference_prompt_cost": 0.0022938,
+    "upstream_inference_completions_cost": 0.00013
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "ids": [
+   " 1964 novels"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2007,
+   "completion_tokens": 16,
+   "total_tokens": 2023,
+   "cost": 0.0006421,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006421,
+    "upstream_inference_prompt_cost": 0.0006021,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "ids": [
+   "probLMS2, which uses a $\\sigma^2_n$ that is $100$ times smaller than the optimal value."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5959,
+   "completion_tokens": 40,
+   "total_tokens": 5999,
+   "cost": 0.0018877,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0018877,
+    "upstream_inference_prompt_cost": 0.0017877,
+    "upstream_inference_completions_cost": 0.0001
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "ids": [
+   "6000 KR1, 9200 KR2, and 760 KR2S plan sets have been sold."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7562,
+   "completion_tokens": 39,
+   "total_tokens": 7601,
+   "cost": 0.0023661,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0023661,
+    "upstream_inference_prompt_cost": 0.0022686,
+    "upstream_inference_completions_cost": 9.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "ids": [
+   "20th century physics early on (the other being quantum mechanics);"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8642,
+   "completion_tokens": 24,
+   "total_tokens": 8666,
+   "cost": 0.0026526,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0026526,
+    "upstream_inference_prompt_cost": 0.0025926,
+    "upstream_inference_completions_cost": 6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "ids": [
+   " 5OS.e, Constant-height I(V) spectra acquired on a species of 5 assigned as 5OS, along with the corresponding dI/dV(V) spectra.Open feedback parameters: V = -2 V, I = 0.17 pA (negative bias side) and V = 2 V, I = 0.17 pA (positive bias side).Acquisition position of the spectra is shown in Supplementary Fig.7.f, Scheme of many-body transitions associated to the measured ionic resonances of 5OS.Also shown are STM images of assigned 5OS at biases where the corresponding transitions become accessible.Scanning parameters: I = 0.3 pA (V = -1.2V and -1.5 V) and 0.2 pA (V = 1.3 V and 1.6 V). g, Laplace-filtered AFM image of assigned 5OS.STM set point: V = 0.2 V, I = 0.5 pA on bilayer NaCl, ?z = -0.3?.The tip-height offset ?z for each panel is provided with respect to the STM setpoint, and positive (negative) values of ?z denote tip approach (retraction) from the STM setpoint.f and g show the same molecule at the same adsorption site, which is next to a trilayer NaCl island.The bright and dark features in the trilayer NaCl island in g correspond to Cl -and Na + ions, respectively.Scale bars: 10 ? (f) and 5 ? (g). Fig. 3 | Characterization of closed-shell indeno[1,2-a]fluorene on bilayer NaCl/Au(111).a, DFTcalculated wave functions of the frontier orbitals of closed-shell 5 0 (isovalue: 0.002 e -? -3 ).The wave functions shown here are calculated for the 5para geometry.b, DFT-calculated bond lengths of"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 9194,
+   "completion_tokens": 435,
+   "total_tokens": 9629,
+   "cost": 0.00174159,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 7793,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00174159,
+    "upstream_inference_prompt_cost": 0.00065409,
+    "upstream_inference_completions_cost": 0.0010875
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "ids": [
+   " 64mm Please note that inappropriate IPD setting may cause ghosting or eyestrain.Accurate IPD setting helps you get a clear imaging and ease eyestrain. EN Product Details VR Headset Status Indicator Legend Blue: Powered on with battery over 20% Yellow: Charging: Battery is less than 98% Red: Charging: Battery is less than 20% Green: Charging: Battery is more than 98% or charge complete Blue flashing: Shutting down Red flashing: Battery is less than 20% Off: Sleeping or Powered off Power Power on: Long press for 2 seconds Power off: Long press for 5 seconds Hardware reset: Long press for 10 seconds Short press to enter sleep or wake up Status Indicator Face Cushion Volume ? ? ? ? ? ? ? ? RGB See Through Camera Do not block during use. Top Strap Removable Strap Dial Tracking Cameras Do not block during use. ? ? ? USB-C Interface Left/Right Speaker Proximity Sensor The system wakes upwhen the VR headset isput on, sleeps when VRheadset is taken off. ? ? Eye Tracking Cameras Pro version only. Do not block during use. Face Tracking Camera Pro version only. Do not block during use. 15 EN Controller Status Indicator Legend Off: Connected or Powered off Blue: Firmware updating in progress Blue flashing: Searching for connection Red and blue flashing alternately: Pairing in progress 16 Joystick Menu ? ? ? Home Power on: Short pressPower off: Long press for 6 secondsReturn home screen: Short pressScreen recentering: Press for 1 secondStatus Indicator Grip Capture Trigger ? ? ? ? ? ? Battery Case Open: Slide down the toggle andpop up the battery case. Lock: Push the battery case to lock. Tracking Ring Do not block during use. * Note: Pass the Controller Lanyardthrough the string as shown andlock at the end of the Controller EN Operating Instructions Headset Control Mode If the Controller is not connected, you can interact with the home screen by moving your head to directthe crosshairs over your intended selection and clicking the Volume Up/Down button on the VR Headset. Switch the pointer of the master Controller In the home screen, short press the Trigger of the corresponding Controller to switch the pointer of themaster Controller. Screen re-centering Wear the VR Headset and look straight ahead, press and hold the Home button of the Controller or VRHeadset ( or the Volume Down button of the VR Headset in head control mode) for more than 1 second tore-center the screen. Disconnect the Controller Press and hold the Home button until the status indicator turns red and the Controller vibrates.Controllers will automatically shut down to save power in the following cases:When the VR Headset enters deep sleep (a while after the VR Headset is taken off)When the Controller is unpairedWhen the VR Headset is powered off Add a new Controller If you need to add a new Controller (the VR Headset can only connect one left Controller and one rightController) or reconnect with an unpaired Controller. Go to ?Settings? ? ?Controller?, click on ?Pair?.Press and hold the Home button and the Trigger of the Controller at the same time until the red and bluelights of the Controller flashing alternately, and then follow the instructions on the VR Headset screen. Sleep / Wake up Option 1 (Proximity Sensor) Take off VR Headset for automatic sleeping: wear the VR Headset for automat- ic waking up. Option 2 (POWER Button) Press the Power button of the VR Headset for manual sleeping or waking up. Hardware reset VR Headset reset If the visual in the VR Headset freezes, or the VR Headset does not respond after short press the Powerbutton, you can press the Power button of the VR Headset for more than 10 seconds to reboot the VRHeadset. Controller reset If the virtual Controller, the Home button or any buttons of the Controller doesn't respond, remove andreinstall the battery case to restart the Controller. The VR Headset Adjustment This device has no myopia adjustment function. The VR Headset allows wearing most standard glasseswith a frame width of less than 150mm. to install Glasses Spacer to increase the space. You can install or not according to your situation. 17 EN Install Glasses Spacer Install Nose Pad If you have glasses collision with headset lens or pressure on the bridge of nose, please follow the pictureto install Glasses Spacer to increase the space. You can install or not according to your situation. If you feel light leaking from your nose, please follow the picture to install Nose Pad to block the light.You can consider having it installed at your own discretion. Disassemble the Face Cushion. Install the Glasses Spacer on the Headset. ? ? ? Install the Face Cushion on the Glasses Spacer. Disassemble the Face Cushion. Install the Nose Pad on the Face Cushion. ? ? Install the Face Cushion on the Headset. ? * Note: Disassemble the Glasses Spacer 18 EN Replace Face Cushion The Face Cushion will have the following phenomena such as color change, surface fluff, soft texture afterlong-term use and repeated cleaning. You can replace a new Face Cushion as needed. Replace Top Strap ? ? Disassemble the Face Cushion. Pinch the metal buckle of the top strap asshown, press it down and pull it out.Install the Face Cushion on. ? ? ? ? Purchase high-quality and trending apps ? Join PICO Community and explore the VR worldwith other PICO players? Manage your device with ease ? Engage in diverse and interactive activities ? More exciting features waiting for you 19 EN"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3199,
+   "completion_tokens": 1164,
+   "total_tokens": 4363,
+   "cost": 0.0038697,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0038697,
+    "upstream_inference_prompt_cost": 0.0009597,
+    "upstream_inference_completions_cost": 0.00291
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "ids": [
+   "2015/19/N/ST3/01030."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 9942,
+   "completion_tokens": 29,
+   "total_tokens": 9971,
+   "cost": 0.0030551,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0030551,
+    "upstream_inference_prompt_cost": 0.0029826,
+    "upstream_inference_completions_cost": 7.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "ids": [
+   "VC-10 Squadron, under Goodwin's command gave close air support to the initial landings of Marines on Saipan on June 15, 1944, destroying enemy gun emplacements, troops, tanks, and trucks. On the 17th, her combat air patrol (CAP) shot down or turned back all but a handful of 47 enemy planes headed for her task group and her gunners shot down two of the three planes that did break through to attack her. Goodwin's carrier continued in providing of close ground support operations at Tinian during the end of July 1944, then turned her attention to Guam, where she gave identical aid to invading troops until mid-August that year. For his service during the Mariana Islands campaign, Goodwin was decorated with Bronze Star Medal with Combat \"V\". He was succeeded by Captain Walter V. R. Vieweg on August 18, 1944, and appointed Chief of Staff, Carrier Division Six under Rear admiral Arthur W. Radford. The Gambier Bay was sunk in the Battle off Samar on October 25, 1944, during the Battle of Leyte Gulf after helping turn back a much larger attacking Japanese surface force. Goodwin served with Carrier Division Six during the Bonin Islands raids, the naval operations at Palau and took part in the Battle of Leyte Gulf and operations supporting Leyte landings in late 1944. He was later appointed Air Officer of the Philippine Sea Frontier under Rear admiral James L. Kauffman and remained with that command until the end of hostilities. For his service in the later part of World War II, Goodwin was decorated with Legion of Merit with Combat \"V\". He was also entitled to wear two Navy Presidential Unit Citations and Navy Unit Commendation. Postwar service Following the surrender of Japan, Goodwin assumed command of Light aircraft carrier on August 24, 1945. The ship was tasked with air missions over Japan became mercy flights over Allied prisoner-of-war camps, dropping food and medicine until the men could be rescued. She was also present at Tokyo Bay for the Japanese surrender on September 2, 1945. Goodwin returned with San Jacinto to the United States in mid-September 1945 and he was detached in January 1946. He subsequently served in the office of the Chief of Naval Operations until May that year, when he entered the instruction at National War College. Goodwin graduated in June 1947 and served on Secretary's committee for Research on Reorganization. Upon promotion to Rear admiral on April 1, 1949, Goodwin was appointed Chief of Staff and Aide to Commander-in-Chief, Atlantic Fleet under Admiral William H. P. Blandy. Revolt of the Admirals In April 1949, the budget's cuts and proposed reorganization of the United States Armed Forces by the Secretary of Defense Louis A. Johnson launched the wave of discontent between senior commanders in the United States Navy. Johnson proposed the merging of the Marine Corps into the Army, and reduce the Navy to a convoy-escort force. Goodwin's superior officer, Admiral Blandy was call to testify before the House Committee on Armed Services and his harsh statements for the defense of the Navy, costed him his career. Goodwin shared his views and openly criticized Secretary Johnson for having power concentrated in a single civilian executive, who is an appointee of the Government and not an elected representative of the people. He also criticized aspects of defense unification which permitted the Joint Chiefs of Staff to vote on arms policies of individual services, and thus \"rob\" the branches of autonomy. The outbreak of the Korean War in summer 1950 proved the proposal of Secretary Johnson as incorrect and he resigned in September that year. Also Secretary of the Navy, Francis P. Matthews resigned one month earlier. Later service Due to the Revolts of the admirals, Blandy was forced to retire in February 1950 and Goodwin was ordered to Newport, Rhode Island for temporary duty as Chief of Staff and Aide to the President of the Naval War College under Vice admiral Donald B. Beary in April 1950. Goodwin was detached from that assignment two months and appointed member of the General Board of the Navy. He was shortly thereafter appointed acting Navy Chief of Public Information, as the substitute for Rear Admiral Russell S. Berkey, who was relieved of illness, but returned to the General Board of the Navy in July that year. Goodwin served in that capacity until February 1951, when he relieved his Academy class, Rear admiral John P. Whitney as Vice Commander, Military Air Transport Service (MATS). While in this capacity, Goodwin served under Lieutenant general Laurence S. Kuter and was co-responsible for the logistical support of United Nations troops fighting in Korea. The MATS operated from the United States to Japan and Goodwin served in this capacity until August 1953, when he was appointed Commander Carrier Division Two. While in this assignment, he took part in the Operation Mariner, Joint Anglo-American exercise which encountered very heavy seas over a two-week period in fall 1953. Goodwin was ordered to the Philippines in May 1954 and assumed duty as Commander, U.S. Naval Forces in the Philippines with headquarters at Naval Station Sangley Point near Cavite. He held that command in the period of tensions between Taiwan and China and publicly declared shortly after his arrival, that any attack on Taiwan by the Chinese Communists on the mainland would result in US participation in the conflict. The naval fighter planes under his command also provided escort for passing commercial planes. Goodwin worked together with retired Admiral Raymond A. Spruance, then-Ambassador to the Philippines, and accompanied him during the visits to Singapore, Bangkok and Saigon in January 1955. On December 18, 1955, Goodwin's classmate Rear admiral Albert K. Morehouse, then serving as Commander, Naval Air Forces, Continental Air Defense Command (CONAD), died of heart attack and Goodwin was ordered to CONAD headquarters in Colorado Springs, Colorado to assume Morehouse's position. While in this capacity, he was subordinated to Army General Earle E. Partridge and was responsible for the Naval and Marine Forces allocated to the command designated for the defense of the Continental United States. Retirement Goodwin retired on June 1, 1957, after 40 years of active service and was advanced to the rank of Vice admiral on the retired list for having been specially commended in combat. A week later, he was invited back to his Monroe High School (now Neville High School) and handed a diploma showing that he had been graduated with the class of 1918. He then settled in Monterey, California where he taught American history at Stevenson school and was a member of the Naval Order of the United States. Vice admiral Hugh H. Goodwin died at his home on February 25, 1980, aged 79. He was survived by his wife, Eleanor with whom he had two children, a daughter Sidney and a son Hugh Jr., who graduated from the Naval Academy in June 1948, but died one year later, when the Hellcat fighter he was piloting collided with another over the Gulf of Mexico during training. Decorations Here is the ribbon bar of Vice admiral Hugh H. Goodwin: References 1900 births 1980 deaths People from Monroe, Louisiana Military personnel from Louisiana United States Naval Academy alumni Naval War College alumni United States Naval Aviators United States Navy personnel of World War I United States Navy World War II admirals United States Navy vice admirals United States submarine commanders Recipients of the Legion of Merit"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3023,
+   "completion_tokens": 1601,
+   "total_tokens": 4624,
+   "cost": 0.0049094,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0049094,
+    "upstream_inference_prompt_cost": 0.0009069,
+    "upstream_inference_completions_cost": 0.0040025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "ids": [
+   "1996 welfare reform law."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4334,
+   "completion_tokens": 18,
+   "total_tokens": 4352,
+   "cost": 0.0013452,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0013452,
+    "upstream_inference_prompt_cost": 0.0013002,
+    "upstream_inference_completions_cost": 4.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "ids": [
+   "FY2001 to FY2010, appropriations for other purposes exceeded $100 million in each year. In fact, during four of these years (FY2004-FY2007), the annual appropriation was between $200 million and $225 million. The appropriation surpassed $400 million in another year during the period. Specifically, the $456.0 million appropriation in FY2001 was more than double the amount provided for other purposes in any other year. These appropriations were used to fund more than a dozen programs in the Clinton Administration's Lands Legacy Initiative. In that year, total LWCF appropriations exceeded the annual authorization level, totaling nearly $1 billion. This record level of funding was provided partly in response to President Clinton's Lands Legacy Initiative, which sought $1.4 billion for about two dozen resource-protection programs, including the LWCF. It also was provided partly in response to some congressional interest in securing increased and more certain funding for the LWCF. The highest percentage of annual funds provided for other purposes occurred in FY2006 and FY2007 (59% in both years), in response to President George W. Bush's request for funding for an array of programs. For instance, in FY2007 the Bush Administration sought funding from the LWCF for 15 programs in addition to land acquisition and state grants. For that year, the appropriation for five other purposes was $216.1 million, out of a total LWCF appropriation of $366.1 million. In some years, the appropriation for other purposes was significantly less than the Administration requested. For example, for FY2008 the Bush Administration sought $313.1 million for other purposes, or 83% of the total request of $378.7 million. The FY2008 appropriation for other purposes was $101.3 million, or 40% of the LWCF total of $255.1 million. The $2.7 billion appropriated from the LWCF from FY1998 to FY2019 for other purposes represents 27% of the $10.0 billion total appropriations from LWCF during the period. FWS and FS have received the largest shares of the appropriations for other purposes, about $1.4 billion (53%) and $1.0 billion (38%), respectively. BLM, NPS, the U.S. Geological Survey, and the Bureau of Indian Affairs have shared the remaining $0.2 billion (9%) of the appropriations for other purposes. (See Figure 1 .) Because there is no set of other purposes specified in the LWCF Act to be funded from the LWCF, presidents have sought funds for a variety of purposes. Congress has chosen which of these requests to fund from the LWCF, and whether to fund any additional programs from the LWCF not suggested by the President. Appropriations for other purposes have been provided for more than a dozen diverse natural resource-related programs, including facility maintenance of the land management agencies, ecosystem restoration, the Historic Preservation Fund, the Payments in Lieu of Taxes program, the FS Forest Legacy program, FWS State and Tribal Wildlife Grants, the FWS Cooperative Endangered Species Conservation Fund, U.S. Geological Survey science and cooperative programs, and Bureau of Indian Affairs Indian Land and Water Claim Settlements. (See Appendix A .) Although in earlier years several other purposes typically were funded from LWCF, since FY2008, funds have been appropriated annually only for grants under two programs: Forest Legacy and Cooperative Endangered Species Conservation Fund. (See Appendix B and Figure 2 . ) The total appropriation from LWCF for these two programs (since FY1998) is $1.7 billion, or 63% of all appropriations for other purposes ($2.7 billion). These two programs and a third grant program funded prior to FY2008 from LWCF?FWS State and Tribal Wildlife Grants?have received more than three-quarters ($2.1 billion, 79%) of the total appropriations for other purposes. The appropriations through FY2019 are $944.4 million for Forest Legacy (35% of the other purposes total), $753.3 million for Cooperative Endangered Species Conservation Fund (28% of total), and $448.5 million for State and Tribal Wildlife Grants (17% of total). Grants under the Forest Legacy program are used to acquire lands or conservation easements to preserve private forests threatened by conversion to non-forest uses, such as agriculture or residences. FS provides matching grants to states through a competitive process that requires state approval and then national approval and ranking. The ranking is based on the importance of the project (potential public benefits from protection), the likelihood of the forest's conversion to non-forest uses, and the strategic relevance of the project, among other factors. The program is implemented primarily through state partners, usually state forestry agencies. State partners generally acquire, hold, and administer the easements or land purchases, although the federal government also may do so. The Cooperative Endangered Species Conservation Fund provides grants \"for species and habitat conservation actions on non-Federal lands, including habitat acquisition, conservation planning, habitat restoration, status surveys, captive propagation and reintroduction, research, and education.\" In addition to appropriations from LWCF, the Cooperative Endangered Species Conservation Fund typically receives additional appropriations. In recent years, the appropriations from LWCF generally have been used for two types of land acquisition grants provided to state and territories on a matching basis. Recovery land acquisition grants have been made for acquisition of habitats in support of species recovery goals and objectives. Habitat conservation plan land acquisition grants have been made for acquisition of lands that are associated with habitat conservation plans. State and Tribal Wildlife Grants are provided to states, territories, and tribes to develop and implement programs for the benefit of fish and wildlife and their habitats, including nongame species. State and Tribal Wildlife Grants received funding from the LWCF for FY2001-FY2007; subsequently, funding has been provided from the General Fund of the U.S. Treasury. Currently, the largest portion of the program is for formula grants to states and territories on a matching basis. Funds from the formula grants may be used to develop state conservation plans and to implement specific conservation projects. Smaller amounts of funding have been appropriated for competitive grants to states and territories, and to tribal governments. The competitive grant programs do not have matching requirements. Appendix A shows the total LWCF appropriations for other purposes summed from FY1998 to FY2019. Appendix B shows the other purposes that received LWCF appropriations each year, the amount of LWCF appropriations for each purpose, and the total annual appropriations for other purposes. Appendix A. Total LWCF Appropriations for Other Purposes Appendix B. Annual LWCF Appropriations for Other Purposes"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2955,
+   "completion_tokens": 1439,
+   "total_tokens": 4394,
+   "cost": 0.004484,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.004484,
+    "upstream_inference_prompt_cost": 0.0008865,
+    "upstream_inference_completions_cost": 0.0035975
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "ids": [
+   "2014, SMC established the Hosted Payload Solutions (HOPS) multiple award indefinite delivery indefinite quantity (IDIQ) vehicle. According to HPO documents, SMC established the contract?available to all DOD and civil agencies?to streamline commercially hosted payload arrangements by selecting a pool of commercial vendors that government payload owners can use to access space on commercial host satellites. Programs do not have to use HOPS, however, and may contract with commercial companies directly. The HOPS vehicle includes 14 vendors across the commercial satellite industry. SMC awarded task orders for studies to each of the vendors with a contract to gather information on potential host opportunities, orbits and launch schedules, cost estimates for hosting fees, and existing host satellite interfaces."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6715,
+   "completion_tokens": 151,
+   "total_tokens": 6866,
+   "cost": 0.002392,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002392,
+    "upstream_inference_prompt_cost": 0.0020145,
+    "upstream_inference_completions_cost": 0.0003775
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "ids": [
+   "18.7 percent of its non-tiered data centers by"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7672,
+   "completion_tokens": 23,
+   "total_tokens": 7695,
+   "cost": 0.0023591,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0023591,
+    "upstream_inference_prompt_cost": 0.0023016,
+    "upstream_inference_completions_cost": 5.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "ids": [
+   "512-7114 (williamsonr@gao.gov)."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2096,
+   "completion_tokens": 29,
+   "total_tokens": 2125,
+   "cost": 0.0007013,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007013,
+    "upstream_inference_prompt_cost": 0.0006288,
+    "upstream_inference_completions_cost": 7.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "ids": [
+   "2018, and ended on January 25, 2019, with the enactment of H.J.Res. 28 ."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4867,
+   "completion_tokens": 43,
+   "total_tokens": 4910,
+   "cost": 0.0015676,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015676,
+    "upstream_inference_prompt_cost": 0.0014601,
+    "upstream_inference_completions_cost": 0.0001075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "ids": [
+   "6,979 in 2008 to 8,574 in 2018"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6379,
+   "completion_tokens": 34,
+   "total_tokens": 6413,
+   "cost": 0.0019987,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019987,
+    "upstream_inference_prompt_cost": 0.0019137,
+    "upstream_inference_completions_cost": 8.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "ids": [
+   "078-0-1)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2731,
+   "completion_tokens": 18,
+   "total_tokens": 2749,
+   "cost": 0.0008643,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008643,
+    "upstream_inference_prompt_cost": 0.0008193,
+    "upstream_inference_completions_cost": 4.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "ids": [
+   " 202-707-3472"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8230,
+   "completion_tokens": 23,
+   "total_tokens": 8253,
+   "cost": 0.0025265,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0025265,
+    "upstream_inference_prompt_cost": 0.002469,
+    "upstream_inference_completions_cost": 5.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "ids": [
+   "6,603 lost operational days?the equivalent of losing the use of 3.0 surface combatants each year."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4792,
+   "completion_tokens": 36,
+   "total_tokens": 4828,
+   "cost": 0.0015276,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015276,
+    "upstream_inference_prompt_cost": 0.0014376,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_30.png": {
+  "ids": [
+   "2022. Sorvino appeared alongside Dean Cain, D.B. Sweeney, and his wife Dee Dee Sorvino for his final performance. Sorvino's scenes were filmed in Jacksonville, Florida."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6246,
+   "completion_tokens": 52,
+   "total_tokens": 6298,
+   "cost": 0.0020038,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0020038,
+    "upstream_inference_prompt_cost": 0.0018738,
+    "upstream_inference_completions_cost": 0.00013
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_31.png": {
+  "ids": [
+   "19th century, posthumously, to distinguish the lords of Schwedt from the main line of the Hohenzollerns."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7381,
+   "completion_tokens": 36,
+   "total_tokens": 7417,
+   "cost": 0.0023043,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0023043,
+    "upstream_inference_prompt_cost": 0.0022143,
+    "upstream_inference_completions_cost": 9e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_32.png": {
+  "ids": [
+   " (1991)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5509,
+   "completion_tokens": 16,
+   "total_tokens": 5525,
+   "cost": 0.0016927,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0016927,
+    "upstream_inference_prompt_cost": 0.0016527,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_33.png": {
+  "ids": [
+   "1860 \u2013 17 October 1909). Second Kad\u0131n. She born Hatice Hanim, she married Mehmed when he was still \u015eehzade. She was the aunt of In\u00e7irah Hanim, who was a consort of Mehmed VI (Mehmed V's younger half-brother). She had a son."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6941,
+   "completion_tokens": 104,
+   "total_tokens": 7045,
+   "cost": 0.0023423,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0023423,
+    "upstream_inference_prompt_cost": 0.0020823,
+    "upstream_inference_completions_cost": 0.00026
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_34.png": {
+  "ids": [
+   "1961."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4786,
+   "completion_tokens": 15,
+   "total_tokens": 4801,
+   "cost": 0.0014733,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0014733,
+    "upstream_inference_prompt_cost": 0.0014358,
+    "upstream_inference_completions_cost": 3.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_35.png": {
+  "ids": [
+   "2013 he was appointed inaugural eminent professor at the University of Toledo and received an honorary doctorate from Lourdes University. Most recently, Kennedy received the 2014 Northwest Region, Ohio Art Education Association award for distinguished educator for art education. =="
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5532,
+   "completion_tokens": 62,
+   "total_tokens": 5594,
+   "cost": 0.0018146,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0018146,
+    "upstream_inference_prompt_cost": 0.0016596,
+    "upstream_inference_completions_cost": 0.000155
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_36.png": {
+  "ids": [
+   "2014 Northwest Region, Ohio Art Education Association award for distinguished educator for art education."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5730,
+   "completion_tokens": 29,
+   "total_tokens": 5759,
+   "cost": 0.0017915,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0017915,
+    "upstream_inference_prompt_cost": 0.001719,
+    "upstream_inference_completions_cost": 7.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_37.png": {
+  "ids": [
+   "2005 release of the film in the United States, by its distributor, Miramax/Buuna Vista, was subject to criticism for delay."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6015,
+   "completion_tokens": 41,
+   "total_tokens": 6056,
+   "cost": 0.001907,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001907,
+    "upstream_inference_prompt_cost": 0.0018045,
+    "upstream_inference_completions_cost": 0.0001025
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_38.png": {
+  "ids": [
+   "2003 comedy-drama in which film producer Amy Hobby made her directorial debut."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5922,
+   "completion_tokens": 28,
+   "total_tokens": 5950,
+   "cost": 0.0018466,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0018466,
+    "upstream_inference_prompt_cost": 0.0017766,
+    "upstream_inference_completions_cost": 7e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_39.png": {
+  "ids": [
+   "2013 he was appointed inaugural eminent professor at the University of Toledo and received an honorary doctorate from Lourdes University. Most recently, Kennedy received the 2014 Northwest Region, Ohio Art Education Association award for distinguished educator for art education. == Notes =="
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6673,
+   "completion_tokens": 63,
+   "total_tokens": 6736,
+   "cost": 0.00050889,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 6113,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00050889,
+    "upstream_inference_prompt_cost": 0.00035139,
+    "upstream_inference_completions_cost": 0.0001575
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_40.png": {
+  "ids": [
+   " 1974] is an Argentine former footballer, who played as a forward."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6406,
+   "completion_tokens": 28,
+   "total_tokens": 6434,
+   "cost": 0.00034156,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 6112,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00034156,
+    "upstream_inference_prompt_cost": 0.00027156,
+    "upstream_inference_completions_cost": 7e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_41.png": {
+  "ids": [
+   "2013; it made little commercial impact and received mixed reviews from critics but spawned the hit single \"Work Bitch\", which was certified platinum in the United States."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8964,
+   "completion_tokens": 45,
+   "total_tokens": 9009,
+   "cost": 0.0028017,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0028017,
+    "upstream_inference_prompt_cost": 0.0026892,
+    "upstream_inference_completions_cost": 0.0001125
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_42.png": {
+  "ids": [
+   "1, 2015."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7788,
+   "completion_tokens": 18,
+   "total_tokens": 7806,
+   "cost": 0.0023814,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0023814,
+    "upstream_inference_prompt_cost": 0.0023364,
+    "upstream_inference_completions_cost": 4.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_43.png": {
+  "ids": [
+   "1968 who has been arrested in June 2010 and sentenced for 10-years in prison for inciting subversion of state power."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1753,
+   "completion_tokens": 43,
+   "total_tokens": 1796,
+   "cost": 0.0006334,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006334,
+    "upstream_inference_prompt_cost": 0.0005259,
+    "upstream_inference_completions_cost": 0.0001075
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_44.png": {
+  "ids": [
+   "1928 construction of the Alouette Dam at"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8814,
+   "completion_tokens": 21,
+   "total_tokens": 8835,
+   "cost": 0.0026967,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0026967,
+    "upstream_inference_prompt_cost": 0.0026442,
+    "upstream_inference_completions_cost": 5.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_45.png": {
+  "ids": [
+   " 1904, he married Ingebj\u00f8rg Klafstad"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4376,
+   "completion_tokens": 31,
+   "total_tokens": 4407,
+   "cost": 0.0013903,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0013903,
+    "upstream_inference_prompt_cost": 0.0013128,
+    "upstream_inference_completions_cost": 7.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_46.png": {
+  "ids": [
+   "2011 \"$101 million was spent on goods and services\""
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5318,
+   "completion_tokens": 27,
+   "total_tokens": 5345,
+   "cost": 0.0016629,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0016629,
+    "upstream_inference_prompt_cost": 0.0015954,
+    "upstream_inference_completions_cost": 6.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_47.png": {
+  "ids": [
+   " 2002 2003 2004 2005 2006 2007 2008 2009 2010s 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020s 2020 2021 2022"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5521,
+   "completion_tokens": 127,
+   "total_tokens": 5648,
+   "cost": 0.0019738,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019738,
+    "upstream_inference_prompt_cost": 0.0016563,
+    "upstream_inference_completions_cost": 0.0003175
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_48.png": {
+  "ids": [
+   " 1204, King Philip granted"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4939,
+   "completion_tokens": 19,
+   "total_tokens": 4958,
+   "cost": 0.0015292,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0015292,
+    "upstream_inference_prompt_cost": 0.0014817,
+    "upstream_inference_completions_cost": 4.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_49.png": {
+  "ids": [
+   " 2016 for other reasons, but are accepted by Kew POWO:"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2108,
+   "completion_tokens": 27,
+   "total_tokens": 2135,
+   "cost": 0.0006999,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006999,
+    "upstream_inference_prompt_cost": 0.0006324,
+    "upstream_inference_completions_cost": 6.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_50.png": {
+  "ids": [
+   "2008."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5571,
+   "completion_tokens": 15,
+   "total_tokens": 5586,
+   "cost": 0.0017088,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0017088,
+    "upstream_inference_prompt_cost": 0.0016713,
+    "upstream_inference_completions_cost": 3.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_51.png": {
+  "ids": [
+   " NEWLINE_CHAR NEWLINE_CHAR 9:04 PM ET Sun, 3 Sept 2017 | 02:51"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1474,
+   "completion_tokens": 42,
+   "total_tokens": 1516,
+   "cost": 0.0005472,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005472,
+    "upstream_inference_prompt_cost": 0.0004422,
+    "upstream_inference_completions_cost": 0.000105
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_52.png": {
+  "ids": [
+   " 1997 film Good Will Hunting."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5964,
+   "completion_tokens": 20,
+   "total_tokens": 5984,
+   "cost": 0.0018392,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0018392,
+    "upstream_inference_prompt_cost": 0.0017892,
+    "upstream_inference_completions_cost": 5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_53.png": {
+  "ids": [
+   " 30-seconds of video at a time."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1281,
+   "completion_tokens": 21,
+   "total_tokens": 1302,
+   "cost": 0.0004368,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004368,
+    "upstream_inference_prompt_cost": 0.0003843,
+    "upstream_inference_completions_cost": 5.25e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_54.png": {
+  "ids": [
+   " 8501 did not have permission to fly to Singapore on the day it crashed into the Java Sea, transport officials have said as search chiefs said they had found ?two big objects? believed to be from the missing plane."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4026,
+   "completion_tokens": 57,
+   "total_tokens": 4083,
+   "cost": 0.0013503,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0013503,
+    "upstream_inference_prompt_cost": 0.0012078,
+    "upstream_inference_completions_cost": 0.0001425
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_55.png": {
+  "ids": [
+   " 2:30 pm"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2651,
+   "completion_tokens": 16,
+   "total_tokens": 2667,
+   "cost": 0.0008353,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008353,
+    "upstream_inference_prompt_cost": 0.0007953,
+    "upstream_inference_completions_cost": 4e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_56.png": {
+  "ids": [
+   "15-year-old girl on school grounds after her homecoming dance was horrific enough. But even more shocking, police say, was that up to two dozen people watched and did nothing to stop it."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2170,
+   "completion_tokens": 51,
+   "total_tokens": 2221,
+   "cost": 0.0007785,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007785,
+    "upstream_inference_prompt_cost": 0.000651,
+    "upstream_inference_completions_cost": 0.0001275
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_57.png": {
+  "ids": [
+   "PS3-splendid, and current-gen PC smooth."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2117,
+   "completion_tokens": 23,
+   "total_tokens": 2140,
+   "cost": 0.0006926,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006926,
+    "upstream_inference_prompt_cost": 0.0006351,
+    "upstream_inference_completions_cost": 5.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_58.png": {
+  "ids": [
+   "I-40 nearing the I-95 interchange."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1661,
+   "completion_tokens": 22,
+   "total_tokens": 1683,
+   "cost": 0.0005533,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005533,
+    "upstream_inference_prompt_cost": 0.0004983,
+    "upstream_inference_completions_cost": 5.5e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_59.png": {
+  "ids": [
+   "2002."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2612,
+   "completion_tokens": 15,
+   "total_tokens": 2627,
+   "cost": 0.0008211,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008211,
+    "upstream_inference_prompt_cost": 0.0007836,
+    "upstream_inference_completions_cost": 3.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

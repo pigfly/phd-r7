@@ -1,0 +1,1302 @@
+{
+ "T_0.png": {
+  "text": "NFPA and FPSA vastly outperform DSA and GMRES for all cases by orders of magnitude.",
+  "usage": {
+   "prompt_tokens": 8290,
+   "completion_tokens": 20,
+   "total_tokens": 8310,
+   "cost": 0.0029215,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0029215,
+    "upstream_inference_prompt_cost": 0.0029015,
+    "upstream_inference_completions_cost": 2e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "text": "BERT and RoBERTa with a linear layer connected to the pooler output of the models.",
+  "usage": {
+   "prompt_tokens": 3110,
+   "completion_tokens": 20,
+   "total_tokens": 3130,
+   "cost": 0.000596175,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000596175,
+    "upstream_inference_prompt_cost": 0.000583125,
+    "upstream_inference_completions_cost": 1.305e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "text": "1766",
+  "usage": {
+   "prompt_tokens": 9721,
+   "completion_tokens": 3,
+   "total_tokens": 9724,
+   "cost": 0.001824645,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001824645,
+    "upstream_inference_prompt_cost": 0.0018226875,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "text": "The bigger the receptive field size, the more complete shapes can be reconstructed using DSP.",
+  "usage": {
+   "prompt_tokens": 6098,
+   "completion_tokens": 18,
+   "total_tokens": 6116,
+   "cost": 0.0021523,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0021523,
+    "upstream_inference_prompt_cost": 0.0021343,
+    "upstream_inference_completions_cost": 1.8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "text": "URPC2017 and URPC2018.",
+  "usage": {
+   "prompt_tokens": 6740,
+   "completion_tokens": 11,
+   "total_tokens": 6751,
+   "cost": 0.00237,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00237,
+    "upstream_inference_prompt_cost": 0.002359,
+    "upstream_inference_completions_cost": 1.1e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "text": "FC Banants",
+  "usage": {
+   "prompt_tokens": 1471,
+   "completion_tokens": 4,
+   "total_tokens": 1475,
+   "cost": 0.00051885,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00051885,
+    "upstream_inference_prompt_cost": 0.00051485,
+    "upstream_inference_completions_cost": 4e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "text": "reducing computational complexity",
+  "usage": {
+   "prompt_tokens": 6738,
+   "completion_tokens": 5,
+   "total_tokens": 6743,
+   "cost": 0.0012666375,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0012666375,
+    "upstream_inference_prompt_cost": 0.001263375,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "text": "provides cover for the war",
+  "usage": {
+   "prompt_tokens": 5746,
+   "completion_tokens": 6,
+   "total_tokens": 5752,
+   "cost": 0.00108129,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00108129,
+    "upstream_inference_prompt_cost": 0.001077375,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "text": "The baseline references the mid point of the firewall for the developed side panel.",
+  "usage": {
+   "prompt_tokens": 7648,
+   "completion_tokens": 16,
+   "total_tokens": 7664,
+   "cost": 0.0026928,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0026928,
+    "upstream_inference_prompt_cost": 0.0026768,
+    "upstream_inference_completions_cost": 1.6e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "text": "Deputy Prime Minister and Minister of Finance",
+  "usage": {
+   "prompt_tokens": 4687,
+   "completion_tokens": 9,
+   "total_tokens": 4696,
+   "cost": 0.000884685,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000884685,
+    "upstream_inference_prompt_cost": 0.0008788125,
+    "upstream_inference_completions_cost": 5.8725e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "text": "It is a characteristic of layer-hybridized electronic states and measures the k-space curl of interlayer BCP over the occupied states.",
+  "usage": {
+   "prompt_tokens": 4563,
+   "completion_tokens": 28,
+   "total_tokens": 4591,
+   "cost": 0.0008738325,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0008738325,
+    "upstream_inference_prompt_cost": 0.0008555625,
+    "upstream_inference_completions_cost": 1.827e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "text": "$\\frac{e^2}{4\\pi \\epsilon_0 a_{ws}}\\frac{1}{k_B T_e}$",
+  "usage": {
+   "prompt_tokens": 8438,
+   "completion_tokens": 26,
+   "total_tokens": 8464,
+   "cost": 0.00159909,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00159909,
+    "upstream_inference_prompt_cost": 0.001582125,
+    "upstream_inference_completions_cost": 1.6965e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "text": "By employing a propagator in the latent space that uses complex-valued latent variables treated independently, with a continuous ODE for each dimension of the latent variable z.",
+  "usage": {
+   "prompt_tokens": 3721,
+   "completion_tokens": 32,
+   "total_tokens": 3753,
+   "cost": 0.0007185675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007185675,
+    "upstream_inference_prompt_cost": 0.0006976875,
+    "upstream_inference_completions_cost": 2.088e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "text": "$O (t, L_{\\parallel} ; S_\\Delta) = L_{\\parallel}^{-\\beta/[\\nu(1+\\Delta)]} \\tilde f_O (t/L_{\\parallel}^{z/(1+\\Delta)} ; S_\\Delta)$",
+  "usage": {
+   "prompt_tokens": 1215,
+   "completion_tokens": 52,
+   "total_tokens": 1267,
+   "cost": 0.0002617425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002617425,
+    "upstream_inference_prompt_cost": 0.0002278125,
+    "upstream_inference_completions_cost": 3.393e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "text": "other toxic products, rather than against saline.",
+  "usage": {
+   "prompt_tokens": 3839,
+   "completion_tokens": 10,
+   "total_tokens": 3849,
+   "cost": 0.0007263375,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007263375,
+    "upstream_inference_prompt_cost": 0.0007198125,
+    "upstream_inference_completions_cost": 6.525e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "text": "85.61%",
+  "usage": {
+   "prompt_tokens": 3115,
+   "completion_tokens": 5,
+   "total_tokens": 3120,
+   "cost": 0.000164925,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 3072,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000164925,
+    "upstream_inference_prompt_cost": 0.0001616625,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "text": "48V",
+  "usage": {
+   "prompt_tokens": 2755,
+   "completion_tokens": 3,
+   "total_tokens": 2758,
+   "cost": 0.00051852,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00051852,
+    "upstream_inference_prompt_cost": 0.0005165625,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "text": "those that form via kinetic rate processes from state-selected Rydberg gases, particularly molecular ultracold plasmas.",
+  "usage": {
+   "prompt_tokens": 8439,
+   "completion_tokens": 21,
+   "total_tokens": 8460,
+   "cost": 0.00297177,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 16,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00297177,
+    "upstream_inference_prompt_cost": 0.00295077,
+    "upstream_inference_completions_cost": 2.1e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "text": "From the simplified form of the vacuum Einstein equations, as applied to a test ball in free fall alongside one of the family of observers.",
+  "usage": {
+   "prompt_tokens": 8267,
+   "completion_tokens": 28,
+   "total_tokens": 8295,
+   "cost": 0.00291857,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 16,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00291857,
+    "upstream_inference_prompt_cost": 0.00289057,
+    "upstream_inference_completions_cost": 2.8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "text": "more than 120",
+  "usage": {
+   "prompt_tokens": 2156,
+   "completion_tokens": 5,
+   "total_tokens": 2161,
+   "cost": 0.0004075125,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004075125,
+    "upstream_inference_prompt_cost": 0.00040425,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "text": "4 years",
+  "usage": {
+   "prompt_tokens": 2639,
+   "completion_tokens": 3,
+   "total_tokens": 2642,
+   "cost": 0.00049677,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00049677,
+    "upstream_inference_prompt_cost": 0.0004948125,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "text": "Vice Admiral",
+  "usage": {
+   "prompt_tokens": 3017,
+   "completion_tokens": 3,
+   "total_tokens": 3020,
+   "cost": 0.000567645,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000567645,
+    "upstream_inference_prompt_cost": 0.0005656875,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "text": "https://workorder.quectel.com/, https://forumschinese.quectel.com/c/function-subjects/quectpython/43, QQ group: 445121768",
+  "usage": {
+   "prompt_tokens": 3879,
+   "completion_tokens": 36,
+   "total_tokens": 3915,
+   "cost": 0.0007508025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0007508025,
+    "upstream_inference_prompt_cost": 0.0007273125,
+    "upstream_inference_completions_cost": 2.349e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "text": "2-5 times smaller",
+  "usage": {
+   "prompt_tokens": 1583,
+   "completion_tokens": 6,
+   "total_tokens": 1589,
+   "cost": 0.0003007275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003007275,
+    "upstream_inference_prompt_cost": 0.0002968125,
+    "upstream_inference_completions_cost": 3.915e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "text": "Nuclear liquid-gas transition in the strong coupling regime of lattice QCD.",
+  "usage": {
+   "prompt_tokens": 4961,
+   "completion_tokens": 14,
+   "total_tokens": 4975,
+   "cost": 0.0009393225,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009393225,
+    "upstream_inference_prompt_cost": 0.0009301875,
+    "upstream_inference_completions_cost": 9.135e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "text": "McPherson",
+  "usage": {
+   "prompt_tokens": 2937,
+   "completion_tokens": 4,
+   "total_tokens": 2941,
+   "cost": 0.0005532975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0005532975,
+    "upstream_inference_prompt_cost": 0.0005506875,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "text": "I have seen the Lord.",
+  "usage": {
+   "prompt_tokens": 8650,
+   "completion_tokens": 7,
+   "total_tokens": 8657,
+   "cost": 0.0016264425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0016264425,
+    "upstream_inference_prompt_cost": 0.001621875,
+    "upstream_inference_completions_cost": 4.5675e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "text": "keep deploying and harvesting your bases",
+  "usage": {
+   "prompt_tokens": 7923,
+   "completion_tokens": 7,
+   "total_tokens": 7930,
+   "cost": 0.00149013,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00149013,
+    "upstream_inference_prompt_cost": 0.0014855625,
+    "upstream_inference_completions_cost": 4.5675e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "text": "Low temperature scanning tunneling microscopy and spectroscopy (STM/STS)",
+  "usage": {
+   "prompt_tokens": 7638,
+   "completion_tokens": 13,
+   "total_tokens": 7651,
+   "cost": 0.00268342,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 16,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00268342,
+    "upstream_inference_prompt_cost": 0.00267042,
+    "upstream_inference_completions_cost": 1.3e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "text": "2013-14",
+  "usage": {
+   "prompt_tokens": 1470,
+   "completion_tokens": 5,
+   "total_tokens": 1475,
+   "cost": 0.0002788875,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002788875,
+    "upstream_inference_prompt_cost": 0.000275625,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_30.png": {
+  "text": "watt",
+  "usage": {
+   "prompt_tokens": 7804,
+   "completion_tokens": 3,
+   "total_tokens": 7807,
+   "cost": 0.0014652075,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0014652075,
+    "upstream_inference_prompt_cost": 0.00146325,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_31.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 8834,
+   "completion_tokens": 2,
+   "total_tokens": 8836,
+   "cost": 0.00165768,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00165768,
+    "upstream_inference_prompt_cost": 0.001656375,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_32.png": {
+  "text": "transport, heating, lighting, communications, and computation",
+  "usage": {
+   "prompt_tokens": 7804,
+   "completion_tokens": 11,
+   "total_tokens": 7815,
+   "cost": 0.0004056275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 7744,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004056275,
+    "upstream_inference_prompt_cost": 0.00039845,
+    "upstream_inference_completions_cost": 7.1775e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_33.png": {
+  "text": "The situation in Iraq, including the formation of a new government, violence, and the struggles of Iraqi Christians and women.",
+  "usage": {
+   "prompt_tokens": 5753,
+   "completion_tokens": 25,
+   "total_tokens": 5778,
+   "cost": 0.0003118,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 5696,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0003118,
+    "upstream_inference_prompt_cost": 0.0002954875,
+    "upstream_inference_completions_cost": 1.63125e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_34.png": {
+  "text": "Del Bigtree and his team at ICAN",
+  "usage": {
+   "prompt_tokens": 3846,
+   "completion_tokens": 11,
+   "total_tokens": 3857,
+   "cost": 0.0002091025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 3776,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0002091025,
+    "upstream_inference_prompt_cost": 0.000201925,
+    "upstream_inference_completions_cost": 7.1775e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_35.png": {
+  "text": "The proximity of superconductivity can lead to the Kondo screening induced by CAR exchange, which is a beautiful example of superconductivity leading to magnetic order, namely the formation of the Kondo singlet.",
+  "usage": {
+   "prompt_tokens": 9611,
+   "completion_tokens": 40,
+   "total_tokens": 9651,
+   "cost": 0.0018281625,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0018281625,
+    "upstream_inference_prompt_cost": 0.0018020625,
+    "upstream_inference_completions_cost": 2.61e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_36.png": {
+  "text": "the U.S. state of Kansas.",
+  "usage": {
+   "prompt_tokens": 2926,
+   "completion_tokens": 9,
+   "total_tokens": 2935,
+   "cost": 0.0001584975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 2880,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0001584975,
+    "upstream_inference_prompt_cost": 0.000152625,
+    "upstream_inference_completions_cost": 5.8725e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_37.png": {
+  "text": "Wallace",
+  "usage": {
+   "prompt_tokens": 4687,
+   "completion_tokens": 3,
+   "total_tokens": 4690,
+   "cost": 0.00024717,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 4608,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00024717,
+    "upstream_inference_prompt_cost": 0.0002452125,
+    "upstream_inference_completions_cost": 1.9575e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_38.png": {
+  "text": "Jivani Street 2 of the Malatia-Sebastia District, Yerevan.",
+  "usage": {
+   "prompt_tokens": 1440,
+   "completion_tokens": 21,
+   "total_tokens": 1461,
+   "cost": 0.00027444,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 1392,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00027444,
+    "upstream_inference_prompt_cost": 0.00025344,
+    "upstream_inference_completions_cost": 2.1e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_39.png": {
+  "text": "The time required to update the robot's belief does not increase with the complexity of the environment.",
+  "usage": {
+   "prompt_tokens": 6766,
+   "completion_tokens": 20,
+   "total_tokens": 6786,
+   "cost": 0.001281675,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001281675,
+    "upstream_inference_prompt_cost": 0.001268625,
+    "upstream_inference_completions_cost": 1.305e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_40.png": {
+  "text": "fruit consumption may provide a protective effect for Hg exposure in Amazonian riparians.",
+  "usage": {
+   "prompt_tokens": 4783,
+   "completion_tokens": 17,
+   "total_tokens": 4800,
+   "cost": 0.000907905,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000907905,
+    "upstream_inference_prompt_cost": 0.0008968125,
+    "upstream_inference_completions_cost": 1.10925e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_41.png": {
+  "text": "NLMS algorithm",
+  "usage": {
+   "prompt_tokens": 5199,
+   "completion_tokens": 4,
+   "total_tokens": 5203,
+   "cost": 0.0009774225,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0009774225,
+    "upstream_inference_prompt_cost": 0.0009748125,
+    "upstream_inference_completions_cost": 2.61e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_42.png": {
+  "text": "January 1929",
+  "usage": {
+   "prompt_tokens": 3012,
+   "completion_tokens": 5,
+   "total_tokens": 3017,
+   "cost": 0.0001632125,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 2944,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0001632125,
+    "upstream_inference_prompt_cost": 0.00015995,
+    "upstream_inference_completions_cost": 3.2625e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_43.png": {
+  "text": "A media application may use a content-recognition module or algorithm to determine the context of an event.",
+  "usage": {
+   "prompt_tokens": 6984,
+   "completion_tokens": 21,
+   "total_tokens": 7005,
+   "cost": 0.0013232025,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0013232025,
+    "upstream_inference_prompt_cost": 0.0013095,
+    "upstream_inference_completions_cost": 1.37025e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_44.png": {
+  "text": "South West Ultras",
+  "usage": {
+   "prompt_tokens": 1467,
+   "completion_tokens": 5,
+   "total_tokens": 1472,
+   "cost": 0.00051845,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00051845,
+    "upstream_inference_prompt_cost": 0.00051345,
+    "upstream_inference_completions_cost": 5e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_45.png": {
+  "text": "30,223",
+  "usage": {
+   "prompt_tokens": 2943,
+   "completion_tokens": 4,
+   "total_tokens": 2947,
+   "cost": 0.00103405,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00103405,
+    "upstream_inference_prompt_cost": 0.00103005,
+    "upstream_inference_completions_cost": 4e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_46.png": {
+  "text": "John F. Kennedy Profiles in Courage Award",
+  "usage": {
+   "prompt_tokens": 2676,
+   "completion_tokens": 10,
+   "total_tokens": 2686,
+   "cost": 0.000508275,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000508275,
+    "upstream_inference_prompt_cost": 0.00050175,
+    "upstream_inference_completions_cost": 6.525e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_47.png": {
+  "text": "C-295.",
+  "usage": {
+   "prompt_tokens": 7604,
+   "completion_tokens": 5,
+   "total_tokens": 7609,
+   "cost": 0.0026664,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0026664,
+    "upstream_inference_prompt_cost": 0.0026614,
+    "upstream_inference_completions_cost": 5e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_48.png": {
+  "text": "Yes",
+  "usage": {
+   "prompt_tokens": 6732,
+   "completion_tokens": 2,
+   "total_tokens": 6734,
+   "cost": 0.001263555,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001263555,
+    "upstream_inference_prompt_cost": 0.00126225,
+    "upstream_inference_completions_cost": 1.305e-06
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_49.png": {
+  "text": "The learning rate rapidly rises as the transition probability increases from 0, and after reaching a peak, it begins to decline slowly, eventually reaching zero.",
+  "usage": {
+   "prompt_tokens": 6241,
+   "completion_tokens": 31,
+   "total_tokens": 6272,
+   "cost": 0.001190415,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001190415,
+    "upstream_inference_prompt_cost": 0.0011701875,
+    "upstream_inference_completions_cost": 2.02275e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

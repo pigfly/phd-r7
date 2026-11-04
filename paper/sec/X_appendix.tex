@@ -32,7 +32,6 @@ Selected values were 0.1--0.5 with median 0.3, which we use for all other experi
 \Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}.
 
 \input{tab/app_length}
-\input{tab/app_density}
 \input{tab/detector}
 
 \section{Short Documents: Mechanism Study}
@@ -92,6 +91,27 @@ On short manifests, enlarging only the hash and path substrings of a manifest li
 Adding one pixel of line spacing to prose-only lines did not change prose accuracy ($+$0.00, 95\% CI $[-0.09,0.09]$).
 Keeping prose at the uniform size left room only for 6--8\,px identifiers and recovered 13--24 points less than full reallocation.
 
+\section{Hazard Density and Routing}
+\label{app:density}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig/density.pdf}
+\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X); recall averages six readers, cost the five that report usage (MiniMax does not). (c) Recall versus cost relative to plain text when each document is routed either to an image with anchors or to plain text by \cref{eq:route}, sweeping $\tau$ (the four readers with billed costs for both images and plain text).}
+\label{fig:density}
+\end{figure*}
+
+\Cref{fig:density} varies the number of flagged strings per 32K-character document from 1 to 256 (six readers; per-reader values in \cref{tab:app_density}).
+Allocation alone degrades as density grows (0.50 at $k{=}1$, 0.33 at $k{=}16$, 0.13 at $k{=}64$), because more strings compete for the pixels prose can give up.
+Anchors are strong while hazards are sparse but become both less accurate and expensive as they multiply, reaching 0.39 recall at $k{=}64$ for 1.8$\times$ the tokens of uniform rendering.
+At $k{=}4$, X recovers 0.99 of the needles while costing 13\% less than uniform rendering and 20\% less than K.
+Under the precision-aware F1, however, X and K do not differ (pooled over $k\in\{1,4,16\}$: $-$0.01, CI [$-$0.07, 0.04]), and several readers return most of the anchor list at $k\ge4$.
+For routing, $\tau$ was chosen per reader by two-fold cross-validation on this sweep; the selected values have median 0.3.
+Sweeping $\tau$ traces the recall--cost frontiers of panel (c), on which routing with X matches or dominates routing with K; at $\tau{=}0.3$ it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$.
+These frontiers are computed on the same sweep used to select $\tau$ and should be read as in-sample.
+
+\input{tab/app_density}
+
 \section{Natural-Identifier Questions}
 \label{app:niq}
 
@@ -100,6 +120,11 @@ A target is a word flagged by the detector of \cref{sec:detect} that, after stri
 We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, characters replaced by ``?'' during ASCII normalization, and words glued across a missing space (a comma directly followed by a letter, a period or closing parenthesis followed by an uppercase letter, and a few letter--digit patterns); targets containing ``='' are also excluded.
 A first version of the set without the last two filters contained such artifacts in 14 of its 60 questions; because anchors and enlarged rendering present the glued string as a single unit, that version favored our arms, and we discarded it.
 The prompt asks for the exact string that follows the phrase; scoring is the same recall as for RULER.
+The same 60 questions were also rendered at base sizes of 5 and 7\,px for the frontier of \cref{sec:anchors}.
+
+\paragraph{Detector-independent set.}
+To measure what happens to strings the detector misses, a second set (new seed) samples the target uniformly from all tokens of 4--64 ASCII characters that contain a digit, with the same phrase and artifact filters (including \texttt{EQREF} and \texttt{DISPLAYFORM} placeholders) but without requiring the detector to flag the target or the document.
+The detector flags one of the 60 targets.
 
 \section{Real-Corpus Profile}
 \label{app:corpora}
@@ -123,14 +148,17 @@ Agents may resample images when reading them, and $N{=}10$ per cell is small, so
 \section{Reproducibility and Ethics}
 \label{app:repro}
 
+\paragraph{Prior work.}
+The detector design, anchors, and text routing follow~\cite{anon2026renderretain}, which is under review; an anonymized copy is included in the supplementary material.
+
 \paragraph{Code and data.}
 The renderer, detector, router, task generators, reader clients, analysis scripts, all logged model outputs, and the scripts that produce every figure and table will be released.
 Task data are generated from public sources (RULER templates with Paul Graham essays, LongBench) with fixed seeds.
 
 \paragraph{Compute and cost.}
 No model was trained.
-All readers were accessed through provider APIs between November 1 and 3, 2026; reader versions are identified by their provider model names in \cref{sec:setup}.
-Pay-per-token API charges for all experiments, including pilots, were about \$51; MiniMax-M3 and the agent-based Claude reader were used under subscription plans.
+All readers were accessed through provider APIs between November 1 and 4, 2026; reader versions are identified by their provider model names in \cref{sec:setup}.
+Pay-per-token API charges for all experiments, including pilots, were about \$55; MiniMax-M3 and the agent-based Claude reader were used under subscription plans.
 
 \paragraph{Ethics.}
 The study involves no human subjects and no personal data.

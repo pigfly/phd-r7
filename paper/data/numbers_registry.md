@@ -9,3 +9,5 @@
 - real_density <- analysis_real_density.json
 - claude_subagent <- analysis_claude_reader.json
 - sweep_short (E2 phase diagram, short synthetic) <- analysis_sw_s5_sw_s6_sw_s8_sw_s10.json
+- rescore / revision_5readers <- analysis_rescore.json (precision-aware F1, exact-set, #returned, copy baselines; 5 non-Claude readers)
+- pooled <- analysis_pooled.json (item-cluster and reader+item bootstrap CIs; Holm within family; 5 readers)

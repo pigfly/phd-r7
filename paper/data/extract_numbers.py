@@ -92,6 +92,30 @@ num["sweep_short"] = json.loads((EXP / "analysis_sw_s5_sw_s6_sw_s8_sw_s10.json")
 num["mlocal"] = (EXP / "analysis_mlocal.txt").read_text()
 reg += ["real_density <- analysis_real_density.json", "claude_subagent <- analysis_claude_reader.json",
         "sweep_short (E2 phase diagram, short synthetic) <- analysis_sw_s5_sw_s6_sw_s8_sw_s10.json"]
+
+# --- Stage-4 revision (review round 1): precision-aware rescoring, pooled effects, new controls ---
+rs = json.loads((EXP / "analysis_rescore.json").read_text())
+num["rescore"] = rs
+num["pooled"] = json.loads((EXP / "analysis_pooled.json").read_text())
+R5 = [x for x in READERS if x != "claude-sonnet-5.5"]
+def m5(run, arm, key):
+    v = [rs[f"{run}|{rd}"]["arms"][arm][key] for rd in R5 if f"{run}|{rd}" in rs and arm in rs[f"{run}|{rd}"]["arms"]]
+    return mean(v)
+def b5(run, arm):
+    v = [rs[f"{run}|{rd}"]["arms"][arm]["billed"] or None for rd in R5 if f"{run}|{rd}" in rs and arm in rs[f"{run}|{rd}"]["arms"]]
+    return mean(v)
+rev = {}
+for run, arms in [("niq2_s5", "ASKX"), ("niq2_s6", "ASKXT"), ("niq2_s7", "ASKX"), ("niq3_s6", "ASKXT"),
+                  *[(f"rv2_box_s6_{t}", "ABS") for t in ("single_3", "multikey_1", "multivalue")],
+                  *[(f"rv2_s{z}_c32k_{t}", "ASUKX") for z in (8, 10) for t in ("single_3", "multikey_1")],
+                  *[(f"rv2_c{c}k_multikey_1", "ASKX") for c in (64, 128)],
+                  *[(f"rbx_s{z}_{t}", "ASUZKX") for z in (5, 6) for t in ("single_3", "multikey_1", "multivalue")]]:
+    rev[run] = {a: {k: m5(run, a, k) for k in ("recall", "f1", "exact", "nret")} | {"billed": b5(run, a)} for a in arms}
+    if "K" in arms: rev[run]["pick_K"] = m5(run, "K", "pick"); rev[run]["gin_K"] = m5(run, "K", "gin"); rev[run]["nanc_K"] = m5(run, "K", "nanc")
+num["revision_5readers"] = rev
+num["niq3_flagged"] = sum(it.get("flagged", 0) for it in json.loads((EXP / "niq3_s6" / "gt.json").read_text())["items"])
+reg.append("rescore / revision_5readers <- analysis_rescore.json (precision-aware F1, exact-set, #returned, copy baselines; 5 non-Claude readers)")
+reg.append("pooled <- analysis_pooled.json (item-cluster and reader+item bootstrap CIs; Holm within family; 5 readers)")
 num["reader_names"] = NAME
 (OUT / "numbers.json").write_text(json.dumps(num, indent=1))
 (OUT / "numbers_registry.md").write_text("# Number registry (all paper numbers come from these files)\n\n" + "\n".join("- " + x for x in reg) + "\n")

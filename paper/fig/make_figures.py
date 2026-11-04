@@ -89,16 +89,18 @@ def teaser():
     ax = fig.add_subplot(gs[:, 2]); style(ax)
     Ls = ["32k", "64k", "128k"]; xs = [32, 64, 128]
     for arm in "AS":
-        ys = [N["length_scaling"][f"{L}|mean"][arm] for L in Ls]
+        ys = [m5(L, arm) for L in Ls]
         ax.plot(xs, ys, color=C[arm], ls=LS[arm], marker=MK[arm], label=LAB[arm], mfc=("white" if arm == "A" else C[arm]))
     ax.set_xscale("log", base=2); ax.set_xticks(xs); ax.set_xticklabels(["32K", "64K", "128K"])
-    ax.set_ylim(0, 0.8); ax.set_xlabel("context length (characters)"); ax.set_ylabel("needle recall (6 VLMs)")
+    ax.set_ylim(0, 0.8); ax.set_xlabel("context length (characters)"); ax.set_ylabel("needle recall (5 VLMs)")
     ax.legend(loc="center left", frameon=False, bbox_to_anchor=(0.02, 0.42), handlelength=1.8)
     ax.set_title("Equal vision-token budget", fontsize=7.5, pad=3)
     fig.savefig(FIG / "teaser.pdf"); plt.close(fig)
     return ans_a, ans_s, gold
 
 # ---------------------------------------------------------------- length scaling
+R5 = [r for r in N["reader_names"] if r != "claude-sonnet-5.5"]
+def m5(L, arm): return sum(N["length_scaling"][f"{L}|{r}"][arm] for r in R5) / len(R5)  # fixed 5-reader mean (review RM-7)
 def scaling():
     Ls = ["32k", "64k", "128k"]; xs = [32, 64, 128]; ls = N["length_scaling"]
     readers = [k for k in N["reader_names"]]
@@ -107,7 +109,7 @@ def scaling():
     for arm in "AS":
         for rd in readers:
             a1.plot(xs, [ls[f"{L}|{rd}"][arm] for L in Ls], color=C[arm], lw=0.6, alpha=0.35, ls=LS[arm])
-        a1.plot(xs, [ls[f"{L}|mean"][arm] for L in Ls], color=C[arm], marker=MK[arm], ls=LS[arm], label=LAB[arm],
+        a1.plot(xs, [m5(L, arm) for L in Ls], color=C[arm], marker=MK[arm], ls=LS[arm], label=LAB[arm],
                 mfc=("white" if arm == "A" else C[arm]))
     a1.set_ylim(0, 1.0); a1.set_ylabel("needle recall"); a1.text(0.02, 0.97, "(a)", transform=a1.transAxes, va="top", fontsize=7.5)
     for arm in "AST":

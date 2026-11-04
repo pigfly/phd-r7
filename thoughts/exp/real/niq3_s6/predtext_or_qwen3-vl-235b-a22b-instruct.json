@@ -1,0 +1,1862 @@
+{
+ "T_0.png": {
+  "ids": [
+   "3-layers of PRU with an embedding size of 400."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4625,
+   "completion_tokens": 24,
+   "total_tokens": 4649,
+   "cost": 0.00101685,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00101685,
+    "upstream_inference_prompt_cost": 0.00097125,
+    "upstream_inference_completions_cost": 4.56e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_1.png": {
+  "ids": [
+   "520-sentence dev-set of the IITB parallel corpus for validation."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2990,
+   "completion_tokens": 25,
+   "total_tokens": 3015,
+   "cost": 0.0006754,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006754,
+    "upstream_inference_prompt_cost": 0.0006279,
+    "upstream_inference_completions_cost": 4.75e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_2.png": {
+  "ids": [
+   "0.0001"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3322,
+   "completion_tokens": 15,
+   "total_tokens": 3337,
+   "cost": 0.0006776,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006776,
+    "upstream_inference_prompt_cost": 0.0006644,
+    "upstream_inference_completions_cost": 1.32e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_3.png": {
+  "ids": [
+   "25,000"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5304,
+   "completion_tokens": 15,
+   "total_tokens": 5319,
+   "cost": 0.00114234,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00114234,
+    "upstream_inference_prompt_cost": 0.00111384,
+    "upstream_inference_completions_cost": 2.85e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_4.png": {
+  "ids": [
+   "2.0.13"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5692,
+   "completion_tokens": 15,
+   "total_tokens": 5707,
+   "cost": 0.00122382,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00122382,
+    "upstream_inference_prompt_cost": 0.00119532,
+    "upstream_inference_completions_cost": 2.85e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_5.png": {
+  "ids": [
+   "98.6%"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2160,
+   "completion_tokens": 14,
+   "total_tokens": 2174,
+   "cost": 0.0004802,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004802,
+    "upstream_inference_prompt_cost": 0.0004536,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_6.png": {
+  "ids": [
+   "83.6%"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5279,
+   "completion_tokens": 14,
+   "total_tokens": 5293,
+   "cost": 0.00113519,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00113519,
+    "upstream_inference_prompt_cost": 0.00110859,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_7.png": {
+  "ids": [
+   "F1-score"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3614,
+   "completion_tokens": 12,
+   "total_tokens": 3626,
+   "cost": 0.00078174,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00078174,
+    "upstream_inference_prompt_cost": 0.00075894,
+    "upstream_inference_completions_cost": 2.28e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_8.png": {
+  "ids": [
+   "2010 i2b2/VA being easier to access and parse,"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4889,
+   "completion_tokens": 26,
+   "total_tokens": 4915,
+   "cost": 0.00107609,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00107609,
+    "upstream_inference_prompt_cost": 0.00102669,
+    "upstream_inference_completions_cost": 4.94e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_9.png": {
+  "ids": [
+   "BB3-event subtask"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3952,
+   "completion_tokens": 14,
+   "total_tokens": 3966,
+   "cost": 0.00085652,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00085652,
+    "upstream_inference_prompt_cost": 0.00082992,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_10.png": {
+  "ids": [
+   "2-dimensional configuration that arises at ? = 1 in the Monte Carlo simulations is given in Fig. ."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5297,
+   "completion_tokens": 30,
+   "total_tokens": 5327,
+   "cost": 0.00116937,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00116937,
+    "upstream_inference_prompt_cost": 0.00111237,
+    "upstream_inference_completions_cost": 5.7e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_11.png": {
+  "ids": [
+   "116.28,"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7881,
+   "completion_tokens": 16,
+   "total_tokens": 7897,
+   "cost": 0.00168541,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00168541,
+    "upstream_inference_prompt_cost": 0.00165501,
+    "upstream_inference_completions_cost": 3.04e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_12.png": {
+  "ids": [
+   "1964 novels"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2081,
+   "completion_tokens": 14,
+   "total_tokens": 2095,
+   "cost": 0.00046361,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00046361,
+    "upstream_inference_prompt_cost": 0.00043701,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_13.png": {
+  "ids": [
+   "probLMS2"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6430,
+   "completion_tokens": 13,
+   "total_tokens": 6443,
+   "cost": 0.001375,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.001375,
+    "upstream_inference_prompt_cost": 0.0013503,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_14.png": {
+  "ids": [
+   "6000 KR1, 9200 KR2, and 760 KR2S plan sets have been sold."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7630,
+   "completion_tokens": 37,
+   "total_tokens": 7667,
+   "cost": 0.0016726,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0016726,
+    "upstream_inference_prompt_cost": 0.0016023,
+    "upstream_inference_completions_cost": 7.03e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_15.png": {
+  "ids": [
+   "20th century physics"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8942,
+   "completion_tokens": 14,
+   "total_tokens": 8956,
+   "cost": 0.00190442,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00190442,
+    "upstream_inference_prompt_cost": 0.00187782,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_16.png": {
+  "ids": [
+   "5OS."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 9517,
+   "completion_tokens": 11,
+   "total_tokens": 9528,
+   "cost": 0.00201947,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00201947,
+    "upstream_inference_prompt_cost": 0.00199857,
+    "upstream_inference_completions_cost": 2.09e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_17.png": {
+  "ids": [
+   "64mm"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3356,
+   "completion_tokens": 12,
+   "total_tokens": 3368,
+   "cost": 0.00072756,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00072756,
+    "upstream_inference_prompt_cost": 0.00070476,
+    "upstream_inference_completions_cost": 2.28e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_18.png": {
+  "ids": [
+   "2015/19/N/ST3/01030"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 10431,
+   "completion_tokens": 26,
+   "total_tokens": 10457,
+   "cost": 0.00223991,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00223991,
+    "upstream_inference_prompt_cost": 0.00219051,
+    "upstream_inference_completions_cost": 4.94e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_19.png": {
+  "ids": [
+   "VC-10 Squadron, under Goodwin's command gave close air support to the initial landings of Marines on Saipan on June 15, 1944, destroying enemy gun emplacements, troops, tanks, and trucks."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3138,
+   "completion_tokens": 59,
+   "total_tokens": 3197,
+   "cost": 0.00077108,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00077108,
+    "upstream_inference_prompt_cost": 0.00065898,
+    "upstream_inference_completions_cost": 0.0001121
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_20.png": {
+  "ids": [
+   "1996 welfare reform law"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4442,
+   "completion_tokens": 16,
+   "total_tokens": 4458,
+   "cost": 0.00096322,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00096322,
+    "upstream_inference_prompt_cost": 0.00093282,
+    "upstream_inference_completions_cost": 3.04e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_21.png": {
+  "ids": [
+   "FY2001 to FY2010, appropriations for other purposes exceeded $100 million in each year."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2985,
+   "completion_tokens": 34,
+   "total_tokens": 3019,
+   "cost": 0.00069145,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00069145,
+    "upstream_inference_prompt_cost": 0.00062685,
+    "upstream_inference_completions_cost": 6.46e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_22.png": {
+  "ids": [
+   "2014, SMC established the Hosted Payload Solutions (HOPS) multiple award indefinite delivery indefinite quantity (IDIQ) vehicle."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6851,
+   "completion_tokens": 37,
+   "total_tokens": 6888,
+   "cost": 0.00150901,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00150901,
+    "upstream_inference_prompt_cost": 0.00143871,
+    "upstream_inference_completions_cost": 7.03e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_23.png": {
+  "ids": [
+   "18.7 percent of its non-tiered data centers"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7738,
+   "completion_tokens": 21,
+   "total_tokens": 7759,
+   "cost": 0.00166488,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00166488,
+    "upstream_inference_prompt_cost": 0.00162498,
+    "upstream_inference_completions_cost": 3.99e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_24.png": {
+  "ids": [
+   "512-7114 (williamsonr@gao.gov)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2103,
+   "completion_tokens": 26,
+   "total_tokens": 2129,
+   "cost": 0.00049103,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00049103,
+    "upstream_inference_prompt_cost": 0.00044163,
+    "upstream_inference_completions_cost": 4.94e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_25.png": {
+  "ids": [
+   "2018,"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4946,
+   "completion_tokens": 14,
+   "total_tokens": 4960,
+   "cost": 0.00106526,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00106526,
+    "upstream_inference_prompt_cost": 0.00103866,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_26.png": {
+  "ids": [
+   "6,979 in 2008 to 8,574 in 2018"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6359,
+   "completion_tokens": 33,
+   "total_tokens": 6392,
+   "cost": 0.00139809,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00139809,
+    "upstream_inference_prompt_cost": 0.00133539,
+    "upstream_inference_completions_cost": 6.27e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_27.png": {
+  "ids": [
+   "078-0-1"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2749,
+   "completion_tokens": 16,
+   "total_tokens": 2765,
+   "cost": 0.00060769,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00060769,
+    "upstream_inference_prompt_cost": 0.00057729,
+    "upstream_inference_completions_cost": 3.04e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_28.png": {
+  "ids": [
+   "202-707-3472"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8106,
+   "completion_tokens": 21,
+   "total_tokens": 8127,
+   "cost": 0.00174216,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00174216,
+    "upstream_inference_prompt_cost": 0.00170226,
+    "upstream_inference_completions_cost": 3.99e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_29.png": {
+  "ids": [
+   "6,603 lost operational days"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4845,
+   "completion_tokens": 17,
+   "total_tokens": 4862,
+   "cost": 0.00104975,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00104975,
+    "upstream_inference_prompt_cost": 0.00101745,
+    "upstream_inference_completions_cost": 3.23e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_30.png": {
+  "ids": [
+   "2022"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6471,
+   "completion_tokens": 13,
+   "total_tokens": 6484,
+   "cost": 0.00138361,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00138361,
+    "upstream_inference_prompt_cost": 0.00135891,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_31.png": {
+  "ids": [
+   "19th century, posthumously, to distinguish the lords of Schwedt from the main line of the Hohenzollerns."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7856,
+   "completion_tokens": 38,
+   "total_tokens": 7894,
+   "cost": 0.00172196,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00172196,
+    "upstream_inference_prompt_cost": 0.00164976,
+    "upstream_inference_completions_cost": 7.22e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_32.png": {
+  "ids": [
+   " (1991)"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5714,
+   "completion_tokens": 15,
+   "total_tokens": 5729,
+   "cost": 0.00122844,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00122844,
+    "upstream_inference_prompt_cost": 0.00119994,
+    "upstream_inference_completions_cost": 2.85e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_33.png": {
+  "ids": [
+   "1860 ? 17 October 1909). Second Kad?n. She born Hatice Hanim, she married Mehmed when he was still ?ehzade. She was the aunt of In?irah Hanim, who was a consort of Mehmed VI (Mehmed V's younger half-brother). She had a son."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7092,
+   "completion_tokens": 85,
+   "total_tokens": 7177,
+   "cost": 0.00165082,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00165082,
+    "upstream_inference_prompt_cost": 0.00148932,
+    "upstream_inference_completions_cost": 0.0001615
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_34.png": {
+  "ids": [
+   "1961"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4955,
+   "completion_tokens": 13,
+   "total_tokens": 4968,
+   "cost": 0.00106525,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00106525,
+    "upstream_inference_prompt_cost": 0.00104055,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_35.png": {
+  "ids": [
+   "2013"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5662,
+   "completion_tokens": 13,
+   "total_tokens": 5675,
+   "cost": 0.00121372,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00121372,
+    "upstream_inference_prompt_cost": 0.00118902,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_36.png": {
+  "ids": [
+   "2014 Northwest Region, Ohio Art Education Association award for distinguished educator for art education."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5844,
+   "completion_tokens": 27,
+   "total_tokens": 5871,
+   "cost": 0.00127854,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00127854,
+    "upstream_inference_prompt_cost": 0.00122724,
+    "upstream_inference_completions_cost": 5.13e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_37.png": {
+  "ids": [
+   "2005 release of the film in the United States, by its distributor, Miramax/Buuna Vista, was subject to criticism for delay."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6122,
+   "completion_tokens": 39,
+   "total_tokens": 6161,
+   "cost": 0.00135972,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00135972,
+    "upstream_inference_prompt_cost": 0.00128562,
+    "upstream_inference_completions_cost": 7.41e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_38.png": {
+  "ids": [
+   "2003 comedy-drama in which film producer Amy Hobby made her directorial debut."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6046,
+   "completion_tokens": 27,
+   "total_tokens": 6073,
+   "cost": 0.00132096,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00132096,
+    "upstream_inference_prompt_cost": 0.00126966,
+    "upstream_inference_completions_cost": 5.13e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_39.png": {
+  "ids": [
+   "2013"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6822,
+   "completion_tokens": 13,
+   "total_tokens": 6835,
+   "cost": 0.00145732,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00145732,
+    "upstream_inference_prompt_cost": 0.00143262,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_40.png": {
+  "ids": [
+   "1974"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 6554,
+   "completion_tokens": 13,
+   "total_tokens": 6567,
+   "cost": 0.00140104,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00140104,
+    "upstream_inference_prompt_cost": 0.00137634,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_41.png": {
+  "ids": [
+   "2013"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 9043,
+   "completion_tokens": 13,
+   "total_tokens": 9056,
+   "cost": 0.00192373,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00192373,
+    "upstream_inference_prompt_cost": 0.00189903,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_42.png": {
+  "ids": [
+   "2015"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 7924,
+   "completion_tokens": 13,
+   "total_tokens": 7937,
+   "cost": 0.00168874,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00168874,
+    "upstream_inference_prompt_cost": 0.00166404,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_43.png": {
+  "ids": [
+   "1968"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1810,
+   "completion_tokens": 13,
+   "total_tokens": 1823,
+   "cost": 0.0004048,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0004048,
+    "upstream_inference_prompt_cost": 0.0003801,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_44.png": {
+  "ids": [
+   "1928 construction of the Alouette Dam at 49?17?10?N 122?29?12?W, which is 11.5 km (7 mi) along the upper reaches of the South Alouette River."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 8977,
+   "completion_tokens": 68,
+   "total_tokens": 9045,
+   "cost": 0.00201437,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00201437,
+    "upstream_inference_prompt_cost": 0.00188517,
+    "upstream_inference_completions_cost": 0.0001292
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_45.png": {
+  "ids": [
+   "1904, he married Ingebj?rg Klafstad (1878?1961). He was the father of the actor and director Knut Thomassen (1921?2002)."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 4551,
+   "completion_tokens": 59,
+   "total_tokens": 4610,
+   "cost": 0.00106781,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00106781,
+    "upstream_inference_prompt_cost": 0.00095571,
+    "upstream_inference_completions_cost": 0.0001121
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_46.png": {
+  "ids": [
+   "2011"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5390,
+   "completion_tokens": 13,
+   "total_tokens": 5403,
+   "cost": 0.0011566,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0011566,
+    "upstream_inference_prompt_cost": 0.0011319,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_47.png": {
+  "ids": [
+   "2002"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5636,
+   "completion_tokens": 13,
+   "total_tokens": 5649,
+   "cost": 0.00120826,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00120826,
+    "upstream_inference_prompt_cost": 0.00118356,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_48.png": {
+  "ids": [
+   "1204"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5169,
+   "completion_tokens": 13,
+   "total_tokens": 5182,
+   "cost": 0.00111019,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00111019,
+    "upstream_inference_prompt_cost": 0.00108549,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_49.png": {
+  "ids": [
+   "2016 for other reasons, but are accepted by Kew POWO:"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2207,
+   "completion_tokens": 26,
+   "total_tokens": 2233,
+   "cost": 0.00051287,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00051287,
+    "upstream_inference_prompt_cost": 0.00046347,
+    "upstream_inference_completions_cost": 4.94e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_50.png": {
+  "ids": [
+   "2008"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5348,
+   "completion_tokens": 13,
+   "total_tokens": 5361,
+   "cost": 0.00114778,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00114778,
+    "upstream_inference_prompt_cost": 0.00112308,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_51.png": {
+  "ids": [
+   "9:04 PM ET Sun, 3 Sept 2017 | 02:51"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1412,
+   "completion_tokens": 32,
+   "total_tokens": 1444,
+   "cost": 0.00035732,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00035732,
+    "upstream_inference_prompt_cost": 0.00029652,
+    "upstream_inference_completions_cost": 6.08e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_52.png": {
+  "ids": [
+   "1997 film Good Will Hunting."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 5690,
+   "completion_tokens": 17,
+   "total_tokens": 5707,
+   "cost": 0.0012272,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0012272,
+    "upstream_inference_prompt_cost": 0.0011949,
+    "upstream_inference_completions_cost": 3.23e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_53.png": {
+  "ids": [
+   "30-seconds of video at a time."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1248,
+   "completion_tokens": 18,
+   "total_tokens": 1266,
+   "cost": 0.00029628,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00029628,
+    "upstream_inference_prompt_cost": 0.00026208,
+    "upstream_inference_completions_cost": 3.42e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_54.png": {
+  "ids": [
+   "8501 did not have permission to fly to Singapore on the day it crashed into the Java Sea, transport officials have said as search chiefs said they had found ?two big objects? believed to be from the missing plane."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 3936,
+   "completion_tokens": 54,
+   "total_tokens": 3990,
+   "cost": 0.00092916,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00092916,
+    "upstream_inference_prompt_cost": 0.00082656,
+    "upstream_inference_completions_cost": 0.0001026
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_55.png": {
+  "ids": [
+   "2:30 pm NEWLINE_CHAR NEWLINE_CHAR Updated: June 22, 2017 1:24 pm NEWLINE_CHAR NEWLINE_CHAR HOPE, Maine ? While jogging on a familiar, overgrown, wooded trail near her home on a recent warm afternoon, Rachel Borch thought to herself, ?what a beautiful day.?"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2580,
+   "completion_tokens": 82,
+   "total_tokens": 2662,
+   "cost": 0.0006976,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006976,
+    "upstream_inference_prompt_cost": 0.0005418,
+    "upstream_inference_completions_cost": 0.0001558
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_56.png": {
+  "ids": [
+   "15-year-old girl"
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2097,
+   "completion_tokens": 14,
+   "total_tokens": 2111,
+   "cost": 0.00046697,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00046697,
+    "upstream_inference_prompt_cost": 0.00044037,
+    "upstream_inference_completions_cost": 2.66e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_57.png": {
+  "ids": [
+   "PS3-splendid, and current-gen PC smooth."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2029,
+   "completion_tokens": 20,
+   "total_tokens": 2049,
+   "cost": 0.00046409,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00046409,
+    "upstream_inference_prompt_cost": 0.00042609,
+    "upstream_inference_completions_cost": 3.8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_58.png": {
+  "ids": [
+   "I-40 nearing the I-95 interchange."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 1582,
+   "completion_tokens": 20,
+   "total_tokens": 1602,
+   "cost": 0.00037022,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00037022,
+    "upstream_inference_prompt_cost": 0.00033222,
+    "upstream_inference_completions_cost": 3.8e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "T_59.png": {
+  "ids": [
+   "2002."
+  ],
+  "codename": "",
+  "mascot": "",
+  "server": "",
+  "usage": {
+   "prompt_tokens": 2530,
+   "completion_tokens": 13,
+   "total_tokens": 2543,
+   "cost": 0.000556,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000556,
+    "upstream_inference_prompt_cost": 0.0005313,
+    "upstream_inference_completions_cost": 2.47e-05
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

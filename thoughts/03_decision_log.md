@@ -279,3 +279,8 @@
 - 5 seats (Claude subagents, role-separated): all Major Revision. Reports in paper/review/r1_*.md; decision letter + roadmap in paper/review/round1_editorial.md.
 - User decision: **cite R-or-R and narrow novelty to budget-constrained allocation** (reverses 2026-11-03 decision). K/routing become prior-work baseline.
 - User decision: Stage 4 scope = P0 (RM-1..4) + cheap P1 (RM-5 detector-independent NIQ, RM-6 8–10px, RM-7 stats, RM-8 salience control). Skip local Glyph/DeepSeek-OCR/pruning (RM-10 → scoping paragraph).
+
+## Stage 4 revision (2026-11-04)
+- Rescoring (no API): S−A survives precision-aware F1 and Holm. On RULER, K/X are inflated by leakage (anchor list = answer on single/multivalue). X−K is ≈0 pooled.
+- New runs (5 readers, ≈$4): LB plain text on lb3 (X−T sig. neg. 9/10); niq3 detector-independent (S−A −0.01, X−A −0.09); niq2 at 5/7px (X ≥ K frontier by 0.02–0.04); box control B (−0.05 vs A); 8/10px (S−A +0.38/+0.20, S−U +0.26/+0.04); multikey at 64K/128K with K/X (X ≈ K recall, 30% cheaper, F1 ≈0.38).
+- Paper reframed: contribution = Allocate; R-or-R cited anonymously; AGAR (2606.12898) added as closest related work; density/routing moved to the appendix.

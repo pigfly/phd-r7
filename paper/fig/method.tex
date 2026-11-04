@@ -39,6 +39,6 @@
 \draw[flow] (route.west) -- ++(-0.35,0) |- (txt.east);
 \draw[save] (alloc.north) to[bend left=22] node[lab, above, text=cCoral] {saved budget $B-v(I)$} (anc.north);
 \end{tikzpicture}
-\caption{\textbf{Hazard-aware rendering.} \textsc{Detect} marks verbatim-risky strings in the text before rendering; \textsc{Allocate} enlarges only those strings and shrinks prose so that the image stays within the vision-token budget $B$ of uniform rendering (up to page rounding); \textsc{Anchor} spends the saved budget on verbatim copies of the flagged strings; \textsc{Route} sends documents whose anchors would be too expensive to plain text. The thumbnails show the same 32K-character document rendered uniformly and by our allocation. Every step is training-free and needs no access to the model.}
+\caption{\textbf{Hazard-aware rendering.} Our contribution is \textsc{Allocate}. \textsc{Detect} marks verbatim-risky strings in the text before rendering; \textsc{Allocate} enlarges only those strings and shrinks prose so that the image stays within the vision-token budget $B$ of uniform rendering (up to page rounding); \textsc{Anchor} and \textsc{Route}, which follow prior work~\cite{anon2026renderretain}, spend the saved budget on verbatim copies of the flagged strings and send documents whose anchors would be too expensive to plain text. The thumbnails show the same 32K-character document rendered uniformly and by our allocation. Every step is training-free and needs no access to the model.}
 \label{fig:method}
 \end{figure*}

@@ -18,7 +18,7 @@
 \vspace{-1.2em}
 \begin{center}
 \includegraphics[width=\textwidth]{fig/teaser.pdf}
-\captionof{figure}{\textbf{Uniform rendering silently corrupts exactly the strings that must be copied.} A 32K-character essay hides one UUID. \emph{Left:} rendered uniformly at 6\,px, Claude Sonnet 5.5 returns a well-formed UUID with four wrong characters and no sign of doubt. \emph{Middle:} our renderer enlarges the UUID within the same vision-token budget (here the prose keeps its 6\,px size), and the answer is exact. \emph{Right:} needle recall averaged over six VLMs and three RULER tasks; uniform rendering degrades with context length while hazard-aware rendering does not.}
+\captionof{figure}{\textbf{Uniform rendering silently corrupts exactly the strings that must be copied.} A 32K-character essay hides one UUID. \emph{Left:} rendered uniformly at 6\,px, Claude Sonnet 5.5 returns a well-formed UUID with four wrong characters and no sign of doubt. \emph{Middle:} our renderer enlarges the UUID within the same vision-token budget (here the prose keeps its 6\,px size), and the answer is exact. \emph{Right:} needle recall averaged over five VLMs and three RULER tasks; uniform rendering degrades with context length while hazard-aware rendering does not.}
 \label{fig:teaser}
 \end{center}
 \vspace{0.6em}

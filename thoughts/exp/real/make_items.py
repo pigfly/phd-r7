@@ -156,6 +156,32 @@ def render(units, lead=0):
         y += lh
     return im
 
+def render_box(text, s):
+    """arm B (salience control, review RM-8): S's layout with s_hi = s_lo = s (flagged tokens kept whole, nothing
+    enlarged) and a 1-px box drawn around each flagged token. Same glyph size as A, so the needle is easier to find
+    but not easier to read. Uses the strict detector."""
+    global STRICT
+    old = STRICT; STRICT = True
+    try:
+        units = units_mixed(text, s, s); boxed = {i for i, (t, _) in enumerate(units) if len(t) > 1 or flagged(t)}
+        lines, cur, x, k = [], [], MARGIN, 0
+        for t, sz in units:  # same greedy flow as layout(), keeping unit indices
+            w = font(sz).getlength(t)
+            if cur and x + w > W - MARGIN and t != " ": lines.append(cur); cur, x = [], MARGIN
+            if not (not cur and t == " "): cur.append((x, t, sz, k)); x += w
+            k += 1
+        if cur: lines.append(cur)
+        lh = sum(font(s).getmetrics()) + 1; H = len(lines) * lh + 2 * MARGIN
+        im = Image.new("L", (W, H), 255); d = ImageDraw.Draw(im); y = MARGIN
+        for ln in lines:
+            for x, t, sz, k in ln:
+                d.text((x, y), t, font=font(sz), fill=0)
+                if k in boxed: d.rectangle([x - 1, y, x + font(sz).getlength(t), y + lh - 1], outline=0)
+            y += lh
+        return im
+    finally:
+        STRICT = old
+
 def units_uniform(text, s): return [(c, s) for c in text]                       # hard char wrap
 def words(text): return [t for t in re.split(r"(\s+)", text) if t]
 def units_word(text, s, s_hi=None):
@@ -265,6 +291,7 @@ def long_arm(code, text, budget, s_a):
     old = STRICT
     try:
         if code == "A": return render(units_uniform(text, s_a)), s_a, s_a, 0
+        if code == "B": return render_box(text, s_a), s_a, s_a, 0
         if code == "U": im, sz, fi = arm_u(text, budget); return im, sz, sz, fi
         if code == "Z": im, f = arm_z(text, budget); return im, 10, 10, round(f, 3)
         STRICT = code in "SL"

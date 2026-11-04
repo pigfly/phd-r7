@@ -12,80 +12,7 @@ def fmt(x, best=False, second=False, d=2):
     s = f"{x:.{d}f}"
     return f"\\textbf{{{s}}}" if best else (f"\\underline{{{s}}}" if second else s)
 
-# ---------------- Table 1: equal-budget images (A,U,Z,R,S) and with anchors (K,X), both densities
-t = N["table1_baselines_ruler16k"]
-def cell(v, best):
-    if v is None: return "--"
-    return f"\\textbf{{{v:.2f}}}" if (best and v == best and v > 0) else f"{v:.2f}"
-rows = []
-for rd in RD + ["mean"]:
-    cells = []
-    for d in ("s5", "s6"):
-        v = t[f"{d}|{rd}"]
-        b1 = max(v[a] for a in "AUZRS" if v[a] is not None); b2 = max(v[a] for a in "KX" if v[a] is not None)
-        cells += [cell(v[a], b1) for a in "AUZRS"] + [cell(v[a], b2) for a in "KX"]
-    if rd == "mean":
-        rows.append("\\midrule")
-        cells = [c + ("$^{\\dagger}$" if i % 7 in (3, 6) else "") for i, c in enumerate(cells)]
-    rows.append(("\\textit{Mean}" if rd == "mean" else SHORT[rd]) + " & " + " & ".join(cells) + " \\\\")
-cost = []
-for d in ("s5", "s6"):
-    v = t[f"{d}|mean"]; cost += [f"{v['billed_'+a]:.0f}" + ("$^{\\dagger}$" if a in "RX" else "") for a in "AUZRSKX"]
-rows.append("\\textit{Billed tokens} & " + " & ".join(cost) + " \\\\")
-(TAB / "baselines.tex").write_text(r"""\begin{table*}[t]
-\centering
-\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall averaged over three NIAH tasks ($N{=}25$ each) per reader, at two budgets (uniform 5\,px $\approx$ 32 and 6\,px $\approx$ 21 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} ordinary words enlarged by our allocation (matched in total length), and hazardous strings enlarged (ours). K and X add anchors to A and S. \textbf{Bold}: best within each group. $^{\dagger}$R and X were run on the five readers other than Claude; their means and billed tokens are over those readers (on the same readers, K averages 0.97 and 0.94). Billed tokens average the readers that report usage. Hazard-aware allocation (S) is significantly worse than U or Z in none of 72 paired comparisons and better in 63; enlarging random words instead (R) does not help.}
-\label{tab:baselines}
-\small
-\setlength{\tabcolsep}{3.4pt}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{l ccccc cc ccccc cc}
-\toprule
-& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars/vtok)} \\
-\cmidrule(lr){2-8}\cmidrule(lr){9-15}
-& \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
-\cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
-Reader & A & U & Z & R & S (ours) & K & X (ours) & A & U & Z & R & S (ours) & K & X (ours) \\
-\midrule
-""" + "\n".join(rows) + r"""
-\bottomrule
-\end{tabular}}
-\end{table*}
-""")
-
-# ---------------- Table 2: LongBench held-out QA (A,S,K,X)
-lb = N["longbench_lb3"]
-rows = []
-def star(d): return "$^{\\dagger}$" if d[2] < 0 else ("$^{\\ast}$" if d[1] > 0 else "")
-for rd in RD:
-    cells = []
-    for task in ("mfqa", "hotpot"):
-        v = lb[f"lb3_s6_{task}|{rd}"]; a = v["arms"]; dd = v["diffs"]
-        cells += [f"{a['A']['f1']:.2f}"] + [f"{a[x]['f1']:.2f}{star(dd[x+'-A'])}" for x in "SKX"]
-    rows.append(f"{SHORT[rd]} & " + " & ".join(cells) + " \\\\")
-mean = []
-for task in ("mfqa", "hotpot"):
-    vs = [lb[f"lb3_s6_{task}|{rd}"]["arms"] for rd in RD]
-    mean += [f"{St.mean(v[x]['f1'] for v in vs):.2f}" for x in "ASKX"]
-rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\"]
-(TAB / "longbench.tex").write_text(r"""\begin{table}[t]
-\centering
-\caption{\textbf{Reallocation does not hurt comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Ours + anchors (X) has no significantly negative cell.}
-\label{tab:longbench}
-\small
-\setlength{\tabcolsep}{2.6pt}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{l cccc cccc}
-\toprule
-& \multicolumn{4}{c}{MultiFieldQA-en} & \multicolumn{4}{c}{HotpotQA} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-9}
-Reader & A & S & K & X & A & S & K & X \\
-\midrule
-""" + "\n".join(rows) + r"""
-\bottomrule
-\end{tabular}}
-\end{table}
-""")
+# Tables 1 (baselines), 2 (LongBench), NIQ and pooled effects: see the revision block at the end.
 
 # ---------------- Table 3: detector ablation
 de = N["detector_ablation"]
@@ -208,30 +135,161 @@ Reader & ids & prose & ids & prose & ids & prose & ids & prose \\
 """ + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}}\n\\end{table*}\n")
 print("appendix tables written")
 
-# ---------------- Table: natural identifiers (NIQ)
-nq = N["niq"]; rows = []
-RD5 = [r for r in RD if r in nq]
-def sg(d): return "$^{\\ast}$" if d[1] > 0 else ("$^{\\dagger}$" if d[2] < 0 else "")
-for rd in RD5:
-    a = nq[rd]["arms"]; d = nq[rd]["diffs"]
-    rows.append(f"{SHORT[rd]} & {a['A']['recall']:.2f} & {a['S']['recall']:.2f}{sg(d['S-A'])} & {a['K']['recall']:.2f}{sg(d['K-A'])} & {a['X']['recall']:.2f}{sg(d['X-A'])} & {a['T']['recall']:.2f} \\\\")
-mean = [St.mean(nq[r]["arms"][x]["recall"] for r in RD5) for x in "ASKXT"]
-bil = [St.mean(nq[r]["arms"][x]["billed"] for r in RD5 if nq[r]["arms"][x]["billed"]) for x in "ASKXT"]
-rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{m:.2f}" for m in mean) + " \\\\",
-         "\\textit{Billed tokens} & " + " & ".join(f"{b:.0f}" for b in bil) + " \\\\"]
-(TAB / "niq.tex").write_text(r"""\begin{table}[t]
+
+
+
+# ======================= revision (review round 1): fixed 5-reader means, F1, text references, pooled effects
+R5 = [r for r in RD if r != "claude-sonnet-5.5"]
+RV = N["revision_5readers"]; PO = N["pooled"]
+def avg(xs): xs = [x for x in xs if x is not None]; return St.mean(xs) if xs else None
+TASKS3 = ("single_3", "multikey_1", "multivalue")
+
+# ---------------- Table 1: equal-budget images (A,U,Z,R,S) and with anchors (K,X)
+t = N["table1_baselines_ruler16k"]
+def cell(v, best):
+    if v is None: return "--"
+    return f"\\textbf{{{v:.2f}}}" if (best is not None and abs(v - best) < 1e-9 and v > 0) else f"{v:.2f}"
+rows = []
+for rd in RD:
+    cells = []
+    for d in ("s5", "s6"):
+        v = t[f"{d}|{rd}"]
+        b1 = max(v[a] for a in "AUZRS" if v[a] is not None); b2 = max(v[a] for a in "KX" if v[a] is not None)
+        cells += [cell(v[a], b1) for a in "AUZRS"] + [cell(v[a], b2) for a in "KX"]
+    rows.append(SHORT[rd] + ("$^{\\ddagger}$" if rd == "claude-sonnet-5.5" else "") + " & " + " & ".join(cells) + " \\\\")
+rows.append("\\midrule")
+mr, mf, mb = [], [], []
+for d in ("s5", "s6"):
+    rec = {a: avg(t[f"{d}|{rd}"][a] for rd in R5) for a in "AUZRSKX"}
+    b1 = max(rec[a] for a in "AUZRS"); b2 = max(rec[a] for a in "KX")
+    mr += [cell(rec[a], b1) for a in "AUZRS"] + [cell(rec[a], b2) for a in "KX"]
+    f1 = {a: avg(RV[f"rbx_{d}_{k}"][a]["f1"] for k in TASKS3) if a != "R" else avg(N["rescore"][f"rabl2_{d}_{k}|{rd}"]["arms"]["R"]["f1"] for k in TASKS3 for rd in R5 if f"rabl2_{d}_{k}|{rd}" in N["rescore"]) for a in "AUZRSKX"}
+    b1 = max(f1[a] for a in "AUZRS"); b2 = max(f1[a] for a in "KX")
+    mf += [cell(f1[a], b1) for a in "AUZRS"] + [cell(f1[a], b2) for a in "KX"]
+    mb += [f"{(avg(RV[f'rbx_{d}_{k}'][a]['billed'] for k in TASKS3) if a != 'R' else t[f'{d}|mean']['billed_R']):.0f}" for a in "AUZRSKX"]
+rows += ["\\textit{Mean recall} & " + " & ".join(mr) + " \\\\", "\\textit{Mean F1} & " + " & ".join(mf) + " \\\\",
+         "\\textit{Billed tokens} & " + " & ".join(mb) + " \\\\"]
+pa = lambda f, c: PO[f"{f}|{c}|recall"]
+(TAB / "baselines.tex").write_text(r"""\begin{table*}[t]
 \centering
-\caption{\textbf{Naturally occurring identifiers.} Exact-copy recall on 60 LongBench documents ($\le$40K characters, 6\,px budget) for identifiers already present in the text, such as report numbers, ISBNs, grant numbers, citation keys, and URLs. $^{\ast}$: paired 95\% CI vs.\ uniform (A) above zero. Billed tokens average the four readers that report usage.}
-\label{tab:niq}
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall per reader averaged over three NIAH tasks ($N{=}25$ each), at two budgets (uniform 5\,px $\approx$ 32 and 6\,px $\approx$ 21 characters per vision token). A, U, Z, R, and S are images with the same vision-token budget: uniform, best uniform font/size, render-then-downsample, \emph{random} ordinary words enlarged by our allocation (matched in total length), and flagged strings enlarged (ours). K and X append anchors~\cite{anon2026renderretain} to A and S. \textbf{Bold}: best within each group. Means, F1 (precision-aware: extra returned values count against the reader), and billed tokens are over the five readers other than Claude$^{\ddagger}$, which was not run on R and X. Pooled over tasks and readers, S$-$A is """ + f"+{pa('tab1_s5','S-A')['pooled']:.2f} [{pa('tab1_s5','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s5','S-A')['ci_readers_items'][1]:.2f}] at 5\\,px and +{pa('tab1_s6','S-A')['pooled']:.2f} [{pa('tab1_s6','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s6','S-A')['ci_readers_items'][1]:.2f}] at 6\\,px (95\\% CI, readers and items resampled; \\cref{{tab:pooled}})." + r""" On these tasks the anchors contain the answer (\cref{sec:anchors}), so K and X measure copying rather than reading.}
+\label{tab:baselines}
 \small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{l ccccc}
+\setlength{\tabcolsep}{3.4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l ccccc cc ccccc cc}
 \toprule
-Reader & A & S & K & X & T (text) \\
+& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars/vtok)} \\
+\cmidrule(lr){2-8}\cmidrule(lr){9-15}
+& \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
+Reader & A & U & Z & R & S (ours) & K & X & A & U & Z & R & S (ours) & K & X \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
-\end{tabular}
+\end{tabular}}
+\end{table*}
+""")
+
+# ---------------- Table: pooled effects (5 readers)
+def prow(label, fam, cmp, met="recall"):
+    r = PO[f"{fam}|{cmp}|{met}"]; lo, hi = r["ci_readers_items"]
+    return f"{label} & {r['pooled']:+.2f} & [{lo:+.2f}, {hi:+.2f}] & {r['sig_pos_holm']}/{r['cells']} & {r['sig_neg_holm']} \\\\"
+prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RULER)}} \\",
+       prow("S$-$A, 16K, 5\\,px", "tab1_s5", "S-A"), prow("S$-$A, 16K, 6\\,px", "tab1_s6", "S-A"),
+       prow("S$-$A, 32K--128K, 6\\,px", "length", "S-A"),
+       prow("S$-$U (font/size search), 6\\,px", "tab1_s6", "S-U"), prow("S$-$R (random words), 6\\,px", "tab1_s6", "S-R"),
+       prow("B$-$A (box, no enlargement), 6\\,px", "box_s6", "B-A"), prow("S$-$B, 6\\,px", "box_s6", "S-B"),
+       r"\midrule \multicolumn{5}{l}{\textit{Milder budgets (32K)}} \\",
+       prow("S$-$A, 8\\,px", "s8", "S-A"), prow("S$-$U, 8\\,px", "s8", "S-U"), prow("S$-$A, 10\\,px", "s10", "S-A"), prow("S$-$U, 10\\,px", "s10", "S-U"),
+       r"\midrule \multicolumn{5}{l}{\textit{Natural strings (LongBench documents)}} \\",
+       prow("S$-$A, flagged targets", "niq2_s6", "S-A"), prow("S$-$A, detector-independent", "niq3_s6", "S-A"),
+       r"\midrule \multicolumn{5}{l}{\textit{Anchors on the allocated vs.\ uniform image}} \\",
+       prow("X$-$K, RULER 16K, 6\\,px (F1)", "tab1_s6", "X-K", "f1"), prow("X$-$K, natural, flagged", "niq2_s6", "X-K"),
+       prow("X$-$K, natural, detector-indep.", "niq3_s6", "X-K")]
+(TAB / "pooled.tex").write_text(r"""\begin{table}[t]
+\centering
+\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative.}
+\label{tab:pooled}
+\small
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l c c c c}
+\toprule
+Comparison & $\Delta$ & 95\% CI & sig. & neg. \\
+\midrule
+""" + "\n".join(prs) + r"""
+\bottomrule
+\end{tabular}}
 \end{table}
 """)
-print("niq table written")
+
+# ---------------- Table: LongBench held-out QA with plain text
+lb = N["longbench_lb3"]
+rows = []
+def star(d): return "$^{\\dagger}$" if d[2] < 0 else ("$^{\\ast}$" if d[1] > 0 else "")
+for rd in R5:
+    cells = []
+    for task in ("mfqa", "hotpot"):
+        v = lb[f"lb3_s6_{task}|{rd}"]; a = v["arms"]; dd = v["diffs"]
+        cells += [f"{a['A']['f1']:.2f}"] + [f"{a[x]['f1']:.2f}{star(dd[x+'-A'])}" for x in "SKX"] + [f"{a['T']['f1']:.2f}"]
+    rows.append(f"{SHORT[rd]} & " + " & ".join(cells) + " \\\\")
+mean, bil = [], []
+for task in ("mfqa", "hotpot"):
+    vs = [lb[f"lb3_s6_{task}|{rd}"]["arms"] for rd in R5]
+    mean += [f"{St.mean(v[x]['f1'] for v in vs):.2f}" for x in "ASKXT"]
+    bil += [f"{St.mean(v[x]['billed'] for v in vs if v[x]['billed']):.0f}" for x in "ASKXT"]
+nxt = sum(lb[f"lb3_s6_{t}|{rd}"]["diffs"]["X-T"][2] < 0 for t in ("mfqa", "hotpot") for rd in R5)
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Billed tokens} & " + " & ".join(bil) + " \\\\"]
+(TAB / "longbench.tex").write_text(r"""\begin{table}[t]
+\centering
+\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Relative to A, X has no significantly negative cell and S one; every image arm trails plain text T (X$-$T significantly negative in """ + f"{nxt} of {2*len(R5)}" + r""" cells).}
+\label{tab:longbench}
+\small
+\setlength{\tabcolsep}{2.2pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l ccccc ccccc}
+\toprule
+& \multicolumn{5}{c}{MultiFieldQA-en} & \multicolumn{5}{c}{HotpotQA} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+Reader & A & S & K & X & T & A & S & K & X & T \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}}
+\end{table}
+""")
+
+# ---------------- Table: natural identifiers, detector-flagged (niq2) and detector-independent (niq3) targets
+rs = N["rescore"]
+def g(run, rd, a): return rs[f"{run}|{rd}"]["arms"][a]["recall"]
+def sg(run, rd, a):
+    d = rs[f"{run}|{rd}"]["diffs"].get(f"{a}-A|recall")
+    return "" if d is None else ("$^{\\ast}$" if d[1] > 0 else ("$^{\\dagger}$" if d[2] < 0 else ""))
+rows = []
+for rd in R5:
+    c = [f"{g('niq2_s6', rd, 'A'):.2f}"] + [f"{g('niq2_s6', rd, a):.2f}{sg('niq2_s6', rd, a)}" for a in "SKX"] + [f"{g('niq2_s6', rd, 'T'):.2f}"]
+    c += [f"{g('niq3_s6', rd, 'A'):.2f}"] + [f"{g('niq3_s6', rd, a):.2f}{sg('niq3_s6', rd, a)}" for a in "SKX"] + [f"{g('niq3_s6', rd, 'T'):.2f}"]
+    rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
+mean = [f"{RV[run][a]['recall']:.2f}" for run in ("niq2_s6", "niq3_s6") for a in "ASKXT"]
+bil = [f"{RV[run][a]['billed']:.0f}" for run in ("niq2_s6", "niq3_s6") for a in "ASKXT"]
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Billed tokens} & " + " & ".join(bil) + " \\\\"]
+(TAB / "niq.tex").write_text(r"""\begin{table}[t]
+\centering
+\caption{\textbf{Naturally occurring strings.} Exact-copy recall on LongBench documents ($\le$40K characters, 6\,px budget, $N{=}60$ each). \emph{Flagged}: targets the detector flags (report and grant numbers, ISBNs, URLs, \ldots). \emph{Detector-independent}: any digit-bearing token, sampled without the detector (""" + f"{N['niq3_flagged']}" + r"""/60 flagged; mostly short numbers and versions). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ A above/below zero. Billed tokens: four readers that report usage.}
+\label{tab:niq}
+\small
+\setlength{\tabcolsep}{2.2pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l ccccc ccccc}
+\toprule
+& \multicolumn{5}{c}{Flagged targets} & \multicolumn{5}{c}{Detector-independent targets} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+Reader & A & S & K & X & T & A & S & K & X & T \\
+\midrule
+""" + "\n".join(rows) + r"""
+\bottomrule
+\end{tabular}}
+\end{table}
+""")
+print("revision tables written")

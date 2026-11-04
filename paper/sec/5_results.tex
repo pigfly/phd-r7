@@ -17,7 +17,7 @@ Under the precision-aware F1, which penalizes returning several candidate values
 \paragraph{Targeting, enlargement, or salience?}
 Two controls separate the ingredients of S.
 Arm R runs the same allocation on randomly chosen ordinary words, matched in total length, so its sizes and cost are close to those of S while the needles shrink with the prose; it recovers 0.10 of the needles at both budgets, and S exceeds it by 0.54 and 0.56.
-Arm B keeps every glyph at the uniform size but draws a box around each flagged string, which makes the needle easy to \emph{find} but not easier to \emph{read}; it is slightly worse than uniform rendering ($-$0.05) and 0.53 below S (\cref{tab:pooled}).
+Arm B keeps every glyph at the uniform size but draws a box around each flagged string, which makes the needle easy to \emph{find} but not easier to \emph{read}; it is slightly worse than uniform rendering ($-$0.05, CI upper bound $-$0.001), perhaps because the box line touches the small glyphs, and 0.53 below S (\cref{tab:pooled}).
 The gain therefore comes from making the targeted strings legible, not from layout changes or from pointing at the needle.
 
 \input{tab/pooled}
@@ -68,12 +68,12 @@ On the single-needle and multi-value tasks of \cref{tab:baselines}, the only fla
 On multi-key, the list adds three distractor values; recall stays at 0.94--1.00, but readers often return the whole list, and the precision-aware F1 drops to 0.46--0.52.
 These numbers measure copying rather than reading, so we compare K and X where the list does not reveal the answer.
 
-On the flagged natural identifiers, documents carry 6.4 anchors on average, and choosing one at random would score 0.44.
+On the flagged natural identifiers, documents carry 5.3 distinct anchors on average, and choosing one at random would score 0.44.
 Readers do better (K 0.74, X 0.76) and almost always return a single value, so here the anchors are used, not dumped.
 Repeating this set at base sizes of 5, 6, and 7\,px gives a recall--cost frontier for each arm: X reaches 0.75, 0.76, and 0.81 at 1017, 1128, and 1306 billed tokens, and K reaches 0.71, 0.74, and 0.77 at 1014, 1267, and 1345.
-X thus lies on or above K at every cost, by 0.02--0.04, although the difference is not significant at 6\,px (\cref{tab:pooled}).
-At 64K and 128K characters, X matches K on multi-key recall (0.99 and 0.97 vs.\ 0.94 and 0.96) at 31\% and 29\% fewer billed tokens, because allocation shrinks the image the anchors are added to.
-When the target is \emph{not} flagged, anchors hurt: on the detector-independent set, X falls to 0.36 against 0.44 for S, apparently because readers copy a plausible anchor instead of reading the image.
+X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink), although no single difference is significant (\cref{tab:pooled}).
+At 64K and 128K characters, X costs 31\% and 29\% fewer billed tokens than K because allocation shrinks the image, but on multi-key the precision-aware F1 is the same for S, K, and X (0.36--0.40), so there the anchors add nothing over allocation alone.
+When the target is \emph{not} flagged, anchors can mislead: on the detector-independent set, X scores 0.36 against 0.44 for S and K ($-$0.08 vs.\ K, CI [$-$0.17, 0.01]), consistent with readers copying a plausible anchor instead of reading the image.
 On a synthetic sweep of hazard density (\cref{app:density}), anchors on either image become expensive and ineffective beyond about 16 flagged strings per 32K characters, which is where routing to text~\cite{anon2026renderretain} takes over.
 
 \subsection{Effect on ordinary comprehension}
@@ -83,7 +83,7 @@ On a synthetic sweep of hazard density (\cref{app:density}), anchors on either i
 
 Shrinking prose could hurt questions that have nothing to do with identifiers.
 \Cref{tab:longbench} tests this on held-out LongBench documents of up to 40K characters.
-Relative to uniform rendering, F1 is unchanged on MultiFieldQA (0.32 for A, 0.33 for S and X) and slightly higher on HotpotQA (0.53 for A, 0.56 for S and X); X has no significantly negative cell, and S has one (Qwen3-VL on HotpotQA, $-$0.06).
+Relative to uniform rendering, F1 is unchanged on MultiFieldQA (0.32 for A, 0.33 for S and X) and slightly higher on HotpotQA (0.53 for A, 0.56 for S and X); X has no significantly negative cell, and S has one (Qwen3-VL on HotpotQA, $-$0.06). Pooled over readers and tasks, S$-$A is +0.02 [$-$0.02, 0.06] and X$-$A +0.02 [$-$0.03, 0.07] (\cref{tab:pooled}), which rules out losses larger than about 0.03 F1.
 Relative to plain text, however, every image arm loses: T reaches 0.58 and 0.73, and X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
 Only GPT-6 Luna reads the HotpotQA images nearly as well as text.
 Allocation therefore removes a failure specific to identifiers without making optical compression a lossless substitute for text; whether the remaining comprehension gap is acceptable depends on the reader and the application.

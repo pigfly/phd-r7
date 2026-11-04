@@ -7,6 +7,27 @@ Reader set fixed to the five non-Claude readers. For each family (a set of runs 
 import json, random
 from pathlib import Path
 from rescore import load
+from analyze_ruler import failed_read
+from longbench_qa import qa_f1
+
+def load_lb(run):
+    """LongBench runs -> {reader: {item: {arm: {"f1": x}}}} (first-line qa_f1, as analyze_longbench.py)."""
+    items = {it["item"]: it for it in json.loads((run / "gt.json").read_text())["items"]}
+    man = json.loads((run / "manifest.json").read_text()); out = {}
+    f = lambda p, it: max(qa_f1((p.get("text") or "").strip().split("\n")[0], g) for g in it["answers"])
+    for pf in sorted(run.glob("pred_*.json")):
+        rd = pf.stem.replace("pred_or_", "").replace("pred_", ""); pred = json.loads(pf.read_text()); rows = {}
+        for m in man:
+            p = pred.get(m["name"] + ".png")
+            if p is None or failed_read(p) == "drop": continue
+            rows.setdefault(m["item"], {})[m["arm"]] = {"f1": 0.0 if failed_read(p) else f(p, items[m["item"]])}
+        tf = run / pf.name.replace("pred_", "predtext_")
+        if tf.exists():
+            for k, p in json.loads(tf.read_text()).items():
+                if failed_read(p) == "drop": continue
+                rows.setdefault(int(k[2:-4]), {})["T"] = {"f1": 0.0 if failed_read(p) else f(p, items[int(k[2:-4])])}
+        out[rd] = rows
+    return out
 
 HERE = Path(__file__).parent
 READERS = ["gemini-3.5-flash-lite", "gpt-6-luna", "llama-4-maverick", "minimax", "qwen3-vl-235b-a22b-instruct"]
@@ -19,7 +40,7 @@ def merged(names):
         parts = n.split("+"); acc = {}
         for p in parts:
             if not (HERE / p / "gt.json").exists(): continue
-            for rd, rows in load(HERE / p).items():
+            for rd, rows in (load_lb if p.startswith("lb") else load)(HERE / p).items():
                 for i, arms in rows.items(): acc.setdefault(rd, {}).setdefault(i, {}).update(arms)
         out[parts[0]] = {rd: acc[rd] for rd in READERS if rd in acc}
     return out
@@ -46,14 +67,17 @@ def family(data, a, b, met="recall", R=None):
     if not cells: return None
     pooled = sum(sum(c[2].values()) for c in cells) / sum(len(c[2]) for c in cells)
     runs = sorted({c[0] for c in cells}); its = {r: sorted(next(c[2] for c in cells if c[0] == r)) for r in runs}
+    rdset = sorted({c[1] for c in cells})
     def draw(resample_readers):
+        # one reader draw shared by every run (readers are crossed with runs), items resampled within each run
+        rd = [R.choice(rdset) for _ in rdset] if resample_readers else rdset
         tot = n = 0
         for r in runs:
-            rds = [c for c in cells if c[0] == r]
-            if resample_readers: rds = [R.choice(rds) for _ in rds]
+            byrd = {c[1]: c for c in cells if c[0] == r}
             ii = [R.choice(its[r]) for _ in its[r]]
-            for c in rds:
-                for i in ii: tot += c[2][i]; n += 1
+            for x in rd:
+                if x not in byrd: continue
+                for i in ii: tot += byrd[x][2][i]; n += 1
         return tot / n
     ci = lambda rr: (lambda s: [round(s[int(.025 * B)], 3), round(s[int(.975 * B)], 3)])(sorted(draw(rr) for _ in range(B)))
     ps = [cell_p(list(c[2].values()), R) for c in cells]
@@ -71,11 +95,12 @@ FAMILIES = {
     "box_s6": [f"rv2_box_s6_{t}" for t in ("single_3", "multikey_1", "multivalue")],
     "s8": [f"rv2_s8_c32k_{t}" for t in ("single_3", "multikey_1")], "s10": [f"rv2_s10_c32k_{t}" for t in ("single_3", "multikey_1")],
     "long_kx": [f"rv2_c{c}k_multikey_1" for c in (64, 128)],
+    "longbench": ["lb3_s6_mfqa", "lb3_s6_hotpot"],
 }
 COMPARE = {"tab1_s5": ["S-A", "S-U", "S-Z", "S-R", "X-K"], "tab1_s6": ["S-A", "S-U", "S-Z", "S-R", "X-K"],
            "length": ["S-A"], "niq2_s6": ["S-A", "X-A", "X-K", "K-A"], "niq3_s6": ["S-A", "X-A", "X-K", "K-A", "X-T"],
            "density": ["S-A", "X-K"], "box_s6": ["B-A", "S-B", "S-A"], "s8": ["S-A", "S-U", "X-K"], "s10": ["S-A", "S-U", "X-K"],
-           "long_kx": ["S-A", "X-K", "K-A", "X-A"]}
+           "long_kx": ["S-A", "X-K", "K-A", "X-A", "X-S"], "longbench": ["S-A", "X-A", "K-A", "X-T"]}
 
 if __name__ == "__main__":
     res = {}
@@ -84,7 +109,7 @@ if __name__ == "__main__":
         if not any(data.values()): continue
         for cmp in COMPARE[fam]:
             a, b = cmp.split("-")
-            for met in ("recall", "f1"):
+            for met in (("f1",) if fam == "longbench" else ("recall", "f1")):
                 r = family(data, a, b, met)
                 if r: res[f"{fam}|{cmp}|{met}"] = r; print(f"{fam:9s} {cmp:4s} {met:6s}", r)
     (HERE / "analysis_pooled.json").write_text(json.dumps(res, indent=1))

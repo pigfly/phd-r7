@@ -1,6 +1,6 @@
 \begin{table}[t]
 \centering
-\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative.}
+\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative. All X$-$K comparisons we ran are listed.}
 \label{tab:pooled}
 \small
 \setlength{\tabcolsep}{2.5pt}
@@ -10,25 +10,34 @@
 Comparison & $\Delta$ & 95\% CI & sig. & neg. \\
 \midrule
 \multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RULER)}} \\
-S$-$A, 16K, 5\,px & +0.55 & [+0.43, +0.68] & 14/15 & 0 \\
-S$-$A, 16K, 6\,px & +0.43 & [+0.31, +0.55] & 11/15 & 0 \\
-S$-$A, 32K--128K, 6\,px & +0.48 & [+0.42, +0.54] & 35/45 & 0 \\
-S$-$U (font/size search), 6\,px & +0.44 & [+0.31, +0.56] & 11/15 & 0 \\
-S$-$R (random words), 6\,px & +0.56 & [+0.44, +0.67] & 12/15 & 0 \\
-B$-$A (box, no enlargement), 6\,px & -0.05 & [-0.11, -0.01] & 0/15 & 1 \\
+S$-$A, 16K, 5\,px & +0.55 & [+0.48, +0.62] & 14/15 & 0 \\
+S$-$A, 16K, 6\,px & +0.43 & [+0.27, +0.56] & 11/15 & 0 \\
+S$-$A, 32K--128K, 6\,px & +0.48 & [+0.43, +0.53] & 35/45 & 0 \\
+S$-$U (font/size search), 6\,px & +0.44 & [+0.31, +0.55] & 11/15 & 0 \\
+S$-$R (random words), 6\,px & +0.56 & [+0.47, +0.64] & 12/15 & 0 \\
+B$-$A (box, no enlargement), 6\,px & -0.05 & [-0.13, 0.00] & 0/15 & 1 \\
 S$-$B, 6\,px & +0.53 & [+0.41, +0.64] & 14/15 & 0 \\
 \midrule \multicolumn{5}{l}{\textit{Milder budgets (32K)}} \\
-S$-$A, 8\,px & +0.38 & [+0.22, +0.54] & 8/10 & 0 \\
-S$-$U, 8\,px & +0.26 & [+0.12, +0.44] & 3/10 & 0 \\
-S$-$A, 10\,px & +0.20 & [+0.08, +0.33] & 4/10 & 0 \\
-S$-$U, 10\,px & +0.04 & [-0.07, +0.15] & 1/10 & 1 \\
+S$-$A, 8\,px & +0.38 & [+0.28, +0.46] & 8/10 & 0 \\
+S$-$U, 8\,px & +0.26 & [+0.14, +0.40] & 3/10 & 0 \\
+S$-$A, 10\,px & +0.20 & [+0.11, +0.30] & 4/10 & 0 \\
+S$-$U, 10\,px & +0.04 & [-0.04, +0.12] & 1/10 & 1 \\
 \midrule \multicolumn{5}{l}{\textit{Natural strings (LongBench documents)}} \\
 S$-$A, flagged targets & +0.25 & [+0.12, +0.38] & 4/5 & 0 \\
 S$-$A, detector-independent & -0.01 & [-0.11, +0.08] & 0/5 & 0 \\
-\midrule \multicolumn{5}{l}{\textit{Anchors on the allocated vs.\ uniform image}} \\
-X$-$K, RULER 16K, 6\,px (F1) & +0.04 & [+0.01, +0.08] & 1/15 & 0 \\
-X$-$K, natural, flagged & +0.02 & [-0.06, +0.10] & 0/5 & 0 \\
-X$-$K, natural, detector-indep. & -0.08 & [-0.17, +0.01] & 0/5 & 1 \\
+\midrule \multicolumn{5}{l}{\textit{Ordinary comprehension (LongBench F1)}} \\
+S$-$A & +0.02 & [-0.02, +0.06] & 0/10 & 0 \\
+X$-$A & +0.02 & [-0.03, +0.07] & 0/10 & 0 \\
+X$-$T (plain text) & -0.21 & [-0.29, -0.13] & 0/10 & 9 \\
+\midrule \multicolumn{5}{l}{\textit{Anchors: X$-$K (F1 on RULER, recall on natural strings)}} \\
+RULER 16K, 5\,px & 0.00 & [-0.02, +0.03] & 0/15 & 0 \\
+RULER 16K, 6\,px & +0.04 & [0.00, +0.08] & 1/15 & 0 \\
+RULER 32K, 8\,px & 0.00 & [-0.04, +0.04] & 0/10 & 0 \\
+RULER 32K, 10\,px & 0.00 & [-0.05, +0.06] & 0/10 & 0 \\
+density $k\le16$, 32K & -0.01 & [-0.07, +0.04] & 1/15 & 0 \\
+multi-key 64K--128K & -0.01 & [-0.05, +0.03] & 0/10 & 0 \\
+natural, flagged & +0.02 & [-0.06, +0.10] & 0/5 & 0 \\
+natural, detector-indep. & -0.08 & [-0.17, +0.01] & 0/5 & 1 \\
 \bottomrule
 \end{tabular}}
 \end{table}

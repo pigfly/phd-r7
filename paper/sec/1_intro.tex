@@ -4,7 +4,7 @@
 Long contexts are expensive to feed to large models.
 A growing line of work reduces this cost by \emph{rendering} text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
 A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it holds, so dense rendering can compress a document several-fold.
-In our measurements, a 128K-character essay costs 27.1K billed text tokens but only 4.7K billed tokens as a uniformly rendered image (mean of the same four readers).
+In our measurements, a 128K-character essay costs 27.1K billed text tokens but only 4.7K billed tokens as a uniformly rendered image (mean of the four readers that report billed usage for both).
 The compression needs no training, works with any VLM that accepts images, and is controlled entirely by the party that renders the text.
 
 Existing systems decide \emph{how densely} to render, but rarely \emph{where} the resolution goes.
@@ -22,13 +22,13 @@ We confirm the problem at long-context scale: at an equal budget, uniform render
 Our observation is that the renderer already holds the signal needed to fix the image.
 Before any pixel is drawn, the text says where the hazardous strings are, and the renderer decides how many pixels each of them gets.
 We therefore propose \emph{\ours} (\cref{fig:method}): flagged strings are drawn larger and prose smaller, under the constraint that the image costs no more vision tokens than uniform rendering.
-The allocation (arm S in our experiments) is training-free and query-independent, so a rendered document can be cached and reused.
+The allocation (arm S in our experiments) is training-free and query-independent, so the same rendering can serve every question about a document.
 It composes with the anchors and text routing of prior work~\cite{anon2026renderretain}, which we treat as baselines and building blocks (arms K and X).
 
 Our contributions are:
 \begin{itemize}
   \item \textbf{Budget-constrained glyph allocation} for rendered context, a rule that redistributes resolution inside the image using only the text and black-box access to the reader (\cref{sec:method}).
   \item \textbf{Controlled evidence for where it helps.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K, and beats font/size search, render-then-downsample, enlargement of random words, and boxing the needles without enlarging them (\cref{tab:pooled}). The gain shrinks at milder budgets and matches a font search at 10\,px.
-  \item \textbf{Natural strings and side effects.} On identifiers that occur in LongBench documents, allocation doubles recall (0.23 to 0.48); on digit-bearing strings sampled independently of the detector, which it mostly does not flag, it neither helps nor hurts. It leaves LongBench QA unchanged relative to uniform rendering, while every image arm, ours included, trails plain text.
-  \item \textbf{Composition with anchors.} The vision tokens allocation saves pay for the anchors: on natural identifiers, anchors on the allocated image lie on or slightly above the recall--cost frontier of anchors on uniform images across three budgets, and at 64K--128K characters they cost 30\% fewer billed tokens at equal recall. We also show that on standard needle tasks anchors contain the answer, so recall there measures copying rather than reading.
+  \item \textbf{Natural strings and side effects.} On identifiers in LongBench documents that the detector flags, allocation doubles recall (0.23 to 0.48); on digit-bearing strings sampled independently of the detector, which it mostly does not flag, it neither helps nor hurts. It leaves LongBench QA unchanged relative to uniform rendering, while every image arm, ours included, trails plain text.
+  \item \textbf{Composition with anchors.} Anchors are as accurate on the allocated image as on a uniform one (pooled X$-$K between $-$0.01 and +0.04 in every setting with flagged targets), and cost less wherever allocation shrinks the image. We also show that on standard needle tasks anchors contain the answer, so recall there measures copying rather than reading, and that anchors mislead readers when the target is not flagged.
 \end{itemize}

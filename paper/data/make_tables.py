@@ -194,7 +194,8 @@ Reader & A & U & Z & R & S (ours) & K & X & A & U & Z & R & S (ours) & K & X \\
 # ---------------- Table: pooled effects (5 readers)
 def prow(label, fam, cmp, met="recall"):
     r = PO[f"{fam}|{cmp}|{met}"]; lo, hi = r["ci_readers_items"]
-    return f"{label} & {r['pooled']:+.2f} & [{lo:+.2f}, {hi:+.2f}] & {r['sig_pos_holm']}/{r['cells']} & {r['sig_neg_holm']} \\\\"
+    f = lambda x: "0.00" if abs(x) < 0.005 else f"{x:+.2f}"
+    return f"{label} & {f(r['pooled'])} & [{f(lo)}, {f(hi)}] & {r['sig_pos_holm']}/{r['cells']} & {r['sig_neg_holm']} \\\\"
 prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RULER)}} \\",
        prow("S$-$A, 16K, 5\\,px", "tab1_s5", "S-A"), prow("S$-$A, 16K, 6\\,px", "tab1_s6", "S-A"),
        prow("S$-$A, 32K--128K, 6\\,px", "length", "S-A"),
@@ -204,12 +205,16 @@ prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RUL
        prow("S$-$A, 8\\,px", "s8", "S-A"), prow("S$-$U, 8\\,px", "s8", "S-U"), prow("S$-$A, 10\\,px", "s10", "S-A"), prow("S$-$U, 10\\,px", "s10", "S-U"),
        r"\midrule \multicolumn{5}{l}{\textit{Natural strings (LongBench documents)}} \\",
        prow("S$-$A, flagged targets", "niq2_s6", "S-A"), prow("S$-$A, detector-independent", "niq3_s6", "S-A"),
-       r"\midrule \multicolumn{5}{l}{\textit{Anchors on the allocated vs.\ uniform image}} \\",
-       prow("X$-$K, RULER 16K, 6\\,px (F1)", "tab1_s6", "X-K", "f1"), prow("X$-$K, natural, flagged", "niq2_s6", "X-K"),
-       prow("X$-$K, natural, detector-indep.", "niq3_s6", "X-K")]
+       r"\midrule \multicolumn{5}{l}{\textit{Ordinary comprehension (LongBench F1)}} \\",
+       prow("S$-$A", "longbench", "S-A", "f1"), prow("X$-$A", "longbench", "X-A", "f1"), prow("X$-$T (plain text)", "longbench", "X-T", "f1"),
+       r"\midrule \multicolumn{5}{l}{\textit{Anchors: X$-$K (F1 on RULER, recall on natural strings)}} \\",
+       prow("RULER 16K, 5\\,px", "tab1_s5", "X-K", "f1"), prow("RULER 16K, 6\\,px", "tab1_s6", "X-K", "f1"),
+       prow("RULER 32K, 8\\,px", "s8", "X-K", "f1"), prow("RULER 32K, 10\\,px", "s10", "X-K", "f1"),
+       prow("density $k\\le16$, 32K", "density", "X-K", "f1"), prow("multi-key 64K--128K", "long_kx", "X-K", "f1"),
+       prow("natural, flagged", "niq2_s6", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
 (TAB / "pooled.tex").write_text(r"""\begin{table}[t]
 \centering
-\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative.}
+\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative. All X$-$K comparisons we ran are listed.}
 \label{tab:pooled}
 \small
 \setlength{\tabcolsep}{2.5pt}
@@ -243,7 +248,7 @@ nxt = sum(lb[f"lb3_s6_{t}|{rd}"]["diffs"]["X-T"][2] < 0 for t in ("mfqa", "hotpo
 rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Billed tokens} & " + " & ".join(bil) + " \\\\"]
 (TAB / "longbench.tex").write_text(r"""\begin{table}[t]
 \centering
-\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Relative to A, X has no significantly negative cell and S one; every image arm trails plain text T (X$-$T significantly negative in """ + f"{nxt} of {2*len(R5)}" + r""" cells).}
+\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Relative to A, X has no significantly negative cell and S one; every image arm trails plain text T (X$-$T significantly negative in """ + f"{nxt} of {2*len(R5)}" + r""" cells). Billed tokens: four readers that report usage.}
 \label{tab:longbench}
 \small
 \setlength{\tabcolsep}{2.2pt}

@@ -4,9 +4,9 @@ This optical compression spends resolution uniformly, yet the strings that must 
 We ask where the pixels should go.
 Because the renderer, unlike the model, sees the text, it can flag high-entropy strings and draw them larger while drawing prose smaller, within the vision-token budget of uniform rendering.
 This allocation is training-free, query-independent, and needs only black-box access to the VLM.
-Across five commercial and open VLMs, it raises RULER needle recall over uniform rendering by 0.55 and 0.43 at the two densest budgets (95\% CIs [0.43, 0.68] and [0.31, 0.55]) and by 0.48 at 32K--128K characters, while using up to 28\% fewer billed tokens.
+Across five commercial and open-weight VLMs accessed through APIs, it raises RULER needle recall over uniform rendering by 0.55 and 0.43 at the two densest budgets (95\% CIs [0.48, 0.62] and [0.27, 0.56]) and by 0.48 at 32K--128K characters, while using up to 28\% fewer billed tokens.
 Enlarging random words, or boxing the needles without enlarging them, does not help, so the gain comes from legibility of the targeted strings.
-The gain shrinks as the budget relaxes and is no larger than a font search at 10\,px, and on LongBench it doubles the recall of naturally occurring identifiers (0.23 to 0.48) without changing QA accuracy relative to uniform rendering.
-Combined with verbatim anchors from prior work, it matches or slightly exceeds anchors on uniform images at lower cost.
+The gain shrinks as the budget relaxes and is no larger than a font search at 10\,px, and on LongBench it doubles the recall of naturally occurring identifiers that the detector flags (0.23 to 0.48) without changing QA accuracy relative to uniform rendering; strings the detector misses gain nothing.
+Verbatim anchors from prior work are as accurate on the allocated image as on a uniform one, and cheaper wherever allocation shrinks the image.
 All image arms, however, remain well below plain text on ordinary QA, so allocation makes optical compression safer for identifiers rather than a substitute for text.
 \end{abstract}

@@ -7,17 +7,22 @@
 \label{sec:main}
 
 \Cref{tab:baselines} compares all image arms at the same vision-token budget on 16K-character RULER documents.
-Averaged over five readers, uniform rendering recovers 8\% of needles at the denser budget and 22\% at the lighter one; Claude Sonnet 5.5 (0.57) and Gemini (0.88) are the only readers above 0.11 at 6\,px.
-Allocation (S) raises the mean to 0.64 and 0.65, a pooled gain of 0.55 and 0.43 whose confidence intervals exclude zero by a wide margin (\cref{tab:pooled}); after Holm correction it is significant in 14 and 11 of 15 cells and never significantly negative.
-The two stronger uniform baselines barely help: searching font family and size (U) reaches 0.12 and 0.21, and rendering large then downsampling (Z) 0.16 and 0.19, plausibly because both spread legibility evenly over all characters.
+Averaged over five readers, uniform rendering recovers 8\% of needles at the denser budget and 22\% at the lighter one.
+Claude Sonnet 5.5 (0.57) and Gemini (0.88) are the only readers above 0.11 at 6\,px.
+Allocation (S) raises the mean to 0.64 and 0.65, a pooled gain of 0.55 and 0.43 whose confidence intervals exclude zero by a wide margin (\cref{tab:pooled}).
+After Holm correction, the gain is significant in 14 and 11 of 15 cells and never significantly negative.
+The two stronger uniform baselines barely help: font/size search (U) reaches 0.12 and 0.21, and render-then-downsample (Z) 0.16 and 0.19.
+Both plausibly fall short because they spread legibility evenly over all characters.
 At 6\,px, S is also 8\% cheaper than uniform rendering (842 vs.\ 920 billed tokens), because prose shrinks more than the enlarged strings grow.
 The weaker readers gain most (at 6\,px Llama 4 Maverick from 0.00 to 0.59, GPT from 0.11 to 0.65), while Gemini, already at 0.88, gains 0.12.
 Under the precision-aware F1, which penalizes returning several candidate values, the gains are smaller (0.46 and 0.34 pooled) but remain significant in at least 9 of 15 cells.
 
 \paragraph{Targeting, enlargement, or salience?}
 Two controls separate the ingredients of S.
-Arm R runs the same allocation on randomly chosen ordinary words, matched in total length, so its sizes and cost are close to those of S while the needles shrink with the prose; it recovers 0.10 of the needles at both budgets, and S exceeds it by 0.54 and 0.56.
-Arm B keeps every glyph at the uniform size but draws a box around each flagged string, which makes the needle easy to \emph{find} but not easier to \emph{read}; it is slightly worse than uniform rendering ($-$0.05, CI upper bound $-$0.001), perhaps because the box line touches the small glyphs, and 0.53 below S (\cref{tab:pooled}).
+Arm R runs the same allocation on randomly chosen ordinary words, matched in total length, so its sizes and cost are close to those of S while the needles shrink with the prose.
+R recovers 0.10 of the needles at both budgets, and S exceeds it by 0.54 and 0.56.
+Arm B keeps every glyph at the uniform size but draws a box around each flagged string, which makes the needle easy to \emph{find} but not easier to \emph{read}.
+B is 0.53 below S and slightly worse than uniform rendering ($-$0.05, CI upper bound $-$0.001; \cref{tab:pooled}), perhaps because the box line touches the small glyphs.
 The gain therefore comes from making the targeted strings legible, not from layout changes or from pointing at the needle.
 
 \input{tab/pooled}
@@ -28,14 +33,15 @@ The gain therefore comes from making the targeted strings legible, not from layo
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/scaling.pdf}
-\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three image pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean over five readers. (b) Billed prompt tokens averaged over the four of these readers that report usage; note the log scale.}
+\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three image pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean over five readers. (b) Billed prompt tokens averaged over the four of these readers that report usage; log scale.}
 \label{fig:scaling}
 \end{figure}
 
 Optical compression is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
 Under uniform rendering, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
 Allocation stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
-It also uses 13\%, 23\%, and 27\% fewer billed tokens than uniform rendering at the three lengths and, on the four readers with billed costs for both, 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than the plain text, which every reader answers with recall of at least 0.99.
+It also uses 13\%, 23\%, and 27\% fewer billed tokens than uniform rendering at the three lengths.
+On the four readers with billed costs for both, it uses 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than plain text, which every reader answers with recall of at least 0.99.
 Individual readers differ widely (0.47 to 0.97 at 128K for S; \cref{tab:app_length}).
 
 \subsection{Milder budgets}
@@ -45,7 +51,8 @@ Our main budgets put most readers near the floor of uniform rendering, where gai
 We therefore repeated the single and multi-key tasks at 32K characters with base sizes of 8 and 10\,px, which cost 1.5 and 2.3 times as many vision tokens as 6\,px.
 Uniform rendering improves with size (multi-key: 0.26 at 8\,px, 0.60 at 10\,px), and the gain of S shrinks accordingly, to 0.38 at 8\,px and 0.20 at 10\,px (\cref{tab:pooled}).
 The font/size search catches up: S beats U by 0.26 at 8\,px but only by 0.04 at 10\,px, which is not significant.
-Single UUIDs remain hard even here (A 0.20, S 0.44 at 10\,px), but allocation is most useful where the budget is tight, which is also where optical compression saves the most.
+Single UUIDs remain hard even here (A 0.20, S 0.44 at 10\,px).
+Allocation is most useful where the budget is tight, which is also where optical compression saves the most.
 
 \subsection{Naturally occurring strings}
 \label{sec:niq}
@@ -53,10 +60,12 @@ Single UUIDs remain hard even here (A 0.20, S 0.44 at 10\,px), but allocation is
 \input{tab/niq}
 
 RULER needles are synthetic, and our detector was designed with such strings in mind.
-We built two sets of 60 questions from LongBench documents of up to 40K characters (ten each from six tasks), each asking for the exact string that follows a unique six-word phrase (\cref{app:niq}).
+We built two sets of 60 questions from LongBench documents of up to 40K characters (ten each from six tasks).
+Each asks for the exact string that follows a unique six-word phrase (\cref{app:niq}).
 In the first set, targets are strings the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs.
 Here allocation doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer billed tokens than uniform rendering (\cref{tab:niq}).
-In the second set, targets are any digit-bearing tokens of at least four characters, sampled without the detector; the detector flags only one of the 60, because most are short numbers, percentages, and version strings such as ``25,000'' or ``2.0.13''.
+In the second set, targets are any digit-bearing tokens of at least four characters, sampled without the detector.
+The detector flags only one of the 60, because most are short numbers, percentages, and version strings such as ``25,000'' or ``2.0.13''.
 On these, every image arm is poor (0.36--0.45 against 0.96 for text), and allocation neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
 Shrinking prose to make room for flagged strings thus did not measurably damage the strings the detector misses, but nothing in the image protects them either.
 
@@ -64,16 +73,21 @@ Shrinking prose to make room for flagged strings thus did not measurably damage 
 \label{sec:anchors}
 
 Anchors~\cite{anon2026renderretain} copy the flagged strings into the prompt, so their value depends on how many strings compete for the answer.
-On the single-needle and multi-value tasks of \cref{tab:baselines}, the only flagged strings in the essay haystack are the needles, so the anchor list \emph{is} the answer (1.0 anchor per single-needle document, always the gold value), and K and X reach 0.90--1.00.
+On the single-needle and multi-value tasks of \cref{tab:baselines}, the only flagged strings in the essay haystack are the needles.
+The anchor list therefore \emph{is} the answer (1.0 anchor per single-needle document, always the gold value), and K and X reach 0.90--1.00.
 On multi-key, the list adds three distractor values; recall stays at 0.94--1.00, but readers often return the whole list, and the precision-aware F1 drops to 0.46--0.52.
 These numbers measure copying rather than reading, so we compare K and X where the list does not reveal the answer.
 
 On the flagged natural identifiers, documents carry 5.3 distinct anchors on average, and choosing one at random would score 0.44.
 Readers do better (K 0.74, X 0.76) and almost always return a single value, so here the anchors are used, not dumped.
-Repeating this set at base sizes of 5, 6, and 7\,px gives a recall--cost frontier for each arm: X reaches 0.75, 0.76, and 0.81 at 1017, 1128, and 1306 billed tokens, and K reaches 0.71, 0.74, and 0.77 at 1014, 1267, and 1345.
-X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink), although the pooled confidence intervals all include zero and only one reader--budget cell is significant (\cref{tab:pooled}).
-At 64K and 128K characters, X costs 31\% and 29\% fewer billed tokens than K because allocation shrinks the image, but on multi-key the precision-aware F1 is the same for S, K, and X (0.36--0.40), so there the anchors add nothing over allocation alone.
-When the target is \emph{not} flagged, anchors can mislead: on the detector-independent set, X scores 0.36 against 0.44 for S and K ($-$0.08 vs.\ K, CI [$-$0.17, 0.01]), consistent with readers copying a plausible anchor instead of reading the image.
+Repeating this set at base sizes of 5, 6, and 7\,px gives a recall--cost frontier for each arm.
+X reaches 0.75, 0.76, and 0.81 at 1017, 1128, and 1306 billed tokens, and K reaches 0.71, 0.74, and 0.77 at 1014, 1267, and 1345.
+X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink).
+The pooled confidence intervals all include zero, however, and only one reader--budget cell is significant (\cref{tab:pooled}).
+At 64K and 128K characters, X costs 31\% and 29\% fewer billed tokens than K because allocation shrinks the image.
+Yet on multi-key the precision-aware F1 is the same for S, K, and X (0.36--0.40), so there the anchors add nothing over allocation alone.
+When the target is \emph{not} flagged, anchors can mislead.
+On the detector-independent set, X scores 0.36 against 0.44 for S and K ($-$0.08 vs.\ K, CI [$-$0.17, 0.01]), consistent with readers copying a plausible anchor instead of reading the image.
 On a synthetic sweep of hazard density (\cref{app:density}), anchors on either image become expensive and ineffective beyond about 16 flagged strings per 32K characters, which is where routing to text~\cite{anon2026renderretain} takes over.
 
 \subsection{Effect on ordinary comprehension}
@@ -83,20 +97,25 @@ On a synthetic sweep of hazard density (\cref{app:density}), anchors on either i
 
 Shrinking prose could hurt questions that have nothing to do with identifiers.
 \Cref{tab:longbench} tests this on held-out LongBench documents of up to 40K characters.
-Relative to uniform rendering, F1 is unchanged on MultiFieldQA (0.32 for A, 0.33 for S and X) and slightly higher on HotpotQA (0.53 for A, 0.56 for S and X); X has no significantly negative cell, and S has one (Qwen3-VL on HotpotQA, $-$0.06). Pooled over readers and tasks, S$-$A is +0.02 [$-$0.02, 0.06] and X$-$A +0.02 [$-$0.03, 0.07] (\cref{tab:pooled}), which rules out losses larger than about 0.03 F1.
-Relative to plain text, however, every image arm loses: T reaches 0.58 and 0.73, and X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
+Relative to uniform rendering, F1 is unchanged on MultiFieldQA (0.32 for A, 0.33 for S and X) and slightly higher on HotpotQA (0.53 for A, 0.56 for S and X).
+X has no significantly negative cell, and S has one (Qwen3-VL on HotpotQA, $-$0.06). Pooled over readers and tasks, S$-$A is +0.02 [$-$0.02, 0.06] and X$-$A +0.02 [$-$0.03, 0.07] (\cref{tab:pooled}), which rules out losses larger than about 0.03 F1.
+Relative to plain text, every image arm loses.
+T reaches 0.58 and 0.73, and X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
 Only GPT-6 Luna reads the HotpotQA images nearly as well as text.
-Allocation therefore removes a failure specific to identifiers without making optical compression a lossless substitute for text; whether the remaining comprehension gap is acceptable depends on the reader and the application.
+Allocation therefore removes a failure specific to identifiers without making optical compression a lossless substitute for text.
+Whether the remaining comprehension gap is acceptable depends on the reader and the application.
 
 \subsection{Analysis}
 \label{sec:analysis}
 
 \paragraph{How much does the detector matter?}
 Replacing the regex detector by an oracle that flags exactly the needle values changes nothing when the needles are of a type the detector recognizes (seven-digit numbers: 0.77 vs.\ 0.78 for S; \cref{tab:detector}).
-When they are not (four-digit numbers, which the detector deliberately ignores), S falls back to the uniform rendering in 24 of 25 documents and matches its recall (0.33 vs.\ 0.32), while the oracle would reach 0.82.
+When they are not (four-digit numbers, which the detector deliberately ignores), S falls back to uniform rendering in 24 of 25 documents and matches its recall (0.33 vs.\ 0.32).
+The oracle would reach 0.82.
 Together with the detector-independent set of \cref{sec:niq}, this suggests that missed hazards cost the gain but, in our tests, not more.
 
 \paragraph{Where do real documents fall?}
 Because the routing ratio is computed from text alone, we profiled 32K-character chunks of 13 LongBench tasks, essays, Python source, system logs, and package manifests without querying any model (\cref{app:corpora}).
-Prose-dominated documents are routed to images 95--100\% of the time at an estimated 0.19--0.27$\times$ the plain-text cost and technical prose (MultiFieldQA) 75\% of the time, while code is mostly routed to text and logs and manifests always are.
+Prose-dominated documents are routed to images 95--100\% of the time, at an estimated 0.19--0.27$\times$ the plain-text cost, and technical prose (MultiFieldQA) 75\% of the time.
+Code is mostly routed to text, and logs and manifests always are.
 Hazard-aware rendering is thus a tool for long documents that \emph{contain} identifiers, not for documents that \emph{consist} of them.

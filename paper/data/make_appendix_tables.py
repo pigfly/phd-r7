@@ -42,7 +42,7 @@ for k, v in PO.items():
             r = PO[f"{fam}|{cmp}|f1"]
             rows.append(f" &  & F1 & {fz(r['pooled'])} & [{fz(r['ci_items'][0])}, {fz(r['ci_items'][1])}] & "
                         f"[{fz(r['ci_readers_items'][0])}, {fz(r['ci_readers_items'][1])}] & {r['sig_pos']}/{r['sig_neg']} & {r['sig_pos_holm']}/{r['sig_neg_holm']} & {r['cells']} \\\\")
-table("app_pooled", r"\textbf{All pooled comparisons} (five non-Claude readers). CI$_{\mathrm{item}}$ resamples items within each run with the readers fixed; CI$_{\mathrm{rd+item}}$ additionally resamples readers (one draw shared by all runs). Cells: significantly positive/negative by per-cell bootstrap, raw and after Holm correction within the row. On natural strings and LongBench recall and F1 coincide or only F1 is defined.",
+table("app_pooled", r"\textbf{All pooled comparisons} (five non-Claude readers). CI$_{\mathrm{item}}$ resamples items within each run with the readers fixed; CI$_{\mathrm{rd+item}}$ additionally resamples readers (one draw shared by all runs). Cells: significantly positive/negative by per-cell bootstrap, raw and after Holm correction within the row. On natural strings, recall and F1 coincide; on LongBench, only F1 is defined.",
       "tab:app_pooled", "l l l r c c c c r", r"Setting & Comparison & Metric & $\Delta$ & CI$_{\mathrm{item}}$ & CI$_{\mathrm{rd+item}}$ & raw $+/-$ & Holm $+/-$ & cells \\", rows, star=True, size=r"\footnotesize")
 
 # ---- 2. rescoring and anchor leakage (RULER + density + long)

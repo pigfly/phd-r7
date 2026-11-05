@@ -2,33 +2,37 @@
 \label{sec:intro}
 
 Long contexts are expensive to feed to large models.
-A growing line of work reduces this cost by \emph{rendering} text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
+Recent work cuts this cost by \emph{rendering} text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
 A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it holds, so dense rendering can compress a document several-fold.
-In our measurements, a 128K-character essay costs 27.1K billed text tokens but only 4.7K billed tokens as a uniformly rendered image (mean of the four readers that report billed usage for both).
+In our measurements, a 128K-character essay costs 27.1K billed tokens as text but only 4.7K as a uniformly rendered image (mean of the four readers that report billed usage for both).
 The compression needs no training, works with any VLM that accepts images, and is controlled entirely by the party that renders the text.
 
 Existing systems decide \emph{how densely} to render, but rarely \emph{where} the resolution goes.
 Optical compressors choose one font, size, and layout for the whole document, sometimes searched for a good accuracy--compression trade-off~\cite{cheng2025glyph}.
-Methods that do vary resolution within the input are trained~\cite{zhong2026focusvtc,xu2026seer,xie2026lensvlm} or read the model's attention for each query~\cite{zeng2026agar}, and visual-token reduction prunes or merges tokens after encoding~\cite{chen2024fastv,yang2025visionzip}.
+Methods that do vary resolution within the input are trained~\cite{zhong2026focusvtc,xu2026seer,xie2026lensvlm} or read the model's attention for each query~\cite{zeng2026agar}.
+Visual-token reduction prunes or merges tokens after encoding~\cite{chen2024fastv,yang2025visionzip}.
 None of these is available to a party that only renders the text and calls a black-box API.
 
-The cost of uniform resolution is not uniform.
-Identifiers, hashes, file paths, and long numbers carry no redundancy, so a single misread glyph turns them into a different, equally plausible string, while the surrounding prose survives the same blur.
+Uniform resolution hurts some strings far more than others.
+Identifiers, hashes, file paths, and long numbers carry no redundancy: a single misread glyph turns them into a different, equally plausible string.
+The surrounding prose survives the same blur.
 \Cref{fig:teaser} shows the typical outcome: a VLM returns a well-formed UUID with four wrong characters and no hedge.
-Prior work on failure-aware optical compression~\cite{anon2026renderretain} showed that such silent corruption concentrates in high-entropy spans, and responded at the level of whole blocks: it flags these spans from the text, copies them verbatim next to the image as \emph{anchors}, and routes risky blocks back to text.
+Prior work on failure-aware optical compression~\cite{anon2026renderretain} showed that such silent corruption concentrates in high-entropy spans.
+It responded at the level of whole blocks: it flags these spans from the text, copies them verbatim next to the image as \emph{anchors}, and routes risky blocks back to text.
 These remedies leave the image itself unchanged.
-We confirm the problem at long-context scale: at an equal budget, uniform rendering recovers only 8--22\% of RULER needles (mean of five readers, \cref{tab:baselines}), and recall falls from 0.12 at 32K characters to 0.07 at 128K.
+We find the same problem at long-context scale.
+At an equal budget, uniform rendering recovers only 8--22\% of RULER needles (mean of five readers, \cref{tab:baselines}), and its recall falls from 0.12 at 32K characters to 0.07 at 128K.
 
-Our observation is that the renderer already holds the signal needed to fix the image.
+The renderer already holds the signal needed to fix the image.
 Before any pixel is drawn, the text says where the hazardous strings are, and the renderer decides how many pixels each of them gets.
-We therefore propose \emph{\ours} (\cref{fig:method}): flagged strings are drawn larger and prose smaller, under the constraint that the image costs no more vision tokens than uniform rendering.
+We therefore propose \emph{\ours} (\cref{fig:method}): flagged strings are drawn larger and prose smaller, subject to the image costing no more vision tokens than uniform rendering.
 The allocation (arm S in our experiments) is training-free and query-independent, so the same rendering can serve every question about a document.
 It composes with the anchors and text routing of prior work~\cite{anon2026renderretain}, which we treat as baselines and building blocks (arms K and X).
 
 Our contributions are:
 \begin{itemize}
   \item \textbf{Budget-constrained glyph allocation} for rendered context, a rule that redistributes resolution inside the image using only the text and black-box access to the reader (\cref{sec:method}).
-  \item \textbf{Controlled evidence for where it helps.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K, and beats font/size search, render-then-downsample, enlargement of random words, and boxing the needles without enlarging them (\cref{tab:pooled}). The gain shrinks at milder budgets and matches a font search at 10\,px.
-  \item \textbf{Natural strings and side effects.} On identifiers in LongBench documents that the detector flags, allocation doubles recall (0.23 to 0.48); on digit-bearing strings sampled independently of the detector, which it mostly does not flag, it neither helps nor hurts. It leaves LongBench QA unchanged relative to uniform rendering, while every image arm, ours included, trails plain text.
-  \item \textbf{Composition with anchors.} Anchors are as accurate on the allocated image as on a uniform one (pooled X$-$K between $-$0.01 and +0.05 in every setting with flagged targets), and cost less wherever allocation shrinks the image. We also show that on standard needle tasks anchors contain the answer, so recall there measures copying rather than reading, and that anchors mislead readers when the target is not flagged.
+  \item \textbf{Controlled evidence for where it helps.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K. It beats font/size search, render-then-downsample, enlargement of random words, and boxing the needles without enlarging them (\cref{tab:pooled}). The gain shrinks at milder budgets and matches a font search at 10\,px.
+  \item \textbf{Natural strings and side effects.} On identifiers in LongBench documents that the detector flags, allocation doubles recall (0.23 to 0.48). On digit-bearing strings sampled independently of the detector, which it mostly does not flag, it neither helps nor hurts. It leaves LongBench QA unchanged relative to uniform rendering, while every image arm, ours included, trails plain text.
+  \item \textbf{Composition with anchors.} Anchors are as accurate on the allocated image as on a uniform one (pooled X$-$K between $-$0.01 and +0.05 in every setting with flagged targets), and cost less wherever allocation shrinks the image. We also show that on standard needle tasks the anchors contain the answer, so recall there measures copying rather than reading, and that anchors can mislead readers when the target is not flagged.
 \end{itemize}

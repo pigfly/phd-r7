@@ -7,8 +7,11 @@
 Given a long document, an optical compressor renders it into image pages that a VLM reads in place of the text.
 Our goal is to make the strings that must be copied exactly survive this rendering, without spending more vision tokens and without access to the model.
 \Cref{fig:method} shows the pipeline.
-\textsc{Detect} reads the text and marks verbatim-hazardous strings, and \textsc{Allocate}, our contribution, renders those strings large and the remaining prose small, so that the image costs no more than uniform rendering would.
-The other two steps follow prior work on failure-aware optical compression~\cite{anon2026renderretain}: \textsc{Anchor} appends verbatim text copies of the flagged strings, here paid for by the vision tokens the allocation saved, and \textsc{Route} falls back to plain text when the anchors would be too expensive.
+\textsc{Detect} reads the text and marks verbatim-hazardous strings.
+\textsc{Allocate}, our contribution, renders those strings large and the remaining prose small, so that the image costs no more than uniform rendering.
+The other two steps follow prior work on failure-aware optical compression~\cite{anon2026renderretain}.
+\textsc{Anchor} appends verbatim text copies of the flagged strings, paid for here by the vision tokens that allocation saves.
+\textsc{Route} falls back to plain text when the anchors would be too expensive.
 
 \subsection{Problem formulation}
 \label{sec:formulation}
@@ -23,7 +26,8 @@ Following the patch-based accounting of dynamic-resolution VLMs~\cite{wang2024qw
 \end{equation}
 where each vision token covers a $28\times28$-pixel area (14-pixel patches merged $2\times2$ in Qwen2-VL).
 \Cref{eq:vtok} is used only to enforce budgets; all costs we report are the prompt tokens billed by each provider.
-The \emph{budget} is the cost of uniform rendering at a base size $s_0$, $B = v\big(R(x;\sigma\equiv s_0)\big)$, so every method we compare uses the same number of vision tokens as the uniform baseline, up to page rounding.
+The \emph{budget} is the cost of uniform rendering at a base size $s_0$, $B = v\big(R(x;\sigma\equiv s_0)\big)$.
+Every method we compare uses the same number of vision tokens as the uniform baseline, up to page rounding.
 Let $\mathcal{H}(x)\subseteq\{1,\dots,n\}$ be the indices of hazardous words, those whose value is needed verbatim downstream.
 We seek a size assignment that makes every $w_i$, $i\in\mathcal{H}(x)$, as legible as possible subject to $v(I)\le B$, without deleting or reordering any character.
 
@@ -37,17 +41,19 @@ We also flag words that mix letters and digits and either have at least 20 ident
 Two choices encode what \emph{not} to protect.
 Four-digit numbers are excluded because in natural text they are mostly years, which are low-entropy and cheap to read.
 The length and entropy rules require mixed letter--digit tokens so that long English words are not flagged.
-These exclusions are our changes; a preliminary detector without them flagged on average 85--112 words per LongBench document, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
+These exclusions are our changes.
+A preliminary detector without them flagged 85--112 words per LongBench document on average, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
 
 When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:analysis}).
-A missed hazard in a document where \emph{other} strings are flagged is, however, shrunk together with the prose.
+A missed hazard in a document where \emph{other} strings are flagged, however, shrinks together with the prose.
 
 \subsection{\textsc{Allocate}: budget-constrained glyph allocation}
 \label{sec:allocate}
 
 Given $\mathcal{H}(x)$, we restrict size assignments to two levels: prose words at $s_{\mathrm{lo}}$ and flagged words at $s_{\mathrm{hi}}$.
 Two levels keep the layout simple; a locally varying alternative that shrinks only prose near flagged strings brought no further gain (\cref{app:negative}).
-Prose is wrapped at character boundaries like the uniform baseline, so it consumes no extra space, while each flagged word is kept on one line so it is never split.
+Prose is wrapped at character boundaries, as in the uniform baseline, so it consumes no extra space.
+Each flagged word is kept on one line and is never split.
 We choose the sizes by
 \begin{equation}
 \begin{aligned}
@@ -57,10 +63,13 @@ We choose the sizes by
   \label{eq:alloc}
 \end{equation}
 where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.
-The order expresses the design choice that the marginal pixel is worth more on a hash than on prose: verbatim accuracy is limited by the least legible character of a string, whereas prose comprehension degrades gracefully.
+The order encodes a design choice: the marginal pixel is worth more on a hash than on prose.
+Verbatim accuracy is limited by the least legible character of a string, whereas prose comprehension degrades gracefully.
 The lower bound of 5\,px keeps prose within the range VLMs still read, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
-If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated (in the implementation, $s_{\mathrm{hi}}$ is searched over $[6,12]$); if $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
-At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings; at $s_0=6$\,px, prose shrinks to 5\,px when needed and otherwise stays at 6\,px.
+If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated (in the implementation, $s_{\mathrm{hi}}$ is searched over $[6,12]$).
+If $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
+At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings.
+At $s_0=6$\,px, prose shrinks to 5\,px when needed and otherwise stays at 6\,px.
 Budget computation plus allocation takes about 1\,s for 32K and 4\,s for 128K characters on one CPU core (unoptimized Python).
 \Cref{fig:teaser} (middle) shows a typical outcome: the UUID is drawn at 12\,px while prose stays at 6\,px.
 
@@ -68,13 +77,16 @@ Budget computation plus allocation takes about 1\,s for 32K and 4\,s for 128K ch
 \label{sec:anchor}
 \label{sec:route}
 
-When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row; in our long-context runs it used 13--27\% fewer billed tokens than uniform rendering.
+When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row.
+In our long-context runs, it used 13--27\% fewer billed tokens than uniform rendering.
 Following~\cite{anon2026renderretain}, we spend these savings on \emph{anchors}: after the question, the flagged strings are appended verbatim as text, under a line stating that they are copied exactly from the image.
-Anchors carry no key, but when a document contains only one or a few flagged strings, the anchor list is short and may consist of the answer alone, so a reader can answer without reading the image (\cref{sec:anchors}).
+Anchors carry no key, but a document with only one or a few flagged strings yields a short list that may consist of the answer alone.
+A reader can then answer without reading the image (\cref{sec:anchors}).
 Anchor cost grows linearly with the number of flagged strings, so before any model call we compute the ratio
 \begin{equation}
   r(x) \;=\; \frac{\sum_{i\in\mathcal{H}(x)} c(w_i)}{v(I)}, \qquad c(w) = \tfrac{|w|}{2} + 3,
   \label{eq:route}
 \end{equation}
 where $c(w)$ estimates the text tokens of one anchor and $I$ is the allocated image, and send the document as plain text when $r(x)>\tau$.
-This replaces the density test of~\cite{anon2026renderretain} with one that accounts for the allocated image; we use $\tau=0.3$, the median of per-reader two-fold cross-validation on a synthetic density sweep (\cref{app:density}).
+This replaces the density test of~\cite{anon2026renderretain} with one that accounts for the allocated image.
+We use $\tau=0.3$, the median of per-reader two-fold cross-validation on a synthetic density sweep (\cref{app:density}).

@@ -20,7 +20,7 @@ lab = {"A": "Uniform (A)", "S": "Ours, regex detector (S)", "O": "Ours, oracle d
 rows = [f"{lab[a]} & {de['rdet_mv7'][a]:.2f} & {de['rdet_mv4'][a]:.2f} \\\\" + ("\n\\midrule" if a == "A" else "") for a in "ASOXY"]
 (TAB / "detector.tex").write_text(r"""\begin{table}[h]
 \centering
-\caption{\textbf{Detector ablation.} RULER multi-value recall (16K characters, 6\,px budget, $N{=}25$, mean of 5 readers; Claude was not run in this ablation). Seven-digit values are flagged by the regex detector; four-digit values are deliberately not (they collide with years), so the regex arms fall back to uniform rendering.}
+\caption{\textbf{Detector ablation.} RULER multi-value recall (16K characters, 6\,px budget, $N{=}25$, mean of 5 readers; Claude was not run in this ablation). The regex detector flags seven-digit values but deliberately not four-digit ones (they collide with years), so on four-digit values the regex arms fall back to uniform rendering.}
 \label{tab:detector}
 \small
 \setlength{\tabcolsep}{5pt}

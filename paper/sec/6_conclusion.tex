@@ -3,13 +3,18 @@
 
 \paragraph{Limitations.}
 The gains are largest at dense budgets where uniform rendering fails; at 10\,px a font search does as well.
-Optical compression, with or without allocation, trails plain text on ordinary QA by up to 0.33 F1 for weaker readers, and the router decides from identifier cost alone, not from this gap.
-Most fidelity tests use synthetic needles with sparse distractors; our natural sets are small (60 automatically constructed questions each), the detector protects only high-entropy strings, and anchors mislead readers when the target is not flagged.
-We evaluate black-box readers only, through public APIs whose versions and image preprocessing may change, and cannot say how enlarged glyphs change internal attention; trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} and token pruning on open models are untested.
-Budgets follow one patch-based accounting rule (\cref{eq:vtok}), and providers tile images differently: billed savings hold in most settings, with exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama, whose billing ignores image size).
-We use ASCII English only, and we do not measure latency, prompt caching~\cite{gim2024promptcache}, or the fact that text inside images bypasses text-side safety filters.
+Optical compression, with or without allocation, trails plain text on ordinary QA by up to 0.33 F1 for weaker readers.
+The router decides from identifier cost alone, not from this gap.
+Most fidelity tests use synthetic needles with sparse distractors.
+Our natural sets are small (60 automatically constructed questions each), the detector protects only high-entropy strings, and anchors can mislead readers when the target is not flagged.
+We evaluate black-box readers only, through public APIs whose versions and image preprocessing may change, and cannot say how enlarged glyphs change internal attention.
+Trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} and token pruning on open models are untested.
+Budgets follow one patch-based accounting rule (\cref{eq:vtok}), but providers tile images differently.
+Billed savings hold in most settings, with exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama, whose billing ignores image size).
+We use ASCII English only, and we do not measure latency, prompt caching~\cite{gim2024promptcache}, or the effect of text inside images bypassing text-side safety filters.
 
 \paragraph{Conclusion.}
 Optical compression decides how many pixels a document receives but not where they go.
-Because the renderer reads the text before drawing it, it can give the strings that must be copied exactly the pixels they need, within the budget of uniform rendering and without access to the model.
-Across five readers, this raises needle recall by about half the scale at dense budgets, doubles the recall of flagged natural identifiers, and makes the anchors of prior work cheaper where prose can shrink, while leaving the gap to plain text on ordinary comprehension in place.
+The renderer reads the text before drawing it, so it can give the strings that must be copied exactly the pixels they need, within the budget of uniform rendering and without access to the model.
+Across five readers, this raises needle recall by about half the scale at dense budgets, doubles the recall of flagged natural identifiers, and makes the anchors of prior work cheaper where prose can shrink.
+The gap to plain text on ordinary comprehension remains.

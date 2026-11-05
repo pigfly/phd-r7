@@ -175,5 +175,31 @@ def thumbs():
     M.STRICT = False
     a.save(FIG / "thumb_uniform.png"); b.save(FIG / "thumb_alloc.png"); return a.size, b.size
 
+def examples():
+    """appendix: one RULER item rendered uniformly (A), with boxed needle (B) and allocated (S); one reader's answers"""
+    import make_items as M
+    run = EXP / "rv2_box_s6_single_3"; gt = {i["item"]: i for i in json.loads((run / "gt.json").read_text())["items"]}
+    man = {(m["item"], m["arm"]): m for m in json.loads((run / "manifest.json").read_text())}
+    pred = json.loads((run / "pred_or_qwen3-vl-235b-a22b-instruct.json").read_text())
+    ans = lambda it, a: (pred.get(man[(it, a)]["name"] + ".png", {}).get("ids") or ["(none)"])[0]
+    ok = lambda it, a: ans(it, a).lower() == gt[it]["answers"][0].lower()
+    item = next(i for i in sorted(gt) if not ok(i, "A") and not ok(i, "B") and ok(i, "S"))
+    it = gt[item]; gold = it["answers"][0]; M.REAL = False
+    crops = [needle_crop(run / "img" / f"{man[(item, 'A')]['name']}.png", it["text"], M.units_uniform(it["text"], 6), 0, gold, width=520, lines_ctx=3)]
+    M.STRICT = True
+    crops.append(needle_crop(run / "img" / f"{man[(item, 'B')]['name']}.png", it["text"], M.units_mixed(it["text"], 6, 6), 0, gold, width=520, lines_ctx=3))
+    ms = man[(item, "S")]
+    crops.append(needle_crop(run / "img" / f"{ms['name']}.png", it["text"], M.units_mixed(it["text"], ms["s_lo"], ms["s_hi"]), ms["extra"], gold, width=520, lines_ctx=3))
+    M.STRICT = False
+    labs = [("A", "uniform 6 px"), ("B", "boxed, not enlarged"), ("S", f"allocated ({ms['s_lo']}/{ms['s_hi']} px)")]
+    fig, axs = plt.subplots(3, 1, figsize=(6.9, 3.3), gridspec_kw=dict(hspace=0.55, left=0.01, right=0.99, top=0.93, bottom=0.02))
+    for ax, im, (arm, lab) in zip(axs, crops, labs):
+        ax.imshow(im, cmap="gray", vmin=0, vmax=255, interpolation="nearest", aspect="equal"); ax.set_xticks([]); ax.set_yticks([])
+        a = ans(item, arm); good = ok(item, arm)
+        ax.set_title(f"{arm}: {lab}   Qwen3-VL answer: {a}  ({'correct' if good else 'wrong'})", fontsize=7, loc="left", pad=2,
+                     color=(C["K"] if good else C["X"]))
+    fig.suptitle(f"gold: {gold}", fontsize=7, x=0.01, ha="left")
+    fig.savefig(FIG / "examples.pdf"); plt.close(fig); return item, gold, [ans(item, a) for a in "ABS"]
+
 if __name__ == "__main__":
-    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("ok")
+    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); print("ok")

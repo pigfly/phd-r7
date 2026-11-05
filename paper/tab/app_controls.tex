@@ -1,0 +1,24 @@
+\begin{table*}[h]
+\centering
+\caption{\textbf{Salience control and milder budgets} (recall per reader; box control averages three RULER tasks on a fresh sample of 25 items each, milder budgets average single and multi-key). B boxes the flagged strings without enlarging them.}
+\label{tab:app_controls}
+\small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l ccc ccccc ccccc}
+\toprule
+& \multicolumn{3}{c}{Box control, 16K, 6\,px} & \multicolumn{5}{c}{32K, 8\,px} & \multicolumn{5}{c}{32K, 10\,px} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-9}\cmidrule(lr){10-14}
+Reader & A & B & S & A & U & S & K & X & A & U & S & K & X \\
+\midrule
+Gemini & 0.87 & 0.67 & 1.00 & 0.48 & 0.42 & 0.90 & 0.96 & 1.00 & 0.68 & 0.84 & 0.92 & 0.98 & 1.00 \\
+GPT & 0.09 & 0.07 & 0.77 & 0.14 & 0.34 & 0.54 & 1.00 & 0.98 & 0.50 & 0.68 & 0.74 & 0.90 & 1.00 \\
+Qwen & 0.02 & 0.00 & 0.58 & 0.14 & 0.28 & 0.48 & 1.00 & 1.00 & 0.44 & 0.58 & 0.62 & 1.00 & 1.00 \\
+Llama & 0.00 & 0.00 & 0.56 & 0.00 & 0.18 & 0.44 & 0.88 & 1.00 & 0.16 & 0.36 & 0.38 & 0.92 & 0.96 \\
+MiniMax & 0.00 & 0.00 & 0.50 & 0.00 & 0.10 & 0.28 & 1.00 & 1.00 & 0.22 & 0.36 & 0.36 & 1.00 & 0.98 \\
+\midrule
+\textit{Mean} & 0.20 & 0.15 & 0.68 & 0.15 & 0.26 & 0.53 & 0.97 & 1.00 & 0.40 & 0.56 & 0.60 & 0.96 & 0.99 \\
+\textit{Billed} & 929 & 923 & 843 & 1913 & 1855 & 1890 & 1954 & 1931 & 3061 & 2870 & 2826 & 3101 & 2866 \\
+\bottomrule
+\end{tabular}}
+\end{table*}

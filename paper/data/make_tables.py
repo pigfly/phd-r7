@@ -45,10 +45,10 @@ for rd in RD:
     for L in ("32k", "64k", "128k"):
         v = ls[f"{L}|{rd}"]; c += [f"{v['A']:.2f}", f"\\textbf{{{v['S']:.2f}}}"]
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
-rows += ["\\midrule", "\\textit{Mean (5 readers, excl.\\ Claude)} & " + " & ".join(f"{St.mean(ls[f'{L}|{r}'][a] for r in RD if r != 'claude-sonnet-5.5'):.2f}" for L in ("32k", "64k", "128k") for a in "AS") + " \\\\"]
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{St.mean(ls[f'{L}|{r}'][a] for r in RD if r != 'claude-sonnet-5.5'):.2f}" for L in ("32k", "64k", "128k") for a in "AS") + " \\\\"]
 (TAB / "app_length.tex").write_text(r"""\begin{table}[h]
 \centering\small\setlength{\tabcolsep}{4pt}
-\caption{Per-reader recall for the length study (\cref{fig:scaling}).}
+\caption{Per-reader recall for the length study (\cref{fig:scaling}); the mean excludes Claude.}
 \label{tab:app_length}
 \begin{tabular}{l cc cc cc}
 \toprule

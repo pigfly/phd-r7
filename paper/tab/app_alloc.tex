@@ -1,0 +1,25 @@
+\begin{table}[h]
+\centering
+\caption{\textbf{Sizes chosen by the allocation} (prose/flagged glyph height in px, with the number of documents), vision tokens of S relative to the uniform budget, and the fraction of documents that needed the $-$1\,px leading fallback.}
+\label{tab:app_alloc}
+\small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l r l c c}
+\toprule
+Setting & docs & most frequent $s_{\mathrm{lo}}/s_{\mathrm{hi}}$ & $v(S)/B$ & fallback \\
+\midrule
+16K, 5\,px & 25 & 5/12 (25) & 0.93 & 0.96 \\
+16K, 6\,px & 25 & 5/12 (25) & 0.71 & 0.00 \\
+32K, 6\,px & 20 & 5/12 (20) & 0.70 & 0.00 \\
+128K, 6\,px & 20 & 5/12 (20) & 0.68 & 0.00 \\
+32K, 8\,px & 25 & 8/12 (21), 7/12 (4) & 0.96 & 0.00 \\
+32K, 10\,px & 25 & 9/12 (20), 10/12 (5) & 0.82 & 0.00 \\
+density $k{=}16$ & 25 & 5/12 (25) & 0.81 & 0.00 \\
+density $k{=}256$ & 25 & 5/7 (25) & 0.94 & 0.00 \\
+natural, flagged & 60 & 5/12 (37), 6/12 (22), 5/9 (1) & 0.84 & 0.00 \\
+LongBench MFQA & 50 & 6/12 (22), 5/12 (19), 5/9 (5) & 0.91 & 0.00 \\
+LongBench HotpotQA & 50 & 6/12 (32), 5/12 (18) & 0.90 & 0.00 \\
+\bottomrule
+\end{tabular}}
+\end{table}

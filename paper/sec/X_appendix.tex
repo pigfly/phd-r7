@@ -34,6 +34,82 @@ Selected values were 0.1--0.5 with median 0.3, which we use for all other experi
 \input{tab/app_length}
 \input{tab/detector}
 
+\section{Statistical Procedures}
+\label{app:stats}
+
+\paragraph{Metrics.}
+Recall is the fraction of gold values that appear, case-insensitively, as a substring of some returned value.
+The precision-aware F1 deduplicates the returned values, counts a returned value as correct when it contains a gold value, and combines this precision with recall; an empty answer scores zero.
+Exact-set accuracy requires every gold value to be found and no other value to be returned.
+Outputs that cannot be parsed are scored as empty answers; empty responses and transport errors are dropped (\cref{sec:setup}).
+
+\paragraph{Per-cell tests.}
+For one reader on one task at one setting, we bootstrap the mean paired difference over items (10{,}000 resamples for the per-cell intervals reported in tables, 1{,}000 for the $p$-values used for Holm correction) and call the cell significant when the two-sided bootstrap $p$-value is below 0.05.
+
+\paragraph{Pooled effects.}
+The pooled effect is the mean paired difference over all (run, reader, item) triples of a family, where a family is one row of \cref{tab:pooled}.
+The item-level interval resamples items within each run, with the same item draw for every reader, so it treats the five readers as fixed.
+The reader-and-item interval additionally resamples readers with replacement; one reader draw is shared by all runs of the family because readers are crossed with runs.
+Both use 4{,}000 resamples and percentile intervals.
+Within each family we apply Holm's step-down correction to the per-cell $p$-values and report how many cells remain significant in each direction.
+\Cref{tab:app_pooled} lists every comparison we computed, including those not discussed in the main text.
+
+\input{tab/app_pooled}
+
+\section{Precision-Aware Scoring and Anchor Content}
+\label{app:rescore}
+
+\Cref{tab:app_rescore} reports, for every RULER setting with anchors, recall and precision-aware F1 for A, S, K, and X, how many values each arm returns, and two baselines that never look at the image: returning every anchor (dump) and returning as many random anchors as there are gold values (pick).
+Three observations qualify the anchor results in the main text.
+First, on single and multi-value the anchors are exactly the needles, so K and X match the dump baseline and their recall says nothing about reading.
+Second, on multi-key and in the density sweep at $k{\ge}4$, several readers (Qwen3-VL and MiniMax most often) return most or all of the anchor list; recall stays high while F1 falls to the level of the pick baseline.
+Third, uniform rendering sometimes produces long lists of hallucinated identifiers (up to 55 per item for MiniMax at 5\,px), which F1 penalizes and recall does not; the gains of S over A are therefore smaller under F1 but remain significant (\cref{tab:app_pooled}).
+On the natural-identifier questions, readers return one value per question for every arm, so recall and F1 coincide.
+
+\input{tab/app_rescore}
+
+\Cref{tab:app_silent} gives the rate of well-formed near-misses on RULER: a gold value counts as a near-miss when it was not recalled but some returned string has the same length and at least 60\% character similarity.
+Allocation does not reduce this rate; it rises from 0.12 to 0.15 at 5\,px and from 0.08 to 0.15 at 6\,px on average, plausibly because allocation turns many complete misses into nearly correct readings, some of which are still wrong; anchors nearly remove near-misses where they contain the answer.
+We therefore do not claim that allocation makes errors detectable; check-and-retry~\cite{anon2026renderretain} addresses that problem.
+
+\input{tab/app_silent}
+
+\section{Controls, Milder Budgets, and Replication}
+\label{app:controls}
+
+\Cref{tab:app_controls} gives per-reader results for the box control and the milder budgets of \cref{sec:main,sec:regime}, and \cref{fig:examples} shows one item from the box runs.
+The box runs used a fresh sample of 25 items per task and re-read A and S, which serves as a replication of \cref{tab:baselines}: on the new items, A averages 0.20 and S 0.68, against 0.22 and 0.65 on the original items at the same budget.
+At 8 and 10\,px the U arm switches to Arial Narrow at 10 and 13\,px, which is why it catches up with S at the lighter budget; anchors (K, X) reach 0.96--1.00 at both budgets because the anchors again contain the needles.
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=\textwidth]{fig/examples.pdf}
+\caption{\textbf{One RULER item at the 6\,px budget} (crops around the needle; Qwen3-VL answers). Uniform rendering yields a well-formed UUID with several wrong characters; boxing the needle at the same size does not help (the reader returned nothing); allocation draws the UUID at 12\,px and prose at 5\,px, and the answer is exact.}
+\label{fig:examples}
+\end{figure*}
+
+\input{tab/app_controls}
+
+\section{Anchors: Budget Frontier and Long Context}
+\label{app:anchors}
+
+\Cref{tab:app_niqfront} gives the per-reader numbers behind the frontier of \cref{sec:anchors}: the 60 flagged natural-identifier questions rendered at base sizes of 5, 6, and 7\,px.
+Allocation alone gains 0.19--0.25 over uniform rendering at every budget, and anchors add 0.28--0.37 on top of S and 0.46--0.53 on top of A.
+\Cref{tab:app_longkx} gives multi-key results at 64K and 128K characters: recall separates the arms, but F1 does not, because every arm with enlarged or copied values tends to return several candidates for the one queried key.
+
+\input{tab/app_niqfront}
+\input{tab/app_longkx}
+
+\section{Allocation Statistics}
+\label{app:alloc}
+
+\Cref{tab:app_alloc} lists the glyph sizes that \cref{eq:alloc} selects.
+At the 5\,px budget, prose cannot shrink, so almost every document uses the $-$1\,px leading fallback and the image fills the budget; at 6\,px, prose shrinks to 5\,px and flagged strings reach 12\,px, leaving 29--32\% of the budget unused on RULER.
+On natural documents and LongBench, between a third and two thirds of the documents keep prose at 6\,px, because they contain few flagged strings, and the image still uses 9--16\% fewer vision tokens than the budget.
+When flagged strings become dense ($k{=}256$), the enlarged size falls to 7\,px.
+
+\input{tab/app_alloc}
+
 \section{Short Documents: Mechanism Study}
 \label{app:short}
 

@@ -1,3 +1,7 @@
+% float placement for the supplementary: let tables and figures fill pages instead of piling up
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}\renewcommand{\dbltopfraction}{0.9}\renewcommand{\dblfloatpagefraction}{0.75}
+\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}\setcounter{dbltopnumber}{3}
 \section{Implementation Details}
 \label{app:impl}
 
@@ -5,36 +9,48 @@
 Pages are 1008 pixels wide (36 patches) with a 4-pixel margin and are rendered in grayscale with the Menlo monospace font through PIL.
 Prose is wrapped at character boundaries; a flagged word is placed whole on the next line when it does not fit.
 Each line is as tall as its largest glyph plus one pixel of leading.
-Documents taller than 2016 pixels are split into pages at blank pixel rows, so no line is cut; all pages are sent in one request in reading order.
+Documents taller than 2016 pixels are split into pages at blank pixel rows, so no line is cut. All pages are sent in one request in reading order.
 The budget of \cref{eq:vtok} is enforced on the unsplit image.
 Splitting can add one patch row per page, which made 10 of the 180 reallocated long-context images 1.2\% more expensive than their uniform counterparts.
 All reported costs are billed tokens and include this effect.
 
 \paragraph{Detector.}
 After stripping the characters \texttt{.,;:()[]"'} from both ends, a word is flagged if it matches \verb![0-9a-f]{8,}!, \verb!\d{5,}!, \verb!/\S*\d\S*!, \verb!\d+\.\d+\.\d+\.\d+!, \verb!\S+/\S+\.\w{1,5}!, or \verb!sha256=!.
-A word is also flagged if it contains at least one letter and one digit and either contains \verb![A-Za-z0-9_\-]{20,}! or is at least 16 characters long with a 16-character window whose character entropy is at least 3.5 bits.
+A word with at least one letter and one digit is also flagged if it contains \verb![A-Za-z0-9_\-]{20,}!.
+It is flagged as well if it is at least 16 characters long and has a 16-character window whose character entropy is at least 3.5 bits.
 
 \paragraph{Baselines.}
 U tries Menlo, Arial, and Arial Narrow at sizes 14 down to 5\,px and keeps the largest size that fits the budget (ties broken by font order).
 At the 5\,px and 6\,px budgets it selects 6\,px Arial and 8\,px Arial Narrow for most documents.
 Z renders at 10\,px and shrinks the image by repeated factors of 0.98 with Lanczos resampling until it fits the budget (final scale 0.52--0.64).
-For RULER and the natural-identifier questions, K and X append, after the question, the line ``Exact strings copied verbatim from the text block in the image:'' followed by one flagged string per line.
+For RULER and the natural-identifier questions, K and X append the line ``Exact strings copied verbatim from the text block in the image:'' after the question, followed by one flagged string per line.
 For LongBench, the anchors are inserted after the image placeholder and before the question, under ``Exact strings copied verbatim from the text in the image:''.
 
 \paragraph{Prompts and scoring.}
-RULER prompts follow the official template with the context replaced by ``[The text is rendered in the image above.]'', add ``Copy each one exactly, character for character.'', and ask for a JSON list of values.
+RULER prompts follow the official template, with the context replaced by ``[The text is rendered in the image above.]''.
+They add ``Copy each one exactly, character for character.'' and ask for a JSON list of values.
 A gold value counts as recalled if it appears (case-insensitively) in any returned string.
-LongBench prompts are the official ones for each task; the first output line is scored with the official QA F1.
+LongBench prompts are the official ones for each task, and the first output line is scored with the official QA F1.
 For the plain-text arm the context is inserted verbatim into the same template.
 
 \paragraph{Router threshold.}
-$\tau$ is chosen per reader by two-fold cross-validation on the density sweep (folds by item parity), maximizing recall minus 0.5 times the cost relative to plain text over $\tau\in\{0,0.05,0.1,0.2,0.3,0.5,0.75,1,1.5,2,4,\infty\}$.
-Selected values were 0.1--0.5 with median 0.3, which we use for all other experiments. The frontier in \cref{fig:density}c sweeps $\tau$ and the per-density figures use the median $\tau$; both are therefore in-sample, unlike the cross-validated aggregate.
+$\tau$ is chosen per reader by two-fold cross-validation on the density sweep (folds by item parity).
+The criterion is recall minus 0.5 times the cost relative to plain text, maximized over $\tau\in\{0,0.05,0.1,0.2,0.3,0.5,0.75,1,1.5,2,4,\infty\}$.
+Selected values were 0.1--0.5 with median 0.3, which we use for all other experiments. The frontier in \cref{fig:density}c sweeps $\tau$, and the per-density figures use the median $\tau$.
+Both are therefore in-sample, unlike the cross-validated aggregate.
 
 \section{Per-Reader Results}
 \label{app:tables}
 
-\Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}.
+\Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}, and \cref{tab:detector} gives the detector ablation of \cref{sec:analysis}.
+In the length study, S is above A for every reader at every length.
+The size of the gain depends mostly on how well a reader does under uniform rendering.
+Claude and Gemini start at 0.45--0.57 and 0.21--0.47 under A, and S lifts them to 0.86--0.97 and 0.70--0.91.
+GPT, Qwen3-VL, Llama, and MiniMax recover at most 0.12 under A at every length, and S lifts them to 0.40--0.60.
+With length, S rises for Claude and MiniMax and falls for the other readers.
+Gemini falls most (0.91 to 0.70), and its uniform curve falls further (0.47 to 0.21).
+In the detector ablation, the regex and oracle detectors give the same recall when the needles are seven-digit numbers.
+With four-digit needles, which the regex detector deliberately ignores, the regex arms match uniform rendering while the oracle arms reach 0.82 (S) and 0.99 (X).
 
 \input{tab/app_length}
 \input{tab/detector}
@@ -47,21 +63,25 @@ Recall is the fraction of gold values that appear, case-insensitively, as a subs
 The precision-aware F1 deduplicates the returned values, counts a returned value as correct when it contains a gold value, and combines this precision with recall.
 An empty answer scores zero.
 Exact-set accuracy requires every gold value to be found and no other value to be returned.
-Outputs that cannot be parsed are scored as empty answers; empty responses and transport errors are dropped (\cref{sec:setup}).
+Outputs that cannot be parsed are scored as empty answers.
+Empty responses and transport errors are dropped (\cref{sec:setup}).
 
 \paragraph{Per-cell tests.}
-For one reader on one task at one setting, we bootstrap the mean paired difference over items: 10{,}000 resamples for the per-cell intervals reported in tables and 1{,}000 for the $p$-values used for Holm correction.
+For one reader on one task at one setting, we bootstrap the mean paired difference over items.
+The per-cell intervals in the tables use 10{,}000 resamples, and the $p$-values used for Holm correction use 1{,}000.
 A cell is significant when the two-sided bootstrap $p$-value is below 0.05.
 
 \paragraph{Pooled effects.}
 The pooled effect is the mean paired difference over all (run, reader, item) triples of a family, where a family is one row of \cref{tab:pooled}.
 The item-level interval resamples items within each run, with the same item draw for every reader, so it treats the five readers as fixed.
-The reader-and-item interval additionally resamples readers with replacement; one reader draw is shared by all runs of the family because readers are crossed with runs.
+The reader-and-item interval also resamples readers with replacement.
+Because readers are crossed with runs, one reader draw is shared by all runs of the family.
 Both use 4{,}000 resamples and percentile intervals.
 Within each family we apply Holm's step-down correction to the per-cell $p$-values and report how many cells remain significant in each direction.
 \Cref{tab:app_pooled} lists every comparison we computed, including those not discussed in the main text.
 
 \input{tab/app_pooled}
+\input{tab/app_pooled2}
 
 \section{Precision-Aware Scoring and Anchor Content}
 \label{app:rescore}
@@ -70,16 +90,19 @@ For every RULER setting with anchors, \cref{tab:app_rescore} reports recall and 
 It also reports two baselines that never look at the image: returning every anchor (dump) and returning as many random anchors as there are gold values (pick).
 Three observations qualify the anchor results in the main text.
 First, on single and multi-value the anchors are exactly the needles, so K and X match the dump baseline and their recall says nothing about reading.
-Second, on multi-key and in the density sweep at $k{\ge}4$, several readers (Qwen3-VL and MiniMax most often) return most or all of the anchor list; recall stays high while F1 falls to the level of the pick baseline.
+Second, on multi-key and in the density sweep at $k{\ge}4$, several readers (Qwen3-VL and MiniMax most often) return most or all of the anchor list.
+Recall then stays high while F1 falls to the level of the pick baseline.
 Third, uniform rendering sometimes produces long lists of hallucinated identifiers (up to 55 per item for MiniMax at 5\,px), which F1 penalizes and recall does not.
 The gains of S over A are therefore smaller under F1 but remain significant (\cref{tab:app_pooled}).
 On the natural-identifier questions, readers return one value per question for every arm, so recall and F1 coincide.
 
 \input{tab/app_rescore}
 
-\Cref{tab:app_silent} gives the rate of well-formed near-misses on RULER: a gold value counts as a near-miss when it was not recalled but some returned string has the same length and at least 60\% character similarity.
+\Cref{tab:app_silent} gives the rate of well-formed near-misses on RULER.
+A gold value counts as a near-miss when it was not recalled but some returned string has the same length and at least 60\% character similarity.
 Allocation does not reduce this rate.
-On average it rises from 0.12 to 0.15 at 5\,px and from 0.08 to 0.15 at 6\,px, plausibly because allocation turns many complete misses into nearly correct readings, some of which are still wrong.
+On average it rises from 0.12 to 0.15 at 5\,px and from 0.08 to 0.15 at 6\,px.
+A plausible cause is that allocation turns many complete misses into nearly correct readings, some of which are still wrong.
 Anchors nearly remove near-misses where they contain the answer.
 We therefore do not claim that allocation makes errors detectable; check-and-retry~\cite{anon2026renderretain} addresses that problem.
 
@@ -89,17 +112,17 @@ We therefore do not claim that allocation makes errors detectable; check-and-ret
 \label{app:controls}
 
 \Cref{tab:app_controls} gives per-reader results for the box control and the milder budgets of \cref{sec:main,sec:regime}, and \cref{fig:examples} shows one item from the box runs.
-The box runs used a fresh sample of 25 items per task and re-read A and S, which gives a replication of \cref{tab:baselines}.
+The box runs used a fresh sample of 25 items per task and re-read A and S, so they also replicate \cref{tab:baselines}.
 On the new items, A averages 0.20 and S 0.68, against 0.22 and 0.65 on the original items at the same budget.
-At 8 and 10\,px the U arm switches to Arial Narrow at 10 and 13\,px, which is why it catches up with S at the lighter budget.
+At 8 and 10\,px the U arm switches to Arial Narrow at 10 and 13\,px, so it catches up with S at the lighter budget.
 Anchors (K, X) reach 0.96--1.00 at both budgets because the anchors again contain the needles.
 
-\begin{figure*}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{fig/examples.pdf}
 \caption{\textbf{One RULER item at the 6\,px budget} (crops around the needle; Qwen3-VL answers). Uniform rendering yields a well-formed UUID with several wrong characters. Boxing the needle at the same size does not help (the reader returned nothing). Allocation draws the UUID at 12\,px and prose at 5\,px, and the answer is exact.}
 \label{fig:examples}
-\end{figure*}
+\end{figure}
 
 \input{tab/app_controls}
 
@@ -107,7 +130,8 @@ Anchors (K, X) reach 0.96--1.00 at both budgets because the anchors again contai
 \label{app:anchors}
 
 \Cref{tab:app_niqfront} gives the per-reader numbers behind the frontier of \cref{sec:anchors}: the 60 flagged natural-identifier questions rendered at base sizes of 5, 6, and 7\,px.
-Allocation alone gains 0.19--0.25 over uniform rendering at every budget, and anchors add 0.28--0.37 on top of S and 0.46--0.53 on top of A.
+Allocation alone gains 0.19--0.25 over uniform rendering at every budget.
+Anchors add 0.28--0.37 on top of S and 0.46--0.53 on top of A.
 \Cref{tab:app_longkx} gives multi-key results at 64K and 128K characters.
 Recall separates the arms but F1 does not, because every arm with enlarged or copied values tends to return several candidates for the one queried key.
 
@@ -120,7 +144,8 @@ Recall separates the arms but F1 does not, because every arm with enlarged or co
 \Cref{tab:app_alloc} lists the glyph sizes that \cref{eq:alloc} selects.
 At the 5\,px budget, prose cannot shrink, so almost every document uses the $-$1\,px leading fallback and the image fills the budget.
 At 6\,px, prose shrinks to 5\,px and flagged strings reach 12\,px, leaving 29--32\% of the budget unused on RULER.
-On natural documents and LongBench, a third to two thirds of the documents keep prose at 6\,px because they contain few flagged strings; the image still uses 9--16\% fewer vision tokens than the budget.
+On natural documents and LongBench, a third to two thirds of the documents keep prose at 6\,px because they contain few flagged strings.
+The images still use 9--16\% fewer vision tokens than the budget.
 When flagged strings become dense ($k{=}256$), the enlarged size falls to 7\,px.
 
 \input{tab/app_alloc}
@@ -147,16 +172,17 @@ The gain follows an inverted U whose peak shifts with reader strength.
 The strongest readers gain most at the highest density (Claude $+$0.32 and Gemini $+$0.39 at 21 characters per vision token), where they begin to fail.
 Weaker readers gain most at moderate densities ($+$0.48 to $+$0.78 at 11--14).
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=\columnwidth]{fig/phase.pdf}
+\includegraphics[width=0.55\linewidth]{fig/phase.pdf}
 \caption{Gain in identifier exact-match of reallocation over uniform rendering versus rendering density (short synthetic documents, $N{=}30$ per point).}
 \label{fig:phase}
 \end{figure}
 
 \paragraph{Readers do not know when they misread.}
 Allowing an ``[unreadable]'' answer did not consistently reduce silent errors.
-MiniMax-M3 used it for at most 6\% of identifiers, and its rate of wrong-but-well-formed answers fell in one of four conditions (uniform, 21 characters per vision token: 0.40 to 0.31) and rose in the other three.
+MiniMax-M3 used it for at most 6\% of identifiers.
+Its rate of wrong-but-well-formed answers fell in one of four conditions (uniform, 21 characters per vision token: 0.40 to 0.31) and rose in the other three.
 This supports preventing errors at render time rather than relying on the reader's self-assessment.
 
 \paragraph{Agent-based readers can leak across items.}
@@ -168,10 +194,11 @@ All agent-based readings reported in this paper therefore use a Latin-square des
 \label{app:negative}
 
 \paragraph{Global detector.}
-A detector that also flagged four-digit numbers and long letter-only tokens (later replaced by the one in \cref{sec:detect}) flagged on average 85 and 112 words per MultiFieldQA and HotpotQA document, 62\% of them years.
+An earlier detector, later replaced by the one in \cref{sec:detect}, also flagged four-digit numbers and long letter-only tokens.
+It flagged on average 85 and 112 words per MultiFieldQA and HotpotQA document, 62\% of them years.
 On one LongBench sample it lowered F1 by 0.05 on average, with 3 of 12 cells significantly negative.
 On a second sample it was neutral ($-$0.005, 1 of 12 negative).
-With the final detector the difference to uniform rendering is $+$0.000 (0 of 12 negative) on the second sample.
+With the final detector, the difference from uniform rendering is $+$0.000 (0 of 12 negative) on the second sample.
 
 \paragraph{Word wrapping.}
 Wrapping prose at word boundaries wastes part of every line.
@@ -191,19 +218,21 @@ Keeping prose at the uniform size left room only for 6--8\,px identifiers and re
 \section{Hazard Density and Routing}
 \label{app:density}
 
-\begin{figure*}[t]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{fig/density.pdf}
-\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X). Recall averages the five non-Claude readers; cost averages the readers that report usage (Claude included, MiniMax excluded). (c) Recall versus cost relative to plain text when \cref{eq:route} routes each document either to an image with anchors or to plain text, sweeping $\tau$ (the four readers with billed costs for both images and plain text).}
+\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) billed tokens for uniform rendering (A), our allocation (S), anchors on uniform rendering (K), and our allocation with anchors (X). Recall averages the five non-Claude readers; cost averages the readers that report usage (Claude included, MiniMax excluded). (c) Recall versus cost relative to plain text when \cref{eq:route} routes each document either to an image with anchors or to plain text. Panel (c) sweeps $\tau$ and uses the four readers with billed costs for both images and plain text.}
 \label{fig:density}
-\end{figure*}
+\end{figure}
 
 \Cref{fig:density} varies the number of flagged strings per 32K-character document from 1 to 256 (per-reader values, including Claude, in \cref{tab:app_density}).
 Allocation alone degrades as density grows (0.42 at $k{=}1$, 0.24 at $k{=}16$, 0.06 at $k{=}64$), because more strings compete for the pixels prose can give up.
-Anchors are strong while hazards are sparse but become both less accurate and expensive as they multiply, reaching 0.34 recall (K) at $k{=}64$ for 1.8$\times$ the tokens of uniform rendering.
+Anchors are strong while hazards are sparse but lose accuracy and grow expensive as hazards multiply.
+At $k{=}64$, K reaches 0.34 recall for 1.8$\times$ the tokens of uniform rendering.
 At $k{=}4$, X recovers 0.98 of the needles while costing 13\% less than uniform rendering and 20\% less than K.
 Under the precision-aware F1, however, X and K do not differ (pooled over $k\in\{1,4,16\}$: $-$0.01, CI [$-$0.07, 0.04]), and several readers return most of the anchor list at $k\ge4$.
-For routing, $\tau$ was chosen per reader by two-fold cross-validation on this sweep; the selected values have median 0.3.
+For routing, $\tau$ was chosen per reader by two-fold cross-validation on this sweep.
+The selected values have median 0.3.
 Sweeping $\tau$ traces the recall--cost frontiers of panel (c), on which routing with X matches or dominates routing with K.
 At $\tau{=}0.3$ it reaches 0.97 recall at 0.69$\times$ the plain-text cost versus 0.93 at 0.70$\times$.
 These frontiers are computed on the same sweep used to select $\tau$ and should be read as in-sample.
@@ -214,24 +243,29 @@ These frontiers are computed on the same sweep used to select $\tau$ and should 
 \label{app:niq}
 
 For each of six LongBench tasks we shuffled the documents of at most 40K characters with a fixed seed and kept the first ten that contain a usable target.
-A target is a word flagged by the detector of \cref{sec:detect} that, after stripping surrounding punctuation, has 6--64 ASCII characters including a digit, starts with a letter or digit, and is preceded by six words none of which is flagged.
+A target is a word flagged by the detector of \cref{sec:detect}.
+After surrounding punctuation is stripped, it must have 6--64 ASCII characters including a digit and start with a letter or digit.
+It must also be preceded by six words, none of them flagged.
 The six-word phrase must occur exactly once in the document.
-We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, characters replaced by ``?'' during ASCII normalization, and words glued across a missing space (a comma directly followed by a letter, a period or closing parenthesis followed by an uppercase letter, and a few letter--digit patterns).
+We exclude dataset artifacts: Qasper reference placeholders (e.g., \texttt{BIBREF}), formula fragments, and characters replaced by ``?'' during ASCII normalization.
+We also exclude words glued across a missing space (a comma directly followed by a letter, a period or closing parenthesis followed by an uppercase letter, and a few letter--digit patterns).
 Targets containing ``='' are also excluded.
 A first version of the set without the last two filters contained such artifacts in 14 of its 60 questions.
 Because anchors and enlarged rendering present the glued string as a single unit, that version favored our arms, and we discarded it.
-The prompt asks for the exact string that follows the phrase; scoring is the same recall as for RULER.
+The prompt asks for the exact string that follows the phrase, and scoring uses the same recall as for RULER.
 The same 60 questions were also rendered at base sizes of 5 and 7\,px for the frontier of \cref{sec:anchors}.
 
 \paragraph{Detector-independent set.}
 A second set (new seed) measures what happens to strings the detector misses.
-It samples the target uniformly from all tokens of 4--64 ASCII characters that contain a digit, with the same phrase and artifact filters (including \texttt{EQREF} and \texttt{DISPLAYFORM} placeholders), but does not require the detector to flag the target or the document.
+It samples the target uniformly from all tokens of 4--64 ASCII characters that contain a digit.
+The phrase and artifact filters are the same (including \texttt{EQREF} and \texttt{DISPLAYFORM} placeholders), but the detector need not flag the target or the document.
 The detector flags one of the 60 targets.
 
 \section{Real-Corpus Profile}
 \label{app:corpora}
 
-\Cref{tab:app_corpora} lists the routing profile of real corpora: 13 English LongBench tasks (20 chunks each), Paul Graham essays, Python source files from an installed package environment, local system logs, and Python package \texttt{RECORD} manifests (36--40 chunks each).
+\Cref{tab:app_corpora} lists the routing profile of real corpora.
+These are 13 English LongBench tasks (20 chunks each) and, with 36--40 chunks each, Paul Graham essays, Python source files from an installed package environment, local system logs, and Python package \texttt{RECORD} manifests.
 Every chunk is rendered and reallocated so that $r$ uses the actual image cost.
 
 \input{tab/app_corpora}
@@ -239,7 +273,7 @@ Every chunk is rendered and reallocated so that $r$ uses the actual image cost.
 \section{Additional Claude Reader}
 \label{app:claude}
 
-We also used Claude through an agent interface as a reader that is never used to choose any setting.
+We also used Claude, through an agent interface, as a reader that never informs the choice of any setting.
 For $k\in\{1,4,16,64,256\}$, ten items of the density sweep were read as X, K, and plain text in a Latin square.
 Each of 15 agents read ten different items, each in one form, using only a file-reading tool and a tool to write its answer file.
 Costs are estimated with \cref{eq:vtok} for images and with the linear text-token fit of \cref{tab:app_corpora}.
@@ -259,12 +293,8 @@ The detector design, anchors, and text routing follow~\cite{anon2026renderretain
 The renderer, detector, router, task generators, reader clients, analysis scripts, all logged model outputs, and the scripts that produce every figure and table will be released.
 Task data are generated from public sources (RULER templates with Paul Graham essays, LongBench) with fixed seeds.
 
-\paragraph{Compute and cost.}
-No model was trained.
-All readers were accessed through provider APIs between November 1 and 4, 2026; reader versions are identified by their provider model names in \cref{sec:setup}.
-Pay-per-token API charges for all experiments, including pilots, were about \$55; MiniMax-M3 and the agent-based Claude reader were used under subscription plans.
-
 \paragraph{Ethics.}
 The study involves no human subjects and no personal data.
 The system logs profiled in \cref{app:corpora} were processed locally to count flagged strings; their contents are not released.
-Better verbatim fidelity under compression could in principle help extract identifiers from rendered documents, but the method only changes how a document the user already holds is presented to a model.
+Better verbatim fidelity under compression could in principle help extract identifiers from rendered documents.
+The method, however, only changes how a document the user already holds is presented to a model.

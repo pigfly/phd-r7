@@ -1,10 +1,10 @@
-\begin{table*}[h]
+\begin{table}[!htbp]
 \centering
-\caption{\textbf{Precision-aware rescoring and anchor content} (means over five readers). rec: recall; F1: precision-aware F1 over the returned values; \#ret: values returned per item; \#anc: distinct anchors per item; dump: recall of returning every anchor; pick: expected recall of returning as many random anchors as there are gold values. Neither copy baseline looks at the image. On single and multi-value the anchor list contains exactly the needles, so K and X approach the dump baseline; at $k{\ge}4$ several readers return most of the list, which recall rewards and F1 does not.}
+\caption{\textbf{Precision-aware rescoring and anchor content} (means over five readers). rec: recall; F1: precision-aware F1 over the returned values; \#ret: values returned per item; \#anc: distinct anchors per item; dump: recall of returning every anchor; pick: expected recall of returning as many random anchors as there are gold values. Neither copy baseline looks at the image. On single and multi-value the anchor list contains exactly the needles, so K and X approach the dump baseline. At $k{\ge}4$, several readers return most of the list, which recall rewards and F1 does not.}
 \label{tab:app_rescore}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{l ccc ccc ccc ccc ccc}
 \toprule
 & \multicolumn{3}{c}{A} & \multicolumn{3}{c}{S} & \multicolumn{3}{c}{K} & \multicolumn{3}{c}{X} & \multicolumn{3}{c}{anchor list} \\
@@ -25,4 +25,4 @@ multi-key 64K & 0.11 & 0.11 & 4.8 & 0.79 & 0.39 & 3.3 & 0.94 & 0.38 & 4.2 & 0.99
 multi-key 128K & 0.11 & 0.10 & 16.6 & 0.75 & 0.38 & 3.3 & 0.96 & 0.39 & 4.7 & 0.97 & 0.36 & 5.1 & 6.0 & 1.00 & 0.18 \\
 \bottomrule
 \end{tabular}}
-\end{table*}
+\end{table}

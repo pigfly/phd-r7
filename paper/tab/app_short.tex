@@ -1,8 +1,7 @@
-\begin{table*}[h]
+\begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{4pt}
-\caption{Short documents ($\approx$1.6K characters, one image, $N{=}30$). Difference between word-wrapped reallocation and uniform rendering in identifier exact-match (ids) and in accuracy on three prose probes (prose); column headers give data and characters per vision token. $^{\ast}$/$^{\dagger}$: 95\% CI above/below zero.}
+\caption{Short documents ($\approx$1.6K characters, one image, $N{=}30$). Difference between word-wrapped reallocation and uniform rendering in identifier exact-match (ids) and in accuracy on three prose probes (prose). Column headers give data and characters per vision token. $^{\ast}$/$^{\dagger}$: 95\% CI above/below zero.}
 \label{tab:app_short}
-\resizebox{\textwidth}{!}{%
 \begin{tabular}{l cc cc cc cc}
 \toprule
 & \multicolumn{2}{c}{synthetic, 21} & \multicolumn{2}{c}{synthetic, 14} & \multicolumn{2}{c}{manifests, 14 (a)} & \multicolumn{2}{c}{manifests, 14 (b)} \\
@@ -16,5 +15,5 @@ Qwen3-VL-235B & +0.04$^{\ast}$ & +0.01 & +0.44$^{\ast}$ & -0.08 & +0.06$^{\ast}$
 Llama 4 Maverick & +0.05$^{\ast}$ & +0.00 & +0.66$^{\ast}$ & -0.39$^{\dagger}$ & +0.18$^{\ast}$ & -0.38$^{\dagger}$ & +0.27$^{\ast}$ & -0.38$^{\dagger}$ \\
 MiniMax-M3 & +0.28$^{\ast}$ & -0.03 & +0.57$^{\ast}$ & -0.02 & +0.17$^{\ast}$ & -0.21$^{\dagger}$ & +0.21$^{\ast}$ & -0.14$^{\dagger}$ \\
 \bottomrule
-\end{tabular}}
-\end{table*}
+\end{tabular}
+\end{table}

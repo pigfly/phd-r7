@@ -68,3 +68,8 @@
 \newcommand{\ours}{hazard-aware rendering\xspace}
 
 \renewcommand{\ttdefault}{cmtt}
+
+\usepackage{placeins}  % \FloatBarrier keeps appendix floats inside their section
+% appendix tables: shrink a box only if it is wider than the line
+\newsavebox{\fitbox}
+\newcommand{\fitwidth}[1]{\sbox{\fitbox}{#1}\ifdim\wd\fitbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\fitbox}}\else\usebox{\fitbox}\fi}

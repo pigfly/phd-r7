@@ -18,9 +18,9 @@ def fmt(x, best=False, second=False, d=2):
 de = N["detector_ablation"]
 lab = {"A": "Uniform (A)", "S": "Ours, regex detector (S)", "O": "Ours, oracle detector", "X": "Ours + anchors, regex (X)", "Y": "Ours + anchors, oracle"}
 rows = [f"{lab[a]} & {de['rdet_mv7'][a]:.2f} & {de['rdet_mv4'][a]:.2f} \\\\" + ("\n\\midrule" if a == "A" else "") for a in "ASOXY"]
-(TAB / "detector.tex").write_text(r"""\begin{table}[h]
+(TAB / "detector.tex").write_text(r"""\begin{table}[!htbp]
 \centering
-\caption{\textbf{Detector ablation.} RULER multi-value recall (16K characters, 6\,px budget, $N{=}25$, mean of 5 readers; Claude was not run in this ablation). The regex detector flags seven-digit values but deliberately not four-digit ones (they collide with years), so on four-digit values the regex arms fall back to uniform rendering.}
+\caption{\textbf{Detector ablation.} RULER multi-value recall (16K characters, 6\,px budget, $N{=}25$, mean of 5 readers; Claude was not run in this ablation). The regex detector flags seven-digit values but deliberately skips four-digit ones, which collide with years. On four-digit values the regex arms therefore fall back to uniform rendering.}
 \label{tab:detector}
 \small
 \setlength{\tabcolsep}{5pt}
@@ -46,9 +46,9 @@ for rd in RD:
         v = ls[f"{L}|{rd}"]; c += [f"{v['A']:.2f}", f"\\textbf{{{v['S']:.2f}}}"]
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
 rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(f"{St.mean(ls[f'{L}|{r}'][a] for r in RD if r != 'claude-sonnet-5.5'):.2f}" for L in ("32k", "64k", "128k") for a in "AS") + " \\\\"]
-(TAB / "app_length.tex").write_text(r"""\begin{table}[h]
+(TAB / "app_length.tex").write_text(r"""\begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{4pt}
-\caption{Per-reader recall for the length study (\cref{fig:scaling}); the mean excludes Claude.}
+\caption{Per-reader recall for the length study (\cref{fig:scaling}). The mean excludes Claude.}
 \label{tab:app_length}
 \begin{tabular}{l cc cc cc}
 \toprule
@@ -66,11 +66,11 @@ for rd in RD:
         pr = den[k]["per_reader"].get(rd)
         c.append(f"{pr['K']:.2f}/{pr['X']:.2f}" if pr else "--")
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
-(TAB / "app_density.tex").write_text(r"""\begin{table}[h]
+(TAB / "app_density.tex").write_text(r"""\begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{3pt}
-\caption{Per-reader recall in the hazard-density sweep, K/X (anchors on uniform rendering / on our rendering).}
+\caption{Per-reader recall in the hazard-density sweep. Each cell gives K/X (anchors on uniform rendering / on our rendering).}
 \label{tab:app_density}
-\resizebox{\columnwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{l cccccc}
 \toprule
 Reader & $k{=}1$ & 4 & 16 & 64 & 128 & 256 \\
@@ -83,22 +83,21 @@ for name, v in rc.items():
     nm = name.replace("longbench/", "LB/").replace("_", "\\_")
     rows.append(f"{nm} & {v['n']} & {v['flag_per_1k']:.2f} & {v['r_median']:.2f} & {v['r_p90']:.2f} & {100*v['frac_X']:.0f}\\% & {v['cost_rel']:.2f} \\\\")
 fit = N["real_density"]["fit"]
-(TAB / "app_corpora.tex").write_text(r"""\begin{table}[h]
-\centering\small\setlength{\tabcolsep}{3.5pt}
+(TAB / "app_corpora.tex").write_text(r"""\begin{table}[!htbp]
+\centering\footnotesize\setlength{\tabcolsep}{2.2pt}
 \caption{Routing profile of real corpora (32K-character chunks, $\tau{=}0.3$). Flags per 1K characters, median and 90th-percentile routing ratio $r$, share routed to image+anchors (X), and estimated cost relative to plain text. Text tokens are estimated with a linear fit to billed text-only reads (""" + f"{fit[0]:.3f}" + r""" tokens per ordinary and """ + f"{fit[1]:.3f}" + r""" per flagged character; mean absolute relative error """ + f"{100*fit[2]:.1f}" + r"""\%).}
 \label{tab:app_corpora}
-\resizebox{\columnwidth}{!}{%
 \begin{tabular}{l c c c c c c}
 \toprule
 Corpus & $n$ & flags/1K & $r$ med & $r$ p90 & $\to$X & cost/T \\
 \midrule
-""" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}}\n\\end{table}\n")
+""" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
 # A4: Claude subagent reader
 cl = N["claude_subagent"]; rows = []
 for k, v in cl["per_k"].items():
     rows.append(f"{k} & {v['X']:.2f} & {v['K']:.2f} & {v['T']:.2f} & {v['costX']:.2f} & {v['costK']:.2f} \\\\")
-(TAB / "app_claude.tex").write_text(r"""\begin{table}[h]
+(TAB / "app_claude.tex").write_text(r"""\begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{4pt}
 \caption{Additional Claude reader (agent interface, one item per form per agent; $N{=}10$ per cell). Recall and estimated cost relative to plain text.}
 \label{tab:app_claude}
@@ -121,18 +120,17 @@ for rd in RD:
         mark = lambda d: d[0] if d is None else (f"{d[0]:+.2f}" + ("$^{\\ast}$" if d[1] > 0 else ("$^{\\dagger}$" if d[2] < 0 else "")))
         c += [mark(di), mark(dp)]
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
-(TAB / "app_short.tex").write_text(r"""\begin{table*}[h]
+(TAB / "app_short.tex").write_text(r"""\begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{4pt}
-\caption{Short documents ($\approx$1.6K characters, one image, $N{=}30$). Difference between word-wrapped reallocation and uniform rendering in identifier exact-match (ids) and in accuracy on three prose probes (prose); column headers give data and characters per vision token. $^{\ast}$/$^{\dagger}$: 95\% CI above/below zero.}
+\caption{Short documents ($\approx$1.6K characters, one image, $N{=}30$). Difference between word-wrapped reallocation and uniform rendering in identifier exact-match (ids) and in accuracy on three prose probes (prose). Column headers give data and characters per vision token. $^{\ast}$/$^{\dagger}$: 95\% CI above/below zero.}
 \label{tab:app_short}
-\resizebox{\textwidth}{!}{%
 \begin{tabular}{l cc cc cc cc}
 \toprule
 & \multicolumn{2}{c}{""" + cond[0][1] + r"""} & \multicolumn{2}{c}{""" + cond[1][1] + r"""} & \multicolumn{2}{c}{""" + cond[2][1] + r"""} & \multicolumn{2}{c}{""" + cond[3][1] + r"""} \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
 Reader & ids & prose & ids & prose & ids & prose & ids & prose \\
 \midrule
-""" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}}\n\\end{table*}\n")
+""" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 print("appendix tables written")
 
 

@@ -42,8 +42,16 @@
 
 % Supplementary material: compiled together for cross-references, then split by build_pdfs.sh
 \clearpage
+\onecolumn
 \setcounter{page}{1}
-\maketitlesupplementary
+\begin{center}
+{\Large\textbf{Spend Pixels Where It Hurts:}}\\[0.2em]
+{\Large\textbf{Hazard-Aware Rendering for Optical Long-Context Compression}}\\[0.5em]
+{\Large Supplementary Material}
+\end{center}
+\vspace{0.5em}
+% citations in the supplementary do not add page back-references to the main reference list
+\makeatletter\renewcommand*{\Hy@backout}[1]{}\makeatother
 \appendix
 \input{sec/X_appendix}
 

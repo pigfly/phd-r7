@@ -1,8 +1,7 @@
-\begin{table}[h]
-\centering\small\setlength{\tabcolsep}{3.5pt}
+\begin{table}[!htbp]
+\centering\footnotesize\setlength{\tabcolsep}{2.2pt}
 \caption{Routing profile of real corpora (32K-character chunks, $\tau{=}0.3$). Flags per 1K characters, median and 90th-percentile routing ratio $r$, share routed to image+anchors (X), and estimated cost relative to plain text. Text tokens are estimated with a linear fit to billed text-only reads (0.208 tokens per ordinary and 0.737 per flagged character; mean absolute relative error 1.1\%).}
 \label{tab:app_corpora}
-\resizebox{\columnwidth}{!}{%
 \begin{tabular}{l c c c c c c}
 \toprule
 Corpus & $n$ & flags/1K & $r$ med & $r$ p90 & $\to$X & cost/T \\
@@ -25,5 +24,5 @@ python\_source & 40 & 2.62 & 0.67 & 1.47 & 12\% & 0.91 \\
 system\_logs & 40 & 11.84 & 3.73 & 4.09 & 0\% & 1.00 \\
 pkg\_manifests & 40 & 11.32 & 16.09 & 16.72 & 0\% & 1.00 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}

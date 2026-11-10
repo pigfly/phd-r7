@@ -27,6 +27,40 @@ The gain therefore comes from making the targeted strings legible, not from layo
 
 \input{tab/pooled}
 
+\subsection{Why does allocation work?}
+\label{sec:why}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig/why.pdf}
+\caption{\textbf{Reading is limited by what the language prior cannot supply.} (a) Controlled study: 32-character targets of three types hidden in the same 16K-character documents and rendered uniformly at 5--10\,px. Among answers in which the reader found the target, the share copied exactly (95\% CI), for the three readers that found enough targets of every type. (b) Single-UUID needles at the 5 and 6\,px budgets: wrong hexadecimal characters per answer of the right length. Under uniform rendering most such answers are fabricated, and under allocation most are exact.}
+\label{fig:why}
+\end{figure}
+
+\Cref{sec:principle} predicts that readers fail where the pixels must supply what the language prior cannot.
+Three observations on the single-UUID needles of \cref{tab:baselines} (five readers, both budgets, and the box runs) are consistent with this.
+
+\emph{The format is read, the content is not.}
+Under uniform rendering, a third of the answers are empty.
+In the answers of the right length, the four hyphens, which the UUID format predicts, are correct 99\% of the time, but the 32 hexadecimal characters only 51\% of the time.
+Allocation raises the hexadecimal characters to 91\% and leaves the hyphens at 98\%. The gain holds for every reader (from 0.15--0.96 to 0.82--1.00).
+
+\emph{Wrong answers are fabricated, not misread.}
+If uniform rendering merely blurred a few glyphs, errors would be spread over a few characters.
+Instead, 59\% of the right-length answers have at least 8 of 32 characters wrong, with a median of 27, close to the 30 expected from guessing (\cref{fig:why}b). Only 23\% are exact.
+The weaker readers drive this pooled pattern. All right-length answers of Llama and MiniMax, and most of those of Qwen and GPT, reproduce the format and invent the content, consistent with \cref{eq:reading}. Gemini, the strongest reader, almost never fabricates and errs by misreading (\cref{app:why}).
+Under allocation, 58\% of the answers are exact and 9\% are fabricated.
+Among partial misreads under uniform rendering, the most frequent confusion is 8$\to$0 (24 of 89 wrong characters). The two glyphs differ by a small stroke, which a patch holding three or four characters blurs.
+
+\emph{The pixels needed depend on predictability.}
+To test this, we hid one 32-character value in the same RULER documents (16K characters) and varied only its type: an English phrase from LongBench passages, random common words, or random hexadecimal characters.
+Each document was rendered uniformly at 4--10\,px. We scored the answers in which the reader found the target (at least 50\% similar to it), which separates transcription from search (\cref{app:why}).
+MiniMax and Qwen3-VL rarely found English or word targets and usually answered with the key instead, so we compare transcription for the three readers that found enough targets of every type.
+For each of them, a found hexadecimal string is copied exactly far less often than a found English phrase at 5--10\,px: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a). Random words reach 0.89, 0.53, and 0.29.
+Hexadecimal and English targets also differ in their glyphs, so this test supports but does not isolate the role of the prior (\cref{app:why}).
+
+The account is also consistent with the boundaries of \cref{tab:pooled}: boxing does not help, suggesting legibility rather than search alone is the bottleneck; at 10\,px font/size search recovers most of the gain (S$-$U $+$0.04); dense hazards leave too few pixels to lift any string (\cref{app:density}); and shrinking prose costs little (\cref{sec:longbench}).
+
 \subsection{Scaling with context length}
 \label{sec:length}
 
@@ -57,7 +91,6 @@ Allocation is most useful where the budget is tight, which is also where optical
 \subsection{Naturally occurring strings}
 \label{sec:niq}
 
-\input{tab/niq}
 
 RULER needles are synthetic, and our detector was designed with such strings in mind.
 We built two sets of 60 questions from LongBench documents of up to 40K characters (ten each from six tasks).
@@ -68,54 +101,25 @@ In the second set, targets are any digit-bearing tokens of at least four charact
 The detector flags only one of the 60, because most are short numbers, percentages, and version strings such as ``25,000'' or ``2.0.13''.
 On these, every image arm is poor (0.36--0.45 against 0.96 for text), and allocation neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
 Shrinking prose to make room for flagged strings thus did not measurably damage the strings the detector misses, but nothing in the image protects them either.
+A synthetic detector ablation agrees: needles the regex misses leave S at uniform recall (0.33 vs.\ 0.32), while an oracle detector would reach 0.82 (\cref{tab:detector}).
 
 \subsection{Anchors on the allocated image}
 \label{sec:anchors}
 
-Anchors~\cite{anon2026renderretain} copy the flagged strings into the prompt, so their value depends on how many strings compete for the answer.
-On the single-needle and multi-value tasks of \cref{tab:baselines}, the only flagged strings in the essay haystack are the needles.
-The anchor list therefore \emph{is} the answer (1.0 anchor per single-needle document, always the gold value), and K and X reach 0.90--1.00.
-On multi-key, the list adds three distractor values; recall stays at 0.94--1.00, but readers often return the whole list, and the precision-aware F1 drops to 0.46--0.52.
-These numbers measure copying rather than reading, so we compare K and X where the list does not reveal the answer.
-
-On the flagged natural identifiers, documents carry 5.3 distinct anchors on average, and choosing one at random would score 0.44.
-Readers do better (K 0.74, X 0.76) and almost always return a single value, so here the anchors are used, not dumped.
-Repeating this set at base sizes of 5, 6, and 7\,px gives a recall--cost frontier for each arm.
-X reaches 0.75, 0.76, and 0.81 at 1017, 1128, and 1306 billed tokens, and K reaches 0.71, 0.74, and 0.77 at 1014, 1267, and 1345.
-X thus lies on or above K's frontier, by 0.02--0.05 at equal or lower cost (equal at 5\,px, where prose cannot shrink).
-The pooled confidence intervals all include zero, however, and only one reader--budget cell is significant (\cref{tab:pooled}).
-At 64K and 128K characters, X costs 31\% and 29\% fewer billed tokens than K because allocation shrinks the image.
-Yet on multi-key the precision-aware F1 is the same for S, K, and X (0.36--0.40), so there the anchors add nothing over allocation alone.
-When the target is \emph{not} flagged, anchors can mislead.
-On the detector-independent set, X scores 0.36 against 0.44 for S and K ($-$0.08 vs.\ K, CI [$-$0.17, 0.01]), consistent with readers copying a plausible anchor instead of reading the image.
-On a synthetic sweep of hazard density (\cref{app:density}), anchors on either image become expensive and ineffective beyond about 16 flagged strings per 32K characters, which is where routing to text~\cite{anon2026renderretain} takes over.
+Anchors~\cite{anon2026renderretain} copy the flagged strings into the prompt.
+In the essay haystacks of \cref{tab:baselines}, the only flagged strings are the needles. The anchor list \emph{is} then the answer, and K and X reach 0.90--1.00 by copying. On multi-key, readers often return the whole list (F1 0.46--0.52; \cref{app:rescore}).
+We therefore compare K and X on the flagged natural identifiers, where documents carry 5.3 distinct anchors and a random pick would score 0.44.
+Across base sizes of 5, 6, and 7\,px, X reaches 0.75--0.81 and lies on or above K's recall--cost frontier by 0.02--0.05, though no pooled interval excludes zero (\cref{app:anchors}).
+At 64K--128K characters, X costs 29--31\% less than K, but under F1 the anchors add nothing over allocation alone.
+When the target is not flagged, anchors can mislead (X 0.36 vs.\ 0.44 for S and K on the detector-independent set).
+Beyond about 16 flagged strings per 32K characters, anchors on either image become expensive and ineffective, and routing to text~\cite{anon2026renderretain} takes over. On real corpora, prose goes to images and code and logs to text (\cref{app:density,app:corpora}).
 
 \subsection{Effect on ordinary comprehension}
 \label{sec:longbench}
 
-\input{tab/longbench}
 
-Shrinking prose could hurt questions that have nothing to do with identifiers.
-\Cref{tab:longbench} tests this on held-out LongBench documents of up to 40K characters.
-Relative to uniform rendering, F1 is unchanged on MultiFieldQA (0.32 for A, 0.33 for S and X) and slightly higher on HotpotQA (0.53 for A, 0.56 for S and X).
-X has no significantly negative cell, and S has one (Qwen3-VL on HotpotQA, $-$0.06). Pooled over readers and tasks, S$-$A is +0.02 [$-$0.02, 0.06] and X$-$A +0.02 [$-$0.03, 0.07] (\cref{tab:pooled}), which rules out losses larger than about 0.03 F1.
-Relative to plain text, every image arm loses.
-T reaches 0.58 and 0.73, and X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
-Only GPT-6 Luna reads the HotpotQA images nearly as well as text.
-Allocation therefore removes a failure specific to identifiers without making optical compression a lossless substitute for text.
-Whether the remaining comprehension gap is acceptable depends on the reader and the application.
+Shrinking prose could hurt questions unrelated to identifiers.
+On held-out LongBench documents of up to 40K characters (\cref{tab:longbench}), pooled F1 changes by +0.02 [$-$0.02, 0.06] for S and +0.02 [$-$0.03, 0.07] for X relative to uniform rendering, which rules out losses larger than about 0.03 (\cref{tab:pooled,tab:app_pooled2}). One reader--task cell is significantly negative for S, and none for X.
+Relative to plain text, however, every image arm loses: X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
+Allocation thus removes a failure specific to identifiers but does not make optical compression a substitute for text.
 
-\subsection{Analysis}
-\label{sec:analysis}
-
-\paragraph{How much does the detector matter?}
-Replacing the regex detector by an oracle that flags exactly the needle values changes nothing when the needles are of a type the detector recognizes (seven-digit numbers: 0.77 vs.\ 0.78 for S; \cref{tab:detector}).
-When they are not (four-digit numbers, which the detector deliberately ignores), S falls back to uniform rendering in 24 of 25 documents and matches its recall (0.33 vs.\ 0.32).
-The oracle would reach 0.82.
-Together with the detector-independent set of \cref{sec:niq}, this suggests that missed hazards cost the gain but, in our tests, not more.
-
-\paragraph{Where do real documents fall?}
-Because the routing ratio is computed from text alone, we profiled 32K-character chunks of 13 LongBench tasks, essays, Python source, system logs, and package manifests without querying any model (\cref{app:corpora}).
-Prose-dominated documents are routed to images 95--100\% of the time, at an estimated 0.19--0.27$\times$ the plain-text cost, and technical prose (MultiFieldQA) 75\% of the time.
-Code is mostly routed to text, and logs and manifests always are.
-Hazard-aware rendering is thus a tool for long documents that \emph{contain} identifiers, not for documents that \emph{consist} of them.

@@ -142,4 +142,42 @@ for run, lab in [("rbx_s5_single_3", "16K, 5\\,px"), ("rbx_s6_single_3", "16K, 6
     rows.append(f"{lab} & {len(S)} & {top} & {St.mean(m['vtok'] / A[m['item']]['vtok'] for m in S):.2f} & {St.mean(m['extra'] == -1 for m in S):.2f} \\\\")
 table("app_alloc", r"\textbf{Sizes chosen by the allocation} (prose/flagged glyph height in px, with the number of documents), vision tokens of S relative to the uniform budget, and the fraction of documents that needed the $-$1\,px leading fallback.",
       "tab:app_alloc", "l r l c c", r"Setting & docs & most frequent $s_{\mathrm{lo}}/s_{\mathrm{hi}}$ & $v(S)/B$ & fallback \\", rows, size=r"\footnotesize", resize=False)
+
+# ---- 8. entropy x glyph-size study and UUID error anatomy
+WY = json.loads((EXP / "analysis_why.json").read_text()); E = WY["esz"]; AN = WY["anatomy"]
+rows = []
+for t, lab in (("E", "English phrase"), ("W", "random words"), ("H", "random hex")):
+    for k, (key, fmt) in enumerate((("located", "found"), ("trans_given_loc", "char.\\ acc.\\ $|$ found"), ("exact_given_loc", "exact $|$ found"))):
+        c = [lab if k == 0 else "", fmt]
+        for sz in (4, 5, 6, 7, 8, 10):
+            v = E[f"{t}|{sz}"][key]
+            c.append("--" if v is None else (f"{v:.2f}" if key == "located" else f"{v[0]:.2f}"))
+        rows.append(" & ".join(c) + " \\\\")
+    rows.append("\\midrule") if t != "H" else None
+table("app_esz", r"\textbf{Entropy $\times$ glyph-size study} (pooled over five readers, whose mix differs across types; $N{=}20$ documents per type and size, 100 answers per cell; per reader in \cref{tab:app_esz_rd}). found: share of answers at least 50\% similar to the target; char.\ acc.: mean similarity of found answers to the target; exact: share of found answers that contain the target exactly. Cells with fewer than five found answers are omitted.",
+      "tab:app_esz", "l l cccccc", r"Target & Measure & 4\,px & 5\,px & 6\,px & 7\,px & 8\,px & 10\,px \\", rows, size=r"\footnotesize", resize=False)
+rows = []
+for a, lab in (("A", "Uniform (A)"), ("S", "Ours (S)")):
+    v = AN[a]
+    rows.append(f"{lab} & {v['n_answers']} & {v['empty']/v['n_answers']:.2f} & {v['n_rightlen']} & {v['hyphen_acc']:.2f} & {v['hex_acc']:.2f} & {v['exact']:.2f} & {v['few_1_7']:.2f} & {v['many_8plus']:.2f} & {v['median_wrong_if_8plus']} \\\\")
+table("app_anatomy", r"\textbf{Anatomy of single-UUID answers} (five readers; RULER 16K at 5 and 6\,px and the box runs). Accuracy is measured over answers of the right length. The last four columns split those answers by the number of wrong hexadecimal characters (of 32) and give the median for answers with at least 8 wrong.",
+      "tab:app_anatomy", "l r c r c c c c c c", r"Arm & answers & empty & right length & hyphen acc. & hex acc. & exact & 1--7 wrong & $\ge$8 wrong & median wrong \\", rows, size=r"\footnotesize", resize=False)
+
+rows = []
+for rd in R5:
+    a, b = AN["A"]["per_reader"].get(rd), AN["S"]["per_reader"].get(rd)
+    rows.append(f"{SH[rd]} & {a['n_rightlen']} & {a['hex_acc']:.2f} & {a['fabricated']:.2f} & {b['n_rightlen']} & {b['hex_acc']:.2f} & {b['fabricated']:.2f} \\\\")
+hdr = (r"& \multicolumn{3}{c}{Uniform (A)} & \multicolumn{3}{c}{Ours (S)} \\" "\n" r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}" "\n"
+       r"Reader & right length & hex acc. & fabricated & right length & hex acc. & fabricated \\")
+table("app_anatomy_rd", r"\textbf{UUID answers per reader.} Number of right-length answers, hexadecimal-character accuracy, and the share of right-length answers with at least 8 of 32 characters wrong (fabricated).",
+      "tab:app_anatomy_rd", "l ccc ccc", hdr, rows, size=r"\footnotesize", resize=False)
+rows = []
+PRF = E["per_reader_found_5to10"]
+for rd in R5:
+    c = [SH[rd]]
+    for t in "EWH":
+        v = PRF.get(f"{rd}|{t}"); c.append("--" if not v or v["exact"] is None else f"{v['exact'][0]:.2f} ({v['n']})")
+    rows.append(" & ".join(c) + " \\\\")
+table("app_esz_rd", r"\textbf{Entropy study per reader}: exact copy among found targets at 5--10\,px (number of found answers). MiniMax and Qwen3-VL rarely found English or word targets because they answered with the key.",
+      "tab:app_esz_rd", "l ccc", r"Reader & English phrase & random words & random hex \\", rows, size=r"\footnotesize", resize=False)
 print("appendix tables written")

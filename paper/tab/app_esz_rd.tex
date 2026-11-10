@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Entropy study per reader}: exact copy among found targets at 5--10\,px (number of found answers). MiniMax and Qwen3-VL rarely found English or word targets because they answered with the key.}
+\label{tab:app_esz_rd}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l ccc}
+\toprule
+Reader & English phrase & random words & random hex \\
+\midrule
+Gemini & 0.82 (76) & 0.89 (91) & 0.61 (100) \\
+GPT & 0.57 (37) & 0.53 (38) & 0.08 (48) \\
+Qwen & 0.00 (5) & 0.54 (13) & 0.00 (48) \\
+Llama & 0.46 (24) & 0.29 (35) & 0.00 (38) \\
+MiniMax & -- & -- & 0.05 (43) \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -31,6 +31,31 @@ Every method we compare uses the same number of vision tokens as the uniform bas
 Let $\mathcal{H}(x)\subseteq\{1,\dots,n\}$ be the indices of hazardous words, those whose value is needed verbatim downstream.
 We seek a size assignment that makes every $w_i$, $i\in\mathcal{H}(x)$, as legible as possible subject to $v(I)\le B$, without deleting or reordering any character.
 
+\subsection{Where pixels matter}
+\label{sec:principle}
+
+Which words should receive the pixels?
+Consider how a reader copies a string $c_1\dots c_L$ from the image.
+As a schematic model, the reader combines two terms for each character: visual evidence from the glyph, which grows with the glyph size $s$, and the expectation of its language model given the context:
+\begin{equation}
+  p(c_i \mid I, \mathrm{ctx}) \;\propto\; \underbrace{p(I_i \mid c_i;\, s_i)}_{\text{pixels}} \; \underbrace{p_\theta(c_i \mid \mathrm{ctx})}_{\text{language prior}} .
+  \label{eq:reading}
+\end{equation}
+The pixels must supply whatever the prior leaves open, roughly the \emph{residual entropy} $H(c_i \mid \mathrm{ctx})$ of each character.
+For English prose this is small, because most letters are predictable from the words around them.
+For the hyphens of a UUID it is close to zero.
+For its hexadecimal characters it is 4 bits, all of which must come from the glyph.
+Exact copying fails if any single character fails, so a string is only as legible as its least predictable character.
+Uniform rendering gives every character the same visual evidence, which is more than prose needs and, at dense budgets, less than an identifier needs.
+When the evidence for a high-entropy character is too weak, the prior dominates \cref{eq:reading}. The prior knows the format but not the content, so we expect the reader to emit a well-formed string with invented characters.
+Under a fixed budget, pixels should therefore move from characters with low residual entropy to characters with high residual entropy.
+The trade is favorable because the two kinds of characters sit on different parts of their legibility curves.
+Predictable text is on the flat part: in our controlled study, found English phrases keep 92--96\% character accuracy from 10 down to 4\,px, so taking pixels from prose costs little.
+High-entropy strings at dense budgets are on the steep part: giving a UUID 12 instead of 5--6\,px raises its hexadecimal accuracy from 51\% to 91\% (\cref{sec:why}).
+A small loss where the prior compensates buys a large gain where it cannot.
+Under the patch convention of \cref{eq:vtok}, a 6\,px Menlo character is 4 pixels wide. One 14-pixel patch then mixes about 3.5 characters, and one vision token covers 7 characters on each of 3 lines; at 12\,px a patch holds 2 characters.
+The two steps below implement this principle with simple means: a text-side proxy for residual entropy (\textsc{Detect}) and a two-level size assignment (\textsc{Allocate}).
+
 \subsection{\textsc{Detect}: text-side hazard detection}
 \label{sec:detect}
 
@@ -44,16 +69,14 @@ The length and entropy rules require mixed letter--digit tokens so that long Eng
 These exclusions are our changes.
 A preliminary detector without them flagged 85--112 words per LongBench document on average, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
 
-When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:analysis}).
+When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:niq}).
 A missed hazard in a document where \emph{other} strings are flagged, however, shrinks together with the prose.
 
 \subsection{\textsc{Allocate}: budget-constrained glyph allocation}
 \label{sec:allocate}
 
 Given $\mathcal{H}(x)$, we restrict size assignments to two levels: prose words at $s_{\mathrm{lo}}$ and flagged words at $s_{\mathrm{hi}}$.
-Two levels keep the layout simple; a locally varying alternative that shrinks only prose near flagged strings brought no further gain (\cref{app:negative}).
-Prose is wrapped at character boundaries, as in the uniform baseline, so it consumes no extra space.
-Each flagged word is kept on one line and is never split.
+Prose is wrapped at character boundaries, as in the uniform baseline; each flagged word is kept whole on one line.
 We choose the sizes by
 \begin{equation}
 \begin{aligned}
@@ -63,15 +86,11 @@ We choose the sizes by
   \label{eq:alloc}
 \end{equation}
 where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.
-The order encodes a design choice: the marginal pixel is worth more on a hash than on prose.
-Verbatim accuracy is limited by the least legible character of a string, whereas prose comprehension degrades gracefully.
+The order follows \cref{sec:principle}: the marginal pixel is worth more on a hash than on prose.
 The lower bound of 5\,px keeps prose within the range VLMs still read, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
-If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ satisfies the constraint, prose-only lines lose their single pixel of extra line spacing and the search is repeated (in the implementation, $s_{\mathrm{hi}}$ is searched over $[6,12]$).
+If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ fits, prose-only lines lose one pixel of line spacing and the search is repeated; at $s_0=5$\,px this is what makes room (\cref{app:alloc}).
 If $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
-At $s_0=5$\,px, prose is already at its minimum size, so this removed line spacing is what makes room for the enlarged strings.
-At $s_0=6$\,px, prose shrinks to 5\,px when needed and otherwise stays at 6\,px.
-Budget computation plus allocation takes about 1\,s for 32K and 4\,s for 128K characters on one CPU core (unoptimized Python).
-\Cref{fig:teaser} (middle) shows a typical outcome: the UUID is drawn at 12\,px while prose stays at 6\,px.
+Allocation takes about 1\,s for 32K and 4\,s for 128K characters on one CPU core.
 
 \subsection{\textsc{Anchor} and \textsc{Route}}
 \label{sec:anchor}

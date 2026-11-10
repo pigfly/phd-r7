@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{UUID answers per reader.} Number of right-length answers, hexadecimal-character accuracy, and the share of right-length answers with at least 8 of 32 characters wrong (fabricated).}
+\label{tab:app_anatomy_rd}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l ccc ccc}
+\toprule
+& \multicolumn{3}{c}{Uniform (A)} & \multicolumn{3}{c}{Ours (S)} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Reader & right length & hex acc. & fabricated & right length & hex acc. & fabricated \\
+\midrule
+Gemini & 71 & 0.96 & 0.01 & 75 & 1.00 & 0.00 \\
+GPT & 8 & 0.68 & 0.62 & 58 & 0.93 & 0.07 \\
+Qwen & 7 & 0.58 & 0.86 & 28 & 0.93 & 0.07 \\
+Llama & 40 & 0.16 & 1.00 & 49 & 0.85 & 0.12 \\
+MiniMax & 55 & 0.15 & 1.00 & 62 & 0.82 & 0.19 \\
+\bottomrule
+\end{tabular}
+\end{table}

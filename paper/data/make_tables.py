@@ -200,16 +200,14 @@ prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RUL
        prow("S$-$U (font/size search), 6\\,px", "tab1_s6", "S-U"), prow("S$-$R (random words), 6\\,px", "tab1_s6", "S-R"),
        prow("B$-$A (box, no enlargement), 6\\,px", "box_s6", "B-A"), prow("S$-$B, 6\\,px", "box_s6", "S-B"),
        r"\midrule \multicolumn{5}{l}{\textit{Milder budgets (32K)}} \\",
-       prow("S$-$A, 8\\,px", "s8", "S-A"), prow("S$-$U, 8\\,px", "s8", "S-U"), prow("S$-$A, 10\\,px", "s10", "S-A"), prow("S$-$U, 10\\,px", "s10", "S-U"),
+       prow("S$-$A, 10\\,px", "s10", "S-A"), prow("S$-$U, 10\\,px", "s10", "S-U"),
        r"\midrule \multicolumn{5}{l}{\textit{Natural strings (LongBench documents)}} \\",
        prow("S$-$A, flagged targets", "niq2_s6", "S-A"), prow("S$-$A, detector-independent", "niq3_s6", "S-A"),
        r"\midrule \multicolumn{5}{l}{\textit{Ordinary comprehension (LongBench F1)}} \\",
-       prow("S$-$A", "longbench", "S-A", "f1"), prow("X$-$A", "longbench", "X-A", "f1"), prow("X$-$T (plain text)", "longbench", "X-T", "f1"),
-       r"\midrule \multicolumn{5}{l}{\textit{Anchors: X$-$K (F1 on RULER, recall on natural strings)}} \\",
-       prow("RULER 16K, 5\\,px", "tab1_s5", "X-K", "f1"), prow("RULER 16K, 6\\,px", "tab1_s6", "X-K", "f1"),
-       prow("RULER 32K, 8\\,px", "s8", "X-K", "f1"), prow("RULER 32K, 10\\,px", "s10", "X-K", "f1"),
-       prow("density $k\\le16$, 32K", "density", "X-K", "f1"), prow("multi-key 64K--128K", "long_kx", "X-K", "f1"),
-       prow("natural, flagged, 5\\,px", "niq2_s5", "X-K"), prow("natural, flagged, 6\\,px", "niq2_s6", "X-K"), prow("natural, flagged, 7\\,px", "niq2_s7", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
+       prow("X$-$A", "longbench", "X-A", "f1"), prow("X$-$T (plain text)", "longbench", "X-T", "f1"),
+       r"\midrule \multicolumn{5}{l}{\textit{Anchors: X$-$K (all eight settings in \cref{tab:app_pooled,tab:app_pooled2})}} \\",
+       prow("RULER 16K, 6\\,px (F1)", "tab1_s6", "X-K", "f1"), prow("multi-key 64K--128K (F1)", "long_kx", "X-K", "f1"),
+       prow("natural, flagged, 6\\,px", "niq2_s6", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
 (TAB / "pooled.tex").write_text(r"""\begin{table}[t]
 \centering
 \caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative. All X$-$K comparisons we ran are listed.}

@@ -42,7 +42,7 @@ Both are therefore in-sample, unlike the cross-validated aggregate.
 \section{Per-Reader Results}
 \label{app:tables}
 
-\Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}, and \cref{tab:detector} gives the detector ablation of \cref{sec:analysis}.
+\Cref{tab:app_length,tab:app_density} give per-reader numbers for \cref{fig:scaling,fig:density}, and \cref{tab:detector} gives the detector ablation of \cref{sec:niq}.
 In the length study, S is above A for every reader at every length.
 The size of the gain depends mostly on how well a reader does under uniform rendering.
 Claude and Gemini start at 0.45--0.57 and 0.21--0.47 under A, and S lifts them to 0.86--0.97 and 0.70--0.91.
@@ -53,6 +53,7 @@ In the detector ablation, the regex and oracle detectors give the same recall wh
 With four-digit needles, which the regex detector deliberately ignores, the regex arms match uniform rendering while the oracle arms reach 0.82 (S) and 0.99 (X).
 
 \input{tab/app_length}
+\input{tab/longbench}
 \input{tab/detector}
 
 \section{Statistical Procedures}
@@ -126,6 +127,38 @@ Anchors (K, X) reach 0.96--1.00 at both budgets because the anchors again contai
 
 \input{tab/app_controls}
 
+\section{Why Allocation Works: Details}
+\label{app:why}
+
+\paragraph{Anatomy of UUID answers.}
+\Cref{tab:app_anatomy} pools the single-UUID needles of the RULER 16K runs at 5 and 6\,px with the box runs, and \cref{tab:app_anatomy_rd} splits them by reader.
+Under uniform rendering, a third of the answers are empty. The answers of the right length split mainly into exact copies (23\%) and fabrications (59\% with at least 8 of 32 hexadecimal characters wrong, median 27).
+Partial misreads with 1--7 wrong characters are the smallest group.
+The hyphens are correct in 99\% of the right-length answers, so the readers reproduce the UUID format even when they invent the content.
+The pooled pattern hides large reader differences.
+All right-length uniform answers of Llama and MiniMax are fabricated, as are most of those of Qwen3-VL and GPT, although these two return few right-length answers. Gemini fabricates in only 1\% and reaches 0.96 hexadecimal accuracy.
+Allocation raises hexadecimal accuracy for every reader and cuts fabrication to 0--19\%.
+Over all right-length uniform answers, fabrications included, the most frequent substitutions are 8$\to$0, 0$\to$8, 8$\to$b, 6$\to$d, 8$\to$9, and 3$\to$1. Among partial misreads alone (89 wrong characters), 8$\to$0 dominates (24), followed by 1$\to$i (6).
+
+\input{tab/app_anatomy}
+\input{tab/app_anatomy_rd}
+
+\paragraph{Entropy $\times$ glyph-size study.}
+Each of 20 RULER documents (16K characters of essay text) receives one needle, ``One of the special magic codes for \emph{key} is: \emph{value}.'', at the same position and with the same key for every condition.
+The value is a 32-character string of one of three types.
+English phrases join consecutive all-lowercase words from LongBench HotpotQA passages, skipping capitalized words and numbers, so they are fluent but not always contiguous spans.
+Random words are drawn from the 2{,}000 most frequent lowercase words of the essays, and random hexadecimal strings use lowercase characters.
+Each of the 60 documents is rendered uniformly at 4, 5, 6, 7, 8, and 10\,px and read by the five readers with a prompt that asks for the code character for character.
+A target counts as found if some answer has a similarity ratio of at least 0.5 to it (random hexadecimal pairs average 0.24 and never reach 0.5). Exact copy is case-insensitive containment. Character accuracy is the similarity ratio of found answers, so its floor is 0.5.
+MiniMax and Qwen3-VL usually answered English and word targets with the key. Their found rates are therefore not comparable across types, and we exclude these two readers from the transcription comparison (\cref{tab:app_esz,tab:app_esz_rd}).
+For Gemini, GPT, and Llama, a found hexadecimal string is copied exactly much less often than a found English phrase (0.61, 0.08, and 0.00 vs.\ 0.82, 0.57, and 0.46).
+Pooled over readers, found English phrases and random words keep 90--97\% character accuracy at every size, although the 4\,px cells rest on 11--14 found answers.
+Hexadecimal strings differ from the other types in their characters as well as in predictability: they contain digits and confusable glyphs such as 8, 0, b, and 6. This study therefore supports but does not isolate the role of the language prior.
+The pooled hexadecimal results do not rise monotonically with size (8\,px is lowest). With 24--98 found answers per cell the intervals are wide, and we do not interpret this pattern.
+
+\input{tab/app_esz}
+\input{tab/app_esz_rd}
+
 \section{Anchors: Budget Frontier and Long Context}
 \label{app:anchors}
 
@@ -135,6 +168,7 @@ Anchors add 0.28--0.37 on top of S and 0.46--0.53 on top of A.
 \Cref{tab:app_longkx} gives multi-key results at 64K and 128K characters.
 Recall separates the arms but F1 does not, because every arm with enlarged or copied values tends to return several candidates for the one queried key.
 
+\input{tab/niq}
 \input{tab/app_niqfront}
 \input{tab/app_longkx}
 

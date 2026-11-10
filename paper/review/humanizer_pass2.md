@@ -55,3 +55,26 @@ Scope: `sec/X_appendix.tex` (prose and figure captions) and the appendix-table c
 - `python3 data/humanizer_guard.py check` -> `OK: no number, citation, or label changed`.
 - `diff -r /tmp/tab_before_h3 tab`: only line 3 (caption) differs in app_controls, app_density, app_length, app_pooled, app_pooled2, app_rescore, app_short, detector.
 - `./build_pdfs.sh`: 0 LaTeX errors, 0 Overfull boxes, no undefined references in `full.log`. main.pdf: 11 pages, Conclusion on page 8. supplementary.pdf: 10 pages (unchanged).
+
+## Pass 4 (residual-entropy narrative)
+
+Scope: the newly written residual-entropy text. Intro ("Why do exactly these strings fail?" and contributions), Sec. 3.2 "Where pixels matter", Sec. 5.3 "Why does allocation work?" and the condensed anchors/LongBench text, Sec. 2, Sec. 6, appendix "Why Allocation Works: Details", the fig:why caption, and the captions of app_anatomy, app_anatomy_rd, app_esz, and app_esz_rd. `sec/7_llm_statement.tex`, float specifiers, and layout code were not touched.
+
+**Audit.** No AI vocabulary, hype, or em-dashes. Remaining tells: clause stacking (semicolon chains, sentences over ~30 words with "which/whereas/while" tails), one sentence fragment in the intro ("Same problem found at long-context scale."), "therefore" used in back-to-back sentences, one double "closest" in Related Work, and a few minor over-claims in wording ("simplest possible means", "To test this directly").
+
+**Changes.**
+- Intro: fragment -> "We find the same failure at long-context scale."; the 99%/51% sentence split from the four-of-five-readers sentence; "We therefore propose" -> "We propose" (the previous sentence already uses "therefore"); contribution 2: "the gain ... matches font search at 10 px" (the gain cannot match a method) -> "The gain shrinks at milder budgets, and at 10 px allocation matches font search."; contribution 4 split into two sentences.
+- Related Work: AGAR sentence recast ("Among rendering changes, AGAR is the most similar: ...") so that "closest" refers only to failure-aware compression, then split; failure-aware-compression, token-pruning, Selective Context, RULER/LongBench, and patch-area sentences split at semicolons; "which makes the budget a controllable cost" -> "so the budget is a controllable cost".
+- Sec. 3.2: reading-model sentence restructured ("the reader combines two terms for each character: ... and ..."); prior-dominance sentence split; "The geometry makes this concrete:" dropped and the patch sentence split; "the simplest possible means" -> "simple means".
+- Sec. 5.3: hexadecimal/hyphen sentence split ("The gain holds for every reader (...)"); "only 23% are exact" made its own sentence; weaker-readers/Gemini sentence (~45 words) split into three; 8->0 sentence split; "To test this directly" -> "To test this" (matches the later "supports but does not isolate"); scoring sentence split, "details in" dropped; random-word numbers moved into their own sentence. fig:why caption: semicolon -> ", and".
+- Sec. 5.5/5.6: anchor-list sentence split into three; routing sentence split; LongBench sentence split ("which rules out losses larger than about 0.03").
+- Sec. 6: four semicolon joins split into separate sentences.
+- Appendix "Why Allocation Works": "split into exact copies and fabrications" -> "split mainly into" (partial misreads form a third group, as the next sentence says); Qwen3-VL/GPT/Gemini sentence split, parenthetical "(which, however, ...)" -> "although ..."; substitution list split; found/exact/char.-acc. definitions split into three sentences; MiniMax/Qwen3-VL exclusion split; hexadecimal-glyph caveat split (hedge kept verbatim); monotonicity sentence split.
+- Table captions: app_anatomy semicolon split. app_esz, app_esz_rd, app_anatomy_rd checked, no change needed.
+
+**Claims.** No number, citation key, label, ref target, equation, or arm name changed. All hedges and conditions kept ("schematic model", "consistent with", "plausibly", "supports but does not isolate", "for four of five readers", "the three readers we can compare", "for flagged targets", "often", "many errors", "can mislead"). No speculation added about what readers recognize. Two wording changes slightly weaken over-strong phrasing ("simplest possible" -> "simple"; "directly" dropped), and one corrects an inaccuracy ("split into" -> "split mainly into").
+
+**Checks.**
+- `python3 data/humanizer_guard.py check` -> `OK: no number, citation, or label changed`.
+- `diff -r /tmp/tab_before_h4 tab`: only line 3 (caption) of `app_anatomy.tex` differs.
+- `./build_pdfs.sh`: no LaTeX errors, no undefined references, 0 Overfull boxes in `full.log`. main.pdf has 11 pages. "Conclusion." and the end of Sec. 6 ("...on ordinary QA remains.") are on page 8, and References starts on page 9.

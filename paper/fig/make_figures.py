@@ -201,5 +201,30 @@ def examples():
     fig.suptitle(f"gold: {gold}", fontsize=7, x=0.01, ha="left")
     fig.savefig(FIG / "examples.pdf"); plt.close(fig); return item, gold, [ans(item, a) for a in "ABS"]
 
+def why():
+    """Why allocation works: (a) exact copy given the needle was found vs glyph size, by string predictability (esz study);
+    (b) wrong hex characters per right-length UUID answer, uniform vs allocated (fabrication vs reading)."""
+    W = json.loads((EXP / "analysis_why.json").read_text()); E = W["esz"]; An = W["anatomy"]
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.3, 1.75), gridspec_kw=dict(wspace=0.45, left=0.13, right=0.99, bottom=0.22, top=0.72))
+    for ax in (a1, a2): style(ax)
+    col = dict(E="#1F8FAE", W="#56B9CF", H="#E8685B"); lab = dict(E="English phrase", W="random words", H="random hex")
+    mk = dict(E="o", W="s", H="D")
+    PR = E["per_reader_found_5to10"]; rds = [("gemini-3.5-flash-lite", "Gemini"), ("gpt-6-luna", "GPT"), ("llama-4-maverick", "Llama")]
+    for j, t in enumerate("EWH"):
+        xs = [i + (j - 1) * 0.27 for i in range(len(rds))]; v = [PR[f"{rd}|{t}"]["exact"] for rd, _ in rds]
+        a1.bar(xs, [x[0] for x in v], width=0.25, color=col[t], label=lab[t],
+               yerr=[[x[0] - x[1] for x in v], [x[2] - x[0] for x in v]], error_kw=dict(lw=0.5, capsize=1))
+    a1.set_xticks(range(len(rds))); a1.set_xticklabels([n for _, n in rds]); a1.set_ylabel("exact copy rate"); a1.set_ylim(0, 1)
+    a1.legend(frameon=False, fontsize=5.5, loc="lower center", bbox_to_anchor=(0.5, 1.13), ncol=3, handlelength=1.2, columnspacing=0.8, borderaxespad=0)
+    a1.set_title("(a) copy given found, 5-10 px", fontsize=6.5, pad=2)
+    bins = ["0", "1-7", "8+"]
+    for k, (arm, c) in enumerate((("A", C["A"]), ("S", C["S"]))):
+        v = An[arm]; ys = [v["exact"], v["few_1_7"], v["many_8plus"]]
+        a2.bar([i + (k - 0.5) * 0.38 for i in range(3)], ys, width=0.36, color=c, label=f"{LAB[arm]}: hex {100*v['hex_acc']:.0f}%, hyphen {100*v['hyphen_acc']:.0f}%")
+    a2.set_xticks(range(3)); a2.set_xticklabels(bins); a2.set_xlabel("wrong hex chars (of 32)"); a2.set_ylabel("share of answers")
+    a2.set_ylim(0, 0.75); a2.legend(frameon=False, fontsize=5, loc="lower center", bbox_to_anchor=(0.5, 1.13), ncol=1, handlelength=1, borderaxespad=0)
+    a2.set_title("(b) single UUID, 5-6 px budgets", fontsize=6.5, pad=2)
+    fig.savefig(FIG / "why.pdf"); plt.close(fig)
+
 if __name__ == "__main__":
-    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); print("ok")
+    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); why(); print("ok")

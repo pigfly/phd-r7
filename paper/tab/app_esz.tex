@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Entropy $\times$ glyph-size study} (pooled over five readers, whose mix differs across types; $N{=}20$ documents per type and size, 100 answers per cell; per reader in \cref{tab:app_esz_rd}). found: share of answers at least 50\% similar to the target; char.\ acc.: mean similarity of found answers to the target; exact: share of found answers that contain the target exactly. Cells with fewer than five found answers are omitted.}
+\label{tab:app_esz}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{l l cccccc}
+\toprule
+Target & Measure & 4\,px & 5\,px & 6\,px & 7\,px & 8\,px & 10\,px \\
+\midrule
+English phrase & found & 0.11 & 0.18 & 0.22 & 0.28 & 0.33 & 0.42 \\
+ & char.\ acc.\ $|$ found & 0.95 & 0.93 & 0.94 & 0.92 & 0.92 & 0.96 \\
+ & exact $|$ found & 0.55 & 0.78 & 0.68 & 0.54 & 0.64 & 0.71 \\
+\midrule
+random words & found & 0.14 & 0.24 & 0.32 & 0.33 & 0.34 & 0.55 \\
+ & char.\ acc.\ $|$ found & 0.92 & 0.97 & 0.91 & 0.90 & 0.92 & 0.95 \\
+ & exact $|$ found & 0.21 & 0.71 & 0.66 & 0.64 & 0.68 & 0.66 \\
+\midrule
+random hex & found & 0.02 & 0.24 & 0.43 & 0.45 & 0.67 & 0.98 \\
+ & char.\ acc.\ $|$ found & -- & 0.90 & 0.81 & 0.84 & 0.83 & 0.91 \\
+ & exact $|$ found & -- & 0.21 & 0.30 & 0.42 & 0.12 & 0.22 \\
+\bottomrule
+\end{tabular}
+\end{table}

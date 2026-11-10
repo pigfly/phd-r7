@@ -14,8 +14,6 @@ Visual-token reduction prunes or merges tokens after encoding~\cite{chen2024fast
 None of these is available to a party that only renders the text and calls a black-box API.
 
 Uniform resolution hurts some strings far more than others.
-Identifiers, hashes, file paths, and long numbers carry no redundancy: a single misread glyph turns them into a different, equally plausible string.
-The surrounding prose survives the same blur.
 \Cref{fig:teaser} shows the typical outcome: a VLM returns a well-formed UUID with four wrong characters and no hedge.
 Prior work on failure-aware optical compression~\cite{anon2026renderretain} showed that such silent corruption concentrates in high-entropy spans.
 It responded at the level of whole blocks: it flags these spans from the text, copies them verbatim next to the image as \emph{anchors}, and routes risky blocks back to text.
@@ -23,16 +21,25 @@ These remedies leave the image itself unchanged.
 Same problem found at long-context scale.
 At an equal budget, uniform rendering recovers only 8--22\% of RULER needles (mean of five readers, \cref{tab:baselines}), and its recall falls from 0.12 at 32K characters to 0.07 at 128K.
 
+Why do exactly these strings fail?
+A VLM that reads rendered text combines two sources of evidence for each character: what the glyph shows, and what its language model expects from the context.
+Prose is predictable, so when glyphs blur, the expectation fills the gap.
+An identifier is not: its format is predictable, but each hexadecimal character carries 4 bits that only the pixels can supply.
+Our readers show this split.
+Under uniform rendering they write the four hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time. For four of five readers, most wrong answers of the right length are not misreadings: they have the right format with nearly every character invented (\cref{sec:why}).
+Uniform rendering therefore spends equal pixels on characters the language prior can reconstruct and on characters that only pixels can supply.
+When the latter fall below legibility, the reader often fills them in from the prior rather than abstaining, so many errors are silent.
+
 The renderer already holds the signal needed to fix the image.
-Before any pixel is drawn, the text says where the hazardous strings are, and the renderer decides how many pixels each of them gets.
-We therefore propose \emph{\ours} (\cref{fig:method}): flagged strings are drawn larger and prose smaller, subject to the image costing no more vision tokens than uniform rendering.
+Before any pixel is drawn, the text shows which strings the prior cannot reconstruct, and the renderer decides how many pixels each string gets.
+We propose \emph{\ours} (\cref{fig:method}): flagged high-entropy strings are drawn larger and prose smaller, subject to the image costing no more vision tokens than uniform rendering.
 The allocation (arm S in our experiments) is training-free and query-independent, so the same rendering can serve every question about a document.
 It composes with the anchors and text routing of prior work~\cite{anon2026renderretain}, which we treat as baselines and building blocks (arms K and X).
 
 Our contributions are:
 \begin{itemize}
-  \item \textbf{Budget-constrained glyph allocation} for rendered context, a rule that redistributes resolution inside the image using only the text and black-box access to the reader (\cref{sec:method}).
-  \item \textbf{Controlled evidence for where it helps.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K. It beats font/size search, render-then-downsample, enlargement of random words, and boxing the needles without enlarging them (\cref{tab:pooled}). The gain shrinks and matches font search at 10\,px.
-  \item \textbf{Natural strings and side effects.} On identifiers in LongBench documents that the detector flags, allocation doubles recall (0.23 to 0.48). On digit-bearing strings sampled independently of the detector, which it mostly does not flag, it neither helps nor hurts. It leaves LongBench QA unchanged relative to uniform rendering, while every image arm, ours included, trails plain text.
-  \item \textbf{Composition with anchors.} Anchors are as accurate on the allocated image as on a uniform one (pooled X$-$K between $-$0.01 and +0.05 in every setting with flagged targets), and cost less wherever allocation shrinks the image. We also show that on standard needle tasks the anchors contain the answer, so recall there measures copying rather than reading, and that anchors can mislead readers when the target is not flagged.
+  \item \textbf{A principle and a rule.} We trace verbatim failures to characters whose content the language prior cannot supply, and propose budget-constrained glyph allocation, which moves pixels to them using only the text and black-box access (\cref{sec:method}). In a controlled study at equal glyph size, each of the three readers we can compare copies a found random hexadecimal string exactly far less often than a found English phrase (e.g., 0.08 vs.\ 0.57 for GPT; \cref{sec:why}).
+  \item \textbf{Controlled evidence.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K, and beats font/size search, render-then-downsample, random-word enlargement, and boxing the needles (\cref{tab:pooled}). It turns fabricated answers into read ones. The gain shrinks at milder budgets, and at 10\,px allocation matches font search.
+  \item \textbf{Natural strings and side effects.} Allocation doubles the recall of flagged identifiers in LongBench documents (0.23 to 0.48), neither helps nor hurts unflagged digit strings, and leaves LongBench QA unchanged relative to uniform rendering; every image arm still trails plain text.
+  \item \textbf{Composition with anchors.} Anchors from prior work are as accurate on the allocated image as on a uniform one and cheaper where allocation shrinks it. On standard needle tasks the anchors contain the answer, so recall there measures copying. Anchors can mislead when the target is not flagged.
 \end{itemize}

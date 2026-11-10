@@ -2,42 +2,23 @@
 \label{sec:related}
 
 \paragraph{Optical context compression.}
-Reading text from pixels has a long history in representation learning, from pixel-based language models~\cite{rust2023pixel,gao2024screenshots} to unified image--text encoders~\cite{tschannen2023clippo} and screenshot pretraining~\cite{lee2023pix2struct}.
-Recent systems use rendering explicitly to compress long contexts.
-DeepSeek-OCR decodes text from a small number of vision tokens~\cite{wei2025deepseekocr}, and its successor reorders visual tokens causally~\cite{wei2026deepseekocr2}.
-Glyph renders long inputs and searches for a good global rendering configuration~\cite{cheng2025glyph}.
-Rendering a whole input as one image can roughly halve its token cost~\cite{li2025textpixels}, and other work renders distant context or interleaves rendered text with images~\cite{xing2025vist,wang2024visincontext}.
-Evaluations have started to show where this fails.
-Compressed reading loses retrieval ability~\cite{zhao2025vtcbench}, and accuracy collapses when linguistic priors are removed~\cite{liang2026visualmerit,gao2026zerosense}.
-The text--pixel gap depends strongly on font and resolution~\cite{sun2026reading}, and optical compression can underperform simple alternatives such as mean pooling~\cite{lee2026autoencoding}.
-Several methods vary resolution within the input.
-FocusVTC combines a low-resolution global view with adaptively enhanced regions~\cite{zhong2026focusvtc}, SEER learns query-dependent selective compression~\cite{xu2026seer}, and LensVLM post-trains a reader to expand relevant compressed pages on demand~\cite{xie2026lensvlm}.
-In document understanding, DocOwl2 and TextMonkey compress the visual tokens of high-resolution pages with learned modules~\cite{hu2024docowl2,liu2024textmonkey}.
-Closest to our rendering change, AGAR re-renders a page with the word spans that receive the most middle-to-late-layer attention enlarged~\cite{zeng2026agar}; it is training-free but needs the model's attention and a first pass for each query.
-Our allocation needs neither.
-It is decided from the text before any model call, works with black-box APIs, and does not depend on the question, so one rendering serves every question about a document (we do not measure provider-side caching).
-Failure-aware optical compression~\cite{anon2026renderretain} is the closest prior work.
-It detects high-entropy spans from the text, keeps them as exact text anchors, routes risky blocks to text, and retries on mismatch, but leaves the rendered image unchanged.
-We change the image and reuse its anchors and routing as baselines and building blocks.
+Reading text from pixels has a long history, from pixel-based language models~\cite{rust2023pixel,gao2024screenshots} to unified image--text encoders~\cite{tschannen2023clippo} and screenshot pretraining~\cite{lee2023pix2struct}.
+Recent systems render long contexts to compress them: DeepSeek-OCR decodes text from few vision tokens~\cite{wei2025deepseekocr,wei2026deepseekocr2}, Glyph searches for a good global rendering configuration~\cite{cheng2025glyph}, and other work renders whole inputs, distant context, or interleaved text~\cite{li2025textpixels,xing2025vist,wang2024visincontext}.
+Evaluations show where this fails: compressed reading loses retrieval ability~\cite{zhao2025vtcbench}, the text--pixel gap depends on font and resolution~\cite{sun2026reading}, optical compression can underperform mean pooling~\cite{lee2026autoencoding}, and accuracy collapses when linguistic priors are removed~\cite{liang2026visualmerit,gao2026zerosense}.
+This last finding is the starting point of our account: what the prior cannot supply must come from the pixels.
+Several methods vary resolution within the input, but they are trained (FocusVTC~\cite{zhong2026focusvtc}, SEER~\cite{xu2026seer}, LensVLM~\cite{xie2026lensvlm}; in document understanding, DocOwl2 and TextMonkey~\cite{hu2024docowl2,liu2024textmonkey}).
+Among rendering changes, AGAR is the most similar: it re-renders a page and enlarges the word spans that receive the most middle-to-late-layer attention~\cite{zeng2026agar}. It is training-free but needs the model's attention and a first pass for each query.
+Our allocation is decided from the text before any model call, works with black-box APIs, and does not depend on the question.
+Failure-aware optical compression~\cite{anon2026renderretain} is the closest prior work. It detects high-entropy spans from the text, keeps them as exact text anchors, routes risky blocks to text, and retries on mismatch, but leaves the image unchanged.
+We change the image and reuse its anchors and routing as baselines.
 
-\paragraph{Training-free visual token reduction.}
-A complementary line of work reduces the tokens of an already encoded image.
-FastV drops low-attention tokens after an early layer~\cite{chen2024fastv}, SparseVLM uses text guidance~\cite{zhang2025sparsevlm}, VisionZip and PruMerge keep dominant or merged tokens~\cite{yang2025visionzip,shang2025prumerge}, and ToMe merges similar tokens~\cite{bolya2023tome}.
-Recent methods balance importance and diversity or target the output objective~\cite{fang2026prunesid,lv2026vprune,zhang2026trio}.
-RTPrune adapts pruning to DeepSeek-OCR by exploiting text density~\cite{wan2026rtprune}, while FCoT-VL shows that text-rich images need dedicated compression~\cite{li2025fcotvl}.
-These methods act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash, and most need access to the model.
-Our method acts on the text, before encoding; we do not test whether pruning keeps or discards the enlarged glyphs.
-
-\paragraph{Text-side and memory compression.}
-Prompt compressors drop tokens judged uninformative by a small language model~\cite{jiang2023llmlingua,jiang2024longllmlingua,li2023selective,pan2024llmlingua2}.
-Learned compressors map context to a few soft tokens~\cite{mu2023gist,ge2024icae,chevalier2023autocompressors}, and KV-cache methods evict entries during inference~\cite{zhang2023h2o,li2024snapkv,xiao2024streamingllm,devoto2025expected}.
-Selective Context, like our detector, uses an information-theoretic signal, but uses it to \emph{remove} low-information text.
-Verbatim strings are high-information and must not be removed; we keep every character and only change how large it is drawn.
-For repeated queries over a fixed document, reusing cached prompt segments~\cite{gim2024promptcache} is a competing way to cut cost that we do not evaluate.
+\paragraph{Visual-token reduction and text-side compression.}
+Training-free pruning and merging reduce the tokens of an encoded image~\cite{chen2024fastv,zhang2025sparsevlm,yang2025visionzip,shang2025prumerge,bolya2023tome,fang2026prunesid,lv2026vprune,zhang2026trio}, including for text-rich and OCR inputs~\cite{wan2026rtprune,li2025fcotvl}.
+They act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash. We do not test whether pruning keeps the enlarged glyphs.
+Prompt compressors drop tokens judged uninformative~\cite{jiang2023llmlingua,jiang2024longllmlingua,li2023selective,pan2024llmlingua2}, learned compressors map context to soft tokens~\cite{mu2023gist,ge2024icae,chevalier2023autocompressors}, and KV-cache methods evict entries~\cite{zhang2023h2o,li2024snapkv,xiao2024streamingllm,devoto2025expected}.
+Selective Context, like our detector, uses an information signal, but to \emph{remove} low-information text. We keep every character and only change how large it is drawn.
+Caching prompt segments~\cite{gim2024promptcache} is a competing way to cut cost for repeated queries that we do not evaluate.
 
 \paragraph{Evaluation and input resolution.}
-We measure verbatim fidelity with RULER needle tasks~\cite{hsieh2024ruler}, whose UUID and number values are exactly the strings at risk, and collateral damage with LongBench QA~\cite{bai2024longbench}.
-Text-rich and long-document benchmarks~\cite{liu2024ocrbench,ma2024mmlongbenchdoc} document the same weakness in natural images and long PDF documents.
-Modern VLMs accept dynamic resolutions and allocate vision tokens roughly in proportion to pixel area, directly or through tiling~\cite{wang2024qwen2vl,bai2025qwen25vl,bai2025qwen3vl,chen2024internvl15,li2025llavaonevision}.
-The rendering budget is therefore a controllable cost.
-We report fidelity on synthetic needles and on naturally occurring identifiers separately from collateral damage, and we measure cost in provider-billed tokens rather than in pixels.
+We measure verbatim fidelity with RULER~\cite{hsieh2024ruler} and collateral damage with LongBench~\cite{bai2024longbench}. Text-rich benchmarks~\cite{liu2024ocrbench,ma2024mmlongbenchdoc} show the same weakness on natural images and PDFs.
+Modern VLMs allocate vision tokens roughly in proportion to pixel area~\cite{wang2024qwen2vl,bai2025qwen25vl,bai2025qwen3vl,chen2024internvl15,li2025llavaonevision}, so the rendering budget is a controllable cost. We report provider-billed tokens.

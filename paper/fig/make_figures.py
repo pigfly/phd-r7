@@ -321,3 +321,95 @@ def why():
 
 if __name__ == "__main__":
     teaser(); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); why(); print("ok")
+
+# ---------------------------------------------------------------- pipeline thumbnails (method figure)
+def thumbs_v2():
+    """(1) a text snippet coloured by residual entropy h_i; (2) information-map strips of the same page region under
+    COC and EquiPix (item 22 of rbx_s6_multikey_1, the teaser document)."""
+    import numpy as np, re, make_items as M, entropy_map as E
+    from matplotlib.colors import LinearSegmentedColormap
+    from PIL import ImageDraw, ImageFont
+    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
+    run = EXP / "rbx_s6_multikey_1"; item = 22
+    it = next(i for i in json.loads((run / "gt.json").read_text())["items"] if i["item"] == item)
+    mb = {m["arm"]: m for m in json.loads((run / "manifest.json").read_text()) if m["item"] == item}
+    h = E.surprisal(it["text"]); v = re.findall(r"is: (\d{7})\.", it["text"])[2]; k = it["text"].find(v)
+    a0 = it["text"].rfind(" ", 0, k - 52) + 1; snip = it["text"][a0:k + 30]; hs = h[a0:k + 30]
+    f = ImageFont.truetype(M.FONT_PATH, 30); cw = f.getlength("M"); W = int(cw * 44) + 20
+    lines, cur = [], 0
+    while cur < len(snip):
+        lines.append((cur, snip[cur:cur + 44])); cur += 44
+    im = Image.new("RGB", (W, 44 * len(lines) + 10), "white"); d = ImageDraw.Draw(im)
+    for li, (o, t) in enumerate(lines):
+        for j, c in enumerate(t):
+            col = tuple(int(255 * x) for x in cmap(min(1.0, hs[o + j] / 6.0))[:3])
+            d.rectangle([10 + j * cw, 6 + li * 44, 10 + (j + 1) * cw, 6 + li * 44 + 38], fill=col)
+            d.text((10 + j * cw, 8 + li * 44), c, font=f, fill=(20, 20, 20))
+    im.save(FIG / "thumb_entropy.png")
+    out = []
+    for arm, name in (("A", "thumb_map_coc.png"), ("S", "thumb_map_ours.png")):
+        M.STRICT = arm == "S"; R = load_raster(it["text"], arm, mb[arm], 6); M.STRICT = False
+        R = R / np.nanmean(R); rgb = cmap(np.clip((np.nan_to_num(R, nan=0.6) - 0.6) / 2.4, 0, 1))[:, :, :3]
+        rgb[np.isnan(load_raster.__defaults__ and R)] = 1.0
+        Image.fromarray((rgb * 255).astype("uint8")).save(FIG / name); out.append(R.shape)
+    return out
+
+# ---------------------------------------------------------------- needle load vs recall
+def needle_load():
+    """(a) recall of each needle vs the information load of the window around it, binned; all renderings vs COC only.
+    (b) Spearman rho between needle load and recall per subset."""
+    import numpy as np
+    D = json.loads((EXP / "analysis_needle_load.json").read_text())
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.3, 1.55), gridspec_kw=dict(wspace=0.95, left=0.14, right=0.97, bottom=0.25, top=0.88, width_ratios=[1.15, 1]))
+    for ax in (a1, a2): style(ax)
+    for key, col, ls, lab in (("binned_all", CH["S"], "-", "all renderings"), ("binned_coc", CH["coc"], "--", "COC only")):
+        b = D[key]; x = [v["mid"] for v in b]; y = [v["mean"] for v in b]
+        a1.fill_between(x, [v["ci"][0] for v in b], [v["ci"][1] for v in b], color=col, alpha=0.15, lw=0)
+        a1.plot(x, y, color=col, ls=ls, marker="o", ms=2.5, label=lab)
+    a1.set_xlabel("needle load (bits per vision token)", labelpad=1); a1.set_ylabel("recall (5 VLMs)", labelpad=1)
+    a1.set_ylim(0, 0.85); a1.legend(frameon=False, fontsize=5.8, loc="upper right", handlelength=1.6)
+    a1.set_title("(a) hotter needles are read worse", fontsize=6.5, pad=2)
+    names = list(D["subsets"]); short = {"RULER 16K": "RULER 16K", "RULER 32K-128K": "RULER 32-128K", "RULER 8-10 px": "RULER 8-10 px",
+                                          "half": "half", "box": "box runs", "natural, flagged": "natural, flagged", "natural, det.-indep.": "natural, indep."}
+    ys = np.arange(len(names))[::-1]
+    a2.barh(ys + 0.18, [D["subsets"][n]["all"]["rho"] for n in names], height=0.34, color=CH["S"], label="all")
+    a2.barh(ys - 0.18, [D["subsets"][n]["coc"]["rho"] if D["subsets"][n]["coc"] else 0 for n in names], height=0.34, color=CH["coc"], label="COC")
+    a2.set_yticks(ys); a2.set_yticklabels([short[n] for n in names], fontsize=5.6); a2.axvline(0, color=MUTED, lw=0.5)
+    a2.set_xlim(-0.75, 0.05); a2.set_xticks([-0.6, -0.3, 0]); a2.set_xlabel("Spearman $\\rho$", labelpad=1); a2.legend(frameon=False, fontsize=5.5, loc="lower left", handlelength=1)
+    a2.set_title("(b) per subset", fontsize=6.5, pad=2)
+    fig.savefig(FIG / "needle_load.pdf"); plt.close(fig)
+
+# ---------------------------------------------------------------- natural document: information map around a target
+def natural_map(item=24):
+    """niq2_s6 item: crops around the target under COC and EquiPix, glyphs tinted by the information load
+    (bits per vision token, shared scale), plus the five-reader recall of the target."""
+    import numpy as np, re, make_items as M, entropy_map as E
+    from matplotlib.colors import LinearSegmentedColormap
+    from stats_pooled import merged
+    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
+    run = EXP / "niq2_s6"; it = next(i for i in json.loads((run / "gt.json").read_text())["items"] if i["item"] == item)
+    man = {m["arm"]: m for m in json.loads((run / "manifest.json").read_text()) if m["item"] == item}
+    ph = re.search(r'immediately after the words "(.*?)"\?', it["prompt"]).group(1); k = it["text"].find(ph) + len(ph) + 1
+    v = it["answers"][0]; dd = merged(["niq2_s6"])["niq2_s6"]
+    rec = {a: np.mean([dd[r][item][a]["recall"] for r in dd if item in dd[r] and a in dd[r][item]]) for a in "AS"}
+    U = json.loads((run / "uniformity.json").read_text())
+    fig, axs = plt.subplots(2, 1, figsize=(3.3, 1.4), gridspec_kw=dict(hspace=0.32, left=0.01, right=0.99, top=0.92, bottom=0.02))
+    vmax = None; crops = []
+    for arm in "AS":
+        M.STRICT = arm == "S"
+        R = load_raster(it["text"], arm, man[arm], 6); bx, ix, _ = E.cells(it["text"], arm, man[arm], 6); M.STRICT = False
+        ix = list(ix); j0, j1 = ix.index(k), ix.index(k + len(v) - 1)
+        x0, y0 = bx[j0][:2]; y1 = bx[j1][3]
+        cx = int(max(0, min(R.shape[1] - 420, x0 - 150))); cy = int(max(0, min(R.shape[0] - 60, (y0 + y1) / 2 - 30)))
+        img = np.array(Image.open(run / "img" / f"{man[arm]['name']}.png").convert("L"), float) / 255
+        crops.append((arm, R[cy:cy + 60, cx:cx + 420], img[cy:cy + 60, cx:cx + 420], (x0 - cx, y0 - cy, bx[j1][2] - cx, y1 - cy)))
+    vmax = np.nanpercentile(np.concatenate([c[1][~np.isnan(c[1])] for c in crops]), 99)
+    for ax, (arm, R, g, (bx0, by0, bx1, by1)) in zip(axs, crops):
+        rgb = cmap(np.clip(np.nan_to_num(R, nan=0) / vmax, 0, 1))[:, :, :3]; rgb[np.isnan(R)] = 1
+        ax.imshow(rgb * g[:, :, None] ** 1.5, interpolation="nearest", aspect="equal"); ax.set_xticks([]); ax.set_yticks([])
+        ax.add_patch(plt.Rectangle((bx0 - 2, by0 - 1), bx1 - bx0 + 4, by1 - by0 + 2, fill=False, lw=0.8, color=CH["R"]))
+        for sp in ax.spines.values(): sp.set_color(MUTED); sp.set_linewidth(0.5)
+        nl = U[f"{arm}|{item}"]["needle_load"]; tl = list(nl.values())[0] if nl else float("nan")
+        ax.set_title(f"{'COC (6 px)' if arm == 'A' else NAME + ' (5 / 12 px)'}:  target load {tl:.0f} bits/vtok,  recall {rec[arm]:.1f}",
+                     fontsize=6.3, pad=2, loc="left")
+    fig.savefig(FIG / "natural_map.pdf"); plt.close(fig); return v, rec

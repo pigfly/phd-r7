@@ -2,7 +2,7 @@
 \label{sec:conclusion}
 
 Our residual-entropy estimate is the surprisal of a small left-to-right language model. It ignores the right-hand context and the visual distinctiveness of glyphs, which is why we smooth it over windows and use $\U$ to compare renderings of the same documents rather than as an absolute score.
-The correlation with recall rests on 13 arm--budget points from synthetic needles, and \name raises $\U$ partly by construction.
+The correlation with recall rests on 13 arm--budget points from synthetic needles, and \name raises $\U$ partly by construction. On natural documents the regex detector cools the flagged targets but leaves page-level $\U$ unchanged.
 The gains are largest at dense budgets where COC fails; at 10\,px font search does as well.
 COC, with or without reallocation, trails plain text on ordinary QA by up to 0.33 F1.
 Our natural sets are small (60 automatically constructed questions each), the detector protects only high-entropy strings, and anchors can mislead when the target is not flagged.

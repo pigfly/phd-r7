@@ -1,44 +1,37 @@
-% Method overview (TikZ), two rows drawn at text width (no scaling).
+% Pipeline (TikZ): theory -> measure/visualization -> method, at text width.
 % Palette: peach #F7D8B8, light aqua #BFE6EA, salmon #F6A69A, mist #D9E2EB, warm white #F2F2F2, coral #E8685B.
 \begin{figure*}[t]
 \centering
 \begin{tikzpicture}[
-  >={Stealth[length=2.4mm]},
-  mod/.style={draw=#1!65!black, fill=#1, rounded corners=3pt, minimum height=1.55cm, text width=3.45cm, align=center, inner sep=3pt},
-  io/.style={draw=gray!60, fill=cWarm, rounded corners=2pt, align=left, inner sep=4pt},
-  ttl/.style={font=\small\bfseries},
-  body/.style={font=\footnotesize},
-  lab/.style={font=\footnotesize\itshape, text=gray!70!black},
+  >={Stealth[length=2.2mm]},
+  stage/.style={draw=#1!60!black, fill=#1!45, rounded corners=3pt, minimum height=4.75cm, text width=3.6cm, align=center, inner sep=3pt},
+  io/.style={draw=gray!60, fill=cWarm, rounded corners=2pt, minimum height=4.75cm, align=center, inner sep=3pt},
   flow/.style={->, thick, draw=gray!70!black},
-  save/.style={->, thick, dashed, draw=cCoral},
 ]
-% ---------- row 1 ----------
-\node[io, text width=3.3cm, minimum height=1.55cm] (doc) at (1.75,0) {{\small\bfseries Long document $x$}\\[2pt]
-  {\footnotesize \ldots{} the uuid for \emph{dusty-harbor} is \colorbox{cSalmon}{\texttt{\scriptsize 186c24bd-\ldots}} \ldots{} founded in 1995 \ldots}};
-\node[mod=cPeach] (det) at (6.15,0) {{\small\bfseries\textsc{Detect}}\\[2pt]{\footnotesize flag high-entropy strings $\mathcal{H}(x)$ from the text; skip years and words}};
-\node[mod=cAqua] (alloc) at (10.25,0) {{\small\bfseries\textsc{Allocate}}\\[2pt]{\footnotesize enlarge $\mathcal{H}(x)$ to $s_{\mathrm{hi}}$, shrink prose to $s_{\mathrm{lo}}$, keep $v(I)\le B$}};
-\node[mod=cSalmon] (anc) at (14.35,0) {{\small\bfseries\textsc{Anchor}}\\[2pt]{\footnotesize append verbatim copies of $\mathcal{H}(x)$, paid by the saved budget}};
-% ---------- row 2 ----------
-\node[mod=cMist] (route) at (14.35,-2.95) {{\small\bfseries\textsc{Route}}\\[2pt]{\footnotesize $r=\frac{\text{anchor tokens}}{v(I)}$;\; image if $r\le\tau$, else text}};
-\node[io, text width=2.7cm] (img) at (10.6,-2.35) {{\small\bfseries VLM input}\\{\footnotesize image + anchors}};
-\node[io, text width=2.7cm] (txt) at (10.6,-3.55) {{\small\bfseries VLM input}\\{\footnotesize plain text (dense)}};
-% thumbnails: same budget, uniform vs allocated
-\node[anchor=north west, inner sep=0] (tu) at (0.1,-1.95) {\includegraphics[width=3.95cm]{fig/thumb_uniform.png}};
-\node[anchor=north west, inner sep=0] (ta) at (4.35,-1.95) {\includegraphics[width=3.95cm]{fig/thumb_alloc.png}};
-\draw[draw=gray!60] (tu.south west) rectangle (tu.north east);
-\draw[draw=cCoral, thick] (ta.south west) rectangle (ta.north east);
-\node[lab, anchor=north] at (tu.south) {uniform, 6\,px};
-\node[lab, anchor=north] at (ta.south) {allocated (ours)};
-\node[font=\footnotesize\bfseries, anchor=south west, text=gray!40!black] at (0.1,-1.9) {same vision-token budget $B$};
-% ---------- flows ----------
-\draw[flow] (doc) -- (det);
-\draw[flow] (det) -- node[lab, above] {$\mathcal{H}$} (alloc);
-\draw[flow] (alloc) -- node[lab, above] {$I$} (anc);
-\draw[flow] (anc) -- (route);
-\draw[flow] (route.west) -- ++(-0.35,0) |- (img.east);
-\draw[flow] (route.west) -- ++(-0.35,0) |- (txt.east);
-\draw[save] (alloc.north) to[bend left=22] node[lab, above, text=cCoral] {saved budget $B-v(I)$} (anc.north);
+\newcommand{\sub}[1]{{\scriptsize\itshape\color{gray!40!black}#1}}
+\node[io, text width=2.3cm] (doc) at (1.25,0) {{\small\bfseries Long document}\\[4pt]
+  {\scriptsize\raggedright \ldots{} One of the special magic numbers for brave-meadow is: \colorbox{cSalmon}{\texttt{\tiny 4414761}}. You couldn't allocate \ldots{} founded in 1995 \ldots\par}};
+\node[stage=cPeach] (ent) at (4.85,0) {{\small\bfseries Residual entropy}\\ \sub{theory, \cref{sec:principle}}\\[4pt]
+  {\footnotesize $h_i=-\log_2 q(c_i\mid c_{<i})$}\\[5pt]
+  \includegraphics[width=3.45cm]{fig/thumb_entropy.png}\\[4pt]
+  {\scriptsize prose $\approx$0.9 bits/char, hex digits $\approx$3.5: the prior cannot fill them in}};
+\node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Information map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
+  {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
+  \includegraphics[width=3.45cm,height=1.2cm]{fig/thumb_map_coc.png}\\[3pt]
+  {\scriptsize typical COC: the needles are hot spots, $\U=0.35$}};
+\node[stage=cAqua] (eq) at (13.35,0) {{\small\bfseries \name: flatten the map}\\ \sub{method, \cref{sec:detect,sec:allocate}}\\[4pt]
+  {\scriptsize flag high-entropy strings; draw them at $s_{\mathrm{hi}}$ and prose at $s_{\mathrm{lo}}$ with $v(I)\le B$}\\[4pt]
+  \includegraphics[width=3.45cm,height=0.87cm]{fig/thumb_map_ours.png}\\[3pt]
+  {\scriptsize same budget, 27\% fewer vision tokens, $\U=0.46$}};
+\node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
+\node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
+  {optional post-processing: append flagged strings as verbatim anchors~\cite{anon2026renderretain}; route dense documents to text};
+\draw[flow] (doc) -- (ent);
+\draw[flow] (ent) -- (map);
+\draw[flow] (map) -- (eq);
+\draw[flow] (eq) -- (vlm);
+\draw[->, thick, dashed, draw=cCoral] (anc.east) -| (vlm.south);
 \end{tikzpicture}
-\caption{\textbf{Hazard-aware rendering.} \textsc{Detect} marks verbatim-risky strings in the text before rendering. \textsc{Allocate}, our contribution, enlarges only those strings and shrinks prose so that the image stays within the vision-token budget $B$ of uniform rendering (up to page rounding). \textsc{Anchor} and \textsc{Route} follow prior work~\cite{anon2026renderretain}: they spend the saved budget on verbatim copies of the flagged strings and send documents whose anchors would be too expensive to plain text. The thumbnails show the same 32K-character document rendered uniformly and by our allocation. Every step is training-free and needs no access to the model.}
+\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the information load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map (same page; colors relative to the page mean). Anchors leave the map unchanged and are optional post-processing. Every step is training-free and needs no access to the model.}
 \label{fig:method}
 \end{figure*}

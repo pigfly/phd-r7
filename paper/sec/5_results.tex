@@ -21,6 +21,19 @@ Enlarged needles are recalled 74\% (5\,px) and 83\% (6\,px) of the time, the oth
 At 6\,px the non-enlarged needles do worse than under COC (0.24), because they shrink to 5\,px with the prose and their load rises.
 Over the whole document, half enlargement lands between COC and \name (+0.21 to +0.30 over COC, and 0.31 below \name; \cref{tab:pooled}).
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig/needle_load.pdf}
+\caption{\textbf{The hot spots of the map are where reading fails.} (a) Recall of each needle against the information load of the 48-character window around it, binned (95\% CI), over all renderings and settings (3{,}760 needle--image pairs) and over COC images only (1{,}030). (b) Spearman $\rho$ between needle load and recall per subset.}
+\label{fig:needle_load}
+\end{figure}
+
+The map also predicts which strings fail, without reference to any arm.
+For every needle we take the load of the window around it and the share of readers that recalled it (\cref{fig:needle_load}).
+Over all renderings, recall falls from 0.70 below 15 bits per vision token to 0.12 above 80 (Spearman $\rho=-0.50$, 3{,}760 needle--image pairs).
+The relation holds within COC images alone, where nothing was reallocated ($\rho=-0.36$ over 1{,}030 needles; 0.52 to 0.10 across the same range), and in every subset we ran.
+It is weakest on the natural strings ($\rho=-0.20$ and $-0.25$ under COC, 60 targets each, $p=0.12$ and 0.05), whose targets the detector did not always choose.
+
 $\U$ measures the shape of the load at a given budget, not its level.
 In every other setting (8 and 10\,px, 32K--128K characters), \name has both the higher $\U$ and the higher recall.
 At 8 and 10\,px, where font search was also run, $\U$ and recall rank the three arms identically.
@@ -102,6 +115,19 @@ We therefore built two sets of 60 questions from LongBench documents of up to 40
 For targets the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs, \name doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer tokens per task (\cref{tab:niq}).
 For digit-bearing targets sampled without the detector, mostly short numbers and version strings such as ``25,000'' or ``2.0.13'', only one of 60 is flagged. Every image arm is poor on these (0.36--0.45 against 0.96 for text), and \name neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
 A synthetic ablation agrees: needles the regex misses leave \name at COC recall (0.33 vs.\ 0.32), whereas an oracle detector would reach 0.82 (\cref{tab:detector}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig/natural_map.pdf}
+\caption{\textbf{Information map of a LongBench document} (GovReport, 30K characters), cropped around the target \texttt{GAO/NSIAD-98-62} (boxed). Glyphs are tinted by load on a shared scale. Under COC the target is the hottest span and no reader copies it. \name halves its load and four of five readers copy it, while the unflagged citations around it grow hotter as prose shrinks.}
+\label{fig:natural_map}
+\end{figure}
+
+The maps explain both results at the level of single strings.
+On flagged targets \name halves the mean load (27.8 to 14.2 bits per vision token), while on detector-independent targets the load rises from 20.5 to 23.0 because they shrink with the prose (\cref{fig:natural_map}).
+Page-level $\U$, however, does not rise on these documents (0.374 to 0.365 on the flagged set).
+Natural documents contain many unflagged hot spots, such as names, short numbers, and citations, which grow hotter when prose shrinks.
+The regex detector is enough to flatten RULER pages but cools only the flagged spots of natural ones; choosing what to enlarge from the map itself is the natural next step.
 Shrinking prose could also hurt questions unrelated to identifiers.
 On held-out LongBench QA (\cref{tab:longbench}), F1 changes by +0.02 [$-$0.02, 0.06] relative to COC, which rules out losses larger than about 0.02; one reader--task cell is significantly negative.
 Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.

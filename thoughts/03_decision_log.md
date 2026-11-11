@@ -284,3 +284,11 @@
 - Rescoring (no API): S−A survives precision-aware F1 and Holm. On RULER, K/X are inflated by leakage (anchor list = answer on single/multivalue). X−K is ≈0 pooled.
 - New runs (5 readers, ≈$4): LB plain text on lb3 (X−T sig. neg. 9/10); niq3 detector-independent (S−A −0.01, X−A −0.09); niq2 at 5/7px (X ≥ K frontier by 0.02–0.04); box control B (−0.05 vs A); 8/10px (S−A +0.38/+0.20, S−U +0.26/+0.04); multikey at 64K/128K with K/X (X ≈ K recall, 30% cheaper, F1 ≈0.38).
 - Paper reframed: contribution = Allocate; R-or-R cited anonymously; AGAR (2606.12898) added as closest related work; density/routing moved to the appendix.
+
+## 2026-11-11 · Andy feedback：理论 → 度量 → 可视化 → 方法
+- 残差熵 h_i = Qwen2.5-0.5B 逐字符 surprisal（`entropy_map.py`）；负载 ℓ = 48 字符窗口的 bits / 视觉 token；U = 页均负载 / 最热 160 个窗口均值（`uniformity_study.py`，`analyze_uniformity.py`）。
+- 新 arm H（随机放大一半检出串，`gen_half.py`，rhalf_*，5 读者，约 $0.15）：recall A 0.11–0.25 / H 0.41–0.48 / S 0.73–0.79；同图内被放大 needle 0.74/0.83，未放大 0.12/0.11（6px 下低于 COC 的 0.24）。
+- U vs recall：16K 等预算 13 点 Spearman 0.84（12 种变体 0.78–0.90）；全部 25 点 0.80。字体搜索/降采样 U 几乎不变；随机放大 U 最低。
+- 定义调整（看过数据后）：尾部从"top 1%"改为固定 160 个窗口，因为 top 1% 随文档变长被正文稀释（全部点 ρ 0.61 → 0.80）；已在附录如实说明。
+- 单文档 U_COC 不能预测 S−A 增益（|ρ| ≤ 0.18）→ 论文不声称可用于单文档筛选。
+- 方法命名 EquiPix（宏 \name），uniform → COC，billed tokens → avg. tokens / task。

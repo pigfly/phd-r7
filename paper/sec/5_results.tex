@@ -22,7 +22,8 @@ At 6\,px the non-enlarged needles do worse than under COC (0.24), because they s
 Over the whole document, half enlargement lands between COC and \name (+0.21 to +0.30 over COC, and 0.31 below \name; \cref{tab:pooled}).
 
 $\U$ measures the shape of the load at a given budget, not its level.
-In every other setting (8 and 10\,px, 32K--128K characters) \name has both the higher $\U$ and the higher recall, and at 8 and 10\,px, where font search was also run, the three arms are ranked identically by $\U$ and by recall.
+In every other setting (8 and 10\,px, 32K--128K characters), \name has both the higher $\U$ and the higher recall.
+At 8 and 10\,px, where font search was also run, $\U$ and recall rank the three arms identically.
 Across settings the mean load $\bar\ell$ also changes, yet pooling all \UnAll{} points still gives $\rho=\UrhoAll$. With other window lengths and tail statistics, $\rho$ at 16K ranges from \UrhoMin{} to \UrhoMax{} (\cref{app:uniformity}).
 
 \input{tab/pooled}
@@ -62,7 +63,7 @@ Under \name, 58\% of the answers are exact and 9\% fabricated.
 Among partial misreads under COC, the most frequent confusion is 8$\to$0, two glyphs that differ by a small stroke.
 
 To vary predictability at fixed glyph size, we hid one 32-character value in the same documents and changed only its type: an English phrase, random common words, or random hexadecimal characters, rendered by COC at 4--10\,px.
-For each of the three readers that found enough targets of every type, a found hexadecimal string is copied exactly far less often than a found English phrase: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a).
+Three readers found enough targets of every type. For each, a found hexadecimal string is copied exactly far less often than a found English phrase: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a).
 Hexadecimal and English targets also differ in their glyphs, so this test supports but does not isolate the role of the prior (\cref{app:why}).
 
 \subsection{Scaling with context length}
@@ -111,5 +112,6 @@ Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 c
 
 Anchors~\cite{anon2026renderretain} append the flagged strings verbatim after the question. They leave the map unchanged, so we treat them as post-processing that can be added to either image.
 In the RULER essays the only flagged strings are the needles, so the anchor list is the answer and both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).
-On flagged natural identifiers, where documents carry 5.3 anchors on average, \name+anchor is on or above the recall--cost frontier of COC+anchor by 0.02--0.05 across 5--7\,px, though no pooled interval excludes zero, and at 64K--128K characters it costs 29--31\% less (\cref{app:anchors}).
+On flagged natural identifiers, where documents carry 5.3 anchors on average, \name+anchor lies on or above the recall--cost frontier of COC+anchor by 0.02--0.05 across 5--7\,px, though no pooled interval excludes zero.
+At 64K--128K characters it costs 29--31\% less (\cref{app:anchors}).
 When the target is not flagged, anchors can mislead (0.36 vs.\ 0.44 without them). Beyond about 16 flagged strings per 32K characters, anchors on either image become expensive and routing to text takes over (\cref{app:density}).

@@ -18,31 +18,26 @@ Under typical COC they write the hyphens of a UUID correctly 99\% of the time an
 At an equal budget, typical COC recovers only 8--22\% of RULER needles, averaged over five readers.
 
 We ask which pixels matter more, and answer in four steps (\cref{fig:teaser}).
-\emph{Theory.}
-After rendering, information is distributed unevenly over the page.
-What the pixels must supply for each character is roughly its residual entropy given the context, which we estimate from the text before anything is drawn (\cref{sec:principle}).
-\emph{Measure.}
-Dividing residual entropy by glyph area gives the information load of each region, in bits per vision token.
-We define entropy uniformity $\U$, the ratio between the mean load of a page and the load of its hottest regions (\cref{sec:map}).
+The first is a theory of where information sits after rendering.
+What the pixels must supply for a character is roughly its residual entropy given the context, and we estimate it from the text before anything is drawn (\cref{sec:principle}).
+The second is a measure.
+Residual entropy divided by glyph area gives the information load of a region in bits per vision token, and entropy uniformity $\U$ compares the mean load of a page with the load of its hottest regions (\cref{sec:map}).
 $\U$ is 1 when every region carries the same information per pixel and small when a few regions carry far more than the rest.
-\emph{Visualization.}
-The load can be drawn as a heat map for any text and any rendering.
-The map points to the spans that are informative and likely to be misread before any model is called.
-\emph{Method.}
-If uneven load causes the errors, the remedy is to flatten the map.
-\name enlarges the high-entropy strings and shrinks prose so that the image costs no more vision tokens than typical COC (\cref{sec:allocate}).
+The third is a visualization: the load can be drawn as a heat map of any text under any rendering, which shows the informative and error-prone spans before any model is called.
+The fourth is the method.
+If uneven load causes the errors, the remedy is to flatten the map, and \name does so by enlarging high-entropy strings and shrinking prose within the vision-token budget of typical COC (\cref{sec:allocate}).
 It is training-free, query-independent, and needs only black-box access.
 
-The measure is useful only if it predicts reading, so we test this directly.
+A measure is useful only if it predicts reading.
 Across 13 arm--budget combinations of the same documents, $\U$ and five-reader recall have Spearman $\rho=0.84$.
-Two observations go beyond the construction of \name.
-Font search and render-then-downsample rescale every region about equally, so they leave $\U$ almost unchanged, and they barely improve recall.
-When only a random half of the needles is enlarged, the enlarged ones are recalled 74--83\% of the time and the others 11--12\% (\cref{sec:uniformity}).
+Two results do not follow from how \name is built.
+Font search and render-then-downsample rescale every region about equally; they leave $\U$ almost unchanged and barely improve recall.
+When a random half of the needles is enlarged, the enlarged ones are recalled 74--83\% of the time and the others 11--12\% (\cref{sec:uniformity}).
 
 Our contributions are:
 \begin{itemize}
-  \item \textbf{An information view of COC.} We trace verbatim failures to characters whose residual entropy the language prior cannot supply, and we estimate it from the text alone.
-  \item \textbf{Entropy uniformity and information maps.} $\U$ quantifies how evenly a rendered page spreads its information. Its map shows where errors are likely. Across renderings at equal budget it tracks recall, and it explains why font search and downsampling fail: a rescaling of the whole page leaves $\U$ unchanged.
-  \item \textbf{\name.} Budget-constrained glyph allocation flattens the map. Over five readers it raises needle recall by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K with up to 27\% fewer tokens, doubles the recall of flagged natural identifiers, and leaves LongBench QA unchanged. The gain shrinks at milder budgets, and at 10\,px font search does as well.
+  \item an information view of COC, which traces verbatim failures to characters whose residual entropy the language prior cannot supply and estimates that entropy from the text alone;
+  \item entropy uniformity and information maps, which track recall across renderings at an equal budget and explain why rescaling the whole page (font search, downsampling) does not help;
+  \item \name, a budget-constrained glyph allocation that flattens the map. Over five readers it raises needle recall by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K with up to 27\% fewer tokens, doubles the recall of flagged natural identifiers, and leaves LongBench QA unchanged. The gain shrinks at milder budgets, and at 10\,px font search does as well.
 \end{itemize}
 Verbatim anchors~\cite{anon2026renderretain}, which copy flagged strings next to the image, leave the map unchanged; we treat them as compatible post-processing (\cref{sec:anchors}).

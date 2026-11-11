@@ -17,12 +17,12 @@
   {\scriptsize prose $\approx$0.9 bits/char, hex digits $\approx$3.5: the prior cannot fill them in}};
 \node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Information map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
   {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
-  \includegraphics[width=3.45cm,height=1.2cm]{fig/thumb_map_coc.png}\\[3pt]
-  {\scriptsize typical COC: the needles are hot spots, $\U=0.35$}};
+  \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_coc.pdf}\\[3pt]
+  {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.36$}};
 \node[stage=cAqua] (eq) at (13.35,0) {{\small\bfseries \name: flatten the map}\\ \sub{method, \cref{sec:detect,sec:allocate}}\\[4pt]
   {\scriptsize flag high-entropy strings; draw them at $s_{\mathrm{hi}}$ and prose at $s_{\mathrm{lo}}$ with $v(I)\le B$}\\[4pt]
-  \includegraphics[width=3.45cm,height=0.87cm]{fig/thumb_map_ours.png}\\[3pt]
-  {\scriptsize same budget, 27\% fewer vision tokens, $\U=0.46$}};
+  \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_ours.pdf}\\[3pt]
+  {\scriptsize same budget, 16$\times$36 tokens, $\U=0.46$}};
 \node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
 \node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
   {optional post-processing: append flagged strings as verbatim anchors~\cite{anon2026renderretain}; route dense documents to text};
@@ -32,6 +32,6 @@
 \draw[flow] (eq) -- (vlm);
 \draw[->, thick, dashed, draw=cCoral] (anc.east) -| (vlm.south);
 \end{tikzpicture}
-\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the information load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map (same page; colors relative to the page mean). Anchors leave the map unchanged and are optional post-processing. Every step is training-free and needs no access to the model.}
+\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the information load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map (same page; each cell is one vision token, as in \cref{fig:teaser}). Anchors leave the map unchanged and are optional post-processing. Every step is training-free and needs no access to the model.}
 \label{fig:method}
 \end{figure*}

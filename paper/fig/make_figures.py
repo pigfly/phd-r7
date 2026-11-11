@@ -164,6 +164,28 @@ def token_cells(R, cell=28):
         out = np.nanmax(B, axis=2)
     return out
 
+
+# one information-map style for every figure (teaser, pipeline thumbnails, natural document)
+MAP_VMIN, MAP_VMAX, MAP_EDGE = 0.5, 3.0, 0.15
+def map_cmap():
+    c = plt.get_cmap("Reds").copy(); c.set_bad("white"); return c   # heatmap asset: cmap="Reds"
+
+def page_map(text, arm, m, size=6):
+    """vision-token grid of the load relative to the page mean (M.STRICT / M.ORACLE must be set by the caller)"""
+    import numpy as np
+    R = load_raster(text, arm, m, size); return token_cells(R / np.nanmean(R))
+
+def draw_map(ax, G, alpha=1.0, zorder=1):
+    import numpy as np
+    return ax.pcolormesh(np.ma.masked_invalid(G), cmap=map_cmap(), vmin=MAP_VMIN, vmax=MAP_VMAX, edgecolors="white",
+                         linewidth=MAP_EDGE, alpha=alpha, zorder=zorder)
+
+def map_colorbar(fig, rect, label="information load per vision token / page mean", fontsize=6.5):
+    cax = fig.add_axes(rect); sm = plt.cm.ScalarMappable(cmap=map_cmap(), norm=plt.Normalize(MAP_VMIN, MAP_VMAX))
+    cb = fig.colorbar(sm, cax=cax, orientation="horizontal", ticks=[0.5, 1, 1.5, 2, 2.5, 3])
+    cb.outline.set_visible(False); cb.ax.tick_params(labelsize=6, length=2, pad=1)
+    cax.text(1.04, 0.5, label, transform=cax.transAxes, fontsize=fontsize, va="center", color=MUTED); return cb
+
 # Academic Figure Skill Asset Confirmation (verified against assets/figures/)
 # (teaser, maps) heatmap -> assets/figures/heatmap/plot_composition.py -> param inherit (cmap "Reds", white cell
 #                 borders, colorbar with explicit ticks); data are per-page load grids, not a category matrix
@@ -185,7 +207,7 @@ def teaser():
     grids, crops, boxes = [], [], []
     for arm, m, run, *_ in cols:
         M.STRICT = arm in "SH"; M.ORACLE = set(mh["enlarged"]) if arm == "H" else None
-        R = load_raster(it["text"], arm, m, 6); R = R / np.nanmean(R); grids.append(token_cells(R))
+        grids.append(page_map(it["text"], arm, m))
         bxs, ixs, _ = E.cells(it["text"], arm, m, 6); M.STRICT = False; M.ORACLE = None; ixs = list(ixs)
         im = np.array(Image.open(Path(str(run).replace("rbx_", "rbase_")) / "img" / f"{m['name']}.png").convert("L"))
         box = {"A": (330, 538, 590, 584), "H": (100, 362, 360, 408), "S": (127, 378, 387, 424)}[arm]
@@ -195,8 +217,6 @@ def teaser():
             if box[0] <= bx0 and bx1 <= box[2] and box[1] <= by0 and by1 <= box[3]:
                 nb.append((bx0 - box[0], by0 - box[1], bx1 - bx0, by1 - by0, arm == "S" or (arm == "H" and v in mh["enlarged"])))
         crops.append((im, box)); boxes.append(nb)
-    cmap = plt.get_cmap("Reds").copy(); cmap.set_bad("white")
-    vmin, vmax = 0.5, 3.0
     fig = plt.figure(figsize=(TEXTW, 60 * MM))
     gs = fig.add_gridspec(2, 3, height_ratios=[0.3, 1], wspace=0.12, hspace=0.12, left=0.005, right=0.715, top=0.88, bottom=0.22)
     gr = fig.add_gridspec(1, 1, left=0.785, right=0.995, top=0.88, bottom=0.22)
@@ -210,7 +230,7 @@ def teaser():
         ax.set_title(title, fontsize=8, fontweight="bold", pad=9, color=INK)
         ax.text(0.5, 1.03, sub, transform=ax.transAxes, ha="center", va="bottom", fontsize=6.5, color=MUTED)
         hx = fig.add_subplot(gs[1, c])
-        hx.pcolormesh(np.ma.masked_invalid(G), cmap=cmap, vmin=vmin, vmax=vmax, edgecolors="white", linewidth=0.15)
+        draw_map(hx, G)
         hx.set_xlim(0, G.shape[1]); hx.set_ylim(G.shape[0], 0); hx.set_xticks([]); hx.set_yticks([])
         for sp in hx.spines.values(): sp.set_visible(False)
         st = json.loads((run / "uniformity.json").read_text())[f"{arm}|{item}"]
@@ -218,10 +238,7 @@ def teaser():
                 fontsize=7, va="top", ha="center", color=INK)
         hx.text(0.5, -0.135, f"{G.shape[0]} $\\times$ {G.shape[1]} vision tokens", transform=hx.transAxes, fontsize=6.5,
                 va="top", ha="center", color=MUTED)
-    cax = fig.add_axes([0.06, 0.045, 0.2, 0.025]); sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin, vmax))
-    cb = fig.colorbar(sm, cax=cax, orientation="horizontal", ticks=[0.5, 1, 1.5, 2, 2.5, 3])
-    cb.outline.set_visible(False); cb.ax.tick_params(labelsize=6, length=2, pad=1)
-    cax.text(1.04, 0.5, "information load per vision token / page mean", transform=cax.transAxes, fontsize=6.5, va="center", color=MUTED)
+    map_colorbar(fig, [0.06, 0.045, 0.2, 0.025])
     # recall vs uniformity
     ax = fig.add_subplot(gr[0, 0])
     STY = {"A": ("coc", "o"), "U": ("coc", "s"), "Z": ("coc", "v"), "B": ("coc", "P"), "R": ("R", "D"), "H": ("H", "^"), "S": ("S", "*")}
@@ -396,15 +413,15 @@ def thumbs_v2():
     for li, (o, t) in enumerate(lines):
         for j, c in enumerate(t):
             col = tuple(int(255 * x) for x in cmap(min(1.0, hs[o + j] / 6.0))[:3])
-            d.rectangle([10 + j * cw, 6 + li * 44, 10 + (j + 1) * cw, 6 + li * 44 + 38], fill=col)
+            d.rectangle([10 + j * cw, 6 + li * 44, 10 + (j + 1) * cw - 1, 6 + li * 44 + 38], fill=col)
             d.text((10 + j * cw, 8 + li * 44), c, font=f, fill=(20, 20, 20))
     im.save(FIG / "thumb_entropy.png")
     out = []
-    for arm, name in (("A", "thumb_map_coc.png"), ("S", "thumb_map_ours.png")):
-        M.STRICT = arm == "S"; R = load_raster(it["text"], arm, mb[arm], 6); M.STRICT = False
-        R = R / np.nanmean(R); rgb = cmap(np.clip((np.nan_to_num(R, nan=0.6) - 0.6) / 2.4, 0, 1))[:, :, :3]
-        rgb[np.isnan(load_raster.__defaults__ and R)] = 1.0
-        Image.fromarray((rgb * 255).astype("uint8")).save(FIG / name); out.append(R.shape)
+    for arm, name in (("A", "thumb_map_coc"), ("S", "thumb_map_ours")):  # same style and size as the teaser maps
+        M.STRICT = arm == "S"; G = page_map(it["text"], arm, mb[arm]); M.STRICT = False
+        f2 = plt.figure(figsize=(34.5 * MM, 14 * MM)); ax = f2.add_axes([0, 0, 1, 1]); draw_map(ax, G)
+        ax.set_xlim(0, G.shape[1]); ax.set_ylim(G.shape[0], 0); ax.axis("off")
+        f2.savefig(FIG / f"{name}.pdf", bbox_inches=None, pad_inches=0); plt.close(f2); out.append(G.shape)
     return out
 
 # ---------------------------------------------------------------- needle load vs recall
@@ -434,35 +451,36 @@ def needle_load():
 
 # ---------------------------------------------------------------- natural document: information map around a target
 def natural_map(item=24):
-    """niq2_s6 item: crops around the target under COC and EquiPix, glyphs tinted by the information load
-    (bits per vision token, shared scale), plus the five-reader recall of the target."""
+    """niq2_s6 item: crops around the target under COC and EquiPix with the vision-token information map (same style as
+    the teaser) drawn under the glyphs, plus the target's load and five-reader recall."""
     import numpy as np, re, make_items as M, entropy_map as E
-    from matplotlib.colors import LinearSegmentedColormap
     from stats_pooled import merged
-    cmap = plt.get_cmap("Reds")  # heatmap asset (assets/figures/heatmap): cmap="Reds"
     run = EXP / "niq2_s6"; it = next(i for i in json.loads((run / "gt.json").read_text())["items"] if i["item"] == item)
     man = {m["arm"]: m for m in json.loads((run / "manifest.json").read_text()) if m["item"] == item}
     ph = re.search(r'immediately after the words "(.*?)"\?', it["prompt"]).group(1); k = it["text"].find(ph) + len(ph) + 1
     v = it["answers"][0]; dd = merged(["niq2_s6"])["niq2_s6"]
     rec = {a: np.mean([dd[r][item][a]["recall"] for r in dd if item in dd[r] and a in dd[r][item]]) for a in "AS"}
     U = json.loads((run / "uniformity.json").read_text())
-    fig, axs = plt.subplots(2, 1, figsize=(3.3, 1.4), gridspec_kw=dict(hspace=0.32, left=0.01, right=0.99, top=0.92, bottom=0.02))
-    vmax = None; crops = []
-    for arm in "AS":
+    fig, axs = plt.subplots(2, 1, figsize=(COLW, 36 * MM), gridspec_kw=dict(hspace=0.45, left=0.01, right=0.99, top=0.9, bottom=0.2))
+    NC, NR = 15, 2
+    for ax, arm in zip(axs, "AS"):
         M.STRICT = arm == "S"
-        R = load_raster(it["text"], arm, man[arm], 6); bx, ix, _ = E.cells(it["text"], arm, man[arm], 6); M.STRICT = False
+        G = page_map(it["text"], arm, man[arm]); bx, ix, _ = E.cells(it["text"], arm, man[arm], 6); M.STRICT = False
         ix = list(ix); j0, j1 = ix.index(k), ix.index(k + len(v) - 1)
-        x0, y0 = bx[j0][:2]; y1 = bx[j1][3]
-        cx = int(max(0, min(R.shape[1] - 420, x0 - 150))); cy = int(max(0, min(R.shape[0] - 60, (y0 + y1) / 2 - 30)))
+        x0, y0 = bx[j0][:2]; x1, y1 = bx[j1][2:]
+        c0 = int(max(0, min(G.shape[1] - NC, x0 // 28 - 5))); r0 = int(max(0, min(G.shape[0] - NR, ((y0 + y1) / 2 - 14) // 28)))
         img = np.array(Image.open(run / "img" / f"{man[arm]['name']}.png").convert("L"), float) / 255
-        crops.append((arm, R[cy:cy + 60, cx:cx + 420], img[cy:cy + 60, cx:cx + 420], (x0 - cx, y0 - cy, bx[j1][2] - cx, y1 - cy)))
-    vmax = np.nanpercentile(np.concatenate([c[1][~np.isnan(c[1])] for c in crops]), 99)
-    for ax, (arm, R, g, (bx0, by0, bx1, by1)) in zip(axs, crops):
-        rgb = cmap(np.clip(np.nan_to_num(R, nan=0) / vmax, 0, 1))[:, :, :3]; rgb[np.isnan(R)] = 1
-        ax.imshow(rgb * g[:, :, None] ** 1.5, interpolation="nearest", aspect="equal"); ax.set_xticks([]); ax.set_yticks([])
-        ax.add_patch(plt.Rectangle((bx0 - 2, by0 - 1), bx1 - bx0 + 4, by1 - by0 + 2, fill=False, lw=0.8, color=BLACK))
-        for sp in ax.spines.values(): sp.set_color(MUTED); sp.set_linewidth(0.5)
+        crop = np.ones((NR * 28, NC * 28)); part = img[r0 * 28:(r0 + NR) * 28, c0 * 28:(c0 + NC) * 28]
+        crop[:part.shape[0], :part.shape[1]] = part   # pad the last partial token row with white
+        draw_map(ax, G[r0:r0 + NR, c0:c0 + NC])
+        ink = np.zeros(crop.shape + (4,)); ink[..., 3] = (1 - crop) ** 0.8   # glyphs in black on top of the map
+        ax.imshow(ink, extent=(0, NC, NR, 0), interpolation="nearest", zorder=2)
+        ax.add_patch(plt.Rectangle((x0 / 28 - c0 - 0.05, y0 / 28 - r0 - 0.03), (x1 - x0) / 28 + 0.1, (y1 - y0) / 28 + 0.06,
+                                   fill=False, lw=0.9, color=BLACK, zorder=3))
+        ax.set_xlim(0, NC); ax.set_ylim(NR, 0); ax.set_aspect("equal"); ax.set_xticks([]); ax.set_yticks([])
+        for sp in ax.spines.values(): sp.set_visible(False)
         nl = U[f"{arm}|{item}"]["needle_load"]; tl = list(nl.values())[0] if nl else float("nan")
-        ax.set_title(f"{'COC (6 px)' if arm == 'A' else NAME + ' (5 / 12 px)'}:  target load {tl:.0f} bits/vtok,  recall {rec[arm]:.1f}",
-                     fontsize=6.3, pad=2, loc="left")
+        ax.set_title(f"{'COC (6 px)' if arm == 'A' else NAME + ' (5 / 12 px)'}:  target load {tl:.0f} bits/vision token,  recall {rec[arm]:.1f}",
+                     fontsize=6.5, pad=2, loc="left")
+    map_colorbar(fig, [0.03, 0.06, 0.32, 0.03], label="load / page mean", fontsize=6)
     fig.savefig(FIG / "natural_map.pdf"); plt.close(fig); return v, rec

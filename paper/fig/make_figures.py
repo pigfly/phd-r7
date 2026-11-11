@@ -242,23 +242,20 @@ def teaser():
     # recall vs uniformity
     ax = fig.add_subplot(gr[0, 0])
     STY = {"A": ("coc", "o"), "U": ("coc", "s"), "Z": ("coc", "v"), "B": ("coc", "P"), "R": ("R", "D"), "H": ("H", "^"), "S": ("S", "*")}
-    pts = [p for p in U["points"] if p["setting"] in ("tab1_s5", "tab1_s6")]
+    pts = [p for p in U["points"] if p["setting"] == "tab1_s6"]   # one budget (6 px): the 5 px points overlap these
     for p in pts:
-        k, mk = STY[p["arm"]]; filled = p["setting"] == "tab1_s6"
-        ax.scatter(p["U"], p["recall"], marker=mk, s=(42 if mk == "*" else 16), color=(CH[k] if filled else "white"),
-                   edgecolor=CH[k], linewidth=0.8, zorder=3)
-    l6 = {p["arm"]: p for p in pts if p["setting"] == "tab1_s6"}
-    ax.text(l6["R"]["U"] + 0.004, l6["R"]["recall"] + 0.045, "random\nwords", fontsize=6.5, ha="left", va="bottom", linespacing=0.95)
+        k, mk = STY[p["arm"]]
+        ax.scatter(p["U"], p["recall"], marker=mk, s=(46 if mk == "*" else 18), color=CH[k], edgecolor="white", linewidth=0.4, zorder=3)
+    l6 = {p["arm"]: p for p in pts}
+    ax.text(l6["R"]["U"] + 0.005, l6["R"]["recall"], "random words", fontsize=6.5, ha="left", va="center")
     ax.text(l6["H"]["U"] - 0.006, l6["H"]["recall"], "half", fontsize=6.5, ha="right", va="center")
-    ax.text(l6["S"]["U"] - 0.008, l6["S"]["recall"] + 0.005, NAME, fontsize=6.5, ha="right", va="center", color=ACCENT_RED, fontweight="bold")
-    ax.text(l6["A"]["U"] + 0.002, l6["A"]["recall"] + 0.075, "COC, font search,\ndownsample, box", fontsize=6.5, ha="center", va="bottom", linespacing=0.95)
-    r = U["spearman_eq16k"]
-    ax.text(0.03, 0.98, f"Spearman $\\rho$ = {r['rho']:.2f}\np = {r['p']:.0e}, n = {r['n']}", transform=ax.transAxes, fontsize=6.5, va="top")
-    ax.scatter([], [], marker="o", color=MUTED, s=12, label="6 px budget"); ax.scatter([], [], marker="o", facecolor="white", edgecolor=MUTED, s=12, label="5 px budget")
-    ax.legend(loc="lower right", fontsize=6.5, handletextpad=0.2, borderaxespad=0.1)
+    ax.text(l6["S"]["U"] - 0.008, l6["S"]["recall"], NAME, fontsize=6.5, ha="right", va="center", color=ACCENT_RED, fontweight="bold")
+    ax.text(l6["A"]["U"] + 0.002, l6["A"]["recall"] + 0.06, "COC, font search,\ndownsample, box", fontsize=6.5, ha="center", va="bottom", linespacing=0.95)
+    r = U["spearman_s6"]
+    ax.text(0.03, 0.98, f"Spearman $\\rho$ = {r['rho']:.2f}\np = {r['p']:.2f}, n = {r['n']}", transform=ax.transAxes, fontsize=6.5, va="top", ha="left")
     ax.set_xlim(0.345, 0.49); ax.set_xticks([0.35, 0.40, 0.45]); ax.set_ylim(0, 0.8)
     ax.set_xlabel("entropy uniformity $\\mathcal{U}$", labelpad=1); ax.set_ylabel("needle recall (5 VLMs)", labelpad=1)
-    ax.set_title("Equal budget, 16K characters", fontsize=8, fontweight="bold", pad=4)
+    ax.set_title("Equal budget (6 px), 16K characters", fontsize=8, fontweight="bold", pad=4)
     fig.savefig(FIG / "teaser.pdf"); fig.savefig(FIG / "teaser.png", dpi=300); plt.close(fig)
 
 # ---------------------------------------------------------------- length scaling

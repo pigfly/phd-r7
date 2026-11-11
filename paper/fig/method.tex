@@ -25,7 +25,7 @@
   {\scriptsize same budget, 16$\times$36 tokens, $\U=0.46$}};
 \node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
 \node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
-  {optional post-processing: append flagged strings as verbatim anchors~\cite{anon2026renderretain}; route dense documents to text};
+  {optional post-processing: append flagged strings as verbatim anchors; route dense documents to text};
 \draw[flow] (doc) -- (ent);
 \draw[flow] (ent) -- (map);
 \draw[flow] (map) -- (eq);

@@ -70,7 +70,7 @@ The account of \cref{sec:principle} predicts that readers fail where the pixels 
 The single-UUID needles of \cref{tab:baselines} agree.
 Under COC a third of the answers are empty.
 In answers of the right length the four hyphens, which the format predicts, are correct 99\% of the time and the 32 hexadecimal characters 51\%. \name raises the hexadecimal characters to 91\% and leaves the hyphens at 98\%, and the gain holds for every reader (from 0.15--0.96 to 0.82--1.00).
-Wrong answers are mostly fabricated rather than misread: 59\% of right-length answers have at least 8 of 32 characters wrong, with a median of 27, close to the 30 expected from guessing, and only 23\% are exact (\cref{fig:why}b).
+Wrong answers are mostly fabricated rather than misread. Of the right-length answers, 59\% have at least 8 of 32 characters wrong (median 27, close to the 30 expected from guessing), and only 23\% are exact (\cref{fig:why}b).
 The weaker readers drive this pattern; Gemini almost never fabricates and errs by misreading (\cref{app:why}).
 Under \name, 58\% of the answers are exact and 9\% fabricated.
 Among partial misreads under COC, the most frequent confusion is 8$\to$0, two glyphs that differ by a small stroke.
@@ -136,7 +136,7 @@ Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 c
 \subsection{Anchors as post-processing}
 \label{sec:anchors}
 
-Anchors~\cite{anon2026renderretain} append the flagged strings verbatim after the question. They leave the map unchanged, so we treat them as post-processing that can be added to either image.
+Anchors append the flagged strings verbatim after the question. They leave the map unchanged, so we treat them as post-processing that can be added to either image.
 In the RULER essays the only flagged strings are the needles, so the anchor list is the answer and both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).
 On flagged natural identifiers, where documents carry 5.3 anchors on average, \name+anchor lies on or above the recall--cost frontier of COC+anchor by 0.02--0.05 across 5--7\,px, though no pooled interval excludes zero.
 At 64K--128K characters it costs 29--31\% less (\cref{app:anchors}).

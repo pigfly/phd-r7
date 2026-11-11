@@ -8,8 +8,6 @@ This last finding is the starting point of our account: what the prior cannot su
 Several methods vary resolution within the input, but they are trained (FocusVTC~\cite{zhong2026focusvtc}, SEER~\cite{xu2026seer}, LensVLM~\cite{xie2026lensvlm}; in document understanding, DocOwl2 and TextMonkey~\cite{hu2024docowl2,liu2024textmonkey}).
 Among rendering changes, AGAR is the most similar: it re-renders a page and enlarges the word spans that receive the most middle-to-late-layer attention~\cite{zeng2026agar}. It is training-free but needs the model's attention and a first pass for each query.
 \name is decided from the text before any model call, works with black-box APIs, and does not depend on the question.
-Failure-aware optical compression~\cite{anon2026renderretain} is the closest prior work. It detects high-entropy spans from the text, keeps them as exact text anchors, routes risky blocks to text, and retries on mismatch, but leaves the image unchanged.
-We change the image and treat its anchors and routing as post-processing.
 
 Training-free pruning and merging reduce the tokens of an encoded image~\cite{chen2024fastv,zhang2025sparsevlm,yang2025visionzip,shang2025prumerge,bolya2023tome,fang2026prunesid,lv2026vprune,zhang2026trio}, including for text-rich and OCR inputs~\cite{wan2026rtprune,li2025fcotvl}.
 They act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash. We do not test whether pruning keeps the enlarged glyphs.

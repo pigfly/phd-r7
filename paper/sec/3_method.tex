@@ -85,11 +85,11 @@ Three constraints make this impractical: glyph sizes are integers, words must st
 \name therefore approximates the ideal with two sizes.
 It flags high-entropy strings with cheap text rules instead of a language model, so that rendering stays fast and model-free, and it gives the flagged strings the pixels that prose can spare.
 
-The detector follows the regex-plus-windowed-entropy design of~\cite{anon2026renderretain}.
-After stripping punctuation, a word is flagged if it is a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix.
+The detector combines regular expressions with a windowed character-entropy test.
+After stripping punctuation, a word is flagged if it matches one of five patterns: a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path with a digit or a file extension, an IP address, or a digest prefix.
 Words that mix letters and digits are also flagged if they have at least 20 identifier characters or a 16-character window with at least 3.5 bits of character entropy.
 Four-digit numbers are excluded because in natural text they are mostly years, which are cheap to read, and long English words are never flagged.
-These exclusions are ours; without them the detector flagged 85--112 words per LongBench document (\cref{app:negative}).
+Without these exclusions the detector flagged 85--112 words per LongBench document (\cref{app:negative}).
 The detector selects strings that the language model also finds surprising, so \name raises $\U$ by construction.
 What has to be shown empirically is that higher $\U$ means higher recall (\cref{sec:uniformity}).
 

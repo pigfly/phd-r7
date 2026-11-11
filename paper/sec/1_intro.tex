@@ -21,7 +21,7 @@ We ask which pixels matter more, and answer in four steps (\cref{fig:teaser}).
 The first is a theory of where information sits after rendering.
 What the pixels must supply for a character is roughly its residual entropy given the context, and we estimate it from the text before anything is drawn (\cref{sec:principle}).
 The second is a measure.
-Residual entropy divided by glyph area gives the information load of a region in bits per vision token, and entropy uniformity $\U$ compares the mean load of a page with the load of its hottest regions (\cref{sec:map}).
+Residual entropy divided by glyph area gives the information load of a region in bits per vision token. Entropy uniformity $\U$ compares the mean load of a page with the load of its hottest regions (\cref{sec:map}).
 $\U$ is 1 when every region carries the same information per pixel and small when a few regions carry far more than the rest.
 The third is a visualization: the load can be drawn as a heat map of any text under any rendering, which shows the informative and error-prone spans before any model is called.
 The fourth is the method.
@@ -40,4 +40,4 @@ Our contributions are:
   \item entropy uniformity and information maps, which track recall across renderings at an equal budget and explain why rescaling the whole page (font search, downsampling) does not help;
   \item \name, a budget-constrained glyph allocation that flattens the map. Over five readers it raises needle recall by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K with up to 27\% fewer tokens, doubles the recall of flagged natural identifiers, and leaves LongBench QA unchanged. The gain shrinks at milder budgets, and at 10\,px font search does as well.
 \end{itemize}
-Verbatim anchors~\cite{anon2026renderretain}, which copy flagged strings next to the image, leave the map unchanged; we treat them as compatible post-processing (\cref{sec:anchors}).
+Verbatim anchors, which copy flagged strings into the prompt next to the image, leave the map unchanged; we treat them as optional post-processing (\cref{sec:anchors}).

@@ -144,7 +144,7 @@ A gold value counts as a near-miss when it was not recalled but some returned st
 On average it rises from 0.12 to 0.15 at 5\,px and from 0.08 to 0.15 at 6\,px.
 A plausible cause is that \name turns many complete misses into nearly correct readings, some of which are still wrong.
 Anchors nearly remove near-misses where they contain the answer.
-We therefore do not claim that allocation makes errors detectable; check-and-retry~\cite{anon2026renderretain} addresses that problem.
+We therefore do not claim that \name makes errors detectable.
 
 \input{tab/app_silent}
 
@@ -235,7 +235,7 @@ This setting isolates the allocation mechanism but is not a deployment target: f
 \Cref{tab:app_short} reports word-wrapped reallocation against COC.
 Identifier exact-match improves significantly in all 24 reader--condition cells.
 Prose probes are unaffected on synthetic text except for Llama at 14 characters per vision token ($-$0.39). On real manifests, weaker readers lose up to 0.38 of prose accuracy, because whole manifest lines are enlarged and prose shrinks from 6 to 5\,px.
-On long documents, where hazards occupy a small fraction of the text, this cost does not appear (\cref{tab:longbench}).
+On long documents, where high-entropy strings occupy a small fraction of the text, this cost does not appear (\cref{tab:longbench}).
 
 \input{tab/app_short}
 
@@ -288,10 +288,10 @@ On short manifests, enlarging only the hash and path substrings of a manifest li
 Adding one pixel of line spacing to prose-only lines did not change prose accuracy ($+$0.00, 95\% CI $[-0.09,0.09]$).
 Keeping prose at the COC size left room only for 6--8\,px identifiers and recovered 13--24 points less than full reallocation.
 
-\section{Hazard Density and Routing}
+\section{Density of Flagged Strings and Routing}
 \label{app:density}
 
-Following~\cite{anon2026renderretain}, anchors append the flagged strings verbatim after the question, under a line stating that they are copied exactly from the image.
+Anchors append the flagged strings verbatim after the question, under a line stating that they are copied exactly from the image.
 They are paid for, where possible, by the vision tokens that allocation saves.
 Anchor cost grows linearly with the number of flagged strings, so before any model call we compute
 \begin{equation}
@@ -299,19 +299,18 @@ Anchor cost grows linearly with the number of flagged strings, so before any mod
   \label{eq:route}
 \end{equation}
 where $c(w)$ estimates the text tokens of one anchor and $I$ is the allocated image, and send the document as plain text when $r(x)>\tau$.
-This replaces the density test of~\cite{anon2026renderretain} with one that accounts for the allocated image.
 We use $\tau=0.3$, the median of per-reader two-fold cross-validation (\cref{app:impl}).
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{fig/density.pdf}
-\caption{\textbf{Hazard density.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) tokens per task for COC (A), \name (S), COC+anchor (K), and \name+anchor (X). Recall averages the five non-Claude readers; cost averages the readers that report usage (Claude included, MiniMax excluded). (c) Recall versus cost relative to plain text when \cref{eq:route} routes each document either to an image with anchors or to plain text. Panel (c) sweeps $\tau$ and uses the four readers with counted costs for both images and plain text.}
+\caption{\textbf{Density of flagged strings.} 32K-character documents with $k$ UUID needles, one of which is queried ($N{=}25$). (a) Recall and (b) tokens per task for COC (A), \name (S), COC+anchor (K), and \name+anchor (X). Recall averages the five non-Claude readers; cost averages the readers that report usage (Claude included, MiniMax excluded). (c) Recall versus cost relative to plain text when \cref{eq:route} routes each document either to an image with anchors or to plain text. Panel (c) sweeps $\tau$ and uses the four readers with counted costs for both images and plain text.}
 \label{fig:density}
 \end{figure}
 
 \Cref{fig:density} varies the number of flagged strings per 32K-character document from 1 to 256 (per-reader values, including Claude, in \cref{tab:app_density}).
 \name alone degrades as density grows (0.42 at $k{=}1$, 0.24 at $k{=}16$, 0.06 at $k{=}64$), because more strings compete for the pixels prose can give up.
-Anchors are strong while hazards are sparse but lose accuracy and grow expensive as hazards multiply.
+Anchors are strong while flagged strings are sparse, but they lose accuracy and grow expensive as the strings multiply.
 At $k{=}64$, K reaches 0.34 recall for 1.8$\times$ the tokens of COC.
 At $k{=}4$, X recovers 0.98 of the needles while costing 13\% less than COC and 20\% less than K.
 Under the precision-aware F1, however, X and K do not differ (pooled over $k\in\{1,4,16\}$: $-$0.01, CI [$-$0.07, 0.04]), and several readers return most of the anchor list at $k\ge4$.
@@ -369,9 +368,6 @@ Agents may resample images when reading them, and $N{=}10$ per cell is small, so
 
 \section{Reproducibility and Ethics}
 \label{app:repro}
-
-\paragraph{Prior work.}
-The detector design, anchors, and text routing follow~\cite{anon2026renderretain}, which is under review; an anonymized copy is included in the supplementary material.
 
 \paragraph{Code and data.}
 The renderer, detector, router, task generators, reader clients, analysis scripts, all logged model outputs, and the scripts that produce every figure and table will be released.

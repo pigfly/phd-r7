@@ -1,39 +1,21 @@
 \section{Experimental Setup}
 \label{sec:setup}
 
-\paragraph{Readers.}
-We treat every VLM as a black box and query it with one stateless request per item at temperature 0 (0.01 for MiniMax).
-A request whose output cannot be parsed is re-sent up to three times.
+We treat every VLM as a black box and send one stateless request per item at temperature 0 (0.01 for MiniMax), re-sending unparseable outputs up to three times.
 The six readers span vendors, scales, and open weights: Claude Sonnet 5.5, Gemini 3.5 Flash-Lite, GPT-6 Luna (minimal reasoning effort), Qwen3-VL-235B-A22B~\cite{bai2025qwen3vl}, Llama 4 Maverick, and MiniMax-M3.
-All means and pooled tests use the five readers other than Claude, which was not run on every arm and is reported per reader only.
-Costs are the prompt tokens billed by each provider, which include the image, the question, and any appended copy.
-MiniMax does not report usage and is excluded from cost averages only.
-Empty responses and transport errors (fewer than 100 of roughly 35{,}000 calls in all experiments reported here, about 0.25\%) are dropped.
-Any other unparseable output, including refusals and degenerate repetition, counts as wrong.
+Means and pooled tests use the five readers other than Claude, which was not run on every arm and is reported per reader only.
+Cost is the average number of prompt tokens per task as counted by each provider, including the image, the question, and any appended text. MiniMax reports no usage and is left out of cost averages only.
+Empty responses and transport errors (fewer than 100 of roughly 35{,}500 calls) are dropped; any other unparseable output counts as wrong.
 
-\paragraph{Tasks.}
-We measure verbatim fidelity with RULER needle-in-a-haystack tasks~\cite{hsieh2024ruler}, re-implemented with the official templates and Paul Graham essays as the haystack.
-The tasks are \emph{single} (one UUID value), \emph{multi-key} (four keys, one queried, numeric values), and \emph{multi-value} (four numeric values for one key).
+Verbatim fidelity is measured with RULER needle-in-a-haystack tasks~\cite{hsieh2024ruler}, re-implemented with the official templates and Paul Graham essays as the haystack: \emph{single} (one UUID value), \emph{multi-key} (four keys, one queried, seven-digit values), and \emph{multi-value} (four seven-digit values for one key).
 Contexts have 16K characters (\cref{sec:main}), 32K--128K characters split into up to three pages (\cref{sec:length}), or 32K characters at milder budgets (\cref{sec:regime}).
-We measure collateral damage on ordinary comprehension with LongBench~\cite{bai2024longbench} MultiFieldQA-en and HotpotQA, from the length-balanced LongBench-E split.
-We replace non-ASCII characters by ``?'' and use contexts of at most 40K characters so that one image holds a document.
-These samples were drawn after the detector was finalized.
-We use $N=25$ items per task and reader for RULER at 16K and 32K characters, $N=20$ for the 32K--128K length study, and $N=50$ for LongBench.
+Collateral damage is measured on held-out LongBench~\cite{bai2024longbench} MultiFieldQA-en and HotpotQA documents of at most 40K characters, drawn after the detector was frozen.
+We use $N=25$ items per task and reader for RULER at 16K and 32K characters, $N=20$ for the length study, and $N=50$ for LongBench.
 
-\paragraph{Arms.}
-All image arms share the renderer of \cref{sec:method}, a 1008-pixel page width, and the budget $B$ of uniform rendering at $s_0\in\{5,6\}$\,px ($\approx$32 and 21 characters per vision token on our long documents).
-\textbf{A} is uniform rendering.
-\textbf{U} searches font family (monospace, Arial, Arial Narrow) and size for the largest uniform text that fits $B$, a training-free stand-in for global configuration search~\cite{cheng2025glyph}.
-\textbf{Z} renders at 10\,px and downsamples the image to $B$, the resolution-compression view of optical encoders~\cite{wei2025deepseekocr}.
-\textbf{R} applies our allocation to randomly chosen ordinary words, matched to within 10\% of the total length of the flagged strings.
-\textbf{B} uses S's layout without enlarging anything and boxes each flagged string, a salience-only control.
-\textbf{S} is our allocation (\cref{sec:allocate}).
-\textbf{K} and \textbf{X} append anchors~\cite{anon2026renderretain} to A and to S, and \textbf{T} gives the plain text.
-Prompts follow the task templates, with the context replaced by the image; RULER answers are requested as JSON.
+All image arms share one renderer (Menlo, 1008-pixel pages) and the budget $B$ of typical COC at $s_0\in\{5,6\}$\,px, about 32 and 21 characters per vision token on our long documents.
+The arms are typical \textbf{COC}; \textbf{font search}, the largest uniform font and size (Menlo, Arial, Arial Narrow) that fits $B$, a training-free stand-in for global configuration search~\cite{cheng2025glyph}; \textbf{downsample}, rendering at 10\,px and shrinking the image to $B$~\cite{wei2025deepseekocr}; \textbf{random words}, our allocation applied to random ordinary words whose total length matches the flagged strings; \textbf{box}, our layout without enlargement and with a box around each flagged string; \textbf{half}, our allocation applied to a random half of the flagged strings; and \textbf{\name}.
+For post-processing we append verbatim anchors~\cite{anon2026renderretain} to COC and to \name (\textbf{COC+anchor}, \textbf{\name+anchor}), and \textbf{text} gives the plain text.
 
-\paragraph{Metrics and statistics.}
-RULER is scored by recall of the gold values (case-insensitive containment, all values), LongBench by token-level F1, as in the original benchmarks.
-Because recall does not penalize extra answers, we also report a precision-aware F1 over the returned values.
-For each reader on each task at each setting (a \emph{cell}) we compute the mean paired difference over items with a 95\% bootstrap confidence interval (10{,}000 resamples).
-Pooled effects average over cells, with 95\% CIs from a bootstrap that resamples both readers and items.
-We count significant cells after Holm correction within each comparison (\cref{tab:pooled}).
+RULER is scored by recall of the gold values (case-insensitive containment) and LongBench by token-level F1, as in the original benchmarks.
+Because recall does not penalize extra answers, we also report a precision-aware F1.
+For each reader, task, and setting (a \emph{cell}) we compute the mean paired difference over items with a 95\% bootstrap interval. Pooled effects average over cells, with intervals from a bootstrap over readers and items, and significant cells are counted after Holm correction (\cref{app:stats}).

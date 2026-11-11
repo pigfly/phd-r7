@@ -1,15 +1,13 @@
 \begin{abstract}
-Rendering long text into images lets vision-language models (VLMs) read it with several times fewer tokens than the text itself.
-This optical compression spends resolution uniformly.
-Yet strings that must be copied exactly, such as identifiers and hashes, are misread into well-formed but wrong answers far more often than prose, and they fail more often as contexts grow.
-We ask where the pixels should go.
-The renderer, unlike the model, sees the text, so it can flag high-entropy strings and draw them larger while drawing prose smaller, within the vision-token budget of uniform rendering.
-This allocation is training-free, query-independent, and needs only black-box access to the VLM.
-Across five commercial and open-weight VLMs accessed through APIs, it raises RULER needle recall over uniform rendering by 0.55 and 0.43 at the two densest budgets (95\% CIs [0.48, 0.62] and [0.27, 0.56]).
-At 32K--128K characters it raises recall by 0.48 while using up to 27\% fewer billed tokens.
-Enlarging random words, or boxing the needles without enlarging them, does not help, so the gain comes from legibility of the targeted strings.
-The gain shrinks as the budget relaxes and is no larger than a font search at 10\,px.
-On LongBench, allocation doubles the recall of naturally occurring identifiers that the detector flags (0.23 to 0.48) without changing QA accuracy relative to uniform rendering; strings the detector misses gain nothing.
-For flagged targets, verbatim anchors from prior work are as accurate on the allocated image as on a uniform one, and cheaper wherever allocation shrinks the image.
-All image arms remain well below plain text on QA: allocation makes optical compression safer for identifiers, not a substitute for text.
+Context optical compression (COC) renders long text into images so that a vision-language model (VLM) can read it with several times fewer tokens.
+Typical COC gives every character the same pixels.
+We argue that this misallocates the budget, because information is spread unevenly over a rendered page.
+A reader can recover predictable prose from its language prior, but characters with high residual entropy, such as those of identifiers and hashes, must come from the pixels.
+We estimate this residual entropy from the text alone, which yields an information map of any rendered page, and we summarize the map with an entropy-uniformity score $\mathcal{U}$.
+Across 13 renderings of the same documents at an equal vision-token budget, $\mathcal{U}$ tracks needle recall over five VLMs (Spearman $\rho=0.84$).
+Font search and downsampling leave $\mathcal{U}$ unchanged and do not help, and enlarging random words lowers both.
+Flattening the map is then the natural remedy.
+Our method, \name, enlarges high-entropy strings and shrinks prose within the budget of typical COC, without training or model access.
+It raises RULER needle recall by 0.55 and 0.43 at the two densest budgets and by 0.48 at 32K--128K characters while using up to 27\% fewer tokens per task, doubles the recall of flagged identifiers in LongBench documents, and leaves QA accuracy unchanged.
+The gain shrinks at milder budgets, and every image-based method still trails plain text on QA.
 \end{abstract}

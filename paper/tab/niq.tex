@@ -1,15 +1,16 @@
 \begin{table}[t]
 \centering
-\caption{\textbf{Naturally occurring strings.} Exact-copy recall on LongBench documents ($\le$40K characters, 6\,px budget, $N{=}60$ each). \emph{Flagged}: targets the detector flags (report and grant numbers, ISBNs, URLs, \ldots). \emph{Detector-independent}: any digit-bearing token, sampled without the detector (1/60 flagged; mostly short numbers and versions). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ A above/below zero. Billed tokens: four readers that report usage.}
+\caption{\textbf{Naturally occurring strings.} Exact-copy recall on LongBench documents ($\le$40K characters, 6\,px budget, $N{=}60$ each). \emph{Flagged}: targets the detector flags (report and grant numbers, ISBNs, URLs, \ldots). \emph{Detector-independent}: any digit-bearing token, sampled without the detector (1/60 flagged; mostly short numbers and versions). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ COC above/below zero. Avg.\ tokens / task: four readers that report usage.}
 \label{tab:niq}
-\small
+\footnotesize
 \setlength{\tabcolsep}{2.2pt}
-\resizebox{\columnwidth}{!}{%
+\begin{adjustbox}{max width=\columnwidth}
 \begin{tabular}{l ccccc ccccc}
 \toprule
 & \multicolumn{5}{c}{Flagged targets} & \multicolumn{5}{c}{Detector-independent targets} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-11}
-Reader & A & S & K & X & T & A & S & K & X & T \\
+Reader & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text \\
+ & & & {\scriptsize anchor} & {\scriptsize anchor} & & & & {\scriptsize anchor} & {\scriptsize anchor} & \\
 \midrule
 Gemini 3.5 Flash-Lite & 0.72 & 0.80 & 0.87$^{\ast}$ & 0.90$^{\ast}$ & 0.92 & 0.85 & 0.87 & 0.82 & 0.73$^{\dagger}$ & 1.00 \\
 GPT-6 Luna & 0.25 & 0.55$^{\ast}$ & 0.85$^{\ast}$ & 0.82$^{\ast}$ & 1.00 & 0.57 & 0.52 & 0.62 & 0.40$^{\dagger}$ & 0.98 \\
@@ -18,7 +19,8 @@ Llama 4 Maverick & 0.05 & 0.20$^{\ast}$ & 0.55$^{\ast}$ & 0.62$^{\ast}$ & 0.97 &
 MiniMax-M3 & 0.03 & 0.39$^{\ast}$ & 0.65$^{\ast}$ & 0.67$^{\ast}$ & 0.98 & 0.27 & 0.15 & 0.22 & 0.17 & 0.93 \\
 \midrule
 \textit{Mean} & 0.23 & 0.48 & 0.74 & 0.76 & 0.97 & 0.45 & 0.44 & 0.44 & 0.36 & 0.96 \\
-\textit{Billed tokens} & 1181 & 1035 & 1267 & 1128 & 5324 & 1111 & 1067 & 1225 & 1173 & 4942 \\
+\textit{Avg.\ tokens / task} & 1181 & 1035 & 1267 & 1128 & 5324 & 1111 & 1067 & 1225 & 1173 & 4942 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table}

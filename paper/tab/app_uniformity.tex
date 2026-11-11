@@ -1,0 +1,68 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Entropy uniformity and recall for every arm and setting.} $\U$ (\cref{eq:uniformity}, $n{=}48$, top 160 windows), mean load $\bar\ell$ in bits per vision token, and recall averaged over the five non-Claude readers. Within each setting all arms share one budget.}
+\label{tab:app_uniformity}
+\footnotesize
+\begin{tabular}{l l c c c}
+\toprule
+Setting & Arm & $\U$ & $\bar\ell$ & Recall \\
+\midrule
+16K, 5\,px & COC & 0.386 & 29.2 & 0.09 \\
+ & font search & 0.391 & 30.4 & 0.12 \\
+ & downsample & 0.386 & 30.2 & 0.17 \\
+ & random words & 0.356 & 29.7 & 0.10 \\
+ & half & 0.417 & 31.4 & 0.43 \\
+ & \name & 0.460 & 30.7 & 0.64 \\
+\midrule
+16K, 6\,px & COC & 0.389 & 19.5 & 0.21 \\
+ & font search & 0.391 & 21.4 & 0.21 \\
+ & downsample & 0.386 & 20.8 & 0.19 \\
+ & box & 0.391 & 19.5 & 0.15 \\
+ & random words & 0.361 & 26.1 & 0.10 \\
+ & half & 0.412 & 28.0 & 0.47 \\
+ & \name & 0.466 & 27.4 & 0.67 \\
+\midrule
+32K, 8\,px & COC & 0.363 & 12.5 & 0.15 \\
+ & font search & 0.374 & 13.3 & 0.26 \\
+ & \name & 0.444 & 12.8 & 0.53 \\
+\midrule
+32K, 10\,px & COC & 0.363 & 8.2 & 0.40 \\
+ & font search & 0.373 & 8.7 & 0.56 \\
+ & \name & 0.410 & 9.2 & 0.60 \\
+\midrule
+32K, 6\,px & COC & 0.365 & 19.2 & 0.12 \\
+ & \name & 0.448 & 25.2 & 0.60 \\
+\midrule
+64K, 6\,px & COC & 0.351 & 19.2 & 0.08 \\
+ & \name & 0.419 & 26.2 & 0.57 \\
+\midrule
+128K, 6\,px & COC & 0.343 & 19.3 & 0.07 \\
+ & \name & 0.394 & 28.5 & 0.55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Robustness of the recall--uniformity correlation} to the window length $n$ and the tail statistic. Spearman $\rho$ over the 13 arm--budget points at 16K characters (equal budget), over all 25 points, and over single images at 16K (reader-averaged recall).}
+\label{tab:app_urobust}
+\footnotesize
+\begin{tabular}{l c c c c}
+\toprule
+Tail statistic & $n$ & $\rho$ (16K points) & $\rho$ (all points) & $\rho$ (images) \\
+\midrule
+top 160 windows & 16 & 0.86 & 0.64 & 0.35 \\
+top 160 windows & 32 & 0.84 & 0.74 & 0.45 \\
+top 160 windows & 48 & 0.84 & 0.80 & 0.48 \\
+top 160 windows & 64 & 0.86 & 0.80 & 0.51 \\
+top 1\% of windows & 16 & 0.86 & 0.54 & 0.35 \\
+top 1\% of windows & 32 & 0.84 & 0.58 & 0.45 \\
+top 1\% of windows & 48 & 0.84 & 0.61 & 0.48 \\
+top 1\% of windows & 64 & 0.86 & 0.60 & 0.51 \\
+maximum window & 16 & 0.78 & 0.77 & 0.26 \\
+maximum window & 32 & 0.90 & 0.87 & 0.40 \\
+maximum window & 48 & 0.86 & 0.78 & 0.53 \\
+maximum window & 64 & 0.86 & 0.75 & 0.52 \\
+\bottomrule
+\end{tabular}
+\end{table}

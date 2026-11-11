@@ -3,63 +3,67 @@
 
 \input{tab/baselines}
 
-\subsection{Equal-budget comparison}
-\label{sec:main}
+\subsection{Does entropy uniformity predict recall?}
+\label{sec:uniformity}
 
-\Cref{tab:baselines} compares all image arms at the same vision-token budget on 16K-character RULER documents.
-Averaged over five readers, uniform rendering recovers 8\% of needles at the denser budget and 22\% at the lighter one.
-Claude Sonnet 5.5 (0.57) and Gemini (0.88) are the only readers above 0.11 at 6\,px.
-Allocation (S) raises the mean to 0.64 and 0.65, a pooled gain of 0.55 and 0.43 whose confidence intervals exclude zero by a wide margin (\cref{tab:pooled}).
-After Holm correction, the gain is significant in 14 and 11 of 15 cells and never significantly negative.
-The two stronger uniform baselines barely help: font/size search (U) reaches 0.12 and 0.21, and render-then-downsample (Z) 0.16 and 0.19.
-Both plausibly fall short because they spread legibility evenly over all characters.
-At 6\,px, S is also 8\% cheaper than uniform rendering (842 vs.\ 920 billed tokens), because prose shrinks more than the enlarged strings grow.
-The weaker readers gain most (at 6\,px Llama 4 Maverick from 0.00 to 0.59, GPT from 0.11 to 0.65), while Gemini, already at 0.88, gains 0.12.
-Under the precision-aware F1, which penalizes returning several candidate values, the gains are smaller (0.46 and 0.34 pooled) but remain significant in at least 9 of 15 cells.
+\Cref{fig:teaser} (right) plots five-reader recall against $\U$ for every rendering of the 16K-character RULER documents at the 5 and 6\,px budgets, 13 arm--budget points in all.
+The two are rank-correlated with Spearman $\rho=\UrhoEq$ ($p=\UpEq$).
+Random words have the lowest uniformity (0.36) and recall (0.10).
+COC, font search, downsampling, and the box control sit together at $\U=0.385$--$0.391$ with recall 0.09--0.21; half enlargement reaches 0.41--0.42 and 0.43--0.47, and \name 0.46--0.47 and 0.64--0.67.
+Over single documents the correlation is weaker ($\rho=\UrhoItems$ over \UnItems{} images), because $\U$ summarizes a page while each question asks about one string.
 
-\paragraph{Targeting, enlargement, or salience?}
-Two controls separate the ingredients of S.
-Arm R runs the same allocation on randomly chosen ordinary words, matched in total length, so its sizes and cost are close to those of S while the needles shrink with the prose.
-R recovers 0.10 of the needles at both budgets, and S exceeds it by 0.54 and 0.56.
-Arm B keeps every glyph at the uniform size but draws a box around each flagged string, which makes the needle easy to \emph{find} but not easier to \emph{read}.
-B is 0.53 below S and slightly worse than uniform rendering ($-$0.05, CI upper bound $-$0.001; \cref{tab:pooled}), perhaps because the box line touches the small glyphs.
-The gain therefore comes from making the targeted strings legible, not from layout changes or from pointing at the needle.
+Because the detector targets high-entropy strings, \name raises $\U$ by construction, so the correlation would be circular if it rested on \name alone.
+Three groups of points do not depend on the detector's choices.
+Font search and downsampling change the size of every glyph, which leaves $\U$ almost unchanged (\cref{sec:map}). As predicted, they barely change recall (+0.04 and +0.08 at 5\,px, $-$0.01 and $-$0.03 at 6\,px).
+Random words receive the same allocation as \name, but on low-entropy text. The needles shrink with the prose, the hot spots get hotter, and recall falls below COC at 6\,px.
+Half enlargement picks the enlarged strings at random, so its two halves form a controlled comparison within the same images.
+Enlarged needles are recalled 74\% (5\,px) and 83\% (6\,px) of the time, the others 12\% and 11\%.
+At 6\,px the non-enlarged needles do worse than under COC (0.24), because they shrink to 5\,px with the prose and their load rises.
+Over the whole document, half enlargement lands between COC and \name (+0.21 to +0.30 over COC, and 0.31 below \name; \cref{tab:pooled}).
+
+$\U$ measures the shape of the load at a given budget, not its level.
+In every other setting (8 and 10\,px, 32K--128K characters) \name has both the higher $\U$ and the higher recall, and at 8 and 10\,px, where font search was also run, the three arms are ranked identically by $\U$ and by recall.
+Across settings the mean load $\bar\ell$ also changes, yet pooling all \UnAll{} points still gives $\rho=\UrhoAll$. With other window lengths and tail statistics, $\rho$ at 16K ranges from \UrhoMin{} to \UrhoMax{} (\cref{app:uniformity}).
 
 \input{tab/pooled}
 
-\subsection{Why does allocation work?}
+\subsection{Equal-budget comparison}
+\label{sec:main}
+
+\Cref{tab:baselines} compares all arms at the same vision-token budget.
+Averaged over five readers, typical COC recovers 8\% of needles at the denser budget and 22\% at the lighter one; only Claude (0.57) and Gemini (0.88) exceed 0.11 at 6\,px.
+\name raises the mean to 0.64 and 0.65, a pooled gain of 0.55 and 0.43 (\cref{tab:pooled}), significant in 14 and 11 of 15 cells after Holm correction and never significantly negative.
+Font search reaches 0.12 and 0.21, and downsampling 0.16 and 0.19.
+At 6\,px \name also uses 8\% fewer tokens per task than COC (842 vs.\ 920), because prose shrinks more than the enlarged strings grow.
+The weaker readers gain most (Llama 4 Maverick from 0.00 to 0.59, GPT from 0.11 to 0.65 at 6\,px), and Gemini, already at 0.88, gains 0.12.
+Under the precision-aware F1 the gains are smaller (0.46 and 0.34 pooled) but remain significant in at least 9 of 15 cells.
+Two controls isolate the ingredients.
+Random words, with sizes and cost close to those of \name, recover 0.10 of the needles at both budgets, 0.54 and 0.56 below \name.
+The box control makes the needle easy to find but not easier to read. It is 0.53 below \name and slightly below COC ($-$0.05, interval upper bound $-$0.001), perhaps because the box line touches the small glyphs.
+The gain thus comes from making the high-entropy strings legible, not from layout changes or from pointing at them.
+
+\subsection{Why does flattening help?}
 \label{sec:why}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/why.pdf}
-\caption{\textbf{Reading is limited by what the language prior cannot supply.} (a) Controlled study: 32-character targets of three types hidden in the same 16K-character documents and rendered uniformly at 5--10\,px. Among answers in which the reader found the target, the share copied exactly (95\% CI), for the three readers that found enough targets of every type. (b) Single-UUID needles at the 5 and 6\,px budgets: wrong hexadecimal characters per answer of the right length. Under uniform rendering most such answers are fabricated, and under allocation most are exact.}
+\caption{\textbf{Reading is limited by what the language prior cannot supply.} (a) 32-character targets of three types hidden in the same 16K-character documents and rendered by COC at 5--10\,px: share copied exactly among answers that found the target (95\% CI), for the three readers that found enough targets of every type. (b) Single-UUID needles at the 5 and 6\,px budgets: wrong hexadecimal characters per answer of the right length. Under COC most such answers are fabricated; under \name most are exact.}
 \label{fig:why}
 \end{figure}
 
-\Cref{sec:principle} predicts that readers fail where the pixels must supply what the language prior cannot.
-Three observations on the single-UUID needles of \cref{tab:baselines} (five readers, both budgets, and the box runs) are consistent with this.
+The account of \cref{sec:principle} predicts that readers fail where the pixels must supply what the prior cannot.
+The single-UUID needles of \cref{tab:baselines} agree.
+Under COC a third of the answers are empty.
+In answers of the right length the four hyphens, which the format predicts, are correct 99\% of the time and the 32 hexadecimal characters 51\%. \name raises the hexadecimal characters to 91\% and leaves the hyphens at 98\%, and the gain holds for every reader (from 0.15--0.96 to 0.82--1.00).
+Wrong answers are mostly fabricated rather than misread: 59\% of right-length answers have at least 8 of 32 characters wrong, with a median of 27, close to the 30 expected from guessing, and only 23\% are exact (\cref{fig:why}b).
+The weaker readers drive this pattern; Gemini almost never fabricates and errs by misreading (\cref{app:why}).
+Under \name, 58\% of the answers are exact and 9\% fabricated.
+Among partial misreads under COC, the most frequent confusion is 8$\to$0, two glyphs that differ by a small stroke.
 
-\emph{The format is read, the content is not.}
-Under uniform rendering, a third of the answers are empty.
-In the answers of the right length, the four hyphens, which the UUID format predicts, are correct 99\% of the time, but the 32 hexadecimal characters only 51\% of the time.
-Allocation raises the hexadecimal characters to 91\% and leaves the hyphens at 98\%. The gain holds for every reader (from 0.15--0.96 to 0.82--1.00).
-
-\emph{Wrong answers are fabricated, not misread.}
-If uniform rendering merely blurred a few glyphs, errors would be spread over a few characters.
-Instead, 59\% of the right-length answers have at least 8 of 32 characters wrong, with a median of 27, close to the 30 expected from guessing (\cref{fig:why}b). Only 23\% are exact.
-The weaker readers drive this pooled pattern. All right-length answers of Llama and MiniMax, and most of those of Qwen and GPT, reproduce the format and invent the content, consistent with \cref{eq:reading}. Gemini, the strongest reader, almost never fabricates and errs by misreading (\cref{app:why}).
-Under allocation, 58\% of the answers are exact and 9\% are fabricated.
-Among partial misreads under uniform rendering, the most frequent confusion is 8$\to$0 (24 of 89 wrong characters). The two glyphs differ by a small stroke, which a patch holding three or four characters blurs.
-
-\emph{The pixels needed depend on predictability.}
-To test this, we hid one 32-character value in the same RULER documents (16K characters) and varied only its type: an English phrase from LongBench passages, random common words, or random hexadecimal characters.
-Each document was rendered uniformly at 4--10\,px. We scored the answers in which the reader found the target (at least 50\% similar to it), which separates transcription from search (\cref{app:why}).
-MiniMax and Qwen3-VL rarely found English or word targets and usually answered with the key instead, so we compare transcription for the three readers that found enough targets of every type.
-For each of them, a found hexadecimal string is copied exactly far less often than a found English phrase at 5--10\,px: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a). Random words reach 0.89, 0.53, and 0.29.
+To vary predictability at fixed glyph size, we hid one 32-character value in the same documents and changed only its type: an English phrase, random common words, or random hexadecimal characters, rendered by COC at 4--10\,px.
+For each of the three readers that found enough targets of every type, a found hexadecimal string is copied exactly far less often than a found English phrase: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a).
 Hexadecimal and English targets also differ in their glyphs, so this test supports but does not isolate the role of the prior (\cref{app:why}).
-
-The account is also consistent with the boundaries of \cref{tab:pooled}: boxing does not help, suggesting legibility rather than search alone is the bottleneck; at 10\,px font/size search recovers most of the gain (S$-$U $+$0.04); dense hazards leave too few pixels to lift any string (\cref{app:density}); and shrinking prose costs little (\cref{sec:longbench}).
 
 \subsection{Scaling with context length}
 \label{sec:length}
@@ -67,59 +71,45 @@ The account is also consistent with the boundaries of \cref{tab:pooled}: boxing 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/scaling.pdf}
-\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three image pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean over five readers. (b) Billed prompt tokens averaged over the four of these readers that report usage; log scale.}
+\caption{\textbf{Context length.} RULER at 32K--128K characters (6\,px budget, up to three pages, $N{=}20$ per task). (a) Needle recall; thin lines are individual readers (including Claude), thick lines the mean of five readers. (b) Average prompt tokens per task over the four of these readers that report usage; log scale.}
 \label{fig:scaling}
 \end{figure}
 
-Optical compression is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
-Under uniform rendering, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
-Allocation stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
-It also uses 13\%, 23\%, and 27\% fewer billed tokens than uniform rendering at the three lengths.
-On the four readers with billed costs for both, it uses 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than plain text, which every reader answers with recall of at least 0.99.
-Individual readers differ widely (0.47 to 0.97 at 128K for S; \cref{tab:app_length}).
+COC is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
+Under COC, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
+\name stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
+It uses 13\%, 23\%, and 27\% fewer tokens per task than COC at the three lengths, and 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than plain text, which every reader answers with recall of at least 0.99.
+Readers differ widely (0.47 to 0.97 at 128K for \name; \cref{tab:app_length}).
 
 \subsection{Milder budgets}
 \label{sec:regime}
 
-Our main budgets put most readers near the floor of uniform rendering, where gains are easiest to obtain.
-We therefore repeated the single and multi-key tasks at 32K characters with base sizes of 8 and 10\,px, which cost 1.5 and 2.3 times as many vision tokens as 6\,px.
-Uniform rendering improves with size (multi-key: 0.26 at 8\,px, 0.60 at 10\,px), and the gain of S shrinks accordingly, to 0.38 at 8\,px and 0.20 at 10\,px (\cref{tab:pooled}).
-The font/size search catches up: S beats U by 0.26 at 8\,px but only by 0.04 at 10\,px, which is not significant.
-Single UUIDs remain hard even here (A 0.20, S 0.44 at 10\,px).
-Allocation is most useful where the budget is tight, which is also where optical compression saves the most.
+Our main budgets put most readers near the floor of COC, where gains are easiest.
+We therefore repeated single and multi-key at 32K characters with base sizes of 8 and 10\,px, which cost 1.5 and 2.3 times as many vision tokens as 6\,px.
+COC improves with size (multi-key 0.26 at 8\,px and 0.60 at 10\,px), and the gain of \name shrinks to 0.38 at 8\,px and 0.20 at 10\,px.
+Font search catches up: \name beats it by 0.26 at 8\,px but only by 0.04 at 10\,px, which is not significant.
+Single UUIDs remain hard (COC 0.20, \name 0.44 at 10\,px).
+All pooled comparisons at 5, 6, 7, and 8\,px, with recall and F1, are listed in \cref{tab:app_pooled,tab:app_pooled2} of the supplementary, and the natural identifiers at 5--7\,px in \cref{tab:app_niqfront}.
+Reallocation helps most where the budget is tight, which is also where COC saves the most.
 
-\subsection{Naturally occurring strings}
+\subsection{Natural strings and ordinary comprehension}
 \label{sec:niq}
-
-
-RULER needles are synthetic, and our detector was designed with such strings in mind.
-We built two sets of 60 questions from LongBench documents of up to 40K characters (ten each from six tasks).
-Each asks for the exact string that follows a unique six-word phrase (\cref{app:niq}).
-In the first set, targets are strings the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs.
-Here allocation doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer billed tokens than uniform rendering (\cref{tab:niq}).
-In the second set, targets are any digit-bearing tokens of at least four characters, sampled without the detector.
-The detector flags only one of the 60, because most are short numbers, percentages, and version strings such as ``25,000'' or ``2.0.13''.
-On these, every image arm is poor (0.36--0.45 against 0.96 for text), and allocation neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
-Shrinking prose to make room for flagged strings thus did not measurably damage the strings the detector misses, but nothing in the image protects them either.
-A synthetic detector ablation agrees: needles the regex misses leave S at uniform recall (0.33 vs.\ 0.32), while an oracle detector would reach 0.82 (\cref{tab:detector}).
-
-\subsection{Anchors on the allocated image}
-\label{sec:anchors}
-
-Anchors~\cite{anon2026renderretain} copy the flagged strings into the prompt.
-In the essay haystacks of \cref{tab:baselines}, the only flagged strings are the needles. The anchor list \emph{is} then the answer, and K and X reach 0.90--1.00 by copying. On multi-key, readers often return the whole list (F1 0.46--0.52; \cref{app:rescore}).
-We therefore compare K and X on the flagged natural identifiers, where documents carry 5.3 distinct anchors and a random pick would score 0.44.
-Across base sizes of 5, 6, and 7\,px, X reaches 0.75--0.81 and lies on or above K's recall--cost frontier by 0.02--0.05, though no pooled interval excludes zero (\cref{app:anchors}).
-At 64K--128K characters, X costs 29--31\% less than K, but under F1 the anchors add nothing over allocation alone.
-When the target is not flagged, anchors can mislead (X 0.36 vs.\ 0.44 for S and K on the detector-independent set).
-Beyond about 16 flagged strings per 32K characters, anchors on either image become expensive and ineffective, and routing to text~\cite{anon2026renderretain} takes over. On real corpora, prose goes to images and code and logs to text (\cref{app:density,app:corpora}).
-
-\subsection{Effect on ordinary comprehension}
 \label{sec:longbench}
 
+RULER needles are synthetic, and the detector was designed with such strings in mind.
+We therefore built two sets of 60 questions from LongBench documents of up to 40K characters, each asking for the exact string that follows a unique six-word phrase (\cref{app:niq}).
+For targets the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs, \name doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer tokens per task (\cref{tab:niq}).
+For digit-bearing targets sampled without the detector, mostly short numbers and version strings such as ``25,000'' or ``2.0.13'', only one of 60 is flagged. Every image arm is poor on these (0.36--0.45 against 0.96 for text), and \name neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
+A synthetic ablation agrees: needles the regex misses leave \name at COC recall (0.33 vs.\ 0.32), whereas an oracle detector would reach 0.82 (\cref{tab:detector}).
+Shrinking prose could also hurt questions unrelated to identifiers.
+On held-out LongBench QA (\cref{tab:longbench}), F1 changes by +0.02 [$-$0.02, 0.06] relative to COC, which rules out losses larger than about 0.02; one reader--task cell is significantly negative.
+Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
+\name removes a failure specific to identifiers but does not make COC a substitute for text.
 
-Shrinking prose could hurt questions unrelated to identifiers.
-On held-out LongBench documents of up to 40K characters (\cref{tab:longbench}), pooled F1 changes by +0.02 [$-$0.02, 0.06] for S and +0.02 [$-$0.03, 0.07] for X relative to uniform rendering, which rules out losses larger than about 0.03 (\cref{tab:pooled,tab:app_pooled2}). One reader--task cell is significantly negative for S, and none for X.
-Relative to plain text, however, every image arm loses: X trails it by 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
-Allocation thus removes a failure specific to identifiers but does not make optical compression a substitute for text.
+\subsection{Anchors as post-processing}
+\label{sec:anchors}
 
+Anchors~\cite{anon2026renderretain} append the flagged strings verbatim after the question. They leave the map unchanged, so we treat them as post-processing that can be added to either image.
+In the RULER essays the only flagged strings are the needles, so the anchor list is the answer and both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).
+On flagged natural identifiers, where documents carry 5.3 anchors on average, \name+anchor is on or above the recall--cost frontier of COC+anchor by 0.02--0.05 across 5--7\,px, though no pooled interval excludes zero, and at 64K--128K characters it costs 29--31\% less (\cref{app:anchors}).
+When the target is not flagged, anchors can mislead (0.36 vs.\ 0.44 without them). Beyond about 16 flagged strings per 32K characters, anchors on either image become expensive and routing to text takes over (\cref{app:density}).

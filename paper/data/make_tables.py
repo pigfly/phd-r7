@@ -166,26 +166,30 @@ for d in ("s5", "s6"):
     mf += [cell(f1[a], b1) for a in "AUZRS"] + [cell(f1[a], b2) for a in "KX"]
     mb += [f"{(avg(RV[f'rbx_{d}_{k}'][a]['billed'] for k in TASKS3) if a != 'R' else t[f'{d}|mean']['billed_R']):.0f}" for a in "AUZRSKX"]
 rows += ["\\textit{Mean recall} & " + " & ".join(mr) + " \\\\", "\\textit{Mean F1} & " + " & ".join(mf) + " \\\\",
-         "\\textit{Billed tokens} & " + " & ".join(mb) + " \\\\"]
+         "\\textit{Avg.\\ tokens / task} & " + " & ".join(mb) + " \\\\"]
 pa = lambda f, c: PO[f"{f}|{c}|recall"]
+ARMN = [("COC", "one size"), ("Font", "search"), ("Down-", "sample"), ("Random", "words"), ("\\name", "(ours)"), ("COC", "+anchor"), ("\\name", "+anchor")]
+HDR1 = ("Reader & " + " & ".join(f"{a}" for a, _ in ARMN * 2) + " \\\\\n" +
+        " & " + " & ".join(f"{{\\scriptsize {b}}}" for _, b in ARMN * 2) + " \\\\")
 (TAB / "baselines.tex").write_text(r"""\begin{table*}[t]
 \centering
-\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall per reader averaged over three NIAH tasks ($N{=}25$ each), at two budgets (uniform 5\,px $\approx$ 32 and 6\,px $\approx$ 21 characters per vision token). A, U, Z, R, and S are images with the same budget: uniform, best uniform font/size, render-then-downsample, \emph{random} ordinary words enlarged by our allocation (matched in total length), and flagged strings enlarged (ours). K and X append anchors~\cite{anon2026renderretain} to A and S. \textbf{Bold}: best within each group. Means, F1 (precision-aware: extra returned values count against the reader), and billed tokens are over the five readers other than Claude$^{\ddagger}$, which was not run on R and X. Pooled over tasks and readers, S$-$A is """ + f"+{pa('tab1_s5','S-A')['pooled']:.2f} [{pa('tab1_s5','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s5','S-A')['ci_readers_items'][1]:.2f}] at 5\\,px and +{pa('tab1_s6','S-A')['pooled']:.2f} [{pa('tab1_s6','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s6','S-A')['ci_readers_items'][1]:.2f}] at 6\\,px (95\\% CI, readers and items resampled; \\cref{{tab:pooled}})." + r""" On these tasks the anchors contain the answer (\cref{sec:anchors}), so K and X measure copying rather than reading.}
+\caption{\textbf{Equal-budget comparison on RULER needle retrieval (16K characters).} Recall per reader, averaged over three NIAH tasks ($N{=}25$ each). All image columns share the vision-token budget of typical COC at 5 or 6\,px. \textbf{Bold}: best within each group. Mean rows exclude Claude$^{\ddagger}$, which was not run on random words or \name+anchor. Pooled over tasks and readers, \name$-$COC is """ + f"+{pa('tab1_s5','S-A')['pooled']:.2f} [{pa('tab1_s5','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s5','S-A')['ci_readers_items'][1]:.2f}] at 5\\,px and +{pa('tab1_s6','S-A')['pooled']:.2f} [{pa('tab1_s6','S-A')['ci_readers_items'][0]:.2f}, {pa('tab1_s6','S-A')['ci_readers_items'][1]:.2f}] at 6\\,px (95\\% CI; \\cref{{tab:pooled}})." + r""" On these tasks the anchors contain the answer, so the anchor columns measure copying rather than reading (\cref{sec:anchors}).}
 \label{tab:baselines}
-\small
-\setlength{\tabcolsep}{3.4pt}
-\resizebox{\textwidth}{!}{%
+\footnotesize
+\setlength{\tabcolsep}{2.6pt}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{l ccccc cc ccccc cc}
 \toprule
-& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars/vtok)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars/vtok)} \\
+& \multicolumn{7}{c}{5\,px budget ($\approx$32 chars per vision token)} & \multicolumn{7}{c}{6\,px budget ($\approx$21 chars per vision token)} \\
 \cmidrule(lr){2-8}\cmidrule(lr){9-15}
-& \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors} \\
+& \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors (post-proc.)} & \multicolumn{5}{c}{equal-budget image} & \multicolumn{2}{c}{+ anchors (post-proc.)} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-8}\cmidrule(lr){9-13}\cmidrule(lr){14-15}
-Reader & A & U & Z & R & S (ours) & K & X & A & U & Z & R & S (ours) & K & X \\
+""" + HDR1 + r"""
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table*}
 """)
 
@@ -194,34 +198,42 @@ def prow(label, fam, cmp, met="recall"):
     r = PO[f"{fam}|{cmp}|{met}"]; lo, hi = r["ci_readers_items"]
     f = lambda x: "0.00" if abs(x) < 0.005 else f"{x:+.2f}"
     return f"{label} & {f(r['pooled'])} & [{f(lo)}, {f(hi)}] & {r['sig_pos_holm']}/{r['cells']} & {r['sig_neg_holm']} \\\\"
-prs = [r"\multicolumn{5}{l}{\textit{Targeting vs.\ uniform and alternatives (RULER)}} \\",
-       prow("S$-$A, 16K, 5\\,px", "tab1_s5", "S-A"), prow("S$-$A, 16K, 6\\,px", "tab1_s6", "S-A"),
-       prow("S$-$A, 32K--128K, 6\\,px", "length", "S-A"),
-       prow("S$-$U (font/size search), 6\\,px", "tab1_s6", "S-U"), prow("S$-$R (random words), 6\\,px", "tab1_s6", "S-R"),
-       prow("B$-$A (box, no enlargement), 6\\,px", "box_s6", "B-A"), prow("S$-$B, 6\\,px", "box_s6", "S-B"),
+HALF = json.loads((EXP / "analysis_half.json").read_text())
+def hrow(label, key):
+    r = HALF[key]; lo, hi = r["ci_readers_items"]; f = lambda x: "0.00" if abs(x) < 0.005 else f"{x:+.2f}"
+    return f"{label} & {f(r['pooled'])} & [{f(lo)}, {f(hi)}] & {r['sig_pos_holm']}/{r['cells']} & {r['sig_neg_holm']} \\\\"
+EQ = "\\name"
+prs = [r"\multicolumn{5}{l}{\textit{Equal budget, RULER}} \\",
+       prow(f"{EQ} $-$ COC, 16K, 5\\,px", "tab1_s5", "S-A"), prow(f"{EQ} $-$ COC, 16K, 6\\,px", "tab1_s6", "S-A"),
+       prow(f"{EQ} $-$ COC, 32K--128K, 6\\,px", "length", "S-A"),
+       prow(f"{EQ} $-$ font search, 6\\,px", "tab1_s6", "S-U"), prow(f"{EQ} $-$ random words, 6\\,px", "tab1_s6", "S-R"),
+       prow("box $-$ COC, 6\\,px", "box_s6", "B-A"), prow(f"{EQ} $-$ box, 6\\,px", "box_s6", "S-B"),
+       hrow("half $-$ COC, 5\\,px", "half_s5|H-A|recall"), hrow("half $-$ COC, 6\\,px", "half_s6|H-A|recall"),
+       hrow(f"{EQ} $-$ half, 6\\,px", "half_s6|S-H|recall"),
        r"\midrule \multicolumn{5}{l}{\textit{Milder budgets (32K)}} \\",
-       prow("S$-$A, 10\\,px", "s10", "S-A"), prow("S$-$U, 10\\,px", "s10", "S-U"),
+       prow(f"{EQ} $-$ COC, 10\\,px", "s10", "S-A"), prow(f"{EQ} $-$ font search, 10\\,px", "s10", "S-U"),
        r"\midrule \multicolumn{5}{l}{\textit{Natural strings (LongBench documents)}} \\",
-       prow("S$-$A, flagged targets", "niq2_s6", "S-A"), prow("S$-$A, detector-independent", "niq3_s6", "S-A"),
+       prow(f"{EQ} $-$ COC, flagged targets", "niq2_s6", "S-A"), prow(f"{EQ} $-$ COC, detector-indep.", "niq3_s6", "S-A"),
        r"\midrule \multicolumn{5}{l}{\textit{Ordinary comprehension (LongBench F1)}} \\",
-       prow("X$-$A", "longbench", "X-A", "f1"), prow("X$-$T (plain text)", "longbench", "X-T", "f1"),
-       r"\midrule \multicolumn{5}{l}{\textit{Anchors: X$-$K (all eight settings in \cref{tab:app_pooled,tab:app_pooled2})}} \\",
+       prow(f"{EQ} $-$ COC", "longbench", "S-A", "f1"), prow(f"{EQ}+anchor $-$ text", "longbench", "X-T", "f1"),
+       r"\midrule \multicolumn{5}{l}{\textit{Post-processing: {\name}+anchor $-$ COC+anchor (all settings: \cref{tab:app_pooled,tab:app_pooled2})}} \\",
        prow("RULER 16K, 6\\,px (F1)", "tab1_s6", "X-K", "f1"), prow("multi-key 64K--128K (F1)", "long_kx", "X-K", "f1"),
-       prow("natural, flagged, 6\\,px", "niq2_s6", "X-K"), prow("natural, detector-indep.", "niq3_s6", "X-K")]
+       prow("natural, flagged, 6\\,px", "niq2_s6", "X-K")]
 (TAB / "pooled.tex").write_text(r"""\begin{table}[t]
 \centering
-\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap resampling readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative. All X$-$K comparisons we ran are listed.}
+\caption{\textbf{Pooled effects} over the five non-Claude readers (recall unless noted). CI: 95\% bootstrap over readers and items. Sig.: cells (reader $\times$ task) significantly positive after Holm correction within each row; neg.: significantly negative.}
 \label{tab:pooled}
-\small
+\footnotesize
 \setlength{\tabcolsep}{2.5pt}
-\resizebox{\columnwidth}{!}{%
+\begin{adjustbox}{max width=\columnwidth}
 \begin{tabular}{l c c c c}
 \toprule
 Comparison & $\Delta$ & 95\% CI & sig. & neg. \\
 \midrule
 """ + "\n".join(prs) + r"""
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table}
 """)
 
@@ -241,23 +253,25 @@ for task in ("mfqa", "hotpot"):
     mean += [f"{St.mean(v[x]['f1'] for v in vs):.2f}" for x in "ASKXT"]
     bil += [f"{St.mean(v[x]['billed'] for v in vs if v[x]['billed']):.0f}" for x in "ASKXT"]
 nxt = sum(lb[f"lb3_s6_{t}|{rd}"]["diffs"]["X-T"][2] < 0 for t in ("mfqa", "hotpot") for rd in R5)
-rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Billed tokens} & " + " & ".join(bil) + " \\\\"]
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Avg.\\ tokens / task} & " + " & ".join(bil) + " \\\\"]
 (TAB / "longbench.tex").write_text(r"""\begin{table}[t]
 \centering
-\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Relative to A, X has no significantly negative cell and S one; every image arm trails plain text T (X$-$T significantly negative in """ + f"{nxt} of {2*len(R5)}" + r""" cells). Billed tokens: four readers that report usage.}
+\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ COC above/below zero. Relative to COC, \name+anchor has no significantly negative cell and \name one; every image arm trails plain text (\name+anchor $-$ text significantly negative in """ + f"{nxt} of {2*len(R5)}" + r""" cells). Avg.\ tokens / task: four readers that report usage.}
 \label{tab:longbench}
-\small
+\footnotesize
 \setlength{\tabcolsep}{2.2pt}
-\resizebox{\columnwidth}{!}{%
+\begin{adjustbox}{max width=\columnwidth}
 \begin{tabular}{l ccccc ccccc}
 \toprule
 & \multicolumn{5}{c}{MultiFieldQA-en} & \multicolumn{5}{c}{HotpotQA} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-11}
-Reader & A & S & K & X & T & A & S & K & X & T \\
+Reader & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text \\
+ & & & {\scriptsize anchor} & {\scriptsize anchor} & & & & {\scriptsize anchor} & {\scriptsize anchor} & \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table}
 """)
 
@@ -274,23 +288,25 @@ for rd in R5:
     rows.append(f"{SHORT[rd]} & " + " & ".join(c) + " \\\\")
 mean = [f"{RV[run][a]['recall']:.2f}" for run in ("niq2_s6", "niq3_s6") for a in "ASKXT"]
 bil = [f"{RV[run][a]['billed']:.0f}" for run in ("niq2_s6", "niq3_s6") for a in "ASKXT"]
-rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Billed tokens} & " + " & ".join(bil) + " \\\\"]
+rows += ["\\midrule", "\\textit{Mean} & " + " & ".join(mean) + " \\\\", "\\textit{Avg.\\ tokens / task} & " + " & ".join(bil) + " \\\\"]
 (TAB / "niq.tex").write_text(r"""\begin{table}[t]
 \centering
-\caption{\textbf{Naturally occurring strings.} Exact-copy recall on LongBench documents ($\le$40K characters, 6\,px budget, $N{=}60$ each). \emph{Flagged}: targets the detector flags (report and grant numbers, ISBNs, URLs, \ldots). \emph{Detector-independent}: any digit-bearing token, sampled without the detector (""" + f"{N['niq3_flagged']}" + r"""/60 flagged; mostly short numbers and versions). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ A above/below zero. Billed tokens: four readers that report usage.}
+\caption{\textbf{Naturally occurring strings.} Exact-copy recall on LongBench documents ($\le$40K characters, 6\,px budget, $N{=}60$ each). \emph{Flagged}: targets the detector flags (report and grant numbers, ISBNs, URLs, \ldots). \emph{Detector-independent}: any digit-bearing token, sampled without the detector (""" + f"{N['niq3_flagged']}" + r"""/60 flagged; mostly short numbers and versions). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ COC above/below zero. Avg.\ tokens / task: four readers that report usage.}
 \label{tab:niq}
-\small
+\footnotesize
 \setlength{\tabcolsep}{2.2pt}
-\resizebox{\columnwidth}{!}{%
+\begin{adjustbox}{max width=\columnwidth}
 \begin{tabular}{l ccccc ccccc}
 \toprule
 & \multicolumn{5}{c}{Flagged targets} & \multicolumn{5}{c}{Detector-independent targets} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-11}
-Reader & A & S & K & X & T & A & S & K & X & T \\
+Reader & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text \\
+ & & & {\scriptsize anchor} & {\scriptsize anchor} & & & & {\scriptsize anchor} & {\scriptsize anchor} & \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table}
 """)
 print("revision tables written")

@@ -2,13 +2,14 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \usepackage[review]{cvpr}
 \input{preamble}
+\input{data/uniformity_macros}
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
 
 \def\confName{CVPR}
 \def\confYear{2027}
 
-\title{Spend Pixels Where It Hurts:\\Hazard-Aware Rendering for Optical Long-Context Compression}
+\title{Which Pixels Matter More?\\Entropy-Uniform Rendering for Optical Long-Context Compression}
 \author{Anonymous CVPR submission}
 
 \begin{document}
@@ -18,7 +19,7 @@
 \vspace{-1.2em}
 \begin{center}
 \includegraphics[width=\textwidth]{fig/teaser.pdf}
-\captionof{figure}{\textbf{Uniform rendering silently corrupts exactly the strings that must be copied.} A 32K-character essay hides one UUID. \emph{Left:} rendered uniformly at 6\,px, Claude Sonnet 5.5 returns a well-formed UUID with four wrong characters and no sign of doubt. \emph{Middle:} our renderer enlarges the UUID within the same vision-token budget, and the answer is exact. \emph{Right:} needle recall averaged over five VLMs and three RULER tasks. Uniform rendering degrades with context length while hazard-aware rendering does not.}
+\captionof{figure}{\textbf{Information is spread unevenly over a rendered page, and recall follows how evenly it is spread.} One 16K-character RULER document with four seven-digit needles, rendered three ways at the same vision-token budget. \emph{Top:} crops around two needles (boxed). \emph{Bottom:} information maps of the whole page, coloring each glyph by the residual entropy per vision token of the text around it (\cref{sec:map}). Typical context optical compression (\coc) leaves the needles as hot spots. Enlarging half of them removes two, and \name enlarges all four and flattens the map. Recall is the mean of five VLMs over 50 documents. \emph{Right:} recall against entropy uniformity $\U$ for every rendering we tested at the 5 and 6\,px budgets.}
 \label{fig:teaser}
 \end{center}
 \vspace{0.6em}
@@ -45,8 +46,8 @@
 \onecolumn
 \setcounter{page}{1}
 \begin{center}
-{\Large\textbf{Spend Pixels Where It Hurts:}}\\[0.2em]
-{\Large\textbf{Hazard-Aware Rendering for Optical Long-Context Compression}}\\[0.5em]
+{\Large\textbf{Which Pixels Matter More?}}\\[0.2em]
+{\Large\textbf{Entropy-Uniform Rendering for Optical Long-Context Compression}}\\[0.5em]
 {\Large Supplementary Material}
 \end{center}
 \vspace{0.5em}

@@ -1,83 +1,102 @@
-\section{Method}
+\section{Information in Rendered Text}
 \label{sec:method}
 
-\input{fig/method}
+We first fix the budget (\cref{sec:formulation}), then ask which characters need pixels (\cref{sec:principle}), measure how evenly a rendering serves them (\cref{sec:map}), and finally flatten the resulting map (\cref{sec:detect,sec:allocate}).
 
-\paragraph{Overview.}
-Given a long document, an optical compressor renders it into image pages that a VLM reads in place of the text.
-Our goal is to make the strings that must be copied exactly survive this rendering, without spending more vision tokens and without access to the model.
-\Cref{fig:method} shows the pipeline.
-\textsc{Detect} reads the text and marks verbatim-hazardous strings.
-\textsc{Allocate}, our contribution, renders those strings large and the remaining prose small, so that the image costs no more than uniform rendering.
-The other two steps follow prior work on failure-aware optical compression~\cite{anon2026renderretain}.
-\textsc{Anchor} appends verbatim text copies of the flagged strings, paid for here by the vision tokens that allocation saves.
-\textsc{Route} falls back to plain text when the anchors would be too expensive.
-
-\subsection{Problem formulation}
+\subsection{Rendering under a budget}
 \label{sec:formulation}
 
-A document $x=(w_1,\dots,w_n)$ is a sequence of whitespace-separated words.
-A renderer $R$ maps $x$ and a size assignment $\sigma:\{1,\dots,n\}\to\mathbb{N}$ (glyph height in pixels for every word) to an image $I=R(x;\sigma)$ of fixed width, which is split into pages for the VLM.
-To compare renderings, we need their cost in the unit providers bill.
-Following the patch-based accounting of dynamic-resolution VLMs~\cite{wang2024qwen2vl}, we define the vision-token cost of an image with pages of width $w_p$ and height $h_p$ as
+A document $x=(c_1,\dots,c_N)$ is a sequence of characters, grouped into whitespace-separated words.
+A renderer $R$ maps $x$ and a size assignment $\sigma$ (glyph height in pixels for every word) to an image $I=R(x;\sigma)$ of fixed width, which is split into pages for the VLM.
+Following the patch-based accounting of dynamic-resolution VLMs~\cite{wang2024qwen2vl}, the vision-token cost of an image with pages of width $w_p$ and height $h_p$ is
 \begin{equation}
   v(I) \;=\; \sum_{p} \left\lceil \tfrac{w_p}{28} \right\rceil \left\lceil \tfrac{h_p}{28} \right\rceil ,
   \label{eq:vtok}
 \end{equation}
-where each vision token covers a $28\times28$-pixel area (14-pixel patches merged $2\times2$ in Qwen2-VL).
-\Cref{eq:vtok} is used only to enforce budgets; all costs we report are the prompt tokens billed by each provider.
-The \emph{budget} is the cost of uniform rendering at a base size $s_0$, $B = v\big(R(x;\sigma\equiv s_0)\big)$.
-Every method we compare uses the same number of vision tokens as the uniform baseline, up to page rounding.
-Let $\mathcal{H}(x)\subseteq\{1,\dots,n\}$ be the indices of hazardous words, those whose value is needed verbatim downstream.
-We seek a size assignment that makes every $w_i$, $i\in\mathcal{H}(x)$, as legible as possible subject to $v(I)\le B$, without deleting or reordering any character.
+where one vision token covers $28\times28$ pixels (14-pixel patches merged $2\times2$ in Qwen2-VL).
+\Cref{eq:vtok} is used to enforce budgets; reported costs are the prompt tokens counted by each provider.
+Typical COC renders every character at one base size $s_0$, and its cost defines the budget $B = v\big(R(x;\sigma\equiv s_0)\big)$.
+Every method we compare stays within $B$, up to page rounding, and keeps every character in place.
 
-\subsection{Where pixels matter}
+\subsection{Which pixels matter more}
 \label{sec:principle}
 
-Which words should receive the pixels?
 Consider how a reader copies a string $c_1\dots c_L$ from the image.
-As a schematic model, the reader combines two terms for each character: visual evidence from the glyph, which grows with the glyph size $s$, and the expectation of its language model given the context:
+As a schematic model, it combines visual evidence from each glyph, which grows with the glyph size $s_i$, with the expectation of its language model given the context:
 \begin{equation}
   p(c_i \mid I, \mathrm{ctx}) \;\propto\; \underbrace{p(I_i \mid c_i;\, s_i)}_{\text{pixels}} \; \underbrace{p_\theta(c_i \mid \mathrm{ctx})}_{\text{language prior}} .
   \label{eq:reading}
 \end{equation}
-The pixels must supply whatever the prior leaves open, roughly the \emph{residual entropy} $H(c_i \mid \mathrm{ctx})$ of each character.
-For English prose this is small, because most letters are predictable from the words around them.
-For the hyphens of a UUID it is close to zero.
-For its hexadecimal characters it is 4 bits, all of which must come from the glyph.
-Exact copying fails if any single character fails, so a string is only as legible as its least predictable character.
-Uniform rendering gives every character the same visual evidence, which is more than prose needs and, at dense budgets, less than an identifier needs.
-When the evidence for a high-entropy character is too weak, the prior dominates \cref{eq:reading}. The prior knows the format but not the content, so we expect the reader to emit a well-formed string with invented characters.
-Under a fixed budget, pixels should therefore move from characters with low residual entropy to characters with high residual entropy.
-The trade is favorable because the two kinds of characters sit on different parts of their legibility curves.
-Predictable text is on the flat part: in our controlled study, found English phrases keep 92--96\% character accuracy from 10 down to 4\,px, so taking pixels from prose costs little.
-High-entropy strings at dense budgets are on the steep part: giving a UUID 12 instead of 5--6\,px raises its hexadecimal accuracy from 51\% to 91\% (\cref{sec:why}).
-A small loss where the prior compensates buys a large gain where it cannot.
-Under the patch convention of \cref{eq:vtok}, a 6\,px Menlo character is 4 pixels wide. One 14-pixel patch then mixes about 3.5 characters, and one vision token covers 7 characters on each of 3 lines; at 12\,px a patch holds 2 characters.
-The two steps below implement this principle with simple means: a text-side proxy for residual entropy (\textsc{Detect}) and a two-level size assignment (\textsc{Allocate}).
+The pixels must supply what the prior leaves open, roughly the \emph{residual entropy} of each character.
+We estimate it from the text alone, before rendering, as the surprisal under a small causal language model $q$,
+\begin{equation}
+  h_i \;=\; -\log_2 q(c_i \mid c_{<i}) ,
+  \label{eq:resid}
+\end{equation}
+whose expectation is the conditional entropy $H(c_i\mid c_{<i})$ under $q$.
+We use Qwen2.5-0.5B~\cite{yang2024qwen25} and spread each token's surprisal evenly over its characters.
+On our RULER documents, essay prose averages 0.9 bits per character, while the hexadecimal characters of a UUID average 3.5 bits.
+Exact copying fails if any character fails, so a string is only as legible as its least predictable part.
+When the visual evidence for a high-entropy character is too weak, the prior dominates \cref{eq:reading}. It knows the format but not the content, so we expect a well-formed string with invented characters, which is what we observe (\cref{sec:why}).
+Under a fixed budget, pixels should therefore move from low to high residual entropy.
+The trade is favorable because the two kinds of text sit on different parts of their legibility curves.
+Found English phrases keep 92--96\% character accuracy from 10 down to 4\,px, while a UUID at 12 instead of 5--6\,px goes from 51\% to 91\% hexadecimal accuracy (\cref{sec:why}).
 
-\subsection{\textsc{Detect}: text-side hazard detection}
+\subsection{Information maps and entropy uniformity}
+\label{sec:map}
+
+Let $a_i$ be the area of the glyph cell of $c_i$ in vision tokens (pixels divided by $28^2$), so that $\sum_i a_i \approx v(I)$.
+For a window $W$ of $n$ consecutive characters in reading order, the \emph{information load}
+\begin{equation}
+  \ell(W) \;=\; \frac{\sum_{i\in W} h_i}{\sum_{i\in W} a_i}
+  \label{eq:load}
+\end{equation}
+is the number of bits each of its vision tokens must carry.
+The page mean is $\bar\ell = \sum_i h_i / \sum_i a_i$.
+Typical COC makes $a_i$ constant, so the load follows $h_i$: prose windows carry about 20 bits per vision token at 6\,px and windows around a UUID about 60.
+We define \emph{entropy uniformity} as
+\begin{equation}
+  \U(I) \;=\; \frac{\bar\ell}{\operatorname{mean}_{W\in\mathcal{T}} \ell(W)} ,
+  \label{eq:uniformity}
+\end{equation}
+where $\mathcal{T}$ is the set of the 160 windows with the highest load (1\% of a 16K-character document; a fixed count keeps the tail from being diluted as documents grow).
+$\U=1$ when every window carries the same load, and $\U$ is small when a few windows carry much more than the rest.
+We use $n=48$, a little longer than a UUID with its key, so that a single rare prose word does not form a peak on its own. Other window lengths and tail statistics give similar results (\cref{app:uniformity}).
+
+Three properties make $\U$ useful.
+First, it is invariant to rescaling: multiplying every $a_i$ by a constant changes $\bar\ell$ and every $\ell(W)$ by the same factor.
+Changing the font size of the whole page or downsampling the image therefore leaves $\U$ almost unchanged, and only a non-uniform allocation of pixels can raise it.
+Second, it is computable before any model call, from the text and the layout.
+A low $\U$ under typical COC flags hot spots that reallocation could cool, although in our data it does not predict the gain of single documents (\cref{app:uniformity}).
+Third, the load can be drawn.
+Coloring every glyph by the load of the window centered on it, relative to $\bar\ell$, gives an \emph{information map} of any page (\cref{fig:teaser}, bottom).
+The hot spots of the map are the spans that the pixels must carry alone and are the most likely to be misread.
+
+$\U$ is a summary of the page, not of the queried string, and it measures shape at a fixed budget.
+Across budgets, $\bar\ell$ itself changes: at 10\,px every window carries less than half the load it carries at 6\,px.
+
+\subsection{\name: flattening the map}
 \label{sec:detect}
 
-The detector approximates $\mathcal{H}(x)$ without labels, following the regex-plus-windowed-entropy design of~\cite{anon2026renderretain}.
-Its premise is that a string is hazardous when it is \emph{high-entropy}: a misread character yields another valid-looking string, and the language model cannot repair it from context.
-After stripping surrounding punctuation, we flag a word if it matches one of five patterns: a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix.
-We also flag words that mix letters and digits and either have at least 20 identifier characters or contain a 16-character window with Shannon entropy of at least 3.5 bits.
-Two choices encode what \emph{not} to protect.
-Four-digit numbers are excluded because in natural text they are mostly years, which are low-entropy and cheap to read.
-The length and entropy rules require mixed letter--digit tokens so that long English words are not flagged.
-These exclusions are our changes.
-A preliminary detector without them flagged 85--112 words per LongBench document on average, most of them years, and shrank prose in documents that did not need it (\cref{app:negative}).
+Ideally, glyph area would be proportional to residual entropy, $a_i\propto h_i$, which makes the load constant and $\U=1$.
+Three constraints make this impractical: glyph sizes are integers, words must stay intact, and prose cannot shrink below the size that VLMs still read.
+\name therefore approximates the ideal with two sizes.
+It flags high-entropy strings with cheap text rules instead of a language model, so that rendering stays fast and model-free, and it gives the flagged strings the pixels that prose can spare.
 
-When the detector flags nothing, the rendering is identical to the uniform baseline, so a document whose hazards all go undetected loses only the potential gain (\cref{sec:niq}).
-A missed hazard in a document where \emph{other} strings are flagged, however, shrinks together with the prose.
+The detector follows the regex-plus-windowed-entropy design of~\cite{anon2026renderretain}.
+After stripping punctuation, a word is flagged if it is a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path containing a digit or a file extension, an IP address, or a digest prefix.
+Words that mix letters and digits are also flagged if they have at least 20 identifier characters or a 16-character window with at least 3.5 bits of character entropy.
+Four-digit numbers are excluded because in natural text they are mostly years, which are cheap to read, and long English words are never flagged.
+These exclusions are ours; without them the detector flagged 85--112 words per LongBench document (\cref{app:negative}).
+The detector selects strings that the language model also finds surprising, so \name raises $\U$ by construction.
+What has to be shown empirically is that higher $\U$ means higher recall (\cref{sec:uniformity}).
 
-\subsection{\textsc{Allocate}: budget-constrained glyph allocation}
+\subsection{Budget-constrained glyph allocation}
 \label{sec:allocate}
 
-Given $\mathcal{H}(x)$, we restrict size assignments to two levels: prose words at $s_{\mathrm{lo}}$ and flagged words at $s_{\mathrm{hi}}$.
-Prose is wrapped at character boundaries, as in the uniform baseline; each flagged word is kept whole on one line.
-We choose the sizes by
+Given the flagged set $\mathcal{H}(x)$, prose words are drawn at $s_{\mathrm{lo}}$ and flagged words at $s_{\mathrm{hi}}$.
+Prose is wrapped at character boundaries, as in typical COC, and each flagged word is kept whole on one line.
+The sizes are
 \begin{equation}
 \begin{aligned}
   (s_{\mathrm{hi}}^{\ast}, s_{\mathrm{lo}}^{\ast}) = &\operatorname*{lexmax}_{\substack{s_{\mathrm{hi}}\in[s_0,\,12]\\ s_{\mathrm{lo}}\in[5,\,\min(s_{\mathrm{hi}},s_0)]}} (s_{\mathrm{hi}}, s_{\mathrm{lo}})\\
@@ -85,27 +104,10 @@ We choose the sizes by
 \end{aligned}
   \label{eq:alloc}
 \end{equation}
-where $\sigma_{s_{\mathrm{lo}},s_{\mathrm{hi}}}$ assigns $s_{\mathrm{hi}}$ to words in $\mathcal{H}(x)$ and $s_{\mathrm{lo}}$ to all others, and $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$.
-The order follows \cref{sec:principle}: the marginal pixel is worth more on a hash than on prose.
-The lower bound of 5\,px keeps prose within the range VLMs still read, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
-If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ fits, prose-only lines lose one pixel of line spacing and the search is repeated; at $s_0=5$\,px this is what makes room (\cref{app:alloc}).
-If $\mathcal{H}(x)=\emptyset$, the result is identical to uniform rendering.
+where $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\mathrm{lo}}$, because the hottest windows limit $\U$.
+The 5\,px floor keeps prose readable, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
+If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ fits, prose-only lines lose one pixel of line spacing; at $s_0=5$\,px this is what makes room (\cref{app:alloc}).
+If nothing is flagged, the image is identical to typical COC.
+A missed high-entropy string in a document where other strings are flagged, however, shrinks with the prose.
 Allocation takes about 1\,s for 32K and 4\,s for 128K characters on one CPU core.
-
-\subsection{\textsc{Anchor} and \textsc{Route}}
-\label{sec:anchor}
-\label{sec:route}
-
-When prose can shrink ($s_0=6$\,px), the allocated image usually ends \emph{below} the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$ rather than filling every remaining row.
-In our long-context runs, it used 13--27\% fewer billed tokens than uniform rendering.
-Following~\cite{anon2026renderretain}, we spend these savings on \emph{anchors}: after the question, the flagged strings are appended verbatim as text, under a line stating that they are copied exactly from the image.
-Anchors carry no key, but a document with only one or a few flagged strings yields a short list that may consist of the answer alone.
-A reader can then answer without reading the image (\cref{sec:anchors}).
-Anchor cost grows linearly with the number of flagged strings, so before any model call we compute the ratio
-\begin{equation}
-  r(x) \;=\; \frac{\sum_{i\in\mathcal{H}(x)} c(w_i)}{v(I)}, \qquad c(w) = \tfrac{|w|}{2} + 3,
-  \label{eq:route}
-\end{equation}
-where $c(w)$ estimates the text tokens of one anchor and $I$ is the allocated image, and send the document as plain text when $r(x)>\tau$.
-This replaces the density test of~\cite{anon2026renderretain} with one that accounts for the allocated image.
-We use $\tau=0.3$, the median of per-reader two-fold cross-validation on a synthetic density sweep (\cref{app:density}).
+At $s_0=6$\,px the result usually costs 13--27\% fewer tokens than the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$.

@@ -1,16 +1,16 @@
 \section{Limitations and Conclusion}
 \label{sec:conclusion}
 
-\paragraph{Limitations.}
-The gains are largest at dense budgets where uniform rendering fails. At 10\,px a font search does as well.
-Optical compression, with or without allocation, trails plain text on ordinary QA by up to 0.33 F1, a gap the router ignores.
-Most fidelity tests use synthetic needles with sparse distractors.
-Our natural sets are small (60 automatically constructed questions each), the detector protects only high-entropy strings, and anchors can mislead readers when the target is not flagged.
-We test black-box readers through public APIs whose versions and preprocessing may change. Trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} and token pruning are untested.
-Budgets follow one patch-based rule (\cref{eq:vtok}). Billed savings hold in most settings, with exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama, whose billing ignores image size).
-We use ASCII English only, and we do not measure latency, prompt caching~\cite{gim2024promptcache}, or the effect of text inside images bypassing text-side safety filters.
+Our residual-entropy estimate is the surprisal of a small left-to-right language model. It ignores the right-hand context and the visual distinctiveness of glyphs, which is why we smooth it over windows and use $\U$ to compare renderings of the same documents rather than as an absolute score.
+The correlation with recall rests on 13 arm--budget points from synthetic needles, and \name raises $\U$ partly by construction.
+The gains are largest at dense budgets where COC fails; at 10\,px font search does as well.
+COC, with or without reallocation, trails plain text on ordinary QA by up to 0.33 F1.
+Our natural sets are small (60 automatically constructed questions each), the detector protects only high-entropy strings, and anchors can mislead when the target is not flagged.
+We test black-box readers through public APIs whose versions and preprocessing may change, and we do not test trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} or token pruning.
+Budgets follow one patch-based rule (\cref{eq:vtok}), and token savings have exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama, whose usage ignores image size).
+We use ASCII English only and do not measure latency, prompt caching~\cite{gim2024promptcache}, or whether text inside images bypasses text-side safety filters.
 
-\paragraph{Conclusion.}
-A VLM reading rendered text recovers prose from its language prior and identifiers only from pixels, yet optical compression gives every character the same pixels.
-Because the renderer reads the text first, it can move pixels to the strings the prior cannot supply, at no extra cost and without access to the model.
-Across five readers, this turns fabricated identifiers into read ones, raises needle recall by about half the scale at dense budgets, and doubles the recall of flagged natural identifiers. The gap to plain text on ordinary QA remains.
+A rendered page does not carry information evenly.
+The renderer can see this before any model call: residual entropy, estimated from the text, gives an information map of the page, and entropy uniformity summarizes it.
+At an equal budget, renderings with a flatter map are read better, and renderings that only rescale the page leave both unchanged.
+\name flattens the map by moving pixels from prose to high-entropy strings. Across five readers it turns fabricated identifiers into read ones, raises needle recall by about half the scale at dense budgets, and doubles the recall of flagged natural identifiers. The gap to plain text on ordinary QA remains.

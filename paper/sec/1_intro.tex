@@ -2,44 +2,47 @@
 \label{sec:intro}
 
 Long contexts are expensive to feed to large models.
-Recent work cuts this cost by \emph{rendering} text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
-A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it holds, so dense rendering can compress a document several-fold.
-In our measurements, a 128K-character essay costs 27.1K billed tokens as text but only 4.7K as a uniformly rendered image (mean of the four readers that report billed usage for both).
-The compression needs no training, works with any VLM that accepts images, and is controlled entirely by the party that renders the text.
+Context optical compression (COC) cuts this cost by rendering text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
+A page of small glyphs costs a fixed number of vision tokens however many characters it holds.
+In our measurements a 128K-character essay costs 27.1K prompt tokens as text and 4.7K as a typical COC image (mean of the four readers that report usage for both).
+COC needs no training and works with any VLM that accepts images.
 
-Existing systems decide \emph{how densely} to render, but rarely \emph{where} the resolution goes.
-Optical compressors choose one font, size, and layout for the whole document, sometimes searched for a good accuracy--compression trade-off~\cite{cheng2025glyph}.
-Methods that do vary resolution within the input are trained~\cite{zhong2026focusvtc,xu2026seer,xie2026lensvlm} or read the model's attention for each query~\cite{zeng2026agar}.
-Visual-token reduction prunes or merges tokens after encoding~\cite{chen2024fastv,yang2025visionzip}.
-None of these is available to a party that only renders the text and calls a black-box API.
-
-Uniform resolution hurts some strings far more than others.
-\Cref{fig:teaser} shows the typical outcome: a VLM returns a well-formed UUID with four wrong characters and no hedge.
-Prior work on failure-aware optical compression~\cite{anon2026renderretain} showed that such silent corruption concentrates in high-entropy spans.
-It responded at the level of whole blocks: it flags these spans from the text, copies them verbatim next to the image as \emph{anchors}, and routes risky blocks back to text.
-These remedies leave the image itself unchanged.
-Same problem found at long-context scale.
-At an equal budget, uniform rendering recovers only 8--22\% of RULER needles (mean of five readers, \cref{tab:baselines}), and its recall falls from 0.12 at 32K characters to 0.07 at 128K.
-
-Why do exactly these strings fail?
-A VLM that reads rendered text combines two sources of evidence for each character: what the glyph shows, and what its language model expects from the context.
-Prose is predictable, so when glyphs blur, the expectation fills the gap.
-An identifier is not: its format is predictable, but each hexadecimal character carries 4 bits that only the pixels can supply.
+Typical COC renders the whole document with one font and one size, chosen at best by a global search~\cite{cheng2025glyph}.
+Every character then receives the same pixels.
+The reader, however, does not need the same evidence for every character.
+A VLM that reads rendered text combines what the glyph shows with what its language model expects.
+In prose the expectation fills most gaps, so blurred letters are still read correctly.
+In an identifier it cannot: the format of a UUID is predictable, but each hexadecimal character carries 4 bits that only the pixels can supply.
 Our readers show this split.
-Under uniform rendering they write the four hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time. For four of five readers, most wrong answers of the right length are not misreadings: they have the right format with nearly every character invented (\cref{sec:why}).
-Uniform rendering therefore spends equal pixels on characters the language prior can reconstruct and on characters that only pixels can supply.
-When the latter fall below legibility, the reader often fills them in from the prior rather than abstaining, so many errors are silent.
+Under typical COC they write the hyphens of a UUID correctly 99\% of the time and its hexadecimal characters only 51\% of the time, and most wrong answers keep the format and invent the content (\cref{sec:why}).
+At an equal budget, typical COC recovers only 8--22\% of RULER needles, averaged over five readers.
 
-The renderer already holds the signal needed to fix the image.
-Before any pixel is drawn, the text shows which strings the prior cannot reconstruct, and the renderer decides how many pixels each string gets.
-We propose \emph{\ours} (\cref{fig:method}): flagged high-entropy strings are drawn larger and prose smaller, subject to the image costing no more vision tokens than uniform rendering.
-The allocation (arm S in our experiments) is training-free and query-independent, so the same rendering can serve every question about a document.
-It composes with the anchors and text routing of prior work~\cite{anon2026renderretain}, which we treat as baselines and building blocks (arms K and X).
+We ask which pixels matter more, and answer in four steps (\cref{fig:teaser}).
+\emph{Theory.}
+After rendering, information is distributed unevenly over the page.
+What the pixels must supply for each character is roughly its residual entropy given the context, which we estimate from the text before anything is drawn (\cref{sec:principle}).
+\emph{Measure.}
+Dividing residual entropy by glyph area gives the information load of each region, in bits per vision token.
+We define entropy uniformity $\U$, the ratio between the mean load of a page and the load of its hottest regions (\cref{sec:map}).
+$\U$ is 1 when every region carries the same information per pixel and small when a few regions carry far more than the rest.
+\emph{Visualization.}
+The load can be drawn as a heat map for any text and any rendering.
+The map points to the spans that are informative and likely to be misread before any model is called.
+\emph{Method.}
+If uneven load causes the errors, the remedy is to flatten the map.
+\name enlarges the high-entropy strings and shrinks prose so that the image costs no more vision tokens than typical COC (\cref{sec:allocate}).
+It is training-free, query-independent, and needs only black-box access.
+
+The measure is useful only if it predicts reading, so we test this directly.
+Across 13 arm--budget combinations of the same documents, $\U$ and five-reader recall have Spearman $\rho=0.84$.
+Two observations go beyond the construction of \name.
+Font search and render-then-downsample rescale every region about equally, so they leave $\U$ almost unchanged, and they barely improve recall.
+When only a random half of the needles is enlarged, the enlarged ones are recalled 74--83\% of the time and the others 11--12\% (\cref{sec:uniformity}).
 
 Our contributions are:
 \begin{itemize}
-  \item \textbf{A principle and a rule.} We trace verbatim failures to characters whose content the language prior cannot supply, and propose budget-constrained glyph allocation, which moves pixels to them using only the text and black-box access (\cref{sec:method}). In a controlled study at equal glyph size, each of the three readers we can compare copies a found random hexadecimal string exactly far less often than a found English phrase (e.g., 0.08 vs.\ 0.57 for GPT; \cref{sec:why}).
-  \item \textbf{Controlled evidence.} Across five readers, allocation raises needle recall over uniform rendering by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K, and beats font/size search, render-then-downsample, random-word enlargement, and boxing the needles (\cref{tab:pooled}). It turns fabricated answers into read ones. The gain shrinks at milder budgets, and at 10\,px allocation matches font search.
-  \item \textbf{Natural strings and side effects.} Allocation doubles the recall of flagged identifiers in LongBench documents (0.23 to 0.48), neither helps nor hurts unflagged digit strings, and leaves LongBench QA unchanged relative to uniform rendering; every image arm still trails plain text.
-  \item \textbf{Composition with anchors.} Anchors from prior work are as accurate on the allocated image as on a uniform one and cheaper where allocation shrinks it. On standard needle tasks the anchors contain the answer, so recall there measures copying. Anchors can mislead when the target is not flagged.
+  \item \textbf{An information view of COC.} We trace verbatim failures to characters whose residual entropy the language prior cannot supply, and we estimate it from the text alone.
+  \item \textbf{Entropy uniformity and information maps.} $\U$ quantifies how evenly a rendered page spreads its information. Its map shows where errors are likely. Across renderings at equal budget it tracks recall, and it explains why font search and downsampling fail: a rescaling of the whole page leaves $\U$ unchanged.
+  \item \textbf{\name.} Budget-constrained glyph allocation flattens the map. Over five readers it raises needle recall by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K with up to 27\% fewer tokens, doubles the recall of flagged natural identifiers, and leaves LongBench QA unchanged. The gain shrinks at milder budgets, and at 10\,px font search does as well.
 \end{itemize}
+Verbatim anchors~\cite{anon2026renderretain}, which copy flagged strings next to the image, leave the map unchanged; we treat them as compatible post-processing (\cref{sec:anchors}).

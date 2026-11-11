@@ -10,7 +10,7 @@ from scipy.stats import spearmanr, pearsonr
 from uniformity_study import GROUPS, HERE
 from stats_pooled import merged
 
-MET = sys.argv[1] if len(sys.argv) > 1 else "Utail48"
+MET = sys.argv[1] if len(sys.argv) > 1 else "Utop48"
 
 def rows_of(gname):
     runs, arms, size = GROUPS[gname]; parts = runs[0].split("+"); data = merged(runs)[parts[0]]

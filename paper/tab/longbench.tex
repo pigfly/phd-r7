@@ -1,15 +1,16 @@
 \begin{table}[t]
 \centering
-\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ uniform rendering (A) above/below zero. Relative to A, X has no significantly negative cell and S one; every image arm trails plain text T (X$-$T significantly negative in 9 of 10 cells). Billed tokens: four readers that report usage.}
+\caption{\textbf{Ordinary comprehension.} LongBench QA F1 on held-out samples ($N{=}50$ per task, contexts $\le$40K characters, 6\,px budget, five readers). $^{\ast}$/$^{\dagger}$: paired 95\% CI vs.\ COC above/below zero. Relative to COC, \name+anchor has no significantly negative cell and \name one; every image arm trails plain text (\name+anchor $-$ text significantly negative in 9 of 10 cells). Avg.\ tokens / task: four readers that report usage.}
 \label{tab:longbench}
-\small
+\footnotesize
 \setlength{\tabcolsep}{2.2pt}
-\resizebox{\columnwidth}{!}{%
+\begin{adjustbox}{max width=\columnwidth}
 \begin{tabular}{l ccccc ccccc}
 \toprule
 & \multicolumn{5}{c}{MultiFieldQA-en} & \multicolumn{5}{c}{HotpotQA} \\
 \cmidrule(lr){2-6}\cmidrule(lr){7-11}
-Reader & A & S & K & X & T & A & S & K & X & T \\
+Reader & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text & COC & \name & \makebox[0pt]{COC+} & \makebox[0pt]{\name+} & Text \\
+ & & & {\scriptsize anchor} & {\scriptsize anchor} & & & & {\scriptsize anchor} & {\scriptsize anchor} & \\
 \midrule
 Gemini 3.5 Flash-Lite & 0.47 & 0.47 & 0.53 & 0.47 & 0.63 & 0.59 & 0.62 & 0.58 & 0.57 & 0.78 \\
 GPT-6 Luna & 0.36 & 0.39 & 0.37 & 0.36 & 0.56 & 0.68 & 0.73 & 0.68 & 0.70 & 0.72 \\
@@ -18,7 +19,8 @@ Llama 4 Maverick & 0.28 & 0.25 & 0.34 & 0.29 & 0.59 & 0.45 & 0.50 & 0.51$^{\ast}
 MiniMax-M3 & 0.23 & 0.26 & 0.25 & 0.25 & 0.56 & 0.29 & 0.34 & 0.41$^{\ast}$ & 0.42$^{\ast}$ & 0.69 \\
 \midrule
 \textit{Mean} & 0.32 & 0.33 & 0.36 & 0.33 & 0.58 & 0.53 & 0.56 & 0.57 & 0.56 & 0.73 \\
-\textit{Billed tokens} & 1141 & 1056 & 1440 & 1355 & 5342 & 1200 & 1114 & 1239 & 1153 & 5617 \\
+\textit{Avg.\ tokens / task} & 1141 & 1056 & 1440 & 1355 & 5342 & 1200 & 1114 & 1239 & 1153 & 5617 \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
+\end{adjustbox}
 \end{table}

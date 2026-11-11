@@ -1,0 +1,85 @@
+{
+ "half_s5|H-A|recall": {
+  "pooled": 0.3,
+  "ci_items": [
+   0.228,
+   0.368
+  ],
+  "ci_readers_items": [
+   0.207,
+   0.401
+  ],
+  "cells": 10,
+  "sig_pos": 9,
+  "sig_neg": 0,
+  "sig_pos_holm": 9,
+  "sig_neg_holm": 0
+ },
+ "half_s5|S-H|recall": {
+  "pooled": 0.32,
+  "ci_items": [
+   0.237,
+   0.408
+  ],
+  "ci_readers_items": [
+   0.195,
+   0.454
+  ],
+  "cells": 10,
+  "sig_pos": 9,
+  "sig_neg": 0,
+  "sig_pos_holm": 7,
+  "sig_neg_holm": 0
+ },
+ "half_s6|H-A|recall": {
+  "pooled": 0.206,
+  "ci_items": [
+   0.126,
+   0.289
+  ],
+  "ci_readers_items": [
+   -0.002,
+   0.385
+  ],
+  "cells": 10,
+  "sig_pos": 8,
+  "sig_neg": 2,
+  "sig_pos_holm": 8,
+  "sig_neg_holm": 0
+ },
+ "half_s6|S-H|recall": {
+  "pooled": 0.307,
+  "ci_items": [
+   0.219,
+   0.397
+  ],
+  "ci_readers_items": [
+   0.203,
+   0.415
+  ],
+  "cells": 10,
+  "sig_pos": 10,
+  "sig_neg": 0,
+  "sig_pos_holm": 6,
+  "sig_neg_holm": 0
+ },
+ "per_needle": {
+  "s5": {
+   "H_enl": 0.74,
+   "H_not": 0.12,
+   "A_enl": 0.13,
+   "A_not": 0.12,
+   "S_enl": 0.73,
+   "S_not": 0.74
+  },
+  "s6": {
+   "H_enl": 0.83,
+   "H_not": 0.11,
+   "A_enl": 0.26,
+   "A_not": 0.24,
+   "S_enl": 0.77,
+   "S_not": 0.8
+  }
+ },
+ "per_needle_note": "hit rate of needles that H enlarges (enl) vs leaves at prose size (not), same needles under A and S; 5 readers x 2 tasks x 25 items"
+}

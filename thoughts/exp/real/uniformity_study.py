@@ -37,6 +37,7 @@ def image_stats(run, m, it, size, seed_cache):
     for n in NS:
         w = E.window_load(h, a, n); top = np.sort(w)[-max(1, len(w) // 100):]
         r[f"Umax{n}"] = float(lam / w.max()); r[f"Utail{n}"] = float(lam / top.mean())
+        r[f"Utop{n}"] = float(lam / np.sort(w)[-160:].mean())  # fixed number of windows (= 1% of a 16K document)
     w = E.window_load(h, a, N0); needles = {}
     for v in it["answers"]:
         ph = re.search(r'immediately after the words "(.*?)"\?', it["prompt"])
@@ -60,7 +61,7 @@ def main():
         rows = []
         for m in man:
             key = f"{m['arm']}|{m['item']}"
-            if key not in old: old[key] = image_stats(HERE / m["_part"], m, items[m["item"]], size, seed_cache)
+            if key not in old or "Utop48" not in old[key]: old[key] = image_stats(HERE / m["_part"], m, items[m["item"]], size, seed_cache)
             st = old[key]
             rec = {rd: data[run.name][rd][m["item"]][m["arm"]]["recall"] for rd in data[run.name]
                    if m["item"] in data[run.name][rd] and m["arm"] in data[run.name][rd][m["item"]]}

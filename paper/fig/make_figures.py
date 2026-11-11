@@ -17,7 +17,7 @@ C = dict(A="#7F8A96", K="#1F8FAE", S="#E8685B", X="#A83E35", T="#3B3B3B")
 MK = dict(A="o", K="s", S="D", X="^", T="*")
 LS = dict(A="--", K="-", S="-", X="-", T=":")
 NAME = "EquiPix"
-LAB = dict(A="Uniform (A)", K="Anchors (K)", S="Ours (S)", X="Ours + anchors (X)", T="Plain text (T)")
+LAB = dict(A="COC", K="COC+anchor", S="EquiPix (ours)", X="EquiPix+anchor", T="Plain text")
 INK, MUTED, GRID = "#2B2B2B", "#6B6B6B", "#E3E7EC"
 LIGHT = dict(aqua="#BFE6EA", peach="#F7D8B8", mist="#D9E2EB", warm="#F2F2F2", salmon="#F6A69A")
 plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
@@ -130,7 +130,10 @@ def teaser():
         im = np.array(Image.open(Path(str(run).replace("rbx_", "rbase_")) / "img" / f"{m['name']}.png").convert("L"))
         box = {"A": (330, 538, 590, 584), "H": (100, 370, 360, 416), "S": (127, 378, 387, 424)}[arm]
         crops.append((im, box))
-    rec = {p["arm"]: p["recall"] for p in U["points"] if p["setting"] == "tab1_s6"}
+    from stats_pooled import merged  # recall on the same 50 documents (multi-key + multi-value, 6 px) for all three columns
+    import statistics as St
+    dd = merged([f"rbx_s6_{t}+rhalf_s6_{t}" for t in ("multikey_1", "multivalue")])
+    rec = {a: St.mean(v[a]["recall"] for run in dd.values() for rows in run.values() for v in rows.values() if a in v) for a in "AHS"}
     vmin, vmax = 0.6, 3.0
     fig = plt.figure(figsize=(6.9, 2.4))
     gs = fig.add_gridspec(2, 4, width_ratios=[1, 1, 1, 1.12], height_ratios=[0.36, 1], wspace=0.12, hspace=0.16,
@@ -231,7 +234,7 @@ def density():
     axs[1].set_ylabel("billed prompt tokens (K)"); axs[1].set_title("(b) cost vs. hazard density", fontsize=7.5, pad=2)
     h, l = axs[0].get_legend_handles_labels(); axs[1].legend(h, l, frameon=False, loc="upper left", fontsize=6)
     fx = [f["X"] for f in R["frontier"]]; fk = [f["K"] for f in R["frontier"]]
-    axs[2].plot([p[1] for p in fk], [p[0] for p in fk], color=C["K"], marker=MK["K"], ls="-", label="route anchors-on-uniform / text")
+    axs[2].plot([p[1] for p in fk], [p[0] for p in fk], color=C["K"], marker=MK["K"], ls="-", label="route COC+anchor / text")
     axs[2].plot([p[1] for p in fx], [p[0] for p in fx], color=C["X"], marker=MK["X"], ls="-", label="route ours+anchors / text")
     axs[2].scatter([1.0], [R["mean"]["T"][0]], color=C["T"], marker=MK["T"], s=30, zorder=5)
     axs[2].annotate("plain text", (1.0, R["mean"]["T"][0]), xytext=(0.86, 0.9), textcoords="data", fontsize=6, color=MUTED,
@@ -249,7 +252,7 @@ def phase():
     for rd, c, m in zip(readers, cols, mks):
         ys = [sw.get(f"{r}|{rd}", {}).get("diffs", {}).get("M-A:ids", [None])[0] for r, _ in runs]
         ax.plot([x for _, x in runs], ys, color=c, marker=m, label=N["reader_names"][rd], lw=1.0)
-    ax.axhline(0, color=MUTED, lw=0.6); ax.set_xlabel("characters per vision token (density)"); ax.set_ylabel("$\\Delta$ exact-match (ours $-$ uniform)")
+    ax.axhline(0, color=MUTED, lw=0.6); ax.set_xlabel("characters per vision token (density)"); ax.set_ylabel("$\\Delta$ exact-match (EquiPix $-$ COC)")
     ax.legend(frameon=False, fontsize=5.8, loc="center left", bbox_to_anchor=(1.0, 0.5))
     fig.savefig(FIG / "phase.pdf"); plt.close(fig)
 
@@ -281,7 +284,7 @@ def examples():
     ms = man[(item, "S")]
     crops.append(needle_crop(run / "img" / f"{ms['name']}.png", it["text"], M.units_mixed(it["text"], ms["s_lo"], ms["s_hi"]), ms["extra"], gold, width=520, lines_ctx=3))
     M.STRICT = False
-    labs = [("A", "uniform 6 px"), ("B", "boxed, not enlarged"), ("S", f"allocated ({ms['s_lo']}/{ms['s_hi']} px)")]
+    labs = [("A", "COC, 6 px"), ("B", "box, not enlarged"), ("S", f"EquiPix ({ms['s_lo']}/{ms['s_hi']} px)")]
     fig, axs = plt.subplots(3, 1, figsize=(6.9, 3.3), gridspec_kw=dict(hspace=0.55, left=0.01, right=0.99, top=0.93, bottom=0.02))
     for ax, im, (arm, lab) in zip(axs, crops, labs):
         ax.imshow(im, cmap="gray", vmin=0, vmax=255, interpolation="nearest", aspect="equal"); ax.set_xticks([]); ax.set_yticks([])

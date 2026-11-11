@@ -19,7 +19,7 @@
 \vspace{-1.2em}
 \begin{center}
 \includegraphics[width=\textwidth]{fig/teaser.pdf}
-\captionof{figure}{\textbf{Information is spread unevenly over a rendered page, and recall follows how evenly it is spread.} One 16K-character RULER document with four seven-digit needles, rendered three ways at the same vision-token budget. \emph{Top:} crops around two needles (boxed). \emph{Bottom:} information maps of the whole page, coloring each glyph by the residual entropy per vision token of the text around it (\cref{sec:map}). Typical context optical compression (\coc) leaves the needles as hot spots. Enlarging half of them removes two, and \name enlarges all four and flattens the map. Recall is the mean of five VLMs over 50 documents. \emph{Right:} recall against entropy uniformity $\U$ for every rendering we tested at the 5 and 6\,px budgets.}
+\captionof{figure}{\textbf{Information is spread unevenly over a rendered page, and recall follows how evenly it is spread.} One 16K-character RULER document with four seven-digit needles, rendered three ways at the same vision-token budget. \emph{Top:} crops around needles (boxed). \emph{Bottom:} information maps; each cell is one vision token, colored by the highest load of its text relative to the page mean (\cref{sec:map}), drawn at equal size although \name uses fewer tokens. Under typical context optical compression (\coc) the needles are hot spots; half enlargement cools two of them and \name all four. Recall: five VLMs, 50 documents. \emph{Right:} recall against entropy uniformity $\U$ for every rendering at the 5 and 6\,px budgets.}
 \label{fig:teaser}
 \end{center}
 \vspace{0.6em}

@@ -12,23 +12,65 @@ ROOT = Path(__file__).resolve().parents[2]; FIG = Path(__file__).resolve().paren
 EXP = ROOT / "thoughts" / "exp" / "real"; sys.path.insert(0, str(EXP))
 N = json.loads((ROOT / "paper" / "data" / "numbers.json").read_text())
 
-# validated categorical set (dataviz validator, --pairs all PASS): K teal, S coral, X dark coral; A = neutral reference
-C = dict(A="#7F8A96", K="#1F8FAE", S="#E8685B", X="#A83E35", T="#3B3B3B")
+# Academic Figure Skill Typography Baseline — COPY VERBATIM, place at TOP of script
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans"],
+    "font.size": 8,
+    "axes.titlesize": 8,
+    "axes.labelsize": 8,
+    "xtick.labelsize": 7,
+    "ytick.labelsize": 7,
+    "legend.fontsize": 8,
+    "figure.titlesize": 9,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.linewidth": 0.6,
+    "xtick.direction": "out",
+    "ytick.direction": "out",
+    "xtick.major.width": 0.6,
+    "ytick.major.width": 0.6,
+    "legend.frameon": False,
+})
+# Academic Figure Skill Nature/Cell/Science Color Palette -- COPY VERBATIM
+CATEGORICAL = ["#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666"]
+CATEGORICAL_EXTENDED = [
+    "#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666",
+    "#4393C3", "#D6604D", "#5AAE61", "#B35806", "#9970AB", "#999999",
+]
+DIVERGING   = ["#2166AC", "#F7F7F7", "#B2182B"]
+SEQUENTIAL  = ["#F7FBFF", "#6BAED6", "#08306B"]
+ACCENT_RED  = "#B2182B"
+GREY        = "#999999"
+BLACK       = "#222222"
+# Academic Figure Skill Export Baseline — COPY VERBATIM
+mpl.rcParams.update({
+    "pdf.fonttype": 42,         # TrueType font embedding
+    "svg.fonttype": "none",     # editable text in SVG
+    "savefig.bbox": "tight",    # trim whitespace
+    "savefig.dpi": 300,
+})
+def save_cns_figure(fig, filename):
+    """Standard Academic Figure Skill export: vector PDF + 300dpi PNG preview."""
+    fig.savefig(f"{filename}.pdf", bbox_inches="tight", dpi=300)
+    fig.savefig(f"{filename}.png", bbox_inches="tight", dpi=300)
+
+# semantic roles (one meaning per colour across all figures): COC = grey reference, EquiPix = red accent,
+# anchors on COC = blue, EquiPix + anchors = purple, plain text = black
+C = dict(A="#666666", K=CATEGORICAL[0], S=ACCENT_RED, X=CATEGORICAL[4], T=BLACK)
 MK = dict(A="o", K="s", S="D", X="^", T="*")
 LS = dict(A="--", K="-", S="-", X="-", T=":")
 NAME = "EquiPix"
 LAB = dict(A="COC", K="COC+anchor", S="EquiPix (ours)", X="EquiPix+anchor", T="Plain text")
-INK, MUTED, GRID = "#2B2B2B", "#6B6B6B", "#E3E7EC"
+INK, MUTED, GRID = BLACK, "#555555", "#E0E0E0"
 LIGHT = dict(aqua="#BFE6EA", peach="#F7D8B8", mist="#D9E2EB", warm="#F2F2F2", salmon="#F6A69A")
-plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
-                     "font.size": 8.5, "axes.labelsize": 8.5, "axes.titlesize": 8.5, "legend.fontsize": 7.5,
-                     "xtick.labelsize": 7.5, "ytick.labelsize": 7.5, "axes.edgecolor": MUTED, "axes.linewidth": 0.6,
-                     "xtick.color": MUTED, "ytick.color": MUTED, "axes.labelcolor": INK, "text.color": INK,
-                     "lines.linewidth": 1.4, "lines.markersize": 4, "pdf.fonttype": 42, "axes.spines.top": False,
-                     "axes.spines.right": False})
+MM = 1 / 25.4; TEXTW = 174 * MM; COLW = 84 * MM   # CVPR text width 6.875 in, column width 3.31 in
+plt.rcParams.update({"lines.linewidth": 1.2, "lines.markersize": 4})
 
 def style(ax):
-    ax.grid(True, color=GRID, lw=0.5); ax.set_axisbelow(True)
+    """skill default: no gridlines; if needed, very light grey (#E0E0E0, lw 0.3, alpha 0.5)"""
+    ax.grid(True, color=GRID, lw=0.3, alpha=0.5); ax.set_axisbelow(True)
 
 # ---------------------------------------------------------------- teaser
 def needle_crop(img_path, text, units, lead, answer, width=330, lines_ctx=5):
@@ -101,7 +143,7 @@ def teaser_old():
 
 
 # ---------------------------------------------------------------- teaser (v2): information maps + recall vs uniformity
-CH = dict(coc="#7F8A96", R="#1F8FAE", H="#D9A23A", S="#E8685B")
+CH = dict(coc="#666666", R=CATEGORICAL[0], H=CATEGORICAL[3], S=ACCENT_RED)
 def load_raster(text, arm, m, size, n=48):
     """per-pixel information load: every glyph cell painted with the load (bits / vision token) of the n-character
     reading-order window centred on it; NaN where nothing is drawn"""
@@ -112,84 +154,95 @@ def load_raster(text, arm, m, size, n=48):
     for (x0, y0, x1, y1), i in zip(bx, ix): R[int(y0):int(np.ceil(y1)), int(x0):int(np.ceil(x1))] = lc[i]
     return R
 
+def token_cells(R, cell=28):
+    """vision-token grid of a load raster: each 28x28 cell gets the highest load of the text it contains (NaN if empty)"""
+    import numpy as np
+    H, W = R.shape; rows, cols = -(-H // cell), -(-W // cell)
+    P = np.full((rows * cell, cols * cell), np.nan); P[:H, :W] = R
+    B = P.reshape(rows, cell, cols, cell).transpose(0, 2, 1, 3).reshape(rows, cols, -1)
+    with np.errstate(all="ignore"):
+        out = np.nanmax(B, axis=2)
+    return out
+
+# Academic Figure Skill Asset Confirmation (verified against assets/figures/)
+# (teaser, maps) heatmap -> assets/figures/heatmap/plot_composition.py -> param inherit (cmap "Reds", white cell
+#                 borders, colorbar with explicit ticks); data are per-page load grids, not a category matrix
+# (teaser, scatter) scatter -> cross-type inherit (basic scatter: marker s=10-20, direct labels, no legend box)
 def teaser():
     import numpy as np, make_items as M
-    from matplotlib.colors import LinearSegmentedColormap
+    from stats_pooled import merged
+    import statistics as St
     U = json.loads((EXP / "analysis_uniformity.json").read_text())
     run_b, run_h = EXP / "rbx_s6_multikey_1", EXP / "rhalf_s6_multikey_1"; item = 22
     it = next(i for i in json.loads((run_b / "gt.json").read_text())["items"] if i["item"] == item)
     mb = {m["arm"]: m for m in json.loads((run_b / "manifest.json").read_text()) if m["item"] == item}
     mh = next(m for m in json.loads((run_h / "manifest.json").read_text()) if m["item"] == item)
-    cols = [("A", mb["A"], run_b, "COC (typical)", "all text at 6 px"), ("H", mh, run_h, "Half enlarged", "2 of 4 needles at 12 px, prose 5 px"),
-            ("S", mb["S"], run_b, f"{NAME} (ours)", "all 4 needles at 12 px, prose 5 px")]
-    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
-    rasters, crops = [], []
+    cols = [("A", mb["A"], run_b, "COC (typical)", "all text at 6 px"), ("H", mh, run_h, "Half enlarged", "2 of 4 needles at 12 px"),
+            ("S", mb["S"], run_b, f"{NAME} (ours)", "all 4 needles at 12 px")]
+    dd = merged([f"rbx_s6_{t}+rhalf_s6_{t}" for t in ("multikey_1", "multivalue")])  # same 50 documents for all columns
+    rec = {a: St.mean(v[a]["recall"] for run in dd.values() for rows in run.values() for v in rows.values() if a in v) for a in "AHS"}
+    import entropy_map as E
+    grids, crops, boxes = [], [], []
     for arm, m, run, *_ in cols:
         M.STRICT = arm in "SH"; M.ORACLE = set(mh["enlarged"]) if arm == "H" else None
-        Rr = load_raster(it["text"], arm, m, 6); rasters.append(Rr / np.nanmean(Rr)); M.STRICT = False; M.ORACLE = None
-        im = np.array(Image.open(Path(str(run).replace("rbx_", "rbase_")) / "img" / f"{m['name']}.png").convert("L"))
-        box = {"A": (330, 538, 590, 584), "H": (100, 370, 360, 416), "S": (127, 378, 387, 424)}[arm]
-        crops.append((im, box))
-    from stats_pooled import merged  # recall on the same 50 documents (multi-key + multi-value, 6 px) for all three columns
-    import statistics as St
-    dd = merged([f"rbx_s6_{t}+rhalf_s6_{t}" for t in ("multikey_1", "multivalue")])
-    rec = {a: St.mean(v[a]["recall"] for run in dd.values() for rows in run.values() for v in rows.values() if a in v) for a in "AHS"}
-    vmin, vmax = 0.6, 3.0
-    fig = plt.figure(figsize=(6.9, 2.4))
-    gs = fig.add_gridspec(2, 4, width_ratios=[1, 1, 1, 1.12], height_ratios=[0.36, 1], wspace=0.12, hspace=0.16,
-                          left=0.005, right=0.985, top=0.9, bottom=0.15)
-    from uniformity_study import N0
-    import entropy_map as E
-    for c, ((arm, m, run, title, sub), R, (im, box)) in enumerate(zip(cols, rasters, crops)):
-        ax = fig.add_subplot(gs[0, c]); x0, y0, x1, y1 = box
-        ax.imshow(im[y0:y1, x0:x1], cmap="gray", vmin=0, vmax=255, interpolation="nearest"); ax.set_xticks([]); ax.set_yticks([])
-        import entropy_map as E
-        M.STRICT = arm in "SH"; M.ORACLE = set(mh["enlarged"]) if arm == "H" else None
+        R = load_raster(it["text"], arm, m, 6); R = R / np.nanmean(R); grids.append(token_cells(R))
         bxs, ixs, _ = E.cells(it["text"], arm, m, 6); M.STRICT = False; M.ORACLE = None; ixs = list(ixs)
-        for v in re.findall(r"is: (\d{7})\.", it["text"]):  # mark every needle inside the crop
+        im = np.array(Image.open(Path(str(run).replace("rbx_", "rbase_")) / "img" / f"{m['name']}.png").convert("L"))
+        box = {"A": (330, 538, 590, 584), "H": (100, 362, 360, 408), "S": (127, 378, 387, 424)}[arm]
+        nb = []
+        for v in re.findall(r"is: (\d{7})\.", it["text"]):
             j = ixs.index(it["text"].find(v)); bx0, by0 = bxs[j][:2]; bx1, by1 = bxs[j + len(v) - 1][2:]
-            if x0 <= bx0 and bx1 <= x1 and y0 <= by0 and by1 <= y1:
-                ax.add_patch(plt.Rectangle((bx0 - x0 - 1.5, by0 - y0 - 0.5), bx1 - bx0 + 3, by1 - by0 + 1, fill=False, lw=0.7,
-                                           color=(CH["S"] if (arm == "S" or (arm == "H" and v in mh["enlarged"])) else CH["R"])))
-        for sp in ax.spines.values(): sp.set_visible(True); sp.set_color(CH["coc" if arm == "A" else arm]); sp.set_linewidth(1.1)
-        ax.set_title(f"{title}\n", fontsize=7.6, pad=1, color=INK, fontweight="bold")
-        ax.text(0.5, 1.04, sub, transform=ax.transAxes, ha="center", va="bottom", fontsize=6.2, color=MUTED)
-        hx = fig.add_subplot(gs[1, c]); Hmax = max(r.shape[0] for r in rasters)
-        bg = np.where(np.isnan(R), np.nan, R)
-        hx.imshow(np.ones_like(R), cmap="gray", vmin=0, vmax=1, extent=(0, R.shape[1], R.shape[0], 0))
-        hx.imshow(bg, cmap=cmap, vmin=vmin, vmax=vmax, interpolation="bilinear", extent=(0, R.shape[1], R.shape[0], 0))
-        hx.set_xlim(0, R.shape[1]); hx.set_ylim(Hmax, 0); hx.set_xticks([]); hx.set_yticks([])
+            if box[0] <= bx0 and bx1 <= box[2] and box[1] <= by0 and by1 <= box[3]:
+                nb.append((bx0 - box[0], by0 - box[1], bx1 - bx0, by1 - by0, arm == "S" or (arm == "H" and v in mh["enlarged"])))
+        crops.append((im, box)); boxes.append(nb)
+    cmap = plt.get_cmap("Reds").copy(); cmap.set_bad("white")
+    vmin, vmax = 0.5, 3.0
+    fig = plt.figure(figsize=(TEXTW, 60 * MM))
+    gs = fig.add_gridspec(2, 3, height_ratios=[0.3, 1], wspace=0.12, hspace=0.12, left=0.005, right=0.715, top=0.88, bottom=0.22)
+    gr = fig.add_gridspec(1, 1, left=0.785, right=0.995, top=0.88, bottom=0.22)
+    for c, ((arm, m, run, title, sub), G, (im, box), nb) in enumerate(zip(cols, grids, crops, boxes)):
+        ax = fig.add_subplot(gs[0, c]); x0, y0, x1, y1 = box
+        ax.imshow(im[y0:y1, x0:x1], cmap="gray", vmin=0, vmax=255, interpolation="nearest", aspect="equal")
+        ax.set_xticks([]); ax.set_yticks([])
+        for sp in ax.spines.values(): sp.set_visible(True); sp.set_color(GREY); sp.set_linewidth(0.6)
+        for (bx, by, bw, bh, enl) in nb:
+            ax.add_patch(plt.Rectangle((bx - 1.5, by - 0.5), bw + 3, bh + 1, fill=False, lw=0.8, color=(ACCENT_RED if enl else "#666666")))
+        ax.set_title(title, fontsize=8, fontweight="bold", pad=9, color=INK)
+        ax.text(0.5, 1.03, sub, transform=ax.transAxes, ha="center", va="bottom", fontsize=6.5, color=MUTED)
+        hx = fig.add_subplot(gs[1, c])
+        hx.pcolormesh(np.ma.masked_invalid(G), cmap=cmap, vmin=vmin, vmax=vmax, edgecolors="white", linewidth=0.15)
+        hx.set_xlim(0, G.shape[1]); hx.set_ylim(G.shape[0], 0); hx.set_xticks([]); hx.set_yticks([])
         for sp in hx.spines.values(): sp.set_visible(False)
-        hx.add_patch(plt.Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=0.6, ls=":", color=INK))
         st = json.loads((run / "uniformity.json").read_text())[f"{arm}|{item}"]
-        hx.text(0.0, Hmax + 14, f"$\\mathcal{{U}}$ = {st[U['metric']]:.2f} (this page)   recall = {rec[arm]:.2f}",
-                fontsize=6.4, va="top", color=INK, transform=hx.transData)
-    # colorbar under the maps
-    cax = fig.add_axes([0.03, 0.07, 0.25, 0.022]); sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin, vmax))
-    cb = fig.colorbar(sm, cax=cax, orientation="horizontal"); cb.outline.set_visible(False); cb.ax.tick_params(labelsize=5.5, length=1.5, pad=1)
-    cax.set_title("information load relative to the page mean", fontsize=5.8, pad=1.5, color=MUTED)
-    # scatter: recall vs uniformity, equal-budget points
-    ax = fig.add_subplot(gs[:, 3]); style(ax)
-    STY = {"A": ("coc", "o", "COC"), "U": ("coc", "s", "font search"), "Z": ("coc", "v", "downsample"), "B": ("coc", "P", "box"),
-           "R": ("R", "D", "random words"), "H": ("H", "^", "half"), "S": ("S", "*", NAME)}
+        hx.text(0.5, -0.04, f"$\\mathcal{{U}}$ = {st[U['metric']]:.2f}   recall = {rec[arm]:.2f}", transform=hx.transAxes,
+                fontsize=7, va="top", ha="center", color=INK)
+        hx.text(0.5, -0.135, f"{G.shape[0]} $\\times$ {G.shape[1]} vision tokens", transform=hx.transAxes, fontsize=6.5,
+                va="top", ha="center", color=MUTED)
+    cax = fig.add_axes([0.06, 0.045, 0.2, 0.025]); sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin, vmax))
+    cb = fig.colorbar(sm, cax=cax, orientation="horizontal", ticks=[0.5, 1, 1.5, 2, 2.5, 3])
+    cb.outline.set_visible(False); cb.ax.tick_params(labelsize=6, length=2, pad=1)
+    cax.text(1.04, 0.5, "information load per vision token / page mean", transform=cax.transAxes, fontsize=6.5, va="center", color=MUTED)
+    # recall vs uniformity
+    ax = fig.add_subplot(gr[0, 0])
+    STY = {"A": ("coc", "o"), "U": ("coc", "s"), "Z": ("coc", "v"), "B": ("coc", "P"), "R": ("R", "D"), "H": ("H", "^"), "S": ("S", "*")}
     pts = [p for p in U["points"] if p["setting"] in ("tab1_s5", "tab1_s6")]
     for p in pts:
-        k, mk, lab = STY[p["arm"]]; filled = p["setting"] == "tab1_s6"
-        ax.scatter(p["U"], p["recall"], marker=mk, s=(46 if mk == "*" else 20), color=(CH[k] if filled else "white"),
-                   edgecolor=CH[k], linewidth=0.9, zorder=3)
-    lab6 = {p["arm"]: p for p in pts if p["setting"] == "tab1_s6"}
-    ax.text(lab6["R"]["U"], lab6["R"]["recall"] + 0.035, "random\nwords", fontsize=5.8, color=INK, ha="center", va="bottom", linespacing=0.9)
-    ax.text(lab6["H"]["U"] - 0.006, lab6["H"]["recall"], "half", fontsize=5.8, color=INK, ha="right", va="center")
-    ax.text(lab6["S"]["U"] - 0.007, lab6["S"]["recall"] + 0.01, NAME, fontsize=5.8, color=INK, ha="right", va="center")
-    ax.text(lab6["A"]["U"] + 0.004, lab6["A"]["recall"] + 0.07, "COC, font search,\ndownsample, box", fontsize=5.8, color=INK, ha="center", va="bottom", linespacing=0.9)
+        k, mk = STY[p["arm"]]; filled = p["setting"] == "tab1_s6"
+        ax.scatter(p["U"], p["recall"], marker=mk, s=(42 if mk == "*" else 16), color=(CH[k] if filled else "white"),
+                   edgecolor=CH[k], linewidth=0.8, zorder=3)
+    l6 = {p["arm"]: p for p in pts if p["setting"] == "tab1_s6"}
+    ax.text(l6["R"]["U"] + 0.004, l6["R"]["recall"] + 0.045, "random\nwords", fontsize=6.5, ha="left", va="bottom", linespacing=0.95)
+    ax.text(l6["H"]["U"] - 0.006, l6["H"]["recall"], "half", fontsize=6.5, ha="right", va="center")
+    ax.text(l6["S"]["U"] - 0.008, l6["S"]["recall"] + 0.005, NAME, fontsize=6.5, ha="right", va="center", color=ACCENT_RED, fontweight="bold")
+    ax.text(l6["A"]["U"] + 0.002, l6["A"]["recall"] + 0.075, "COC, font search,\ndownsample, box", fontsize=6.5, ha="center", va="bottom", linespacing=0.95)
     r = U["spearman_eq16k"]
-    ax.text(0.03, 0.97, f"Spearman $\\rho$ = {r['rho']:.2f}\n(p = {r['p']:.1g}, {r['n']} arm × budget)", transform=ax.transAxes,
-            fontsize=6.3, va="top", color=INK)
-    ax.scatter([], [], marker="o", color=MUTED, s=14, label="6 px budget"); ax.scatter([], [], marker="o", facecolor="white", edgecolor=MUTED, s=14, label="5 px budget")
-    ax.legend(frameon=False, loc="lower right", fontsize=5.8, handletextpad=0.2, borderaxespad=0.1)
+    ax.text(0.03, 0.98, f"Spearman $\\rho$ = {r['rho']:.2f}\np = {r['p']:.0e}, n = {r['n']}", transform=ax.transAxes, fontsize=6.5, va="top")
+    ax.scatter([], [], marker="o", color=MUTED, s=12, label="6 px budget"); ax.scatter([], [], marker="o", facecolor="white", edgecolor=MUTED, s=12, label="5 px budget")
+    ax.legend(loc="lower right", fontsize=6.5, handletextpad=0.2, borderaxespad=0.1)
+    ax.set_xlim(0.345, 0.49); ax.set_xticks([0.35, 0.40, 0.45]); ax.set_ylim(0, 0.8)
     ax.set_xlabel("entropy uniformity $\\mathcal{U}$", labelpad=1); ax.set_ylabel("needle recall (5 VLMs)", labelpad=1)
-    ax.set_ylim(0, 0.8); ax.set_title("Equal vision-token budget, 16K chars", fontsize=7, pad=3)
-    fig.savefig(FIG / "teaser.pdf"); plt.close(fig)
+    ax.set_title("Equal budget, 16K characters", fontsize=8, fontweight="bold", pad=4)
+    fig.savefig(FIG / "teaser.pdf"); fig.savefig(FIG / "teaser.png", dpi=300); plt.close(fig)
 
 # ---------------------------------------------------------------- length scaling
 R5 = [r for r in N["reader_names"] if r != "claude-sonnet-5.5"]
@@ -300,7 +353,7 @@ def why():
     W = json.loads((EXP / "analysis_why.json").read_text()); E = W["esz"]; An = W["anatomy"]
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.3, 1.75), gridspec_kw=dict(wspace=0.45, left=0.13, right=0.99, bottom=0.22, top=0.72))
     for ax in (a1, a2): style(ax)
-    col = dict(E="#1F8FAE", W="#56B9CF", H="#E8685B"); lab = dict(E="English phrase", W="random words", H="random hex")
+    col = dict(E=CATEGORICAL[0], W=CATEGORICAL_EXTENDED[6], H=CATEGORICAL[3]); lab = dict(E="English phrase", W="random words", H="random hex")
     mk = dict(E="o", W="s", H="D")
     PR = E["per_reader_found_5to10"]; rds = [("gemini-3.5-flash-lite", "Gemini"), ("gpt-6-luna", "GPT"), ("llama-4-maverick", "Llama")]
     for j, t in enumerate("EWH"):
@@ -329,7 +382,7 @@ def thumbs_v2():
     import numpy as np, re, make_items as M, entropy_map as E
     from matplotlib.colors import LinearSegmentedColormap
     from PIL import ImageDraw, ImageFont
-    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
+    cmap = plt.get_cmap("Reds")  # heatmap asset (assets/figures/heatmap): cmap="Reds"
     run = EXP / "rbx_s6_multikey_1"; item = 22
     it = next(i for i in json.loads((run / "gt.json").read_text())["items"] if i["item"] == item)
     mb = {m["arm"]: m for m in json.loads((run / "manifest.json").read_text()) if m["item"] == item}
@@ -386,7 +439,7 @@ def natural_map(item=24):
     import numpy as np, re, make_items as M, entropy_map as E
     from matplotlib.colors import LinearSegmentedColormap
     from stats_pooled import merged
-    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
+    cmap = plt.get_cmap("Reds")  # heatmap asset (assets/figures/heatmap): cmap="Reds"
     run = EXP / "niq2_s6"; it = next(i for i in json.loads((run / "gt.json").read_text())["items"] if i["item"] == item)
     man = {m["arm"]: m for m in json.loads((run / "manifest.json").read_text()) if m["item"] == item}
     ph = re.search(r'immediately after the words "(.*?)"\?', it["prompt"]).group(1); k = it["text"].find(ph) + len(ph) + 1
@@ -407,7 +460,7 @@ def natural_map(item=24):
     for ax, (arm, R, g, (bx0, by0, bx1, by1)) in zip(axs, crops):
         rgb = cmap(np.clip(np.nan_to_num(R, nan=0) / vmax, 0, 1))[:, :, :3]; rgb[np.isnan(R)] = 1
         ax.imshow(rgb * g[:, :, None] ** 1.5, interpolation="nearest", aspect="equal"); ax.set_xticks([]); ax.set_yticks([])
-        ax.add_patch(plt.Rectangle((bx0 - 2, by0 - 1), bx1 - bx0 + 4, by1 - by0 + 2, fill=False, lw=0.8, color=CH["R"]))
+        ax.add_patch(plt.Rectangle((bx0 - 2, by0 - 1), bx1 - bx0 + 4, by1 - by0 + 2, fill=False, lw=0.8, color=BLACK))
         for sp in ax.spines.values(): sp.set_color(MUTED); sp.set_linewidth(0.5)
         nl = U[f"{arm}|{item}"]["needle_load"]; tl = list(nl.values())[0] if nl else float("nan")
         ax.set_title(f"{'COC (6 px)' if arm == 'A' else NAME + ' (5 / 12 px)'}:  target load {tl:.0f} bits/vtok,  recall {rec[arm]:.1f}",

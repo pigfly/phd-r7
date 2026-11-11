@@ -1,7 +1,7 @@
 """Figures for the paper. All numbers come from paper/data/numbers.json (built by extract_numbers.py);
 teaser crops come from the rendered images of thoughts/exp/real/rlong_c32k_single_3 (item 1).
 usage: python3 paper/fig/make_figures.py   -> paper/fig/*.pdf"""
-import json, sys
+import json, re, sys
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
@@ -16,6 +16,7 @@ N = json.loads((ROOT / "paper" / "data" / "numbers.json").read_text())
 C = dict(A="#7F8A96", K="#1F8FAE", S="#E8685B", X="#A83E35", T="#3B3B3B")
 MK = dict(A="o", K="s", S="D", X="^", T="*")
 LS = dict(A="--", K="-", S="-", X="-", T=":")
+NAME = "EquiPix"
 LAB = dict(A="Uniform (A)", K="Anchors (K)", S="Ours (S)", X="Ours + anchors (X)", T="Plain text (T)")
 INK, MUTED, GRID = "#2B2B2B", "#6B6B6B", "#E3E7EC"
 LIGHT = dict(aqua="#BFE6EA", peach="#F7D8B8", mist="#D9E2EB", warm="#F2F2F2", salmon="#F6A69A")
@@ -49,7 +50,7 @@ def needle_crop(img_path, text, units, lead, answer, width=330, lines_ctx=5):
     left = max(0, min(im.width - width, x0 - 40))
     return im.crop((left, top, left + width, bot))
 
-def teaser():
+def teaser_old():
     import make_items as M
     run = EXP / "rlong_c32k_single_3"; gt = {it["item"]: it for it in json.loads((run / "gt.json").read_text())["items"]}
     man = {(m["item"], m["arm"]): m for m in json.loads((run / "manifest.json").read_text())}
@@ -97,6 +98,95 @@ def teaser():
     ax.set_title("Equal vision-token budget", fontsize=7.5, pad=3)
     fig.savefig(FIG / "teaser.pdf"); plt.close(fig)
     return ans_a, ans_s, gold
+
+
+# ---------------------------------------------------------------- teaser (v2): information maps + recall vs uniformity
+CH = dict(coc="#7F8A96", R="#1F8FAE", H="#D9A23A", S="#E8685B")
+def load_raster(text, arm, m, size, n=48):
+    """per-pixel information load: every glyph cell painted with the load (bits / vision token) of the n-character
+    reading-order window centred on it; NaN where nothing is drawn"""
+    import numpy as np, entropy_map as E
+    h, a = E.char_load(text, arm, m, size); w = E.window_load(h, a, n)
+    lc = np.concatenate([np.full(n // 2, w[0]), w, np.full(len(text) - len(w) - n // 2, w[-1])])
+    bx, ix, (Wd, Hd) = E.cells(text, arm, m, size); R = np.full((Hd, Wd), np.nan)
+    for (x0, y0, x1, y1), i in zip(bx, ix): R[int(y0):int(np.ceil(y1)), int(x0):int(np.ceil(x1))] = lc[i]
+    return R
+
+def teaser():
+    import numpy as np, make_items as M
+    from matplotlib.colors import LinearSegmentedColormap
+    U = json.loads((EXP / "analysis_uniformity.json").read_text())
+    run_b, run_h = EXP / "rbx_s6_multikey_1", EXP / "rhalf_s6_multikey_1"; item = 22
+    it = next(i for i in json.loads((run_b / "gt.json").read_text())["items"] if i["item"] == item)
+    mb = {m["arm"]: m for m in json.loads((run_b / "manifest.json").read_text()) if m["item"] == item}
+    mh = next(m for m in json.loads((run_h / "manifest.json").read_text()) if m["item"] == item)
+    cols = [("A", mb["A"], run_b, "COC (typical)", "all text at 6 px"), ("H", mh, run_h, "Half enlarged", "2 of 4 needles at 12 px, prose 5 px"),
+            ("S", mb["S"], run_b, f"{NAME} (ours)", "all 4 needles at 12 px, prose 5 px")]
+    cmap = LinearSegmentedColormap.from_list("load", ["#FBF1EC", "#F2A08F", "#E8685B", "#A83E35", "#4A1410"])
+    rasters, crops = [], []
+    for arm, m, run, *_ in cols:
+        M.STRICT = arm in "SH"; M.ORACLE = set(mh["enlarged"]) if arm == "H" else None
+        Rr = load_raster(it["text"], arm, m, 6); rasters.append(Rr / np.nanmean(Rr)); M.STRICT = False; M.ORACLE = None
+        im = np.array(Image.open(Path(str(run).replace("rbx_", "rbase_")) / "img" / f"{m['name']}.png").convert("L"))
+        box = {"A": (330, 538, 590, 584), "H": (100, 370, 360, 416), "S": (127, 378, 387, 424)}[arm]
+        crops.append((im, box))
+    rec = {p["arm"]: p["recall"] for p in U["points"] if p["setting"] == "tab1_s6"}
+    vmin, vmax = 0.6, 3.0
+    fig = plt.figure(figsize=(6.9, 2.4))
+    gs = fig.add_gridspec(2, 4, width_ratios=[1, 1, 1, 1.12], height_ratios=[0.36, 1], wspace=0.12, hspace=0.16,
+                          left=0.005, right=0.985, top=0.9, bottom=0.15)
+    from uniformity_study import N0
+    import entropy_map as E
+    for c, ((arm, m, run, title, sub), R, (im, box)) in enumerate(zip(cols, rasters, crops)):
+        ax = fig.add_subplot(gs[0, c]); x0, y0, x1, y1 = box
+        ax.imshow(im[y0:y1, x0:x1], cmap="gray", vmin=0, vmax=255, interpolation="nearest"); ax.set_xticks([]); ax.set_yticks([])
+        import entropy_map as E
+        M.STRICT = arm in "SH"; M.ORACLE = set(mh["enlarged"]) if arm == "H" else None
+        bxs, ixs, _ = E.cells(it["text"], arm, m, 6); M.STRICT = False; M.ORACLE = None; ixs = list(ixs)
+        for v in re.findall(r"is: (\d{7})\.", it["text"]):  # mark every needle inside the crop
+            j = ixs.index(it["text"].find(v)); bx0, by0 = bxs[j][:2]; bx1, by1 = bxs[j + len(v) - 1][2:]
+            if x0 <= bx0 and bx1 <= x1 and y0 <= by0 and by1 <= y1:
+                ax.add_patch(plt.Rectangle((bx0 - x0 - 1.5, by0 - y0 - 0.5), bx1 - bx0 + 3, by1 - by0 + 1, fill=False, lw=0.7,
+                                           color=(CH["S"] if (arm == "S" or (arm == "H" and v in mh["enlarged"])) else CH["R"])))
+        for sp in ax.spines.values(): sp.set_visible(True); sp.set_color(CH["coc" if arm == "A" else arm]); sp.set_linewidth(1.1)
+        ax.set_title(f"{title}\n", fontsize=7.6, pad=1, color=INK, fontweight="bold")
+        ax.text(0.5, 1.04, sub, transform=ax.transAxes, ha="center", va="bottom", fontsize=6.2, color=MUTED)
+        hx = fig.add_subplot(gs[1, c]); Hmax = max(r.shape[0] for r in rasters)
+        bg = np.where(np.isnan(R), np.nan, R)
+        hx.imshow(np.ones_like(R), cmap="gray", vmin=0, vmax=1, extent=(0, R.shape[1], R.shape[0], 0))
+        hx.imshow(bg, cmap=cmap, vmin=vmin, vmax=vmax, interpolation="bilinear", extent=(0, R.shape[1], R.shape[0], 0))
+        hx.set_xlim(0, R.shape[1]); hx.set_ylim(Hmax, 0); hx.set_xticks([]); hx.set_yticks([])
+        for sp in hx.spines.values(): sp.set_visible(False)
+        hx.add_patch(plt.Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=0.6, ls=":", color=INK))
+        st = json.loads((run / "uniformity.json").read_text())[f"{arm}|{item}"]
+        hx.text(0.0, Hmax + 14, f"$\\mathcal{{U}}$ = {st[U['metric']]:.2f} (this page)   recall = {rec[arm]:.2f}",
+                fontsize=6.4, va="top", color=INK, transform=hx.transData)
+    # colorbar under the maps
+    cax = fig.add_axes([0.03, 0.07, 0.25, 0.022]); sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin, vmax))
+    cb = fig.colorbar(sm, cax=cax, orientation="horizontal"); cb.outline.set_visible(False); cb.ax.tick_params(labelsize=5.5, length=1.5, pad=1)
+    cax.set_title("information load relative to the page mean", fontsize=5.8, pad=1.5, color=MUTED)
+    # scatter: recall vs uniformity, equal-budget points
+    ax = fig.add_subplot(gs[:, 3]); style(ax)
+    STY = {"A": ("coc", "o", "COC"), "U": ("coc", "s", "font search"), "Z": ("coc", "v", "downsample"), "B": ("coc", "P", "box"),
+           "R": ("R", "D", "random words"), "H": ("H", "^", "half"), "S": ("S", "*", NAME)}
+    pts = [p for p in U["points"] if p["setting"] in ("tab1_s5", "tab1_s6")]
+    for p in pts:
+        k, mk, lab = STY[p["arm"]]; filled = p["setting"] == "tab1_s6"
+        ax.scatter(p["U"], p["recall"], marker=mk, s=(46 if mk == "*" else 20), color=(CH[k] if filled else "white"),
+                   edgecolor=CH[k], linewidth=0.9, zorder=3)
+    lab6 = {p["arm"]: p for p in pts if p["setting"] == "tab1_s6"}
+    ax.text(lab6["R"]["U"], lab6["R"]["recall"] + 0.035, "random\nwords", fontsize=5.8, color=INK, ha="center", va="bottom", linespacing=0.9)
+    ax.text(lab6["H"]["U"] - 0.006, lab6["H"]["recall"], "half", fontsize=5.8, color=INK, ha="right", va="center")
+    ax.text(lab6["S"]["U"] - 0.007, lab6["S"]["recall"] + 0.01, NAME, fontsize=5.8, color=INK, ha="right", va="center")
+    ax.text(lab6["A"]["U"] + 0.004, lab6["A"]["recall"] + 0.07, "COC, font search,\ndownsample, box", fontsize=5.8, color=INK, ha="center", va="bottom", linespacing=0.9)
+    r = U["spearman_eq16k"]
+    ax.text(0.03, 0.97, f"Spearman $\\rho$ = {r['rho']:.2f}\n(p = {r['p']:.1g}, {r['n']} arm × budget)", transform=ax.transAxes,
+            fontsize=6.3, va="top", color=INK)
+    ax.scatter([], [], marker="o", color=MUTED, s=14, label="6 px budget"); ax.scatter([], [], marker="o", facecolor="white", edgecolor=MUTED, s=14, label="5 px budget")
+    ax.legend(frameon=False, loc="lower right", fontsize=5.8, handletextpad=0.2, borderaxespad=0.1)
+    ax.set_xlabel("entropy uniformity $\\mathcal{U}$", labelpad=1); ax.set_ylabel("needle recall (5 VLMs)", labelpad=1)
+    ax.set_ylim(0, 0.8); ax.set_title("Equal vision-token budget, 16K chars", fontsize=7, pad=3)
+    fig.savefig(FIG / "teaser.pdf"); plt.close(fig)
 
 # ---------------------------------------------------------------- length scaling
 R5 = [r for r in N["reader_names"] if r != "claude-sonnet-5.5"]
@@ -227,4 +317,4 @@ def why():
     fig.savefig(FIG / "why.pdf"); plt.close(fig)
 
 if __name__ == "__main__":
-    print("teaser answers (A, S, gold):", teaser()); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); why(); print("ok")
+    teaser(); scaling(); density(); phase(); print("thumbs", thumbs()); print("examples", examples()); why(); print("ok")

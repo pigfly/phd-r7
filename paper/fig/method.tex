@@ -10,7 +10,7 @@
 ]
 \newcommand{\sub}[1]{{\scriptsize\itshape\color{gray!40!black}#1}}
 \node[io, text width=2.3cm] (doc) at (1.25,0) {{\small\bfseries Long document}\\[4pt]
-  {\scriptsize\raggedright \ldots{} One of the special magic numbers for brave-meadow is: \colorbox{cSalmon}{\texttt{\tiny 4414761}}. You couldn't allocate \ldots{} founded in 1995 \ldots\par}};
+  {\scriptsize\raggedright \ldots{} One of the special magic numbers for mellow-island is: \colorbox{cSalmon}{\texttt{\tiny 8676176}}. The lowest form of response to an argument \ldots\par}};
 \node[stage=cPeach] (ent) at (4.85,0) {{\small\bfseries Residual entropy}\\ \sub{theory, \cref{sec:principle}}\\[4pt]
   {\footnotesize $h_i=-\log_2 q(c_i\mid c_{<i})$}\\[5pt]
   \includegraphics[width=3.45cm]{fig/thumb_entropy.png}\\[4pt]
@@ -18,11 +18,11 @@
 \node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Information map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
   {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
   \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_coc.pdf}\\[3pt]
-  {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.36$}};
+  {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.40$}};
 \node[stage=cAqua] (eq) at (13.35,0) {{\small\bfseries \name: flatten the map}\\ \sub{method, \cref{sec:detect,sec:allocate}}\\[4pt]
   {\scriptsize flag high-entropy strings; draw them at $s_{\mathrm{hi}}$ and prose at $s_{\mathrm{lo}}$ with $v(I)\le B$}\\[4pt]
   \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_ours.pdf}\\[3pt]
-  {\scriptsize same budget, 16$\times$36 tokens, $\U=0.46$}};
+  {\scriptsize same budget, 15$\times$36 tokens, $\U=0.46$}};
 \node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
 \node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
   {optional post-processing: append flagged strings as verbatim anchors; route dense documents to text};

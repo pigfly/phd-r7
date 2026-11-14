@@ -20,7 +20,7 @@ Besides typical \textbf{COC}, the arms are as follows.
 \textbf{Random words} applies our allocation to random ordinary words whose total length matches the flagged strings.
 \textbf{Box} uses our layout without enlargement and draws a box around each flagged string.
 \textbf{Half} applies our allocation to a random half of the flagged strings.
-As post-processing, verbatim anchors (the flagged strings copied into the prompt) are appended to COC and to \name (\textbf{COC+anchor}, \textbf{\name+anchor}), and \textbf{text} gives the plain text.
+As post-processing, verbatim anchors (the flagged strings copied into the prompt) are appended to COC and to \name (\textbf{COC+anchor}, \textbf{\name+anchor}), and \textbf{text} gives the plain text.\footnote{We do not compare with FocusVTC, SEER, or LensVLM, which fine-tune the reader, or with AGAR, which needs attention maps; our readers are black-box APIs.}
 
 RULER is scored by recall of the gold values (case-insensitive containment) and LongBench by token-level F1, as in the original benchmarks.
 Because recall does not penalize extra answers, we also report a precision-aware F1.

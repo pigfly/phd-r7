@@ -13,4 +13,4 @@ We use ASCII English only and do not measure latency, prompt caching~\cite{gim20
 A rendered page does not carry information evenly.
 The renderer can see this before any model call: residual entropy, estimated from the text, gives an information map of the page, and entropy uniformity summarizes it.
 At an equal budget, renderings with a flatter map are read better, and renderings that only rescale the page leave both unchanged.
-\name flattens the map by moving pixels from prose to high-entropy strings. Across five readers it turns fabricated identifiers into read ones, raises needle recall by about half the scale at dense budgets, and doubles the recall of flagged natural identifiers. The gap to plain text on ordinary QA remains.
+\name flattens the map by moving pixels from prose to high-entropy strings. Across five readers it turns fabricated identifiers into read ones, raises needle recall by about half the scale at dense budgets, and doubles the recall of flagged natural identifiers. Plain text still wins on ordinary QA.

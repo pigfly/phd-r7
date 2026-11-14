@@ -24,7 +24,7 @@ Over the whole document, half enlargement lands between COC and \name (+0.21 to 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/needle_load.pdf}
-\caption{\textbf{The hot spots of the map are where reading fails.} (a) Recall of each needle against the information load of the 48-character window around it, binned (95\% CI), over all renderings and settings (3{,}760 needle--image pairs) and over COC images only (1{,}030). (b) Spearman $\rho$ between needle load and recall per subset.}
+\caption{\textbf{The hot spots of the map are where reading fails.} (a) Recall of each needle against the absolute load of the 48-character window around it (a normalized load of 1 in \cref{fig:teaser} is 56 bits per vision token), binned (95\% CI), over all renderings and settings (3{,}760 needle--image pairs) and over COC images only (1{,}030). (b) Spearman $\rho$ between needle load and recall per subset.}
 \label{fig:needle_load}
 \end{figure}
 
@@ -119,7 +119,7 @@ A synthetic ablation agrees: needles the regex misses leave \name at COC recall 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig/natural_map.pdf}
-\caption{\textbf{Information map of a LongBench document} (GovReport, 30K characters) around the target \texttt{GAO/NSIAD-98-62} (boxed), in the style of \cref{fig:teaser}: each cell is one vision token, colored by load relative to the page mean. Under COC the target sits in the hottest cells and no reader copies it. \name halves its load and four of five readers copy it, while the unflagged citations around it stay hot.}
+\caption{\textbf{Information map of a LongBench document} (GovReport, 30K characters) around the target \texttt{GAO/NSIAD-98-62} (boxed); cells as in \cref{fig:teaser}. Under COC the target sits in the hottest cells and no reader copies it. \name halves its load and four of five readers copy it, while the unflagged citations around it stay hot.}
 \label{fig:natural_map}
 \end{figure}
 

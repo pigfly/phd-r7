@@ -39,6 +39,8 @@ Within the RULER and natural-identifier sets the rank correlation is at most \Ut
 Inside one set the documents have similar hot spots, so the gain depends mostly on whether the queried string is flagged, which $\U$ does not see.
 We therefore use $\U$ to compare renderings of the same documents, not to predict the gain on a single document.
 
+$\U$ measures the shape of the load at a given budget, not its level. In the settings beyond those of \cref{sec:uniformity} (8 and 10\,px, 32K--128K characters), \name has both the higher $\U$ and the higher recall. At 8 and 10\,px, where font search was also run, $\U$ and recall rank the three arms identically. Across settings the mean load $\bar\ell$ also changes, yet pooling all \UnAll{} points still gives $\rho=\UrhoAll$. With other window lengths and tail statistics, $\rho$ at 16K ranges from \UrhoMin{} to \UrhoMax{} (\cref{app:uniformity}).
+
 \input{tab/app_uniformity}
 
 \section{Implementation Details}
@@ -166,6 +168,8 @@ Anchors (K, X) reach 0.96--1.00 at both budgets because the anchors again contai
 
 \input{tab/app_controls}
 
+Several numbers from the main comparisons are given here for completeness. Under half enlargement, whole-document recall lands between COC and \name (+0.21 to +0.30 over COC and 0.31 below \name; \cref{tab:pooled}), and at 6\,px the non-enlarged needles do worse than under COC (0.24) because they shrink to 5\,px with the prose and their load rises. In the equal-budget comparison (\cref{sec:main}) the weaker readers gain most (Llama 4 Maverick from 0.00 to 0.59, GPT from 0.11 to 0.65 at 6\,px), and Gemini, already at 0.88, gains 0.12; under the precision-aware F1 the pooled gains are smaller (0.46 and 0.34) but remain significant in at least 9 of 15 cells. Among partial misreads of UUIDs under COC, the most frequent confusion is 8$\to$0, two glyphs that differ by a small stroke. In the length study readers differ widely (0.47 to 0.97 at 128K for \name; \cref{tab:app_length}). A synthetic detector ablation shows that needles the regex misses leave \name at COC recall (0.33 vs.\ 0.32), whereas an oracle detector would reach 0.82 (\cref{tab:detector}).
+
 \section{Why Flattening Helps: Details}
 \label{app:why}
 
@@ -200,6 +204,8 @@ The pooled hexadecimal results do not rise monotonically with size (8\,px is low
 
 \section{Anchors: Budget Frontier and Long Context}
 \label{app:anchors}
+
+We give the anchor results of \cref{sec:anchors} in full. Anchors append the flagged strings verbatim after the question. They leave the map unchanged, so we treat them as post-processing that can be added to either image. In the RULER essays the only flagged strings are the needles, so the anchor list is the answer and both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}). On flagged natural identifiers, where documents carry 5.3 anchors on average, \name+anchor lies on or above the recall--cost frontier of COC+anchor by 0.02--0.05 across 5--7\,px, though no pooled interval excludes zero. At 64K--128K characters it costs 29--31\% less (\cref{app:anchors}). When the target is not flagged, anchors can mislead (0.36 vs.\ 0.44 without them). Beyond about 16 flagged strings per 32K characters, anchors on either image become expensive and routing to text takes over (\cref{app:density}).
 
 \Cref{tab:app_niqfront} gives the per-reader numbers behind the frontier of \cref{sec:anchors}: the 60 flagged natural-identifier questions rendered at base sizes of 5, 6, and 7\,px.
 \name alone gains 0.19--0.25 over COC at every budget.
@@ -343,6 +349,50 @@ A second set (new seed) measures what happens to strings the detector misses.
 It samples the target uniformly from all tokens of 4--64 ASCII characters that contain a digit.
 The phrase and artifact filters are the same (including \texttt{EQREF} and \texttt{DISPLAYFORM} placeholders), but the detector need not flag the target or the document.
 The detector flags one of the 60 targets.
+
+\section{Selection-Method Control}
+\label{app:selection}
+
+This control (\cref{sec:selection}) reuses the 60 detector-independent questions of \cref{app:niq}: one digit-bearing target of at least four characters per document, sampled at random among strings that follow a unique six-word phrase, without regard to any selector.
+All arms share the renderer and the budget $B$ of typical COC at 6\,px.
+The simple and surprisal rules draw prose at 5\,px and selected tokens at 12\,px, kept whole on one line, as \name does.
+Each rule ranks the token types of a document (simple rule: tokens with a digit or at least 12 characters, longest first; surprisal rule: tokens of at least four characters, highest mean per-character surprisal under Qwen2.5-0.5B first) and walks down the ranking, enlarging every occurrence of a type if the image still fits $B$ and skipping it otherwise.
+Skipping matters because a line that holds one enlarged token takes the height of that token, so a type that occurs on many lines can exhaust the budget by itself.
+The detector arm and COC are the images of \cref{sec:niq}; the detector arm uses the allocation of \cref{eq:alloc}, which keeps prose at 6\,px in 41 of 60 documents because it flags few strings.
+Five readers read every image; two GPT answers failed after retries and are dropped with their items for that reader.
+Intervals are 95\% bootstraps over readers and items (\cref{app:stats}).
+The surprisal rule mostly enlarges names, years, and runs of replaced non-ASCII characters, which are surprising to the language model but rarely queried.
+
+\begin{table}[h]
+\centering
+\caption{\textbf{Selection-method control on 60 natural targets sampled without any selector} (6\,px budget, five readers). Targets: how many queried strings the arm enlarges. Chars: enlarged characters per document. Vis.\ tok.: vision tokens by \cref{eq:vtok}. Tokens: prompt tokens per task (four readers that report usage). $\Delta$: recall minus COC.}
+\label{tab:app_selection}
+\begin{adjustbox}{max width=\columnwidth}
+\small
+\begin{tabular}{lrrrrcc}
+\toprule
+Arm & Targets & Chars & Vis.\ tok. & Tokens & Recall & $\Delta$ vs.\ COC \\
+\midrule
+COC & -- & -- & 1028 & 1106 & 0.45 & -- \\
+Detector (\name) & 1 & -- & 956 & 1063 & 0.44 & $-$0.01 [$-$0.12, 0.08] \\
+Simple rule & 12 & 862 & 1028 & 1111 & 0.44 & $-$0.01 [$-$0.12, 0.10] \\
+Surprisal rule & 16 & 432 & 1028 & 1111 & 0.50 & +0.05 [$-$0.07, 0.15] \\
+\midrule
+ & $n$ & \multicolumn{2}{r}{COC} & Arm & \multicolumn{2}{c}{$\Delta$} \\
+Simple rule, target enlarged & 12 & \multicolumn{2}{r}{0.45} & 0.70 & \multicolumn{2}{c}{+0.25 [$-$0.03, 0.55]} \\
+Simple rule, target missed & 48 & \multicolumn{2}{r}{0.45} & 0.37 & \multicolumn{2}{c}{$-$0.08 [$-$0.18, 0.03]} \\
+Surprisal rule, target enlarged & 16 & \multicolumn{2}{r}{0.30} & 0.70 & \multicolumn{2}{c}{+0.39 [0.21, 0.59]} \\
+Surprisal rule, target missed & 44 & \multicolumn{2}{r}{0.51} & 0.43 & \multicolumn{2}{c}{$-$0.08 [$-$0.20, 0.04]} \\
+\midrule
+ & Gemini & GPT & Llama & Qwen & MiniMax & \\
+COC & 0.85 & 0.57 & 0.25 & 0.33 & 0.27 & \\
+Detector (\name) & 0.87 & 0.50 & 0.25 & 0.43 & 0.15 & \\
+Simple rule & 0.73 & 0.52 & 0.28 & 0.45 & 0.22 & \\
+Surprisal rule & 0.85 & 0.67 & 0.35 & 0.45 & 0.18 & \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
 
 \section{Real-Corpus Profile}
 \label{app:corpora}

@@ -16,30 +16,31 @@ Our readers show this split.
 Under typical COC they write the hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time, and most wrong answers keep the format and invent the content (\cref{sec:why}).
 At an equal budget, typical COC recovers only 8--22\% of RULER needles across five readers.
 
-We ask which pixels matter more (\cref{fig:teaser}).
-What the pixels must supply for a character is roughly its residual entropy given the context, and we estimate it from the text before anything is drawn (\cref{sec:principle}).
+We first analyze which pixels matter more (\cref{fig:teaser}).
+What the pixels must supply for a character is roughly its residual entropy given the context, which we estimate with a small language model from the text before anything is drawn (\cref{sec:principle}).
 Dividing residual entropy by glyph area gives the information load of a region in bits per vision token.
 Drawn over a page, this load forms an information map, which shows the informative and error-prone spans of any text under any rendering before a model is called.
-Entropy uniformity $\U$ summarizes the map by comparing the mean load of a page with the load of its hottest regions (\cref{sec:map}).
-It is 1 when every region carries the same information per pixel and small when a few regions carry far more than the rest.
+Entropy uniformity $\U$ summarizes the map by comparing the mean load of a page with the load of its hottest regions (\cref{sec:map}), and we use it to compare renderings rather than to validate the method.
 
-If uneven load causes the errors, the remedy is to flatten the map.
-\name does so by enlarging high-entropy strings and shrinking prose within the vision-token budget of typical COC (\cref{sec:allocate}).
+The analysis suggests moving pixels from prose to high-entropy strings.
+\name implements this allocation without the language model: a detector built from regular expressions and character statistics selects candidate strings, and \name enlarges them while shrinking prose within the vision-token budget of typical COC (\cref{sec:detect,sec:allocate}).
 It needs no training and no query, and it uses only black-box access to the reader.
 Font search~\cite{cheng2025glyph} rescales the whole page, whereas \name moves pixels between regions of the same page.
 Methods that vary resolution within the input, such as FocusVTC~\cite{zhong2026focusvtc} and SEER~\cite{xu2026seer}, train the reader and decide per query over several turns, whereas \name decides once from the text and leaves the reader unchanged.
 Verbatim anchors, which copy flagged strings into the prompt next to the image, leave the map unchanged, and we treat them as optional post-processing (\cref{sec:anchors}).
 
-Entropy uniformity tracks recall: across 13 arm--budget combinations of the same documents, $\U$ and five-reader recall have Spearman $\rho=0.84$.
-Two further results, neither of which follows from how \name is built, support this link.
-Font search and render-then-downsample rescale every region about equally, so they leave $\U$ almost unchanged and barely improve recall.
-When a random half of the needles is enlarged, the enlarged ones are recalled six to seven times as often as the others (\cref{sec:uniformity}).
+\name makes the selected strings readable.
+In answers of the right length, the share of correct hexadecimal characters in UUID needles rises from 51\% to 91\% (\cref{sec:why}).
 \name outperforms typical COC on RULER needle recall by 0.43--0.55 at 16K characters and by 0.48 at 32K--128K characters, with up to 27\% fewer tokens per task.
-It also doubles the recall of flagged natural identifiers and leaves LongBench QA accuracy unchanged (\cref{sec:results}).
+On LongBench documents it doubles the recall of the identifiers it flags, and on the two LongBench QA tasks pooled F1 shows no significant difference from typical COC (\cref{sec:niq}).
+Two controls show that the gain comes from enlargement itself.
+When a random half of the needles is enlarged, the enlarged ones are recalled six to seven times as often as the others (\cref{sec:uniformity}).
+When only the selection rule changes at the same budget, natural targets that are enlarged rise from 0.30 to 0.70 recall while missed ones do not gain (\cref{sec:selection}).
+In synthetic retrieval, $\U$ also correlates with recall (Spearman $\rho=0.84$ over 13 arm--budget combinations), but on natural documents page-level $\U$ does not follow the gain, so it serves as an auxiliary analysis.
 
 Our contributions are:
 \begin{itemize}
-  \item an information view of COC that traces verbatim failures to characters with high residual entropy and estimates that entropy from the text alone (\cref{sec:principle});
-  \item information maps and entropy uniformity, which track recall across renderings at an equal budget and explain why rescaling the whole page does not help (\cref{sec:map,sec:uniformity});
-  \item \name, a training-free, budget-constrained glyph allocation that flattens the map (\cref{sec:allocate}).
+  \item an entropy analysis that traces verbatim failures to high-entropy characters and draws them as information maps (\cref{sec:principle,sec:map});
+  \item \name, a training-free allocation that enlarges strings selected by cheap text rules (\cref{sec:detect,sec:allocate});
+  \item an evaluation over five black-box VLMs with controls that separate enlargement from layout, salience, and selection (\cref{sec:results}).
 \end{itemize}

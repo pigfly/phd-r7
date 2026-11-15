@@ -65,7 +65,7 @@ where $\mathcal{T}$ is the set of the 160 windows with the highest load (1\% of 
 $\U=1$ when every window carries the same load, and $\U$ is small when a few windows carry much more than the rest.
 We use $n=48$, a little longer than a UUID with its key, so that a single rare prose word does not form a peak on its own. Other window lengths and tail statistics give similar results (\cref{app:uniformity}).
 
-Three properties make $\U$ useful.
+Three properties make $\U$ a useful diagnostic.
 First, it is invariant to rescaling: multiplying every $a_i$ by a constant changes $\bar\ell$ and every $\ell(W)$ by the same factor.
 Changing the font size of the whole page or downsampling the image therefore leaves $\U$ almost unchanged, and only a non-uniform allocation of pixels can raise it.
 Second, it is computable before any model call, from the text and the layout.
@@ -77,7 +77,7 @@ Its hot spots are the spans that the pixels must carry alone, and in our data th
 $\U$ is a summary of the page, not of the queried string, and it measures shape at a fixed budget.
 Across budgets, $\bar\ell$ itself changes: at 10\,px every window carries less than half the load it carries at 6\,px.
 
-\subsection{\name: flattening the map}
+\subsection{\name: enlarging selected strings}
 \label{sec:detect}
 
 Ideally, glyph area would be proportional to residual entropy, $a_i\propto h_i$, which makes the load constant and $\U=1$.
@@ -90,8 +90,9 @@ After stripping punctuation, a word is flagged if it matches one of five pattern
 Words that mix letters and digits are also flagged if they have at least 20 identifier characters or a 16-character window with at least 3.5 bits of character entropy.
 Four-digit numbers are excluded because in natural text they are mostly years, which are cheap to read, and long English words are never flagged.
 Without these exclusions the detector flagged 85--112 words per LongBench document (\cref{app:negative}).
-The detector selects strings that the language model also finds surprising, so \name raises $\U$ by construction.
-What has to be shown empirically is that higher $\U$ means higher recall (\cref{sec:uniformity}).
+The detector never calls the language model of \cref{sec:principle}, which serves only the analysis.
+Because the strings it selects are also surprising to that model, \name raises $\U$ by construction, so $\U$ cannot validate the method.
+We therefore evaluate \name by how accurately the selected strings are read (\cref{sec:main,sec:niq}) and compare the detector with other selection rules at the same budget (\cref{sec:selection}).
 
 \subsection{Budget-constrained glyph allocation}
 \label{sec:allocate}

@@ -1,11 +1,16 @@
 \begin{abstract}
-Context optical compression (COC) renders long text into images so that a vision-language model (VLM) can read it with several times fewer tokens.
-Typical COC gives every character the same pixels, which misallocates the budget because information is spread unevenly over a rendered page.
-A reader can recover predictable prose from its language prior, but characters with high residual entropy, such as those of identifiers and hashes, must come from the pixels.
-We estimate this residual entropy from the text alone, which yields an information map of any rendered page, and we summarize the map with an entropy-uniformity score $\mathcal{U}$.
-Across 13 rendering--budget combinations of the same documents at an equal vision-token budget, $\mathcal{U}$ tracks needle recall over five VLMs (Spearman $\rho=0.84$).
-Font search and downsampling leave $\mathcal{U}$ almost unchanged and barely help, so the remedy is to flatten the map.
-Our method, \name, enlarges high-entropy strings and shrinks prose within the budget of typical COC, without training and with only black-box access to the reader.
-It outperforms typical COC on RULER needle recall by 0.43--0.55 at the two densest budgets and by 0.48 at 32K--128K characters, with up to 27\% fewer tokens per task.
-It also doubles the recall of flagged identifiers in LongBench documents without lowering QA accuracy.
+Context optical compression (COC) renders long text into images so that a vision-language model (VLM) can read it with several times fewer tokens, but readers often fail to copy the identifiers in such images.
+At the densest budget, typical COC recovers 8\% of RULER needles over five VLMs, and most wrong answers to needles with a high information load keep the format and invent the characters.
+The cause is that typical COC gives every character the same pixels.
+A reader can fill in predictable prose from its language prior, but high-entropy characters, such as those of identifiers and hashes, must come from the pixels.
+An entropy analysis with a small language model shows that these characters form the hot spots of the information load on a page.
+Pixels should therefore move from prose to high-entropy strings.
+Our method, \name, implements this allocation without the language model.
+A lightweight text-rule detector selects candidate strings, which are enlarged while prose is shrunk within the vision-token budget of typical COC.
+It needs no training, no query, and only black-box access to the reader.
+Over five VLMs, \name raises RULER needle recall by 0.43--0.55 at the two densest budgets and by 0.48 at 32K--128K characters, with up to 27\% fewer tokens per task.
+In LongBench documents it doubles the recall of the identifiers it selects (0.23 to 0.48).
+On the two LongBench QA tasks evaluated, pooled QA F1 shows no statistically significant difference from typical COC.
+The gain is limited to the strings that are enlarged.
+A control that changes only the selection rule shows that missed strings do not benefit, so on natural documents selection coverage limits the gain, which also shrinks at milder budgets.
 \end{abstract}

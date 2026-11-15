@@ -11,10 +11,9 @@ Among rendering changes, AGAR is the most similar: it re-renders a page and enla
 \name is decided from the text before any model call, works with black-box APIs, and does not depend on the question.
 
 Training-free pruning and merging reduce the tokens of an encoded image~\cite{chen2024fastv,zhang2025sparsevlm,yang2025visionzip,shang2025prumerge,bolya2023tome,fang2026prunesid,lv2026vprune,zhang2026trio}, including for text-rich and OCR inputs~\cite{wan2026rtprune,li2025fcotvl}.
-They act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash. We do not test whether pruning keeps the enlarged glyphs.
+They act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash.
 Prompt compressors drop tokens judged uninformative~\cite{jiang2023llmlingua,jiang2024longllmlingua,li2023selective,pan2024llmlingua2}, learned compressors map context to soft tokens~\cite{mu2023gist,ge2024icae,chevalier2023autocompressors}, and KV-cache methods evict entries~\cite{zhang2023h2o,li2024snapkv,xiao2024streamingllm,devoto2025expected}.
 Selective Context, like our entropy estimate, uses an information signal, but to \emph{remove} low-information text. We keep every character and only change how large it is drawn.
-Caching prompt segments~\cite{gim2024promptcache} is a competing way to cut cost for repeated queries that we do not evaluate.
 
-We measure verbatim fidelity with RULER~\cite{hsieh2024ruler} and collateral damage with LongBench~\cite{bai2024longbench}. Text-rich benchmarks~\cite{liu2024ocrbench,ma2024mmlongbenchdoc} show the same weakness on natural images and PDFs.
-Modern VLMs allocate vision tokens roughly in proportion to pixel area~\cite{wang2024qwen2vl,bai2025qwen25vl,bai2025qwen3vl,chen2024internvl15,li2025llavaonevision}, so the rendering budget is a controllable cost. We report the prompt tokens counted by each provider.
+We measure verbatim fidelity with RULER~\cite{hsieh2024ruler} and collateral damage with LongBench~\cite{bai2024longbench}.
+Modern VLMs allocate vision tokens roughly in proportion to pixel area~\cite{wang2024qwen2vl,bai2025qwen25vl,bai2025qwen3vl,chen2024internvl15,li2025llavaonevision}, so the rendering budget is a controllable cost.

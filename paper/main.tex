@@ -9,7 +9,7 @@
 \def\confName{CVPR}
 \def\confYear{2027}
 
-\title{Which Pixels Matter More?\\Entropy-Uniform Rendering for Optical Long-Context Compression}
+\title{EQPix: Entropy-Equalized Pixel Rendering for\\Token-Efficient Optical Context Compression}
 \author{Anonymous CVPR submission}
 
 \begin{document}
@@ -19,7 +19,7 @@
 \vspace{-1.2em}
 \begin{center}
 \includegraphics[width=\textwidth]{fig/teaser.pdf}
-\captionof{figure}{\textbf{Information is spread unevenly over a rendered page, and recall follows how evenly it is spread.} One 16K-character RULER document with four seven-digit needles, rendered within the vision-token budget of typical context optical compression (\coc). \emph{Top:} crops of the rendered images; black boxes mark the needles and red boxes the enlarged ones. \emph{Bottom:} information maps drawn to scale, one cell per vision token, colored by normalized load (\cref{sec:map}); the color is computed from the text and is not part of the image. Under \coc the needles are hot spots. The middle rendering is an illustration that enlarges the needles but keeps the first fifth of the prose at 6\,px; it was not evaluated. \name shrinks all prose, uses the fewest tokens, and has the flattest map. Recall: five VLMs, 50 documents. \emph{Right:} recall against entropy uniformity $\U$ for every rendering at the 6\,px budget (both budgets: \cref{sec:uniformity}).}
+\captionof{figure}{\textbf{Information is spread unevenly over a rendered page, and enlarging its high-entropy strings makes them readable.} One 16K-character RULER document with four seven-digit needles, rendered within the vision-token budget of typical context optical compression (\coc). \emph{Top:} crops of the rendered images; black boxes mark the needles and red boxes the enlarged ones. \emph{Bottom:} information maps drawn to scale, one cell per vision token, colored by normalized load computed from the text (\cref{sec:map}). Under \coc the needles are hot spots. The middle rendering is an unevaluated illustration that keeps a fifth of the prose at 6\,px. \name shrinks all prose, uses the fewest tokens, and has the flattest map. Recall: five VLMs, 50 documents. \emph{Right:} auxiliary analysis on RULER: recall against entropy uniformity $\U$ for every rendering at the 6\,px budget (both budgets and caveats: \cref{sec:uniformity}).}
 \label{fig:teaser}
 \end{center}
 \vspace{0.6em}

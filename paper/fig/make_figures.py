@@ -83,9 +83,9 @@ def save_cns_figure(fig, filename):
 C = dict(A="#666666", K=CATEGORICAL[0], S=ACCENT_RED, X=CATEGORICAL[4], T=BLACK)
 MK = dict(A="o", K="s", S="D", X="^", T="*")
 LS = dict(A="--", K="-", S="-", X="-", T=":")
-NAME = "EquiPix"
+NAME = "EQPix"
 LAB = dict(
-    A="COC", K="COC+anchor", S="EquiPix (ours)", X="EquiPix+anchor", T="Plain text"
+    A="COC", K="COC+anchor", S="EQPix (ours)", X="EQPix+anchor", T="Plain text"
 )
 INK, MUTED, GRID = BLACK, "#555555", "#E0E0E0"
 LIGHT = dict(
@@ -728,7 +728,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
     fig.text(
         x4 + w4 / 2,
         0.948,
-        "Recall follows uniformity",
+        "Uniformity vs. recall",
         ha="center",
         va="center",
         fontsize=9,
@@ -738,7 +738,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
     fig.text(
         x4 + w4 / 2,
         0.868,
-        "(equal budget, 6 px, 16K characters)",
+        "(RULER, equal budget, 6 px)",
         ha="center",
         va="center",
         fontsize=6.8,
@@ -1045,7 +1045,7 @@ def phase():
         )
     ax.axhline(0, color=MUTED, lw=0.6)
     ax.set_xlabel("characters per vision token (density)")
-    ax.set_ylabel("$\\Delta$ exact-match (EquiPix $-$ COC)")
+    ax.set_ylabel("$\\Delta$ exact-match (EQPix $-$ COC)")
     ax.legend(frameon=False, fontsize=5.8, loc="center left", bbox_to_anchor=(1.0, 0.5))
     fig.savefig(FIG / "phase.pdf")
     plt.close(fig)
@@ -1149,7 +1149,7 @@ def examples():
     labs = [
         ("A", "COC, 6 px"),
         ("B", "box, not enlarged"),
-        ("S", f"EquiPix ({ms['s_lo']}/{ms['s_hi']} px)"),
+        ("S", f"EQPix ({ms['s_lo']}/{ms['s_hi']} px)"),
     ]
     fig, axs = plt.subplots(
         3,

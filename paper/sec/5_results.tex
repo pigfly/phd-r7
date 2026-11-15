@@ -6,10 +6,11 @@
 \subsection{Does entropy uniformity predict recall?}
 \label{sec:uniformity}
 
-\Cref{fig:teaser} (right) plots five-reader recall against $\U$ for the seven renderings of the 16K-character RULER documents at the 6\,px budget ($\rho=0.79$). Adding the six renderings at 5\,px gives 13 arm--budget points.
-Over these 13 points, $\U$ and recall have Spearman $\rho=\UrhoEq$ ($p=\UpEq$).
+For the seven renderings of the 16K-character RULER documents at the 6\,px budget, five-reader recall rises with $\U$ ($\rho=0.79$; \cref{fig:teaser}, right).
+Adding the six renderings at 5\,px gives 13 arm--budget points, over which $\U$ and recall have Spearman $\rho=\UrhoEq$ ($p=\UpEq$).
 Random words have the lowest uniformity (0.36) and recall (0.10).
-COC, font search, downsampling, and the box control sit together at $\U=0.385$--$0.391$ with recall 0.09--0.21; half enlargement reaches 0.41--0.42 and 0.43--0.47, and \name 0.46--0.47 and 0.64--0.67.
+COC, font search, downsampling, and the box control sit together at $\U=0.385$--$0.391$ with recall 0.09--0.21.
+Half enlargement reaches $\U=0.41$--$0.42$ with recall 0.43--0.47, and \name reaches 0.46--0.47 with recall 0.64--0.67.
 Over single documents the correlation is weaker ($\rho=\UrhoItems$ over \UnItems{} images), because $\U$ summarizes a page while each question asks about one string.
 
 Because the detector targets high-entropy strings, \name raises $\U$ by construction, so the correlation would be circular if it rested on \name alone.
@@ -44,8 +45,7 @@ Across settings the mean load $\bar\ell$ also changes, yet pooling all \UnAll{} 
 \subsection{Equal-budget comparison}
 \label{sec:main}
 
-\Cref{tab:baselines} compares all arms at the same vision-token budget.
-Averaged over five readers, typical COC recovers 8\% of needles at the denser budget and 22\% at the lighter one; only Claude (0.57) and Gemini (0.88) exceed 0.11 at 6\,px.
+At the same vision-token budget, typical COC recovers only 8\% of needles at the denser budget and 22\% at the lighter one, averaged over five readers (\cref{tab:baselines}); only Claude (0.57) and Gemini (0.88) exceed 0.11 at 6\,px.
 \name raises the mean to 0.64 and 0.65, a pooled gain of 0.55 and 0.43 (\cref{tab:pooled}), significant in 14 and 11 of 15 cells after Holm correction and never significantly negative.
 Font search reaches 0.12 and 0.21, and downsampling 0.16 and 0.19.
 At 6\,px \name also uses 8\% fewer tokens per task than COC (842 vs.\ 920), because prose shrinks more than the enlarged strings grow.
@@ -92,7 +92,8 @@ Hexadecimal and English targets also differ in their glyphs, so this test suppor
 COC is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
 Under COC, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
 \name stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
-It uses 13\%, 23\%, and 27\% fewer tokens per task than COC at the three lengths, and 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer than plain text, which every reader answers with recall of at least 0.99.
+It uses 13\%, 23\%, and 27\% fewer tokens per task than COC at the three lengths.
+Against plain text, which every reader answers with recall of at least 0.99, it uses 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer tokens.
 Readers differ widely (0.47 to 0.97 at 128K for \name; \cref{tab:app_length}).
 
 \subsection{Milder budgets}

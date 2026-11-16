@@ -44,11 +44,11 @@ Under a fixed budget, pixels should therefore move from low to high residual ent
 The trade is favorable because the two kinds of text sit on different parts of their legibility curves.
 Found English phrases keep 92--96\% character accuracy from 10 down to 4\,px, while a UUID at 12 instead of 5--6\,px goes from 51\% to 91\% hexadecimal accuracy (\cref{sec:why}).
 
-\subsection{Information maps and entropy uniformity}
+\subsection{Entropy maps and entropy uniformity}
 \label{sec:map}
 
 Let $a_i$ be the area of the glyph cell of $c_i$ in vision tokens (pixels divided by $28^2$), so that $\sum_i a_i \approx v(I)$.
-For a window $W$ of $n$ consecutive characters in reading order, the \emph{information load}
+For a window $W$ of $n$ consecutive characters in reading order, the \emph{entropy load}
 \begin{equation}
   \ell(W) \;=\; \frac{\sum_{i\in W} h_i}{\sum_{i\in W} a_i}
   \label{eq:load}
@@ -71,7 +71,7 @@ Changing the font size of the whole page or downsampling the image therefore lea
 Second, it is computable before any model call, from the text and the layout.
 A low $\U$ under typical COC flags hot spots that reallocation could cool, although in our data it does not predict the gain of single documents (\cref{app:uniformity}).
 Third, the load can be drawn.
-Coloring each vision token by its hottest window, as $\ell/(3\bar\ell)$ clipped at 1, gives an \emph{information map} on a 0--1 scale (\cref{fig:teaser}, bottom).
+Coloring each vision token by its hottest window, as $\ell/(3\bar\ell)$ clipped at 1, gives an \emph{entropy map} on a 0--1 scale (\cref{fig:teaser}, bottom).
 Its hot spots are the spans that the pixels must carry alone, and in our data they are the spans most often misread (\cref{sec:uniformity}).
 
 $\U$ is a summary of the page, not of the queried string, and it measures shape at a fixed budget.

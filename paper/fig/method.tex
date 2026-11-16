@@ -15,7 +15,7 @@
   {\footnotesize $h_i=-\log_2 q(c_i\mid c_{<i})$}\\[5pt]
   \includegraphics[width=3.45cm]{fig/thumb_entropy.png}\\[4pt]
   {\scriptsize prose $\approx$0.9 bits/char, hex digits $\approx$3.5: the prior cannot fill them in}};
-\node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Information map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
+\node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Entropy map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
   {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
   \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_coc.pdf}\\[3pt]
   {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.40$}};
@@ -32,6 +32,6 @@
 \draw[flow] (eq) -- (vlm);
 \draw[->, thick, dashed, draw=cCoral] (anc.east) -| (vlm.south);
 \end{tikzpicture}
-\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the information load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map. The language model is used only for this analysis: \name selects strings with text rules. Anchors leave the map unchanged and are optional post-processing.}
+\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the entropy load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map. The language model is used only for this analysis: \name selects strings with text rules. Anchors leave the map unchanged and are optional post-processing.}
 \label{fig:method}
 \end{figure*}

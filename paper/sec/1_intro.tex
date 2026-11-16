@@ -18,8 +18,8 @@ At an equal budget, typical COC recovers only 8--22\% of RULER needles across fi
 
 We first analyze which pixels matter more (\cref{fig:teaser}).
 What the pixels must supply for a character is roughly its residual entropy given the context, which we estimate with a small language model from the text before anything is drawn (\cref{sec:principle}).
-Dividing residual entropy by glyph area gives the information load of a region in bits per vision token.
-Drawn over a page, this load forms an information map, which shows the informative and error-prone spans of any text under any rendering before a model is called.
+Dividing residual entropy by glyph area gives the entropy load of a region in bits per vision token.
+Drawn over a page, this load forms an entropy map, which shows the informative and error-prone spans of any text under any rendering before a model is called.
 Entropy uniformity $\U$ summarizes the map by comparing the mean load of a page with the load of its hottest regions (\cref{sec:map}), and we use it to compare renderings rather than to validate the method.
 
 The analysis suggests moving pixels from prose to high-entropy strings.
@@ -40,7 +40,7 @@ In synthetic retrieval, $\U$ also correlates with recall (Spearman $\rho=0.84$ o
 
 Our contributions are:
 \begin{itemize}
-  \item an entropy analysis that traces verbatim failures to high-entropy characters and draws them as information maps (\cref{sec:principle,sec:map});
+  \item an entropy analysis that traces verbatim failures to high-entropy characters and draws them as entropy maps (\cref{sec:principle,sec:map});
   \item \name, a training-free allocation that enlarges strings selected by cheap text rules (\cref{sec:detect,sec:allocate});
   \item an evaluation over five black-box VLMs with controls that separate enlargement from layout, salience, and selection (\cref{sec:results}).
 \end{itemize}

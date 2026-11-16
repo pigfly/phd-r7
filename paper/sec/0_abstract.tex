@@ -1,9 +1,9 @@
 \begin{abstract}
 Context optical compression (COC) renders long text into images so that a vision-language model (VLM) can read it with several times fewer tokens, but readers often fail to copy the identifiers in such images.
-At the densest budget, typical COC recovers 8\% of RULER needles over five VLMs, and most wrong answers to needles with a high information load keep the format and invent the characters.
+At the densest budget, typical COC recovers 8\% of RULER needles over five VLMs, and most wrong answers to needles with a high entropy load keep the format and invent the characters.
 The cause is that typical COC gives every character the same pixels.
 A reader can fill in predictable prose from its language prior, but high-entropy characters, such as those of identifiers and hashes, must come from the pixels.
-An entropy analysis with a small language model shows that these characters form the hot spots of the information load on a page.
+An entropy analysis with a small language model shows that these characters form the hot spots of the entropy load on a page.
 Pixels should therefore move from prose to high-entropy strings.
 Our method, \name, implements this allocation without the language model.
 A lightweight text-rule detector selects candidate strings, which are enlarged while prose is shrunk within the vision-token budget of typical COC.

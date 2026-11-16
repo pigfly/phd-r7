@@ -343,7 +343,7 @@ def token_cells(R, cell=28):
 # one information-map style for every figure (teaser, pipeline thumbnails, natural document)
 MAP_VMIN, MAP_VMAX, MAP_EDGE = 0.0, 1.0, 0.15
 MAP_REF = 3.0  # normalized load = (load / page mean) / MAP_REF, clipped to [0, 1]: one fixed scale for every map, no per-map min-max
-MAP_LABEL = "normalized information load (0\u20131)"
+MAP_LABEL = "normalized entropy load (0\u20131)"
 
 
 def map_cmap():
@@ -643,7 +643,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
         fig.text(
             x + cw / 2 + 0.006,
             (ya + yb) / 2,
-            "information map",
+            "entropy map",
             ha="left",
             va="center",
             fontsize=6.2,
@@ -728,10 +728,10 @@ def teaser(item=14, out="teaser", task="multivalue"):
     fig.text(
         x4 + w4 / 2,
         0.948,
-        "Uniformity vs. recall",
+        "Entropy uniformity vs. recall",
         ha="center",
         va="center",
-        fontsize=9,
+        fontsize=7.8,
         fontweight="bold",
         color=INK,
     )
@@ -780,7 +780,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
     ax.text(
         l6["H"]["U"] - 0.006,
         l6["H"]["recall"],
-        "half enlarged",
+        "partial",
         fontsize=6.3,
         ha="right",
         va="center",
@@ -825,7 +825,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
     fig.text(
         x4 + w4 / 2,
         0.225,
-        "normalized information load (0–1)",
+        "normalized entropy load (0–1)",
         ha="center",
         va="center",
         fontsize=6.3,

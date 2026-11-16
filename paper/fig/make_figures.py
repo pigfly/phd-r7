@@ -400,7 +400,7 @@ def map_colorbar(fig, rect, label=MAP_LABEL, fontsize=6.5):
 # (teaser, maps) heatmap -> assets/figures/heatmap/plot_composition.py -> param inherit (cmap "Reds", white cell
 #                 borders, colorbar with explicit ticks); data are per-page load grids, not a category matrix
 # (teaser, scatter) scatter -> cross-type inherit (basic scatter: marker s=10-20, direct labels, no legend box)
-def teaser(item=14, out="teaser", task="multivalue"):
+def teaser(item=5, out="teaser", task="multivalue"):
     """Card layout (one card per rendering + recall vs U): title, rendered crop, arrow, information map drawn to scale
     (same cell = one vision token), token count. Needles are outlined: red if enlarged, black if not.
     """
@@ -410,52 +410,36 @@ def teaser(item=14, out="teaser", task="multivalue"):
     from matplotlib.patches import Rectangle, FancyBboxPatch, FancyArrowPatch
 
     U = json.loads((EXP / "analysis_uniformity.json").read_text())
-    run_b, run_h = EXP / f"rbx_s6_{task}", EXP / f"rhalf_s6_{task}"
+    run_b = EXP / f"rbx_s6_{task}"
     it = next(
         i
         for i in json.loads((run_b / "gt.json").read_text())["items"]
         if i["item"] == item
     )
-    mb = {
-        m["arm"]: m
-        for m in json.loads((run_b / "manifest.json").read_text())
-        if m["item"] == item
-    }
-    mh = next(
-        m
-        for m in json.loads((run_h / "manifest.json").read_text())
-        if m["item"] == item
-    )
-    vals = re.findall(r"is: (\d{7})\.", it["text"])
-    # middle panel: an illustrative partial reallocation (rendered here, not evaluated): all needles at 12 px, the first
-    # fifth of the prose kept at 6 px and the rest at 5 px
-    text = it["text"]
-    cut = len(text) // 5
-    old_units = E._units
+    # two-needle document built from the essay of this RULER item (advisor, 2026-11-16): the four needle sentences are
+    # removed and two are inserted in the lower half, so the upper half holds only prose. Rendered here with the real
+    # arms: COC, partial (the half rule: one of the two needles enlarged, prose at 5 px) and EQPix (both enlarged).
+    sents = re.findall(r" ?One of the special magic numbers for [\w-]+ is: \d{7}\.", it["text"])
+    key = re.search(r"numbers for ([\w-]+)", sents[0]).group(1)
+    base = it["text"]
+    for s_ in sents:
+        base = base.replace(s_, "")
+    vals = [re.search(r"\d{7}", s_).group(0) for s_ in sents[:2]]
 
-    def units_i(tx, arm, m, size):
-        if arm != "I":
-            return old_units(tx, arm, m, size)
-        out, k = [], 0
-        for w in M.words(tx):
-            if w.strip(".,;:()[]\"'") in vals:
-                out.append((w, 12, k))
-            else:
-                out += [(ch, 6 if k + j < cut else 5, k + j) for j, ch in enumerate(w)]
-            k += len(w)
-        return out, 0, 1.0, M.FONT_PATH
-
-    E._units = units_i
-    mi = {"name": None}
-    low = set(vals)
+    # sentence boundaries chosen so that both needles fall inside one 260 x 46 px crop in all three renderings
+    # (found by searching boundaries in the lower half; both needles at ~58% of the text)
+    k1, k2 = 9105, 9317
+    text = (base[:k1] + f"One of the special magic numbers for {key} is: {vals[0]}. " + base[k1:k2]
+            + f"One of the special magic numbers for {key} is: {vals[1]}. " + base[k2:])
+    bud = M.vtokens(*M.render(M.units_uniform(text, 6)).size)
     cols = [
-        ("A", mb["A"], run_b, "COC (typical)", "all text at 6 px"),
-        ("I", mi, None, "Partial (illustrative)", "needles 12 px, most prose 5 px"),
-        ("S", mb["S"], run_b, f"{NAME} (ours)", "prose 5 px, 4 of 4 needles at 12 px"),
+        ("A", "COC (typical)", "all text at 6 px"),
+        ("H", "Partial", "prose 5 px, 1 of 2 needles at 12 px"),
+        ("S", f"{NAME} (ours)", "prose 5 px, 2 of 2 needles at 12 px"),
     ]
     dd = merged(
         [f"rbx_s6_{t}+rhalf_s6_{t}" for t in ("multikey_1", "multivalue")]
-    )  # same 50 documents for all columns
+    )  # recall of each arm over the same 50 evaluated RULER documents
     rec = {
         a: St.mean(
             v[a]["recall"]
@@ -466,47 +450,25 @@ def teaser(item=14, out="teaser", task="multivalue"):
         )
         for a in "AHS"
     }
-    CROP = {}
-    panels = []
-    for arm, m, run, *_ in cols:
+    CROP, panels, UV = {}, [], {}
+    for arm, *_ in cols:
         M.STRICT = arm in "SH"
-        M.ORACLE = (low if arm == "I" else set(mh["enlarged"])) if arm in "HI" else None
-        G = page_map(it["text"], arm, m)
-        bxs, ixs, _ = E.cells(it["text"], arm, m, 6)
+        M.ORACLE = {vals[0]} if arm == "H" else None
+        pim, lo, hi, ex = M.long_arm("A" if arm == "A" else "S", text, bud, 6)
+        m = dict(arm=arm, s_lo=lo, s_hi=hi, extra=ex, name=None)
+        G = page_map(text, arm, m)
+        bxs, ixs, _ = E.cells(text, arm, m, 6)
+        hh, aa = E.char_load(text, arm, m, 6)
+        ww = E.window_load(hh, aa, 48)
+        UV[arm] = (hh.sum() / aa.sum()) / np.sort(ww)[-160:].mean()
         M.STRICT = False
         M.ORACLE = None
         ixs = list(ixs)
-        if arm == "I":
-            M.ORACLE = low
-            hh, aa = E.char_load(text, "I", m, 6)
-            ww = E.window_load(hh, aa, 48)
-            UI = (hh.sum() / aa.sum()) / np.sort(ww)[-160:].mean()
-            im = np.array(
-                M.render([(t, z) for t, z, _ in units_i(text, "I", m, 6)[0]]).convert(
-                    "L"
-                )
-            )
-            M.ORACLE = None
-        else:
-            im = np.array(
-                Image.open(
-                    Path(str(run).replace("rbx_", "rbase_"))
-                    / "img"
-                    / f"{m['name']}.png"
-                ).convert("L")
-            )
+        im = np.array(pim.convert("L"))
         nd = []
-        for (
-            v
-        ) in (
-            vals
-        ):  # one box per text line, so a needle wrapped across two lines gets two boxes
-            j = ixs.index(it["text"].find(v))
-            enl = (
-                arm == "S"
-                or (arm == "H" and v in mh["enlarged"])
-                or (arm == "I" and v in low)
-            )
+        for v in vals:  # one box per text line, so a needle wrapped across two lines gets two boxes
+            j = ixs.index(text.find(v))
+            enl = arm == "S" or (arm == "H" and v == vals[0])
             seg = None
             for q in range(j, j + len(v)):
                 b = bxs[q]
@@ -517,20 +479,12 @@ def teaser(item=14, out="teaser", task="multivalue"):
                         nd.append(seg + (enl,))
                     seg = tuple(b[:4])
             nd.append(seg + (enl,))
-        fx = next(n for n in nd if n[4]) if arm != "A" else None
-        if (
-            fx is None
-        ):  # COC: crop around the same needle (first enlarged one in the halfway panel)
-            q = ixs.index(it["text"].find(next(v for v in vals if v in low)))
-            fx = tuple(bxs[q][:2]) + tuple(
-                bxs[q + 6][2:]
-            )  # crop around the first needle enlarged by Half
-        cx0 = int(min(max(0, fx[0] - 40), im.shape[1] - 260))
-        cy = (fx[1] + fx[3]) / 2
-        cy0 = int(min(max(0, cy - 23), im.shape[0] - 46))
+        ux0, uy0 = min(n[0] for n in nd), min(n[1] for n in nd)  # crop around both needles
+        ux1, uy1 = max(n[2] for n in nd), max(n[3] for n in nd)
+        cx0 = int(min(max(0, (ux0 + ux1) / 2 - 130), im.shape[1] - 260))
+        cy0 = int(min(max(0, (uy0 + uy1) / 2 - 23), im.shape[0] - 46))
         CROP[arm] = (cx0, cy0, cx0 + 260, cy0 + 46)
         panels.append((G, im, nd))
-    E._units = old_units
     nrow0, ncol = panels[0][0].shape
     FW, FH = TEXTW, 56 * MM
     fig = plt.figure(figsize=(FW, FH))
@@ -562,7 +516,7 @@ def teaser(item=14, out="teaser", task="multivalue"):
     ch0 = mw * (FW / FH) * 46 / 260
     my1 = 0.815 - ch0 - 0.07
     my0 = my1 - mh_
-    for c, ((arm, m, run, title, sub), (G, im, nd)) in enumerate(zip(cols, panels)):
+    for c, ((arm, title, sub), (G, im, nd)) in enumerate(zip(cols, panels)):
         x = xs[c]
         card(x, cw)
         fig.text(
@@ -602,47 +556,58 @@ def teaser(item=14, out="teaser", task="multivalue"):
             sp.set_visible(True)
             sp.set_color(GREY)
             sp.set_linewidth(0.5)
-        for bx0, by0, bx1, by1, enl in nd:
-            if x0 <= bx0 and bx1 <= x1 and y0 <= by0 and by1 <= y1:
-                ax.add_patch(
-                    Rectangle(
-                        (bx0 - x0 - 1.5, by0 - y0 - 0.5),
-                        bx1 - bx0 + 3,
-                        by1 - by0 + 1,
-                        fill=False,
-                        lw=0.9,
-                        color=(ACCENT_RED if enl else NEED),
+        inside = [n for n in nd if x0 <= n[0] and n[2] <= x1 and y0 <= n[1] and n[3] <= y1]
+        for bx0, by0, bx1, by1, enl in inside:
+            ax.add_patch(
+                Rectangle(
+                    (bx0 - x0 - 1.5, by0 - y0 - 0.5),
+                    bx1 - bx0 + 3,
+                    by1 - by0 + 1,
+                    fill=False,
+                    lw=0.9,
+                    color=(ACCENT_RED if enl else NEED),
+                )
+            )
+        fx_ = lambda n: x + pad + mw * ((n[0] + n[2]) / 2 - x0) / (x1 - x0)
+        fy_ = lambda n: 0.815 - ch * (n[3] - y0 + 1) / (y1 - y0)
+        kinds = sorted({n[4] for n in inside}, key=lambda e: min(fx_(n) for n in inside if n[4] == e))
+        ly = 0.815 - ch - 0.023
+        for gi, e in enumerate(kinds):
+            grp = [n for n in inside if n[4] == e]
+            col = ACCENT_RED if e else NEED
+            word = ("enlarged needle" if e else "needle") + ("s" if len(grp) > 1 else "")
+            if len(kinds) == 1:
+                lx, ha = sum(fx_(n) for n in grp) / len(grp), "center"
+            else:
+                lx, ha = (x + pad, "left") if gi == 0 else (x + pad + mw, "right")
+            fig.text(lx, ly, word, fontsize=6.5, fontweight="bold", color=col, ha=ha, va="center")
+            for n in grp:
+                fig.add_artist(
+                    FancyArrowPatch(
+                        (lx if ha == "center" else (lx + 0.03 if ha == "left" else lx - 0.03), ly + 0.009),
+                        (fx_(n), fy_(n)),
+                        transform=fig.transFigure,
+                        arrowstyle="-|>",
+                        mutation_scale=5,
+                        lw=0.6,
+                        color=col,
                     )
                 )
-                ax.text(
-                    bx1 - x0 + 4,
-                    (by0 + by1) / 2 - y0,
-                    "enlarged needle" if enl else "needle",
-                    fontsize=6.5,
-                    fontweight="bold",
-                    color=(ACCENT_RED if enl else NEED),
-                    ha="left",
-                    va="center",
-                    zorder=6,
-                    bbox=dict(
-                        boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.92
-                    ),
-                )
-        ya, yb = 0.815 - ch - 0.012, my1 + 0.012
+        side = ["none"]
         fig.add_artist(
             FancyArrowPatch(
-                (x + cw / 2, ya),
-                (x + cw / 2, yb),
+                (x + pad + 0.004, my1 + 0.022),
+                (x + pad + 0.004, my1 + 0.004),
                 transform=fig.transFigure,
                 arrowstyle="-|>",
-                mutation_scale=6,
-                lw=0.6,
+                mutation_scale=4,
+                lw=0.5,
                 color=MUTED,
             )
         )
         fig.text(
-            x + cw / 2 + 0.006,
-            (ya + yb) / 2,
+            x + pad + 0.010,
+            my1 + 0.012,
             "entropy map",
             ha="left",
             va="center",
@@ -706,14 +671,8 @@ def teaser(item=14, out="teaser", task="multivalue"):
             fontweight="bold",
             color=INK,
         )
-        if arm == "I":
-            uval = UI
-            rtxt = "recall 0.56"
-        else:
-            uval = json.loads((run / "uniformity.json").read_text())[f"{arm}|{item}"][
-                U["metric"]
-            ]
-            rtxt = f"recall {rec[arm]:.2f}"
+        uval = UV[arm]
+        rtxt = f"recall {rec[arm]:.2f}"
         fig.text(
             x + cw / 2,
             my0 - 0.125,

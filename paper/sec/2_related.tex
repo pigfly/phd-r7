@@ -1,6 +1,8 @@
 \section{Related Work}
 \label{sec:related}
 
+\input{fig/method}
+
 Reading text from pixels has a long history, from pixel-based language models~\cite{rust2023pixel,gao2024screenshots} to unified image--text encoders~\cite{tschannen2023clippo} and screenshot pretraining~\cite{lee2023pix2struct}.
 Context optical compression (COC) renders long contexts to compress them: DeepSeek-OCR decodes text from few vision tokens~\cite{wei2025deepseekocr,wei2026deepseekocr2}, Glyph searches for a good global rendering configuration~\cite{cheng2025glyph}, and other work renders whole inputs, distant context, or interleaved text~\cite{li2025textpixels,xing2025vist,wang2024visincontext}.
 Evaluations show where this fails: compressed reading loses retrieval ability~\cite{zhao2025vtcbench}, the text--pixel gap depends on font and resolution~\cite{sun2026reading}, optical compression can underperform mean pooling~\cite{lee2026autoencoding}, and accuracy collapses when linguistic priors are removed~\cite{liang2026visualmerit,gao2026zerosense}.
@@ -14,6 +16,8 @@ Training-free pruning and merging reduce the tokens of an encoded image~\cite{ch
 They act on visual features inside the model, where it is no longer explicit that a group of glyphs forms a hash.
 Prompt compressors drop tokens judged uninformative~\cite{jiang2023llmlingua,jiang2024longllmlingua,li2023selective,pan2024llmlingua2}, learned compressors map context to soft tokens~\cite{mu2023gist,ge2024icae,chevalier2023autocompressors}, and KV-cache methods evict entries~\cite{zhang2023h2o,li2024snapkv,xiao2024streamingllm,devoto2025expected}.
 Selective Context, like our entropy estimate, uses an information signal, but to \emph{remove} low-information text. We keep every character and only change how large it is drawn.
+
+
 
 We measure verbatim fidelity with RULER~\cite{hsieh2024ruler} and collateral damage with LongBench~\cite{bai2024longbench}.
 Modern VLMs allocate vision tokens roughly in proportion to pixel area~\cite{wang2024qwen2vl,bai2025qwen25vl,bai2025qwen3vl,chen2024internvl15,li2025llavaonevision}, so the rendering budget is a controllable cost.

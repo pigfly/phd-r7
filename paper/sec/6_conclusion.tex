@@ -1,14 +1,27 @@
-\section{Limitations and Conclusion}
-\label{sec:conclusion}
+% \section{Conclusion}
+% \label{sec:conclusion}
 
-Our residual-entropy estimate is the surprisal of a small left-to-right language model, which ignores the right-hand context and the visual distinctiveness of glyphs, so we use it to compare renderings of the same documents rather than as an absolute score.
-The correlation between $\U$ and recall rests on 13 synthetic arm--budget points, \name raises $\U$ partly by construction, and on natural documents page-level $\U$ does not rise.
-The gains are largest at dense budgets; at 10\,px font search does as well, and every image arm trails plain text on ordinary QA by up to 0.33 F1.
-Strings that no rule selects shrink with the prose and do not benefit, and our natural sets, including the selection control, have only 60 questions each.
-We test black-box readers through public APIs whose versions may change, not trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} or token pruning.
-Budgets follow one patch-based rule (\cref{eq:vtok}), token savings have exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, Llama), and we use ASCII English only, without measuring latency, prompt caching~\cite{gim2024promptcache}, or text-side safety filters.
+% Our residual-entropy estimate is the surprisal of a small left-to-right language model, which ignores the right-hand context and the visual distinctiveness of glyphs, so we use it to compare renderings of the same documents rather than as an absolute score.
+% The correlation between $\U$ and recall rests on 13 synthetic arm--budget points, \name raises $\U$ partly by construction, and on natural documents page-level $\U$ does not rise.
+% The gains are largest at dense budgets; at 10\,px font search does as well, and every image arm trails plain text on ordinary QA by up to 0.33 F1.
+% Strings that no rule selects shrink with the prose and do not benefit, and our natural sets, including the selection control, have only 60 questions each.
+% We test black-box readers through public APIs whose versions may change, not trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} or token pruning.
+% Budgets follow one patch-based rule (\cref{eq:vtok}), token savings have exceptions at short lengths (Gemini up to 32K characters, Qwen at 16K and 5\,px, Llama), and we use ASCII English only, without measuring latency, prompt caching~\cite{gim2024promptcache}, or text-side safety filters.
 
-A rendered page does not carry information evenly.
-Residual entropy, estimated from the text before any model call, locates the strings that the pixels must carry, and \name enlarges strings selected by cheap rules within the budget of typical COC.
-Across five readers this turns fabricated identifiers into read ones and raises needle recall by about half the scale at dense budgets.
-On natural documents it helps only the strings that are enlarged, so better selection is the main lever for future work.
+% A rendered page does not carry information evenly.
+% Residual entropy, estimated from the text before any model call, locates the strings that the pixels must carry, and \name enlarges strings selected by cheap rules within the budget of typical COC.
+% Across five readers this turns fabricated identifiers into read ones and raises needle recall by about half the scale at dense budgets.
+% On natural documents it helps only the strings that are enlarged, so better selection is the main lever for future work.
+
+% \section{Limitations}
+
+\section{Conclusion}
+
+A rendered page does not carry information evenly. Residual entropy, estimated from the text before any reader-model call, identifies strings whose information must be preserved visually. Guided by this analysis, \name enlarges high-entropy strings selected by lightweight rules while remaining within the vision-token budget of typical COC. Across five readers, \name substantially reduces fabricated identifiers and improves needle recall by roughly 0.5 at dense budgets. On natural documents, only selected strings benefit, making improved selection the main direction for future work.
+
+\section{Limitations}
+
+Our residual-entropy estimate uses the surprisal of a small left-to-right language model. It therefore ignores right-hand context and the visual distinctiveness of glyphs. We use it to compare renderings of the same documents rather than as an absolute score. The correlation between $\U$ and recall is based on 13 synthetic arm--budget points, and \name increases $\U$ partly by construction; on natural documents, page-level $\U$ does not increase.
+
+The gains are largest at dense budgets. At 10\,px, font search performs comparably, and every image-based method trails plain text on ordinary QA by up to 0.33 F1. Strings missed by the rule-based selector shrink with the prose and do not benefit. Our natural-document evaluations, including the selection control, contain only 60 questions each.
+We evaluate black-box readers through public APIs whose versions may change. We do not test trained optical compressors~\cite{wei2025deepseekocr,cheng2025glyph} or token-pruning methods. Our budgets follow one patch-based rule (\cref{eq:vtok}), and token savings have exceptions at short context lengths, including Gemini up to 32K characters, Qwen at 16K and 5\,px, and Llama. Finally, we evaluate only ASCII English and do not measure latency, prompt caching~\cite{gim2024promptcache}, or interactions with text-side safety filters.

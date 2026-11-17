@@ -1,37 +1,38 @@
 % Pipeline (TikZ): theory -> measure/visualization -> method, at text width.
 % Palette: peach #F7D8B8, light aqua #BFE6EA, salmon #F6A69A, mist #D9E2EB, warm white #F2F2F2, coral #E8685B.
-\begin{figure*}[t]
-\centering
-\begin{tikzpicture}[
-  >={Stealth[length=2.2mm]},
-  stage/.style={draw=#1!60!black, fill=#1!45, rounded corners=3pt, minimum height=4.75cm, text width=3.6cm, align=center, inner sep=3pt},
-  io/.style={draw=gray!60, fill=cWarm, rounded corners=2pt, minimum height=4.75cm, align=center, inner sep=3pt},
-  flow/.style={->, thick, draw=gray!70!black},
-]
-\newcommand{\sub}[1]{{\scriptsize\itshape\color{gray!40!black}#1}}
-\node[io, text width=2.3cm] (doc) at (1.25,0) {{\small\bfseries Long document}\\[4pt]
-  {\scriptsize\raggedright \ldots{} One of the special magic numbers for mellow-island is: \colorbox{cSalmon}{\texttt{\tiny 8676176}}. The lowest form of response to an argument \ldots\par}};
-\node[stage=cPeach] (ent) at (4.85,0) {{\small\bfseries Residual entropy}\\ \sub{theory, \cref{sec:principle}}\\[4pt]
-  {\footnotesize $h_i=-\log_2 q(c_i\mid c_{<i})$}\\[5pt]
-  \includegraphics[width=3.45cm]{fig/thumb_entropy.png}\\[4pt]
-  {\scriptsize prose $\approx$0.9 bits/char, hex digits $\approx$3.5: the prior cannot fill them in}};
-\node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Entropy map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
-  {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
-  \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_coc.pdf}\\[3pt]
-  {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.40$}};
-\node[stage=cAqua] (eq) at (13.35,0) {{\small\bfseries \name: flatten the map}\\ \sub{method, \cref{sec:detect,sec:allocate}}\\[4pt]
-  {\scriptsize flag high-entropy strings; draw them at $s_{\mathrm{hi}}$ and prose at $s_{\mathrm{lo}}$ with $v(I)\le B$}\\[4pt]
-  \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_ours.pdf}\\[3pt]
-  {\scriptsize same budget, 15$\times$36 tokens, $\U=0.46$}};
-\node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
-\node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
-  {optional post-processing: append flagged strings as verbatim anchors; route dense documents to text};
-\draw[flow] (doc) -- (ent);
-\draw[flow] (ent) -- (map);
-\draw[flow] (map) -- (eq);
-\draw[flow] (eq) -- (vlm);
-\draw[->, thick, dashed, draw=cCoral] (anc.east) -| (vlm.south);
-\end{tikzpicture}
-\caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the entropy load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map. The language model is used only for this analysis: \name selects strings with text rules. Anchors leave the map unchanged and are optional post-processing.}
-\label{fig:method}
-\end{figure*}
+\begin{figure*}[ht!]
+  \centering
+  \begin{tikzpicture}[
+    >={Stealth[length=2.2mm]},
+    stage/.style={draw=#1!60!black, fill=#1!45, rounded corners=3pt, minimum height=4.75cm, text width=3.6cm, align=center, inner sep=3pt},
+    io/.style={draw=gray!60, fill=cWarm, rounded corners=2pt, minimum height=4.75cm, align=center, inner sep=3pt},
+    flow/.style={->, thick, draw=gray!70!black},
+  ]
+  \newcommand{\sub}[1]{{\scriptsize\itshape\color{gray!40!black}#1}}
+  \node[io, text width=2.3cm] (doc) at (1.25,0) {{\small\bfseries Long document}\\[4pt]
+    {\scriptsize\raggedright \ldots{} One of the special magic numbers for mellow-island is: \colorbox{cSalmon}{\texttt{\tiny 8676176}}. The lowest form of response to an argument \ldots\par}};
+  \node[stage=cPeach] (ent) at (4.85,0) {{\small\bfseries Residual entropy}\\ \sub{theory, \cref{sec:principle}}\\[4pt]
+    {\footnotesize $h_i=-\log_2 q(c_i\mid c_{<i})$}\\[5pt]
+    \includegraphics[width=3.45cm]{fig/thumb_entropy.png}\\[4pt]
+    {\scriptsize prose $\approx$0.9 bits/char, hex digits $\approx$3.5: the prior cannot fill them in}};
+  \node[stage=cMist] (map) at (9.1,0) {{\small\bfseries Entropy map and $\U$}\\ \sub{measure \& visualization, \cref{sec:map}}\\[4pt]
+    {\footnotesize $\ell(W)=\frac{\sum_{W} h_i}{\sum_{W} a_i}$,\; $\U=\frac{\bar\ell}{\mathrm{mean}_{\mathcal{T}}\ell}$}\\[4pt]
+    \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_coc.pdf}\\[3pt]
+    {\scriptsize typical COC (21$\times$36 tokens): the needles are hot spots, $\U=0.40$}};
+  \node[stage=cAqua] (eq) at (13.35,0) {{\small\bfseries \name: flatten the map}\\ \sub{method, \cref{sec:detect,sec:allocate}}\\[4pt]
+    {\scriptsize flag high-entropy strings; draw them at $s_{\mathrm{hi}}$ and prose at $s_{\mathrm{lo}}$ with $v(I)\le B$}\\[4pt]
+    \includegraphics[width=3.45cm,height=1.4cm]{fig/thumb_map_ours.pdf}\\[3pt]
+    {\scriptsize same budget, 15$\times$36 tokens, $\U=0.46$}};
+  \node[io, text width=1.15cm] (vlm) at (16.4,0) {{\small\bfseries VLM}\\[3pt]{\scriptsize black box, any query}};
+  \node[draw=cCoral, dashed, rounded corners=2pt, fill=white, text width=7.6cm, align=center, inner sep=2.5pt, font=\scriptsize] (anc) at (11.2,-2.95)
+    {optional post-processing: append flagged strings as verbatim anchors; route dense documents to text};
+  \draw[flow] (doc) -- (ent);
+  \draw[flow] (ent) -- (map);
+  \draw[flow] (map) -- (eq);
+  \draw[flow] (eq) -- (vlm);
+  \draw[->, thick, dashed, draw=cCoral] (anc.east) -| (vlm.south);
+  \end{tikzpicture}
+  \caption{\textbf{From residual entropy to \name.} The renderer estimates the residual entropy of every character from the text alone (left: a needle sentence colored by $h_i$; the key and the digits are hot). Dividing by glyph area gives the entropy load, which can be drawn as a map of any page and summarized by entropy uniformity $\U$. Typical COC leaves the high-entropy strings as hot spots. \name enlarges the flagged strings and shrinks prose within the same vision-token budget, which flattens the map. The language model is used only for this analysis: \name selects strings with text rules. Anchors leave the map unchanged and are optional post-processing.}
+  \label{fig:method}
+  \end{figure*}
+  

@@ -1,7 +1,7 @@
+
+
 \section{Information in Rendered Text}
 \label{sec:method}
-
-\input{fig/method}
 
 We first fix the budget (\cref{sec:formulation}), then ask which characters need pixels (\cref{sec:principle}), measure how evenly a rendering serves them (\cref{sec:map}), and finally flatten the resulting map (\cref{sec:detect,sec:allocate}); \cref{fig:method} summarizes the pipeline.
 
@@ -18,7 +18,7 @@ Following the patch-based accounting of dynamic-resolution VLMs~\cite{wang2024qw
 where one vision token covers $28\times28$ pixels (14-pixel patches merged $2\times2$ in Qwen2-VL).
 \Cref{eq:vtok} is used to enforce budgets; reported costs are the prompt tokens counted by each provider.
 Typical COC renders every character at one base size $s_0$, and its cost defines the budget $B = v\big(R(x;\sigma\equiv s_0)\big)$.
-Every method we compare stays within $B$, up to page rounding, and keeps every character in place.
+Every method we compare stays within $B$, up to page rounding, and keeps every character in the document in place.
 
 \subsection{Which pixels matter more}
 \label{sec:principle}
@@ -63,13 +63,13 @@ We define \emph{entropy uniformity} as
 \end{equation}
 where $\mathcal{T}$ is the set of the 160 windows with the highest load (1\% of a 16K-character document; a fixed count keeps the tail from being diluted as documents grow).
 $\U=1$ when every window carries the same load, and $\U$ is small when a few windows carry much more than the rest.
-We use $n=48$, a little longer than a UUID with its key, so that a single rare prose word does not form a peak on its own. Other window lengths and tail statistics give similar results (\cref{app:uniformity}).
+We use $n=48$, a little longer than a UUID with its key, so that a single rare prose word does not form a peak on its own. Other window lengths and tail statistics give similar results (\textbf{Appendix \ref{app:uniformity}}).
 
 Three properties make $\U$ a useful diagnostic.
 First, it is invariant to rescaling: multiplying every $a_i$ by a constant changes $\bar\ell$ and every $\ell(W)$ by the same factor.
 Changing the font size of the whole page or downsampling the image therefore leaves $\U$ almost unchanged, and only a non-uniform allocation of pixels can raise it.
 Second, it is computable before any model call, from the text and the layout.
-A low $\U$ under typical COC flags hot spots that reallocation could cool, although in our data it does not predict the gain of single documents (\cref{app:uniformity}).
+A low $\U$ under typical COC flags hot spots that reallocation could cool, although in our data it does not predict the gain of single documents (\textbf{Appendix \ref{app:uniformity}}).
 Third, the load can be drawn.
 Coloring each vision token by its hottest window, as $\ell/(3\bar\ell)$ clipped at 1, gives an \emph{entropy map} on a 0--1 scale (\cref{fig:teaser}, bottom).
 Its hot spots are the spans that the pixels must carry alone, and in our data they are the spans most often misread (\cref{sec:uniformity}).
@@ -89,7 +89,7 @@ The detector combines regular expressions with a windowed character-entropy test
 After stripping punctuation, a word is flagged if it matches one of five patterns: a hexadecimal run of at least 8 characters, a run of at least 5 digits, a path with a digit or a file extension, an IP address, or a digest prefix.
 Words that mix letters and digits are also flagged if they have at least 20 identifier characters or a 16-character window with at least 3.5 bits of character entropy.
 Four-digit numbers are excluded because in natural text they are mostly years, which are cheap to read, and long English words are never flagged.
-Without these exclusions the detector flagged 85--112 words per LongBench document (\cref{app:negative}).
+Without these exclusions the detector flagged 85--112 words per LongBench document (\textbf{Appendix \ref{app:negative}}).
 The detector never calls the language model of \cref{sec:principle}, which serves only the analysis.
 Because the strings it selects are also surprising to that model, \name raises $\U$ by construction, so $\U$ cannot validate the method.
 We therefore evaluate \name by how accurately the selected strings are read (\cref{sec:main,sec:niq}) and compare the detector with other selection rules at the same budget (\cref{sec:selection}).
@@ -111,5 +111,6 @@ where $\operatorname{lexmax}$ first maximizes $s_{\mathrm{hi}}$ and then $s_{\ma
 The 5\,px floor keeps prose readable, and $s_{\mathrm{lo}}\le s_0$ ensures prose is never enlarged.
 If no pair with $s_{\mathrm{hi}}>s_{\mathrm{lo}}$ fits, prose-only lines lose one pixel of line spacing; at $s_0=5$\,px this is what makes room (\cref{app:alloc}).
 If nothing is flagged, the image is identical to typical COC.
-A missed high-entropy string in a document where other strings are flagged, however, shrinks with the prose.
+%A missed high-entropy string in a document where other strings are flagged, however, shrinks with the prose.
+An undetected high-entropy string, however, shrinks with the prose.
 At $s_0=6$\,px the result usually costs 13--27\% fewer tokens than the budget, because the search stops at the largest feasible $s_{\mathrm{hi}}$.

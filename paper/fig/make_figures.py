@@ -898,7 +898,7 @@ def scaling():
     a2.set_yticks([1.5, 3, 6, 12, 25])
     a2.set_yticklabels(["1.5", "3", "6", "12", "25"])
     a2.minorticks_off()
-    a2.set_ylabel("billed prompt tokens (K)")
+    a2.set_ylabel("prompt tokens per task (K)")
     a2.text(0.02, 0.97, "(b)", transform=a2.transAxes, va="top", fontsize=7.5)
     for ax in (a1, a2):
         ax.set_xscale("log", base=2)
@@ -959,7 +959,7 @@ def density():
     axs[0].set_ylabel("needle recall")
     axs[0].set_ylim(0, 1.05)
     axs[0].set_title("(a) recall vs. hazard density", fontsize=7.5, pad=2)
-    axs[1].set_ylabel("billed prompt tokens (K)")
+    axs[1].set_ylabel("prompt tokens per task (K)")
     axs[1].set_title("(b) cost vs. hazard density", fontsize=7.5, pad=2)
     h, l = axs[0].get_legend_handles_labels()
     axs[1].legend(h, l, frameon=False, loc="upper left", fontsize=6)

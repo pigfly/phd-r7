@@ -14,8 +14,7 @@ The reader, however, needs different evidence for different characters.
 A VLM that reads rendered text combines what the glyph shows with what its language model expects.
 In prose the expectation fills most gaps, so blurred letters are still read correctly.
 In an identifier it cannot, because the format of a UUID is predictable while each hexadecimal character carries 4 bits that only the pixels can supply.
-Our readers show this split.
-Under typical COC they write the hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time, and most wrong answers keep the format and invent the content (\cref{sec:why}).
+Under typical COC, our readers write the hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time, and most wrong answers keep the format and invent the content (\cref{sec:why}).
 At an equal budget, typical COC recovers only 8--22\% of RULER needles across five readers.
 
 We first analyze which pixels matter more (\cref{fig:teaser}).
@@ -27,11 +26,11 @@ Dividing residual entropy by glyph area gives the entropy load of a region in bi
 % The analysis suggests reallocating pixels from predictable prose to high-entropy strings. Hence we propose
 % \name to achieve this allocation without any language model: a detector built from regular expressions and character statistics selects candidate strings, and \name enlarges them while shrinking prose within the vision-token budget of typical COC (\cref{sec:detect,sec:allocate}).
 % It needs no training and no query, and it uses only black-box access to the reader.
-The analysis suggests reallocating pixels from predictable prose to high-entropy strings. Hence, we propose \name, which achieves this reallocation without an auxiliary language model. A detector based on regular expressions and character statistics selects candidate strings, and \name enlarges them while shrinking prose within the vision-token budget of typical COC (\cref{sec:detect,sec:allocate}). It is training-free and query-agnostic and requires only black-box access to the reader.
+The analysis suggests reallocating pixels from predictable prose to high-entropy strings. Hence, we propose \name, which achieves this reallocation without an auxiliary language model. A detector based on regular expressions and character statistics selects candidate strings, and \name enlarges them while shrinking prose within the vision-token budget of typical COC (\cref{sec:detect,sec:allocate}).
 % Font search~\cite{cheng2025glyph} rescales the whole page, whereas \name moves pixels between regions of the same page.
 % Methods that vary resolution within the input, such as FocusVTC~\cite{zhong2026focusvtc} and SEER~\cite{xu2026seer}, train the reader and decide per query over several turns, whereas our \name decides once from the text and leaves the reader unchanged.
 % Verbatim anchors, which copy flagged strings into the prompt next to the image, leave the map unchanged, and we treat them as optional post-processing (\cref{sec:anchors}).
-Font search~\cite{cheng2025glyph} rescales the entire page uniformly, whereas \name reallocates pixels among regions of the same page. Methods that vary resolution within an input, such as FocusVTC~\cite{zhong2026focusvtc} and SEER~\cite{xu2026seer}, train the reader and make query-dependent decisions over multiple rounds. In contrast, \name determines the rendering once from the source text and leaves the reader unchanged. Verbatim anchors copy flagged strings into the prompt alongside the image without changing the entropy map; we therefore treat them as optional post-processing (\cref{sec:anchors}).
+Font search~\cite{cheng2025glyph} rescales the entire page uniformly, whereas \name reallocates pixels among regions of the same page. Methods that vary resolution within an input, such as FocusVTC~\cite{zhong2026focusvtc} and SEER~\cite{xu2026seer}, train the reader and make query-dependent decisions over multiple rounds. In contrast, \name determines the rendering once from the source text and leaves the reader unchanged. Verbatim anchors, which copy flagged strings into the prompt, leave the entropy map unchanged and serve as optional post-processing (\cref{sec:anchors}).
 
 % \name makes the selected strings readable.
 % In answers of the right length, the share of correct hexadecimal characters in UUID needles rises from 51\% to 91\% (\cref{sec:why}).
@@ -55,7 +54,7 @@ Font search~\cite{cheng2025glyph} rescales the entire page uniformly, whereas \n
 \begin{enumerate}
   \item We introduce a residual-entropy analysis that explains verbatim retrieval failures as insufficient visual capacity for high-entropy characters. We visualize this uneven information distribution using entropy maps and quantify it through entropy uniformity (\cref{sec:principle,sec:map}).
 
-  \item We propose \name, a training-free and query-agnostic rendering method that reallocates visual capacity from predictable prose to high-entropy strings selected by lightweight text rules. It operates within the vision-token budget of typical COC and requires only black-box access to the reader (\cref{sec:detect,sec:allocate}).
+  \item We propose \name, a training-free and query-agnostic rendering method that reallocates visual capacity from predictable prose to high-entropy strings selected by lightweight text rules, using only black-box access to the reader (\cref{sec:detect,sec:allocate}).
 
-  \item We evaluate \name across five black-box VLMs on synthetic retrieval and natural-document tasks. Controlled experiments separate the effects of enlargement from layout, salience, and selection, demonstrating improved verbatim recall and token efficiency without significantly reducing downstream QA accuracy (\cref{sec:results}).
+  \item We evaluate \name across five black-box VLMs on synthetic retrieval and natural-document tasks. Controls separate enlargement from layout, salience, and selection; \name improves verbatim recall and token efficiency without significantly reducing QA accuracy (\cref{sec:results}).
 \end{enumerate}

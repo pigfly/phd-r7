@@ -433,8 +433,8 @@ def teaser(item=5, out="teaser", task="multivalue"):
             + f"One of the special magic numbers for {key} is: {vals[1]}. " + base[k2:])
     bud = M.vtokens(*M.render(M.units_uniform(text, 6)).size)
     cols = [
-        ("A", "COC (typical)", "all text at 6 px"),
-        ("H", "Partial", "prose 5 px, 1 of 2 needles at 12 px"),
+        ("A", "COC", "all text at 6 px"),
+        ("I", "Partial", "prose 5 px, 1 of 2 needles at 12 px"),
         ("S", f"{NAME} (ours)", "prose 5 px, 2 of 2 needles at 12 px"),
     ]
     dd = merged(
@@ -450,11 +450,32 @@ def teaser(item=5, out="teaser", task="multivalue"):
         )
         for a in "AHS"
     }
+    cut = len(text) // 3
+    old_units = E._units
+
+    def units_i(tx, arm, m, size):  # illustrative partial: first third of the prose at 6 px, the rest at 5 px
+        if arm != "I":
+            return old_units(tx, arm, m, size)
+        out, k = [], 0
+        for w in M.words(tx):
+            if w.strip(".,;:()[]\"'") == vals[0]:
+                out.append((w, 12, k))
+            else:
+                out += [(ch, 6 if k + j < cut else 5, k + j) for j, ch in enumerate(w)]
+            k += len(w)
+        return out, 0, 1.0, M.FONT_PATH
+
+    E._units = units_i
+    rec["I"] = rec["H"]  # illustration: shown with the recall of the evaluated half arm (stated in the caption)
     CROP, panels, UV = {}, [], {}
     for arm, *_ in cols:
         M.STRICT = arm in "SH"
-        M.ORACLE = {vals[0]} if arm == "H" else None
-        pim, lo, hi, ex = M.long_arm("A" if arm == "A" else "S", text, bud, 6)
+        M.ORACLE = {vals[0]} if arm in "HI" else None
+        if arm == "I":
+            pim = M.render([(u, z) for u, z, _ in units_i(text, "I", None, 6)[0]])
+            lo, hi, ex = 5, 12, 0
+        else:
+            pim, lo, hi, ex = M.long_arm("A" if arm == "A" else "S", text, bud, 6)
         m = dict(arm=arm, s_lo=lo, s_hi=hi, extra=ex, name=None)
         G = page_map(text, arm, m)
         bxs, ixs, _ = E.cells(text, arm, m, 6)
@@ -468,7 +489,7 @@ def teaser(item=5, out="teaser", task="multivalue"):
         nd = []
         for v in vals:  # one box per text line, so a needle wrapped across two lines gets two boxes
             j = ixs.index(text.find(v))
-            enl = arm == "S" or (arm == "H" and v == vals[0])
+            enl = arm == "S" or (arm in "HI" and v == vals[0])
             seg = None
             for q in range(j, j + len(v)):
                 b = bxs[q]
@@ -485,6 +506,7 @@ def teaser(item=5, out="teaser", task="multivalue"):
         cy0 = int(min(max(0, (uy0 + uy1) / 2 - 23), im.shape[0] - 46))
         CROP[arm] = (cx0, cy0, cx0 + 260, cy0 + 46)
         panels.append((G, im, nd))
+    E._units = old_units
     nrow0, ncol = panels[0][0].shape
     FW, FH = TEXTW, 56 * MM
     fig = plt.figure(figsize=(FW, FH))
@@ -516,12 +538,15 @@ def teaser(item=5, out="teaser", task="multivalue"):
     ch0 = mw * (FW / FH) * 46 / 260
     my1 = 0.815 - ch0 - 0.07
     my0 = my1 - mh_
+    DY = 0.5 - (0.948 + (my0 - 0.125)) / 2  # centre each rendering card: top gap = bottom gap
+    my1 += DY
+    my0 += DY
     for c, ((arm, title, sub), (G, im, nd)) in enumerate(zip(cols, panels)):
         x = xs[c]
         card(x, cw)
         fig.text(
             x + cw / 2,
-            0.948,
+            (0.948 + DY),
             title,
             ha="center",
             va="center",
@@ -531,7 +556,7 @@ def teaser(item=5, out="teaser", task="multivalue"):
         )
         fig.text(
             x + cw / 2,
-            0.868,
+            (0.868 + DY),
             f"({sub})",
             ha="center",
             va="center",
@@ -541,7 +566,7 @@ def teaser(item=5, out="teaser", task="multivalue"):
         # rendered crop (what the VLM receives)
         x0, y0, x1, y1 = CROP[arm]
         ch = mw * (FW / FH) * (y1 - y0) / (x1 - x0)
-        ax = fig.add_axes([x + pad, 0.815 - ch, mw, ch])
+        ax = fig.add_axes([x + pad, (0.815 + DY) - ch, mw, ch])
         ax.imshow(
             im[y0:y1, x0:x1],
             cmap="gray",
@@ -569,9 +594,9 @@ def teaser(item=5, out="teaser", task="multivalue"):
                 )
             )
         fx_ = lambda n: x + pad + mw * ((n[0] + n[2]) / 2 - x0) / (x1 - x0)
-        fy_ = lambda n: 0.815 - ch * (n[3] - y0 + 1) / (y1 - y0)
+        fy_ = lambda n: (0.815 + DY) - ch * (n[3] - y0 + 1) / (y1 - y0)
         kinds = sorted({n[4] for n in inside}, key=lambda e: min(fx_(n) for n in inside if n[4] == e))
-        ly = 0.815 - ch - 0.023
+        ly = (0.815 + DY) - ch - 0.023
         for gi, e in enumerate(kinds):
             grp = [n for n in inside if n[4] == e]
             col = ACCENT_RED if e else NEED
@@ -706,15 +731,12 @@ def teaser(item=5, out="teaser", task="multivalue"):
     ax = fig.add_axes([x4 + 0.048, 0.40, w4 - 0.062, 0.40])
     ax.set_facecolor(CARD)
     STY = {
-        "A": ("coc", "o"),
-        "U": ("coc", "s"),
-        "Z": ("coc", "v"),
-        "B": ("coc", "P"),
+        "A": ("coc", "v"),
         "R": ("R", "D"),
         "H": ("H", "^"),
         "S": ("S", "*"),
     }
-    pts = [p for p in U["points"] if p["setting"] == "tab1_s6"]
+    pts = [p for p in U["points"] if p["setting"] == "tab1_s6" and p["arm"] in STY]  # font search, downsample, box overlap COC: not drawn
     for p in pts:
         k, mk = STY[p["arm"]]
         ax.scatter(
@@ -739,7 +761,7 @@ def teaser(item=5, out="teaser", task="multivalue"):
     ax.text(
         l6["H"]["U"] - 0.006,
         l6["H"]["recall"],
-        "partial",
+        "Partial",
         fontsize=6.3,
         ha="right",
         va="center",

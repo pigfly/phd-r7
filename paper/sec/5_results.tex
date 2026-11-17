@@ -34,7 +34,7 @@ Over all renderings, recall falls from 0.70 below 15 bits per vision token to 0.
 The relation holds within COC images alone, where nothing was reallocated ($\rho=-0.36$ over 1{,}030 needles; 0.52 to 0.10 across the same range), and in every subset we ran.
 It is weakest on the natural strings ($\rho=-0.20$ and $-0.25$ under COC, 60 targets each, $p=0.12$ and 0.05), whose targets the detector did not always choose.
 
-In the other settings (8 and 10\,px, 32K--128K characters) \name also has the higher $\U$ and the higher recall (\cref{app:uniformity}).
+In the other settings (8 and 10\,px, 32K--128K characters) \name also has the higher $\U$ and the higher recall (\textbf{Appendix \ref{app:uniformity}}).
 
 \input{tab/pooled}
 
@@ -48,7 +48,7 @@ At 6\,px \name also uses 8\% fewer tokens per task than COC (842 vs.\ 920), beca
 Two controls isolate the ingredients.
 Random words, with sizes and cost close to those of \name, recover 0.10 of the needles at both budgets, 0.54 and 0.56 below \name.
 The box control makes the needle easy to find but not easier to read. It is 0.53 below \name and slightly below COC ($-$0.05, interval upper bound $-$0.001), perhaps because the box line touches the small glyphs.
-The gain thus comes from making the high-entropy strings legible, not from layout changes or from pointing at them.
+The gain thus comes from making the high-entropy strings legible, not from layout changes or from pointing at them (\textbf{Appendix \ref{app:controls}}).
 
 \subsection{Why does flattening help?}
 \label{sec:why}
@@ -65,12 +65,12 @@ The single-UUID needles of \cref{tab:baselines} agree.
 Under COC a third of the answers are empty.
 In answers of the right length the four hyphens, which the format predicts, are correct 99\% of the time and the 32 hexadecimal characters 51\%. \name raises the hexadecimal characters to 91\% and leaves the hyphens at 98\%, and the gain holds for every reader (from 0.15--0.96 to 0.82--1.00).
 Wrong answers are mostly fabricated rather than misread. Of the right-length answers, 59\% have at least 8 of 32 characters wrong (median 27, close to the 30 expected from guessing), and only 23\% are exact (\cref{fig:why}b).
-The weaker readers drive this pattern; Gemini almost never fabricates and errs by misreading (\cref{app:why}).
+The weaker readers drive this pattern; Gemini almost never fabricates and errs by misreading (\textbf{Appendix \ref{app:why}}).
 Under \name, 58\% of the answers are exact and 9\% fabricated.
 
 To vary predictability at fixed glyph size, we hid one 32-character value in the same documents and changed only its type: an English phrase, random common words, or random hexadecimal characters, rendered by COC at 4--10\,px.
 Three readers found enough targets of every type. For each, a found hexadecimal string is copied exactly far less often than a found English phrase: 0.61 vs.\ 0.82 for Gemini, 0.08 vs.\ 0.57 for GPT, and 0.00 vs.\ 0.46 for Llama (\cref{fig:why}a).
-Hexadecimal and English targets also differ in their glyphs, so this test supports but does not isolate the role of the prior (\cref{app:why}).
+Hexadecimal and English targets also differ in their glyphs, so this test supports but does not isolate the role of the prior (\textbf{Appendix \ref{app:why}}).
 
 \subsection{Scaling with context length}
 \label{sec:length}
@@ -84,7 +84,7 @@ Hexadecimal and English targets also differ in their glyphs, so this test suppor
 
 COC is most attractive for long documents, so \cref{fig:scaling} extends the comparison to 128K characters.
 Under COC, mean recall declines from 0.12 at 32K to 0.08 at 64K and 0.07 at 128K, consistent with reports that compressed reading loses retrieval ability as context grows~\cite{zhao2025vtcbench}.
-\name stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction.
+\name stays between 0.60 and 0.56, a pooled gain of 0.48 [0.43, 0.53] with 35 of 45 cells significant after Holm correction (\textbf{Appendix \ref{app:tables}}).
 It uses 13\%, 23\%, and 27\% fewer tokens per task than COC at the three lengths.
 Against plain text, which every reader answers with recall of at least 0.99, it uses 5.4$\times$, 6.8$\times$, and 8.0$\times$ fewer tokens.
 
@@ -102,7 +102,7 @@ Reallocation helps most where the budget is tight, which is also where COC saves
 \label{sec:longbench}
 
 RULER needles are synthetic, and the detector was designed with such strings in mind.
-We therefore built two sets of 60 questions from LongBench documents of up to 40K characters, each asking for the exact string that follows a unique six-word phrase (\cref{app:niq}).
+We therefore built two sets of 60 questions from LongBench documents of up to 40K characters, each asking for the exact string that follows a unique six-word phrase (\textbf{Appendix \ref{app:niq}}).
 For targets the detector flags, such as report and grant numbers, ISBNs, citation keys, and URLs, \name doubles mean recall (0.23 to 0.48, significant for four of five readers) at 12\% fewer tokens per task (\cref{tab:niq}).
 For digit-bearing targets sampled without the detector, mostly short numbers and version strings such as ``25,000'' or ``2.0.13'', only one of 60 is flagged. Every image arm is poor on these (0.36--0.45 against 0.96 for text), and \name neither helps nor hurts ($-$0.01 [$-$0.11, 0.08]).
 
@@ -127,7 +127,7 @@ Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 c
 
 To separate the selection from the rendering, we kept the renderer, the budget of typical COC, and the two sizes of \name (5 and 12\,px) fixed and changed only which strings are enlarged.
 A simple rule ranks tokens that contain a digit or have at least 12 characters by length; a surprisal rule ranks tokens by their mean residual entropy under the language model of \cref{sec:principle}.
-Each rule enlarges strings down its ranking while the image fits the budget (\cref{app:selection}).
+Each rule enlarges strings down its ranking while the image fits the budget (\textbf{Appendix \ref{app:selection}}).
 On the 60 detector-independent targets of \cref{sec:niq}, sampled before any rule was applied (all contain digits, which favors the simple rule), the detector enlarges 1 target, the simple rule 12, and the surprisal rule 16.
 No rule changes pooled recall significantly (COC 0.45, detector 0.44, simple rule 0.44, surprisal 0.50; surprisal minus COC +0.05 [$-$0.07, 0.15]); what matters is whether the target is enlarged.
 Targets that the surprisal rule enlarges rise from 0.30 to 0.70 (+0.39 [0.21, 0.59]), and those it misses fall by 0.08 [$-$0.20, 0.04] because they shrink with the prose; the simple rule shows the same pattern (+0.25 and $-$0.08).
@@ -138,4 +138,4 @@ Enlargement helps the strings it reaches (significantly for the surprisal rule),
 
 Anchors append the flagged strings verbatim after the question and leave the map unchanged, so they can be added to either image.
 In the RULER essays the anchor list is the answer, so both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).
-On flagged natural identifiers \name+anchor lies on or above the recall--cost frontier of COC+anchor, but anchors mislead when the target is not flagged, and dense documents are better routed to text (\cref{app:anchors,app:density}).
+On flagged natural identifiers \name+anchor lies on or above the recall--cost frontier of COC+anchor, but anchors mislead when the target is not flagged, and dense documents are better routed to text (\textbf{Appendices \ref{app:anchors}, \ref{app:density}, \ref{app:corpora}, and \ref{app:claude}}).

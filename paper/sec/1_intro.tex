@@ -8,12 +8,12 @@ A page of small glyphs costs a fixed number of vision tokens regardless of how m
 A 128K-character essay therefore costs 27.1K prompt tokens as text but only 4.7K as a typical COC image, averaged across the four readers that report usage for both formats.
 %(mean of the four readers that report usage for both).
 
-Typical COC renders the whole document using a single font and size, chosen at best through a global search~\cite{cheng2025glyph}, %so every character receives the same pixels.
+COC renders the whole document using a single font and size, chosen at best through a global search~\cite{cheng2025glyph}, %so every character receives the same pixels.
 so every character receives the same number of pixels.
 The reader, however, needs different evidence for different characters.
 A VLM that reads rendered text combines what the glyph shows with what its language model expects.
 In prose the expectation fills most gaps, so blurred letters are still read correctly.
-In an identifier it cannot, because the format of a UUID is predictable while each hexadecimal character carries 4 bits that only the pixels can supply.
+In an identifier it cannot, as the format of a UUID is predictable while each hexadecimal character carries 4 bits that only the pixels can supply.
 Under typical COC, our readers write the hyphens of a UUID correctly 99\% of the time but its hexadecimal characters only 51\% of the time, and most wrong answers keep the format and invent the content (\cref{sec:why}).
 At an equal budget, typical COC recovers only 8--22\% of RULER needles across five readers.
 

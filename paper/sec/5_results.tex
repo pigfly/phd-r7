@@ -118,8 +118,9 @@ Page-level $\U$, however, does not rise on these documents (0.374 to 0.365 on th
 Natural documents contain many unflagged hot spots, such as names, short numbers, and citations, which grow hotter when prose shrinks.
 The regex detector is enough to flatten RULER pages but cools only the flagged spots of natural ones; \cref{sec:selection} tests other ways to choose what to enlarge.
 Shrinking prose could also hurt other questions, but on the two held-out LongBench QA tasks the pooled F1 difference from COC is not significant (+0.02 [$-$0.02, 0.06], \cref{tab:longbench}); one reader--task cell is significantly negative.
-Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.
-\name removes a failure specific to identifiers but does not make COC a substitute for text.
+%Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 cells, at a fifth to a quarter of the text cost.\name removes a failure specific to identifiers but does not make COC a substitute for text.
+Every image arm trails plain text: \name+anchor loses 0.15--0.33 F1 in 9 of 10 cells, at $1/5$ to $1/4$ of the text cost.  
+\name addresses identifier-specific failures but does not make COC a substitute for text.
 
 \subsection{Which strings to enlarge}
 \label{sec:selection}
@@ -135,6 +136,10 @@ Enlargement helps the strings it reaches (significantly for the surprisal rule),
 \subsection{Anchors as post-processing}
 \label{sec:anchors}
 
-Anchors append the flagged strings verbatim after the question and leave the map unchanged, so they can be added to either image.
-In the RULER essays the anchor list is the answer, so both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).
-On flagged natural identifiers \name+anchor lies on or above the recall--cost frontier of COC+anchor, but anchors mislead when the target is not flagged, and dense documents are better routed to text (\textbf{Appendices \ref{app:anchors}, \ref{app:density}, \ref{app:corpora}, and \ref{app:claude}}).
+%Anchors append the flagged strings verbatim after the question and leave the map unchanged, so they can be added to either image.In the RULER essays the anchor list is the answer, so both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).On flagged natural identifiers \name+anchor lies on or above the recall--cost frontier of COC+anchor, but anchors mislead when the target is not flagged, and dense documents are better routed to text (\textbf{Appendices \ref{app:anchors}, \ref{app:density}, \ref{app:corpora}, and \ref{app:claude}}).
+
+Anchors append the flagged strings verbatim after the question and leave the map unchanged, so they can be added to either image without requiring any change to the underlying renderer or reader. 
+
+
+In the RULER essays, the anchor list is the answer, so both anchor arms reach 0.90--1.00 by copying (\cref{tab:baselines}).  
+On flagged natural identifiers, \name+anchor lies on or above the recall--cost frontier of COC+anchor, but anchors mislead when the target is not flagged, and dense documents are better routed to text (\textbf{Appendices \ref{app:anchors}, \ref{app:density}, \ref{app:corpora}, and \ref{app:claude}}).

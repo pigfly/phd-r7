@@ -4,7 +4,7 @@
 Long contexts are expensive to feed to large models.
 Context optical compression (COC) cuts this cost by rendering text into images and letting a vision-language model (VLM) read the pixels~\cite{wei2025deepseekocr,cheng2025glyph,rust2023pixel}.
 It needs no training and works with any VLM that accepts images.
-A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it contains.%however many characters it holds.
+A page of small glyphs costs a fixed number of vision tokens regardless of how many characters it contains. %however many characters it holds.
 A 128K-character essay therefore costs 27.1K prompt tokens as text but only 4.7K as a typical COC image, averaged across the four readers that report usage for both formats.
 %(mean of the four readers that report usage for both).
 
